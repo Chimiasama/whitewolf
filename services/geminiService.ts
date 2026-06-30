@@ -5,7 +5,7 @@ import { GameType } from '../types';
 import { fnGetClanDetails, fnGetTribeDetails, fnGetAuspiceDetails } from '../constants';
 
 // Always initialize GoogleGenAI with the apiKey from process.env.API_KEY
-const oAi = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY as string });
 
 type TFunction = (key: string, replacements?: Record<string, string | number>) => string;
 
@@ -59,19 +59,19 @@ function fnBuildBasePrompt(oCharacter: Character, fnT: TFunction, sLocale: strin
     `;
 }
 
-// Fix: Updating models to gemini-3-flash-preview as it is the current standard for basic text tasks
+// Fix: Updating models to gemini-1.5-flash as it is the current standard for basic text tasks
 export const fnGenerateBackstory = async (oCharacter: Character, fnT: TFunction, sLocale: string): Promise<string> => {
-    if (!process.env.API_KEY) return "API key not configured.";
+    if (!process.env.GEMINI_API_KEY) return "API key not configured.";
     try {
         const sPrompt = `
         ${fnBuildBasePrompt(oCharacter, fnT, sLocale)}
         ${fnT('gemini.backstoryPrompt')}
         `;
-        const oResponse = await oAi.models.generateContent({
-            model: 'gemini-3-flash-preview',
-            contents: sPrompt,
+        const response = await genAI.models.generateContent({
+            model: "gemini-1.5-flash",
+            contents: sPrompt
         });
-        return oResponse.text;
+        return response.text || "";
     } catch (error) {
         console.error("Error generating backstory:", error);
         return fnT('gemini.errorBackstory');
@@ -79,17 +79,17 @@ export const fnGenerateBackstory = async (oCharacter: Character, fnT: TFunction,
 };
 
 export const fnGeneratePlotHook = async (oCharacter: Character, fnT: TFunction, sLocale: string): Promise<string> => {
-    if (!process.env.API_KEY) return "API key not configured.";
+    if (!process.env.GEMINI_API_KEY) return "API key not configured.";
     try {
         const sPrompt = `
         ${fnBuildBasePrompt(oCharacter, fnT, sLocale)}
         ${fnT('gemini.plotHookPrompt')}
         `;
-        const oResponse = await oAi.models.generateContent({
-            model: 'gemini-3-flash-preview',
-            contents: sPrompt,
+        const response = await genAI.models.generateContent({
+            model: "gemini-1.5-flash",
+            contents: sPrompt
         });
-        return oResponse.text;
+        return response.text || "";
     } catch (error) {
         console.error("Error generating plot hook:", error);
         return fnT('gemini.errorPlotHook');
@@ -97,17 +97,17 @@ export const fnGeneratePlotHook = async (oCharacter: Character, fnT: TFunction, 
 };
 
 export const fnGeneratePortraitDescription = async (oCharacter: Character, fnT: TFunction, sLocale: string): Promise<string> => {
-    if (!process.env.API_KEY) return "API key not configured.";
+    if (!process.env.GEMINI_API_KEY) return "API key not configured.";
     try {
         const sPrompt = `
         ${fnBuildBasePrompt(oCharacter, fnT, sLocale)}
         ${fnT('gemini.portraitPrompt')}
         `;
-        const oResponse = await oAi.models.generateContent({
-            model: 'gemini-3-flash-preview',
-            contents: sPrompt,
+        const response = await genAI.models.generateContent({
+            model: "gemini-1.5-flash",
+            contents: sPrompt
         });
-        return oResponse.text;
+        return response.text || "";
     } catch (error) {
         console.error("Error generating portrait description:", error);
         return fnT('gemini.errorPortrait');
