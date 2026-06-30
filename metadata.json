@@ -1,0 +1,9 @@
+{
+  "name": "Vampire: The Masquerade 5e Character Creator",
+  "description": "An application to create character sheets for Vampire: The Masquerade 5th Edition, with AI-powered assistance for generating backstories, plot hooks, and character portrait ideas using the Gemini API.",
+  "requestFramePermissions": [],
+  "locales": [
+    "en",
+    "pt"
+  ]
+}
