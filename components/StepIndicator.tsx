@@ -5,16 +5,24 @@ interface StepIndicatorProps {
   totalSteps: number;
   steps: string[];
   isWerewolf?: boolean;
+  onStepClick?: (step: number) => void;
 }
 
-export const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep: nCurrentStep, totalSteps: nTotalSteps, steps: aSteps, isWerewolf = false }) => {
+export const StepIndicator: React.FC<StepIndicatorProps> = ({
+    currentStep: nCurrentStep,
+    totalSteps: nTotalSteps,
+    steps: aSteps,
+    isWerewolf = false,
+    onStepClick: fnOnStepClick
+}) => {
   return (
-    <div className="w-full mb-8">
-      <ol className="flex items-center w-full">
+    <div className="w-full mb-8 overflow-x-auto pb-4 custom-scrollbar">
+      <ol className="flex items-center w-full min-w-[600px]">
         {aSteps.map((sStepName, nIndex) => {
           const nStepNumber = nIndex + 1;
           const bIsCompleted = nCurrentStep > nStepNumber;
           const bIsCurrent = nCurrentStep === nStepNumber;
+          const bCanClick = true;
 
           return (
             <li
@@ -23,7 +31,10 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep: nCurr
                 nStepNumber < nTotalSteps ? "after:content-[''] after:w-full after:h-1 after:border-b after:border-4 after:inline-block" : ""
               } ${bIsCompleted ? (isWerewolf ? "after:border-emerald-800" : "after:border-red-800") : "after:border-gray-800"}`}
             >
-              <div className="flex flex-col items-center justify-center">
+              <button
+                onClick={() => fnOnStepClick?.(nStepNumber)}
+                className="flex flex-col items-center justify-center focus:outline-none transition-all cursor-pointer hover:opacity-80"
+              >
                 <span
                   className={`flex items-center justify-center w-10 h-10 rounded-full shrink-0 transition-all duration-300
                     ${bIsCurrent ? (isWerewolf ? "bg-emerald-700 border-2 border-emerald-500 text-white shadow-[0_0_15px_rgba(16,185,129,0.4)] font-bold scale-110" : "bg-red-700 border-2 border-red-500 text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] font-bold scale-110") : ""}
@@ -35,7 +46,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep: nCurr
                   ) : nStepNumber}
                 </span>
                 <span className={`mt-2 text-[10px] uppercase tracking-wider text-center w-24 transition-colors duration-300 ${bIsCurrent ? (isWerewolf ? 'text-emerald-400 font-bold' : 'text-red-400 font-bold') : 'text-gray-500'}`}>{sStepName}</span>
-              </div>
+              </button>
             </li>
           );
         })}

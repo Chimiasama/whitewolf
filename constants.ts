@@ -42,11 +42,12 @@ export const fnGetClanDetails = (fnT: TFunction): Record<Clan, { name: string; d
 
 export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
     { 
+        id: 'alleycat',
         name: fnT('predatorTypes.alleycat.name'), 
         description: fnT('predatorTypes.alleycat.description'),
         disciplineAdd: { discipline: "Potence", dots: 1 },
         humanityModifier: -1,
-        advantages: [{ id: 'contacts_criminal', name: fnT('advantages.contacts.name'), description: fnT('advantages.contacts.description'), cost: 3, type: 'advantage', levels: [3] }], // Criminal Contact
+        advantages: [{ id: 'contacts_criminal', name: fnT('advantages.contacts.name'), description: fnT('advantages.contacts.description'), cost: 3, type: 'advantage', levels: [3] }],
         flaws: [],
         specialties: [],
         specialtyOptions: [
@@ -55,11 +56,12 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         ]
     },
     { 
+        id: 'bagger',
         name: fnT('predatorTypes.bagger.name'), 
         description: fnT('predatorTypes.bagger.description'),
         humanityModifier: 0,
         advantages: [],
-        flaws: [{ id: 'enemy_bagger', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.baggerDescription'), cost: 2, type: 'flaw', levels: [2]}],
+        flaws: [{ id: 'enemy_bagger', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 2, type: 'flaw', levels: [2]}],
         specialties: [],
         specialtyOptions: [
             { skill: Skill.Streetwise, name: fnT('predatorTypes.specialties.blackMarket') },
@@ -67,13 +69,14 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         ]
     },
     { 
+        id: 'consensualist',
         name: fnT('predatorTypes.consensualist.name'), 
         description: fnT('predatorTypes.consensualist.description'),
         humanityModifier: 1,
         advantages: [],
         flaws: [
             { id: 'darksecret_consensualist', name: fnT('flaws.darksecret.name'), description: fnT('flaws.darksecret.description'), cost: 1, type: 'flaw', levels: [1]},
-            { id: 'feeding_consensualist', name: fnT('flaws.feeding.name'), description: fnT('flaws.feeding.consensualistDescription'), cost: 1, type: 'flaw', levels: [1]}
+            { id: 'feeding_consensualist', name: fnT('flaws.feeding.name'), description: fnT('flaws.feeding.description'), cost: 1, type: 'flaw', levels: [1]}
         ],
         specialties: [],
         specialtyOptions: [
@@ -82,11 +85,12 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         ]
     },
     { 
+        id: 'farmer',
         name: fnT('predatorTypes.farmer.name'), 
         description: fnT('predatorTypes.farmer.description'),
         humanityModifier: 0,
         advantages: [],
-        flaws: [{ id: 'feeding_farmer', name: fnT('flaws.feeding.name'), description: fnT('flaws.feeding.farmerDescription'), cost: 2, type: 'flaw', levels: [2]}],
+        flaws: [{ id: 'feeding_farmer', name: fnT('flaws.feeding.name'), description: fnT('flaws.feeding.description'), cost: 2, type: 'flaw', levels: [2]}],
         specialties: [],
         specialtyOptions: [
             { skill: Skill.AnimalKen, name: fnT('predatorTypes.specialties.animal') },
@@ -94,6 +98,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         ]
     },
     { 
+        id: 'osiris',
         name: fnT('predatorTypes.osiris.name'), 
         description: fnT('predatorTypes.osiris.description'),
         humanityModifier: -1,
@@ -103,7 +108,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         ],
         flaws: [
             { id: 'enemy_osiris', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 2, type: 'flaw', levels: [2]},
-            { id: 'shunned_osiris', name: fnT('flaws.shunned.name'), description: fnT('flaws.shunned.description'), cost: 2, type: 'flaw', levels: [2]} // Mythic Flaw equiv
+            { id: 'shunned_osiris', name: fnT('flaws.shunned.name'), description: fnT('flaws.shunned.description'), cost: 2, type: 'flaw', levels: [2]}
         ],
         specialties: [],
         specialtyOptions: [
@@ -112,6 +117,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         ]
     },
     { 
+        id: 'sandman',
         name: fnT('predatorTypes.sandman.name'), 
         description: fnT('predatorTypes.sandman.description'),
         disciplineAdd: { discipline: "Auspex", dots: 1 },
@@ -125,12 +131,13 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         ]
     },
     { 
+        id: 'siren',
         name: fnT('predatorTypes.siren.name'), 
         description: fnT('predatorTypes.siren.description'),
         disciplineAdd: { discipline: "Presence", dots: 1 },
         humanityModifier: 0,
         advantages: [{ id: 'beautiful_siren', name: fnT('advantages.beautiful.name'), description: fnT('advantages.beautiful.description'), cost: 2, type: 'advantage', levels: [2]}],
-        flaws: [{ id: 'enemy_siren', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.sirenDescription'), cost: 1, type: 'flaw', levels: [1]}],
+        flaws: [{ id: 'enemy_siren', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 1, type: 'flaw', levels: [1]}],
         specialties: [],
         specialtyOptions: [
             { skill: Skill.Persuasion, name: fnT('predatorTypes.specialties.seduction') },
@@ -739,8 +746,8 @@ export const oInitialCharacter: Character = {
   harano: 0,
   hauglosk: 0,
   renown: { glory: 0, honor: 0, wisdom: 0 },
-  health: 0, 
-  willpower: 0, 
+  health: null,
+  willpower: null,
   bloodPotency: 1,
   touchstones: '',
   advantages: [],

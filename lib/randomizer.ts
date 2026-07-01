@@ -169,8 +169,8 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
                 const d1 = giftNames[0];
                 disciplines[d1] = Math.min(5, (disciplines[d1] || 0) + 1);
             }
-            advantages.push({ name: fnT('advantages.resources.name'), description: fnT('common.unknown'), cost: 2, type: 'advantage', levels: [2] });
-            flaws.push({ name: fnT('flaws.enemy.name'), description: fnT('common.unknown'), cost: 1, type: 'flaw', levels: [1] });
+            advantages.push({ id: 'resources_bonus', name: fnT('advantages.resources.name'), description: fnT('common.unknown'), cost: 2, type: 'advantage', levels: [2] });
+            flaws.push({ id: 'enemy_bonus', name: fnT('flaws.enemy.name'), description: fnT('common.unknown'), cost: 1, type: 'flaw', levels: [1] });
         }
 
         return {
@@ -294,8 +294,8 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
             const d1 = clanDiscNames[0];
             disciplines[d1] = Math.min(5, (disciplines[d1] || 0) + 1);
         }
-        advantages.push({ name: fnT('advantages.resources.name'), description: fnT('common.unknown'), cost: 2, type: 'advantage', levels: [2] });
-        flaws.push({ name: fnT('flaws.enemy.name'), description: fnT('common.unknown'), cost: 1, type: 'flaw', levels: [1] });
+        advantages.push({ id: 'resources_bonus', name: fnT('advantages.resources.name'), description: fnT('common.unknown'), cost: 2, type: 'advantage', levels: [2] });
+        flaws.push({ id: 'enemy_bonus', name: fnT('flaws.enemy.name'), description: fnT('common.unknown'), cost: 1, type: 'flaw', levels: [1] });
     }
 
     // 7. Discipline Combos (Vampire)
@@ -325,7 +325,7 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         disciplines,
         disciplinePowers,
         disciplineCombos,
-        predatorType: selectedPredator.name,
+        predatorType: selectedPredator.id,
         specialties,
         advantages,
         flaws,
