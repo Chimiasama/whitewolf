@@ -41,6 +41,12 @@ const oEn = {
       "saveSuccess": "Character saved successfully.",
       "loadSuccess": "Character loaded successfully."
   },
+  "gameSelection": {
+    "title": "Select Your Fate",
+    "subtitle": "Choose the chronicle you wish to embark upon.",
+    "vampireDesc": "The Beast within rages. Survive the night in the World of Darkness.",
+    "werewolfDesc": "When will you Rage? Fight the Wyrm and save Gaia."
+  },
   "steps": {
     "gameSelection": "Game",
     "concept": "Concept",
@@ -124,7 +130,12 @@ const oEn = {
     "managePowers": "Manage Powers",
     "paintMode": "Painting {{value}}",
     "paintInstruction": "Click on attributes or skills to assign the active value.",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "randomIdentity": "Random Identity",
+    "specialty": "Specialty",
+    "resetWarning": "Are you sure you want to reset all character data? This cannot be undone.",
+    "resetSuccess": "Character reset to default.",
+    "generateSuccess": "Character generated successfully!"
   },
   "concept": {
     "title": "Core Concept",
@@ -252,7 +263,8 @@ const oEn = {
     "predatorType": { "title": "Predator Type" },
     "advantages": { "title": "Advantages" },
     "flaws": { "title": "Flaws" },
-    "touchstones": "Touchstones & Convictions"
+    "touchstones": "Touchstones & Convictions",
+    "touchstonesPlaceholder": "Describe your character's touchstones and convictions..."
   },
   "characterSheet": {
     "name": "Name",
@@ -975,6 +987,12 @@ const oPt = {
       "saveSuccess": "Personagem salvo com sucesso.",
       "loadSuccess": "Personagem carregado com sucesso."
   },
+  "gameSelection": {
+    "title": "Selecione o Jogo",
+    "subtitle": "Escolha o cenário que deseja explorar.",
+    "vampireDesc": "A Besta interior ruge. Sobreviva à noite no Mundo das Trevas.",
+    "werewolfDesc": "Quando você irá enfurecer? Lute contra a Wyrm e salve Gaia."
+  },
   "steps": {
     "gameSelection": "Jogo",
     "concept": "Conceito",
@@ -1144,7 +1162,12 @@ const oPt = {
     "managePowers": "Gerenciar Poderes",
     "paintMode": "Pintando {{value}}",
     "paintInstruction": "Clique nos atributos ou perícias para atribuir o valor ativo.",
-    "confirm": "Confirmar"
+    "confirm": "Confirmar",
+    "randomIdentity": "Identidade Aleatória",
+    "specialty": "Especialidade",
+    "resetWarning": "Tem certeza que deseja reiniciar todos os dados do personagem? Isso não pode ser desfeito.",
+    "resetSuccess": "Personagem reiniciado para o padrão.",
+    "generateSuccess": "Personagem gerado com sucesso!"
   },
   "concept": {
     "title": "Conceito Principal",
@@ -1243,7 +1266,8 @@ const oPt = {
     "predatorType": { "title": "Tipo de Predador" },
     "advantages": { "title": "Vantagens" },
     "flaws": { "title": "Defeitos" },
-    "touchstones": "Pedras de Toque e Convicções"
+    "touchstones": "Pedras de Toque e Convicções",
+    "touchstonesPlaceholder": "Descreva as pedras de toque e convicções do seu personagem..."
   },
   "characterSheet": {
     "name": "Nome", "clan": "Clã", "sire": "Senhor", "mentor": "Mentor", "concept": "Conceito", "ambition": "Ambição", "desire": "Desejo",

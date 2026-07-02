@@ -80,9 +80,9 @@ const DiceIcon = () => (
 const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSelect }) => {
     const { t: fnT } = useI18n();
     return (
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fadeIn">
+        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fadeIn px-4">
             <div className="space-y-4">
-                <h1 className="text-5xl font-cinzel text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-cinzel text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">
                     {fnT('gameSelection.title')}
                 </h1>
                 <p className="text-gray-400 text-lg italic max-w-2xl mx-auto">
@@ -93,7 +93,7 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                 <div 
                     onClick={() => onSelect(GameType.Vampire)}
-                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-red-900/30 bg-black/40 p-8 transition-all hover:border-red-600 hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]"
+                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-red-900/30 bg-black/40 p-4 sm:p-8 transition-all hover:border-red-600 hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]"
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-red-900/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                     <div className="relative z-10 space-y-6">
@@ -101,7 +101,7 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                             <BloodIcon />
                         </div>
                         <div className="space-y-2">
-                            <h2 className="text-3xl font-cinzel text-red-500">{fnT('app.vampire')}</h2>
+                            <h2 className="text-2xl md:text-3xl font-cinzel text-red-500">{fnT('app.vampire')}</h2>
                             <p className="text-gray-400 text-sm leading-relaxed">
                                 {fnT('gameSelection.vampireDesc')}
                             </p>
@@ -114,7 +114,7 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
 
                 <div 
                     onClick={() => onSelect(GameType.Werewolf)}
-                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-emerald-900/30 bg-black/40 p-8 transition-all hover:border-emerald-600 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
+                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-emerald-900/30 bg-black/40 p-4 sm:p-8 transition-all hover:border-emerald-600 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                     <div className="relative z-10 space-y-6">
@@ -122,7 +122,7 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                             <ClawIcon />
                         </div>
                         <div className="space-y-2">
-                            <h2 className="text-3xl font-cinzel text-emerald-500">{fnT('app.werewolf')}</h2>
+                            <h2 className="text-2xl md:text-3xl font-cinzel text-emerald-500">{fnT('app.werewolf')}</h2>
                             <p className="text-gray-400 text-sm leading-relaxed">
                                 {fnT('gameSelection.werewolfDesc')}
                             </p>
@@ -820,7 +820,7 @@ const App: React.FC = () => {
         fnSetCharacter(char);
         setView('creator');
         fnSetStep(6); 
-        fnShowNotification("Character generated successfully!");
+        fnShowNotification(fnT('common.generateSuccess'));
     };
 
     const fnSaveCharacter = (sName: string) => {
@@ -860,7 +860,7 @@ const App: React.FC = () => {
     };
 
     const fnResetCharacter = () => {
-        if (window.confirm("Are you sure you want to reset all character data? This cannot be undone.")) {
+        if (window.confirm(fnT('common.resetWarning'))) {
             const oIdentity = fnGenerateIdentity(sLocale, oCharacter.gameType); 
             fnSetCharacter({
                 ...oInitialCharacter,
@@ -871,7 +871,7 @@ const App: React.FC = () => {
             });
             fnSetStep(1);
             setView('home'); 
-            fnShowNotification("Character reset to default.");
+            fnShowNotification(fnT('common.resetSuccess'));
         }
     };
 
@@ -1010,10 +1010,10 @@ const App: React.FC = () => {
                                 variant="secondary" 
                                 onClick={fnRandomizeIdentity} 
                                 className="flex items-center gap-2 text-xs py-1 px-3 bg-gray-700 hover:bg-red-900 border border-gray-600 hover:border-red-500"
-                                title="Randomize Identity"
+                                title={fnT('common.randomIdentity')}
                             >
                                 <DiceIcon />
-                                <span>Random Identity</span>
+                                <span>{fnT('common.randomIdentity')}</span>
                             </Button>
                         </div>
                         <p className="text-gray-400 mb-6 italic">{fnT('concept.subtitle')}</p>
@@ -1661,7 +1661,7 @@ const App: React.FC = () => {
                                     </div>
                                     <div className="md:col-span-1">
                                         <Input
-                                            label="Especialidade"
+                                            label={fnT('common.specialty')}
                                             placeholder="ex: Parkour"
                                             value={sSpecialtyName}
                                             onChange={(e) => setSpecialtyName(e.target.value)}
@@ -1743,9 +1743,9 @@ const App: React.FC = () => {
                     <div className="absolute inset-0 pointer-events-none opacity-10">
                         <RoseIcon className="w-[800px] h-[800px] text-red-900 absolute -top-40 -right-40 animate-pulse" />
                     </div>
-                    <div className="z-20 text-center mb-12">
-                        <h1 className="text-6xl font-cinzel font-bold text-red-600 tracking-widest mb-2 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">{fnT('app.title')}</h1>
-                        <p className="text-xl text-gray-400 italic max-w-2xl mx-auto">{fnT('app.subtitle')}</p>
+                    <div className="z-20 text-center mb-12 px-4">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-cinzel font-bold text-red-600 tracking-widest mb-2 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">{fnT('app.title')}</h1>
+                        <p className="text-lg sm:text-xl text-gray-400 italic max-w-2xl mx-auto">{fnT('app.subtitle')}</p>
                     </div>
                     <GameSelection onSelect={fnHandleGameSelect} />
                     <div className="mt-12 flex justify-center gap-4 z-20">
@@ -1769,8 +1769,8 @@ const App: React.FC = () => {
                 <div className="absolute inset-0 pointer-events-none opacity-20">
                     <RoseIcon className={`w-[800px] h-[800px] ${bIsWerewolf ? 'text-emerald-900' : 'text-red-900'} absolute -top-40 -right-40 animate-pulse`} />
                 </div>
-                <GothicFrame className={`max-w-2xl w-full text-center p-12 bg-black/80 shadow-2xl z-10 border ${sThemeBorder}`}>
-                    <h1 className={`text-5xl md:text-6xl font-cinzel font-bold ${sThemeColor} tracking-widest mb-2 text-shadow-lg`}>
+                <GothicFrame className={`max-w-2xl w-full text-center p-6 sm:p-12 bg-black/80 shadow-2xl z-10 border ${sThemeBorder}`}>
+                    <h1 className={`text-3xl sm:text-5xl md:text-6xl font-cinzel font-bold ${sThemeColor} tracking-widest mb-2 text-shadow-lg`}>
                         {bIsWerewolf ? fnT('app.werewolf') : fnT('app.vampire')}
                     </h1>
                     <p className={`text-xl text-gray-400 mb-12 italic border-b ${sThemeBorder}/50 pb-6 mx-auto w-3/4`}>

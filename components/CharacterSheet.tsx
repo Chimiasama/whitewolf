@@ -507,11 +507,11 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                     <strong className={`${sThemeAccentClass} text-lg uppercase tracking-widest`}>{bIsWerewolf ? fnT('characterSheet.rage') : fnT('characterSheet.hunger')}</strong>
                     <span className="text-gray-400 text-xs font-mono">{bIsWerewolf ? (oCharacter.rage || 0) : oCharacter.hunger} / 5</span>
                  </div>
-                 <div className={`flex items-center justify-between bg-black/40 p-4 rounded-lg border ${bIsWerewolf ? 'border-green-900/30' : 'border-red-900/30'}`}>
+                 <div className={`flex items-center justify-between bg-black/40 p-2 sm:p-4 rounded-lg border ${bIsWerewolf ? 'border-green-900/30' : 'border-red-900/30'}`}>
                     {(!bIsWerewolf ? fnOnUpdateHunger : fnOnUpdateRage) && (
-                        <Button variant="secondary" className={`px-3 py-1 text-lg font-bold leading-none h-10 w-10 flex items-center justify-center transition-colors ${bIsWerewolf ? 'hover:bg-green-900/20' : 'hover:bg-red-900/20'}`} onClick={() => bIsWerewolf ? fnOnUpdateRage?.(Math.max(0, (oCharacter.rage || 0) - 1)) : fnOnUpdateHunger?.(Math.max(0, oCharacter.hunger - 1))} disabled={bIsWerewolf ? (oCharacter.rage || 0) <= 0 : oCharacter.hunger <= 0}>-</Button>
+                        <Button variant="secondary" className={`px-2 sm:px-3 py-1 text-lg font-bold leading-none h-8 w-8 sm:h-10 sm:w-10 flex items-center justify-center transition-colors ${bIsWerewolf ? 'hover:bg-green-900/20' : 'hover:bg-red-900/20'}`} onClick={() => bIsWerewolf ? fnOnUpdateRage?.(Math.max(0, (oCharacter.rage || 0) - 1)) : fnOnUpdateHunger?.(Math.max(0, oCharacter.hunger - 1))} disabled={bIsWerewolf ? (oCharacter.rage || 0) <= 0 : oCharacter.hunger <= 0}>-</Button>
                     )}
-                    <div className="flex space-x-2 mx-4">
+                    <div className="flex space-x-1 sm:space-x-2 mx-1 sm:mx-4">
                          {[...Array(5)].map((_, nI) => (
                             <button 
                                 key={nI} 
@@ -521,12 +521,12 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                             >
                                 {bIsWerewolf ? (
                                     <ClawIcon 
-                                        className={`w-8 h-8 transition-colors duration-300 drop-shadow-[0_0_5px_rgba(22,163,74,0.3)] ${(oCharacter.rage || 0) > nI ? 'text-green-600' : 'text-gray-800'}`} 
+                                        className={`w-6 h-6 sm:w-8 sm:h-8 transition-colors duration-300 drop-shadow-[0_0_5px_rgba(22,163,74,0.3)] ${(oCharacter.rage || 0) > nI ? 'text-green-600' : 'text-gray-800'}`}
                                         filled={(oCharacter.rage || 0) > nI} 
                                     />
                                 ) : (
                                     <BloodIcon 
-                                        className={`w-8 h-8 transition-colors duration-300 drop-shadow-[0_0_5px_rgba(220,38,38,0.3)] ${oCharacter.hunger > nI ? 'text-red-600' : 'text-gray-800'}`} 
+                                        className={`w-6 h-6 sm:w-8 sm:h-8 transition-colors duration-300 drop-shadow-[0_0_5px_rgba(220,38,38,0.3)] ${oCharacter.hunger > nI ? 'text-red-600' : 'text-gray-800'}`}
                                         filled={oCharacter.hunger > nI} 
                                     />
                                 )}
@@ -534,7 +534,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                         ))}
                     </div>
                     {(!bIsWerewolf ? fnOnUpdateHunger : fnOnUpdateRage) && (
-                        <Button variant="secondary" className={`px-3 py-1 text-lg font-bold leading-none h-10 w-10 flex items-center justify-center transition-colors ${bIsWerewolf ? 'hover:bg-green-900/20' : 'hover:bg-red-900/20'}`} onClick={() => bIsWerewolf ? fnOnUpdateRage?.(Math.min(5, (oCharacter.rage || 0) + 1)) : fnOnUpdateHunger?.(Math.min(5, oCharacter.hunger + 1))} disabled={bIsWerewolf ? (oCharacter.rage || 0) >= 5 : oCharacter.hunger >= 5}>+</Button>
+                        <Button variant="secondary" className={`px-2 sm:px-3 py-1 text-lg font-bold leading-none h-8 w-8 sm:h-10 sm:w-10 flex items-center justify-center transition-colors ${bIsWerewolf ? 'hover:bg-green-900/20' : 'hover:bg-red-900/20'}`} onClick={() => bIsWerewolf ? fnOnUpdateRage?.(Math.min(5, (oCharacter.rage || 0) + 1)) : fnOnUpdateHunger?.(Math.min(5, oCharacter.hunger + 1))} disabled={bIsWerewolf ? (oCharacter.rage || 0) >= 5 : oCharacter.hunger >= 5}>+</Button>
                     )}
                  </div>
             </div>
