@@ -5,40 +5,40 @@ export enum GameType {
 }
 
 export enum Tribe {
-  BlackFuries = "Black Furies",
-  BoneGnawers = "Bone Gnawers",
-  ChildrenOfGaia = "Children of Gaia",
-  Galestalkers = "Galestalkers",
-  GhostCouncil = "Ghost Council",
-  GlassWalkers = "Glass Walkers",
-  HartWardens = "Hart Wardens",
-  RedTalons = "Red Talons",
-  ShadowLords = "Shadow Lords",
-  SilverFangs = "Silver Fangs",
-  SilentStriders = "Silent Striders"
+  BlackFuries = "blackfuries",
+  BoneGnawers = "bonegnawers",
+  ChildrenOfGaia = "childrenofgaia",
+  Galestalkers = "galestalkers",
+  GhostCouncil = "ghostcouncil",
+  GlassWalkers = "glasswalkers",
+  HartWardens = "hartwardens",
+  RedTalons = "redtalons",
+  ShadowLords = "shadowlords",
+  SilverFangs = "silverfangs",
+  SilentStriders = "silentstriders"
 }
 
 export enum Auspice {
-  Ragabash = "Ragabash",
-  Theurge = "Theurge",
-  Philodox = "Philodox",
-  Galliard = "Galliard",
-  Ahroun = "Ahroun"
+  Ragabash = "ragabash",
+  Theurge = "theurge",
+  Philodox = "philodox",
+  Galliard = "galliard",
+  Ahroun = "ahroun"
 }
 
 export enum Clan {
-  Brujah = "Brujah",
-  Gangrel = "Gangrel",
-  Malkavian = "Malkavian",
-  Nosferatu = "Nosferatu",
-  Toreador = "Toreador",
-  Tremere = "Tremere",
-  Ventrue = "Ventrue",
-  BanuHaqim = "Banu Haqim",
-  TheMinistry = "The Ministry",
-  Lasombra = "Lasombra",
-  Caitiff = "Caitiff",
-  ThinBlood = "Thin-Blood"
+  Brujah = "brujah",
+  Gangrel = "gangrel",
+  Malkavian = "malkavian",
+  Nosferatu = "nosferatu",
+  Toreador = "toreador",
+  Tremere = "tremere",
+  Ventrue = "ventrue",
+  BanuHaqim = "banuhaqim",
+  TheMinistry = "theministry",
+  Lasombra = "lasombra",
+  Caitiff = "caitiff",
+  ThinBlood = "thinblood"
 }
 
 export enum Attribute {
@@ -112,7 +112,7 @@ export interface DisciplineCombo {
 }
 
 export interface AdvantageFlaw {
-    id?: string;
+    id: string;
     name: string;
     description: string;
     cost: number;
@@ -126,6 +126,7 @@ export interface Specialty {
 }
 
 export interface PredatorTypeDetail {
+    id: string;
     name: string;
     description: string;
     disciplineAdd?: { discipline: string, dots: number };
@@ -160,18 +161,18 @@ export interface Character {
   // Vampire specific
   clan?: Clan | null;
   sire?: string;
-  generation?: number;
-  bloodPotency?: number;
-  hunger?: number;
-  humanity?: number;
+  generation: number;
+  bloodPotency: number;
+  hunger: number;
+  humanity: number;
   // Werewolf specific
   tribe?: Tribe | null;
   auspice?: Auspice | null;
   mentor?: string;
-  rage?: number;
-  harano?: number;
-  hauglosk?: number;
-  renown?: { 
+  rage: number;
+  harano: number;
+  hauglosk: number;
+  renown: {
     glory: number, 
     honor: number, 
     wisdom: number,
@@ -185,9 +186,9 @@ export interface Character {
   disciplineCombos: DisciplineCombo[];
   rituals: { id: string, name: string, description: string }[];
   talismans: { id: string, name: string, description: string }[];
-  predatorType: string | null; // Used for Patron Spirit or similar in Werewolf if needed
-  health: number; 
-  willpower: number; 
+  predatorType: string | null;
+  health: number | null;
+  willpower: number | null;
   touchstones: string;
   advantages: AdvantageFlaw[];
   flaws: AdvantageFlaw[];

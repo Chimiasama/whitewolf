@@ -552,7 +552,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                 )}
                 <VitalsPool 
                     label={fnT('characterSheet.willpower')}
-                    value={oCharacter.willpower || nWillpower}
+                    value={oCharacter.willpower ?? nWillpower}
                     max={nWillpower}
                     colorClass="bg-blue-600"
                     onUpdate={fnOnUpdateWillpower}
@@ -560,7 +560,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                 />
                 <VitalsPool 
                     label={fnT('characterSheet.health')}
-                    value={oCharacter.health || nHealth}
+                    value={oCharacter.health ?? nHealth}
                     max={nHealth}
                     colorClass="bg-red-800"
                     onUpdate={fnOnUpdateHealth}

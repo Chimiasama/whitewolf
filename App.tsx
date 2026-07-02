@@ -753,6 +753,8 @@ const App: React.FC = () => {
     const [nStep, fnSetStep] = useState(1);
     const [bShowModeSelection, fnSetShowModeSelection] = useState(false);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
+    const [sSelectedSkill, setSelectedSkill] = useState<string>('');
+    const [sSpecialtyName, setSpecialtyName] = useState<string>('');
     const [bShowStorage, fnSetShowStorage] = useState(false);
     const [sStorageMode, fnSetStorageMode] = useState<'save' | 'load'>('save');
     const [oNotification, fnSetNotification] = useState<{message: string, type: 'success' | 'error'} | null>(null);
@@ -930,20 +932,27 @@ const App: React.FC = () => {
         }
     }, [oCharacter.disciplines, fnT]);
 
-    const fnHandlePredatorTypeChange = (sNewName: string) => {
+    const fnHandlePredatorTypeChange = (sNewId: string) => {
         const aPredatorTypes = fnGetPredatorTypes(fnT);
-        const oOldType = aPredatorTypes.find(pt => pt.name === oCharacter.predatorType);
-        const oNewType = aPredatorTypes.find(pt => pt.name === sNewName);
+        const oOldType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
+        const oNewType = aPredatorTypes.find(pt => pt.id === sNewId);
 
         let aNewAdvantages = [...oCharacter.advantages];
         let aNewFlaws = [...oCharacter.flaws];
-        let nNewHumanity = oCharacter.humanity;
+        let nNewHumanity = oCharacter.humanity ?? 7;
+        let oNewDisciplines = { ...oCharacter.disciplines };
 
         // Clean up old predator type bonuses
         if (oOldType) {
             nNewHumanity -= oOldType.humanityModifier;
-            aNewAdvantages = aNewAdvantages.filter(a => !oOldType.advantages.some(oa => oa.name === a.name));
-            aNewFlaws = aNewFlaws.filter(f => !oOldType.flaws.some(of => of.name === f.name));
+            aNewAdvantages = aNewAdvantages.filter(a => !oOldType.advantages.some(oa => oa.id === a.id));
+            aNewFlaws = aNewFlaws.filter(f => !oOldType.flaws.some(of => of.id === f.id));
+
+            if (oOldType.disciplineAdd) {
+                const dName = oOldType.disciplineAdd.discipline;
+                oNewDisciplines[dName] = Math.max(0, (oNewDisciplines[dName] || 0) - oOldType.disciplineAdd.dots);
+                if (oNewDisciplines[dName] === 0) delete oNewDisciplines[dName];
+            }
         }
 
         // Apply new predator type bonuses
@@ -955,30 +964,31 @@ const App: React.FC = () => {
             // Handle automatic discipline dot if applicable
             if (oNewType.disciplineAdd) {
                 const dName = oNewType.disciplineAdd.discipline;
-                const nCurrent = oCharacter.disciplines[dName] || 0;
-                fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [dName]: nCurrent + oNewType.disciplineAdd.dots });
+                oNewDisciplines[dName] = (oNewDisciplines[dName] || 0) + oNewType.disciplineAdd.dots;
             }
         }
 
         fnSetCharacter(prev => ({
             ...prev,
-            predatorType: sNewName,
+            predatorType: sNewId,
             humanity: Math.max(0, Math.min(10, nNewHumanity)),
             advantages: aNewAdvantages,
-            flaws: aNewFlaws
+            flaws: aNewFlaws,
+            disciplines: oNewDisciplines
         }));
     };
 
     const fnHandleGameSelect = (game: GameType) => {
-        fnUpdateCharacter('gameType', game);
-        // Reset relevant fields when switching games
-        if (game === GameType.Werewolf) {
-            fnUpdateCharacter('clan', null);
-            fnUpdateCharacter('predatorType', null);
-        } else {
-            fnUpdateCharacter('tribe', null);
-            fnUpdateCharacter('auspice', null);
-        }
+        // Full reset when switching game types
+        const oIdentity = fnGenerateIdentity(sLocale, game);
+        fnSetCharacter({
+            ...oInitialCharacter,
+            gameType: game,
+            name: oIdentity.name,
+            sire: (oIdentity as any).sire,
+            mentor: (oIdentity as any).mentor,
+            concept: oIdentity.concept
+        });
         
         if (view === 'home') {
             fnSetShowModeSelection(true);
@@ -1351,7 +1361,7 @@ const App: React.FC = () => {
                                 >
                                     <option value="">{fnT('common.selectPlaceholder')}</option>
                                     {fnGetPredatorTypes(fnT).map(pt => (
-                                        <option key={pt.name} value={pt.name}>{pt.name}</option>
+                                        <option key={pt.id} value={pt.id}>{pt.name}</option>
                                     ))}
                                 </select>
                                 {oCharacter.predatorType && (
@@ -1605,6 +1615,86 @@ const App: React.FC = () => {
                                 </GothicFrame>
                             </div>
                         )}
+
+                        {/* Vampire Specific Stats */}
+                        {!bIsWerewolf && (
+                            <GothicFrame className="text-left">
+                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('steps.finishingTouches')}</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <Input
+                                        label={fnT('characterSheet.generation')}
+                                        type="number"
+                                        value={oCharacter.generation}
+                                        onChange={e => fnUpdateCharacter('generation', parseInt(e.target.value))}
+                                        min={4}
+                                        max={16}
+                                    />
+                                    <Input
+                                        label={fnT('characterSheet.bloodPotency')}
+                                        type="number"
+                                        value={oCharacter.bloodPotency}
+                                        onChange={e => fnUpdateCharacter('bloodPotency', parseInt(e.target.value))}
+                                        min={0}
+                                        max={10}
+                                    />
+                                </div>
+                            </GothicFrame>
+                        )}
+
+                        {/* Specialties Section */}
+                        <GothicFrame className="text-left">
+                            <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('characterSheet.specialties')}</h3>
+                            <div className="space-y-4">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+                                    <div className="md:col-span-1">
+                                        <label className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">{fnT('common.skill')}</label>
+                                        <select
+                                            className="w-full bg-gray-800 border border-gray-600 rounded p-2 text-white outline-none focus:ring-2 focus:ring-red-500"
+                                            onChange={(e) => setSelectedSkill(e.target.value)}
+                                            value={sSelectedSkill}
+                                        >
+                                            <option value="">{fnT('common.selectPlaceholder')}</option>
+                                            {aSkillList.map(s => (
+                                                <option key={s} value={s}>{fnT(`skills.list.${s}`)}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div className="md:col-span-1">
+                                        <Input
+                                            label="Especialidade"
+                                            placeholder="ex: Parkour"
+                                            value={sSpecialtyName}
+                                            onChange={(e) => setSpecialtyName(e.target.value)}
+                                        />
+                                    </div>
+                                    <Button
+                                        variant="secondary"
+                                        onClick={() => {
+                                            if (sSelectedSkill && sSpecialtyName) {
+                                                fnUpdateCharacter('specialties', [...oCharacter.specialties, { skill: sSelectedSkill as Skill, name: sSpecialtyName }]);
+                                                setSpecialtyName('');
+                                            }
+                                        }}
+                                    >
+                                        {fnT('buttons.add')}
+                                    </Button>
+                                </div>
+                                <div className="flex flex-wrap gap-2 mt-4">
+                                    {oCharacter.specialties.map((s, i) => (
+                                        <div key={i} className="flex items-center gap-2 bg-gray-800 border border-gray-700 px-3 py-1 rounded-full text-sm">
+                                            <span className="text-red-400 font-bold">{fnT(`skills.list.${s.skill}`)}:</span>
+                                            <span>{s.name}</span>
+                                            <button
+                                                onClick={() => fnUpdateCharacter('specialties', oCharacter.specialties.filter((_, idx) => idx !== i))}
+                                                className="text-gray-500 hover:text-red-500 font-bold ml-1"
+                                            >
+                                                ✕
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </GothicFrame>
 
                         {/* Touchstones Section */}
                         <GothicFrame className="text-left">
