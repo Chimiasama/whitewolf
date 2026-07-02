@@ -82,10 +82,10 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
     return (
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fadeIn px-4">
             <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-cinzel text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-cinzel text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal">
                     {fnT('gameSelection.title')}
                 </h1>
-                <p className="text-gray-400 text-lg italic max-w-2xl mx-auto">
+                <p className="text-gray-400 text-lg italic max-w-2xl mx-auto break-words whitespace-normal">
                     {fnT('gameSelection.subtitle')}
                 </p>
             </div>
@@ -101,8 +101,8 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                             <BloodIcon />
                         </div>
                         <div className="space-y-2">
-                            <h2 className="text-2xl md:text-3xl font-cinzel text-red-500">{fnT('app.vampire')}</h2>
-                            <p className="text-gray-400 text-sm leading-relaxed">
+                            <h2 className="text-2xl md:text-3xl font-cinzel text-red-500 [text-wrap:balance] break-words whitespace-normal">{fnT('app.vampire')}</h2>
+                            <p className="text-gray-400 text-sm leading-relaxed break-words whitespace-normal">
                                 {fnT('gameSelection.vampireDesc')}
                             </p>
                         </div>
@@ -122,8 +122,8 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                             <ClawIcon />
                         </div>
                         <div className="space-y-2">
-                            <h2 className="text-2xl md:text-3xl font-cinzel text-emerald-500">{fnT('app.werewolf')}</h2>
-                            <p className="text-gray-400 text-sm leading-relaxed">
+                            <h2 className="text-2xl md:text-3xl font-cinzel text-emerald-500 [text-wrap:balance] break-words whitespace-normal">{fnT('app.werewolf')}</h2>
+                            <p className="text-gray-400 text-sm leading-relaxed break-words whitespace-normal">
                                 {fnT('gameSelection.werewolfDesc')}
                             </p>
                         </div>
@@ -1744,8 +1744,8 @@ const App: React.FC = () => {
                         <RoseIcon className="w-[800px] h-[800px] text-red-900 absolute -top-40 -right-40 animate-pulse" />
                     </div>
                     <div className="z-20 text-center mb-12 px-4">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-cinzel font-bold text-red-600 tracking-widest mb-2 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">{fnT('app.title')}</h1>
-                        <p className="text-lg sm:text-xl text-gray-400 italic max-w-2xl mx-auto">{fnT('app.subtitle')}</p>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-cinzel font-bold text-red-600 tracking-widest mb-2 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal">{fnT('app.title')}</h1>
+                        <p className="text-lg sm:text-xl text-gray-400 italic max-w-2xl mx-auto break-words whitespace-normal">{fnT('app.subtitle')}</p>
                     </div>
                     <GameSelection onSelect={fnHandleGameSelect} />
                     <div className="mt-12 flex justify-center gap-4 z-20">
@@ -1770,10 +1770,10 @@ const App: React.FC = () => {
                     <RoseIcon className={`w-[800px] h-[800px] ${bIsWerewolf ? 'text-emerald-900' : 'text-red-900'} absolute -top-40 -right-40 animate-pulse`} />
                 </div>
                 <GothicFrame className={`max-w-2xl w-full text-center p-6 sm:p-12 bg-black/80 shadow-2xl z-10 border ${sThemeBorder}`}>
-                    <h1 className={`text-3xl sm:text-5xl md:text-6xl font-cinzel font-bold ${sThemeColor} tracking-widest mb-2 text-shadow-lg`}>
+                    <h1 className={`text-3xl sm:text-5xl md:text-6xl font-cinzel font-bold ${sThemeColor} tracking-widest mb-2 text-shadow-lg [text-wrap:balance] break-words whitespace-normal`}>
                         {bIsWerewolf ? fnT('app.werewolf') : fnT('app.vampire')}
                     </h1>
-                    <p className={`text-xl text-gray-400 mb-12 italic border-b ${sThemeBorder}/50 pb-6 mx-auto w-3/4`}>
+                    <p className={`text-xl text-gray-400 mb-12 italic border-b ${sThemeBorder}/50 pb-6 mx-auto w-3/4 break-words whitespace-normal`}>
                         {fnT('creationMethod.subtitle')}
                     </p>
                     
@@ -1822,8 +1822,8 @@ const App: React.FC = () => {
                     <div className="flex items-center gap-3 cursor-pointer" onClick={() => setView('home')}>
                          <div className="text-red-600"><RoseIcon className="w-10 h-10" /></div>
                         <div>
-                            <h1 className="text-2xl font-cinzel font-bold text-red-600 tracking-widest">{fnT('app.title')}</h1>
-                            <p className="text-xs text-gray-500 hidden md:block">{fnT('app.subtitle')}</p>
+                            <h1 className="text-2xl font-cinzel font-bold text-red-600 tracking-widest [text-wrap:balance] break-words whitespace-normal">{fnT('app.title')}</h1>
+                            <p className="text-xs text-gray-500 hidden md:block break-words whitespace-normal">{fnT('app.subtitle')}</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-2">

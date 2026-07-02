@@ -8,14 +8,14 @@ export enum Tribe {
   BlackFuries = "blackfuries",
   BoneGnawers = "bonegnawers",
   ChildrenOfGaia = "childrenofgaia",
-  Galestalkers = "galestalkers",
-  GhostCouncil = "ghostcouncil",
-  GlassWalkers = "glasswalkers",
-  HartWardens = "hartwardens",
+  FiandeirosDeVidro = "fiandeirosdevidro",
+  AndarilhosDoAsfalto = "andarilhosdoasfalto",
+  CriaDeFenris = "criadefenris",
   RedTalons = "redtalons",
   ShadowLords = "shadowlords",
+  SilentStriders = "silentstriders",
   SilverFangs = "silverfangs",
-  SilentStriders = "silentstriders"
+  Wendigo = "wendigo"
 }
 
 export enum Auspice {
