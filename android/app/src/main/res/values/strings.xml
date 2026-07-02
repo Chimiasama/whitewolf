@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Vampire V5 Character Creator</string>
+    <string name="title_activity_main">Vampire V5 Character Creator</string>
+    <string name="package_name">com.vampire.charactercreator</string>
+    <string name="custom_url_scheme">com.vampire.charactercreator</string>
+</resources>
