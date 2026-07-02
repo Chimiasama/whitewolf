@@ -7,14 +7,14 @@ export const fnGetTribeDetails = (fnT: TFunction): Record<Tribe, { name: string;
     [Tribe.BlackFuries]: { name: fnT('tribes.blackfuries.name'), description: fnT('tribes.blackfuries.description'), gifts: ["Black Furies Gifts", "Innate Gifts"], bane: fnT('tribes.blackfuries.bane'), favor: fnT('tribes.blackfuries.favor') },
     [Tribe.BoneGnawers]: { name: fnT('tribes.bonegnawers.name'), description: fnT('tribes.bonegnawers.description'), gifts: ["Bone Gnawers Gifts", "Innate Gifts"], bane: fnT('tribes.bonegnawers.bane'), favor: fnT('tribes.bonegnawers.favor') },
     [Tribe.ChildrenOfGaia]: { name: fnT('tribes.childrenofgaia.name'), description: fnT('tribes.childrenofgaia.description'), gifts: ["Children of Gaia Gifts", "Innate Gifts"], bane: fnT('tribes.childrenofgaia.bane'), favor: fnT('tribes.childrenofgaia.favor') },
-    [Tribe.Galestalkers]: { name: fnT('tribes.galestalkers.name'), description: fnT('tribes.galestalkers.description'), gifts: ["Galestalkers Gifts", "Innate Gifts"], bane: fnT('tribes.galestalkers.bane'), favor: fnT('tribes.galestalkers.favor') },
-    [Tribe.GhostCouncil]: { name: fnT('tribes.ghostcouncil.name'), description: fnT('tribes.ghostcouncil.description'), gifts: ["Ghost Council Gifts", "Innate Gifts"], bane: fnT('tribes.ghostcouncil.bane'), favor: fnT('tribes.ghostcouncil.favor') },
-    [Tribe.GlassWalkers]: { name: fnT('tribes.glasswalkers.name'), description: fnT('tribes.glasswalkers.description'), gifts: ["Glass Walkers Gifts", "Innate Gifts"], bane: fnT('tribes.glasswalkers.bane'), favor: fnT('tribes.glasswalkers.favor') },
-    [Tribe.HartWardens]: { name: fnT('tribes.hartwardens.name'), description: fnT('tribes.hartwardens.description'), gifts: ["Hart Wardens Gifts", "Innate Gifts"], bane: fnT('tribes.hartwardens.bane'), favor: fnT('tribes.hartwardens.favor') },
+    [Tribe.FiandeirosDeVidro]: { name: fnT('tribes.fiandeirosdevidro.name'), description: fnT('tribes.fiandeirosdevidro.description'), gifts: ["Fiandeiros de Vidro Gifts", "Innate Gifts"], bane: fnT('tribes.fiandeirosdevidro.bane'), favor: fnT('tribes.fiandeirosdevidro.favor') },
+    [Tribe.AndarilhosDoAsfalto]: { name: fnT('tribes.andarilhosdoasfalto.name'), description: fnT('tribes.andarilhosdoasfalto.description'), gifts: ["Andarilhos do Asfalto Gifts", "Innate Gifts"], bane: fnT('tribes.andarilhosdoasfalto.bane'), favor: fnT('tribes.andarilhosdoasfalto.favor') },
+    [Tribe.CriaDeFenris]: { name: fnT('tribes.criadefenris.name'), description: fnT('tribes.criadefenris.description'), gifts: ["Cria de Fenris Gifts", "Innate Gifts"], bane: fnT('tribes.criadefenris.bane'), favor: fnT('tribes.criadefenris.favor') },
     [Tribe.RedTalons]: { name: fnT('tribes.redtalons.name'), description: fnT('tribes.redtalons.description'), gifts: ["Red Talons Gifts", "Innate Gifts"], bane: fnT('tribes.redtalons.bane'), favor: fnT('tribes.redtalons.favor') },
     [Tribe.ShadowLords]: { name: fnT('tribes.shadowlords.name'), description: fnT('tribes.shadowlords.description'), gifts: ["Shadow Lords Gifts", "Innate Gifts"], bane: fnT('tribes.shadowlords.bane'), favor: fnT('tribes.shadowlords.favor') },
+    [Tribe.SilentStriders]: { name: fnT('tribes.silentstriders.name'), description: fnT('tribes.silentstriders.description'), gifts: ["Silent Striders Gifts", "Innate Gifts"], bane: fnT('tribes.silentstriders.bane'), favor: fnT('tribes.silentstriders.favor') },
     [Tribe.SilverFangs]: { name: fnT('tribes.silverfangs.name'), description: fnT('tribes.silverfangs.description'), gifts: ["Silver Fangs Gifts", "Innate Gifts"], bane: fnT('tribes.silverfangs.bane'), favor: fnT('tribes.silverfangs.favor') },
-    [Tribe.SilentStriders]: { name: fnT('tribes.silentstriders.name'), description: fnT('tribes.silentstriders.description'), gifts: ["Silent Striders Gifts", "Innate Gifts"], bane: fnT('tribes.silentstriders.bane'), favor: fnT('tribes.silentstriders.favor') }
+    [Tribe.Wendigo]: { name: fnT('tribes.wendigo.name'), description: fnT('tribes.wendigo.description'), gifts: ["Wendigo Gifts", "Innate Gifts"], bane: fnT('tribes.wendigo.bane'), favor: fnT('tribes.wendigo.favor') }
 });
 
 export const fnGetAuspiceDetails = (fnT: TFunction): Record<Auspice, { name: string; description: string; gifts: string[]; }> => ({
@@ -631,36 +631,36 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "childrenOfGaiaGifts", 1, "resistPain"),
         ]
     },
-    "Galestalkers Gifts": {
-        name: fnT('disciplines.galestalkersGifts.name'),
-        description: fnT('disciplines.galestalkersGifts.description'),
+    "Fiandeiros de Vidro Gifts": {
+        name: fnT('disciplines.fiandeirosdevidroGifts.name'),
+        description: fnT('disciplines.fiandeirosdevidroGifts.description'),
         powers: [
-            fnGetP(fnT, "galestalkersGifts", 1, "beastSpeech"),
-            fnGetP(fnT, "galestalkersGifts", 1, "tracklessStep"),
+            fnGetP(fnT, "fiandeirosdevidroGifts", 1, "spiritSpeech"),
+            fnGetP(fnT, "fiandeirosdevidroGifts", 1, "umbralTether"),
         ]
     },
-    "Ghost Council Gifts": {
-        name: fnT('disciplines.ghostCouncilGifts.name'),
-        description: fnT('disciplines.ghostCouncilGifts.description'),
+    "Andarilhos do Asfalto Gifts": {
+        name: fnT('disciplines.andarilhosdoasfaltoGifts.name'),
+        description: fnT('disciplines.andarilhosdoasfaltoGifts.description'),
         powers: [
-            fnGetP(fnT, "ghostCouncilGifts", 1, "spiritClaw"),
-            fnGetP(fnT, "ghostCouncilGifts", 1, "umbralTether"),
+            fnGetP(fnT, "andarilhosdoasfaltoGifts", 1, "controlSimpleMachine"),
+            fnGetP(fnT, "andarilhosdoasfaltoGifts", 1, "plugAndPlay"),
         ]
     },
-    "Glass Walkers Gifts": {
-        name: fnT('disciplines.glassWalkersGifts.name'),
-        description: fnT('disciplines.glassWalkersGifts.description'),
+    "Cria de Fenris Gifts": {
+        name: fnT('disciplines.criadefenrisGifts.name'),
+        description: fnT('disciplines.criadefenrisGifts.description'),
         powers: [
-            fnGetP(fnT, "glassWalkersGifts", 1, "controlSimpleMachine"),
-            fnGetP(fnT, "glassWalkersGifts", 1, "plugAndPlay"),
+            fnGetP(fnT, "criadefenrisGifts", 1, "resistPain"),
+            fnGetP(fnT, "criadefenrisGifts", 1, "furiousStrike"),
         ]
     },
-    "Hart Wardens Gifts": {
-        name: fnT('disciplines.hartWardensGifts.name'),
-        description: fnT('disciplines.hartWardensGifts.description'),
+    "Wendigo Gifts": {
+        name: fnT('disciplines.wendigoGifts.name'),
+        description: fnT('disciplines.wendigoGifts.description'),
         powers: [
-            fnGetP(fnT, "hartWardensGifts", 1, "naturesBounty"),
-            fnGetP(fnT, "hartWardensGifts", 1, "wardTheHaven"),
+            fnGetP(fnT, "wendigoGifts", 1, "beastSpeech"),
+            fnGetP(fnT, "wendigoGifts", 1, "tracklessStep"),
         ]
     },
     "Red Talons Gifts": {

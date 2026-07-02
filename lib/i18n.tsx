@@ -580,23 +580,15 @@ const oEn = {
               "resistPain": { "name": "Resist Pain", "description": "Ignore wound penalties.", "system": "Passive. Ignore penalties for a scene." }
           }
       },
-      "galestalkersGifts": {
-          "name": "Galestalkers Gifts",
-          "description": "Gifts of the Galestalkers, focusing on tracking and the cold.",
+      "fiandeirosdevidroGifts": {
+          "name": "Glass Spinners Gifts",
+          "description": "Gifts of the Glass Spinners, focusing on spirits and the Umbra.",
           "powers": {
-              "beastSpeech": { "name": "Beast Speech", "description": "Talk to any animal.", "system": "Charisma + Animal Ken. No cost." },
-              "tracklessStep": { "name": "Trackless Step", "description": "Leave no trail behind.", "system": "Dexterity + Stealth. Passive." }
-          }
-      },
-      "ghostCouncilGifts": {
-          "name": "Ghost Council Gifts",
-          "description": "Gifts of the Ghost Council, focusing on secrets and spirits.",
-          "powers": {
-              "spiritClaw": { "name": "Spirit Claw", "description": "Strike spirits in the physical world.", "system": "Strength + Brawl. Cost: 1 Rage check." },
+              "spiritSpeech": { "name": "Spirit Speech", "description": "Communicate with spirits.", "system": "Charisma + Insight. No cost." },
               "umbralTether": { "name": "Umbral Tether", "description": "Create a link to return from the Umbra.", "system": "Intelligence + Occult. No cost." }
           }
       },
-      "glassWalkersGifts": {
+      "andarilhosdoasfaltoGifts": {
           "name": "Glass Walkers Gifts",
           "description": "Gifts of the Glass Walkers, focusing on technology.",
           "powers": {
@@ -604,12 +596,20 @@ const oEn = {
               "plugAndPlay": { "name": "Plug and Play", "description": "Interface with any electronic device.", "system": "Intelligence + Technology. Passive." }
           }
       },
-      "hartWardensGifts": {
-          "name": "Hart Wardens Gifts",
-          "description": "Gifts of the Hart Wardens, focusing on protection and nature.",
+      "criadefenrisGifts": {
+          "name": "Get of Fenris Gifts",
+          "description": "Gifts of the Get of Fenris, focusing on combat and brutality.",
           "powers": {
-              "naturesBounty": { "name": "Nature's Bounty", "description": "Find sustenance in any environment.", "system": "Wits + Survival. No cost." },
-              "wardTheHaven": { "name": "Ward the Haven", "description": "Protect a location from intruders.", "system": "Intelligence + Occult. Cost: 1 Rage check." }
+              "resistPain": { "name": "Resist Pain", "description": "Ignore wound penalties.", "system": "Passive. Ignore penalties for a scene." },
+              "furiousStrike": { "name": "Furious Strike", "description": "Concentrate Rage into blows.", "system": "Add Glory to a Brawl pool. Cost: 1 Rage check." }
+          }
+      },
+      "wendigoGifts": {
+          "name": "Wendigo Gifts",
+          "description": "Gifts of the Wendigo, focusing on tracking and the cold.",
+          "powers": {
+              "beastSpeech": { "name": "Beast Speech", "description": "Talk to any animal.", "system": "Charisma + Animal Ken. No cost." },
+              "tracklessStep": { "name": "Trackless Step", "description": "Leave no trail behind.", "system": "Dexterity + Stealth. Passive." }
           }
       },
       "redTalonsGifts": {
@@ -794,80 +794,80 @@ const oEn = {
   "tribes": {
     "blackfuries": { 
       "name": "Black Furies", 
-      "description": "Defenders of justice and fighters against oppression, famous for breaking systemic obstacles.", 
+      "description": "Defenders of justice and fighters against oppression.",
       "favor": "Oppose Power: +1 die to oppose someone in power or bypass obstacles.", 
       "bane": "Must Correct Injustice: If they allow an injustice to continue, recover only 1 Willpower.",
       "archetypes": ["Wanted", "First Responder", "Musician", "Scout"]
     },
     "bonegnawers": { 
       "name": "Bone Gnawers", 
-      "description": "Specialists in urban secrets and survival on the fringes of human society.", 
+      "description": "Specialists in urban secrets and survival on the fringes.",
       "favor": "Find Hidden: +1 die to find something lost or unnoticed.", 
       "bane": "Help the Downtrodden: If they pass an opportunity to help the disadvantaged, recover only 1 Willpower.",
       "archetypes": ["Gazette Chronicler", "Sound Technician", "Our Friend", "Ride Driver"]
     },
     "childrenofgaia": { 
       "name": "Children of Gaia", 
-      "description": "Seek to understand Gaia's mysteries and direct Fury toward healing and solving enigmas.", 
+      "description": "Seek to understand Gaia's mysteries and direct Fury toward healing.",
       "favor": "Insight: +1 die to discover something about a person, animal, or spirit.", 
       "bane": "Honesty: If they lie or hide the truth for personal gain, recover only 1 Willpower.",
       "archetypes": ["Healer", "Dealer", "Traveler", "Miner"]
     },
-    "galestalkers": { 
-      "name": "Galestalkers", 
-      "description": "Peerless trackers and tireless hunters who never abandon a trail.", 
-      "favor": "Inexorable: +1 die to pursuits of their prey.", 
-      "bane": "Fresh Kill: Must consume fresh-killed game daily; otherwise, recover only 1 Willpower.",
-      "archetypes": ["Vagabond", "Spirit Walker", "Gaucho", "Leech Charmer"]
+    "fiandeirosdevidro": {
+      "name": "Glass Spinners",
+      "description": "Mystics who weave the threads of the spirit world into physical reality.",
+      "favor": "Spirit Weaving: +1 die to interact with or command spirits.",
+      "bane": "Fragile Balance: If they fail to maintain spiritual harmony, recover only 1 Willpower.",
+      "archetypes": ["Umbramancer", "Thread-Seeker"]
     },
-    "ghostcouncil": { 
-      "name": "Ghost Council", 
-      "description": "Investigators of mysteries and secrets, willing to use heterodox means for knowledge.", 
-      "favor": "Reveal Secrets: +1 die to reveal a well-guarded secret.", 
-      "bane": "Curiosity: If they pass an opportunity to satisfy curiosity, recover only 1 Willpower.",
-      "archetypes": ["Thoughtful", "Saboteur", "Warlock", "Herd Keeper"]
-    },
-    "glasswalkers": { 
+    "andarilhosdoasfalto": {
       "name": "Glass Walkers", 
-      "description": "Masters of technology and applied science. They adapt human tools for the Garou cause.", 
-      "favor": "Structured Approach: +1 die to Technology or Science to build or repair.", 
+      "description": "Masters of technology and applied science in the urban jungle.",
+      "favor": "Structured Approach: +1 die to Technology or Science.",
       "bane": "Spider's Web: Cannot harm Spider spirits. If they destroy complex machines, recover only 1 Willpower.",
-      "archetypes": ["Urbanist", "Car Liberator", "Investigator", "Tattoo Artist"]
+      "archetypes": ["Urbanist", "Investigator"]
     },
-    "hartwardens": { 
-      "name": "Hart Wardens", 
-      "description": "Caretakers of nature who cultivate and protect sacred places with fierce loyalty.", 
-      "favor": "Nature's Care: +1 die to Survival, Animal Ken, or Crafts related to nature.", 
-      "bane": "Hospitality: If harm comes to a guest under their care, recover only 1 Willpower.",
-      "archetypes": ["Gamekeeper", "Digital Caern Strategist", "MC", "Local Legend"]
+    "criadefenris": {
+      "name": "Get of Fenris (Cult)",
+      "description": "Fierce warriors who have fallen into fanaticism and bloodlust.",
+      "favor": "Unrelenting Force: +1 die to damage-dealing rolls.",
+      "bane": "Bloodlust: If they show mercy to a worthy foe, recover only 1 Willpower.",
+      "archetypes": ["Berserker", "Fanatic"]
     },
     "redtalons": { 
       "name": "Red Talons", 
-      "description": "Mostly composed of wolves, they fight to reclaim wild territories from human expansion.", 
+      "description": "Wolves who fight to reclaim wild territories from human expansion.",
       "favor": "Relentless Combatant: +1 die to Brawl when Health is below half.", 
-      "bane": "Abhor Complexity: Using technology for its intended purpose causes recovery of only 1 Willpower.",
-      "archetypes": ["Bounty Hunter", "Man-Eater", "Prepper", "Pestilent Dog"]
+      "bane": "Abhor Complexity: Using technology causes recovery of only 1 Willpower.",
+      "archetypes": ["Bounty Hunter", "Man-Eater"]
     },
     "shadowlords": { 
       "name": "Shadow Lords", 
-      "description": "Strategists who value strength and cunning to dominate enemies through their weaknesses.", 
-      "favor": "Exploit Weakness: +1 die to Intimidation or Subterfuge to threaten or exploit weaknesses.", 
+      "description": "Strategists who value strength and cunning to dominate enemies.",
+      "favor": "Exploit Weakness: +1 die to Intimidation or Subterfuge.",
       "bane": "Pride: If defeated by a Garou of lower Renown, recover only 1 Willpower.",
-      "archetypes": ["Boyar", "Hacktivist", "Midnight Terror", "Assassin"]
+      "archetypes": ["Boyar", "Assassin"]
+    },
+    "silentstriders": {
+      "name": "Silent Striders",
+      "description": "Travelers and messengers who carry news and secrets.",
+      "favor": "Swift Passage: +1 die to Athletics or Stealth for travel.",
+      "bane": "Ritual for the Dead: If they witness death without a ritual, recover only 1 Willpower.",
+      "archetypes": ["Kin-Seeker", "Ambassador"]
     },
     "silverfangs": { 
       "name": "Silver Fangs", 
-      "description": "The noble lineage of the Garou, traditional leaders who inspire unity and great deeds.", 
-      "favor": "Lead by Example: +1 die to Persuasion or Leadership to have others follow advice.", 
+      "description": "The noble lineage of the Garou, traditional leaders.",
+      "favor": "Lead by Example: +1 die to Persuasion or Leadership.",
       "bane": "Honor: If they act dishonorably or lose Renown, recover only 1 Willpower.",
-      "archetypes": ["Local Celebrity", "Hetman", "Golden Age Quarterback", "Exiled Noble"]
+      "archetypes": ["Local Celebrity", "Exiled Noble"]
     },
-    "silentstriders": { 
-      "name": "Silent Striders", 
-      "description": "Travelers and messengers who carry news and secrets throughout the World of Darkness.", 
-      "favor": "Swift Passage: +1 die to Athletics or Stealth for travel, escape, or infiltration.", 
-      "bane": "Ritual for the Dead: If they witness death without a commemorative ritual, recover only 1 Willpower.",
-      "archetypes": ["Kin-Seeker", "Ambassador", "Faith Reviver", "Long-Distance Trucker"]
+    "wendigo": {
+      "name": "Wendigo (Galestalkers)",
+      "description": "Peerless trackers and tireless hunters from the frozen north.",
+      "favor": "Inexorable: +1 die to pursuits of their prey.",
+      "bane": "Fresh Kill: Must consume fresh-killed game daily; otherwise, recover only 1 Willpower.",
+      "archetypes": ["Spirit Walker", "Gaucho"]
     }
   },
   "loresheets": {
@@ -1050,80 +1050,80 @@ const oPt = {
   "tribes": {
     "blackfuries": { 
       "name": "Fúrias Negras", 
-      "description": "Defensoras da justiça e combatentes da opressão, famosas por arrebentar obstáculos sistêmicos.", 
-      "favor": "Opor-se ao Poder: +1 dado para se opor a alguém em posição de poder ou contornar obstáculos.", 
-      "bane": "Corrigir Injustiça: Se permitirem a continuidade de uma injustiça, recuperam apenas 1 de Força de Vontade.",
-      "archetypes": ["Procurado", "Socorrista", "Músico", "Batedor"]
+      "description": "Defensoras da justiça e combatentes da opressão.",
+      "favor": "Opor ao Poder: +1 dado para se opor ao poder ou saltar obstáculos.",
+      "bane": "Corrigir Injustiça: Se permitir injustiça, recupera apenas 1 de Vontade.",
+      "archetypes": ["Procurado", "Socorrista"]
     },
     "bonegnawers": { 
       "name": "Roedores de Ossos", 
-      "description": "Especialistas em segredos urbanos e sobrevivência nas margens da sociedade humana.", 
-      "favor": "Encontrar o Oculto: +1 dado para achar algo perdido ou despercebido.", 
-      "bane": "Ajudar os Desfavorecidos: Se deixarem passar oportunidade de ajudar os necessitados, recuperam apenas 1 de Força de Vontade.",
-      "archetypes": ["Cronista de Gazeta", "Técnico de Som", "Nosso Amigo", "Motorista dos Rolês"]
+      "description": "Especialistas em segredos urbanos e sobrevivência nas margens.",
+      "favor": "Achar o Oculto: +1 dado para achar algo perdido.",
+      "bane": "Ajudar Desvalidos: Se ignorar quem precisa, recupera apenas 1 de Vontade.",
+      "archetypes": ["Cronista", "Motorista"]
     },
     "childrenofgaia": { 
       "name": "Filhos de Gaia", 
-      "description": "Buscam entender os mistérios de Gaia e direcionar a Fúria para a cura e resolução de enigmas.", 
-      "favor": "Percepção: +1 dado para descobrir algo sobre uma pessoa, animal ou espírito.", 
-      "bane": "Honestidade: Se mentirem ou ocultarem a verdade para fins pessoais, recuperam apenas 1 de Força de Vontade.",
-      "archetypes": ["Mata-sano", "Traficante", "Viajante", "Minerador"]
+      "description": "Buscam entender Gaia e curar o mundo.",
+      "favor": "Intuição: +1 dado para descobrir algo sobre alguém.",
+      "bane": "Honestidade: Se mentir para ganho pessoal, recupera apenas 1 de Vontade.",
+      "archetypes": ["Curandeiro", "Viajante"]
     },
-    "galestalkers": { 
-      "name": "Espreitadores do Vento", 
-      "description": "Rastreadores inigualáveis e caçadores incansáveis que nunca abandonam um rastro.", 
-      "favor": "Inexorável: +1 dado em perseguições de suas presas.", 
-      "bane": "Caça Fresca: Devem consumir caça recém-abatida diariamente; caso contrário, recuperam apenas 1 de Força de Vontade.",
-      "archetypes": ["Vagamundo", "Andarilho Espiritual", "Gaúcho", "Encantador de Sanguessugas"]
+    "fiandeirosdevidro": {
+      "name": "Fiandeiros de Vidro",
+      "description": "Místicos que tecem os fios do mundo espiritual na realidade física.",
+      "favor": "Tecelagem Espiritual: +1 dado para interagir com espíritos.",
+      "bane": "Equilíbrio Frágil: Se falhar na harmonia espiritual, recupera apenas 1 de Vontade.",
+      "archetypes": ["Umbramante", "Buscador"]
     },
-    "ghostcouncil": { 
-      "name": "Conselho dos Fantasmas", 
-      "description": "Investigadores de mistérios e segredos, dispostos a usar meios heterodoxos por conhecimento.", 
-      "favor": "Revelar Segredos: +1 dado para revelar um segredo bem guardado.", 
-      "bane": "Curiosidade: Se deixarem passar oportunidade de saciar a curiosidade, recuperam apenas 1 de Força de Vontade.",
-      "archetypes": ["Pensativo", "Sabotador", "Bruxo", "Guardador de Rebanhos"]
-    },
-    "glasswalkers": { 
+    "andarilhosdoasfalto": {
       "name": "Andarilhos do Asfalto", 
-      "description": "Mestres da tecnologia e ciência aplicada. Adaptam ferramentas humanas para a causa Garou.", 
-      "favor": "Abordagem Estruturada: +1 dado em Tecnologia ou Ciência para construir ou consertar.", 
-      "bane": "Teia da Aranha: Proibidos de fazer mal a espíritos da Aranha. Se destruírem máquinas complexas, recuperam apenas 1 de Força de Vontade.",
-      "archetypes": ["Urbanista", "Libertador de Automóveis", "Investigador", "Tatuador"]
+      "description": "Mestres da tecnologia e ciência na selva urbana.",
+      "favor": "Abordagem Estruturada: +1 dado em Tecnologia ou Ciência.",
+      "bane": "Teia da Aranha: Se destruir máquinas complexas, recupera apenas 1 de Vontade.",
+      "archetypes": ["Urbanista", "Investigador"]
     },
-    "hartwardens": { 
-      "name": "Guardadores do Galhado", 
-      "description": "Zeladores da natureza que cultivam e protegem lugares sagrados com lealdade encarniçada.", 
-      "favor": "Cuidado da Natureza: +1 dado em Sobrevivência, Empatia com Animais ou Ofícios relacionados à natureza.", 
-      "bane": "Hospitalidade: Se algum mal ocorrer a um convidado sob seus cuidados, recuperam apenas 1 de Força de Vontade.",
-      "archetypes": ["Couteiro", "Estrategista de Caern Digital", "MC", "Lenda Local"]
+    "criadefenris": {
+      "name": "Cria de Fenris (Culto)",
+      "description": "Guerreiros ferozes que sucumbiram ao fanatismo e sede de sangue.",
+      "favor": "Força Implacável: +1 dado em rolagens de dano.",
+      "bane": "Sede de Sangue: Se mostrar misericórdia, recupera apenas 1 de Vontade.",
+      "archetypes": ["Berserker", "Fanático"]
     },
     "redtalons": { 
       "name": "Garras Vermelhas", 
-      "description": "Composta majoritariamente por lobos, lutam para retomar territórios selvagens da expansão humana.", 
-      "favor": "Combatente Implacável: +1 dado em Briga quando a Vitalidade estiver abaixo da metade.", 
-      "bane": "Abominar Complexidade: Usar tecnologia para seu fim pretendido causa recuperação de apenas 1 de Força de Vontade.",
-      "archetypes": ["Caçador de Recompensas", "Devorador de Homens", "Preparacionista", "Cão Pestilento"]
+      "description": "Lobos que lutam para retomar territórios da expansão humana.",
+      "favor": "Combatente Implacável: +1 dado em Briga (Vida < metade).",
+      "bane": "Abominar Complexidade: Usar tecnologia recupera apenas 1 de Vontade.",
+      "archetypes": ["Caçador", "Devorador"]
     },
     "shadowlords": { 
       "name": "Senhores das Sombras", 
-      "description": "Estrategistas que valorizam a força e a astúcia para dominar inimigos através de seus pontos fracos.", 
-      "favor": "Explorar Fraqueza: +1 dado em Intimidação ou Subterfúgio para ameaçar ou explorar fraquezas.", 
-      "bane": "Orgulho: Se derrotado por um Garou de Renome inferior, recupera apenas 1 de Força de Vontade.",
-      "archetypes": ["Boiardo", "Hacktivista", "Terror da Meia-noite", "Assassino"]
+      "description": "Estrategistas que valorizam força e astúcia.",
+      "favor": "Explorar Fraqueza: +1 dado em Intimidação ou Lábia.",
+      "bane": "Orgulho: Se derrotado por menor Renome, recupera apenas 1 de Vontade.",
+      "archetypes": ["Boiardo", "Assassino"]
+    },
+    "silentstriders": {
+      "name": "Peregrinos Silenciosos",
+      "description": "Viajantes e mensageiros que portam notícias e segredos.",
+      "favor": "Passagem Rápida: +1 dado em Atletismo ou Furtividade.",
+      "bane": "Ritual aos Mortos: Se ignorar a morte, recupera apenas 1 de Vontade.",
+      "archetypes": ["Mensageiro", "Embaixador"]
     },
     "silverfangs": { 
       "name": "Presas de Prata", 
-      "description": "A linhagem nobre dos Garou, líderes tradicionais que inspiram união e grandes feitos.", 
-      "favor": "Liderar pelo Exemplo: +1 dado em Persuasão ou Liderança para fazer outros seguirem conselhos.", 
-      "bane": "Honra: Se agirem desonradamente ou perderem Renome, recuperam apenas 1 de Força de Vontade.",
-      "archetypes": ["Celebridade Local", "Hétmane", "Quarterback dos Anos de Ouro", "Nobre Exilado"]
+      "description": "A linhagem nobre dos Garou, líderes tradicionais.",
+      "favor": "Liderar pelo Exemplo: +1 dado em Persuasão ou Liderança.",
+      "bane": "Honra: Se agir desonradamente, recupera apenas 1 de Vontade.",
+      "archetypes": ["Nobre", "Celebridade"]
     },
-    "silentstriders": { 
-      "name": "Peregrinos Silenciosos", 
-      "description": "Viajantes e mensageiros que portam notícias e segredos por todo o Mundo das Trevas.", 
-      "favor": "Passagem Rápida: +1 dado em Atletismo ou Furtividade para travessias, fugas ou infiltrações.", 
-      "bane": "Ritual para os Mortos: Se testemunharem a morte sem um ritual comemorativo, recuperam apenas 1 de Força de Vontade.",
-      "archetypes": ["Buscador de Parentes", "Embaixador", "Reavivador da Fé", "Caminhoneiro de Longas Distâncias"]
+    "wendigo": {
+      "name": "Wendigo (Galopantes do Fantasma)",
+      "description": "Rastreadores inigualáveis e caçadores das terras geladas.",
+      "favor": "Inexorável: +1 dado em perseguições.",
+      "bane": "Caça Fresca: Se não comer caça do dia, recupera apenas 1 de Vontade.",
+      "archetypes": ["Andarilho", "Gaúcho"]
     }
   },
   "summary": {
@@ -1549,23 +1549,15 @@ const oPt = {
               "resistPain": { "name": "Resistir à Dor", "description": "Ignora penalidades por ferimentos.", "system": "Passivo. Ignora penalidades por uma cena." }
           }
       },
-      "galestalkersGifts": {
-          "name": "Dons dos Espreitadores do Vento",
-          "description": "Dons dos Espreitadores do Vento, focados em rastreamento e frio.",
+      "fiandeirosdevidroGifts": {
+          "name": "Dons dos Fiandeiros de Vidro",
+          "description": "Dons dos Fiandeiros de Vidro, focados em espíritos e na Umbra.",
           "powers": {
-              "beastSpeech": { "name": "Fala das Feras", "description": "Fala com qualquer animal.", "system": "Carisma + Empatia com Animais. Sem custo." },
-              "tracklessStep": { "name": "Passo Sem Rastro", "description": "Não deixa rastro para trás.", "system": "Destreza + Furtividade. Passivo." }
-          }
-      },
-      "ghostCouncilGifts": {
-          "name": "Dons do Conselho dos Fantasmas",
-          "description": "Dons do Conselho dos Fantasmas, focados em segredos e espíritos.",
-          "powers": {
-              "spiritClaw": { "name": "Garra Espiritual", "description": "Ataca espíritos no mundo físico.", "system": "Força + Briga. Custo: 1 teste de Fúria." },
+              "spiritSpeech": { "name": "Fala dos Espíritos", "description": "Comunica-se com espíritos.", "system": "Carisma + Percepção. Sem custo." },
               "umbralTether": { "name": "Vínculo Umbral", "description": "Cria um link para retornar da Umbra.", "system": "Inteligência + Ocultismo. Sem custo." }
           }
       },
-      "glassWalkersGifts": {
+      "andarilhosdoasfaltoGifts": {
           "name": "Dons dos Andarilhos do Asfalto",
           "description": "Dons dos Andarilhos do Asfalto, focados em tecnologia.",
           "powers": {
@@ -1573,12 +1565,20 @@ const oPt = {
               "plugAndPlay": { "name": "Conectar e Usar", "description": "Interface com qualquer dispositivo eletrônico.", "system": "Inteligência + Tecnologia. Passivo." }
           }
       },
-      "hartWardensGifts": {
-          "name": "Dons dos Guardadores do Galhado",
-          "description": "Dons dos Guardadores do Galhado, focados em proteção e natureza.",
+      "criadefenrisGifts": {
+          "name": "Dons da Cria de Fenris",
+          "description": "Dons da Cria de Fenris, focados em combate e brutalidade.",
           "powers": {
-              "naturesBounty": { "name": "Dádiva da Natureza", "description": "Encontra sustento em qualquer ambiente.", "system": "Raciocínio + Sobrevivência. Sem custo." },
-              "wardTheHaven": { "name": "Proteger o Refúgio", "description": "Protege um local contra intrusos.", "system": "Inteligência + Ocultismo. Custo: 1 teste de Fúria." }
+              "resistPain": { "name": "Resistir à Dor", "description": "Ignora penalidades por ferimentos.", "system": "Passivo. Ignora penalidades por uma cena." },
+              "furiousStrike": { "name": "Pancada Furiosa", "description": "Concentra Fúria nos golpes.", "system": "Soma Glória a uma parada de Briga. Custo: 1 checagem de Fúria." }
+          }
+      },
+      "wendigoGifts": {
+          "name": "Dons dos Wendigo",
+          "description": "Dons dos Wendigo, focados em rastreamento e frio.",
+          "powers": {
+              "beastSpeech": { "name": "Fala das Feras", "description": "Fala com qualquer animal.", "system": "Carisma + Empatia com Animais. Sem custo." },
+              "tracklessStep": { "name": "Passo Sem Rastro", "description": "Não deixa rastro para trás.", "system": "Destreza + Furtividade. Passivo." }
           }
       },
       "redTalonsGifts": {
