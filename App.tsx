@@ -528,40 +528,44 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                         </div>
                                     )}
                                     {sActiveItem === sItem && nActivePaintValue === null && (
-                                        <div className="absolute z-20 top-full left-0 right-0 mt-2 p-3 bg-gray-900 border border-red-900 rounded-lg shadow-2xl grid grid-cols-1 gap-2 animate-fadeIn">
-                                             <button
-                                                onClick={() => { fnOnChange(sItem, nBaseValue); fnSetActiveItem(null); }}
-                                                className="w-full py-1 px-2 text-xs text-gray-400 hover:text-white hover:bg-red-900/30 border border-transparent hover:border-red-900 rounded transition-colors uppercase tracking-wider"
-                                            >
-                                                {fnT('common.clear')}
-                                            </button>
-                                            <div className="flex justify-center gap-2 flex-wrap">
-                                                {[...Array(6)].map((_, i) => {
-                                                    const nVal = i;
-                                                    const nCount = oPoolUsage.available[nVal] || 0;
-                                                    const bIsCurrent = (oValues[sItem] || nBaseValue) === nVal;
-                                                    const bIsDisabled = nCount === 0 && !bIsCurrent && nVal > 0;
-                                                    if (nVal === 0 && nBaseValue > 0) return null;
-                                                    return (
-                                                        <button
-                                                            key={nVal}
-                                                            disabled={bIsDisabled}
-                                                            onClick={() => { fnOnChange(sItem, nVal); fnSetActiveItem(null); }}
-                                                            className={`
-                                                                w-10 h-10 rounded-full border-2 font-bold flex items-center justify-center transition-all duration-200
-                                                                ${bIsCurrent
-                                                                    ? 'bg-red-600 border-red-400 text-white shadow-[0_0_10px_rgba(220,38,38,0.5)] scale-110'
-                                                                    : bIsDisabled
-                                                                        ? 'bg-gray-800 border-gray-700 text-gray-700 cursor-not-allowed opacity-50'
-                                                                        : 'bg-gray-800 border-gray-500 text-gray-300 hover:border-red-400 hover:text-red-400 hover:bg-gray-700 hover:scale-105'}
-                                                            `}
-                                                        >
-                                                            {nVal}
-                                                        </button>
-                                                    );
-                                                })}
+                                        <InfoModal title={sTranslationPrefix ? fnT(`${sTranslationPrefix}.${sItem}`) : sItem} onClose={() => fnSetActiveItem(null)}>
+                                            <div className="space-y-6">
+                                                <div className="flex justify-center gap-3 flex-wrap">
+                                                    {[...Array(6)].map((_, i) => {
+                                                        const nVal = i;
+                                                        const nCount = oPoolUsage.available[nVal] || 0;
+                                                        const bIsCurrent = (oValues[sItem] || nBaseValue) === nVal;
+                                                        const bIsDisabled = nCount === 0 && !bIsCurrent && nVal > 0;
+                                                        if (nVal === 0 && nBaseValue > 0) return null;
+                                                        return (
+                                                            <button
+                                                                key={nVal}
+                                                                disabled={bIsDisabled}
+                                                                onClick={() => { fnOnChange(sItem, nVal); fnSetActiveItem(null); }}
+                                                                className={`
+                                                                    w-14 h-14 rounded-full border-2 font-bold flex flex-col items-center justify-center transition-all duration-200
+                                                                    ${bIsCurrent
+                                                                        ? 'bg-red-600 border-red-400 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] scale-110'
+                                                                        : bIsDisabled
+                                                                            ? 'bg-gray-800 border-gray-700 text-gray-700 cursor-not-allowed opacity-30'
+                                                                            : 'bg-gray-700 border-gray-500 text-gray-300 hover:border-red-500 hover:text-white hover:bg-gray-600'}
+                                                                `}
+                                                            >
+                                                                <span className="text-xl">{nVal}</span>
+                                                                <span className="text-[8px] uppercase">{nCount} av.</span>
+                                                            </button>
+                                                        );
+                                                    })}
+                                                </div>
+                                                <Button
+                                                    variant="secondary"
+                                                    onClick={() => { fnOnChange(sItem, nBaseValue); fnSetActiveItem(null); }}
+                                                    className="w-full"
+                                                >
+                                                    {fnT('common.clear')}
+                                                </Button>
                                             </div>
-                                        </div>
+                                        </InfoModal>
                                     )}
                                 </div>
                             )})}
@@ -758,6 +762,7 @@ const App: React.FC = () => {
     const [bShowStorage, fnSetShowStorage] = useState(false);
     const [sStorageMode, fnSetStorageMode] = useState<'save' | 'load'>('save');
     const [oNotification, fnSetNotification] = useState<{message: string, type: 'success' | 'error'} | null>(null);
+    const [oActiveDetail, fnSetActiveDetail] = useState<{title: string, content: React.ReactNode} | null>(null);
 
     useEffect(() => {
         if (!oCharacter.name) {
@@ -1041,23 +1046,54 @@ const App: React.FC = () => {
                             <LoreQuote text={fnT('lore.intro')} />
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {(Object.keys(oClans) as Clan[]).map(sClan => (
-                                    <Card 
-                                        key={sClan} 
-                                        className="text-left relative overflow-hidden group"
-                                        onClick={() => fnUpdateCharacter('clan', sClan)}
-                                        isSelected={oCharacter.clan === sClan}
-                                        variant="vampire"
-                                    >
-                                        <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
-                                            <RoseIcon className="w-24 h-24 text-red-900" />
-                                        </div>
-                                        <h3 className="text-xl font-bold text-red-400 mb-1">{oClans[sClan].name}</h3>
-                                        <p className="text-sm text-gray-300 mb-2 h-10 overflow-hidden">{oClans[sClan].description}</p>
-                                        <div className="text-xs text-gray-500 mt-2 space-y-1">
-                                            <p><strong>{fnT('characterSheet.clanBane')}:</strong> {oClans[sClan].bane}</p>
-                                            <p><strong>{fnT('characterSheet.clanCompulsion')}:</strong> {oClans[sClan].compulsion}</p>
-                                        </div>
-                                    </Card>
+                                    <div key={sClan} className="relative group">
+                                        <Card
+                                            className="text-left relative overflow-hidden h-full flex flex-col"
+                                            onClick={() => fnUpdateCharacter('clan', sClan)}
+                                            isSelected={oCharacter.clan === sClan}
+                                            variant="vampire"
+                                        >
+                                            <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+                                                <RoseIcon className="w-24 h-24 text-red-900" />
+                                            </div>
+                                            <div className="flex justify-between items-start mb-1">
+                                                <h3 className="text-xl font-bold text-red-400">{oClans[sClan].name}</h3>
+                                                <InfoIcon onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    fnSetActiveDetail({
+                                                        title: oClans[sClan].name,
+                                                        content: (
+                                                            <div className="space-y-6 text-left">
+                                                                <p className="text-gray-300 leading-relaxed">{oClans[sClan].description}</p>
+                                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                                    <div className="bg-black/40 p-4 rounded-lg border border-red-900/30">
+                                                                        <h4 className="text-red-500 font-bold uppercase text-xs tracking-widest mb-2">{fnT('characterSheet.clanBane')}</h4>
+                                                                        <p className="text-sm text-gray-400">{oClans[sClan].bane}</p>
+                                                                    </div>
+                                                                    <div className="bg-black/40 p-4 rounded-lg border border-red-900/30">
+                                                                        <h4 className="text-red-500 font-bold uppercase text-xs tracking-widest mb-2">{fnT('characterSheet.clanCompulsion')}</h4>
+                                                                        <p className="text-sm text-gray-400">{oClans[sClan].compulsion}</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <h4 className="text-red-500 font-bold uppercase text-xs tracking-widest mb-2">{fnT('steps.disciplines')}</h4>
+                                                                    <div className="flex flex-wrap gap-2">
+                                                                        {oClans[sClan].disciplines.map(d => (
+                                                                            <span key={d} className="px-3 py-1 bg-red-900/20 border border-red-900/40 rounded text-xs text-red-300 font-bold uppercase tracking-widest">{d}</span>
+                                                                        ))}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        )
+                                                    });
+                                                }} />
+                                            </div>
+                                            <p className="text-sm text-gray-300 mb-4 flex-grow line-clamp-3">{oClans[sClan].description}</p>
+                                            <div className="text-[10px] text-gray-500 space-y-1 mt-auto pt-2 border-t border-gray-800">
+                                                <p className="line-clamp-1"><strong>{fnT('characterSheet.clanBane')}:</strong> {oClans[sClan].bane}</p>
+                                            </div>
+                                        </Card>
+                                    </div>
                                 ))}
                             </div>
 
@@ -1103,16 +1139,47 @@ const App: React.FC = () => {
                                         return (
                                             <Card 
                                                 key={sTribe} 
-                                                className="text-left relative overflow-hidden group"
+                                                className="text-left relative overflow-hidden h-full flex flex-col group"
                                                 onClick={() => fnUpdateCharacter('tribe', sTribe)}
                                                 isSelected={oCharacter.tribe === sTribe}
                                                 variant="werewolf"
                                             >
-                                                <h4 className="font-bold text-green-500 mb-2">{oTribes[sTribe].name}</h4>
-                                                <p className="text-xs text-gray-300 mb-3 line-clamp-3">{oTribes[sTribe].description}</p>
-                                                <div className="text-[10px] border-t border-gray-800 pt-2 space-y-1">
-                                                    <p><span className="text-green-600 font-bold uppercase">Favor:</span> <span className="text-gray-500">{fnT(`tribes.${sKey}.favor`)}</span></p>
-                                                    <p><span className="text-red-600 font-bold uppercase">Bane:</span> <span className="text-gray-500">{fnT(`tribes.${sKey}.bane`)}</span></p>
+                                                <div className="flex justify-between items-start mb-2">
+                                                    <h4 className="font-bold text-green-500">{oTribes[sTribe].name}</h4>
+                                                    <InfoIcon onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        fnSetActiveDetail({
+                                                            title: oTribes[sTribe].name,
+                                                            content: (
+                                                                <div className="space-y-6 text-left">
+                                                                    <p className="text-gray-300 leading-relaxed">{oTribes[sTribe].description}</p>
+                                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                                        <div className="bg-black/40 p-4 rounded-lg border border-emerald-900/30">
+                                                                            <h4 className="text-emerald-500 font-bold uppercase text-xs tracking-widest mb-2">Favor</h4>
+                                                                            <p className="text-sm text-gray-400">{fnT(`tribes.${sKey}.favor`)}</p>
+                                                                        </div>
+                                                                        <div className="bg-black/40 p-4 rounded-lg border border-red-900/30">
+                                                                            <h4 className="text-red-500 font-bold uppercase text-xs tracking-widest mb-2">Bane</h4>
+                                                                            <p className="text-sm text-gray-400">{fnT(`tribes.${sKey}.bane`)}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div>
+                                                                        <h4 className="text-emerald-500 font-bold uppercase text-xs tracking-widest mb-2">{fnT('characterSheet.gifts')}</h4>
+                                                                        <div className="flex flex-wrap gap-2">
+                                                                            {oTribes[sTribe].gifts.map(g => (
+                                                                                <span key={g} className="px-3 py-1 bg-emerald-900/20 border border-emerald-900/40 rounded text-xs text-emerald-300 font-bold uppercase tracking-widest">{g}</span>
+                                                                            ))}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            )
+                                                        });
+                                                    }} />
+                                                </div>
+                                                <p className="text-xs text-gray-300 mb-3 line-clamp-3 flex-grow">{oTribes[sTribe].description}</p>
+                                                <div className="text-[10px] border-t border-gray-800 pt-2 space-y-1 mt-auto">
+                                                    <p className="line-clamp-1"><span className="text-green-600 font-bold uppercase">Favor:</span> <span className="text-gray-500">{fnT(`tribes.${sKey}.favor`)}</span></p>
+                                                    <p className="line-clamp-1"><span className="text-red-600 font-bold uppercase">Bane:</span> <span className="text-gray-500">{fnT(`tribes.${sKey}.bane`)}</span></p>
                                                 </div>
                                             </Card>
                                         );
@@ -1313,29 +1380,56 @@ const App: React.FC = () => {
                                             return (
                                                 <div 
                                                    key={combo.id}
-                                                   onClick={() => {
-                                                       const aNew = bSelected ? oCharacter.disciplineCombos.filter(c => c.id !== combo.id) : [...oCharacter.disciplineCombos, combo];
-                                                       fnUpdateCharacter('disciplineCombos', aNew);
-                                                   }}
-                                                   className={`p-4 rounded-lg border-2 cursor-pointer transition-all duration-300 relative group overflow-hidden ${bSelected ? 'bg-red-900/30 border-red-500 shadow-[0_0_10px_rgba(220,38,38,0.2)]' : 'bg-gray-800 border-gray-700 hover:border-gray-500'}`}
+                                                   className="relative"
                                                 >
-                                                    <div className="flex justify-between items-start mb-2">
-                                                        <div>
-                                                           <h4 className="font-bold text-gray-100 text-lg">{combo.name}</h4>
-                                                           <div className="flex flex-wrap gap-1 mt-1">
-                                                               {combo.requirements.map(req => (
-                                                                   <span key={req.discipline} className="text-[9px] px-1.5 py-0.5 bg-black/40 rounded text-red-400 border border-red-900/30 font-mono uppercase">
-                                                                       {req.discipline} {req.level}
-                                                                   </span>
-                                                               ))}
-                                                           </div>
+                                                    <div
+                                                        onClick={() => {
+                                                            const aNew = bSelected ? oCharacter.disciplineCombos.filter(c => c.id !== combo.id) : [...oCharacter.disciplineCombos, combo];
+                                                            fnUpdateCharacter('disciplineCombos', aNew);
+                                                        }}
+                                                        className={`p-4 rounded-lg border-2 cursor-pointer transition-all duration-300 relative group overflow-hidden h-full ${bSelected ? 'bg-red-900/30 border-red-500 shadow-[0_0_10px_rgba(220,38,38,0.2)]' : 'bg-gray-800 border-gray-700 hover:border-gray-500'}`}
+                                                    >
+                                                        <div className="flex justify-between items-start mb-2">
+                                                            <div className="pr-8">
+                                                               <h4 className="font-bold text-gray-100 text-lg">{combo.name}</h4>
+                                                               <div className="flex flex-wrap gap-1 mt-1">
+                                                                   {combo.requirements.map(req => (
+                                                                       <span key={req.discipline} className="text-[9px] px-1.5 py-0.5 bg-black/40 rounded text-red-400 border border-red-900/30 font-mono uppercase">
+                                                                           {req.discipline} {req.level}
+                                                                       </span>
+                                                                   ))}
+                                                               </div>
+                                                            </div>
+                                                            {bSelected && <div className="animate-pulse absolute top-4 right-4"><CheckCircle /></div>}
                                                         </div>
-                                                        {bSelected && <div className="animate-pulse"><CheckCircle /></div>}
-                                                    </div>
-                                                    <p className="text-xs text-gray-400 mb-2 leading-relaxed">{combo.description}</p>
-                                                    <div className={`mt-2 p-2 rounded text-[10px] font-mono border-l-2 ${bSelected ? 'bg-black/30 border-red-500 text-gray-300' : 'bg-black/10 border-gray-600 text-gray-500'}`}>
-                                                        <strong className="uppercase text-red-500/80 mr-1">{fnT('compendium.system')}:</strong>
-                                                        {combo.system}
+                                                        <p className="text-xs text-gray-400 mb-2 leading-relaxed line-clamp-2">{combo.description}</p>
+                                                        <div className="absolute bottom-2 right-2">
+                                                            <InfoIcon onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                fnSetActiveDetail({
+                                                                    title: combo.name,
+                                                                    content: (
+                                                                        <div className="space-y-4 text-left">
+                                                                            <p className="text-gray-300">{combo.description}</p>
+                                                                            <div className="p-4 bg-red-900/10 border-l-4 border-red-500 rounded">
+                                                                                <h5 className="text-red-500 font-bold uppercase text-[10px] tracking-widest mb-2">{fnT('compendium.system')}</h5>
+                                                                                <p className="text-sm text-gray-300 leading-relaxed italic">{combo.system}</p>
+                                                                            </div>
+                                                                            <div className="pt-4 border-t border-gray-700">
+                                                                                <h5 className="text-gray-500 font-bold uppercase text-[10px] tracking-widest mb-2">Requirements</h5>
+                                                                                <div className="flex flex-wrap gap-2">
+                                                                                    {combo.requirements.map(req => (
+                                                                                        <span key={req.discipline} className="px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs text-gray-400">
+                                                                                            {req.discipline} {req.level}
+                                                                                        </span>
+                                                                                    ))}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    )
+                                                                });
+                                                            }} />
+                                                        </div>
                                                     </div>
                                                 </div>
                                             );
@@ -1865,6 +1959,11 @@ const App: React.FC = () => {
             )}
             {oNotification && (
                 <Notification message={oNotification.message} type={oNotification.type} onClose={() => fnSetNotification(null)} />
+            )}
+            {oActiveDetail && (
+                <InfoModal title={oActiveDetail.title} onClose={() => fnSetActiveDetail(null)}>
+                    {oActiveDetail.content}
+                </InfoModal>
             )}
         </div>
     );

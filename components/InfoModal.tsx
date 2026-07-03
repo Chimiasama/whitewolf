@@ -12,9 +12,17 @@ interface InfoModalProps {
 export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fnOnClose, children: oChildren }) => {
   const { t: fnT } = useI18n();
 
+  React.useEffect(() => {
+    const sOriginalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = sOriginalStyle;
+    };
+  }, []);
+
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[100] p-4"
       onClick={fnOnClose}
     >
       <div 
