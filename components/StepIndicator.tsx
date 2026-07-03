@@ -17,7 +17,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
 }) => {
   return (
     <div className="w-full mb-8 overflow-x-auto pb-4 custom-scrollbar">
-      <ol className="flex items-center w-full min-w-[600px]">
+      <ol className="flex items-center w-max min-w-full">
         {aSteps.map((sStepName, nIndex) => {
           const nStepNumber = nIndex + 1;
           const bIsCompleted = nCurrentStep > nStepNumber;

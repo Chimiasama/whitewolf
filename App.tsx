@@ -35,9 +35,9 @@ const ResetIcon = () => (
 );
 
 const FloppyDiskIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 20.25h-2.25a2.25 2.25 0 01-13.5 18v-2.25z" />
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+    </svg>
 );
 
 const FolderOpenIcon = () => (
@@ -746,7 +746,6 @@ const gothicBackgroundStyle = {
     backgroundImage: `linear-gradient(rgba(10, 15, 25, 0.88), rgba(10, 15, 25, 0.96)), url('/src/assets/images/gothic_background_1782838973165.jpg')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
     backgroundRepeat: 'no-repeat',
 };
 
@@ -1268,44 +1267,126 @@ const App: React.FC = () => {
                                     ? fnT('finishingTouches.gifts.subtitle')
                                     : fnT('finishingTouches.disciplines.subtitle')}
                             </p>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {(bIsWerewolf 
-                                    ? Array.from(new Set([
-                                        ...(oCharacter.tribe ? fnGetTribeDetails(fnT)[oCharacter.tribe].gifts : []),
-                                        ...(oCharacter.auspice ? fnGetAuspiceDetails(fnT)[oCharacter.auspice].gifts : [])
-                                      ]))
-                                    : (oCharacter.clan ? fnGetClanDetails(fnT)[oCharacter.clan].disciplines : [])
-                                ).map(sDisc => {
-                                    const nDots = oCharacter.disciplines[sDisc] || 0;
+
+                            {/* Point Pool Indicator */}
+                            <div className="mb-6 flex flex-col items-center p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+                                {(() => {
+                                    const nTotalDots = (Object.values(oCharacter.disciplines) as number[]).reduce((acc: number, val: number) => acc + (val || 0), 0);
+                                    const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
+                                    const nExpectedDots = 3 + (oPredatorType?.disciplineAdd ? oPredatorType.disciplineAdd.dots : 0);
+                                    const bIsComplete = nTotalDots >= nExpectedDots;
+
                                     return (
-                                        <div key={sDisc} className="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                                            <div className="flex justify-between items-center mb-2">
-                                                <h4 className="font-bold text-gray-200">{oDisciplineDetails[sDisc]?.name || sDisc}</h4>
-                                                <div className="flex space-x-1">
-                                                    {[1, 2, 3, 4, 5].map(n => (
-                                                        <button
-                                                            key={n}
+                                        <>
+                                            <span className={`text-xs font-bold uppercase tracking-widest mb-2 ${bIsComplete ? 'text-green-500' : 'text-red-400'}`}>
+                                                {fnT('common.poolDistribution')}: {nTotalDots} / {nExpectedDots} {fnT('common.value')}
+                                            </span>
+                                            <div className="flex gap-2">
+                                                {[...Array(nExpectedDots)].map((_, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className={`w-3 h-3 rounded-full border ${i < (nTotalDots as number) ? (bIsWerewolf ? 'bg-green-600 border-green-400 shadow-[0_0_8px_rgba(34,197,94,0.4)]' : 'bg-red-600 border-red-400 shadow-[0_0_8px_rgba(220,38,38,0.4)]') : 'bg-gray-800 border-gray-600'}`}
+                                                    ></div>
+                                                ))}
+                                                {(nTotalDots as number) > nExpectedDots && (
+                                                     <div className="ml-2 text-xs text-yellow-500 font-bold">+{(nTotalDots as number) - nExpectedDots}</div>
+                                                )}
+                                            </div>
+                                        </>
+                                    );
+                                })()}
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {(() => {
+                                    const aBaseDiscs = bIsWerewolf
+                                        ? Array.from(new Set([
+                                            ...(oCharacter.tribe ? fnGetTribeDetails(fnT)[oCharacter.tribe].gifts : []),
+                                            ...(oCharacter.auspice ? fnGetAuspiceDetails(fnT)[oCharacter.auspice].gifts : [])
+                                          ]))
+                                        : (oCharacter.clan ? fnGetClanDetails(fnT)[oCharacter.clan].disciplines : []);
+                                    const aActiveDiscs = Object.keys(oCharacter.disciplines);
+                                    const aAllDiscs = Array.from(new Set([...aBaseDiscs, ...aActiveDiscs]));
+
+                                    return aAllDiscs.map(sDisc => {
+                                        const nDots = oCharacter.disciplines[sDisc] || 0;
+                                        return (
+                                            <div key={sDisc} className="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                                                <div className="flex justify-between items-center mb-2">
+                                                    <div className="flex flex-col">
+                                                        <h4 className="font-bold text-gray-200">{oDisciplineDetails[sDisc]?.name || sDisc}</h4>
+                                                        {!aBaseDiscs.includes(sDisc) && (
+                                                            <span className="text-[9px] uppercase text-gray-500 font-bold">{fnT('common.unknown')}</span>
+                                                        )}
+                                                    </div>
+                                                    <div className="flex space-x-1">
+                                                        {[1, 2, 3, 4, 5].map(n => (
+                                                            <button
+                                                                key={n}
+                                                                onClick={() => {
+                                                                    const nNewVal = nDots === n ? 0 : n;
+                                                                    fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [sDisc]: nNewVal });
+                                                                }}
+                                                                className={`w-4 h-4 rounded-full border border-gray-500 ${nDots >= n ? (bIsWerewolf ? 'bg-green-500' : 'bg-red-500') : 'bg-gray-900'}`}
+                                                            />
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                                {nDots > 0 && oDisciplineDetails[sDisc] && (
+                                                    <DisciplinePowerSelector
+                                                        disciplineKey={sDisc}
+                                                        dots={nDots}
+                                                        selectedPowerIds={oCharacter.disciplinePowers[sDisc] || []}
+                                                        onSelectPowers={(ids) => fnUpdateCharacter('disciplinePowers', { ...oCharacter.disciplinePowers, [sDisc]: ids })}
+                                                        disciplineDetails={oDisciplineDetails[sDisc]}
+                                                    />
+                                                )}
+                                                {!aBaseDiscs.includes(sDisc) && nDots === 0 && (
+                                                    <button
+                                                        className="text-[10px] text-red-900 hover:text-red-500 uppercase font-bold mt-2 transition-colors"
+                                                        onClick={() => {
+                                                            const oNewDiscs = { ...oCharacter.disciplines };
+                                                            delete oNewDiscs[sDisc];
+                                                            fnUpdateCharacter('disciplines', oNewDiscs);
+                                                        }}
+                                                    >
+                                                        {fnT('buttons.delete')}
+                                                    </button>
+                                                )}
+                                            </div>
+                                        );
+                                    });
+                                })()}
+                            </div>
+
+                            <div className="mt-6 flex justify-center">
+                                <Button
+                                    variant="secondary"
+                                    onClick={() => {
+                                        fnSetActiveDetail({
+                                            title: bIsWerewolf ? fnT('characterSheet.gifts') : fnT('finishingTouches.disciplines.title'),
+                                            content: (
+                                                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                                                    {Object.keys(oDisciplineDetails).filter(d => !oCharacter.disciplines[d]).map(d => (
+                                                        <Button
+                                                            key={d}
+                                                            variant="secondary"
+                                                            className="text-[10px] py-2"
                                                             onClick={() => {
-                                                                const nNewVal = nDots === n ? 0 : n;
-                                                                fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [sDisc]: nNewVal });
+                                                                fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [d]: 0 });
+                                                                fnSetActiveDetail(null);
                                                             }}
-                                                            className={`w-4 h-4 rounded-full border border-gray-500 ${nDots >= n ? (bIsWerewolf ? 'bg-green-500' : 'bg-red-500') : 'bg-gray-900'}`}
-                                                        />
+                                                        >
+                                                            {oDisciplineDetails[d].name}
+                                                        </Button>
                                                     ))}
                                                 </div>
-                                            </div>
-                                            {nDots > 0 && oDisciplineDetails[sDisc] && (
-                                                <DisciplinePowerSelector 
-                                                    disciplineKey={sDisc}
-                                                    dots={nDots}
-                                                    selectedPowerIds={oCharacter.disciplinePowers[sDisc] || []}
-                                                    onSelectPowers={(ids) => fnUpdateCharacter('disciplinePowers', { ...oCharacter.disciplinePowers, [sDisc]: ids })}
-                                                    disciplineDetails={oDisciplineDetails[sDisc]}
-                                                />
-                                            )}
-                                        </div>
-                                    );
-                                })}
+                                            )
+                                        });
+                                    }}
+                                >
+                                    + {bIsWerewolf ? fnT('buttons.add') : fnT('buttons.add')}
+                                </Button>
                             </div>
                         </GothicFrame>
 
@@ -1833,13 +1914,13 @@ const App: React.FC = () => {
 
         if (!bShowModeSelection) {
             return (
-                <div className="min-h-screen text-white font-sans flex flex-col items-center justify-center p-4 relative overflow-hidden" style={gothicBackgroundStyle}>
+                <div className="min-h-screen w-full overflow-x-hidden text-white font-sans flex flex-col items-center justify-center p-4 relative" style={gothicBackgroundStyle}>
                     <div className="absolute inset-0 pointer-events-none opacity-10">
                         <RoseIcon className="w-[800px] h-[800px] text-red-900 absolute -top-40 -right-40 animate-pulse" />
                     </div>
-                    <div className="z-20 text-center mb-12 px-4">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-cinzel font-bold text-red-600 tracking-widest mb-2 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal">{fnT('app.title')}</h1>
-                        <p className="text-lg sm:text-xl text-gray-400 italic max-w-2xl mx-auto break-words whitespace-normal">{fnT('app.subtitle')}</p>
+                    <div className="z-20 text-center mb-12 px-4 w-full">
+                        <h1 className="text-2xl sm:text-4xl md:text-6xl font-cinzel font-bold text-red-600 tracking-widest mb-2 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal">{fnT('app.title')}</h1>
+                        <p className="text-base sm:text-xl text-gray-400 italic max-w-2xl mx-auto break-words whitespace-normal">{fnT('app.subtitle')}</p>
                     </div>
                     <GameSelection onSelect={fnHandleGameSelect} />
                     <div className="mt-12 flex justify-center gap-4 z-20">
@@ -1859,12 +1940,12 @@ const App: React.FC = () => {
         }
 
         return (
-            <div className="min-h-screen text-white font-sans flex flex-col items-center justify-center p-4 relative overflow-hidden" style={gothicBackgroundStyle}>
+            <div className="min-h-screen w-full overflow-x-hidden text-white font-sans flex flex-col items-center justify-center p-4 relative" style={gothicBackgroundStyle}>
                 <div className="absolute inset-0 pointer-events-none opacity-20">
                     <RoseIcon className={`w-[800px] h-[800px] ${bIsWerewolf ? 'text-emerald-900' : 'text-red-900'} absolute -top-40 -right-40 animate-pulse`} />
                 </div>
                 <GothicFrame className={`max-w-2xl w-full text-center p-6 sm:p-12 bg-black/80 shadow-2xl z-10 border ${sThemeBorder}`}>
-                    <h1 className={`text-3xl sm:text-5xl md:text-6xl font-cinzel font-bold ${sThemeColor} tracking-widest mb-2 text-shadow-lg [text-wrap:balance] break-words whitespace-normal`}>
+                    <h1 className={`text-2xl sm:text-4xl md:text-5xl font-cinzel font-bold ${sThemeColor} tracking-widest mb-2 text-shadow-lg [text-wrap:balance] break-words whitespace-normal`}>
                         {bIsWerewolf ? fnT('app.werewolf') : fnT('app.vampire')}
                     </h1>
                     <p className={`text-xl text-gray-400 mb-12 italic border-b ${sThemeBorder}/50 pb-6 mx-auto w-3/4 break-words whitespace-normal`}>
@@ -1910,7 +1991,7 @@ const App: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
+        <div className="min-h-screen w-full overflow-x-hidden text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
             <header className="bg-black border-b-2 border-red-900 p-4 sticky top-0 z-50 shadow-2xl">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     <div className="flex items-center gap-3 cursor-pointer" onClick={() => setView('home')}>
@@ -1934,7 +2015,7 @@ const App: React.FC = () => {
                     </div>
                 </div>
             </header>
-            <main className="flex-grow p-4 md:p-8 max-w-6xl mx-auto w-full">
+            <main className="flex-grow p-4 md:p-8 max-w-6xl mx-auto w-full overflow-x-hidden">
                 <StepIndicator currentStep={nStep} totalSteps={7} steps={aSteps} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                 <div className="mt-8 animate-fadeIn">
                     {renderStepContent()}
