@@ -80,7 +80,7 @@ const DiceIcon = () => (
 const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSelect }) => {
     const { t: fnT } = useI18n();
     return (
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fadeIn px-4">
+        <div className="w-full max-w-4xl mx-auto text-center space-y-8 animate-fadeIn px-2 sm:px-4 overflow-hidden">
             <div className="space-y-4">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-cinzel text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal">
                     {fnT('gameSelection.title')}
@@ -90,7 +90,7 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-12 min-w-0">
                 <div 
                     onClick={() => onSelect(GameType.Vampire)}
                     className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-red-900/30 bg-black/40 p-4 sm:p-8 transition-all hover:border-red-600 hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]"
@@ -101,7 +101,7 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                             <BloodIcon />
                         </div>
                         <div className="space-y-2">
-                            <h2 className="text-2xl md:text-3xl font-cinzel text-red-500 [text-wrap:balance] break-words whitespace-normal">{fnT('app.vampire')}</h2>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-cinzel text-red-500 [text-wrap:balance] break-words whitespace-normal">{fnT('app.vampire')}</h2>
                             <p className="text-gray-400 text-sm leading-relaxed break-words whitespace-normal">
                                 {fnT('gameSelection.vampireDesc')}
                             </p>
@@ -122,7 +122,7 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                             <ClawIcon />
                         </div>
                         <div className="space-y-2">
-                            <h2 className="text-2xl md:text-3xl font-cinzel text-emerald-500 [text-wrap:balance] break-words whitespace-normal">{fnT('app.werewolf')}</h2>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-cinzel text-emerald-500 [text-wrap:balance] break-words whitespace-normal">{fnT('app.werewolf')}</h2>
                             <p className="text-gray-400 text-sm leading-relaxed break-words whitespace-normal">
                                 {fnT('gameSelection.werewolfDesc')}
                             </p>
@@ -509,7 +509,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                             <span className={`text-xl font-bold w-6 text-right ${nValue > nBaseValue ? 'text-red-400' : 'text-gray-600'}`}>
                                                 {nValue}
                                             </span>
-                                            <div className="flex space-x-1">
+                                            <div className="flex flex-shrink-0 space-x-1">
                                                  {[...Array(5)].map((_, nI) => (
                                                     <div 
                                                         key={nI} 
@@ -658,7 +658,7 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
                     <div className="text-left space-y-6">
                         <div className="bg-gray-900 p-4 rounded-lg border border-gray-700 flex justify-between items-center sticky top-0 z-10 shadow-lg gap-4 flex-wrap">
                             <div className="flex-grow">
-                                <h4 className="font-bold text-gray-200">{fnT('finishingTouches.disciplines.powersSelected', { count: aSelectedPowerIds.length, total: nDots })}</h4>
+                                <h4 className="font-bold text-gray-200 break-words">{fnT('finishingTouches.disciplines.powersSelected', { count: aSelectedPowerIds.length, total: nDots })}</h4>
                                 <div className="flex gap-1 mt-1">
                                     {[...Array(nDots)].map((_, i) => (
                                         <div key={i} className={`h-1.5 flex-1 rounded-full transition-colors duration-300 ${i < aSelectedPowerIds.length ? 'bg-red-500 shadow-[0_0_5px_rgba(220,38,38,0.5)]' : 'bg-gray-700'}`}></div>
@@ -1008,7 +1008,7 @@ const App: React.FC = () => {
             case 2: // Concept
                 return (
                     <GothicFrame>
-                        <div className="flex justify-between items-center mb-2">
+                        <div className="flex flex-wrap justify-between items-center gap-3 mb-2">
                             <h2 className="text-3xl font-cinzel text-red-500">{fnT('concept.title')}</h2>
                             <Button 
                                 variant="secondary" 
@@ -1297,7 +1297,7 @@ const App: React.FC = () => {
                                 })()}
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 min-w-0">
                                 {(() => {
                                     const aBaseDiscs = bIsWerewolf
                                         ? Array.from(new Set([
@@ -1308,18 +1308,26 @@ const App: React.FC = () => {
                                     const aActiveDiscs = Object.keys(oCharacter.disciplines);
                                     const aAllDiscs = Array.from(new Set([...aBaseDiscs, ...aActiveDiscs]));
 
+                                    if (aAllDiscs.length === 0) {
+                                        return (
+                                            <div className="sm:col-span-2 lg:col-span-3 rounded-lg border border-dashed border-gray-700 bg-gray-900/60 p-4 text-center text-sm text-gray-400">
+                                                {bIsWerewolf ? fnT('finishingTouches.gifts.subtitle') : fnT('finishingTouches.disciplines.subtitle')}
+                                            </div>
+                                        );
+                                    }
+
                                     return aAllDiscs.map(sDisc => {
                                         const nDots = oCharacter.disciplines[sDisc] || 0;
                                         return (
-                                            <div key={sDisc} className="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                                                <div className="flex justify-between items-center mb-2">
+                                            <div key={sDisc} className="bg-gray-800 p-4 rounded-lg border border-gray-700 min-w-0">
+                                                <div className="flex flex-wrap justify-between items-center gap-3 mb-2">
                                                     <div className="flex flex-col">
-                                                        <h4 className="font-bold text-gray-200">{oDisciplineDetails[sDisc]?.name || sDisc}</h4>
+                                                        <h4 className="font-bold text-gray-200 break-words">{oDisciplineDetails[sDisc]?.name || sDisc}</h4>
                                                         {!aBaseDiscs.includes(sDisc) && (
                                                             <span className="text-[9px] uppercase text-gray-500 font-bold">{fnT('common.unknown')}</span>
                                                         )}
                                                     </div>
-                                                    <div className="flex space-x-1">
+                                                    <div className="flex flex-shrink-0 space-x-1">
                                                         {[1, 2, 3, 4, 5].map(n => (
                                                             <button
                                                                 key={n}
@@ -1679,7 +1687,7 @@ const App: React.FC = () => {
                                             <div key={ls.id} className={`p-4 rounded-lg border-2 transition-all duration-300 ${nLevel > 0 ? 'bg-green-900/30 border-green-500' : 'bg-gray-800 border-gray-700'}`}>
                                                 <div className="flex justify-between items-start mb-2">
                                                     <h4 className="font-bold text-gray-100">{ls.name}</h4>
-                                                    <div className="flex space-x-1">
+                                                    <div className="flex flex-shrink-0 space-x-1">
                                                         {[1, 2, 3, 4, 5].map(n => (
                                                             <button
                                                                 key={n}
@@ -1923,11 +1931,11 @@ const App: React.FC = () => {
                         <p className="text-base sm:text-xl text-gray-400 italic max-w-2xl mx-auto break-words whitespace-normal">{fnT('app.subtitle')}</p>
                     </div>
                     <GameSelection onSelect={fnHandleGameSelect} />
-                    <div className="mt-12 flex justify-center gap-4 z-20">
+                    <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 z-20 w-full px-2">
                          <Button variant="secondary" onClick={() => { fnSetStorageMode('load'); fnSetShowStorage(true); }} title={fnT('buttons.load')}>
                             <FolderOpenIcon /> {fnT('buttons.load')}
                         </Button>
-                         <label className="cursor-pointer bg-gray-600 hover:bg-gray-500 px-6 py-2 rounded-md text-white font-bold transition-all duration-200 shadow-md flex items-center gap-2">
+                         <label className="cursor-pointer bg-gray-600 hover:bg-gray-500 px-3 sm:px-6 py-2 rounded-md text-white font-bold transition-all duration-200 shadow-md flex items-center justify-center gap-2 text-center max-w-full">
                             <span>{fnT('buttons.import')}</span>
                             <input type="file" className="hidden" accept=".json" onChange={fnImportJSON} />
                         </label>
@@ -1992,16 +2000,16 @@ const App: React.FC = () => {
 
     return (
         <div className="min-h-screen w-full overflow-x-hidden text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
-            <header className="bg-black border-b-2 border-red-900 p-4 sticky top-0 z-50 shadow-2xl">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <div className="flex items-center gap-3 cursor-pointer" onClick={() => setView('home')}>
+            <header className="bg-black border-b-2 border-red-900 p-3 sm:p-4 sticky top-0 z-50 shadow-2xl overflow-hidden">
+                <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3 min-w-0">
+                    <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => setView('home')}>
                          <div className="text-red-600"><RoseIcon className="w-10 h-10" /></div>
                         <div>
-                            <h1 className="text-2xl font-cinzel font-bold text-red-600 tracking-widest [text-wrap:balance] break-words whitespace-normal">{fnT('app.title')}</h1>
+                            <h1 className="text-lg sm:text-2xl font-cinzel font-bold text-red-600 tracking-widest [text-wrap:balance] break-words whitespace-normal leading-tight">{fnT('app.title')}</h1>
                             <p className="text-xs text-gray-500 hidden md:block break-words whitespace-normal">{fnT('app.subtitle')}</p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center justify-end gap-2 max-w-full">
                         <Button variant="secondary" onClick={() => { fnSetStorageMode('save'); fnSetShowStorage(true); }} title={fnT('buttons.save')}><FloppyDiskIcon /></Button>
                         <Button variant="secondary" onClick={() => { fnSetStorageMode('load'); fnSetShowStorage(true); }} title={fnT('buttons.load')}><FolderOpenIcon /></Button>
                         <Button variant="secondary" onClick={fnResetCharacter} title={fnT('buttons.reset')}><ResetIcon /></Button>
@@ -2015,18 +2023,18 @@ const App: React.FC = () => {
                     </div>
                 </div>
             </header>
-            <main className="flex-grow p-4 md:p-8 max-w-6xl mx-auto w-full overflow-x-hidden">
+            <main className="flex-grow p-3 sm:p-4 md:p-8 max-w-6xl mx-auto w-full min-w-0 overflow-x-hidden">
                 <StepIndicator currentStep={nStep} totalSteps={7} steps={aSteps} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
-                <div className="mt-8 animate-fadeIn">
+                <div className="mt-6 sm:mt-8 animate-fadeIn min-w-0 overflow-hidden">
                     {renderStepContent()}
                 </div>
                 {nStep < 7 && <CharacterSummary character={oCharacter} />}
             </main>
-            <footer className="bg-black border-t border-gray-800 p-6 sticky bottom-0 z-40">
-                <div className="max-w-6xl mx-auto flex justify-between items-center">
+            <footer className="bg-black border-t border-gray-800 p-3 sm:p-6 sticky bottom-0 z-40 overflow-hidden">
+                <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
                     <Button onClick={() => fnSetStep(prev => Math.max(1, prev - 1))} disabled={nStep === 1} variant="secondary">{fnT('buttons.back')}</Button>
                     {nStep < 7 ? (
-                        <div className="flex gap-4">
+                        <div className="flex flex-wrap justify-end gap-2 sm:gap-4">
                             <Button variant="secondary" onClick={() => fnSetStep(7)}>{fnT('buttons.jumpToSheet')}</Button>
                             <Button onClick={() => fnSetStep(prev => Math.min(7, prev + 1))}>{fnT('buttons.next')}</Button>
                         </div>

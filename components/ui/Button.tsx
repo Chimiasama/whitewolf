@@ -6,7 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: React.FC<ButtonProps> = ({ children: oChildren, variant: sVariant = 'primary', className: sClassName = '', ...oProps }) => {
-  const sBaseClasses = "px-6 py-2.5 rounded-lg font-bold text-xs tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-950 disabled:opacity-40 disabled:cursor-not-allowed active:scale-95 flex items-center justify-center gap-2";
+  const sBaseClasses = "max-w-full px-3 sm:px-6 py-2.5 rounded-lg font-bold text-[11px] sm:text-xs tracking-wide sm:tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-950 disabled:opacity-40 disabled:cursor-not-allowed active:scale-95 flex items-center justify-center gap-2 text-center whitespace-normal break-words";
   
   const oVariantClasses = {
     primary: "bg-gradient-to-r from-red-800 to-red-700 hover:from-red-700 hover:to-red-600 focus:ring-red-500 border border-red-500/30 text-red-50",
