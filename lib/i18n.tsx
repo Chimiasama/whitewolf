@@ -48,7 +48,7 @@ const oEn = {
     "werewolfDesc": "When will you Rage? Fight the Wyrm and save Gaia."
   },
   "steps": {
-    "gameSelection": "Game",
+    "gameSelectionStep": "Game",
     "concept": "Concept",
     "clan": "Clan",
     "tribe": "Tribe",
@@ -994,7 +994,7 @@ const oPt = {
     "werewolfDesc": "Quando você irá enfurecer? Lute contra a Wyrm e salve Gaia."
   },
   "steps": {
-    "gameSelection": "Jogo",
+    "gameSelectionStep": "Jogo",
     "concept": "Conceito",
     "clan": "Clã",
     "tribe": "Tribo",

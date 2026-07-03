@@ -80,9 +80,9 @@ const DiceIcon = () => (
 const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSelect }) => {
     const { t: fnT } = useI18n();
     return (
-        <div className="w-full max-w-4xl mx-auto text-center space-y-8 animate-fadeIn px-2 sm:px-4 overflow-hidden">
-            <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-cinzel text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal">
+        <div className="w-full max-w-4xl mx-auto text-center space-y-8 animate-fadeIn px-2 sm:px-4 overflow-hidden min-w-0">
+            <div className="space-y-4 min-w-0">
+                <h1 className="text-2xl sm:text-4xl md:text-5xl font-cinzel text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal leading-tight">
                     {fnT('gameSelection.title')}
                 </h1>
                 <p className="text-gray-400 text-lg italic max-w-2xl mx-auto break-words whitespace-normal">
@@ -100,8 +100,8 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                         <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-red-900/20 text-red-500 ring-4 ring-red-900/10 group-hover:scale-110 transition-transform">
                             <BloodIcon />
                         </div>
-                        <div className="space-y-2">
-                            <h2 className="text-xl sm:text-2xl md:text-3xl font-cinzel text-red-500 [text-wrap:balance] break-words whitespace-normal">{fnT('app.vampire')}</h2>
+                        <div className="space-y-2 min-w-0">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-cinzel text-red-500 [text-wrap:balance] break-words whitespace-normal leading-tight">{fnT('app.vampire')}</h2>
                             <p className="text-gray-400 text-sm leading-relaxed break-words whitespace-normal">
                                 {fnT('gameSelection.vampireDesc')}
                             </p>
@@ -121,8 +121,8 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                         <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-900/20 text-emerald-500 ring-4 ring-emerald-900/10 group-hover:scale-110 transition-transform">
                             <ClawIcon />
                         </div>
-                        <div className="space-y-2">
-                            <h2 className="text-xl sm:text-2xl md:text-3xl font-cinzel text-emerald-500 [text-wrap:balance] break-words whitespace-normal">{fnT('app.werewolf')}</h2>
+                        <div className="space-y-2 min-w-0">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-cinzel text-emerald-500 [text-wrap:balance] break-words whitespace-normal leading-tight">{fnT('app.werewolf')}</h2>
                             <p className="text-gray-400 text-sm leading-relaxed break-words whitespace-normal">
                                 {fnT('gameSelection.werewolfDesc')}
                             </p>
@@ -777,7 +777,7 @@ const App: React.FC = () => {
     }, [sLocale]);
 
     const aSteps = useMemo(() => {
-        const base = [fnT('steps.gameSelection'), fnT('steps.concept')];
+        const base = [fnT('steps.gameSelectionStep'), fnT('steps.concept')];
         if (oCharacter.gameType === GameType.Vampire) {
             base.push(fnT('steps.clan'));
         } else {
@@ -1926,8 +1926,8 @@ const App: React.FC = () => {
                     <div className="absolute inset-0 pointer-events-none opacity-10">
                         <RoseIcon className="w-[800px] h-[800px] text-red-900 absolute -top-40 -right-40 animate-pulse" />
                     </div>
-                    <div className="z-20 text-center mb-12 px-4 w-full">
-                        <h1 className="text-2xl sm:text-4xl md:text-6xl font-cinzel font-bold text-red-600 tracking-widest mb-2 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal">{fnT('app.title')}</h1>
+                    <div className="z-20 text-center mb-12 px-4 w-full min-w-0">
+                        <h1 className="text-xl sm:text-4xl md:text-6xl font-cinzel font-bold text-red-600 tracking-widest mb-2 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal leading-tight">{fnT('app.title')}</h1>
                         <p className="text-base sm:text-xl text-gray-400 italic max-w-2xl mx-auto break-words whitespace-normal">{fnT('app.subtitle')}</p>
                     </div>
                     <GameSelection onSelect={fnHandleGameSelect} />
@@ -1952,11 +1952,11 @@ const App: React.FC = () => {
                 <div className="absolute inset-0 pointer-events-none opacity-20">
                     <RoseIcon className={`w-[800px] h-[800px] ${bIsWerewolf ? 'text-emerald-900' : 'text-red-900'} absolute -top-40 -right-40 animate-pulse`} />
                 </div>
-                <GothicFrame className={`max-w-2xl w-full text-center p-6 sm:p-12 bg-black/80 shadow-2xl z-10 border ${sThemeBorder}`}>
-                    <h1 className={`text-2xl sm:text-4xl md:text-5xl font-cinzel font-bold ${sThemeColor} tracking-widest mb-2 text-shadow-lg [text-wrap:balance] break-words whitespace-normal`}>
+                <GothicFrame className={`max-w-2xl w-full text-center p-6 sm:p-12 bg-black/80 shadow-2xl z-10 border ${sThemeBorder} min-w-0`}>
+                    <h1 className={`text-xl sm:text-4xl md:text-5xl font-cinzel font-bold ${sThemeColor} tracking-widest mb-2 text-shadow-lg [text-wrap:balance] break-words whitespace-normal leading-tight`}>
                         {bIsWerewolf ? fnT('app.werewolf') : fnT('app.vampire')}
                     </h1>
-                    <p className={`text-xl text-gray-400 mb-12 italic border-b ${sThemeBorder}/50 pb-6 mx-auto w-3/4 break-words whitespace-normal`}>
+                    <p className={`text-lg sm:text-xl text-gray-400 mb-12 italic border-b ${sThemeBorder}/50 pb-6 mx-auto w-3/4 break-words whitespace-normal`}>
                         {fnT('creationMethod.subtitle')}
                     </p>
                     
