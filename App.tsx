@@ -777,17 +777,23 @@ const App: React.FC = () => {
     }, [sLocale]);
 
     const aSteps = useMemo(() => {
-        const base = [fnT('steps.gameSelectionStep'), fnT('steps.concept')];
+        const base = [
+            { id: 'game', label: fnT('steps.gameSelectionStep') },
+            { id: 'concept', label: fnT('steps.concept') }
+        ];
         if (oCharacter.gameType === GameType.Vampire) {
-            base.push(fnT('steps.clan'));
+            base.push({ id: 'clan', label: fnT('steps.clan') });
         } else {
-            base.push(fnT('steps.tribe'));
+            base.push(
+                { id: 'tribe', label: fnT('steps.tribe') },
+                { id: 'auspice', label: fnT('steps.auspice') }
+            );
         }
         base.push(
-            fnT('steps.attributes'),
-            fnT('steps.skills'),
-            fnT('steps.finishingTouches'),
-            fnT('steps.sheet')
+            { id: 'attributes', label: fnT('steps.attributes') },
+            { id: 'skills', label: fnT('steps.skills') },
+            { id: 'finishing', label: fnT('steps.finishingTouches') },
+            { id: 'sheet', label: fnT('steps.sheet') }
         );
         return base;
     }, [fnT, oCharacter.gameType]);
@@ -823,7 +829,7 @@ const App: React.FC = () => {
         const char = fnCreateRandomCharacter(sLocale, level, fnT, oCharacter.gameType || GameType.Vampire);
         fnSetCharacter(char);
         setView('creator');
-        fnSetStep(6); 
+        fnSetStep(aSteps.length - 1);
         fnShowNotification(fnT('common.generateSuccess'));
     };
 
@@ -846,7 +852,7 @@ const App: React.FC = () => {
                     const oLoaded = JSON.parse(sData);
                     fnSetCharacter(oLoaded);
                     setView('creator');
-                    fnSetStep(6);
+                    fnSetStep(aSteps.length);
                     fnShowNotification(fnT('storage.loadSuccess') || `Character '${sName}' loaded.`);
                 } catch (e) {
                     console.error("Failed to parse save", e);
@@ -899,7 +905,7 @@ const App: React.FC = () => {
                 const oLoaded = JSON.parse(event.target?.result as string);
                 fnSetCharacter(oLoaded);
                 setView('creator');
-                fnSetStep(6);
+                fnSetStep(aSteps.length);
                 fnShowNotification("Character imported from JSON.");
             } catch (err) {
                 console.error(err);
@@ -1000,12 +1006,12 @@ const App: React.FC = () => {
             fnSetStep(2);
         }
     };
-
     const renderStepContent = () => {
-        switch (nStep) {
-            case 1:
+        const sStepId = aSteps[nStep - 1]?.id;
+        switch (sStepId) {
+            case 'game':
                 return <GameSelection onSelect={fnHandleGameSelect} />;
-            case 2: // Concept
+            case 'concept':
                 return (
                     <GothicFrame>
                         <div className="flex flex-wrap justify-between items-center gap-3 mb-2">
@@ -1036,8 +1042,8 @@ const App: React.FC = () => {
                         </div>
                     </GothicFrame>
                 );
-            case 3: // Clan / Tribe & Auspice
-                if (oCharacter.gameType === GameType.Vampire) {
+            case 'clan':
+                {
                     const oClans = fnGetClanDetails(fnT);
                     return (
                         <div className="text-center">
@@ -1125,9 +1131,10 @@ const App: React.FC = () => {
                             )}
                         </div>
                     );
-                } else {
+                }
+            case 'tribe':
+                {
                     const oTribes = fnGetTribeDetails(fnT);
-                    const oAuspices = fnGetAuspiceDetails(fnT);
                     return (
                         <div className="space-y-8">
                             <div>
@@ -1185,6 +1192,14 @@ const App: React.FC = () => {
                                     })}
                                 </div>
                             </div>
+                        </div>
+                    );
+                }
+            case 'auspice':
+                {
+                    const oAuspices = fnGetAuspiceDetails(fnT);
+                    return (
+                        <div className="space-y-8">
                             <div>
                                 <h3 className="text-xl font-bold text-green-500 mb-4">{fnT('steps.auspice')}</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -1208,7 +1223,7 @@ const App: React.FC = () => {
                         </div>
                     );
                 }
-            case 4: // Attributes
+            case 'attributes':
                 return (
                     <div className="text-center">
                         <h2 className={`text-3xl font-cinzel mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-green-500' : 'text-red-500'}`}>{fnT('attributes.title')}</h2>
@@ -1226,7 +1241,7 @@ const App: React.FC = () => {
                         />
                     </div>
                 );
-            case 5: // Skills
+            case 'skills':
                 return (
                     <div className="text-center">
                         <h2 className={`text-3xl font-cinzel mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-green-500' : 'text-red-500'}`}>{fnT('skills.title')}</h2>
@@ -1243,7 +1258,7 @@ const App: React.FC = () => {
                         />
                     </div>
                 );
-            case 6: // Finishing Touches
+            case 'finishing':
                 const oDisciplineDetails = fnGetDisciplineDetails(fnT);
                 const aAdvantagesAndFlaws = fnGetAdvantagesAndFlaws(fnT, oCharacter.gameType);
                 const bIsWerewolf = oCharacter.gameType === GameType.Werewolf;
@@ -1318,11 +1333,12 @@ const App: React.FC = () => {
 
                                     return aAllDiscs.map(sDisc => {
                                         const nDots = oCharacter.disciplines[sDisc] || 0;
+                                        const oDetails = oDisciplineDetails[sDisc];
                                         return (
                                             <div key={sDisc} className="bg-gray-800 p-4 rounded-lg border border-gray-700 min-w-0">
                                                 <div className="flex flex-wrap justify-between items-center gap-3 mb-2">
                                                     <div className="flex flex-col">
-                                                        <h4 className="font-bold text-gray-200 break-words">{oDisciplineDetails[sDisc]?.name || sDisc}</h4>
+                                                        <h4 className="font-bold text-gray-200 break-words">{oDetails?.name || sDisc}</h4>
                                                         {!aBaseDiscs.includes(sDisc) && (
                                                             <span className="text-[9px] uppercase text-gray-500 font-bold">{fnT('common.unknown')}</span>
                                                         )}
@@ -1335,18 +1351,18 @@ const App: React.FC = () => {
                                                                     const nNewVal = nDots === n ? 0 : n;
                                                                     fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [sDisc]: nNewVal });
                                                                 }}
-                                                                className={`w-4 h-4 rounded-full border border-gray-500 ${nDots >= n ? (bIsWerewolf ? 'bg-green-500' : 'bg-red-500') : 'bg-gray-900'}`}
+                                                                className={`w-4 h-4 rounded-full border border-gray-500 transition-all duration-200 ${nDots >= n ? (bIsWerewolf ? 'bg-green-600 border-green-400 shadow-[0_0_8px_rgba(34,197,94,0.4)]' : 'bg-red-600 border-red-400 shadow-[0_0_8px_rgba(220,38,38,0.4)]') : 'bg-gray-900 hover:border-gray-300'}`}
                                                             />
                                                         ))}
                                                     </div>
                                                 </div>
-                                                {nDots > 0 && oDisciplineDetails[sDisc] && (
+                                                {nDots > 0 && oDetails && (
                                                     <DisciplinePowerSelector
                                                         disciplineKey={sDisc}
                                                         dots={nDots}
                                                         selectedPowerIds={oCharacter.disciplinePowers[sDisc] || []}
                                                         onSelectPowers={(ids) => fnUpdateCharacter('disciplinePowers', { ...oCharacter.disciplinePowers, [sDisc]: ids })}
-                                                        disciplineDetails={oDisciplineDetails[sDisc]}
+                                                        disciplineDetails={oDetails}
                                                     />
                                                 )}
                                                 {!aBaseDiscs.includes(sDisc) && nDots === 0 && (
@@ -1550,7 +1566,7 @@ const App: React.FC = () => {
                                 {oCharacter.predatorType && (
                                     <div className="mt-4 animate-fadeIn">
                                         {(() => {
-                                            const oSelectedPredator = fnGetPredatorTypes(fnT).find(pt => pt.name === oCharacter.predatorType);
+                                            const oSelectedPredator = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
                                             if (!oSelectedPredator) return null;
                                             return (
                                                 <div className="p-6 bg-gray-900/80 rounded-lg border border-red-900/40 shadow-2xl">
@@ -1893,7 +1909,7 @@ const App: React.FC = () => {
                         <CharacterSummary character={oCharacter} />
                     </div>
                 );
-            case 7: // Sheet
+            case 'sheet':
                 return (
                     <CharacterSheet 
                         character={oCharacter} 
@@ -2024,19 +2040,19 @@ const App: React.FC = () => {
                 </div>
             </header>
             <main className="flex-grow p-3 sm:p-4 md:p-8 max-w-6xl mx-auto w-full min-w-0 overflow-x-hidden">
-                <StepIndicator currentStep={nStep} totalSteps={7} steps={aSteps} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                <StepIndicator currentStep={nStep} totalSteps={aSteps.length} steps={aSteps} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                 <div className="mt-6 sm:mt-8 animate-fadeIn min-w-0 overflow-hidden">
                     {renderStepContent()}
                 </div>
-                {nStep < 7 && <CharacterSummary character={oCharacter} />}
+                {nStep < aSteps.length && <CharacterSummary character={oCharacter} />}
             </main>
             <footer className="bg-black border-t border-gray-800 p-3 sm:p-6 sticky bottom-0 z-40 overflow-hidden">
                 <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
                     <Button onClick={() => fnSetStep(prev => Math.max(1, prev - 1))} disabled={nStep === 1} variant="secondary">{fnT('buttons.back')}</Button>
-                    {nStep < 7 ? (
+                    {nStep < aSteps.length ? (
                         <div className="flex flex-wrap justify-end gap-2 sm:gap-4">
-                            <Button variant="secondary" onClick={() => fnSetStep(7)}>{fnT('buttons.jumpToSheet')}</Button>
-                            <Button onClick={() => fnSetStep(prev => Math.min(7, prev + 1))}>{fnT('buttons.next')}</Button>
+                            <Button variant="secondary" onClick={() => fnSetStep(aSteps.length)}>{fnT('buttons.jumpToSheet')}</Button>
+                            <Button onClick={() => fnSetStep(prev => Math.min(aSteps.length, prev + 1))}>{fnT('buttons.next')}</Button>
                         </div>
                     ) : (
                         <Button variant="secondary" onClick={() => window.print()}>{fnT('buttons.print') || 'Print'}</Button>
