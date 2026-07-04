@@ -1,7 +1,7 @@
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, Specialty, DisciplinePower, DisciplineCombo, GameType, Tribe, Auspice } from './types';
-import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetDisciplineCombos, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans } from './constants';
+import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetDisciplineCombos, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths } from './constants';
 import { Card } from './components/ui/Card';
 import { Button } from './components/ui/Button';
 import { Input, TextArea } from './components/ui/Input';
@@ -158,8 +158,12 @@ const CharacterSummary: React.FC<{ character: Character }> = ({ character: oChar
         const nAttrSum = (Object.values(oCharacter.attributes) as number[]).reduce((nAcc: number, nVal: number) => nAcc + nVal, 0);
         const bAttributesValid = nAttrSum >= 22;
         aList.push({ label: fnT('steps.attributes'), isValid: bAttributesValid, error: fnT('summary.error_attributes') });
-        const nSkillSum = (Object.values(oCharacter.skills) as number[]).reduce((nAcc: number, nVal: number) => nAcc + nVal, 0);
-        const bSkillsValid = nSkillSum >= 22; 
+        const aCurrentSkills = (Object.values(oCharacter.skills) as number[]).filter(v => v > 0).sort((a, b) => b - a);
+        const bSkillsValid = Object.values(oSkillPaths).some(aPathDots => {
+            if (aCurrentSkills.length !== aPathDots.length) return false;
+            const aSortedPath = [...aPathDots].sort((a, b) => b - a);
+            return aCurrentSkills.every((v, i) => v === aSortedPath[i]);
+        });
         aList.push({ label: fnT('steps.skills'), isValid: bSkillsValid, error: fnT('summary.error_skills') });
         
         if (oCharacter.gameType === GameType.Vampire) {
@@ -776,6 +780,52 @@ const App: React.FC = () => {
         }
     }, [sLocale]);
 
+    const oDetectedSkillPath = useMemo(() => {
+        const aCurrentSkills = (Object.values(oCharacter.skills) as number[]).filter(v => v > 0);
+
+        const aPossiblePaths = Object.entries(oSkillPaths).filter(([_, aDots]) => {
+            const oPathCounts: Record<number, number> = {};
+            aDots.forEach(n => oPathCounts[n] = (oPathCounts[n] || 0) + 1);
+
+            const oCurrentCounts: Record<number, number> = {};
+            aCurrentSkills.forEach(n => oCurrentCounts[n] = (oCurrentCounts[n] || 0) + 1);
+
+            return [4, 3, 2, 1].every(n => (oCurrentCounts[n] || 0) <= (oPathCounts[n] || 0));
+        });
+
+        const aDotValues = [4, 3, 2, 1];
+        const oMaxRemaining: Record<number, number> = {};
+
+        aPossiblePaths.forEach(([_, aDots]) => {
+            const aRemaining = [...aDots];
+            aCurrentSkills.forEach(nVal => {
+                const nIdx = aRemaining.indexOf(nVal);
+                if (nIdx >= 0) aRemaining.splice(nIdx, 1);
+            });
+
+            const oCounts: Record<number, number> = {};
+            aRemaining.forEach(n => oCounts[n] = (oCounts[n] || 0) + 1);
+
+            aDotValues.forEach(nVal => {
+                oMaxRemaining[nVal] = Math.max(oMaxRemaining[nVal] || 0, oCounts[nVal] || 0);
+            });
+        });
+
+        const aUnionPool: number[] = [];
+        aDotValues.forEach(nVal => {
+            for (let i = 0; i < oMaxRemaining[nVal]; i++) {
+                aUnionPool.push(nVal);
+            }
+        });
+
+        const aTotalPool = [...aCurrentSkills, ...aUnionPool];
+
+        return {
+            validPaths: aPossiblePaths.map(([sKey]) => sKey),
+            pool: aTotalPool.length > 0 ? aTotalPool : [0]
+        };
+    }, [oCharacter.skills]);
+
     const aSteps = useMemo(() => {
         const base = [
             { id: 'game', label: fnT('steps.gameSelectionStep') },
@@ -1245,13 +1295,29 @@ const App: React.FC = () => {
                 return (
                     <div className="text-center">
                         <h2 className={`text-3xl font-cinzel mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-green-500' : 'text-red-500'}`}>{fnT('skills.title')}</h2>
-                        <p className="text-gray-400 mb-6">{fnT('skills.subtitle')}</p>
+                        <p className="text-gray-400 mb-2">{fnT('skills.subtitle')}</p>
+
+                        <div className="mb-6 flex flex-col items-center">
+                            <div className="px-4 py-2 bg-black/40 border border-gray-700 rounded-full text-xs flex items-center gap-3">
+                                <span className="text-gray-500 font-bold uppercase tracking-widest">{fnT('skills.paths.title')}:</span>
+                                {oDetectedSkillPath.validPaths.length === 0 ? (
+                                    <span className="text-red-500 font-bold">{fnT('skills.paths.none')}</span>
+                                ) : oDetectedSkillPath.validPaths.length === 1 ? (
+                                    <span className="text-green-400 font-bold">{fnT(`skills.paths.${oDetectedSkillPath.validPaths[0]}`)}</span>
+                                ) : (
+                                    <span className="text-blue-400 font-bold">
+                                        {fnT('skills.paths.multiple', { paths: oDetectedSkillPath.validPaths.map(p => fnT(`skills.paths.${p}`)).join(', ') })}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+
                         <LoreQuote text={fnT('lore.skills')} />
                         <PointAllocator 
                             items={aSkillList} 
                             values={oCharacter.skills} 
                             onChange={fnHandleSkillChange} 
-                            pool={[3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1]} 
+                            pool={oDetectedSkillPath.pool}
                             translationPrefix="skills.list"
                             colorClass={oCharacter.gameType === GameType.Werewolf ? "bg-green-900/40" : "bg-red-900/40"}
                             accentColorClass={oCharacter.gameType === GameType.Werewolf ? "border-green-500 shadow-[0_0_15px_rgba(22,163,74,0.5)] ring-1 ring-green-400" : "border-red-500 shadow-[0_0_15px_rgba(220,38,38,0.5)] ring-1 ring-red-400"}

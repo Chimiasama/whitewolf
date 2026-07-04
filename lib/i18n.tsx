@@ -101,7 +101,7 @@ const oEn = {
       "missing_concept": "Name, Concept, Ambition, or Desire missing.",
       "missing_clan": "Clan not selected.",
       "error_attributes": "Attributes must sum to 22.",
-      "error_skills": "Skills distribution incomplete (min 22 points).",
+      "error_skills": "Skills distribution must follow one of the three paths.",
       "missing_predator": "Predator Type not selected.",
       "error_disciplines": "Select at least 2 Discipline dots (+ Predator adds).",
       "error_advantages": "Spend 7 points on Advantages.",
@@ -219,6 +219,15 @@ const oEn = {
   "skills": {
     "title": "Distribute Skills",
     "subtitle": "Click on Skills to assign values from the point pool.",
+    "paths": {
+        "title": "Skill Path",
+        "detected": "Detected Path: {{path}}",
+        "none": "No valid path detected",
+        "multiple": "Valid Paths: {{paths}}",
+        "jackOfAllTrades": "Jack of all Trades",
+        "balanced": "Balanced",
+        "specialist": "Specialist"
+    },
     "list": {
       "Athletics": "Athletics",
       "Brawl": "Brawl",
@@ -1133,7 +1142,7 @@ const oPt = {
       "missing_concept": "Nome, Conceito, Ambição ou Desejo faltando.",
       "missing_clan": "Clã não selecionado.",
       "error_attributes": "Atributos devem somar 22.",
-      "error_skills": "Distribuição de perícias incompleta.",
+      "error_skills": "A distribuição de perícias deve seguir uma das três trilhas.",
       "missing_predator": "Tipo de Predador não selecionado.",
       "error_disciplines": "Selecione pelo menos 2 pontos em Disciplinas.",
       "error_advantages": "Gaste 7 pontos em Vantagens.",
@@ -1242,6 +1251,15 @@ const oPt = {
   "skills": {
     "title": "Distribua Perícias",
     "subtitle": "Clique nas Perícias para atribuir valores da reserva de pontos.",
+    "paths": {
+        "title": "Trilha de Perícias",
+        "detected": "Trilha Detectada: {{path}}",
+        "none": "Nenhuma trilha válida detectada",
+        "multiple": "Trilhas Válidas: {{paths}}",
+        "jackOfAllTrades": "Faz tudo",
+        "balanced": "Equilibrado",
+        "specialist": "Especialista"
+    },
     "list": {
       "Athletics": "Atletismo", "Brawl": "Briga", "Craft": "Ofícios", "Drive": "Condução", "Firearms": "Armas de Fogo",
       "Larceny": "Ladinagem", "Melee": "Armas Brancas", "Stealth": "Furtividade", "Survival": "Sobrevivência",

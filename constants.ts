@@ -721,6 +721,12 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
 export const aAttributeList = Object.values(Attribute);
 export const aSkillList = Object.values(Skill);
 
+export const oSkillPaths = {
+    jackOfAllTrades: [3, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    balanced: [3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1],
+    specialist: [4, 3, 3, 3, 2, 2, 2, 1, 1, 1]
+};
+
 export const aMandatorySpecialtySkills = [Skill.Craft, Skill.Performance, Skill.Academics, Skill.Science];
 
 export const oInitialCharacter: Character = {
