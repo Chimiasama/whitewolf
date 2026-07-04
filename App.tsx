@@ -852,7 +852,7 @@ const App: React.FC = () => {
                     const oLoaded = JSON.parse(sData);
                     fnSetCharacter(oLoaded);
                     setView('creator');
-                    fnSetStep(6);
+                    fnSetStep(aSteps.length);
                     fnShowNotification(fnT('storage.loadSuccess') || `Character '${sName}' loaded.`);
                 } catch (e) {
                     console.error("Failed to parse save", e);
@@ -905,7 +905,7 @@ const App: React.FC = () => {
                 const oLoaded = JSON.parse(event.target?.result as string);
                 fnSetCharacter(oLoaded);
                 setView('creator');
-                fnSetStep(6);
+                fnSetStep(aSteps.length);
                 fnShowNotification("Character imported from JSON.");
             } catch (err) {
                 console.error(err);
@@ -1333,11 +1333,12 @@ const App: React.FC = () => {
 
                                     return aAllDiscs.map(sDisc => {
                                         const nDots = oCharacter.disciplines[sDisc] || 0;
+                                        const oDetails = oDisciplineDetails[sDisc];
                                         return (
                                             <div key={sDisc} className="bg-gray-800 p-4 rounded-lg border border-gray-700 min-w-0">
                                                 <div className="flex flex-wrap justify-between items-center gap-3 mb-2">
                                                     <div className="flex flex-col">
-                                                        <h4 className="font-bold text-gray-200 break-words">{oDisciplineDetails[sDisc]?.name || sDisc}</h4>
+                                                        <h4 className="font-bold text-gray-200 break-words">{oDetails?.name || sDisc}</h4>
                                                         {!aBaseDiscs.includes(sDisc) && (
                                                             <span className="text-[9px] uppercase text-gray-500 font-bold">{fnT('common.unknown')}</span>
                                                         )}
@@ -1350,18 +1351,18 @@ const App: React.FC = () => {
                                                                     const nNewVal = nDots === n ? 0 : n;
                                                                     fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [sDisc]: nNewVal });
                                                                 }}
-                                                                className={`w-4 h-4 rounded-full border border-gray-500 ${nDots >= n ? (bIsWerewolf ? 'bg-green-500' : 'bg-red-500') : 'bg-gray-900'}`}
+                                                                className={`w-4 h-4 rounded-full border border-gray-500 transition-all duration-200 ${nDots >= n ? (bIsWerewolf ? 'bg-green-600 border-green-400 shadow-[0_0_8px_rgba(34,197,94,0.4)]' : 'bg-red-600 border-red-400 shadow-[0_0_8px_rgba(220,38,38,0.4)]') : 'bg-gray-900 hover:border-gray-300'}`}
                                                             />
                                                         ))}
                                                     </div>
                                                 </div>
-                                                {nDots > 0 && oDisciplineDetails[sDisc] && (
+                                                {nDots > 0 && oDetails && (
                                                     <DisciplinePowerSelector
                                                         disciplineKey={sDisc}
                                                         dots={nDots}
                                                         selectedPowerIds={oCharacter.disciplinePowers[sDisc] || []}
                                                         onSelectPowers={(ids) => fnUpdateCharacter('disciplinePowers', { ...oCharacter.disciplinePowers, [sDisc]: ids })}
-                                                        disciplineDetails={oDisciplineDetails[sDisc]}
+                                                        disciplineDetails={oDetails}
                                                     />
                                                 )}
                                                 {!aBaseDiscs.includes(sDisc) && nDots === 0 && (
