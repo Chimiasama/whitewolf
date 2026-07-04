@@ -727,6 +727,11 @@ export const oSkillPaths = {
     specialist: [4, 3, 3, 3, 2, 2, 2, 1, 1, 1]
 };
 
+export const oDisciplineCreationPools = {
+    [GameType.Vampire]: [2, 1],
+    [GameType.Werewolf]: [1, 1, 1]
+};
+
 export const aMandatorySpecialtySkills = [Skill.Craft, Skill.Performance, Skill.Academics, Skill.Science];
 
 export const oInitialCharacter: Character = {

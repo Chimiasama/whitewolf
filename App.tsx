@@ -1,7 +1,7 @@
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, Specialty, DisciplinePower, DisciplineCombo, GameType, Tribe, Auspice } from './types';
-import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetDisciplineCombos, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths } from './constants';
+import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetDisciplineCombos, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths, oDisciplineCreationPools } from './constants';
 import { Card } from './components/ui/Card';
 import { Button } from './components/ui/Button';
 import { Input, TextArea } from './components/ui/Input';
@@ -767,6 +767,86 @@ const App: React.FC = () => {
     const [oNotification, fnSetNotification] = useState<{message: string, type: 'success' | 'error'} | null>(null);
     const [oActiveDetail, fnSetActiveDetail] = useState<{title: string, content: React.ReactNode} | null>(null);
 
+    const bIsStepValid = useMemo(() => {
+        const sStepId = aSteps[nStep - 1]?.id;
+        if (!sStepId) return true;
+
+        switch (sStepId) {
+            case 'game':
+                return !!oCharacter.gameType;
+            case 'concept':
+                return !!(oCharacter.name && oCharacter.concept && oCharacter.ambition && oCharacter.desire);
+            case 'clan':
+                return !!oCharacter.clan;
+            case 'tribe':
+                return !!oCharacter.tribe;
+            case 'auspice':
+                return !!oCharacter.auspice;
+            case 'attributes':
+                const nAttrSum = (Object.values(oCharacter.attributes) as number[]).reduce((acc, val) => acc + val, 0);
+                return nAttrSum === 22; // Values: 4, 3, 3, 3, 2, 2, 2, 2, 1
+            case 'skills':
+                const aCurrentSkills = (Object.values(oCharacter.skills) as number[]).filter(v => v > 0).sort((a, b) => b - a);
+                return Object.values(oSkillPaths).some(aPathDots => {
+                    if (aCurrentSkills.length !== aPathDots.length) return false;
+                    const aSortedPath = [...aPathDots].sort((a, b) => b - a);
+                    return aCurrentSkills.every((v, i) => v === aSortedPath[i]);
+                });
+            case 'finishing':
+                const bIsVampire = oCharacter.gameType === GameType.Vampire;
+
+                // Advantages/Flaws
+                const nAdvSum = oCharacter.advantages.reduce((acc, val) => acc + val.cost, 0);
+                const nFlawSum = oCharacter.flaws.reduce((acc, val) => acc + val.cost, 0);
+                if (nAdvSum < 7 || nFlawSum < 2) return false;
+
+                // Specialties
+                if (oCharacter.specialties.length === 0) return false;
+
+                if (bIsVampire) {
+                    if (!oCharacter.predatorType) return false;
+
+                    // Disciplines check
+                    const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
+                    const oDiscs = { ...oCharacter.disciplines };
+
+                    // Subtract predator bonus
+                    if (oPredatorType?.disciplineAdd) {
+                        const d = oPredatorType.disciplineAdd.discipline;
+                        if (oDiscs[d]) oDiscs[d] -= oPredatorType.disciplineAdd.dots;
+                        if (oDiscs[d] === 0) delete oDiscs[d];
+                    }
+
+                    const aRemaining = Object.entries(oDiscs).filter(([_, v]) => v > 0);
+                    if (aRemaining.length === 1) {
+                         // Must have spent 2 and 1 in same discipline? (not standard but possible if 1+2=3)
+                         const [name, val] = aRemaining[0];
+                         if (val !== 3) return false;
+                         // Check if clan discipline
+                         const oClan = fnGetClanDetails(fnT)[oCharacter.clan as Clan];
+                         if (oCharacter.clan !== Clan.Caitiff && !oClan?.disciplines.includes(name)) return false;
+                    } else if (aRemaining.length === 2) {
+                        const sorted = aRemaining.map(([_, v]) => v).sort((a, b) => b - a);
+                        if (sorted[0] !== 2 || sorted[1] !== 1) return false;
+
+                        // The 2-dot one must be Clan
+                        const oClan = fnGetClanDetails(fnT)[oCharacter.clan as Clan];
+                        const sTwoDotDisc = aRemaining.find(([_, v]) => v === 2)?.[0];
+                        if (oCharacter.clan !== Clan.Caitiff && sTwoDotDisc && !oClan?.disciplines.includes(sTwoDotDisc)) return false;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    // Werewolf Gifts
+                    const nGiftDots = (Object.values(oCharacter.disciplines) as number[]).reduce((acc, val) => acc + val, 0);
+                    if (nGiftDots !== 3) return false;
+                }
+                return true;
+            default:
+                return true;
+        }
+    }, [oCharacter, nStep, fnT]);
+
     useEffect(() => {
         if (!oCharacter.name) {
             const oIdentity = fnGenerateIdentity(sLocale, oCharacter.gameType); 
@@ -1352,25 +1432,58 @@ const App: React.FC = () => {
                             {/* Point Pool Indicator */}
                             <div className="mb-6 flex flex-col items-center p-4 bg-gray-900/50 rounded-lg border border-gray-700">
                                 {(() => {
-                                    const nTotalDots = (Object.values(oCharacter.disciplines) as number[]).reduce((acc: number, val: number) => acc + (val || 0), 0);
                                     const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
-                                    const nExpectedDots = 3 + (oPredatorType?.disciplineAdd ? oPredatorType.disciplineAdd.dots : 0);
-                                    const bIsComplete = nTotalDots >= nExpectedDots;
+                                    const aCreationPool = oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
+
+                                    const oDiscs = { ...oCharacter.disciplines };
+                                    if (oPredatorType?.disciplineAdd) {
+                                        const d = oPredatorType.disciplineAdd.discipline;
+                                        if (oDiscs[d]) oDiscs[d] -= oPredatorType.disciplineAdd.dots;
+                                        if (oDiscs[d] === 0) delete oDiscs[d];
+                                    }
+
+                                    const aAssigned = Object.values(oDiscs).filter(v => v > 0);
+                                    const aSortedPool = [...aCreationPool].sort((a, b) => b - a);
+
+                                    const oUsage = aSortedPool.reduce((acc, val) => {
+                                        acc[val] = (acc[val] || 0) + 1;
+                                        return acc;
+                                    }, {} as Record<number, number>);
+
+                                    const oUsed = aAssigned.reduce((acc, val) => {
+                                        acc[val] = (acc[val] || 0) + 1;
+                                        return acc;
+                                    }, {} as Record<number, number>);
+
+                                    const bIsComplete = aSortedPool.every(val => (oUsed[val] || 0) >= (oUsage[val] || 0));
 
                                     return (
                                         <>
                                             <span className={`text-xs font-bold uppercase tracking-widest mb-2 ${bIsComplete ? 'text-green-500' : 'text-red-400'}`}>
-                                                {fnT('common.poolDistribution')}: {nTotalDots} / {nExpectedDots} {fnT('common.value')}
+                                                {fnT('common.poolDistribution')}
+                                                {bIsComplete && <CheckCircle />}
                                             </span>
-                                            <div className="flex gap-2">
-                                                {[...Array(nExpectedDots)].map((_, i) => (
-                                                    <div
-                                                        key={i}
-                                                        className={`w-3 h-3 rounded-full border ${i < (nTotalDots as number) ? (bIsWerewolf ? 'bg-green-600 border-green-400 shadow-[0_0_8px_rgba(34,197,94,0.4)]' : 'bg-red-600 border-red-400 shadow-[0_0_8px_rgba(220,38,38,0.4)]') : 'bg-gray-800 border-gray-600'}`}
-                                                    ></div>
-                                                ))}
-                                                {(nTotalDots as number) > nExpectedDots && (
-                                                     <div className="ml-2 text-xs text-yellow-500 font-bold">+{(nTotalDots as number) - nExpectedDots}</div>
+                                            <div className="flex gap-4">
+                                                {Object.keys(oUsage).sort((a, b) => parseInt(b) - parseInt(a)).map(k => {
+                                                    const val = parseInt(k);
+                                                    const total = oUsage[val];
+                                                    const used = Math.min(total, oUsed[val] || 0);
+                                                    return (
+                                                        <div key={val} className="flex flex-col items-center">
+                                                            <span className="text-[10px] text-gray-500 mb-1">{val} DOTS</span>
+                                                            <div className="flex gap-1">
+                                                                {[...Array(total)].map((_, i) => (
+                                                                    <div key={i} className={`w-3 h-3 rounded-full border ${i < used ? (bIsWerewolf ? 'bg-green-600 border-green-400 shadow-[0_0_8px_rgba(34,197,94,0.4)]' : 'bg-red-600 border-red-400 shadow-[0_0_8px_rgba(220,38,38,0.4)]') : 'bg-gray-800 border-gray-600'}`}></div>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
+                                                {oPredatorType?.disciplineAdd && (
+                                                    <div className="flex flex-col items-center opacity-60">
+                                                        <span className="text-[10px] text-gray-500 mb-1">PREDATOR</span>
+                                                        <div className="w-3 h-3 rounded-full border bg-purple-600 border-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.4)]"></div>
+                                                    </div>
                                                 )}
                                             </div>
                                         </>
@@ -1400,26 +1513,77 @@ const App: React.FC = () => {
                                     return aAllDiscs.map(sDisc => {
                                         const nDots = oCharacter.disciplines[sDisc] || 0;
                                         const oDetails = oDisciplineDetails[sDisc];
+                                        const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
+                                        const bIsPredatorDisc = oPredatorType?.disciplineAdd?.discipline === sDisc;
+                                        const nPredatorDots = bIsPredatorDisc ? oPredatorType?.disciplineAdd?.dots || 0 : 0;
+
                                         return (
                                             <div key={sDisc} className="bg-gray-800 p-4 rounded-lg border border-gray-700 min-w-0">
                                                 <div className="flex flex-wrap justify-between items-center gap-3 mb-2">
                                                     <div className="flex flex-col">
                                                         <h4 className="font-bold text-gray-200 break-words">{oDetails?.name || sDisc}</h4>
-                                                        {!aBaseDiscs.includes(sDisc) && (
-                                                            <span className="text-[9px] uppercase text-gray-500 font-bold">{fnT('common.unknown')}</span>
-                                                        )}
+                                                        <div className="flex gap-1">
+                                                            {!aBaseDiscs.includes(sDisc) && (
+                                                                <span className="text-[9px] uppercase text-gray-500 font-bold">{fnT('common.unknown')}</span>
+                                                            )}
+                                                            {bIsPredatorDisc && (
+                                                                <span className="text-[9px] uppercase text-purple-500 font-bold">Predator Type</span>
+                                                            )}
+                                                        </div>
                                                     </div>
                                                     <div className="flex flex-shrink-0 space-x-1">
-                                                        {[1, 2, 3, 4, 5].map(n => (
+                                                        {[1, 2, 3, 4, 5].map(n => {
+                                                            const bIsPredatorFilled = n <= nPredatorDots;
+                                                            return (
                                                             <button
                                                                 key={n}
+                                                                disabled={bIsPredatorFilled}
                                                                 onClick={() => {
-                                                                    const nNewVal = nDots === n ? 0 : n;
-                                                                    fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [sDisc]: nNewVal });
+                                                                    const nNewVal = nDots === n ? nPredatorDots : n;
+
+                                                                    // Validation: Can only assign values from the pool
+                                                                    const aCreationPool = oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
+                                                                    const oCurrentDiscs = { ...oCharacter.disciplines, [sDisc]: nNewVal };
+                                                                    const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
+                                                                    if (oPredatorType?.disciplineAdd) {
+                                                                        const d = oPredatorType.disciplineAdd.discipline;
+                                                                        if (oCurrentDiscs[d]) oCurrentDiscs[d] -= oPredatorType.disciplineAdd.dots;
+                                                                        if (oCurrentDiscs[d] === 0) delete oCurrentDiscs[d];
+                                                                    }
+
+                                                                    const aAssigned = Object.values(oCurrentDiscs).filter(v => v > 0);
+                                                                    const aSortedPool = [...aCreationPool].sort((a, b) => b - a);
+
+                                                                    const oUsage = aSortedPool.reduce((acc, val) => {
+                                                                        acc[val] = (acc[val] || 0) + 1;
+                                                                        return acc;
+                                                                    }, {} as Record<number, number>);
+
+                                                                    const oUsed = aAssigned.reduce((acc, val) => {
+                                                                        acc[val] = (acc[val] || 0) + 1;
+                                                                        return acc;
+                                                                    }, {} as Record<number, number>);
+
+                                                                    // Total creation dots available
+                                                                    const nTotalCreationDots = aCreationPool.reduce((acc, v) => acc + v, 0);
+
+                                                                    // Check total creation dots spent including this change
+                                                                    const oNewDiscs = { ...oCharacter.disciplines, [sDisc]: nNewVal };
+                                                                    if (oPredatorType?.disciplineAdd) {
+                                                                        const d = oPredatorType.disciplineAdd.discipline;
+                                                                        if (oNewDiscs[d]) oNewDiscs[d] -= oPredatorType.disciplineAdd.dots;
+                                                                        if (oNewDiscs[d] === 0) delete oNewDiscs[d];
+                                                                    }
+
+                                                                    const nNewCreationSpent = Object.values(oNewDiscs).reduce((acc, v) => acc + (v || 0), 0);
+
+                                                                    if (nNewCreationSpent <= nTotalCreationDots || nNewVal <= nPredatorDots) {
+                                                                        fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [sDisc]: nNewVal });
+                                                                    }
                                                                 }}
-                                                                className={`w-4 h-4 rounded-full border border-gray-500 transition-all duration-200 ${nDots >= n ? (bIsWerewolf ? 'bg-green-600 border-green-400 shadow-[0_0_8px_rgba(34,197,94,0.4)]' : 'bg-red-600 border-red-400 shadow-[0_0_8px_rgba(220,38,38,0.4)]') : 'bg-gray-900 hover:border-gray-300'}`}
+                                                                className={`w-4 h-4 rounded-full border border-gray-500 transition-all duration-200 ${nDots >= n ? (bIsPredatorFilled ? 'bg-purple-600 border-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.4)]' : bIsWerewolf ? 'bg-green-600 border-green-400 shadow-[0_0_8px_rgba(34,197,94,0.4)]' : 'bg-red-600 border-red-400 shadow-[0_0_8px_rgba(220,38,38,0.4)]') : 'bg-gray-900 hover:border-gray-300'}`}
                                                             />
-                                                        ))}
+                                                        )})}
                                                     </div>
                                                 </div>
                                                 {nDots > 0 && oDetails && (
@@ -2106,7 +2270,16 @@ const App: React.FC = () => {
                 </div>
             </header>
             <main className="flex-grow p-3 sm:p-4 md:p-8 max-w-6xl mx-auto w-full min-w-0 overflow-x-hidden">
-                <StepIndicator currentStep={nStep} totalSteps={aSteps.length} steps={aSteps} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                <StepIndicator
+                    currentStep={nStep}
+                    totalSteps={aSteps.length}
+                    steps={aSteps}
+                    isWerewolf={oCharacter.gameType === GameType.Werewolf}
+                    onStepClick={(s) => {
+                        if (s <= nStep) fnSetStep(s);
+                        else if (s === nStep + 1 && bIsStepValid) fnSetStep(s);
+                    }}
+                />
                 <div className="mt-6 sm:mt-8 animate-fadeIn min-w-0 overflow-hidden">
                     {renderStepContent()}
                 </div>
@@ -2118,7 +2291,12 @@ const App: React.FC = () => {
                     {nStep < aSteps.length ? (
                         <div className="flex flex-wrap justify-end gap-2 sm:gap-4">
                             <Button variant="secondary" onClick={() => fnSetStep(aSteps.length)}>{fnT('buttons.jumpToSheet')}</Button>
-                            <Button onClick={() => fnSetStep(prev => Math.min(aSteps.length, prev + 1))}>{fnT('buttons.next')}</Button>
+                            <Button
+                                onClick={() => fnSetStep(prev => Math.min(aSteps.length, prev + 1))}
+                                disabled={!bIsStepValid}
+                            >
+                                {fnT('buttons.next')}
+                            </Button>
                         </div>
                     ) : (
                         <Button variant="secondary" onClick={() => window.print()}>{fnT('buttons.print') || 'Print'}</Button>
