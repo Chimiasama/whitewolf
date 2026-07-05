@@ -767,6 +767,28 @@ const App: React.FC = () => {
     const [oNotification, fnSetNotification] = useState<{message: string, type: 'success' | 'error'} | null>(null);
     const [oActiveDetail, fnSetActiveDetail] = useState<{title: string, content: React.ReactNode} | null>(null);
 
+    const aSteps = useMemo(() => {
+        const base = [
+            { id: 'game', label: fnT('steps.gameSelectionStep') },
+            { id: 'concept', label: fnT('steps.concept') }
+        ];
+        if (oCharacter.gameType === GameType.Vampire) {
+            base.push({ id: 'clan', label: fnT('steps.clan') });
+        } else {
+            base.push(
+                { id: 'tribe', label: fnT('steps.tribe') },
+                { id: 'auspice', label: fnT('steps.auspice') }
+            );
+        }
+        base.push(
+            { id: 'attributes', label: fnT('steps.attributes') },
+            { id: 'skills', label: fnT('steps.skills') },
+            { id: 'finishing', label: fnT('steps.finishingTouches') },
+            { id: 'sheet', label: fnT('steps.sheet') }
+        );
+        return base;
+    }, [fnT, oCharacter.gameType]);
+
     const bIsStepValid = useMemo(() => {
         const sStepId = aSteps[nStep - 1]?.id;
         if (!sStepId) return true;
@@ -845,7 +867,7 @@ const App: React.FC = () => {
             default:
                 return true;
         }
-    }, [oCharacter, nStep, fnT]);
+    }, [oCharacter, nStep, fnT, aSteps]);
 
     useEffect(() => {
         if (!oCharacter.name) {
@@ -905,28 +927,6 @@ const App: React.FC = () => {
             pool: aTotalPool.length > 0 ? aTotalPool : [0]
         };
     }, [oCharacter.skills]);
-
-    const aSteps = useMemo(() => {
-        const base = [
-            { id: 'game', label: fnT('steps.gameSelectionStep') },
-            { id: 'concept', label: fnT('steps.concept') }
-        ];
-        if (oCharacter.gameType === GameType.Vampire) {
-            base.push({ id: 'clan', label: fnT('steps.clan') });
-        } else {
-            base.push(
-                { id: 'tribe', label: fnT('steps.tribe') },
-                { id: 'auspice', label: fnT('steps.auspice') }
-            );
-        }
-        base.push(
-            { id: 'attributes', label: fnT('steps.attributes') },
-            { id: 'skills', label: fnT('steps.skills') },
-            { id: 'finishing', label: fnT('steps.finishingTouches') },
-            { id: 'sheet', label: fnT('steps.sheet') }
-        );
-        return base;
-    }, [fnT, oCharacter.gameType]);
 
     const fnUpdateCharacter = (field: keyof Character, value: any) => {
         fnSetCharacter(prev => ({ ...prev, [field]: value }));
