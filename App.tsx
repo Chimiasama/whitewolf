@@ -1117,13 +1117,13 @@ const App: React.FC = () => {
 
                             {oCharacter.clan && oClans[oCharacter.clan as Clan] ? (
                                 <GothicFrame className="text-left animate-fadeIn">
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                        <div className="md:col-span-2 space-y-4">
-                                            <div className="flex justify-between items-center border-b border-red-900/30 pb-4">
-                                                <h3 className="text-4xl font-cinzel text-red-500">{oClans[oCharacter.clan as Clan].name}</h3>
-                                                <div className="flex gap-2">
+                                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                        <div className="lg:col-span-2 space-y-4">
+                                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 border-b border-red-900/30 pb-4">
+                                                <h3 className="text-3xl sm:text-4xl font-cinzel text-red-500">{oClans[oCharacter.clan as Clan].name}</h3>
+                                                <div className="flex flex-col sm:flex-row flex-wrap gap-2 items-center sm:items-end justify-center sm:justify-end w-full sm:w-auto">
                                                     {oClans[oCharacter.clan as Clan].disciplines.map(d => (
-                                                        <span key={d} className="px-3 py-1 bg-red-900/20 border border-red-900/40 rounded text-xs text-red-400 font-bold uppercase tracking-widest">{d}</span>
+                                                        <span key={d} className="px-3 py-1 bg-red-900/20 border border-red-900/40 rounded text-xs text-red-400 font-bold uppercase tracking-widest w-full sm:w-auto text-center">{d}</span>
                                                     ))}
                                                 </div>
                                             </div>
@@ -1182,13 +1182,13 @@ const App: React.FC = () => {
 
                             {oCharacter.tribe && oTribes[oCharacter.tribe as Tribe] ? (
                                 <GothicFrame className="text-left animate-fadeIn border-emerald-900/30">
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                        <div className="md:col-span-2 space-y-4">
-                                            <div className="flex justify-between items-center border-b border-emerald-900/30 pb-4">
-                                                <h3 className="text-4xl font-cinzel text-emerald-500">{oTribes[oCharacter.tribe as Tribe].name}</h3>
-                                                <div className="flex gap-2">
+                                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                        <div className="lg:col-span-2 space-y-4">
+                                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 border-b border-emerald-900/30 pb-4">
+                                                <h3 className="text-3xl sm:text-4xl font-cinzel text-emerald-500">{oTribes[oCharacter.tribe as Tribe].name}</h3>
+                                                <div className="flex flex-col sm:flex-row flex-wrap gap-2 items-center sm:items-end justify-center sm:justify-end w-full sm:w-auto">
                                                     {oTribes[oCharacter.tribe as Tribe].gifts.map(g => (
-                                                        <span key={g} className="px-3 py-1 bg-emerald-900/20 border border-emerald-900/40 rounded text-xs text-emerald-400 font-bold uppercase tracking-widest">{g}</span>
+                                                        <span key={g} className="px-3 py-1 bg-emerald-900/20 border border-emerald-900/40 rounded text-xs text-emerald-400 font-bold uppercase tracking-widest w-full sm:w-auto text-center">{g}</span>
                                                     ))}
                                                 </div>
                                             </div>
