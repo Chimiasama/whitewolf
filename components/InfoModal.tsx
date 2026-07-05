@@ -28,14 +28,13 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
     // Broadcast change
     window.dispatchEvent(new CustomEvent('vtm_modal_count_change'));
 
-    const sOriginalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
     return () => {
       nGlobalModalCount--;
       window.dispatchEvent(new CustomEvent('vtm_modal_count_change'));
       if (nGlobalModalCount === 0) {
-        document.body.style.overflow = sOriginalOverflow || 'auto';
+        document.body.style.overflow = '';
       }
     };
   }, []);
@@ -63,7 +62,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
         aria-labelledby={`modal-title-${nMyIndex}`}
         className={`
           bg-gray-800 border border-red-800 rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col transition-transform duration-300
-          ${bIsTop ? 'scale-100 opacity-100' : 'scale-95 opacity-50'}
+          scale-100
         `}
         onClick={e => e.stopPropagation()}
       >

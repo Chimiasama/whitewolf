@@ -137,93 +137,6 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
     );
 };
 
-const CharacterSummary: React.FC<{ character: Character }> = ({ character: oCharacter }) => {
-    const { t: fnT } = useI18n();
-    
-    const aChecks = useMemo(() => {
-        const aList = [];
-        const bConceptValid = !!(oCharacter.name && oCharacter.concept && oCharacter.ambition && oCharacter.desire);
-        aList.push({ label: fnT('steps.concept'), isValid: bConceptValid, error: fnT('summary.missing_concept') });
-        
-        if (oCharacter.gameType === GameType.Vampire) {
-            const bClanValid = !!oCharacter.clan;
-            aList.push({ label: fnT('steps.clan'), isValid: bClanValid, error: fnT('summary.missing_clan') });
-        } else {
-            const bTribeValid = !!oCharacter.tribe;
-            aList.push({ label: fnT('steps.tribe'), isValid: bTribeValid, error: fnT('summary.missing_tribe') });
-            const bAuspiceValid = !!oCharacter.auspice;
-            aList.push({ label: fnT('steps.auspice'), isValid: bAuspiceValid, error: fnT('summary.missing_auspice') });
-        }
-
-        const nAttrSum = (Object.values(oCharacter.attributes) as number[]).reduce((nAcc: number, nVal: number) => nAcc + nVal, 0);
-        const bAttributesValid = nAttrSum >= 22;
-        aList.push({ label: fnT('steps.attributes'), isValid: bAttributesValid, error: fnT('summary.error_attributes') });
-        const aCurrentSkills = (Object.values(oCharacter.skills) as number[]).filter(v => v > 0).sort((a, b) => b - a);
-        const bSkillsValid = Object.values(oSkillPaths).some(aPathDots => {
-            if (aCurrentSkills.length !== aPathDots.length) return false;
-            const aSortedPath = [...aPathDots].sort((a, b) => b - a);
-            return aCurrentSkills.every((v, i) => v === aSortedPath[i]);
-        });
-        aList.push({ label: fnT('steps.skills'), isValid: bSkillsValid, error: fnT('summary.error_skills') });
-        
-        if (oCharacter.gameType === GameType.Vampire) {
-            const bPredatorValid = !!oCharacter.predatorType;
-            aList.push({ label: fnT('finishingTouches.predatorType.title'), isValid: bPredatorValid, error: fnT('summary.missing_predator') });
-        }
-
-        const nDisciplineDots = (Object.values(oCharacter.disciplines) as number[]).reduce((nAcc: number, nVal: number) => nAcc + nVal, 0);
-        const bDisciplinesValid = nDisciplineDots >= 3;
-        const nAdvSum = oCharacter.advantages.reduce((nAcc: number, oVal) => nAcc + oVal.cost, 0);
-        const nFlawSum = oCharacter.flaws.reduce((nAcc: number, oVal) => nAcc + oVal.cost, 0);
-        const bAdvantagesValid = nAdvSum >= 7;
-        const bFlawsValid = nFlawSum >= 2;
-        const bFinishingValid = bDisciplinesValid && bAdvantagesValid && bFlawsValid;
-        let sFinishingError = '';
-        if (!bDisciplinesValid) sFinishingError = oCharacter.gameType === GameType.Vampire ? fnT('summary.error_disciplines') : fnT('summary.error_gifts');
-        else if (!bAdvantagesValid) sFinishingError = fnT('summary.error_advantages');
-        else if (!bFlawsValid) sFinishingError = fnT('summary.error_flaws');
-        aList.push({ label: fnT('steps.finishingTouches'), isValid: bFinishingValid, error: sFinishingError });
-        return aList;
-    }, [oCharacter, fnT]);
-
-    const bAllValid = aChecks.every(c => c.isValid);
-
-    return (
-        <GothicFrame className="text-left mt-8">
-             <div className="p-6 bg-gray-800/50">
-                <div className="flex items-center mb-6">
-                    {bAllValid ? <CheckCircle /> : <ExclamationCircle />}
-                    <div className="ml-3">
-                        <h3 className="text-xl font-bold text-gray-200">{fnT('summary.title')}</h3>
-                        <p className="text-gray-400 text-sm">{bAllValid ? fnT('summary.readySubtitle') : fnT('summary.incompleteSubtitle')}</p>
-                    </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {aChecks.map((oCheck, nIdx) => (
-                        <div key={nIdx} className={`flex items-center p-3 rounded-lg border ${oCheck.isValid ? 'bg-green-900 bg-opacity-20 border-green-900' : 'bg-red-900 bg-opacity-20 border-red-900'}`}>
-                            <div className="flex-shrink-0 mr-3">
-                                {oCheck.isValid ? (
-                                    <svg className="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                ) : (
-                                    <svg className="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                )}
-                            </div>
-                            <div>
-                                <h4 className={`font-bold ${oCheck.isValid ? 'text-green-400' : 'text-red-400'}`}>{oCheck.label}</h4>
-                                {!oCheck.isValid && <p className="text-xs text-red-300 mt-1">{oCheck.error}</p>}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-             </div>
-        </GothicFrame>
-    );
-};
-
 interface StorageModalProps {
     mode: 'save' | 'load';
     onClose: () => void;
@@ -2138,7 +2051,6 @@ const App: React.FC = () => {
                             />
                         </GothicFrame>
 
-                        <CharacterSummary character={oCharacter} />
                     </div>
                 );
             case 'sheet':
@@ -2285,7 +2197,6 @@ const App: React.FC = () => {
                 <div className="mt-6 sm:mt-8 animate-fadeIn min-w-0 overflow-hidden">
                     {renderStepContent()}
                 </div>
-                {nStep < aSteps.length && <CharacterSummary character={oCharacter} />}
             </main>
             <footer className="bg-black border-t border-gray-800 p-3 sm:p-6 sticky bottom-0 z-40 overflow-hidden">
                 <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
