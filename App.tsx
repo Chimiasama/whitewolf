@@ -839,16 +839,16 @@ const App: React.FC = () => {
                         if (oDiscs[d] === 0) delete oDiscs[d];
                     }
 
-                    const aRemaining = Object.entries(oDiscs).filter(([_, v]) => v > 0);
+                    const aRemaining = Object.entries(oDiscs).filter(([_, v]) => (v as number) > 0);
                     if (aRemaining.length === 1) {
                          // Must have spent 2 and 1 in same discipline? (not standard but possible if 1+2=3)
                          const [name, val] = aRemaining[0];
-                         if (val !== 3) return false;
+                         if ((val as number) !== 3) return false;
                          // Check if clan discipline
                          const oClan = fnGetClanDetails(fnT)[oCharacter.clan as Clan];
                          if (oCharacter.clan !== Clan.Caitiff && !oClan?.disciplines.includes(name)) return false;
                     } else if (aRemaining.length === 2) {
-                        const sorted = aRemaining.map(([_, v]) => v).sort((a, b) => b - a);
+                        const sorted = aRemaining.map(([_, v]) => v as number).sort((a, b) => b - a);
                         if (sorted[0] !== 2 || sorted[1] !== 1) return false;
 
                         // The 2-dot one must be Clan
@@ -1442,7 +1442,7 @@ const App: React.FC = () => {
                                         if (oDiscs[d] === 0) delete oDiscs[d];
                                     }
 
-                                    const aAssigned = Object.values(oDiscs).filter(v => v > 0);
+                                    const aAssigned = Object.values(oDiscs).filter(v => (v as number) > 0);
                                     const aSortedPool = [...aCreationPool].sort((a, b) => b - a);
 
                                     const oUsage = aSortedPool.reduce((acc, val) => {
@@ -1451,7 +1451,8 @@ const App: React.FC = () => {
                                     }, {} as Record<number, number>);
 
                                     const oUsed = aAssigned.reduce((acc, val) => {
-                                        acc[val] = (acc[val] || 0) + 1;
+                                        const nVal = val as number;
+                                        acc[nVal] = (acc[nVal] || 0) + 1;
                                         return acc;
                                     }, {} as Record<number, number>);
 
@@ -1551,7 +1552,7 @@ const App: React.FC = () => {
                                                                         if (oCurrentDiscs[d] === 0) delete oCurrentDiscs[d];
                                                                     }
 
-                                                                    const aAssigned = Object.values(oCurrentDiscs).filter(v => v > 0);
+                                                                    const aAssigned = Object.values(oCurrentDiscs).filter(v => (v as number) > 0);
                                                                     const aSortedPool = [...aCreationPool].sort((a, b) => b - a);
 
                                                                     const oUsage = aSortedPool.reduce((acc, val) => {
@@ -1560,7 +1561,8 @@ const App: React.FC = () => {
                                                                     }, {} as Record<number, number>);
 
                                                                     const oUsed = aAssigned.reduce((acc, val) => {
-                                                                        acc[val] = (acc[val] || 0) + 1;
+                                                                        const nVal = val as number;
+                                                                        acc[nVal] = (acc[nVal] || 0) + 1;
                                                                         return acc;
                                                                     }, {} as Record<number, number>);
 
@@ -1575,9 +1577,9 @@ const App: React.FC = () => {
                                                                         if (oNewDiscs[d] === 0) delete oNewDiscs[d];
                                                                     }
 
-                                                                    const nNewCreationSpent = Object.values(oNewDiscs).reduce((acc, v) => acc + (v || 0), 0);
+                                                                    const nNewCreationSpent = Object.values(oNewDiscs).reduce((acc, v) => (acc as number) + (v as number || 0), 0);
 
-                                                                    if (nNewCreationSpent <= nTotalCreationDots || nNewVal <= nPredatorDots) {
+                                                                    if ((nNewCreationSpent as number) <= (nTotalCreationDots as number) || nNewVal <= nPredatorDots) {
                                                                         fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [sDisc]: nNewVal });
                                                                     }
                                                                 }}
