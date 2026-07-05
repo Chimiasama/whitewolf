@@ -1088,89 +1088,65 @@ const App: React.FC = () => {
             case 'clan':
                 {
                     const oClans = fnGetClanDetails(fnT);
+                    const aClanKeys = Object.keys(oClans) as Clan[];
                     return (
-                        <div className="text-center">
-                            <h2 className="text-3xl font-cinzel text-red-500 mb-6">{fnT('clan.title')}</h2>
-                            <LoreQuote text={fnT('lore.intro')} />
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {(Object.keys(oClans) as Clan[]).map(sClan => (
-                                    <div key={sClan} className="relative group">
-                                        <Card
-                                            className="text-left relative overflow-hidden h-full flex flex-col"
-                                            onClick={() => fnUpdateCharacter('clan', sClan)}
-                                            isSelected={oCharacter.clan === sClan}
-                                            variant="vampire"
-                                        >
-                                            <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
-                                                <RoseIcon className="w-24 h-24 text-red-900" />
-                                            </div>
-                                            <div className="flex justify-between items-start mb-1">
-                                                <h3 className="text-xl font-bold text-red-400">{oClans[sClan].name}</h3>
-                                                <InfoIcon onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    fnSetActiveDetail({
-                                                        title: oClans[sClan].name,
-                                                        content: (
-                                                            <div className="space-y-6 text-left">
-                                                                <p className="text-gray-300 leading-relaxed">{oClans[sClan].description}</p>
-                                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                                    <div className="bg-black/40 p-4 rounded-lg border border-red-900/30">
-                                                                        <h4 className="text-red-500 font-bold uppercase text-xs tracking-widest mb-2">{fnT('characterSheet.clanBane')}</h4>
-                                                                        <p className="text-sm text-gray-400">{oClans[sClan].bane}</p>
-                                                                    </div>
-                                                                    <div className="bg-black/40 p-4 rounded-lg border border-red-900/30">
-                                                                        <h4 className="text-red-500 font-bold uppercase text-xs tracking-widest mb-2">{fnT('characterSheet.clanCompulsion')}</h4>
-                                                                        <p className="text-sm text-gray-400">{oClans[sClan].compulsion}</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div>
-                                                                    <h4 className="text-red-500 font-bold uppercase text-xs tracking-widest mb-2">{fnT('steps.disciplines')}</h4>
-                                                                    <div className="flex flex-wrap gap-2">
-                                                                        {oClans[sClan].disciplines.map(d => (
-                                                                            <span key={d} className="px-3 py-1 bg-red-900/20 border border-red-900/40 rounded text-xs text-red-300 font-bold uppercase tracking-widest">{d}</span>
-                                                                        ))}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        )
-                                                    });
-                                                }} />
-                                            </div>
-                                            <p className="text-sm text-gray-300 mb-4 flex-grow line-clamp-3">{oClans[sClan].description}</p>
-                                            <div className="text-[10px] text-gray-500 space-y-1 mt-auto pt-2 border-t border-gray-800">
-                                                <p className="line-clamp-1"><strong>{fnT('characterSheet.clanBane')}:</strong> {oClans[sClan].bane}</p>
-                                            </div>
-                                        </Card>
-                                    </div>
-                                ))}
+                        <div className="text-center space-y-8">
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-cinzel text-red-500">{fnT('clan.title')}</h2>
+                                <LoreQuote text={fnT('lore.intro')} />
                             </div>
 
-                            {oCharacter.clan && oClans[oCharacter.clan] && (
-                                <GothicFrame className="mt-8 text-left border-red-900/30 bg-red-900/5">
-                                    <div className="flex flex-col md:flex-row gap-6">
-                                        <div className="flex-1">
-                                            <h3 className="text-2xl font-cinzel text-red-500 mb-2">{oClans[oCharacter.clan].name}</h3>
-                                            <p className="text-gray-300 italic mb-4">{oClans[oCharacter.clan].description}</p>
-                                            <div className="flex flex-wrap gap-2 mb-4">
-                                                {oClans[oCharacter.clan].disciplines.map(d => (
-                                                    <span key={d} className="px-2 py-1 bg-red-900/20 border border-red-900/40 rounded text-[10px] uppercase tracking-widest text-red-400 font-bold">
-                                                        {d}
-                                                    </span>
-                                                ))}
+                            <div className="bg-black/40 p-4 rounded-xl border border-red-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    {aClanKeys.map(sClan => (
+                                        <button
+                                            key={sClan}
+                                            onClick={() => fnUpdateCharacter('clan', sClan)}
+                                            className={`
+                                                px-4 py-2 rounded-lg border font-cinzel text-sm transition-all duration-300
+                                                ${oCharacter.clan === sClan
+                                                    ? 'bg-red-900 border-red-500 text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] scale-105'
+                                                    : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-red-800 hover:text-red-400'}
+                                            `}
+                                        >
+                                            {oClans[sClan].name}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {oCharacter.clan && oClans[oCharacter.clan as Clan] ? (
+                                <GothicFrame className="text-left animate-fadeIn">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                        <div className="md:col-span-2 space-y-4">
+                                            <div className="flex justify-between items-center border-b border-red-900/30 pb-4">
+                                                <h3 className="text-4xl font-cinzel text-red-500">{oClans[oCharacter.clan as Clan].name}</h3>
+                                                <div className="flex gap-2">
+                                                    {oClans[oCharacter.clan as Clan].disciplines.map(d => (
+                                                        <span key={d} className="px-3 py-1 bg-red-900/20 border border-red-900/40 rounded text-xs text-red-400 font-bold uppercase tracking-widest">{d}</span>
+                                                    ))}
+                                                </div>
                                             </div>
+                                            <p className="text-gray-300 leading-relaxed italic text-lg">{oClans[oCharacter.clan as Clan].description}</p>
                                         </div>
-                                        <div className="flex-1 space-y-4 border-t md:border-t-0 md:border-l border-red-900/20 pt-4 md:pt-0 md:pl-6">
-                                            <div>
-                                                <h4 className="text-red-400 font-bold uppercase text-xs tracking-widest mb-1">{fnT('characterSheet.clanBane')}</h4>
-                                                <p className="text-sm text-gray-400">{oClans[oCharacter.clan].bane}</p>
+
+                                        <div className="space-y-6 bg-black/40 p-6 rounded-xl border border-red-900/20">
+                                            <div className="space-y-2">
+                                                <h4 className="text-red-500 font-bold uppercase text-xs tracking-[0.2em]">{fnT('characterSheet.clanBane')}</h4>
+                                                <p className="text-sm text-gray-400 leading-relaxed">{oClans[oCharacter.clan as Clan].bane}</p>
                                             </div>
-                                            <div>
-                                                <h4 className="text-red-400 font-bold uppercase text-xs tracking-widest mb-1">{fnT('characterSheet.clanCompulsion')}</h4>
-                                                <p className="text-sm text-gray-400">{oClans[oCharacter.clan].compulsion}</p>
+                                            <div className="space-y-2">
+                                                <h4 className="text-red-500 font-bold uppercase text-xs tracking-[0.2em]">{fnT('characterSheet.clanCompulsion')}</h4>
+                                                <p className="text-sm text-gray-400 leading-relaxed">{oClans[oCharacter.clan as Clan].compulsion}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </GothicFrame>
+                            ) : (
+                                <div className="py-20 flex flex-col items-center justify-center opacity-30">
+                                    <RoseIcon className="w-32 h-32 text-red-900 animate-pulse" />
+                                    <p className="text-red-800 font-cinzel mt-4 tracking-widest">Selecione um Clã para ver detalhes</p>
+                                </div>
                             )}
                         </div>
                     );
@@ -1178,91 +1154,112 @@ const App: React.FC = () => {
             case 'tribe':
                 {
                     const oTribes = fnGetTribeDetails(fnT);
+                    const aTribeKeys = Object.keys(oTribes) as Tribe[];
                     return (
-                        <div className="space-y-8">
-                            <div>
-                                <h3 className="text-xl font-bold text-green-500 mb-4">{fnT('steps.tribe')}</h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                    {(Object.keys(oTribes) as Tribe[]).map(sTribe => {
-                                        const sKey = sTribe.toLowerCase().replace(/\s/g, '');
-                                        return (
-                                            <Card 
-                                                key={sTribe} 
-                                                className="text-left relative overflow-hidden h-full flex flex-col group"
-                                                onClick={() => fnUpdateCharacter('tribe', sTribe)}
-                                                isSelected={oCharacter.tribe === sTribe}
-                                                variant="werewolf"
-                                            >
-                                                <div className="flex justify-between items-start mb-2">
-                                                    <h4 className="font-bold text-green-500">{oTribes[sTribe].name}</h4>
-                                                    <InfoIcon onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        fnSetActiveDetail({
-                                                            title: oTribes[sTribe].name,
-                                                            content: (
-                                                                <div className="space-y-6 text-left">
-                                                                    <p className="text-gray-300 leading-relaxed">{oTribes[sTribe].description}</p>
-                                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                                        <div className="bg-black/40 p-4 rounded-lg border border-emerald-900/30">
-                                                                            <h4 className="text-emerald-500 font-bold uppercase text-xs tracking-widest mb-2">Favor</h4>
-                                                                            <p className="text-sm text-gray-400">{fnT(`tribes.${sKey}.favor`)}</p>
-                                                                        </div>
-                                                                        <div className="bg-black/40 p-4 rounded-lg border border-red-900/30">
-                                                                            <h4 className="text-red-500 font-bold uppercase text-xs tracking-widest mb-2">Bane</h4>
-                                                                            <p className="text-sm text-gray-400">{fnT(`tribes.${sKey}.bane`)}</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div>
-                                                                        <h4 className="text-emerald-500 font-bold uppercase text-xs tracking-widest mb-2">{fnT('characterSheet.gifts')}</h4>
-                                                                        <div className="flex flex-wrap gap-2">
-                                                                            {oTribes[sTribe].gifts.map(g => (
-                                                                                <span key={g} className="px-3 py-1 bg-emerald-900/20 border border-emerald-900/40 rounded text-xs text-emerald-300 font-bold uppercase tracking-widest">{g}</span>
-                                                                            ))}
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            )
-                                                        });
-                                                    }} />
-                                                </div>
-                                                <p className="text-xs text-gray-300 mb-3 line-clamp-3 flex-grow">{oTribes[sTribe].description}</p>
-                                                <div className="text-[10px] border-t border-gray-800 pt-2 space-y-1 mt-auto">
-                                                    <p className="line-clamp-1"><span className="text-green-600 font-bold uppercase">Favor:</span> <span className="text-gray-500">{fnT(`tribes.${sKey}.favor`)}</span></p>
-                                                    <p className="line-clamp-1"><span className="text-red-600 font-bold uppercase">Bane:</span> <span className="text-gray-500">{fnT(`tribes.${sKey}.bane`)}</span></p>
-                                                </div>
-                                            </Card>
-                                        );
-                                    })}
+                        <div className="text-center space-y-8">
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-cinzel text-emerald-500">{fnT('steps.tribe')}</h2>
+                            </div>
+
+                            <div className="bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    {aTribeKeys.map(sTribe => (
+                                        <button
+                                            key={sTribe}
+                                            onClick={() => fnUpdateCharacter('tribe', sTribe)}
+                                            className={`
+                                                px-4 py-2 rounded-lg border font-cinzel text-sm transition-all duration-300
+                                                ${oCharacter.tribe === sTribe
+                                                    ? 'bg-emerald-900 border-emerald-500 text-white shadow-[0_0_15px_rgba(16,185,129,0.4)] scale-105'
+                                                    : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-emerald-800 hover:text-emerald-400'}
+                                            `}
+                                        >
+                                            {oTribes[sTribe].name}
+                                        </button>
+                                    ))}
                                 </div>
                             </div>
+
+                            {oCharacter.tribe && oTribes[oCharacter.tribe as Tribe] ? (
+                                <GothicFrame className="text-left animate-fadeIn border-emerald-900/30">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                        <div className="md:col-span-2 space-y-4">
+                                            <div className="flex justify-between items-center border-b border-emerald-900/30 pb-4">
+                                                <h3 className="text-4xl font-cinzel text-emerald-500">{oTribes[oCharacter.tribe as Tribe].name}</h3>
+                                                <div className="flex gap-2">
+                                                    {oTribes[oCharacter.tribe as Tribe].gifts.map(g => (
+                                                        <span key={g} className="px-3 py-1 bg-emerald-900/20 border border-emerald-900/40 rounded text-xs text-emerald-400 font-bold uppercase tracking-widest">{g}</span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            <p className="text-gray-300 leading-relaxed italic text-lg">{oTribes[oCharacter.tribe as Tribe].description}</p>
+                                        </div>
+
+                                        <div className="space-y-6 bg-black/40 p-6 rounded-xl border border-emerald-900/20">
+                                            <div className="space-y-2">
+                                                <h4 className="text-emerald-500 font-bold uppercase text-xs tracking-[0.2em]">Favor</h4>
+                                                <p className="text-sm text-gray-400 leading-relaxed">{oTribes[oCharacter.tribe as Tribe].favor}</p>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <h4 className="text-red-500 font-bold uppercase text-xs tracking-[0.2em]">Bane</h4>
+                                                <p className="text-sm text-gray-400 leading-relaxed">{oTribes[oCharacter.tribe as Tribe].bane}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </GothicFrame>
+                            ) : (
+                                <div className="py-20 flex flex-col items-center justify-center opacity-30">
+                                    <ClawIcon className="w-32 h-32 text-emerald-900 animate-pulse" />
+                                    <p className="text-emerald-800 font-cinzel mt-4 tracking-widest">Selecione uma Tribo para ver detalhes</p>
+                                </div>
+                            )}
                         </div>
                     );
                 }
             case 'auspice':
                 {
                     const oAuspices = fnGetAuspiceDetails(fnT);
+                    const aAuspiceKeys = Object.keys(oAuspices) as Auspice[];
                     return (
-                        <div className="space-y-8">
-                            <div>
-                                <h3 className="text-xl font-bold text-green-500 mb-4">{fnT('steps.auspice')}</h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                    {(Object.keys(oAuspices) as Auspice[]).map(sAuspice => {
-                                        const sKey = sAuspice.toLowerCase().replace(/\s/g, '');
-                                        return (
-                                            <Card 
-                                                key={sAuspice} 
-                                                className="text-left relative overflow-hidden group"
-                                                onClick={() => fnUpdateCharacter('auspice', sAuspice)}
-                                                isSelected={oCharacter.auspice === sAuspice}
-                                                variant="werewolf"
-                                            >
-                                                <h4 className="font-bold text-green-500 mb-2">{oAuspices[sAuspice].name}</h4>
-                                                <p className="text-xs text-gray-300 line-clamp-4">{oAuspices[sAuspice].description}</p>
-                                            </Card>
-                                        );
-                                    })}
+                        <div className="text-center space-y-8">
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-cinzel text-emerald-500">{fnT('steps.auspice')}</h2>
+                            </div>
+
+                            <div className="bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    {aAuspiceKeys.map(sAuspice => (
+                                        <button
+                                            key={sAuspice}
+                                            onClick={() => fnUpdateCharacter('auspice', sAuspice)}
+                                            className={`
+                                                px-4 py-2 rounded-lg border font-cinzel text-sm transition-all duration-300
+                                                ${oCharacter.auspice === sAuspice
+                                                    ? 'bg-emerald-900 border-emerald-500 text-white shadow-[0_0_15px_rgba(16,185,129,0.4)] scale-105'
+                                                    : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-emerald-800 hover:text-emerald-400'}
+                                            `}
+                                        >
+                                            {oAuspices[sAuspice].name}
+                                        </button>
+                                    ))}
                                 </div>
                             </div>
+
+                            {oCharacter.auspice && oAuspices[oCharacter.auspice as Auspice] ? (
+                                <GothicFrame className="text-left animate-fadeIn border-emerald-900/30">
+                                    <div className="space-y-4">
+                                        <div className="flex justify-between items-center border-b border-emerald-900/30 pb-4">
+                                            <h3 className="text-4xl font-cinzel text-emerald-500">{oAuspices[oCharacter.auspice as Auspice].name}</h3>
+                                        </div>
+                                        <p className="text-gray-300 leading-relaxed italic text-lg">{oAuspices[oCharacter.auspice as Auspice].description}</p>
+                                    </div>
+                                </GothicFrame>
+                            ) : (
+                                <div className="py-20 flex flex-col items-center justify-center opacity-30">
+                                    <WolfCubIcon className="w-32 h-32 text-emerald-900 animate-pulse" />
+                                    <p className="text-emerald-800 font-cinzel mt-4 tracking-widest">Selecione um Augúrio para ver detalhes</p>
+                                </div>
+                            )}
                         </div>
                     );
                 }
