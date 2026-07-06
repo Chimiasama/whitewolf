@@ -37,6 +37,9 @@ export enum Clan {
   BanuHaqim = "banuhaqim",
   TheMinistry = "theministry",
   Lasombra = "lasombra",
+  Ravnos = "ravnos",
+  Salubri = "salubri",
+  Tzimisce = "tzimisce",
   Caitiff = "caitiff",
   ThinBlood = "thinblood"
 }

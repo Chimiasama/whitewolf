@@ -36,6 +36,9 @@ export const fnGetClanDetails = (fnT: TFunction): Record<Clan, { name: string; d
     [Clan.BanuHaqim]: { name: fnT('clans.banuhaqim.name'), description: fnT('clans.banuhaqim.description'), disciplines: ["bloodsorcery", "celerity", "obfuscate"], bane: fnT('clans.banuhaqim.bane'), compulsion: fnT('clans.banuhaqim.compulsion') },
     [Clan.TheMinistry]: { name: fnT('clans.theministry.name'), description: fnT('clans.theministry.description'), disciplines: ["obfuscate", "presence", "protean"], bane: fnT('clans.theministry.bane'), compulsion: fnT('clans.theministry.compulsion') },
     [Clan.Lasombra]: { name: fnT('clans.lasombra.name'), description: fnT('clans.lasombra.description'), disciplines: ["dominate", "oblivion", "potence"], bane: fnT('clans.lasombra.bane'), compulsion: fnT('clans.lasombra.compulsion') },
+    [Clan.Ravnos]: { name: fnT('clans.ravnos.name'), description: fnT('clans.ravnos.description'), disciplines: ["animalism", "obfuscate", "presence"], bane: fnT('clans.ravnos.bane'), compulsion: fnT('clans.ravnos.compulsion') },
+    [Clan.Salubri]: { name: fnT('clans.salubri.name'), description: fnT('clans.salubri.description'), disciplines: ["auspex", "dominate", "fortitude"], bane: fnT('clans.salubri.bane'), compulsion: fnT('clans.salubri.compulsion') },
+    [Clan.Tzimisce]: { name: fnT('clans.tzimisce.name'), description: fnT('clans.tzimisce.description'), disciplines: ["animalism", "dominate", "protean"], bane: fnT('clans.tzimisce.bane'), compulsion: fnT('clans.tzimisce.compulsion') },
     [Clan.Caitiff]: { name: fnT('clans.caitiff.name'), description: fnT('clans.caitiff.description'), disciplines: [], bane: fnT('clans.caitiff.bane'), compulsion: fnT('clans.caitiff.compulsion') },
     [Clan.ThinBlood]: { name: fnT('clans.thinblood.name'), description: fnT('clans.thinblood.description'), disciplines: ["thinbloodalchemy"], bane: fnT('clans.thinblood.bane'), compulsion: fnT('clans.thinblood.compulsion') }
 });
