@@ -4,40 +4,40 @@ import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail
 type TFunction = (key: string) => string;
 
 export const fnGetTribeDetails = (fnT: TFunction): Record<Tribe, { name: string; description: string; gifts: string[]; bane: string; favor: string; }> => ({
-    [Tribe.BlackFuries]: { name: fnT('tribes.blackfuries.name'), description: fnT('tribes.blackfuries.description'), gifts: ["Black Furies Gifts", "Innate Gifts"], bane: fnT('tribes.blackfuries.bane'), favor: fnT('tribes.blackfuries.favor') },
-    [Tribe.BoneGnawers]: { name: fnT('tribes.bonegnawers.name'), description: fnT('tribes.bonegnawers.description'), gifts: ["Bone Gnawers Gifts", "Innate Gifts"], bane: fnT('tribes.bonegnawers.bane'), favor: fnT('tribes.bonegnawers.favor') },
-    [Tribe.ChildrenOfGaia]: { name: fnT('tribes.childrenofgaia.name'), description: fnT('tribes.childrenofgaia.description'), gifts: ["Children of Gaia Gifts", "Innate Gifts"], bane: fnT('tribes.childrenofgaia.bane'), favor: fnT('tribes.childrenofgaia.favor') },
-    [Tribe.FiandeirosDeVidro]: { name: fnT('tribes.fiandeirosdevidro.name'), description: fnT('tribes.fiandeirosdevidro.description'), gifts: ["Fiandeiros de Vidro Gifts", "Innate Gifts"], bane: fnT('tribes.fiandeirosdevidro.bane'), favor: fnT('tribes.fiandeirosdevidro.favor') },
-    [Tribe.AndarilhosDoAsfalto]: { name: fnT('tribes.andarilhosdoasfalto.name'), description: fnT('tribes.andarilhosdoasfalto.description'), gifts: ["Andarilhos do Asfalto Gifts", "Innate Gifts"], bane: fnT('tribes.andarilhosdoasfalto.bane'), favor: fnT('tribes.andarilhosdoasfalto.favor') },
-    [Tribe.CriaDeFenris]: { name: fnT('tribes.criadefenris.name'), description: fnT('tribes.criadefenris.description'), gifts: ["Cria de Fenris Gifts", "Innate Gifts"], bane: fnT('tribes.criadefenris.bane'), favor: fnT('tribes.criadefenris.favor') },
-    [Tribe.RedTalons]: { name: fnT('tribes.redtalons.name'), description: fnT('tribes.redtalons.description'), gifts: ["Red Talons Gifts", "Innate Gifts"], bane: fnT('tribes.redtalons.bane'), favor: fnT('tribes.redtalons.favor') },
-    [Tribe.ShadowLords]: { name: fnT('tribes.shadowlords.name'), description: fnT('tribes.shadowlords.description'), gifts: ["Shadow Lords Gifts", "Innate Gifts"], bane: fnT('tribes.shadowlords.bane'), favor: fnT('tribes.shadowlords.favor') },
-    [Tribe.SilentStriders]: { name: fnT('tribes.silentstriders.name'), description: fnT('tribes.silentstriders.description'), gifts: ["Silent Striders Gifts", "Innate Gifts"], bane: fnT('tribes.silentstriders.bane'), favor: fnT('tribes.silentstriders.favor') },
-    [Tribe.SilverFangs]: { name: fnT('tribes.silverfangs.name'), description: fnT('tribes.silverfangs.description'), gifts: ["Silver Fangs Gifts", "Innate Gifts"], bane: fnT('tribes.silverfangs.bane'), favor: fnT('tribes.silverfangs.favor') },
-    [Tribe.Wendigo]: { name: fnT('tribes.wendigo.name'), description: fnT('tribes.wendigo.description'), gifts: ["Wendigo Gifts", "Innate Gifts"], bane: fnT('tribes.wendigo.bane'), favor: fnT('tribes.wendigo.favor') }
+    [Tribe.BlackFuries]: { name: fnT('tribes.blackfuries.name'), description: fnT('tribes.blackfuries.description'), gifts: ["blackfuriesgifts", "innategifts"], bane: fnT('tribes.blackfuries.bane'), favor: fnT('tribes.blackfuries.favor') },
+    [Tribe.BoneGnawers]: { name: fnT('tribes.bonegnawers.name'), description: fnT('tribes.bonegnawers.description'), gifts: ["bonegnawersgifts", "innategifts"], bane: fnT('tribes.bonegnawers.bane'), favor: fnT('tribes.bonegnawers.favor') },
+    [Tribe.ChildrenOfGaia]: { name: fnT('tribes.childrenofgaia.name'), description: fnT('tribes.childrenofgaia.description'), gifts: ["childrenofgaiagifts", "innategifts"], bane: fnT('tribes.childrenofgaia.bane'), favor: fnT('tribes.childrenofgaia.favor') },
+    [Tribe.FiandeirosDeVidro]: { name: fnT('tribes.fiandeirosdevidro.name'), description: fnT('tribes.fiandeirosdevidro.description'), gifts: ["fiandeirosdevidrogifts", "innategifts"], bane: fnT('tribes.fiandeirosdevidro.bane'), favor: fnT('tribes.fiandeirosdevidro.favor') },
+    [Tribe.AndarilhosDoAsfalto]: { name: fnT('tribes.andarilhosdoasfalto.name'), description: fnT('tribes.andarilhosdoasfalto.description'), gifts: ["andarilhosdoasfaltogifts", "innategifts"], bane: fnT('tribes.andarilhosdoasfalto.bane'), favor: fnT('tribes.andarilhosdoasfalto.favor') },
+    [Tribe.CriaDeFenris]: { name: fnT('tribes.criadefenris.name'), description: fnT('tribes.criadefenris.description'), gifts: ["criadefenrisgifts", "innategifts"], bane: fnT('tribes.criadefenris.bane'), favor: fnT('tribes.criadefenris.favor') },
+    [Tribe.RedTalons]: { name: fnT('tribes.redtalons.name'), description: fnT('tribes.redtalons.description'), gifts: ["redtalonsgifts", "innategifts"], bane: fnT('tribes.redtalons.bane'), favor: fnT('tribes.redtalons.favor') },
+    [Tribe.ShadowLords]: { name: fnT('tribes.shadowlords.name'), description: fnT('tribes.shadowlords.description'), gifts: ["shadowlordsgifts", "innategifts"], bane: fnT('tribes.shadowlords.bane'), favor: fnT('tribes.shadowlords.favor') },
+    [Tribe.SilentStriders]: { name: fnT('tribes.silentstriders.name'), description: fnT('tribes.silentstriders.description'), gifts: ["silentstridersgifts", "innategifts"], bane: fnT('tribes.silentstriders.bane'), favor: fnT('tribes.silentstriders.favor') },
+    [Tribe.SilverFangs]: { name: fnT('tribes.silverfangs.name'), description: fnT('tribes.silverfangs.description'), gifts: ["silverfangsgifts", "innategifts"], bane: fnT('tribes.silverfangs.bane'), favor: fnT('tribes.silverfangs.favor') },
+    [Tribe.Wendigo]: { name: fnT('tribes.wendigo.name'), description: fnT('tribes.wendigo.description'), gifts: ["wendigogifts", "innategifts"], bane: fnT('tribes.wendigo.bane'), favor: fnT('tribes.wendigo.favor') }
 });
 
 export const fnGetAuspiceDetails = (fnT: TFunction): Record<Auspice, { name: string; description: string; gifts: string[]; }> => ({
-    [Auspice.Ragabash]: { name: fnT('auspices.ragabash.name'), description: fnT('auspices.ragabash.description'), gifts: ["Ragabash Gifts"] },
-    [Auspice.Theurge]: { name: fnT('auspices.theurge.name'), description: fnT('auspices.theurge.description'), gifts: ["Theurge Gifts"] },
-    [Auspice.Philodox]: { name: fnT('auspices.philodox.name'), description: fnT('auspices.philodox.description'), gifts: ["Philodox Gifts"] },
-    [Auspice.Galliard]: { name: fnT('auspices.galliard.name'), description: fnT('auspices.galliard.description'), gifts: ["Galliard Gifts"] },
-    [Auspice.Ahroun]: { name: fnT('auspices.ahroun.name'), description: fnT('auspices.ahroun.description'), gifts: ["AhrounGifts"] }
+    [Auspice.Ragabash]: { name: fnT('auspices.ragabash.name'), description: fnT('auspices.ragabash.description'), gifts: ["ragabashgifts"] },
+    [Auspice.Theurge]: { name: fnT('auspices.theurge.name'), description: fnT('auspices.theurge.description'), gifts: ["theurgegifts"] },
+    [Auspice.Philodox]: { name: fnT('auspices.philodox.name'), description: fnT('auspices.philodox.description'), gifts: ["philodoxgifts"] },
+    [Auspice.Galliard]: { name: fnT('auspices.galliard.name'), description: fnT('auspices.galliard.description'), gifts: ["galliardgifts"] },
+    [Auspice.Ahroun]: { name: fnT('auspices.ahroun.name'), description: fnT('auspices.ahroun.description'), gifts: ["ahroungifts"] }
 });
 
 export const fnGetClanDetails = (fnT: TFunction): Record<Clan, { name: string; description: string; disciplines: string[]; bane: string; compulsion: string; }> => ({
-    [Clan.Brujah]: { name: fnT('clans.brujah.name'), description: fnT('clans.brujah.description'), disciplines: ["Celerity", "Potence", "Presence"], bane: fnT('clans.brujah.bane'), compulsion: fnT('clans.brujah.compulsion') },
-    [Clan.Gangrel]: { name: fnT('clans.gangrel.name'), description: fnT('clans.gangrel.description'), disciplines: ["Animalism", "Fortitude", "Protean"], bane: fnT('clans.gangrel.bane'), compulsion: fnT('clans.gangrel.compulsion') },
-    [Clan.Malkavian]: { name: fnT('clans.malkavian.name'), description: fnT('clans.malkavian.description'), disciplines: ["Auspex", "Dominate", "Obfuscate"], bane: fnT('clans.malkavian.bane'), compulsion: fnT('clans.malkavian.compulsion') },
-    [Clan.Nosferatu]: { name: fnT('clans.nosferatu.name'), description: fnT('clans.nosferatu.description'), disciplines: ["Animalism", "Obfuscate", "Potence"], bane: fnT('clans.nosferatu.bane'), compulsion: fnT('clans.nosferatu.compulsion') },
-    [Clan.Toreador]: { name: fnT('clans.toreador.name'), description: fnT('clans.toreador.description'), disciplines: ["Auspex", "Celerity", "Presence"], bane: fnT('clans.toreador.bane'), compulsion: fnT('clans.toreador.compulsion') },
-    [Clan.Tremere]: { name: fnT('clans.tremere.name'), description: fnT('clans.tremere.description'), disciplines: ["Auspex", "Blood Sorcery", "Dominate"], bane: fnT('clans.tremere.bane'), compulsion: fnT('clans.tremere.compulsion') },
-    [Clan.Ventrue]: { name: fnT('clans.ventrue.name'), description: fnT('clans.ventrue.description'), disciplines: ["Dominate", "Fortitude", "Presence"], bane: fnT('clans.ventrue.bane'), compulsion: fnT('clans.ventrue.compulsion') },
-    [Clan.BanuHaqim]: { name: fnT('clans.banuhaqim.name'), description: fnT('clans.banuhaqim.description'), disciplines: ["Blood Sorcery", "Celerity", "Obfuscate"], bane: fnT('clans.banuhaqim.bane'), compulsion: fnT('clans.banuhaqim.compulsion') },
-    [Clan.TheMinistry]: { name: fnT('clans.theministry.name'), description: fnT('clans.theministry.description'), disciplines: ["Obfuscate", "Presence", "Protean"], bane: fnT('clans.theministry.bane'), compulsion: fnT('clans.theministry.compulsion') },
-    [Clan.Lasombra]: { name: fnT('clans.lasombra.name'), description: fnT('clans.lasombra.description'), disciplines: ["Dominate", "Oblivion", "Potence"], bane: fnT('clans.lasombra.bane'), compulsion: fnT('clans.lasombra.compulsion') },
+    [Clan.Brujah]: { name: fnT('clans.brujah.name'), description: fnT('clans.brujah.description'), disciplines: ["celerity", "potence", "presence"], bane: fnT('clans.brujah.bane'), compulsion: fnT('clans.brujah.compulsion') },
+    [Clan.Gangrel]: { name: fnT('clans.gangrel.name'), description: fnT('clans.gangrel.description'), disciplines: ["animalism", "fortitude", "protean"], bane: fnT('clans.gangrel.bane'), compulsion: fnT('clans.gangrel.compulsion') },
+    [Clan.Malkavian]: { name: fnT('clans.malkavian.name'), description: fnT('clans.malkavian.description'), disciplines: ["auspex", "dominate", "obfuscate"], bane: fnT('clans.malkavian.bane'), compulsion: fnT('clans.malkavian.compulsion') },
+    [Clan.Nosferatu]: { name: fnT('clans.nosferatu.name'), description: fnT('clans.nosferatu.description'), disciplines: ["animalism", "obfuscate", "potence"], bane: fnT('clans.nosferatu.bane'), compulsion: fnT('clans.nosferatu.compulsion') },
+    [Clan.Toreador]: { name: fnT('clans.toreador.name'), description: fnT('clans.toreador.description'), disciplines: ["auspex", "celerity", "presence"], bane: fnT('clans.toreador.bane'), compulsion: fnT('clans.toreador.compulsion') },
+    [Clan.Tremere]: { name: fnT('clans.tremere.name'), description: fnT('clans.tremere.description'), disciplines: ["auspex", "bloodsorcery", "dominate"], bane: fnT('clans.tremere.bane'), compulsion: fnT('clans.tremere.compulsion') },
+    [Clan.Ventrue]: { name: fnT('clans.ventrue.name'), description: fnT('clans.ventrue.description'), disciplines: ["dominate", "fortitude", "presence"], bane: fnT('clans.ventrue.bane'), compulsion: fnT('clans.ventrue.compulsion') },
+    [Clan.BanuHaqim]: { name: fnT('clans.banuhaqim.name'), description: fnT('clans.banuhaqim.description'), disciplines: ["bloodsorcery", "celerity", "obfuscate"], bane: fnT('clans.banuhaqim.bane'), compulsion: fnT('clans.banuhaqim.compulsion') },
+    [Clan.TheMinistry]: { name: fnT('clans.theministry.name'), description: fnT('clans.theministry.description'), disciplines: ["obfuscate", "presence", "protean"], bane: fnT('clans.theministry.bane'), compulsion: fnT('clans.theministry.compulsion') },
+    [Clan.Lasombra]: { name: fnT('clans.lasombra.name'), description: fnT('clans.lasombra.description'), disciplines: ["dominate", "oblivion", "potence"], bane: fnT('clans.lasombra.bane'), compulsion: fnT('clans.lasombra.compulsion') },
     [Clan.Caitiff]: { name: fnT('clans.caitiff.name'), description: fnT('clans.caitiff.description'), disciplines: [], bane: fnT('clans.caitiff.bane'), compulsion: fnT('clans.caitiff.compulsion') },
-    [Clan.ThinBlood]: { name: fnT('clans.thinblood.name'), description: fnT('clans.thinblood.description'), disciplines: ["Thin-Blood Alchemy"], bane: fnT('clans.thinblood.bane'), compulsion: fnT('clans.thinblood.compulsion') }
+    [Clan.ThinBlood]: { name: fnT('clans.thinblood.name'), description: fnT('clans.thinblood.description'), disciplines: ["thinbloodalchemy"], bane: fnT('clans.thinblood.bane'), compulsion: fnT('clans.thinblood.compulsion') }
 });
 
 export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
@@ -45,7 +45,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         id: 'alleycat',
         name: fnT('predatorTypes.alleycat.name'), 
         description: fnT('predatorTypes.alleycat.description'),
-        disciplineAdd: { discipline: "Potence", dots: 1 },
+        disciplineAdd: { discipline: "potence", dots: 1 },
         humanityModifier: -1,
         advantages: [{ id: 'contacts_criminal', name: fnT('advantages.contacts.name'), description: fnT('advantages.contacts.description'), cost: 3, type: 'advantage', levels: [3] }],
         flaws: [],
@@ -120,7 +120,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         id: 'sandman',
         name: fnT('predatorTypes.sandman.name'), 
         description: fnT('predatorTypes.sandman.description'),
-        disciplineAdd: { discipline: "Auspex", dots: 1 },
+        disciplineAdd: { discipline: "auspex", dots: 1 },
         humanityModifier: 0,
         advantages: [{ id: 'resources_sandman', name: fnT('advantages.resources.name'), description: fnT('advantages.resources.description'), cost: 1, type: 'advantage', levels: [1]}],
         flaws: [],
@@ -134,7 +134,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         id: 'siren',
         name: fnT('predatorTypes.siren.name'), 
         description: fnT('predatorTypes.siren.description'),
-        disciplineAdd: { discipline: "Presence", dots: 1 },
+        disciplineAdd: { discipline: "presence", dots: 1 },
         humanityModifier: 0,
         advantages: [{ id: 'beautiful_siren', name: fnT('advantages.beautiful.name'), description: fnT('advantages.beautiful.description'), cost: 2, type: 'advantage', levels: [2]}],
         flaws: [{ id: 'enemy_siren', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 1, type: 'flaw', levels: [1]}],
@@ -344,7 +344,7 @@ export const fnGetDisciplineCombos = (fnT: TFunction): DisciplineCombo[] => [
         id: "dementation",
         name: fnT('combos.dementation.name'),
         description: fnT('combos.dementation.description'),
-        requirements: [{ discipline: "Dominate", level: 2 }, { discipline: "Auspex", level: 2 }],
+        requirements: [{ discipline: "dominate", level: 2 }, { discipline: "auspex", level: 2 }],
         system: fnT('combos.dementation.system'),
         cost: "One Rouse Check"
     },
@@ -352,7 +352,7 @@ export const fnGetDisciplineCombos = (fnT: TFunction): DisciplineCombo[] => [
         id: "chimerstry",
         name: fnT('combos.chimerstry.name'),
         description: fnT('combos.chimerstry.description'),
-        requirements: [{ discipline: "Obfuscate", level: 2 }, { discipline: "Presence", level: 1 }],
+        requirements: [{ discipline: "obfuscate", level: 2 }, { discipline: "presence", level: 1 }],
         system: fnT('combos.chimerstry.system'),
         cost: "One Rouse Check"
     },
@@ -360,7 +360,7 @@ export const fnGetDisciplineCombos = (fnT: TFunction): DisciplineCombo[] => [
         id: "viciousGaze",
         name: fnT('combos.viciousGaze.name'),
         description: fnT('combos.viciousGaze.description'),
-        requirements: [{ discipline: "Presence", level: 2 }, { discipline: "Potence", level: 1 }],
+        requirements: [{ discipline: "presence", level: 2 }, { discipline: "potence", level: 1 }],
         system: fnT('combos.viciousGaze.system'),
         cost: "Passive"
     },
@@ -368,7 +368,7 @@ export const fnGetDisciplineCombos = (fnT: TFunction): DisciplineCombo[] => [
         id: "bullseye",
         name: fnT('combos.bullseye.name'),
         description: fnT('combos.bullseye.description'),
-        requirements: [{ discipline: "Auspex", level: 3 }, { discipline: "Celerity", level: 2 }],
+        requirements: [{ discipline: "auspex", level: 3 }, { discipline: "celerity", level: 2 }],
         system: fnT('combos.bullseye.system'),
         cost: "One Rouse Check"
     }
@@ -403,7 +403,7 @@ const fnGetP = (fnT: TFunction, sDisc: string, nLvl: number, sKey: string) => {
 };
 
 export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, DisciplineDetail> => ({
-    "Animalism": {
+    "animalism": {
         name: fnT('disciplines.animalism.name'),
         description: fnT('disciplines.animalism.description'),
         powers: [
@@ -417,7 +417,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "animalism", 5, "drawingOutTheBeast")
         ]
     },
-    "Auspex": {
+    "auspex": {
         name: fnT('disciplines.auspex.name'),
         description: fnT('disciplines.auspex.description'),
         powers: [
@@ -432,7 +432,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "auspex", 5, "telepathy")
         ]
     },
-    "Celerity": {
+    "celerity": {
         name: fnT('disciplines.celerity.name'),
         description: fnT('disciplines.celerity.description'),
         powers: [
@@ -447,7 +447,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "celerity", 5, "splitSecond")
         ]
     },
-    "Dominate": {
+    "dominate": {
         name: fnT('disciplines.dominate.name'),
         description: fnT('disciplines.dominate.description'),
         powers: [
@@ -462,7 +462,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "dominate", 5, "terminalDecree")
         ]
     },
-    "Fortitude": {
+    "fortitude": {
         name: fnT('disciplines.fortitude.name'),
         description: fnT('disciplines.fortitude.description'),
         powers: [
@@ -476,7 +476,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "fortitude", 5, "prowessFromPain")
         ]
     },
-    "Obfuscate": {
+    "obfuscate": {
         name: fnT('disciplines.obfuscate.name'),
         description: fnT('disciplines.obfuscate.description'),
         powers: [
@@ -490,7 +490,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "obfuscate", 5, "impostorsGuise")
         ]
     },
-    "Potence": {
+    "potence": {
         name: fnT('disciplines.potence.name'),
         description: fnT('disciplines.potence.description'),
         powers: [
@@ -504,7 +504,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "potence", 5, "fistOfCaine")
         ]
     },
-    "Presence": {
+    "presence": {
         name: fnT('disciplines.presence.name'),
         description: fnT('disciplines.presence.description'),
         powers: [
@@ -519,7 +519,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "presence", 5, "starMagnetism")
         ]
     },
-    "Protean": {
+    "protean": {
         name: fnT('disciplines.protean.name'),
         description: fnT('disciplines.protean.description'),
         powers: [
@@ -533,7 +533,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "protean", 5, "theUnfetteredHeart")
         ]
     },
-    "Blood Sorcery": {
+    "bloodsorcery": {
         name: fnT('disciplines.bloodsorcery.name'),
         description: fnT('disciplines.bloodsorcery.description'),
         powers: [
@@ -547,7 +547,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "bloodsorcery", 5, "cauldronOfBlood")
         ]
     },
-    "Oblivion": {
+    "oblivion": {
         name: fnT('disciplines.oblivion.name'),
         description: fnT('disciplines.oblivion.description'),
         powers: [
@@ -560,159 +560,159 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
              fnGetP(fnT, "oblivion", 5, "tenebrousAvatar")
         ]
     },
-     "Thin-Blood Alchemy": {
+     "thinbloodalchemy": {
         name: fnT('disciplines.thinbloodalchemy.name'),
         description: fnT('disciplines.thinbloodalchemy.description'),
         powers: [
              fnGetP(fnT, "thinbloodalchemy", 1, "farReach"),
         ]
     },
-    "Ragabash Gifts": {
-        name: fnT('disciplines.ragabashGifts.name'),
-        description: fnT('disciplines.ragabashGifts.description'),
+    "ragabashgifts": {
+        name: fnT('disciplines.ragabashgifts.name'),
+        description: fnT('disciplines.ragabashgifts.description'),
         powers: [
-            fnGetP(fnT, "ragabashGifts", 1, "blurOfTheMilkyEye"),
-            fnGetP(fnT, "ragabashGifts", 1, "liarsFace"),
+            fnGetP(fnT, "ragabashgifts", 1, "blurOfTheMilkyEye"),
+            fnGetP(fnT, "ragabashgifts", 1, "liarsFace"),
         ]
     },
-    "Theurge Gifts": {
-        name: fnT('disciplines.theurgeGifts.name'),
-        description: fnT('disciplines.theurgeGifts.description'),
+    "theurgegifts": {
+        name: fnT('disciplines.theurgegifts.name'),
+        description: fnT('disciplines.theurgegifts.description'),
         powers: [
-            fnGetP(fnT, "theurgeGifts", 1, "senseWyrm"),
-            fnGetP(fnT, "theurgeGifts", 1, "spiritSpeech"),
+            fnGetP(fnT, "theurgegifts", 1, "senseWyrm"),
+            fnGetP(fnT, "theurgegifts", 1, "spiritSpeech"),
         ]
     },
-    "Philodox Gifts": {
-        name: fnT('disciplines.philodoxGifts.name'),
-        description: fnT('disciplines.philodoxGifts.description'),
+    "philodoxgifts": {
+        name: fnT('disciplines.philodoxgifts.name'),
+        description: fnT('disciplines.philodoxgifts.description'),
         powers: [
-            fnGetP(fnT, "philodoxGifts", 1, "kingOfTheBeasts"),
-            fnGetP(fnT, "philodoxGifts", 1, "truthOfGaia"),
+            fnGetP(fnT, "philodoxgifts", 1, "kingOfTheBeasts"),
+            fnGetP(fnT, "philodoxgifts", 1, "truthOfGaia"),
         ]
     },
-    "Galliard Gifts": {
-        name: fnT('disciplines.galliardGifts.name'),
-        description: fnT('disciplines.galliardGifts.description'),
+    "galliardgifts": {
+        name: fnT('disciplines.galliardgifts.name'),
+        description: fnT('disciplines.galliardgifts.description'),
         powers: [
-            fnGetP(fnT, "galliardGifts", 1, "callOfTheWyld"),
-            fnGetP(fnT, "galliardGifts", 1, "mindspeak"),
+            fnGetP(fnT, "galliardgifts", 1, "callOfTheWyld"),
+            fnGetP(fnT, "galliardgifts", 1, "mindspeak"),
         ]
     },
-    "AhrounGifts": {
-        name: fnT('disciplines.ahrounGifts.name'),
-        description: fnT('disciplines.ahrounGifts.description'),
+    "ahroungifts": {
+        name: fnT('disciplines.ahroungifts.name'),
+        description: fnT('disciplines.ahroungifts.description'),
         powers: [
-            fnGetP(fnT, "ahrounGifts", 1, "fallingTouch"),
-            fnGetP(fnT, "ahrounGifts", 1, "senseSilver"),
+            fnGetP(fnT, "ahroungifts", 1, "fallingTouch"),
+            fnGetP(fnT, "ahroungifts", 1, "senseSilver"),
         ]
     },
-    "Black Furies Gifts": {
-        name: fnT('disciplines.blackFuriesGifts.name'),
-        description: fnT('disciplines.blackFuriesGifts.description'),
+    "blackfuriesgifts": {
+        name: fnT('disciplines.blackfuriesgifts.name'),
+        description: fnT('disciplines.blackfuriesgifts.description'),
         powers: [
-            fnGetP(fnT, "blackFuriesGifts", 1, "breathOfTheWyld"),
-            fnGetP(fnT, "blackFuriesGifts", 1, "heightenedSenses"),
+            fnGetP(fnT, "blackfuriesgifts", 1, "breathOfTheWyld"),
+            fnGetP(fnT, "blackfuriesgifts", 1, "heightenedSenses"),
         ]
     },
-    "Bone Gnawers Gifts": {
-        name: fnT('disciplines.boneGnawersGifts.name'),
-        description: fnT('disciplines.boneGnawersGifts.description'),
+    "bonegnawersgifts": {
+        name: fnT('disciplines.bonegnawersgifts.name'),
+        description: fnT('disciplines.bonegnawersgifts.description'),
         powers: [
-            fnGetP(fnT, "boneGnawersGifts", 1, "cooking"),
-            fnGetP(fnT, "boneGnawersGifts", 1, "scentOfSweetSuccess"),
+            fnGetP(fnT, "bonegnawersgifts", 1, "cooking"),
+            fnGetP(fnT, "bonegnawersgifts", 1, "scentOfSweetSuccess"),
         ]
     },
-    "Children of Gaia Gifts": {
-        name: fnT('disciplines.childrenOfGaiaGifts.name'),
-        description: fnT('disciplines.childrenOfGaiaGifts.description'),
+    "childrenofgaiagifts": {
+        name: fnT('disciplines.childrenofgaiagifts.name'),
+        description: fnT('disciplines.childrenofgaiagifts.description'),
         powers: [
-            fnGetP(fnT, "childrenOfGaiaGifts", 1, "dazzle"),
-            fnGetP(fnT, "childrenOfGaiaGifts", 1, "resistPain"),
+            fnGetP(fnT, "childrenofgaiagifts", 1, "dazzle"),
+            fnGetP(fnT, "childrenofgaiagifts", 1, "resistPain"),
         ]
     },
-    "Fiandeiros de Vidro Gifts": {
-        name: fnT('disciplines.fiandeirosdevidroGifts.name'),
-        description: fnT('disciplines.fiandeirosdevidroGifts.description'),
+    "fiandeirosdevidrogifts": {
+        name: fnT('disciplines.fiandeirosdevidrogifts.name'),
+        description: fnT('disciplines.fiandeirosdevidrogifts.description'),
         powers: [
-            fnGetP(fnT, "fiandeirosdevidroGifts", 1, "spiritSpeech"),
-            fnGetP(fnT, "fiandeirosdevidroGifts", 1, "umbralTether"),
+            fnGetP(fnT, "fiandeirosdevidrogifts", 1, "spiritSpeech"),
+            fnGetP(fnT, "fiandeirosdevidrogifts", 1, "umbralTether"),
         ]
     },
-    "Andarilhos do Asfalto Gifts": {
-        name: fnT('disciplines.andarilhosdoasfaltoGifts.name'),
-        description: fnT('disciplines.andarilhosdoasfaltoGifts.description'),
+    "andarilhosdoasfaltogifts": {
+        name: fnT('disciplines.andarilhosdoasfaltogifts.name'),
+        description: fnT('disciplines.andarilhosdoasfaltogifts.description'),
         powers: [
-            fnGetP(fnT, "andarilhosdoasfaltoGifts", 1, "controlSimpleMachine"),
-            fnGetP(fnT, "andarilhosdoasfaltoGifts", 1, "plugAndPlay"),
+            fnGetP(fnT, "andarilhosdoasfaltogifts", 1, "controlSimpleMachine"),
+            fnGetP(fnT, "andarilhosdoasfaltogifts", 1, "plugAndPlay"),
         ]
     },
-    "Cria de Fenris Gifts": {
-        name: fnT('disciplines.criadefenrisGifts.name'),
-        description: fnT('disciplines.criadefenrisGifts.description'),
+    "criadefenrisgifts": {
+        name: fnT('disciplines.criadefenrisgifts.name'),
+        description: fnT('disciplines.criadefenrisgifts.description'),
         powers: [
-            fnGetP(fnT, "criadefenrisGifts", 1, "resistPain"),
-            fnGetP(fnT, "criadefenrisGifts", 1, "furiousStrike"),
+            fnGetP(fnT, "criadefenrisgifts", 1, "resistPain"),
+            fnGetP(fnT, "criadefenrisgifts", 1, "furiousStrike"),
         ]
     },
-    "Wendigo Gifts": {
-        name: fnT('disciplines.wendigoGifts.name'),
-        description: fnT('disciplines.wendigoGifts.description'),
+    "wendigogifts": {
+        name: fnT('disciplines.wendigogifts.name'),
+        description: fnT('disciplines.wendigogifts.description'),
         powers: [
-            fnGetP(fnT, "wendigoGifts", 1, "beastSpeech"),
-            fnGetP(fnT, "wendigoGifts", 1, "tracklessStep"),
+            fnGetP(fnT, "wendigogifts", 1, "beastSpeech"),
+            fnGetP(fnT, "wendigogifts", 1, "tracklessStep"),
         ]
     },
-    "Red Talons Gifts": {
-        name: fnT('disciplines.redTalonsGifts.name'),
-        description: fnT('disciplines.redTalonsGifts.description'),
+    "redtalonsgifts": {
+        name: fnT('disciplines.redtalonsgifts.name'),
+        description: fnT('disciplines.redtalonsgifts.description'),
         powers: [
-            fnGetP(fnT, "redTalonsGifts", 1, "beastLife"),
-            fnGetP(fnT, "redTalonsGifts", 1, "hiddenKiller"),
+            fnGetP(fnT, "redtalonsgifts", 1, "beastLife"),
+            fnGetP(fnT, "redtalonsgifts", 1, "hiddenKiller"),
         ]
     },
-    "Shadow Lords Gifts": {
-        name: fnT('disciplines.shadowLordsGifts.name'),
-        description: fnT('disciplines.shadowLordsGifts.description'),
+    "shadowlordsgifts": {
+        name: fnT('disciplines.shadowlordsgifts.name'),
+        description: fnT('disciplines.shadowlordsgifts.description'),
         powers: [
-            fnGetP(fnT, "shadowLordsGifts", 1, "auraOfConfidence"),
-            fnGetP(fnT, "shadowLordsGifts", 1, "fatalFlaw"),
+            fnGetP(fnT, "shadowlordsgifts", 1, "auraOfConfidence"),
+            fnGetP(fnT, "shadowlordsgifts", 1, "fatalFlaw"),
         ]
     },
-    "Silver Fangs Gifts": {
-        name: fnT('disciplines.silverFangsGifts.name'),
-        description: fnT('disciplines.silverFangsGifts.description'),
+    "silverfangsgifts": {
+        name: fnT('disciplines.silverfangsgifts.name'),
+        description: fnT('disciplines.silverfangsgifts.description'),
         powers: [
-            fnGetP(fnT, "silverFangsGifts", 1, "falconsGrasp"),
-            fnGetP(fnT, "silverFangsGifts", 1, "senseWyrm"),
+            fnGetP(fnT, "silverfangsgifts", 1, "falconsGrasp"),
+            fnGetP(fnT, "silverfangsgifts", 1, "senseWyrm"),
         ]
     },
-    "Silent Striders Gifts": {
-        name: fnT('disciplines.silentStridersGifts.name'),
-        description: fnT('disciplines.silentStridersGifts.description'),
+    "silentstridersgifts": {
+        name: fnT('disciplines.silentstridersgifts.name'),
+        description: fnT('disciplines.silentstridersgifts.description'),
         powers: [
-            fnGetP(fnT, "silentStridersGifts", 1, "speedOfThought"),
-            fnGetP(fnT, "silentStridersGifts", 1, "messengersFortitude"),
+            fnGetP(fnT, "silentstridersgifts", 1, "speedOfThought"),
+            fnGetP(fnT, "silentstridersgifts", 1, "messengersFortitude"),
         ]
     },
-    "Innate Gifts": {
-        name: fnT('disciplines.innateGifts.name'),
-        description: fnT('disciplines.innateGifts.description'),
+    "innategifts": {
+        name: fnT('disciplines.innategifts.name'),
+        description: fnT('disciplines.innategifts.description'),
         powers: [
-            fnGetP(fnT, "innateGifts", 1, "olharDesconcertante"),
-            fnGetP(fnT, "innateGifts", 1, "olhosDaCoruja"),
-            fnGetP(fnT, "innateGifts", 1, "pancadaFuriosa"),
-            fnGetP(fnT, "innateGifts", 1, "pesDeGato"),
-            fnGetP(fnT, "innateGifts", 1, "saltoDaLebre"),
-            fnGetP(fnT, "innateGifts", 1, "sentidosCrepusculares"),
-            fnGetP(fnT, "innateGifts", 1, "skinLaceration"),
-            fnGetP(fnT, "innateGifts", 1, "lycanthropeBite"),
-            fnGetP(fnT, "innateGifts", 1, "urbanHunter"),
-            fnGetP(fnT, "innateGifts", 1, "corruptedMemories"),
-            fnGetP(fnT, "innateGifts", 1, "cuttingWords"),
-            fnGetP(fnT, "innateGifts", 1, "hungryTeeth"),
-            fnGetP(fnT, "innateGifts", 1, "wyrmSpeech"),
-            fnGetP(fnT, "innateGifts", 1, "mouthFullOfTeeth"),
+            fnGetP(fnT, "innategifts", 1, "olharDesconcertante"),
+            fnGetP(fnT, "innategifts", 1, "olhosDaCoruja"),
+            fnGetP(fnT, "innategifts", 1, "pancadaFuriosa"),
+            fnGetP(fnT, "innategifts", 1, "pesDeGato"),
+            fnGetP(fnT, "innategifts", 1, "saltoDaLebre"),
+            fnGetP(fnT, "innategifts", 1, "sentidosCrepusculares"),
+            fnGetP(fnT, "innategifts", 1, "skinLaceration"),
+            fnGetP(fnT, "innategifts", 1, "lycanthropeBite"),
+            fnGetP(fnT, "innategifts", 1, "urbanHunter"),
+            fnGetP(fnT, "innategifts", 1, "corruptedMemories"),
+            fnGetP(fnT, "innategifts", 1, "cuttingWords"),
+            fnGetP(fnT, "innategifts", 1, "hungryTeeth"),
+            fnGetP(fnT, "innategifts", 1, "wyrmSpeech"),
+            fnGetP(fnT, "innategifts", 1, "mouthFullOfTeeth"),
         ]
     },
 });

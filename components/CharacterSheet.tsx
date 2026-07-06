@@ -389,7 +389,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                       <>
                         <div className="md:col-span-3"><strong className={sThemeAccentClass}>{fnT('characterSheet.clanBane')}:</strong> {oClanDetail?.bane || fnT('common.noClanSelected')}</div>
                         <div className="md:col-span-3"><strong className={sThemeAccentClass}>{fnT('characterSheet.clanCompulsion')}:</strong> {oClanDetail?.compulsion || fnT('common.noClanSelected')}</div>
-                        <div><strong className={sThemeAccentClass}>{fnT('characterSheet.predatorType')}:</strong> {oCharacter.predatorType}</div>
+                        <div><strong className={sThemeAccentClass}>{fnT('characterSheet.predatorType')}:</strong> {oCharacter.predatorType ? (fnT(`predatorTypes.${oCharacter.predatorType}.name`) || oCharacter.predatorType) : fnT('common.none')}</div>
                         <div><strong className={sThemeAccentClass}>{fnT('characterSheet.generation')}:</strong> {oCharacter.generation}</div>
                         <div><strong className={sThemeAccentClass}>{fnT('characterSheet.bloodPotency')}:</strong> {oCharacter.bloodPotency}</div>
                       </>
@@ -439,7 +439,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
             {Object.keys(oCharacter.disciplines).length > 0 ? (
                 <ul className="mb-6">
                 {Object.entries(oCharacter.disciplines).sort((a,b) => (b[1] as number) - (a[1] as number)).map(([sKey, value]) => {
-                    const oDisciplineDetail = oDisciplineDetails[sKey];
+                    const oDisciplineDetail = oDisciplineDetails[sKey.toLowerCase()];
                     const sDisplayName = oDisciplineDetail ? oDisciplineDetail.name : sKey;
                     const aSelectedPowerIds = oCharacter.disciplinePowers[sKey] || [];
                     return (
@@ -465,7 +465,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                                         const oPower = oDisciplineDetail.powers.find(p => p.id === sPid);
                                         return oPower ? (
                                             <li key={sPid} className="text-xs text-gray-400">
-                                                <span className={`${sThemeAccentClass} font-bold`}>Lvl {oPower.level}:</span> {oPower.name}
+                                                <span className={`${sThemeAccentClass} font-bold`}>{fnT('compendium.lvl')} {oPower.level}:</span> {oPower.name}
                                             </li>
                                         ) : null;
                                     })}
@@ -486,11 +486,11 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                                 <li key={combo.id} className="mb-4 p-2 bg-black/20 rounded border-l-2 border-red-900">
                                     <div className="flex justify-between items-start">
                                         <h4 className="font-bold text-gray-200">{combo.name}</h4>
-                                        <div className="text-[10px] text-red-400 font-bold">{combo.cost}</div>
+                                        <div className="text-[10px] text-red-400 font-bold">{combo.cost === "Passive" ? fnT('compendium.passive') : (combo.cost === "One Rouse Check" ? fnT('compendium.oneRouseCheck') : combo.cost)}</div>
                                     </div>
                                     <p className="text-xs text-gray-400 mt-1">{combo.description}</p>
                                     <div className="mt-2 text-[10px] font-mono text-gray-500 uppercase tracking-tighter">
-                                        {combo.requirements.map(r => `${r.discipline} ${r.level}`).join(' • ')}
+                                        {combo.requirements.map(r => `${oDisciplineDetails[r.discipline.toLowerCase()]?.name || r.discipline} ${r.level}`).join(' • ')}
                                     </div>
                                 </li>
                             ))}
@@ -612,7 +612,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                         }}
                         disabled={oCharacter.harano >= 5}
                     >
-                        {fnT('buttons.activate') || 'Activate'} {fnT('characterSheet.desperateRage')}
+                        {fnT('buttons.activate')} {fnT('characterSheet.desperateRage')}
                     </Button>
                 </div>
                 <div className="p-4 bg-orange-900/10 rounded border border-orange-900/30 flex flex-col justify-between">
@@ -634,7 +634,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                         }}
                         disabled={oCharacter.hauglosk >= 5}
                     >
-                        {fnT('buttons.activate') || 'Activate'} {fnT('characterSheet.unrelentingWillpower')}
+                        {fnT('buttons.activate')} {fnT('characterSheet.unrelentingWillpower')}
                     </Button>
                 </div>
             </div>
@@ -682,7 +682,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                             {ls?.levels.map((lvl) => (
                                 <div key={lvl.level} className={`pl-4 border-l-2 ${bIsWerewolf ? 'border-green-900' : 'border-red-900'}`}>
                                     <div className="flex items-center gap-2 mb-1">
-                                        <span className={`${bIsWerewolf ? 'bg-green-900 text-green-100' : 'bg-red-900 text-red-100'} text-[10px] px-1.5 py-0.5 rounded font-bold`}>LVL {lvl.level}</span>
+                                        <span className={`${bIsWerewolf ? 'bg-green-900 text-green-100' : 'bg-red-900 text-red-100'} text-[10px] px-1.5 py-0.5 rounded font-bold uppercase`}>{fnT('compendium.lvl')} {lvl.level}</span>
                                         <span className="font-bold text-gray-200">{lvl.name}</span>
                                     </div>
                                     <p className="text-xs text-gray-400 mb-1">{lvl.description}</p>
@@ -720,7 +720,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                                 <h4 className={`font-bold ${sThemeAccentClass}`}>{fnT('compendium.level')} {oPower.level}: {oPower.name}</h4>
                                 <div className="flex items-center text-xs text-gray-400 bg-gray-900 px-2 py-1 rounded border border-gray-700">
                                     {bIsWerewolf ? <ClawIcon className="w-3 h-3 text-green-500 mr-1" /> : <BloodIcon className="w-3 h-3 text-red-500 mr-1" />}
-                                    <span>{oPower.cost || "Passive"}</span>
+                                    <span>{oPower.cost === "Passive" ? fnT('compendium.passive') : (oPower.cost === "No cost" ? fnT('compendium.noCost') : oPower.cost)}</span>
                                 </div>
                             </div>
                             <p className="text-sm text-gray-300">{oPower.description}</p>
