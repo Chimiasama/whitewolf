@@ -39,7 +39,13 @@ const oEn = {
       "overwriteWarning": "Character with this name already exists. Overwrite?",
       "deleteConfirm": "Are you sure you want to delete this character?",
       "saveSuccess": "Character saved successfully.",
-      "loadSuccess": "Character loaded successfully."
+      "saveError": "Failed to save character.",
+      "loadSuccess": "Character loaded successfully.",
+      "loadError": "Failed to load character.",
+      "deleteSuccess": "Character '{{name}}' deleted.",
+      "importSuccess": "Character imported from JSON.",
+      "importError": "Invalid JSON file.",
+      "namePlaceholder": "My Character"
   },
   "gameSelection": {
     "title": "Select Your Fate",
@@ -119,6 +125,9 @@ const oEn = {
     "keyAttributes": "Key Attributes",
     "keySkills": "Key Skills",
     "noClanSelected": "No clan selected.",
+    "selectClanToSeeDetails": "Select a Clan to see details",
+    "selectTribeToSeeDetails": "Select a Tribe to see details",
+    "selectAuspiceToSeeDetails": "Select an Auspice to see details",
     "noneListed": "None listed.",
     "skill": "Skill",
     "available": "Available",
@@ -133,6 +142,7 @@ const oEn = {
     "confirm": "Confirm",
     "randomIdentity": "Random Identity",
     "specialty": "Specialty",
+    "specialtyPlaceholder": "ex: Parkour",
     "resetWarning": "Are you sure you want to reset all character data? This cannot be undone.",
     "resetSuccess": "Character reset to default.",
     "generateSuccess": "Character generated successfully!"
@@ -345,7 +355,28 @@ const oEn = {
     "plotHookPrompt": "Generate three distinct plot hooks.",
     "portraitPrompt": "Provide a vivid description of the appearance."
   },
-  "compendium": { "level": "Level", "system": "System" },
+  "compendium": {
+    "level": "Level",
+    "lvl": "Lvl",
+    "print": "Print",
+    "system": "System",
+    "dots": "dots",
+    "passive": "Passive",
+    "noCost": "No cost",
+    "cost": "Cost",
+    "requirements": "Requirements",
+    "dotsIncluded": "dots included",
+    "dotsPenalty": "dots penalty",
+    "advantage": "Advantage",
+    "flaw": "Flaw",
+    "predator": "Predator",
+    "grantedBenefits": "Granted Benefits",
+    "potentialCosts": "Potential Costs",
+    "favor": "Favor",
+    "bane": "Bane",
+    "rouseCheck": "Rouse Check",
+    "oneRouseCheck": "1 Rouse Check"
+  },
   "predatorTypes": {
     "alleycat": { "name": "Alleycat", "description": "You hunt via ambush and physical violence on the streets." },
     "bagger": { "name": "Bagger", "description": "You obtain blood from cold storage or crime scenes." },
@@ -354,6 +385,8 @@ const oEn = {
     "osiris": { "name": "Osiris", "description": "You lead a cult or social circle that offers their blood freely." },
     "sandman": { "name": "Sandman", "description": "You feed on victims while they sleep." },
     "siren": { "name": "Siren", "description": "You use seduction and beauty to charm your prey." },
+    "noAdvantages": "No static advantages granted.",
+    "noFlaws": "No static flaws required.",
     "specialties": {
         "stickups": "Stickups", "grappling": "Grappling", "blackMarket": "Black Market", "lockpicking": "Lockpicking",
         "phlebotomy": "Phlebotomy", "vessels": "Vessels", "animal": "Specific Animal", "hunting": "Hunting",
@@ -525,7 +558,7 @@ const oEn = {
               "farReach": { "name": "Far Reach", "description": "Simple telekinesis via alchemical fumes.", "system": "Intelligence + Alchemy. One Rouse Check." }
           }
       },
-      "ragabashGifts": {
+      "ragabashgifts": {
           "name": "Ragabash Gifts",
           "description": "Gifts of the New Moon, focusing on trickery and subversion.",
           "powers": {
@@ -533,7 +566,7 @@ const oEn = {
               "liarsFace": { "name": "Liar's Face", "description": "Your lies are impossible to detect.", "system": "Manipulation + Subterfuge. Passive." }
           }
       },
-      "theurgeGifts": {
+      "theurgegifts": {
           "name": "Theurge Gifts",
           "description": "Gifts of the Crescent Moon, focusing on spirits and the Umbra.",
           "powers": {
@@ -541,7 +574,7 @@ const oEn = {
               "spiritSpeech": { "name": "Spirit Speech", "description": "Communicate with spirits.", "system": "Charisma + Insight. No cost." }
           }
       },
-      "philodoxGifts": {
+      "philodoxgifts": {
           "name": "Philodox Gifts",
           "description": "Gifts of the Half Moon, focusing on balance and judgment.",
           "powers": {
@@ -549,7 +582,7 @@ const oEn = {
               "truthOfGaia": { "name": "Truth of Gaia", "description": "Sense if someone is lying.", "system": "Intelligence + Insight vs Manipulation + Subterfuge." }
           }
       },
-      "galliardGifts": {
+      "galliardgifts": {
           "name": "Galliard Gifts",
           "description": "Gifts of the Gibbous Moon, focusing on lore and inspiration.",
           "powers": {
@@ -557,7 +590,7 @@ const oEn = {
               "mindspeak": { "name": "Mindspeak", "description": "Project thoughts into the minds of others.", "system": "Manipulation + Empathy. Cost: 1 Rage check." }
           }
       },
-      "ahrounGifts": {
+      "ahroungifts": {
           "name": "Ahroun Gifts",
           "description": "Gifts of the Full Moon, focusing on combat and leadership.",
           "powers": {
@@ -565,7 +598,7 @@ const oEn = {
               "senseSilver": { "name": "Sense Silver", "description": "Detect the presence of silver.", "system": "Perception + Primal-Urge. Passive." }
           }
       },
-      "blackFuriesGifts": {
+      "blackfuriesgifts": {
           "name": "Black Furies Gifts",
           "description": "Gifts of the Black Furies, focusing on justice and nature.",
           "powers": {
@@ -573,7 +606,7 @@ const oEn = {
               "heightenedSenses": { "name": "Heightened Senses", "description": "Sharpen all senses.", "system": "Passive. Add level to perception tests." }
           }
       },
-      "boneGnawersGifts": {
+      "bonegnawersgifts": {
           "name": "Bone Gnawers Gifts",
           "description": "Gifts of the Bone Gnawers, focusing on urban survival.",
           "powers": {
@@ -581,7 +614,7 @@ const oEn = {
               "scentOfSweetSuccess": { "name": "Scent of Sweet Success", "description": "Know exactly what to say to succeed.", "system": "Manipulation + Etiquette. Passive." }
           }
       },
-      "childrenOfGaiaGifts": {
+      "childrenofgaiagifts": {
           "name": "Children of Gaia Gifts",
           "description": "Gifts of the Children of Gaia, focusing on healing and peace.",
           "powers": {
@@ -589,7 +622,7 @@ const oEn = {
               "resistPain": { "name": "Resist Pain", "description": "Ignore wound penalties.", "system": "Passive. Ignore penalties for a scene." }
           }
       },
-      "fiandeirosdevidroGifts": {
+      "fiandeirosdevidrogifts": {
           "name": "Glass Spinners Gifts",
           "description": "Gifts of the Glass Spinners, focusing on spirits and the Umbra.",
           "powers": {
@@ -597,7 +630,7 @@ const oEn = {
               "umbralTether": { "name": "Umbral Tether", "description": "Create a link to return from the Umbra.", "system": "Intelligence + Occult. No cost." }
           }
       },
-      "andarilhosdoasfaltoGifts": {
+      "andarilhosdoasfaltogifts": {
           "name": "Glass Walkers Gifts",
           "description": "Gifts of the Glass Walkers, focusing on technology.",
           "powers": {
@@ -605,7 +638,7 @@ const oEn = {
               "plugAndPlay": { "name": "Plug and Play", "description": "Interface with any electronic device.", "system": "Intelligence + Technology. Passive." }
           }
       },
-      "criadefenrisGifts": {
+      "criadefenrisgifts": {
           "name": "Get of Fenris Gifts",
           "description": "Gifts of the Get of Fenris, focusing on combat and brutality.",
           "powers": {
@@ -613,7 +646,7 @@ const oEn = {
               "furiousStrike": { "name": "Furious Strike", "description": "Concentrate Rage into blows.", "system": "Add Glory to a Brawl pool. Cost: 1 Rage check." }
           }
       },
-      "wendigoGifts": {
+      "wendigogifts": {
           "name": "Wendigo Gifts",
           "description": "Gifts of the Wendigo, focusing on tracking and the cold.",
           "powers": {
@@ -621,7 +654,7 @@ const oEn = {
               "tracklessStep": { "name": "Trackless Step", "description": "Leave no trail behind.", "system": "Dexterity + Stealth. Passive." }
           }
       },
-      "redTalonsGifts": {
+      "redtalonsgifts": {
           "name": "Red Talons Gifts",
           "description": "Gifts of the Red Talons, focusing on the wild and predators.",
           "powers": {
@@ -629,7 +662,7 @@ const oEn = {
               "hiddenKiller": { "name": "Hidden Killer", "description": "Conceal the evidence of a kill.", "system": "Intelligence + Stealth. Passive." }
           }
       },
-      "shadowLordsGifts": {
+      "shadowlordsgifts": {
           "name": "Shadow Lords Gifts",
           "description": "Gifts of the Shadow Lords, focusing on dominance and shadows.",
           "powers": {
@@ -637,7 +670,7 @@ const oEn = {
               "fatalFlaw": { "name": "Fatal Flaw", "description": "Sense a target's weakness.", "system": "Perception + Insight. No cost." }
           }
       },
-      "silverFangsGifts": {
+      "silverfangsgifts": {
           "name": "Silver Fangs Gifts",
           "description": "Gifts of the Silver Fangs, focusing on leadership and nobility.",
           "powers": {
@@ -645,7 +678,7 @@ const oEn = {
               "senseWyrm": { "name": "Sense Wyrm", "description": "Detect the presence of the Wyrm.", "system": "Intelligence + Occult. No cost." }
           }
       },
-      "silentStridersGifts": {
+      "silentstridersgifts": {
           "name": "Silent Striders Gifts",
           "description": "Gifts of the Silent Striders, focusing on travel and messages.",
           "powers": {
@@ -653,7 +686,7 @@ const oEn = {
               "messengersFortitude": { "name": "Messenger's Fortitude", "description": "Travel for days without rest.", "system": "Stamina + Athletics. No cost." }
           }
       },
-      "innateGifts": {
+      "innategifts": {
           "name": "Innate Gifts",
           "description": "Gifts available to all Garou.",
           "powers": {
@@ -994,7 +1027,13 @@ const oPt = {
       "overwriteWarning": "Personagem com este nome já existe. Sobrescrever?",
       "deleteConfirm": "Tem certeza que deseja excluir este personagem?",
       "saveSuccess": "Personagem salvo com sucesso.",
-      "loadSuccess": "Personagem carregado com sucesso."
+      "saveError": "Falha ao salvar o personagem.",
+      "loadSuccess": "Personagem carregado com sucesso.",
+      "loadError": "Falha ao carregar o personagem.",
+      "deleteSuccess": "Personagem '{{name}}' excluído.",
+      "importSuccess": "Personagem importado do JSON.",
+      "importError": "Arquivo JSON inválido.",
+      "namePlaceholder": "Meu Personagem"
   },
   "gameSelection": {
     "title": "Selecione o Jogo",
@@ -1160,6 +1199,9 @@ const oPt = {
     "keyAttributes": "Atributos Chave",
     "keySkills": "Perícias Chave",
     "noClanSelected": "Nenhum clã selecionado.",
+    "selectClanToSeeDetails": "Selecione um Clã para ver detalhes",
+    "selectTribeToSeeDetails": "Selecione uma Tribo para ver detalhes",
+    "selectAuspiceToSeeDetails": "Selecione um Augúrio para ver detalhes",
     "noneListed": "Nenhum listado.",
     "skill": "Perícia",
     "available": "Disponível",
@@ -1174,6 +1216,7 @@ const oPt = {
     "confirm": "Confirmar",
     "randomIdentity": "Identidade Aleatória",
     "specialty": "Especialidade",
+    "specialtyPlaceholder": "ex: Parkour",
     "resetWarning": "Tem certeza que deseja reiniciar todos os dados do personagem? Isso não pode ser desfeito.",
     "resetSuccess": "Personagem reiniciado para o padrão.",
     "generateSuccess": "Personagem gerado com sucesso!"
@@ -1327,7 +1370,28 @@ const oPt = {
     "plotHookPrompt": "Gere três ganchos.", 
     "portraitPrompt": "Descreva a aparência."
   },
-  "compendium": { "level": "Nível", "system": "Sistema" },
+  "compendium": {
+    "level": "Nível",
+    "lvl": "Nvl",
+    "print": "Imprimir",
+    "system": "Sistema",
+    "dots": "pontos",
+    "passive": "Passivo",
+    "noCost": "Sem custo",
+    "cost": "Custo",
+    "requirements": "Requisitos",
+    "dotsIncluded": "pontos inclusos",
+    "dotsPenalty": "pontos de penalidade",
+    "advantage": "Vantagem",
+    "flaw": "Defeito",
+    "predator": "Predador",
+    "grantedBenefits": "Benefícios Concedidos",
+    "potentialCosts": "Custos Potenciais",
+    "favor": "Favor",
+    "bane": "Perdição",
+    "rouseCheck": "Teste de Sangue",
+    "oneRouseCheck": "1 Teste de Sangue"
+  },
   "predatorTypes": { 
     "alleycat": { "name": "Gato de Beco", "description": "Você caça por emboscadas e violência física nas ruas." },
     "bagger": { "name": "Bolsista", "description": "Você obtém sangue de armazenamento a frio ou cenas de crime." },
@@ -1336,6 +1400,8 @@ const oPt = {
     "osiris": { "name": "Osíris", "description": "Você lidera um culto ou círculo social que oferece sangue livremente." },
     "sandman": { "name": "Sandman", "description": "Você se alimenta de vítimas enquanto elas dormem." },
     "siren": { "name": "Sereia", "description": "Você usa sedução e beleza para encantar suas presas." },
+    "noAdvantages": "Nenhuma vantagem estática concedida.",
+    "noFlaws": "Nenhum defeito estático obrigatório.",
     "specialties": { "seduction": "Sedução", "stickups": "Assaltos", "grappling": "Agarrar", "blackMarket": "Mercado Negro", "lockpicking": "Arrombamento", "phlebotomy": "Flebotomia", "vessels": "Vasos", "animal": "Animal Específico", "hunting": "Caça", "specificTradition": "Tradição Específica", "anesthetics": "Anestésicos", "breakIn": "Invasão" } 
   },
   "disciplines": { 
@@ -1503,7 +1569,7 @@ const oPt = {
               "farReach": { "name": "Longo Alcance", "description": "Telecinese simples via vapores alquímicos.", "system": "Inteligência + Alquimia. Um Teste de Sangue." }
           }
       },
-      "ragabashGifts": {
+      "ragabashgifts": {
           "name": "Dons de Ragabash",
           "description": "Dons da Lua Nova, focados em trapaça e subversão.",
           "powers": {
@@ -1511,23 +1577,23 @@ const oPt = {
               "liarsFace": { "name": "Rosto do Mentiroso", "description": "Suas mentiras são impossíveis de detectar.", "system": "Manipulação + Subterfúgio. Passivo." }
           }
       },
-      "theurgeGifts": {
+      "theurgegifts": {
           "name": "Dons de Theurge",
           "description": "Dons da Lua Crescente, focados em espíritos e na Umbra.",
           "powers": {
               "senseWyrm": { "name": "Sentir a Wyrm", "description": "Detecta a presença da Wyrm.", "system": "Inteligência + Ocultismo. Sem custo." },
-              "spiritSpeech": { "name": "Fala dos Espíritos", "description": "Comunica-se com espíritos.", "system": "Carisma + Percepção. Sem custo." }
+              "spiritSpeech": { "name": "Fala dos Espíritos", "description": "Comunica-se com espíritos.", "system": "Carisma + Intuição. Sem custo." }
           }
       },
-      "philodoxGifts": {
+      "philodoxgifts": {
           "name": "Dons de Philodox",
           "description": "Dons da Meia-Lua, focados em equilíbrio e julgamento.",
           "powers": {
               "kingOfTheBeasts": { "name": "Rei das Feras", "description": "Comanda animais com autoridade.", "system": "Carisma + Empatia com Animais. Sem custo." },
-              "truthOfGaia": { "name": "Verdade de Gaia", "description": "Sente se alguém está mentindo.", "system": "Inteligência + Percepção vs Manipulação + Subterfúgio." }
+              "truthOfGaia": { "name": "Verdade de Gaia", "description": "Sente se alguém está mentindo.", "system": "Inteligência + Intuição vs Manipulação + Subterfúgio." }
           }
       },
-      "galliardGifts": {
+      "galliardgifts": {
           "name": "Dons de Galliard",
           "description": "Dons da Lua Gibosa, focados em saber e inspiração.",
           "powers": {
@@ -1535,7 +1601,7 @@ const oPt = {
               "mindspeak": { "name": "Fala Mental", "description": "Projeta pensamentos nas mentes de outros.", "system": "Manipulação + Empatia. Custo: 1 teste de Fúria." }
           }
       },
-      "ahrounGifts": {
+      "ahroungifts": {
           "name": "Dons de Ahroun",
           "description": "Dons da Lua Cheia, focados em combate e liderança.",
           "powers": {
@@ -1543,7 +1609,7 @@ const oPt = {
               "senseSilver": { "name": "Sentir Prata", "description": "Detecta a presença de prata.", "system": "Percepção + Instinto Primitivo. Passivo." }
           }
       },
-      "blackFuriesGifts": {
+      "blackfuriesgifts": {
           "name": "Dons das Fúrias Negras",
           "description": "Dons das Fúrias Negras, focados em justiça e natureza.",
           "powers": {
@@ -1551,7 +1617,7 @@ const oPt = {
               "heightenedSenses": { "name": "Sentidos Aguçados", "description": "Aguça todos os sentidos.", "system": "Passivo. Adiciona nível aos testes de percepção." }
           }
       },
-      "boneGnawersGifts": {
+      "bonegnawersgifts": {
           "name": "Dons dos Roedores de Ossos",
           "description": "Dons dos Roedores de Ossos, focados em sobrevivência urbana.",
           "powers": {
@@ -1559,7 +1625,7 @@ const oPt = {
               "scentOfSweetSuccess": { "name": "Cheiro do Sucesso Doce", "description": "Sabe exatamente o que dizer para ter sucesso.", "system": "Manipulação + Etiqueta. Passivo." }
           }
       },
-      "childrenOfGaiaGifts": {
+      "childrenofgaiagifts": {
           "name": "Dons dos Filhos de Gaia",
           "description": "Dons dos Filhos de Gaia, focados em cura e paz.",
           "powers": {
@@ -1567,15 +1633,15 @@ const oPt = {
               "resistPain": { "name": "Resistir à Dor", "description": "Ignora penalidades por ferimentos.", "system": "Passivo. Ignora penalidades por uma cena." }
           }
       },
-      "fiandeirosdevidroGifts": {
+      "fiandeirosdevidrogifts": {
           "name": "Dons dos Fiandeiros de Vidro",
           "description": "Dons dos Fiandeiros de Vidro, focados em espíritos e na Umbra.",
           "powers": {
-              "spiritSpeech": { "name": "Fala dos Espíritos", "description": "Comunica-se com espíritos.", "system": "Carisma + Percepção. Sem custo." },
+              "spiritSpeech": { "name": "Fala dos Espíritos", "description": "Comunica-se com espíritos.", "system": "Carisma + Intuição. Sem custo." },
               "umbralTether": { "name": "Vínculo Umbral", "description": "Cria um link para retornar da Umbra.", "system": "Inteligência + Ocultismo. Sem custo." }
           }
       },
-      "andarilhosdoasfaltoGifts": {
+      "andarilhosdoasfaltogifts": {
           "name": "Dons dos Andarilhos do Asfalto",
           "description": "Dons dos Andarilhos do Asfalto, focados em tecnologia.",
           "powers": {
@@ -1583,7 +1649,7 @@ const oPt = {
               "plugAndPlay": { "name": "Conectar e Usar", "description": "Interface com qualquer dispositivo eletrônico.", "system": "Inteligência + Tecnologia. Passivo." }
           }
       },
-      "criadefenrisGifts": {
+      "criadefenrisgifts": {
           "name": "Dons da Cria de Fenris",
           "description": "Dons da Cria de Fenris, focados em combate e brutalidade.",
           "powers": {
@@ -1591,7 +1657,7 @@ const oPt = {
               "furiousStrike": { "name": "Pancada Furiosa", "description": "Concentra Fúria nos golpes.", "system": "Soma Glória a uma parada de Briga. Custo: 1 checagem de Fúria." }
           }
       },
-      "wendigoGifts": {
+      "wendigogifts": {
           "name": "Dons dos Wendigo",
           "description": "Dons dos Wendigo, focados em rastreamento e frio.",
           "powers": {
@@ -1599,7 +1665,7 @@ const oPt = {
               "tracklessStep": { "name": "Passo Sem Rastro", "description": "Não deixa rastro para trás.", "system": "Destreza + Furtividade. Passivo." }
           }
       },
-      "redTalonsGifts": {
+      "redtalonsgifts": {
           "name": "Dons dos Garras Vermelhas",
           "description": "Dons dos Garras Vermelhas, focados no selvagem e predadores.",
           "powers": {
@@ -1607,15 +1673,15 @@ const oPt = {
               "hiddenKiller": { "name": "Assassino Oculto", "description": "Oculta as evidências de uma matança.", "system": "Inteligência + Furtividade. Passivo." }
           }
       },
-      "shadowLordsGifts": {
+      "shadowlordsgifts": {
           "name": "Dons dos Senhores das Sombras",
           "description": "Dons dos Senhores das Sombras, focados em dominância e sombras.",
           "powers": {
               "auraOfConfidence": { "name": "Aura de Confiança", "description": "Projeta auto-segurança absoluta.", "system": "Manipulação + Subterfúgio. Passivo." },
-              "fatalFlaw": { "name": "Falha Fatal", "description": "Sente a fraqueza de um alvo.", "system": "Percepção + Percepção. Sem custo." }
+              "fatalFlaw": { "name": "Falha Fatal", "description": "Sente a fraqueza de um alvo.", "system": "Percepção + Intuição. Sem custo." }
           }
       },
-      "silverFangsGifts": {
+      "silverfangsgifts": {
           "name": "Dons dos Presas de Prata",
           "description": "Dons dos Presas de Prata, focados em liderança e nobreza.",
           "powers": {
@@ -1623,7 +1689,7 @@ const oPt = {
               "senseWyrm": { "name": "Sentir a Wyrm", "description": "Detecta a presença da Wyrm.", "system": "Inteligência + Ocultismo. Sem custo." }
           }
       },
-      "silentStridersGifts": {
+      "silentstridersgifts": {
           "name": "Dons dos Peregrinos Silenciosos",
           "description": "Dons dos Peregrinos Silenciosos, focados em viagens e mensagens.",
           "powers": {
@@ -1631,7 +1697,7 @@ const oPt = {
               "messengersFortitude": { "name": "Fortitude do Mensageiro", "description": "Viaja por dias sem descanso.", "system": "Vigor + Atletismo. Sem custo." }
           }
       },
-      "innateGifts": {
+      "innategifts": {
           "name": "Dons Inatos",
           "description": "Dons disponíveis para todos os Garou.",
           "powers": {

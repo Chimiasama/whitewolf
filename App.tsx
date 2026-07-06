@@ -190,7 +190,7 @@ const StorageModal: React.FC<StorageModalProps> = ({ mode: sMode, onClose: fnOnC
                             label={fnT('storage.enterName')} 
                             value={sNameInput} 
                             onChange={e => fnSetNameInput(e.target.value)}
-                            placeholder="My Character"
+                            placeholder={fnT('storage.namePlaceholder')}
                         />
                         <Button onClick={fnHandleSave} disabled={!sNameInput.trim()} className="mb-[2px] h-[42px]">
                             {fnT('buttons.save')}
@@ -354,7 +354,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                         >
                             <span className={`text-2xl font-bold font-cinzel ${bIsActive ? 'text-white' : bIsExhausted ? 'text-gray-600' : 'text-gray-300'}`}>{nVal}</span>
                             <span className="text-[10px] uppercase tracking-wider text-gray-500 mt-1">
-                                {nAvailable} / {nTotal} {fnT('common.available')}
+                                {nAvailable} / {nTotal}
                             </span>
                             <div className="flex gap-1 mt-1">
                                 {[...Array(nTotal)].map((_, i) => (
@@ -469,7 +469,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                                                 `}
                                                             >
                                                                 <span className="text-xl">{nVal}</span>
-                                                                <span className="text-[8px] uppercase">{nCount} av.</span>
+                                                                <span className="text-[10px] font-bold">{nCount}</span>
                                                             </button>
                                                         );
                                                     })}
@@ -614,7 +614,7 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
                                                 >
                                                     <div className={`absolute top-0 right-0 px-3 py-1 rounded-bl-lg text-[10px] uppercase font-bold tracking-wider flex items-center gap-1 border-l border-b ${bIsSelected ? 'bg-red-600 text-white border-red-500' : 'bg-gray-900 text-gray-400 border-gray-700'}`}>
                                                         <BloodIcon />
-                                                        <span>{oPower.cost || "Passive"}</span>
+                                                        <span>{oPower.cost === "Passive" ? fnT('compendium.passive') : (oPower.cost === "No cost" ? fnT('compendium.noCost') : oPower.cost)}</span>
                                                     </div>
                                                     <div className="flex justify-between items-center mb-3 pr-24">
                                                         <span className={`font-bold text-lg ${bIsSelected ? 'text-white text-shadow-sm' : 'text-gray-300'}`}>
@@ -880,9 +880,9 @@ const App: React.FC = () => {
         if (typeof window !== 'undefined') {
             try {
                 localStorage.setItem(`vtm_save_${sName}`, JSON.stringify(oCharacter));
-                fnShowNotification(fnT('storage.saveSuccess') || `Character '${sName}' saved successfully.`);
+                fnShowNotification(fnT('storage.saveSuccess'));
             } catch (e) {
-                fnShowNotification("Failed to save character.", "error");
+                fnShowNotification(fnT('storage.saveError'), "error");
             }
         }
     };
@@ -896,10 +896,10 @@ const App: React.FC = () => {
                     fnSetCharacter(oLoaded);
                     setView('creator');
                     fnSetStep(aSteps.length);
-                    fnShowNotification(fnT('storage.loadSuccess') || `Character '${sName}' loaded.`);
+                    fnShowNotification(fnT('storage.loadSuccess'));
                 } catch (e) {
                     console.error("Failed to parse save", e);
-                    fnShowNotification("Failed to load character.", "error");
+                    fnShowNotification(fnT('storage.loadError'), "error");
                 }
             }
         }
@@ -908,7 +908,7 @@ const App: React.FC = () => {
     const fnDeleteCharacter = (sName: string) => {
         if (typeof window !== 'undefined') {
             localStorage.removeItem(`vtm_save_${sName}`);
-            fnShowNotification(`Character '${sName}' deleted.`);
+            fnShowNotification(fnT('storage.deleteSuccess', { name: sName }));
         }
     };
 
@@ -949,10 +949,10 @@ const App: React.FC = () => {
                 fnSetCharacter(oLoaded);
                 setView('creator');
                 fnSetStep(aSteps.length);
-                fnShowNotification("Character imported from JSON.");
+                fnShowNotification(fnT('storage.importSuccess'));
             } catch (err) {
                 console.error(err);
-                fnShowNotification("Invalid JSON file.", "error");
+                fnShowNotification(fnT('storage.importError'), "error");
             }
         };
         reader.readAsText(file);
@@ -1080,7 +1080,7 @@ const App: React.FC = () => {
                             <Input label={fnT('concept.ambition')} value={oCharacter.ambition} onChange={e => fnUpdateCharacter('ambition', e.target.value)} placeholder={fnT('concept.ambitionPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             <Input label={fnT('concept.desire')} value={oCharacter.desire} onChange={e => fnUpdateCharacter('desire', e.target.value)} placeholder={fnT('concept.desirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                              <div className="md:col-span-2">
-                                <Input label={fnT('concept.portrait')} value={oCharacter.portraitUrl || ''} onChange={e => fnUpdateCharacter('portraitUrl', e.target.value)} placeholder="https://example.com/image.jpg" isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                                <Input label={fnT('concept.portrait')} value={oCharacter.portraitUrl || ''} onChange={e => fnUpdateCharacter('portraitUrl', e.target.value)} placeholder={fnT('concept.portraitPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             </div>
                         </div>
                     </GothicFrame>
@@ -1123,7 +1123,9 @@ const App: React.FC = () => {
                                                 <h3 className="text-3xl sm:text-4xl font-cinzel text-red-500">{oClans[oCharacter.clan as Clan].name}</h3>
                                                 <div className="flex flex-col sm:flex-row flex-wrap gap-2 items-center sm:items-end justify-center sm:justify-end w-full sm:w-auto">
                                                     {oClans[oCharacter.clan as Clan].disciplines.map(d => (
-                                                        <span key={d} className="px-3 py-1 bg-red-900/20 border border-red-900/40 rounded text-xs text-red-400 font-bold uppercase tracking-widest w-full sm:w-auto text-center">{d}</span>
+                                                    <span key={d} className="px-3 py-1 bg-red-900/20 border border-red-900/40 rounded text-xs text-red-400 font-bold uppercase tracking-widest w-full sm:w-auto text-center">
+                                                        {fnGetDisciplineDetails(fnT)[d.toLowerCase()]?.name || d}
+                                                    </span>
                                                     ))}
                                                 </div>
                                             </div>
@@ -1145,7 +1147,7 @@ const App: React.FC = () => {
                             ) : (
                                 <div className="py-20 flex flex-col items-center justify-center opacity-30">
                                     <RoseIcon className="w-32 h-32 text-red-900 animate-pulse" />
-                                    <p className="text-red-800 font-cinzel mt-4 tracking-widest">Selecione um Clã para ver detalhes</p>
+                                    <p className="text-red-800 font-cinzel mt-4 tracking-widest">{fnT('common.selectClanToSeeDetails')}</p>
                                 </div>
                             )}
                         </div>
@@ -1188,7 +1190,9 @@ const App: React.FC = () => {
                                                 <h3 className="text-3xl sm:text-4xl font-cinzel text-emerald-500">{oTribes[oCharacter.tribe as Tribe].name}</h3>
                                                 <div className="flex flex-col sm:flex-row flex-wrap gap-2 items-center sm:items-end justify-center sm:justify-end w-full sm:w-auto">
                                                     {oTribes[oCharacter.tribe as Tribe].gifts.map(g => (
-                                                        <span key={g} className="px-3 py-1 bg-emerald-900/20 border border-emerald-900/40 rounded text-xs text-emerald-400 font-bold uppercase tracking-widest w-full sm:w-auto text-center">{g}</span>
+                                                    <span key={g} className="px-3 py-1 bg-emerald-900/20 border border-emerald-900/40 rounded text-xs text-emerald-400 font-bold uppercase tracking-widest w-full sm:w-auto text-center">
+                                                        {fnGetDisciplineDetails(fnT)[g]?.name || g}
+                                                    </span>
                                                     ))}
                                                 </div>
                                             </div>
@@ -1197,11 +1201,11 @@ const App: React.FC = () => {
 
                                         <div className="space-y-6 bg-black/40 p-6 rounded-xl border border-emerald-900/20">
                                             <div className="space-y-2">
-                                                <h4 className="text-emerald-500 font-bold uppercase text-xs tracking-[0.2em]">Favor</h4>
+                                                <h4 className="text-emerald-500 font-bold uppercase text-xs tracking-[0.2em]">{fnT('compendium.favor')}</h4>
                                                 <p className="text-sm text-gray-400 leading-relaxed">{oTribes[oCharacter.tribe as Tribe].favor}</p>
                                             </div>
                                             <div className="space-y-2">
-                                                <h4 className="text-red-500 font-bold uppercase text-xs tracking-[0.2em]">Bane</h4>
+                                                <h4 className="text-red-500 font-bold uppercase text-xs tracking-[0.2em]">{fnT('compendium.bane')}</h4>
                                                 <p className="text-sm text-gray-400 leading-relaxed">{oTribes[oCharacter.tribe as Tribe].bane}</p>
                                             </div>
                                         </div>
@@ -1210,7 +1214,7 @@ const App: React.FC = () => {
                             ) : (
                                 <div className="py-20 flex flex-col items-center justify-center opacity-30">
                                     <ClawIcon className="w-32 h-32 text-emerald-900 animate-pulse" />
-                                    <p className="text-emerald-800 font-cinzel mt-4 tracking-widest">Selecione uma Tribo para ver detalhes</p>
+                                    <p className="text-emerald-800 font-cinzel mt-4 tracking-widest">{fnT('common.selectTribeToSeeDetails')}</p>
                                 </div>
                             )}
                         </div>
@@ -1257,7 +1261,7 @@ const App: React.FC = () => {
                             ) : (
                                 <div className="py-20 flex flex-col items-center justify-center opacity-30">
                                     <WolfCubIcon className="w-32 h-32 text-emerald-900 animate-pulse" />
-                                    <p className="text-emerald-800 font-cinzel mt-4 tracking-widest">Selecione um Augúrio para ver detalhes</p>
+                                    <p className="text-emerald-800 font-cinzel mt-4 tracking-widest">{fnT('common.selectAuspiceToSeeDetails')}</p>
                                 </div>
                             )}
                         </div>
@@ -1381,7 +1385,7 @@ const App: React.FC = () => {
                                                     const used = Math.min(total, oUsed[val] || 0);
                                                     return (
                                                         <div key={val} className="flex flex-col items-center">
-                                                            <span className="text-[10px] text-gray-500 mb-1">{val} DOTS</span>
+                                                            <span className="text-[10px] text-gray-500 mb-1 uppercase">{val} {fnT('compendium.dots')}</span>
                                                             <div className="flex gap-1">
                                                                 {[...Array(total)].map((_, i) => (
                                                                     <div key={i} className={`w-3 h-3 rounded-full border ${i < used ? (bIsWerewolf ? 'bg-green-600 border-green-400 shadow-[0_0_8px_rgba(34,197,94,0.4)]' : 'bg-red-600 border-red-400 shadow-[0_0_8px_rgba(220,38,38,0.4)]') : 'bg-gray-800 border-gray-600'}`}></div>
@@ -1392,7 +1396,7 @@ const App: React.FC = () => {
                                                 })}
                                                 {oPredatorType?.disciplineAdd && (
                                                     <div className="flex flex-col items-center opacity-60">
-                                                        <span className="text-[10px] text-gray-500 mb-1">PREDATOR</span>
+                                                        <span className="text-[10px] text-gray-500 mb-1 uppercase">{fnT('compendium.predator')}</span>
                                                         <div className="w-3 h-3 rounded-full border bg-purple-600 border-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.4)]"></div>
                                                     </div>
                                                 )}
@@ -1423,7 +1427,7 @@ const App: React.FC = () => {
 
                                     return aAllDiscs.map(sDisc => {
                                         const nDots = oCharacter.disciplines[sDisc] || 0;
-                                        const oDetails = oDisciplineDetails[sDisc];
+                                        const oDetails = oDisciplineDetails[sDisc.toLowerCase()];
                                         const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
                                         const bIsPredatorDisc = oPredatorType?.disciplineAdd?.discipline === sDisc;
                                         const nPredatorDots = bIsPredatorDisc ? oPredatorType?.disciplineAdd?.dots || 0 : 0;
@@ -1438,7 +1442,7 @@ const App: React.FC = () => {
                                                                 <span className="text-[9px] uppercase text-gray-500 font-bold">{fnT('common.unknown')}</span>
                                                             )}
                                                             {bIsPredatorDisc && (
-                                                                <span className="text-[9px] uppercase text-purple-500 font-bold">Predator Type</span>
+                                                                <span className="text-[9px] uppercase text-purple-500 font-bold">{fnT('characterSheet.predatorType')}</span>
                                                             )}
                                                         </div>
                                                     </div>
@@ -1642,7 +1646,7 @@ const App: React.FC = () => {
                                                                <div className="flex flex-wrap gap-1 mt-1">
                                                                    {combo.requirements.map(req => (
                                                                        <span key={req.discipline} className="text-[9px] px-1.5 py-0.5 bg-black/40 rounded text-red-400 border border-red-900/30 font-mono uppercase">
-                                                                           {req.discipline} {req.level}
+                                                                           {fnGetDisciplineDetails(fnT)[req.discipline]?.name || req.discipline} {req.level}
                                                                        </span>
                                                                    ))}
                                                                </div>
@@ -1663,11 +1667,11 @@ const App: React.FC = () => {
                                                                                 <p className="text-sm text-gray-300 leading-relaxed italic">{combo.system}</p>
                                                                             </div>
                                                                             <div className="pt-4 border-t border-gray-700">
-                                                                                <h5 className="text-gray-500 font-bold uppercase text-[10px] tracking-widest mb-2">Requirements</h5>
+                                                                                <h5 className="text-gray-500 font-bold uppercase text-[10px] tracking-widest mb-2">{fnT('compendium.requirements')}</h5>
                                                                                 <div className="flex flex-wrap gap-2">
                                                                                     {combo.requirements.map(req => (
                                                                                         <span key={req.discipline} className="px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs text-gray-400">
-                                                                                            {req.discipline} {req.level}
+                                                                                            {fnGetDisciplineDetails(fnT)[req.discipline]?.name || req.discipline} {req.level}
                                                                                         </span>
                                                                                     ))}
                                                                                 </div>
@@ -1722,12 +1726,12 @@ const App: React.FC = () => {
                                                         <div className="flex flex-wrap gap-2">
                                                             {oSelectedPredator.humanityModifier !== 0 && (
                                                                 <div className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tighter ${oSelectedPredator.humanityModifier > 0 ? 'bg-green-900/30 text-green-400 border border-green-900/50' : 'bg-red-900/30 text-red-400 border border-red-900/50'}`}>
-                                                                    {oSelectedPredator.humanityModifier > 0 ? '+' : ''}{oSelectedPredator.humanityModifier} Humanity
+                                                                    {oSelectedPredator.humanityModifier > 0 ? '+' : ''}{oSelectedPredator.humanityModifier} {fnT('characterSheet.humanity')}
                                                                 </div>
                                                             )}
                                                             {oSelectedPredator.disciplineAdd && (
                                                                 <div className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tighter bg-purple-900/30 text-purple-400 border border-purple-900/50">
-                                                                    +{oSelectedPredator.disciplineAdd.dots} {oSelectedPredator.disciplineAdd.discipline}
+                                                                    +{oSelectedPredator.disciplineAdd.dots} {fnGetDisciplineDetails(fnT)[oSelectedPredator.disciplineAdd.discipline]?.name || oSelectedPredator.disciplineAdd.discipline}
                                                                 </div>
                                                             )}
                                                         </div>
@@ -1741,21 +1745,21 @@ const App: React.FC = () => {
                                                         <div className="space-y-4">
                                                             <h5 className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold flex items-center gap-2">
                                                                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                                                                Granted Benefits
+                                                                {fnT('compendium.grantedBenefits')}
                                                             </h5>
                                                             <div className="space-y-3">
                                                                 {oSelectedPredator.advantages.map((adv, idx) => (
                                                                     <div key={`${adv.name}-${idx}`} className="flex items-start gap-3 bg-green-900/5 p-4 rounded-md border border-green-900/20 hover:bg-green-900/10 transition-colors">
                                                                         <div className="mt-1 text-green-500"><CheckCircle /></div>
                                                                         <div>
-                                                                            <div className="text-[9px] uppercase tracking-widest text-green-600 font-bold mb-0.5">Advantage</div>
+                                                                            <div className="text-[9px] uppercase tracking-widest text-green-600 font-bold mb-0.5">{fnT('compendium.advantage')}</div>
                                                                             <div className="text-sm font-bold text-green-400">{adv.name}</div>
-                                                                            <div className="text-[10px] text-gray-500">{adv.cost} dots included</div>
+                                                                            <div className="text-[10px] text-gray-500">{adv.cost} {fnT('compendium.dotsIncluded')}</div>
                                                                         </div>
                                                                     </div>
                                                                 ))}
                                                                 {oSelectedPredator.advantages.length === 0 && (
-                                                                    <div className="text-xs text-gray-600 italic">No static advantages granted.</div>
+                                    <div className="text-xs text-gray-600 italic">{fnT('predatorTypes.noAdvantages')}</div>
                                                                 )}
                                                             </div>
                                                         </div>
@@ -1763,21 +1767,21 @@ const App: React.FC = () => {
                                                         <div className="space-y-4">
                                                              <h5 className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold flex items-center gap-2">
                                                                 <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
-                                                                Potential Costs
+                                                                {fnT('compendium.potentialCosts')}
                                                              </h5>
                                                              <div className="space-y-3">
                                                                  {oSelectedPredator.flaws.map((flaw, idx) => (
                                                                      <div key={`${flaw.name}-${idx}`} className="flex items-start gap-3 bg-red-900/5 p-4 rounded-md border border-red-900/20 hover:bg-red-900/10 transition-colors">
                                                                          <div className="mt-1 text-red-500"><ExclamationCircle /></div>
                                                                          <div>
-                                                                             <div className="text-[9px] uppercase tracking-widest text-red-600 font-bold mb-0.5">Flaw</div>
+                                                                             <div className="text-[9px] uppercase tracking-widest text-red-600 font-bold mb-0.5">{fnT('compendium.flaw')}</div>
                                                                              <div className="text-sm font-bold text-red-400">{flaw.name}</div>
-                                                                             <div className="text-[10px] text-gray-500">{flaw.cost} dots penalty</div>
+                                                                             <div className="text-[10px] text-gray-500">{flaw.cost} {fnT('compendium.dotsPenalty')}</div>
                                                                          </div>
                                                                      </div>
                                                                  ))}
                                                                  {oSelectedPredator.flaws.length === 0 && (
-                                                                     <div className="text-xs text-gray-600 italic">No static flaws required.</div>
+                                     <div className="text-xs text-gray-600 italic">{fnT('predatorTypes.noFlaws')}</div>
                                                                  )}
                                                              </div>
                                                         </div>
@@ -2003,7 +2007,7 @@ const App: React.FC = () => {
                                     <div className="md:col-span-1">
                                         <Input
                                             label={fnT('common.specialty')}
-                                            placeholder="ex: Parkour"
+                                            placeholder={fnT('common.specialtyPlaceholder')}
                                             value={sSpecialtyName}
                                             onChange={(e) => setSpecialtyName(e.target.value)}
                                         />
@@ -2209,7 +2213,7 @@ const App: React.FC = () => {
                             </Button>
                         </div>
                     ) : (
-                        <Button variant="secondary" onClick={() => window.print()}>{fnT('buttons.print') || 'Print'}</Button>
+                        <Button variant="secondary" onClick={() => window.print()}>{fnT('buttons.print')}</Button>
                     )}
                 </div>
             </footer>
