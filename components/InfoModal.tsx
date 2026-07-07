@@ -80,9 +80,6 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
         <main className={`p-6 ${bIsTop ? 'overflow-y-auto' : 'overflow-y-hidden'}`}>
           {oChildren}
         </main>
-        <footer className="p-4 border-t border-red-950/70 text-right flex-shrink-0">
-          <Button onClick={fnOnClose} variant="secondary">{fnT('buttons.close')}</Button>
-        </footer>
       </div>
     </div>
   );
