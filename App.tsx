@@ -2051,8 +2051,8 @@ const App: React.FC = () => {
         if (!bShowModeSelection) {
             return (
                 <div className="min-h-screen w-full overflow-x-hidden text-white font-sans flex flex-col items-center justify-center p-4 relative" style={gothicBackgroundStyle}>
-                    <div className="absolute inset-0 pointer-events-none opacity-10">
-                        <RoseIcon className="w-[800px] h-[800px] text-red-900 absolute -top-40 -right-40 animate-pulse" />
+                    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-10">
+                        <RoseIcon className="absolute -right-16 -top-16 h-72 w-72 text-red-900 opacity-70 sm:-right-40 sm:-top-40 sm:h-[800px] sm:w-[800px] animate-pulse" />
                     </div>
                     <div className="z-20 text-center mb-12 px-4 w-full min-w-0">
                         <h1 className="text-xl sm:text-4xl md:text-6xl font-cinzel font-bold text-red-600 tracking-widest mb-2 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal leading-tight">{fnT('app.title')}</h1>
@@ -2077,8 +2077,8 @@ const App: React.FC = () => {
 
         return (
             <div className="min-h-screen w-full overflow-x-hidden text-white font-sans flex flex-col items-center justify-center p-4 relative" style={gothicBackgroundStyle}>
-                <div className="absolute inset-0 pointer-events-none opacity-20">
-                    <RoseIcon className={`w-[800px] h-[800px] ${bIsWerewolf ? 'text-emerald-900' : 'text-red-900'} absolute -top-40 -right-40 animate-pulse`} />
+                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-20">
+                    <RoseIcon className={`absolute -right-16 -top-16 h-72 w-72 opacity-70 sm:-right-40 sm:-top-40 sm:h-[800px] sm:w-[800px] ${bIsWerewolf ? 'text-emerald-900' : 'text-red-900'} animate-pulse`} />
                 </div>
                 <GothicFrame className={`max-w-2xl w-full text-center p-6 sm:p-12 bg-black/80 shadow-2xl z-10 border ${sThemeBorder} min-w-0`}>
                     <h1 className={`text-xl sm:text-4xl md:text-5xl font-cinzel font-bold ${sThemeColor} tracking-widest mb-2 text-shadow-lg [text-wrap:balance] break-words whitespace-normal leading-tight`}>
