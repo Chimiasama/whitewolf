@@ -431,8 +431,8 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                                     <div 
                                                         key={nI} 
                                                         className={`
-                                                            w-2 h-4 rounded-sm transition-colors duration-300
-                                                            ${nValue > nI ? 'bg-red-600 shadow-[0_0_5px_rgba(220,38,38,0.6)]' : 'bg-gray-800 border border-gray-700'}
+                                                            w-2.5 h-2.5 rounded-full border transition-all duration-300
+                                                            ${nValue > nI ? 'bg-red-600 border-red-400 shadow-[0_0_6px_rgba(220,38,38,0.7)]' : 'bg-transparent border-gray-600'}
                                                         `}
                                                     ></div>
                                                 ))}
@@ -474,13 +474,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                                         );
                                                     })}
                                                 </div>
-                                                <Button
-                                                    variant="secondary"
-                                                    onClick={() => { fnOnChange(sItem, nBaseValue); fnSetActiveItem(null); }}
-                                                    className="w-full"
-                                                >
-                                                    {fnT('common.clear')}
-                                                </Button>
+
                                             </div>
                                         </InfoModal>
                                     )}
