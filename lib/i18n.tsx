@@ -160,7 +160,8 @@ const oEn = {
     "desire": "Desire",
     "desirePlaceholder": "Short-term goal, e.g., To taste the blood of a celebrity",
     "portrait": "Character Portrait",
-    "portraitPlaceholder": "Portrait URL"
+    "portraitPlaceholder": "Upload Photo",
+    "changePortrait": "Change Photo"
   },
   "clan": {
     "title": "Choose your Bloodline"
@@ -2661,7 +2662,8 @@ const oPt = {
     "desire": "Desejo",
     "desirePlaceholder": "Objetivo de curto prazo",
     "portrait": "Retrato",
-    "portraitPlaceholder": "URL do Retrato"
+    "portraitPlaceholder": "Enviar Foto",
+    "changePortrait": "Mudar Foto"
   },
   "clan": {
     "title": "Escolha sua Linhagem"

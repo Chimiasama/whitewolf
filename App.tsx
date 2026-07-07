@@ -10,10 +10,10 @@ import { useI18n } from './lib/i18n';
 import { InfoModal } from './components/InfoModal';
 import { InfoIcon } from './components/InfoIcon';
 import { GothicFrame, RoseIcon } from './components/ui/GothicFrame';
-import { LoreQuote } from './components/ui/LoreQuote';
 import { StepIndicator } from './components/StepIndicator';
 import { fnGenerateIdentity } from './lib/generators';
 import { fnCreateRandomCharacter } from './lib/randomizer';
+import { fnProcessImage } from './lib/imageUtils';
 
 // --- ICONS --- //
 const CheckCircle = () => (
@@ -1066,6 +1066,18 @@ const App: React.FC = () => {
         }));
     };
 
+    const fnHandlePortraitChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        try {
+            const sBase64 = await fnProcessImage(file);
+            fnUpdateCharacter('portraitUrl', sBase64);
+        } catch (err: any) {
+            fnShowNotification(err.message, 'error');
+        }
+    };
+
     const fnHandleGameSelect = (game: GameType) => {
         // Full reset when switching game types
         const oIdentity = fnGenerateIdentity(sLocale, game);
@@ -1093,7 +1105,7 @@ const App: React.FC = () => {
                 return (
                     <GothicFrame>
                         <div className="flex flex-wrap justify-between items-center gap-3 mb-2">
-                            <h2 className="text-3xl font-cinzel text-red-500">{fnT('concept.title')}</h2>
+                            <h2 className="text-2xl font-cinzel text-red-500">{fnT('concept.title')}</h2>
                             <Button 
                                 variant="secondary" 
                                 onClick={fnRandomizeIdentity} 
@@ -1105,7 +1117,6 @@ const App: React.FC = () => {
                             </Button>
                         </div>
                         <p className="text-gray-400 mb-6 italic">{fnT('concept.subtitle')}</p>
-                        <LoreQuote text={fnT('lore.concept')} />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                             <Input label={fnT('concept.name')} value={oCharacter.name} onChange={e => fnUpdateCharacter('name', e.target.value)} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             <Input label={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sire')} value={oCharacter.gameType === GameType.Werewolf ? (oCharacter.mentor || '') : oCharacter.sire} onChange={e => fnUpdateCharacter(oCharacter.gameType === GameType.Werewolf ? 'mentor' : 'sire', e.target.value)} placeholder={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
@@ -1115,7 +1126,29 @@ const App: React.FC = () => {
                             <Input label={fnT('concept.ambition')} value={oCharacter.ambition} onChange={e => fnUpdateCharacter('ambition', e.target.value)} placeholder={fnT('concept.ambitionPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             <Input label={fnT('concept.desire')} value={oCharacter.desire} onChange={e => fnUpdateCharacter('desire', e.target.value)} placeholder={fnT('concept.desirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                              <div className="md:col-span-2">
-                                <Input label={fnT('concept.portrait')} value={oCharacter.portraitUrl || ''} onChange={e => fnUpdateCharacter('portraitUrl', e.target.value)} placeholder={fnT('concept.portraitPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                                <label className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">
+                                    {fnT('concept.portrait')}
+                                </label>
+                                <div className="flex items-center gap-4">
+                                    {oCharacter.portraitUrl && (
+                                        <div className="w-16 h-16 rounded overflow-hidden border border-gray-700 flex-shrink-0">
+                                            <img src={oCharacter.portraitUrl} alt="Portrait preview" className="w-full h-full object-cover" />
+                                        </div>
+                                    )}
+                                    <label className={`flex-grow cursor-pointer bg-gray-950/60 backdrop-blur-sm border border-gray-800/80 rounded-lg px-4 py-2.5 text-gray-400 text-sm transition-all duration-200 hover:border-gray-600 flex items-center justify-center gap-2 ${oCharacter.gameType === GameType.Werewolf ? 'hover:border-emerald-500/50' : 'hover:border-red-500/50'}`}>
+                                        <span className="truncate">{oCharacter.portraitUrl ? fnT('concept.changePortrait') : fnT('concept.portraitPlaceholder')}</span>
+                                        <input type="file" className="hidden" accept="image/*" onChange={fnHandlePortraitChange} />
+                                    </label>
+                                    {oCharacter.portraitUrl && (
+                                        <button
+                                            onClick={() => fnUpdateCharacter('portraitUrl', '')}
+                                            className="p-2 text-gray-500 hover:text-red-500 transition-colors"
+                                            title={fnT('buttons.delete')}
+                                        >
+                                            <TrashIcon />
+                                        </button>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </GothicFrame>
@@ -1127,8 +1160,7 @@ const App: React.FC = () => {
                     return (
                         <div className="text-center space-y-8">
                             <div className="space-y-4">
-                                <h2 className="text-3xl font-cinzel text-red-500">{fnT('clan.title')}</h2>
-                                <LoreQuote text={fnT('lore.intro')} />
+                                <h2 className="text-2xl font-cinzel text-red-500">{fnT('clan.title')}</h2>
                             </div>
 
                             <div className="bg-black/40 p-4 rounded-xl border border-red-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
@@ -1195,7 +1227,7 @@ const App: React.FC = () => {
                     return (
                         <div className="text-center space-y-8">
                             <div className="space-y-4">
-                                <h2 className="text-3xl font-cinzel text-emerald-500">{fnT('steps.tribe')}</h2>
+                                <h2 className="text-2xl font-cinzel text-emerald-500">{fnT('steps.tribe')}</h2>
                             </div>
 
                             <div className="bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
@@ -1262,7 +1294,7 @@ const App: React.FC = () => {
                     return (
                         <div className="text-center space-y-8">
                             <div className="space-y-4">
-                                <h2 className="text-3xl font-cinzel text-emerald-500">{fnT('steps.auspice')}</h2>
+                                <h2 className="text-2xl font-cinzel text-emerald-500">{fnT('steps.auspice')}</h2>
                             </div>
 
                             <div className="bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
@@ -1305,9 +1337,8 @@ const App: React.FC = () => {
             case 'attributes':
                 return (
                     <div className="text-center">
-                        <h2 className={`text-3xl font-cinzel mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-green-500' : 'text-red-500'}`}>{fnT('attributes.title')}</h2>
+                        <h2 className={`text-2xl font-cinzel mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-green-500' : 'text-red-500'}`}>{fnT('attributes.title')}</h2>
                         <p className="text-gray-400 mb-6">{fnT('attributes.subtitle')}</p>
-                        <LoreQuote text={fnT('lore.attributes')} />
                         <PointAllocator 
                             items={aAttributeList} 
                             values={oCharacter.attributes} 
@@ -1323,7 +1354,7 @@ const App: React.FC = () => {
             case 'skills':
                 return (
                     <div className="text-center">
-                        <h2 className={`text-3xl font-cinzel mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-green-500' : 'text-red-500'}`}>{fnT('skills.title')}</h2>
+                        <h2 className={`text-2xl font-cinzel mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-green-500' : 'text-red-500'}`}>{fnT('skills.title')}</h2>
                         <p className="text-gray-400 mb-2">{fnT('skills.subtitle')}</p>
 
                         <div className="mb-6 flex flex-col items-center">
@@ -1341,7 +1372,6 @@ const App: React.FC = () => {
                             </div>
                         </div>
 
-                        <LoreQuote text={fnT('lore.skills')} />
                         <PointAllocator 
                             items={aSkillList} 
                             values={oCharacter.skills} 
@@ -1364,8 +1394,7 @@ const App: React.FC = () => {
 
                 return (
                     <div className="text-center space-y-8">
-                        <h2 className={`text-3xl font-cinzel ${sThemeColor} mb-2`}>{fnT('finishingTouches.title')}</h2>
-                        <LoreQuote text={fnT('lore.finishing')} />
+                        <h2 className={`text-2xl font-cinzel ${sThemeColor} mb-2`}>{fnT('finishingTouches.title')}</h2>
                         
                         {/* Disciplines / Gifts Section */}
                         <GothicFrame className="text-left">
