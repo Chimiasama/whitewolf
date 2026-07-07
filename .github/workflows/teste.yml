@@ -3,13 +3,11 @@ name: Android CI (Automatic & Manual APK Build)
 on:
   push:
     branches:
-      - main       # Mude para 'master' se a sua branch principal tiver esse nome
-      - master     # Deixei ambas para garantir que vai disparar independentemente do nome da sua branch
+      - '**'        # O '**' diz ao GitHub: "Rode em QUALQUER push de QUALQUER branch"
   pull_request:
     branches:
-      - main
-      - master
-  workflow_dispatch: # Mantém o botão de executar manualmente pelo site caso você precise
+      - '**'        # Também roda se você abrir uma Pull Request de qualquer branch
+  workflow_dispatch: # Mantém o botão manual ativo por segurança
 
 jobs:
   build:
