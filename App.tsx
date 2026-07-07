@@ -624,10 +624,21 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
                                                         <BloodIcon />
                                                         <span>{oPower.cost === "Passive" ? fnT('compendium.passive') : (oPower.cost === "No cost" ? fnT('compendium.noCost') : oPower.cost)}</span>
                                                     </div>
-                                                    <div className="flex justify-between items-center mb-3 pr-24">
-                                                        <span className={`font-bold text-lg ${bIsSelected ? 'text-white text-shadow-sm' : 'text-gray-300'}`}>
-                                                            {oPower.name}
-                                                        </span>
+                                                    <div className="flex justify-between items-start mb-3 pr-24">
+                                                        <div className="flex flex-col">
+                                                            <span className={`font-bold text-lg ${bIsSelected ? 'text-white text-shadow-sm' : 'text-gray-300'}`}>
+                                                                {oPower.name}
+                                                            </span>
+                                                            {oPower.amalgam && (
+                                                                <div className="flex flex-wrap gap-2 mt-1">
+                                                                    {oPower.amalgam.map((oReq, idx) => (
+                                                                        <span key={idx} className="text-[10px] font-bold uppercase tracking-wider text-red-400/80 bg-red-900/20 px-1.5 py-0.5 rounded border border-red-900/30">
+                                                                            {fnT('compendium.requirements')}: {fnT('disciplines.' + oReq.discipline + '.name')} {oReq.level}
+                                                                        </span>
+                                                                    ))}
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                         {bIsSelected && <div className="text-red-500 bg-red-900/20 rounded-full p-1"><CheckCircle /></div>}
                                                     </div>
                                                     <p className={`text-sm mb-4 leading-relaxed ${bIsSelected ? 'text-gray-200' : 'text-gray-400'}`}>{oPower.description}</p>
@@ -679,6 +690,10 @@ const App: React.FC = () => {
     const { t: fnT, locale: sLocale } = useI18n(); 
     const [view, setView] = useState<'home' | 'creator'>('home');
     const [nStep, fnSetStep] = useState(1);
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [nStep]);
     const [bShowModeSelection, fnSetShowModeSelection] = useState(false);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
     const [sSelectedSkill, setSelectedSkill] = useState<string>('');
