@@ -1,7 +1,7 @@
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, Specialty, DisciplinePower, GameType, Tribe, Auspice, Disciplines } from './types';
-import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths, oDisciplineCreationPools } from './constants';
+import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths, oDisciplineCreationPools, VAMPIRE_DISCIPLINES, WEREWOLF_GIFTS } from './constants';
 import { Card } from './components/ui/Card';
 import { Button } from './components/ui/Button';
 import { Input, TextArea } from './components/ui/Input';
@@ -1133,13 +1133,13 @@ const App: React.FC = () => {
                         </div>
                         <p className="text-gray-400 mb-6 italic">{fnT('concept.subtitle')}</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                            <Input label={fnT('concept.name')} value={oCharacter.name} onChange={e => fnUpdateCharacter('name', e.target.value)} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
-                            <Input label={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sire')} value={oCharacter.gameType === GameType.Werewolf ? (oCharacter.mentor || '') : oCharacter.sire} onChange={e => fnUpdateCharacter(oCharacter.gameType === GameType.Werewolf ? 'mentor' : 'sire', e.target.value)} placeholder={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                            <Input id="char-name" label={fnT('concept.name')} value={oCharacter.name} onChange={e => fnUpdateCharacter('name', e.target.value)} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                            <Input id="char-mentor" label={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sire')} value={oCharacter.gameType === GameType.Werewolf ? (oCharacter.mentor || '') : oCharacter.sire} onChange={e => fnUpdateCharacter(oCharacter.gameType === GameType.Werewolf ? 'mentor' : 'sire', e.target.value)} placeholder={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             <div className="md:col-span-2">
-                                <Input label={fnT('concept.concept')} value={oCharacter.concept} onChange={e => fnUpdateCharacter('concept', e.target.value)} placeholder={fnT('concept.conceptPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                                <Input id="char-concept" label={fnT('concept.concept')} value={oCharacter.concept} onChange={e => fnUpdateCharacter('concept', e.target.value)} placeholder={fnT('concept.conceptPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             </div>
-                            <Input label={fnT('concept.ambition')} value={oCharacter.ambition} onChange={e => fnUpdateCharacter('ambition', e.target.value)} placeholder={fnT('concept.ambitionPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
-                            <Input label={fnT('concept.desire')} value={oCharacter.desire} onChange={e => fnUpdateCharacter('desire', e.target.value)} placeholder={fnT('concept.desirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                            <Input id="char-ambition" label={fnT('concept.ambition')} value={oCharacter.ambition} onChange={e => fnUpdateCharacter('ambition', e.target.value)} placeholder={fnT('concept.ambitionPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                            <Input id="char-desire" label={fnT('concept.desire')} value={oCharacter.desire} onChange={e => fnUpdateCharacter('desire', e.target.value)} placeholder={fnT('concept.desirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                              <div className="md:col-span-2">
                                 <label className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">
                                     {fnT('concept.portrait')}
@@ -1617,7 +1617,10 @@ const App: React.FC = () => {
                                             title: bIsWerewolf ? fnT('characterSheet.gifts') : fnT('finishingTouches.disciplines.title'),
                                             content: (
                                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                                                    {Object.keys(oDisciplineDetails).filter(d => !oCharacter.disciplines[d]).map(d => (
+                                                    {Object.keys(oDisciplineDetails)
+                                                        .filter(d => !oCharacter.disciplines[d])
+                                                        .filter(d => bIsWerewolf ? WEREWOLF_GIFTS.includes(d) : VAMPIRE_DISCIPLINES.includes(d))
+                                                        .map(d => (
                                                         <Button
                                                             key={d}
                                                             variant="secondary"
@@ -1635,7 +1638,7 @@ const App: React.FC = () => {
                                         });
                                     }}
                                 >
-                                    + {bIsWerewolf ? fnT('buttons.add') : fnT('buttons.add')}
+                                    + {bIsWerewolf ? fnT('characterSheet.gifts') : fnT('characterSheet.disciplines')}
                                 </Button>
                             </div>
                         </GothicFrame>
