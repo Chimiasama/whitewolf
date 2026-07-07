@@ -61,13 +61,13 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
         aria-modal="true"
         aria-labelledby={`modal-title-${nMyIndex}`}
         className={`
-          bg-gray-800 border border-red-800 rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col transition-transform duration-300
+          ww-modal-panel bg-gradient-to-br from-gray-950 via-slate-950 to-black border border-red-800/80 rounded-xl shadow-[0_0_45px_rgba(127,29,29,0.32),0_25px_80px_rgba(0,0,0,0.7)] w-full max-w-2xl max-h-[90vh] flex flex-col transition-all duration-300 ease-out
           scale-100
         `}
         onClick={e => e.stopPropagation()}
       >
-        <header className="flex justify-between items-center p-4 border-b border-gray-700 flex-shrink-0">
-          <h2 id={`modal-title-${nMyIndex}`} className="text-xl sm:text-2xl font-bold text-red-400 break-words pr-4">{sTitle}</h2>
+        <header className="flex justify-between items-center p-4 border-b border-red-950/70 flex-shrink-0">
+          <h2 id={`modal-title-${nMyIndex}`} className="text-xl sm:text-2xl font-black text-red-400 drop-shadow-[0_0_14px_rgba(248,113,113,0.35)] break-words pr-4">{sTitle}</h2>
           <button 
             onClick={fnOnClose} 
             className="text-gray-400 hover:text-white transition-colors flex-shrink-0"
@@ -79,7 +79,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
         <main className={`p-6 ${bIsTop ? 'overflow-y-auto' : 'overflow-y-hidden'}`}>
           {oChildren}
         </main>
-        <footer className="p-4 border-t border-gray-700 text-right flex-shrink-0">
+        <footer className="p-4 border-t border-red-950/70 text-right flex-shrink-0">
           <Button onClick={fnOnClose} variant="secondary">{fnT('buttons.close')}</Button>
         </footer>
       </div>
