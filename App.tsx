@@ -1,7 +1,7 @@
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
-import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, Specialty, DisciplinePower, DisciplineCombo, GameType, Tribe, Auspice } from './types';
-import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetDisciplineCombos, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths, oDisciplineCreationPools } from './constants';
+import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, Specialty, DisciplinePower, GameType, Tribe, Auspice, Disciplines } from './types';
+import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths, oDisciplineCreationPools } from './constants';
 import { Card } from './components/ui/Card';
 import { Button } from './components/ui/Button';
 import { Input, TextArea } from './components/ui/Input';
@@ -501,9 +501,10 @@ interface DisciplinePowerSelectorProps {
     selectedPowerIds: string[];
     onSelectPowers: (ids: string[]) => void;
     disciplineDetails: DisciplineDetail;
+    allDisciplines: Disciplines;
 }
 
-const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disciplineKey: sDisciplineKey, dots: nDots, selectedPowerIds: aSelectedPowerIds, onSelectPowers: fnOnSelectPowers, disciplineDetails: oDisciplineDetails }) => {
+const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disciplineKey: sDisciplineKey, dots: nDots, selectedPowerIds: aSelectedPowerIds, onSelectPowers: fnOnSelectPowers, disciplineDetails: oDisciplineDetails, allDisciplines: oAllDisciplines }) => {
     const { t: fnT } = useI18n();
     const [bIsOpen, fnSetIsOpen] = useState(false);
 
@@ -517,6 +518,19 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
     }, [oDisciplineDetails]);
 
     const fnCheckValidity = useCallback((sTestId: string) => {
+        const oPower = oDisciplineDetails.powers.find(p => p.id === sTestId);
+        if (!oPower) return false;
+
+        // Check prerequisites
+        if (oPower.prerequisite && !aSelectedPowerIds.includes(oPower.prerequisite)) return false;
+
+        // Check amalgams
+        if (oPower.amalgam) {
+            for (const oReq of oPower.amalgam) {
+                if ((oAllDisciplines[oReq.discipline] || 0) < oReq.level) return false;
+            }
+        }
+
         const aTestList = [...aSelectedPowerIds, sTestId];
         const aLevels = aTestList.map(id => {
             return oDisciplineDetails.powers.find(p => p.id === id)?.level || 0;
@@ -526,7 +540,7 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
             if (aLevels[i] > nDots - i) return false;
         }
         return true;
-    }, [aSelectedPowerIds, nDots, oDisciplineDetails]);
+    }, [aSelectedPowerIds, nDots, oDisciplineDetails, oAllDisciplines]);
 
     const fnTogglePower = (sPowerId: string) => {
         if (aSelectedPowerIds.includes(sPowerId)) {
@@ -958,30 +972,57 @@ const App: React.FC = () => {
         reader.readAsText(file);
     };
 
-    const aAvailableCombos = useMemo(() => {
-        const aAll = fnGetDisciplineCombos(fnT);
-        return aAll.filter(c => {
-            return c.requirements.every(req => {
-                const nLevel = oCharacter.disciplines[req.discipline] || 0;
-                return nLevel >= req.level;
-            });
-        });
-    }, [oCharacter.disciplines, fnT]);
-
-    // Prune invalid combos when disciplines change
+    // Prune invalid powers (amalgams/prerequisites) when disciplines change
     useEffect(() => {
-        const aAll = fnGetDisciplineCombos(fnT);
-        const aValidSelectedIds = oCharacter.disciplineCombos
-            .filter(selected => {
-                const oDef = aAll.find(c => c.id === selected.id);
-                if (!oDef) return false;
-                return oDef.requirements.every(req => (oCharacter.disciplines[req.discipline] || 0) >= req.level);
-            })
-            .map(c => c.id);
-        
-        if (aValidSelectedIds.length !== oCharacter.disciplineCombos.length) {
-            const aNewCombos = aAll.filter(c => aValidSelectedIds.includes(c.id));
-            fnUpdateCharacter('disciplineCombos', aNewCombos);
+        const oNewDisciplinePowers = { ...oCharacter.disciplinePowers };
+        let bChanged = false;
+
+        const oDetails = fnGetDisciplineDetails(fnT);
+
+        Object.keys(oNewDisciplinePowers).forEach(sDisc => {
+            const aSelectedIds = oNewDisciplinePowers[sDisc];
+            const oDiscDetails = oDetails[sDisc];
+            if (!oDiscDetails) return;
+
+            const aValidIds: string[] = [];
+            // We need to check in order because prerequisites might depend on each other
+            // but for simplicity we can just filter multiple times or use a more robust logic.
+            // Standard discipline powers are linear enough.
+
+            let aToFilter = [...aSelectedIds];
+            let bFilterChanged = true;
+            while (bFilterChanged) {
+                bFilterChanged = false;
+                const aNext = aToFilter.filter(sId => {
+                    const oPower = oDiscDetails.powers.find(p => p.id === sId);
+                    if (!oPower) return false;
+
+                    // Level check
+                    if (oPower.level > (oCharacter.disciplines[sDisc] || 0)) return false;
+
+                    // Prerequisite check
+                    if (oPower.prerequisite && !aToFilter.includes(oPower.prerequisite)) return false;
+
+                    // Amalgam check
+                    if (oPower.amalgam) {
+                        for (const oReq of oPower.amalgam) {
+                            if ((oCharacter.disciplines[oReq.discipline] || 0) < oReq.level) return false;
+                        }
+                    }
+                    return true;
+                });
+
+                if (aNext.length !== aToFilter.length) {
+                    aToFilter = aNext;
+                    bFilterChanged = true;
+                    bChanged = true;
+                }
+            }
+            oNewDisciplinePowers[sDisc] = aToFilter;
+        });
+
+        if (bChanged) {
+            fnUpdateCharacter('disciplinePowers', oNewDisciplinePowers);
         }
     }, [oCharacter.disciplines, fnT]);
 
@@ -1509,6 +1550,7 @@ const App: React.FC = () => {
                                                         selectedPowerIds={oCharacter.disciplinePowers[sDisc] || []}
                                                         onSelectPowers={(ids) => fnUpdateCharacter('disciplinePowers', { ...oCharacter.disciplinePowers, [sDisc]: ids })}
                                                         disciplineDetails={oDetails}
+                                                        allDisciplines={oCharacter.disciplines}
                                                     />
                                                 )}
                                                 {!aBaseDiscs.includes(sDisc) && nDots === 0 && (
@@ -1619,81 +1661,6 @@ const App: React.FC = () => {
                             </GothicFrame>
                         )}
 
-                        {/* Vampire Combos Section */}
-                        {!bIsWerewolf && (
-                            <GothicFrame className="text-left">
-                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('combos.title')}</h3>
-                                <p className="text-gray-400 mb-4">{fnT('combos.subtitle')}</p>
-                                {aAvailableCombos.length > 0 ? (
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        {aAvailableCombos.map(combo => {
-                                            const bSelected = oCharacter.disciplineCombos.some(c => c.id === combo.id);
-                                            return (
-                                                <div 
-                                                   key={combo.id}
-                                                   className="relative"
-                                                >
-                                                    <div
-                                                        onClick={() => {
-                                                            const aNew = bSelected ? oCharacter.disciplineCombos.filter(c => c.id !== combo.id) : [...oCharacter.disciplineCombos, combo];
-                                                            fnUpdateCharacter('disciplineCombos', aNew);
-                                                        }}
-                                                        className={`p-4 rounded-lg border-2 cursor-pointer transition-all duration-300 relative group overflow-hidden h-full ${bSelected ? 'bg-red-900/30 border-red-500 shadow-[0_0_10px_rgba(220,38,38,0.2)]' : 'bg-gray-800 border-gray-700 hover:border-gray-500'}`}
-                                                    >
-                                                        <div className="flex justify-between items-start mb-2">
-                                                            <div className="pr-8">
-                                                               <h4 className="font-bold text-gray-100 text-lg">{combo.name}</h4>
-                                                               <div className="flex flex-wrap gap-1 mt-1">
-                                                                   {combo.requirements.map(req => (
-                                                                       <span key={req.discipline} className="text-[9px] px-1.5 py-0.5 bg-black/40 rounded text-red-400 border border-red-900/30 font-mono uppercase">
-                                                                           {fnGetDisciplineDetails(fnT)[req.discipline]?.name || req.discipline} {req.level}
-                                                                       </span>
-                                                                   ))}
-                                                               </div>
-                                                            </div>
-                                                            {bSelected && <div className="animate-pulse absolute top-4 right-4"><CheckCircle /></div>}
-                                                        </div>
-                                                        <p className="text-xs text-gray-400 mb-2 leading-relaxed line-clamp-2">{combo.description}</p>
-                                                        <div className="absolute bottom-2 right-2">
-                                                            <InfoIcon onClick={(e) => {
-                                                                e.stopPropagation();
-                                                                fnSetActiveDetail({
-                                                                    title: combo.name,
-                                                                    content: (
-                                                                        <div className="space-y-4 text-left">
-                                                                            <p className="text-gray-300">{combo.description}</p>
-                                                                            <div className="p-4 bg-red-900/10 border-l-4 border-red-500 rounded">
-                                                                                <h5 className="text-red-500 font-bold uppercase text-[10px] tracking-widest mb-2">{fnT('compendium.system')}</h5>
-                                                                                <p className="text-sm text-gray-300 leading-relaxed italic">{combo.system}</p>
-                                                                            </div>
-                                                                            <div className="pt-4 border-t border-gray-700">
-                                                                                <h5 className="text-gray-500 font-bold uppercase text-[10px] tracking-widest mb-2">{fnT('compendium.requirements')}</h5>
-                                                                                <div className="flex flex-wrap gap-2">
-                                                                                    {combo.requirements.map(req => (
-                                                                                        <span key={req.discipline} className="px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs text-gray-400">
-                                                                                            {fnGetDisciplineDetails(fnT)[req.discipline]?.name || req.discipline} {req.level}
-                                                                                        </span>
-                                                                                    ))}
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    )
-                                                                });
-                                                            }} />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
-                                ) : (
-                                    <div className="flex flex-col items-center justify-center py-8 px-4 bg-black/20 rounded border border-dashed border-gray-700">
-                                        <svg className="w-12 h-12 text-gray-600 mb-3 opacity-20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z"/></svg>
-                                        <p className="italic text-gray-500 text-center">{fnT('combos.noAvailable')}</p>
-                                    </div>
-                                )}
-                            </GothicFrame>
-                        )}
 
                         {/* Vampire Predator Type Section */}
                         {!bIsWerewolf && (

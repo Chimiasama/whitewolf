@@ -342,43 +342,8 @@ export const fnGetTalismans = (fnT: TFunction): { id: string, name: string, desc
     { id: "boneScourge", name: fnT('tribes.werewolfTalismans.boneScourge.name'), description: fnT('tribes.werewolfTalismans.boneScourge.description') }
 ];
 
-export const fnGetDisciplineCombos = (fnT: TFunction): DisciplineCombo[] => [
-    {
-        id: "dementation",
-        name: fnT('combos.dementation.name'),
-        description: fnT('combos.dementation.description'),
-        requirements: [{ discipline: "dominate", level: 2 }, { discipline: "auspex", level: 2 }],
-        system: fnT('combos.dementation.system'),
-        cost: "One Rouse Check"
-    },
-    {
-        id: "chimerstry",
-        name: fnT('combos.chimerstry.name'),
-        description: fnT('combos.chimerstry.description'),
-        requirements: [{ discipline: "obfuscate", level: 2 }, { discipline: "presence", level: 1 }],
-        system: fnT('combos.chimerstry.system'),
-        cost: "One Rouse Check"
-    },
-    {
-        id: "viciousGaze",
-        name: fnT('combos.viciousGaze.name'),
-        description: fnT('combos.viciousGaze.description'),
-        requirements: [{ discipline: "presence", level: 2 }, { discipline: "potence", level: 1 }],
-        system: fnT('combos.viciousGaze.system'),
-        cost: "Passive"
-    },
-    {
-        id: "bullseye",
-        name: fnT('combos.bullseye.name'),
-        description: fnT('combos.bullseye.description'),
-        requirements: [{ discipline: "auspex", level: 3 }, { discipline: "celerity", level: 2 }],
-        system: fnT('combos.bullseye.system'),
-        cost: "One Rouse Check"
-    }
-];
-
 // Helper to shorten looking up standard keys
-const fnGetP = (fnT: TFunction, sDisc: string, nLvl: number, sKey: string) => {
+const fnGetP = (fnT: TFunction, sDisc: string, nLvl: number, sKey: string, amalgam?: { discipline: string, level: number }[], prerequisite?: string) => {
     const sSystem = fnT(`disciplines.${sDisc}.powers.${sKey}.system`);
     let sCost = "";
     
@@ -401,7 +366,9 @@ const fnGetP = (fnT: TFunction, sDisc: string, nLvl: number, sKey: string) => {
         name: fnT(`disciplines.${sDisc}.powers.${sKey}.name`),
         description: fnT(`disciplines.${sDisc}.powers.${sKey}.description`),
         system: sSystem,
-        cost: sCost
+        cost: sCost,
+        amalgam,
+        prerequisite
     };
 };
 
@@ -413,11 +380,18 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "animalism", 1, "bondFamulus"),
             fnGetP(fnT, "animalism", 1, "senseTheBeast"),
             fnGetP(fnT, "animalism", 2, "feralWhispers"),
+            fnGetP(fnT, "animalism", 2, "feralFrenzy", undefined, "feralWhispers"),
+            fnGetP(fnT, "animalism", 2, "huntTheBeast", undefined, "senseTheBeast"),
             fnGetP(fnT, "animalism", 3, "animalSucculence"),
             fnGetP(fnT, "animalism", 3, "quellTheBeast"),
+            fnGetP(fnT, "animalism", 3, "unlivingHive", [{ discipline: "obfuscate", level: 2 }]),
+            fnGetP(fnT, "animalism", 3, "howlOfRage", [{ discipline: "presence", level: 2 }]),
+            fnGetP(fnT, "animalism", 3, "markPrey", [{ discipline: "obfuscate", level: 1 }]),
             fnGetP(fnT, "animalism", 4, "subsumeTheSpirit"),
+            fnGetP(fnT, "animalism", 4, "packFrenzy"),
             fnGetP(fnT, "animalism", 5, "animalDominion"),
-            fnGetP(fnT, "animalism", 5, "drawingOutTheBeast")
+            fnGetP(fnT, "animalism", 5, "drawingOutTheBeast"),
+            fnGetP(fnT, "animalism", 5, "subsumeTheServant", [{ discipline: "dominate", level: 4 }])
         ]
     },
     "auspex": {
@@ -426,13 +400,22 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
         powers: [
             fnGetP(fnT, "auspex", 1, "heightenedSenses"),
             fnGetP(fnT, "auspex", 1, "senseTheUnseen"),
+            fnGetP(fnT, "auspex", 1, "lieDetector"),
             fnGetP(fnT, "auspex", 2, "premonition"),
+            fnGetP(fnT, "auspex", 2, "decipher"),
+            fnGetP(fnT, "auspex", 2, "implantDream", [{ discipline: "dominate", level: 1 }]),
+            fnGetP(fnT, "auspex", 2, "readOpponent", [{ discipline: "celerity", level: 1 }]),
+            fnGetP(fnT, "auspex", 2, "senseStrengthsAndWeaknesses"),
+            fnGetP(fnT, "auspex", 2, "obeah", [{ discipline: "fortitude", level: 1 }]),
             fnGetP(fnT, "auspex", 3, "scryTheSoul"),
             fnGetP(fnT, "auspex", 3, "shareTheSenses"),
+            fnGetP(fnT, "auspex", 3, "psychicBacklash"),
+            fnGetP(fnT, "auspex", 3, "scanTheRoom", [{ discipline: "potence", level: 1 }]),
             fnGetP(fnT, "auspex", 4, "spiritsTouch"),
             fnGetP(fnT, "auspex", 5, "clairvoyance"),
-            fnGetP(fnT, "auspex", 5, "possession"),
-            fnGetP(fnT, "auspex", 5, "telepathy")
+            fnGetP(fnT, "auspex", 5, "possession", [{ discipline: "dominate", level: 3 }]),
+            fnGetP(fnT, "auspex", 5, "telepathy"),
+            fnGetP(fnT, "auspex", 5, "aliviandoAAlmaBestial", [{ discipline: "dominate", level: 3 }], "obeah")
         ]
     },
     "celerity": {
@@ -442,10 +425,15 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "celerity", 1, "catsGrace"),
             fnGetP(fnT, "celerity", 1, "rapidReflexes"),
             fnGetP(fnT, "celerity", 2, "fleetness"),
+            fnGetP(fnT, "celerity", 2, "controlMomentum", [{ discipline: "auspex", level: 1 }]),
             fnGetP(fnT, "celerity", 3, "blink"),
             fnGetP(fnT, "celerity", 3, "traversal"),
+            fnGetP(fnT, "celerity", 3, "combatTempest"),
+            fnGetP(fnT, "celerity", 3, "speedIsPower"),
             fnGetP(fnT, "celerity", 4, "draughtOfElegance"),
-            fnGetP(fnT, "celerity", 4, "unerringAim"),
+            fnGetP(fnT, "celerity", 4, "unerringAim", [{ discipline: "auspex", level: 2 }]),
+            fnGetP(fnT, "celerity", 4, "furiousFrenzy"),
+            fnGetP(fnT, "celerity", 4, "longDistanceJourney", [{ discipline: "fortitude", level: 1 }], "blink"),
             fnGetP(fnT, "celerity", 5, "lightningStrike"),
             fnGetP(fnT, "celerity", 5, "splitSecond")
         ]
@@ -457,12 +445,17 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "dominate", 1, "cloudMemory"),
             fnGetP(fnT, "dominate", 1, "compel"),
             fnGetP(fnT, "dominate", 2, "mesmerize"),
-            fnGetP(fnT, "dominate", 2, "dementation"),
+            fnGetP(fnT, "dominate", 2, "dementation", [{ discipline: "obfuscate", level: 2 }]),
+            fnGetP(fnT, "dominate", 2, "declareWeakness"),
+            fnGetP(fnT, "dominate", 2, "objectCommand", [{ discipline: "auspex", level: 2 }]),
+            fnGetP(fnT, "dominate", 2, "favorDoDomitor"),
             fnGetP(fnT, "dominate", 3, "theForgetfulMind"),
             fnGetP(fnT, "dominate", 3, "submergedDirective"),
             fnGetP(fnT, "dominate", 4, "rationalize"),
+            fnGetP(fnT, "dominate", 4, "mentalConditioning", undefined, "compel"),
             fnGetP(fnT, "dominate", 5, "massManipulation"),
-            fnGetP(fnT, "dominate", 5, "terminalDecree")
+            fnGetP(fnT, "dominate", 5, "terminalDecree"),
+            fnGetP(fnT, "dominate", 5, "energyVampire", [{ discipline: "oblivion", level: 3 }])
         ]
     },
     "fortitude": {
@@ -471,7 +464,13 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
         powers: [
             fnGetP(fnT, "fortitude", 1, "resilience"),
             fnGetP(fnT, "fortitude", 1, "unswayableMind"),
+            fnGetP(fnT, "fortitude", 1, "eternalVigilance"),
             fnGetP(fnT, "fortitude", 2, "toughness"),
+            fnGetP(fnT, "fortitude", 2, "enduringBeasts", [{ discipline: "animalism", level: 1 }]),
+            fnGetP(fnT, "fortitude", 2, "returnToSender"),
+            fnGetP(fnT, "fortitude", 2, "mentalVault"),
+            fnGetP(fnT, "fortitude", 2, "sleepLikeStone", undefined, "resilience"),
+            fnGetP(fnT, "fortitude", 2, "valeren", [{ discipline: "auspex", level: 1 }]),
             fnGetP(fnT, "fortitude", 3, "defyBane"),
             fnGetP(fnT, "fortitude", 3, "fortifyTheInnerFacade"),
             fnGetP(fnT, "fortitude", 4, "draughtOfEndurance"),
@@ -486,11 +485,18 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "obfuscate", 1, "cloakOfShadows"),
             fnGetP(fnT, "obfuscate", 1, "silenceOfDeath"),
             fnGetP(fnT, "obfuscate", 2, "unseenPassage"),
+            fnGetP(fnT, "obfuscate", 2, "shapeAura", [{ discipline: "presence", level: 1 }]),
+            fnGetP(fnT, "obfuscate", 2, "quimerismo", [{ discipline: "presence", level: 1 }]),
             fnGetP(fnT, "obfuscate", 3, "ghostInTheMachine"),
             fnGetP(fnT, "obfuscate", 3, "maskOfAThousandFaces"),
-            fnGetP(fnT, "obfuscate", 4, "vanish"),
+            fnGetP(fnT, "obfuscate", 3, "duplicate", [{ discipline: "presence", level: 1 }], "cloakOfShadows"),
+            fnGetP(fnT, "obfuscate", 3, "fataMorgana", [{ discipline: "presence", level: 2 }]),
+            fnGetP(fnT, "obfuscate", 4, "conceal", [{ discipline: "auspex", level: 3 }]),
+            fnGetP(fnT, "obfuscate", 4, "vanish", undefined, "cloakOfShadows"),
+            fnGetP(fnT, "obfuscate", 4, "hiddenBlade"),
             fnGetP(fnT, "obfuscate", 5, "cloakTheGathering"),
-            fnGetP(fnT, "obfuscate", 5, "impostorsGuise")
+            fnGetP(fnT, "obfuscate", 5, "impostorsGuise", undefined, "maskOfAThousandFaces"),
+            fnGetP(fnT, "obfuscate", 5, "fadingMemory")
         ]
     },
     "potence": {
@@ -501,7 +507,9 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "potence", 1, "soaringLeap"),
             fnGetP(fnT, "potence", 2, "prowess"),
             fnGetP(fnT, "potence", 3, "brutalFeed"),
-            fnGetP(fnT, "potence", 3, "sparkOfRage"),
+            fnGetP(fnT, "potence", 3, "sparkOfRage", [{ discipline: "presence", level: 3 }]),
+            fnGetP(fnT, "potence", 3, "uncannyGrip"),
+            fnGetP(fnT, "potence", 3, "fastballSpecial"),
             fnGetP(fnT, "potence", 4, "draughtOfMight"),
             fnGetP(fnT, "potence", 5, "earthshock"),
             fnGetP(fnT, "potence", 5, "fistOfCaine")
@@ -514,12 +522,18 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "presence", 1, "awe"),
             fnGetP(fnT, "presence", 1, "daunt"),
             fnGetP(fnT, "presence", 2, "lingeringKiss"),
+            fnGetP(fnT, "presence", 2, "subtleMessages"),
             fnGetP(fnT, "presence", 3, "dreadGaze"),
             fnGetP(fnT, "presence", 3, "entrancement"),
-            fnGetP(fnT, "presence", 4, "irresistibleVoice"),
+            fnGetP(fnT, "presence", 3, "throneRoom", [{ discipline: "auspex", level: 1 }]),
+            fnGetP(fnT, "presence", 3, "obsession"),
+            fnGetP(fnT, "presence", 4, "irresistibleVoice", [{ discipline: "dominate", level: 1 }]),
             fnGetP(fnT, "presence", 4, "summon"),
+            fnGetP(fnT, "presence", 4, "twistWords", [{ discipline: "auspex", level: 2 }]),
+            fnGetP(fnT, "presence", 4, "hideousLaughter"),
             fnGetP(fnT, "presence", 5, "majesty"),
-            fnGetP(fnT, "presence", 5, "starMagnetism")
+            fnGetP(fnT, "presence", 5, "starMagnetism"),
+            fnGetP(fnT, "presence", 5, "mindPrison", [{ discipline: "obfuscate", level: 3 }])
         ]
     },
     "protean": {
@@ -528,12 +542,20 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
         powers: [
             fnGetP(fnT, "protean", 1, "eyesOfTheBeast"),
             fnGetP(fnT, "protean", 1, "weightOfTheFeather"),
+            fnGetP(fnT, "protean", 1, "shedSkin"),
             fnGetP(fnT, "protean", 2, "feralWeapons"),
+            fnGetP(fnT, "protean", 2, "vicissitude", [{ discipline: "dominate", level: 2 }]),
             fnGetP(fnT, "protean", 3, "earthMeld"),
             fnGetP(fnT, "protean", 3, "shapechange"),
-            fnGetP(fnT, "protean", 4, "metamorphosis"),
+            fnGetP(fnT, "protean", 3, "toolsOfNature", undefined, "feralWeapons"),
+            fnGetP(fnT, "protean", 3, "modelagemDeCarne", [{ discipline: "dominate", level: 2 }], "vicissitude"),
+            fnGetP(fnT, "protean", 4, "metamorphosis", undefined, "shapechange"),
+            fnGetP(fnT, "protean", 4, "swarmForm", [{ discipline: "animalism", level: 2 }], "shapechange"),
+            fnGetP(fnT, "protean", 4, "traverseTheEarth", undefined, "earthMeld"),
+            fnGetP(fnT, "protean", 4, "formaHedionda", [{ discipline: "dominate", level: 2 }], "vicissitude"),
             fnGetP(fnT, "protean", 5, "mistForm"),
-            fnGetP(fnT, "protean", 5, "theUnfetteredHeart")
+            fnGetP(fnT, "protean", 5, "theUnfetteredHeart"),
+            fnGetP(fnT, "protean", 5, "umComATerra", [{ discipline: "animalism", level: 2 }], "earthMeld")
         ]
     },
     "bloodsorcery": {
@@ -543,11 +565,18 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "bloodsorcery", 1, "corrosiveVitae"),
             fnGetP(fnT, "bloodsorcery", 1, "aTasteForBlood"),
             fnGetP(fnT, "bloodsorcery", 2, "extinguishVitae"),
+            fnGetP(fnT, "bloodsorcery", 2, "bloodObject"),
+            fnGetP(fnT, "bloodsorcery", 2, "bloodTendrils"),
             fnGetP(fnT, "bloodsorcery", 3, "bloodOfPotency"),
             fnGetP(fnT, "bloodsorcery", 3, "scorpionsTouch"),
+            fnGetP(fnT, "bloodsorcery", 3, "diluteTheLine"),
+            fnGetP(fnT, "bloodsorcery", 3, "healersBane"),
             fnGetP(fnT, "bloodsorcery", 4, "theftOfVitae"),
+            fnGetP(fnT, "bloodsorcery", 4, "crimsonFury"),
+            fnGetP(fnT, "bloodsorcery", 4, "curseOfTheSlowBlood"),
             fnGetP(fnT, "bloodsorcery", 5, "baalsCaress"),
-            fnGetP(fnT, "bloodsorcery", 5, "cauldronOfBlood")
+            fnGetP(fnT, "bloodsorcery", 5, "cauldronOfBlood"),
+            fnGetP(fnT, "bloodsorcery", 5, "telekinesis", [{ discipline: "auspex", level: 4 }])
         ]
     },
     "oblivion": {
@@ -558,7 +587,10 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
              fnGetP(fnT, "oblivion", 1, "oblivionsSight"),
              fnGetP(fnT, "oblivion", 2, "armsOfAhriman"),
              fnGetP(fnT, "oblivion", 2, "shadowCast"),
+             fnGetP(fnT, "oblivion", 2, "abyssalPulse"),
              fnGetP(fnT, "oblivion", 3, "touchOfOblivion"),
+             fnGetP(fnT, "oblivion", 3, "shadowPuppet"),
+             fnGetP(fnT, "oblivion", 3, "witnessTheEnd"),
              fnGetP(fnT, "oblivion", 4, "stygianShroud"),
              fnGetP(fnT, "oblivion", 5, "tenebrousAvatar")
         ]
@@ -568,6 +600,12 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
         description: fnT('disciplines.thinbloodalchemy.description'),
         powers: [
              fnGetP(fnT, "thinbloodalchemy", 1, "farReach"),
+             fnGetP(fnT, "thinbloodalchemy", 1, "haze"),
+             fnGetP(fnT, "thinbloodalchemy", 1, "profaneHierosGamos"),
+             fnGetP(fnT, "thinbloodalchemy", 2, "envelop"),
+             fnGetP(fnT, "thinbloodalchemy", 3, "defractionate"),
+             fnGetP(fnT, "thinbloodalchemy", 4, "airborneMomentum"),
+             fnGetP(fnT, "thinbloodalchemy", 5, "awakenTheSleeper")
         ]
     },
     "ragabashgifts": {
@@ -750,7 +788,6 @@ export const oInitialCharacter: Character = {
   skills: aSkillList.reduce((acc, skill) => ({ ...acc, [skill]: 0 }), {} as Character['skills']),
   disciplines: {},
   disciplinePowers: {},
-  disciplineCombos: [],
   rituals: [],
   talismans: [],
   predatorType: null,
