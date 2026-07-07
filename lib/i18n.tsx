@@ -606,6 +606,11 @@ const oEn = {
           "description": "Calm an emotionally agitated target.",
           "system": "Autocontrole + Auspex vs Difficulty 2. Cost: One Rouse Check."
         },
+        "implantDream": {
+          "name": "Implant Dream",
+          "description": "Implant a dream to be experienced when target sleeps.",
+          "system": "Resolve + Dominate vs Composure + Intelligence. Cost: One Rouse Check."
+        },
         "decipher": {
           "name": "Decipher",
           "description": "Understand any language or code by reading intent.",
@@ -3112,6 +3117,11 @@ const oPt = {
           "name": "Obeah",
           "description": "O vampiro acalma um alvo emocionalmente agitado, restaurando-lhe um mínimo de equilíbrio.",
           "system": "Autocontrole + Auspícios contra Dificuldade 2 e restaura uma quantidade de níveis de dano Superficial à Força de Vontade igual à margem de sucesso. Custo: Um Teste de Sangue."
+        },
+        "implantDream": {
+          "name": "Implantar Sonho",
+          "description": "Implanta um sonho a ser vivido quando o alvo dormir.",
+          "system": "Determinação + Dominação vs Autocontrole + Inteligência. Custo: Um Teste de Sangue."
         },
         "decipher": {
           "name": "Decifrar",

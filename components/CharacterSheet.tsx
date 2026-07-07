@@ -466,6 +466,11 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                                         return oPower ? (
                                             <li key={sPid} className="text-xs text-gray-400">
                                                 <span className={`${sThemeAccentClass} font-bold`}>{fnT('compendium.lvl')} {oPower.level}:</span> {oPower.name}
+                                                {oPower.amalgam && (
+                                                    <span className="ml-2 opacity-70 italic">
+                                                        ({fnT('compendium.requirements')}: {oPower.amalgam.map(req => `${fnT('disciplines.' + req.discipline + '.name')} ${req.level}`).join(', ')})
+                                                    </span>
+                                                )}
                                             </li>
                                         ) : null;
                                     })}
@@ -695,7 +700,18 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                     {[...oSelectedDiscipline.powers].sort((a,b) => a.level - b.level).map(oPower => (
                         <div key={oPower.id} className="border-t border-gray-700 pt-3">
                             <div className="flex justify-between items-start mb-1">
-                                <h4 className={`font-bold ${sThemeAccentClass}`}>{fnT('compendium.level')} {oPower.level}: {oPower.name}</h4>
+                                <div className="flex flex-col">
+                                    <h4 className={`font-bold ${sThemeAccentClass}`}>{fnT('compendium.level')} {oPower.level}: {oPower.name}</h4>
+                                    {oPower.amalgam && (
+                                        <div className="flex flex-wrap gap-2 mt-0.5">
+                                            {oPower.amalgam.map((oReq, idx) => (
+                                                <span key={idx} className="text-[10px] font-bold uppercase tracking-wider text-red-400/80 bg-red-900/20 px-1.5 py-0.5 rounded border border-red-900/30">
+                                                    {fnT('compendium.requirements')}: {fnT('disciplines.' + oReq.discipline + '.name')} {oReq.level}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
                                 <div className="flex items-center text-xs text-gray-400 bg-gray-900 px-2 py-1 rounded border border-gray-700">
                                     {bIsWerewolf ? <ClawIcon className="w-3 h-3 text-green-500 mr-1" /> : <BloodIcon className="w-3 h-3 text-red-500 mr-1" />}
                                     <span>{oPower.cost === "Passive" ? fnT('compendium.passive') : (oPower.cost === "No cost" ? fnT('compendium.noCost') : oPower.cost)}</span>
