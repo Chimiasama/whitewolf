@@ -372,6 +372,18 @@ const fnGetP = (fnT: TFunction, sDisc: string, nLvl: number, sKey: string, amalg
     };
 };
 
+export const VAMPIRE_DISCIPLINES = [
+    "animalism", "auspex", "celerity", "dominate", "fortitude", "obfuscate",
+    "potence", "presence", "protean", "bloodsorcery", "oblivion", "thinbloodalchemy"
+];
+
+export const WEREWOLF_GIFTS = [
+    "ragabashgifts", "theurgegifts", "philodoxgifts", "galliardgifts", "ahroungifts",
+    "blackfuriesgifts", "bonegnawersgifts", "childrenofgaiagifts", "fiandeirosdevidrogifts",
+    "andarilhosdoasfaltogifts", "criadefenrisgifts", "wendigogifts", "redtalonsgifts",
+    "shadowlordsgifts", "silverfangsgifts", "silentstridersgifts", "innategifts"
+];
+
 export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, DisciplineDetail> => ({
     "animalism": {
         name: fnT('disciplines.animalism.name'),

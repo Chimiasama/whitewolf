@@ -701,7 +701,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                         <div key={oPower.id} className="border-t border-gray-700 pt-3">
                             <div className="flex justify-between items-start mb-1">
                                 <div className="flex flex-col">
-                                    <h4 className={`font-bold ${sThemeAccentClass}`}>{fnT('compendium.level')} {oPower.level}: {oPower.name}</h4>
+                                    <h4 className={`font-bold ${sThemeAccentClass}`}>{fnT(bIsWerewolf ? 'compendium.lvl' : 'compendium.level')} {oPower.level}: {oPower.name}</h4>
                                     {oPower.amalgam && (
                                         <div className="flex flex-wrap gap-2 mt-0.5">
                                             {oPower.amalgam.map((oReq, idx) => (
