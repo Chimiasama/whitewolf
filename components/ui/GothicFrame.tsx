@@ -6,7 +6,7 @@ interface GothicFrameProps {
 }
 
 export const RoseIcon = ({ className: sClassName }: { className?: string }) => (
-  <svg viewBox="0 0 100 100" className={sClassName} fill="currentColor">
+  <svg viewBox="0 0 100 100" width="1em" height="1em" className={sClassName} fill="currentColor">
     {/* Rose petals */}
     <path d="M50 30 C40 30, 30 40, 30 50 C30 65, 50 80, 50 80 C50 80, 70 65, 70 50 C70 40, 60 30, 50 30 Z" fill="#991b1b" />
     <path d="M50 30 C55 25, 65 25, 70 35" fill="none" stroke="#7f1d1d" strokeWidth="3" />
@@ -19,7 +19,7 @@ export const RoseIcon = ({ className: sClassName }: { className?: string }) => (
 );
 
 const ThornBorderX = () => (
-    <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 10">
+    <svg className="w-full h-full" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 10">
         <line x1="0" y1="5" x2="100" y2="5" stroke="#3f2e2e" strokeWidth="1" />
         {/* Thorns */}
         <path d="M10 5 L15 0 M30 5 L35 10 M50 5 L55 0 M70 5 L75 10 M90 5 L95 0" stroke="#3f2e2e" strokeWidth="1" fill="none" />
@@ -31,7 +31,7 @@ const ThornBorderX = () => (
 );
 
 const ThornBorderY = () => (
-     <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 10 100">
+     <svg className="w-full h-full" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 10 100">
         <line x1="5" y1="0" x2="5" y2="100" stroke="#3f2e2e" strokeWidth="1" />
         {/* Thorns */}
         <path d="M5 10 L10 15 M5 30 L0 35 M5 50 L10 55 M5 70 L0 75 M5 90 L10 95" stroke="#3f2e2e" strokeWidth="1" fill="none" />
@@ -44,32 +44,32 @@ const ThornBorderY = () => (
 
 export const GothicFrame: React.FC<GothicFrameProps> = ({ children: oChildren, className: sClassName = '' }) => {
   return (
-    <div className={`relative p-4 ${sClassName}`}>
+    <div className={`relative overflow-hidden p-4 ${sClassName}`}>
         {/* Corners */}
-        <div className="absolute top-0 left-0 w-8 h-8 z-10 text-red-800 pointer-events-none">
+        <div className="absolute top-0 left-0 w-6 h-6 sm:w-8 sm:h-8 z-10 text-red-800 pointer-events-none">
             <RoseIcon className="w-full h-full transform -rotate-45" />
         </div>
-        <div className="absolute top-0 right-0 w-8 h-8 z-10 text-red-800 pointer-events-none">
+        <div className="absolute top-0 right-0 w-6 h-6 sm:w-8 sm:h-8 z-10 text-red-800 pointer-events-none">
              <RoseIcon className="w-full h-full transform rotate-45" />
         </div>
-        <div className="absolute bottom-0 left-0 w-8 h-8 z-10 text-red-800 pointer-events-none">
+        <div className="absolute bottom-0 left-0 w-6 h-6 sm:w-8 sm:h-8 z-10 text-red-800 pointer-events-none">
              <RoseIcon className="w-full h-full transform -rotate-135" />
         </div>
-        <div className="absolute bottom-0 right-0 w-8 h-8 z-10 text-red-800 pointer-events-none">
+        <div className="absolute bottom-0 right-0 w-6 h-6 sm:w-8 sm:h-8 z-10 text-red-800 pointer-events-none">
              <RoseIcon className="w-full h-full transform rotate-135" />
         </div>
 
         {/* Borders */}
-        <div className="absolute top-0 left-4 right-4 h-3 overflow-hidden opacity-80 pointer-events-none">
+        <div className="absolute top-0 left-4 right-4 h-2 sm:h-3 overflow-hidden opacity-80 pointer-events-none">
             <ThornBorderX />
         </div>
-        <div className="absolute bottom-0 left-4 right-4 h-3 overflow-hidden opacity-80 transform rotate-180 pointer-events-none">
+        <div className="absolute bottom-0 left-4 right-4 h-2 sm:h-3 overflow-hidden opacity-80 transform rotate-180 pointer-events-none">
              <ThornBorderX />
         </div>
-        <div className="absolute top-4 bottom-4 left-0 w-3 overflow-hidden opacity-80 pointer-events-none">
+        <div className="absolute top-4 bottom-4 left-0 w-2 sm:w-3 overflow-hidden opacity-80 pointer-events-none">
             <ThornBorderY />
         </div>
-         <div className="absolute top-4 bottom-4 right-0 w-3 overflow-hidden opacity-80 transform rotate-180 pointer-events-none">
+         <div className="absolute top-4 bottom-4 right-0 w-2 sm:w-3 overflow-hidden opacity-80 transform rotate-180 pointer-events-none">
             <ThornBorderY />
         </div>
 
