@@ -97,21 +97,14 @@ export interface DisciplinePower {
     description: string;
     system: string;
     cost?: string;
+    amalgam?: { discipline: string, level: number }[];
+    prerequisite?: string;
 }
 
 export interface DisciplineDetail {
     name: string;
     description: string;
     powers: DisciplinePower[];
-}
-
-export interface DisciplineCombo {
-    id: string;
-    name: string;
-    description: string;
-    requirements: { discipline: string, level: number }[];
-    system: string;
-    cost?: string;
 }
 
 export interface AdvantageFlaw {
@@ -186,7 +179,6 @@ export interface Character {
   skills: Skills;
   disciplines: Disciplines; // Used for Gifts in Werewolf
   disciplinePowers: Record<string, string[]>; 
-  disciplineCombos: DisciplineCombo[];
   rituals: { id: string, name: string, description: string }[];
   talismans: { id: string, name: string, description: string }[];
   predatorType: string | null;

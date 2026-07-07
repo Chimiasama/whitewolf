@@ -1,6 +1,6 @@
 
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, GameType, Tribe, Auspice } from '../types';
-import { oInitialCharacter, fnGetClanDetails, fnGetPredatorTypes, fnGetDisciplineDetails, aAttributeList, aSkillList, fnGetTribeDetails, fnGetAuspiceDetails, fnGetAdvantagesAndFlaws, fnGetLoresheets, fnGetDisciplineCombos } from '../constants';
+import { oInitialCharacter, fnGetClanDetails, fnGetPredatorTypes, fnGetDisciplineDetails, aAttributeList, aSkillList, fnGetTribeDetails, fnGetAuspiceDetails, fnGetAdvantagesAndFlaws, fnGetLoresheets } from '../constants';
 import { fnGenerateIdentity } from './generators';
 
 type XPLevel = 'fledgling' | 'neonate' | 'ancilla';
@@ -298,14 +298,6 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         flaws.push({ id: 'enemy_bonus', name: fnT('flaws.enemy.name'), description: fnT('common.unknown'), cost: 1, type: 'flaw', levels: [1] });
     }
 
-    // 7. Discipline Combos (Vampire)
-    const disciplineCombos: any[] = [];
-    const allCombos = fnGetDisciplineCombos(fnT);
-    allCombos.forEach(combo => {
-        const hasReqs = combo.requirements.every(req => (disciplines[req.discipline] || 0) >= req.level);
-        if (hasReqs) disciplineCombos.push(combo);
-    });
-
     return {
         ...oInitialCharacter,
         gameType: GameType.Vampire,
@@ -324,7 +316,6 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         skills,
         disciplines,
         disciplinePowers,
-        disciplineCombos,
         predatorType: selectedPredator.id,
         specialties,
         advantages,

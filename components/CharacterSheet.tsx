@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import type { Character, DisciplineDetail, AdvantageFlaw, Specialty, DisciplineCombo } from '../types';
+import type { Character, DisciplineDetail, AdvantageFlaw, Specialty } from '../types';
 import { Attribute, Skill, GameType } from '../types';
 import { Card } from './ui/Card';
 import { Button } from './ui/Button';
@@ -476,28 +476,6 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                 })}
                 </ul>
             ) : <p className="text-gray-400 italic mb-6">{fnT('common.noneListed')}</p>}
-
-            {!bIsWerewolf && (
-                <>
-                    <h3 className="text-red-500 font-bold text-lg mb-2 border-b border-gray-700 pb-1">{fnT('characterSheet.combos')}</h3>
-                    {oCharacter.disciplineCombos.length > 0 ? (
-                        <ul>
-                            {oCharacter.disciplineCombos.map(combo => (
-                                <li key={combo.id} className="mb-4 p-2 bg-black/20 rounded border-l-2 border-red-900">
-                                    <div className="flex justify-between items-start">
-                                        <h4 className="font-bold text-gray-200">{combo.name}</h4>
-                                        <div className="text-[10px] text-red-400 font-bold">{combo.cost === "Passive" ? fnT('compendium.passive') : (combo.cost === "One Rouse Check" ? fnT('compendium.oneRouseCheck') : combo.cost)}</div>
-                                    </div>
-                                    <p className="text-xs text-gray-400 mt-1">{combo.description}</p>
-                                    <div className="mt-2 text-[10px] font-mono text-gray-500 uppercase tracking-tighter">
-                                        {combo.requirements.map(r => `${oDisciplineDetails[r.discipline.toLowerCase()]?.name || r.discipline} ${r.level}`).join(' • ')}
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    ) : <p className="text-gray-400 italic">{fnT('common.noneListed')}</p>}
-                </>
-            )}
         </Card>
         <Card className="text-left" variant={bIsWerewolf ? 'werewolf' : 'vampire'}>
             <h3 className={`${sThemeColorClass} font-bold text-lg mb-4 border-b border-gray-700 pb-1`}>{fnT('characterSheet.vitals')}</h3>
