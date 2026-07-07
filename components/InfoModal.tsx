@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { Button } from './ui/Button';
 import { useI18n } from '../lib/i18n';
 
@@ -48,7 +49,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
   const bIsTop = nMyIndex === nTotalCount - 1;
   const nZIndex = 100 + nMyIndex * 10;
 
-  return (
+  const oModal = (
     <div 
       className={`fixed inset-0 flex items-center justify-center p-4 transition-all duration-300 ${
         nMyIndex > 0 ? 'bg-black/90' : 'bg-black/80 backdrop-blur-sm'
@@ -85,4 +86,6 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
       </div>
     </div>
   );
+
+  return createPortal(oModal, document.body);
 };

@@ -75,13 +75,13 @@ p, li, label, input, textarea, select, button { line-height: 1.55; }
 ::selection { background: rgba(153, 27, 27, 0.85); color: #fff7ed; }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(14px) scale(0.985); filter: blur(3px); }
-  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes modalIn {
-  from { opacity: 0; transform: translateY(18px) scale(0.96); filter: blur(4px); }
-  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes orbFill {
