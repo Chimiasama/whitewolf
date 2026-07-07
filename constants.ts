@@ -1,5 +1,5 @@
 
-import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, DisciplineCombo, GameType, Tribe, Auspice, Loresheet } from './types';
+import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, GameType, Tribe, Auspice, Loresheet } from './types';
 
 type TFunction = (key: string) => string;
 
