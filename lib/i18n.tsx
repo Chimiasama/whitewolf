@@ -473,6 +473,78 @@ const oEn = {
       "name": "Siren",
       "description": "You use seduction and beauty to charm your prey."
     },
+    "businessowner": {
+      "name": "Business Owner",
+      "description": "You own a business or control it from behind the scenes, providing staff and customers to feed from."
+    },
+    "confidant": {
+      "name": "Confidant",
+      "description": "People seek you out for advice or therapy, and you open their veins in return."
+    },
+    "corporateleech": {
+      "name": "Corporate Leech",
+      "description": "You haunt corporate buildings, feeding on inattentive workers and manipulating from the shadows."
+    },
+    "eattherich": {
+      "name": "Eat the Rich",
+      "description": "You have access to high society, either by pretending to work for them or as a former member."
+    },
+    "hideandeat": {
+      "name": "Hide and Eat",
+      "description": "You patiently wait for your prey in neighborhoods, parks, or cars, disappearing before they realize they were hunted."
+    },
+    "kidnapper": {
+      "name": "Kidnapper",
+      "description": "You capture your prey and keep them for feeding until they expire or can be safely released."
+    },
+    "labrat": {
+      "name": "Lab Rat",
+      "description": "You run a clinic or experimental facility where people willingly give blood for cash or a perceived purpose."
+    },
+    "hospitalhunter": {
+      "name": "Hospital Hunter",
+      "description": "You flow through hospital halls as a cursed angel or spectre of death, feeding on easy victims."
+    },
+    "localhaunt": {
+      "name": "Local Haunt",
+      "description": "You are the monster behind a popular folktale, capitalizing on rumors of danger to hunt the curious."
+    },
+    "lurkerinthecrowd": {
+      "name": "Lurker in the Crowd",
+      "description": "You pick targets from crowds and feed before anyone notices, preferring to never stand out."
+    },
+    "manicpixiepredator": {
+      "name": "Manic Pixie Predator",
+      "description": "You groom your food with short-lived but passionate relationships, leaving them longing and lost."
+    },
+    "onlinepredator": {
+      "name": "Online Predator",
+      "description": "You hunt via the internet, finding identifying information or cultivating relationships to meet victims."
+    },
+    "opportunist": {
+      "name": "Opportunist",
+      "description": "You lure in desperate or naive customers through fake businesses or social media accounts."
+    },
+    "packhunter": {
+      "name": "Pack Hunter",
+      "description": "You hunt surrounded by beasts that accept you as one of their own, chasing down prey."
+    },
+    "payforblood": {
+      "name": "Pay for Blood",
+      "description": "Hunting is just another transaction for you; you have the means to have blood brought to you."
+    },
+    "streetfeeder": {
+      "name": "Street Feeder",
+      "description": "You know the city streets well, lulling victims into vulnerable situations in areas others consider dangerous."
+    },
+    "watcherfromthewater": {
+      "name": "Watcher from the Water",
+      "description": "You hunt in bodies of water, waiting indefinitely for divers, fishermen, or sailors."
+    },
+    "wolfinsheepsclothing": {
+      "name": "Wolf in Sheep's Clothing",
+      "description": "You pretend to be an easy target in key locations, flipping the dynamic on potential predators."
+    },
     "noAdvantages": "No static advantages granted.",
     "noFlaws": "No static flaws required.",
     "specialties": {
@@ -487,7 +559,39 @@ const oEn = {
       "specificTradition": "Specific Tradition",
       "seduction": "Seduction",
       "anesthetics": "Anesthetics",
-      "breakIn": "Break-In"
+      "breakIn": "Break-In",
+      "deals": "Deals",
+      "moneyLaundering": "Money Laundering",
+      "empathy": "Empathy",
+      "psychology": "Psychology",
+      "corporate": "Corporate",
+      "extortion": "Extortion",
+      "media": "Media",
+      "stalking": "Stalking",
+      "ambushes": "Ambushes",
+      "security": "Security",
+      "experiments": "Experiments",
+      "diagnosis": "Diagnosis",
+      "condolence": "Condolence",
+      "frighten": "Frighten",
+      "chasing": "Chasing",
+      "blendingIn": "Blending In",
+      "escaping": "Escaping",
+      "riskTaking": "Risk Taking",
+      "insecurities": "Insecurities",
+      "doxing": "Doxing",
+      "internetSubculture": "Internet Subculture",
+      "selling": "Selling",
+      "desire": "Desire",
+      "carnivores": "Carnivores",
+      "packTactics": "Pack Tactics",
+      "feedingHabits": "Feeding Habits",
+      "followTheMoney": "Follow the Money",
+      "highCrimeAreas": "High Crime Areas",
+      "swimming": "Swimming",
+      "water": "Water",
+      "feigningWeakness": "Feigning Weakness",
+      "hiddenWeapon": "Hidden Weapon"
     }
   },
   "disciplines": {
@@ -1815,6 +1919,63 @@ const oEn = {
     "beautiful": {
       "name": "Beautiful"
     },
+    "calmheart": { "name": "Calm Heart" },
+    "daredevil": { "name": "Daredevil" },
+    "codeofhonor": { "name": "Code of Honor" },
+    "fastlearner": { "name": "Fast Learner" },
+    "focused": { "name": "Focused" },
+    "headstrong": { "name": "Headstrong" },
+    "highhumanity": { "name": "High Humanity" },
+    "ironwill": { "name": "Iron Will" },
+    "jackofalltrades": { "name": "Jack of All Trades" },
+    "expertinstructor": { "name": "Expert Instructor" },
+    "remorseful": { "name": "Remorseful" },
+    "loremaster": { "name": "Lore Master" },
+    "totalrecall": { "name": "Total Recall" },
+    "crackdriver": { "name": "Crack Driver" },
+    "lightsleeper": { "name": "Light Sleeper" },
+    "sharpsenses": { "name": "Sharp Senses" },
+    "slippery": { "name": "Slippery" },
+    "skillaptitude": { "name": "Skill Aptitude" },
+    "tough": { "name": "Tough" },
+    "unstakeable": { "name": "Unstakeable" },
+    "claninfiltrator": { "name": "Clan Infiltrator" },
+    "inspiringpresence": { "name": "Inspiring Presence" },
+    "prestigioussire": { "name": "Prestigious Sire" },
+    "socialengineer": { "name": "Social Engineer" },
+    "stalwartloyalty": { "name": "Stalwart Loyalty" },
+    "underestimated": { "name": "Underestimated" },
+    "aftermealglow": { "name": "After Meal Glow" },
+    "alchemyexpert": { "name": "Alchemy Expert" },
+    "animalaffinity": { "name": "Animal Affinity" },
+    "apexpredator": { "name": "Apex Predator" },
+    "berserker": { "name": "Berserker" },
+    "bloodhealer": { "name": "Blood Healer" },
+    "delaydestruction": { "name": "Delay Destruction" },
+    "dangersense": { "name": "Danger Sense" },
+    "demonicpact": { "name": "Demonic Pact" },
+    "diablerist": { "name": "Diablerist" },
+    "disciplinecompetence": { "name": "Discipline Competence" },
+    "efficienteater": { "name": "Efficient Eater" },
+    "fasteater": { "name": "Fast Eater" },
+    "fasthealer": { "name": "Fast Healer" },
+    "friendtofae": { "name": "Friend to Fae" },
+    "holyaura": { "name": "Holy Aura" },
+    "improvedghouls": { "name": "Improved Ghouls" },
+    "magicresistance": { "name": "Magic Resistance" },
+    "memoriamdweller": { "name": "Memoriam Dweller" },
+    "obscure": { "name": "Obscure" },
+    "powerfulvitae": { "name": "Powerful Vitae" },
+    "risingsun": { "name": "Rising Sun" },
+    "spiritmentor": { "name": "Spirit Mentor" },
+    "thaumaturgictraining": { "name": "Thaumaturgic Training" },
+    "truebond": { "name": "True Bond" },
+    "truefaith": { "name": "True Faith" },
+    "truesight": { "name": "True Sight" },
+    "mysticalitem": { "name": "Mystical Item" },
+    "businessowner": { "name": "Business Owner" },
+    "powerbehindthrone": { "name": "Power Behind the Throne" },
+    "supportivepresence": { "name": "Supportive Presence" },
     "bloodhound": {
       "name": "Bloodhound"
     },
@@ -1913,6 +2074,55 @@ const oEn = {
     "shunned": {
       "name": "Shunned"
     },
+    "amnesia": { "name": "Amnesia" },
+    "curiosity": { "name": "Curiosity" },
+    "impatient": { "name": "Impatient" },
+    "paranoia": { "name": "Paranoia" },
+    "routine": { "name": "Routine" },
+    "morbidfascination": { "name": "Morbid Fascination" },
+    "nightmares": { "name": "Nightmares" },
+    "sadist": { "name": "Sadist" },
+    "vengeful": { "name": "Vengeful" },
+    "weakwilled": { "name": "Weak-Willed" },
+    "softhearted": { "name": "Soft-Hearted" },
+    "bluntedfangs": { "name": "Blunted Fangs" },
+    "childlike": { "name": "Childlike" },
+    "fleshofthecorpse": { "name": "Flesh of the Corpse" },
+    "fragile": { "name": "Fragile" },
+    "stenchofdeath": { "name": "Stench of Death" },
+    "weakstomach": { "name": "Weak Stomach" },
+    "mistakenidentity": { "name": "Mistaken Identity" },
+    "notorioussire": { "name": "Notorious Sire" },
+    "oathbreaker": { "name": "Oath Breaker" },
+    "outsider": { "name": "Outsider" },
+    "brash": { "name": "Brash" },
+    "conflictingloyalties": { "name": "Conflicting Loyalties" },
+    "dull": { "name": "Dull" },
+    "hunted": { "name": "Hunted" },
+    "intolerance": { "name": "Intolerance" },
+    "markedfordeath": { "name": "Marked for Death" },
+    "overconfident": { "name": "Overconfident" },
+    "twistedupbringing": { "name": "Twisted Upbringing" },
+    "angrybeast": { "name": "Angry Beast" },
+    "appetizingblood": { "name": "Appetizing Blood" },
+    "beaconofunholy": { "name": "Beacon of Unholy" },
+    "cannotembrace": { "name": "Cannot Embrace" },
+    "cursed": { "name": "Cursed" },
+    "eeriepresence": { "name": "Eerie Presence" },
+    "deathskiss": { "name": "Death's Kiss" },
+    "deepsleeper": { "name": "Deep Sleeper" },
+    "disciplineinept": { "name": "Discipline Inept" },
+    "frigidaura": { "name": "Frigid Aura" },
+    "magicsusceptibility": { "name": "Magic Susceptibility" },
+    "grimwounds": { "name": "Grim Wounds" },
+    "repulsivetoanimals": { "name": "Repulsive to Animals" },
+    "taintofcorruption": { "name": "Taint of Corruption" },
+    "taintedblood": { "name": "Tainted Blood" },
+    "thirstforinnocence": { "name": "Thirst for Innocence" },
+    "weakblood": { "name": "Weak Blood" },
+    "curseditem": { "name": "Cursed Item" },
+    "obviouspredator": { "name": "Obvious Predator" },
+    "despised": { "name": "Despised" },
     "feeding": {
       "name": "Feeding Flaw"
     },
@@ -2980,6 +3190,78 @@ const oPt = {
       "name": "Sereia",
       "description": "Você usa sedução e beleza para encantar suas presas."
     },
+    "businessowner": {
+      "name": "Dono de Negócio",
+      "description": "Você possui um negócio ou o controla nos bastidores, providenciando funcionários e clientes para se alimentar."
+    },
+    "confidant": {
+      "name": "Confidente",
+      "description": "Pessoas o procuram em busca de conselhos ou terapia, e você abre as veias delas em troca."
+    },
+    "corporateleech": {
+      "name": "Sanguessuga Corporativo",
+      "description": "Você frequenta edifícios corporativos, alimentando-se de trabalhadores desatentos e manipulando das sombras."
+    },
+    "eattherich": {
+      "name": "Coma os Ricos",
+      "description": "Você tem acesso à alta sociedade, fingindo trabalhar para eles ou como um antigo membro."
+    },
+    "hideandeat": {
+      "name": "Esconda-se e Coma",
+      "description": "Você espera pacientemente por sua presa em bairros, parques ou carros, desaparecendo antes que percebam."
+    },
+    "kidnapper": {
+      "name": "Sequestrador",
+      "description": "Você captura sua presa e a mantém para alimentação até que expirem ou possam ser liberados com segurança."
+    },
+    "labrat": {
+      "name": "Rato de Laboratório",
+      "description": "Você dirige uma clínica ou instalação experimental onde as pessoas voluntariamente doam sangue por dinheiro."
+    },
+    "hospitalhunter": {
+      "name": "Caçador de Hospital",
+      "description": "Você flui pelos corredores do hospital como um anjo amaldiçoado ou espectro da morte, alimentando-se de vítimas fáceis."
+    },
+    "localhaunt": {
+      "name": "Assombração Local",
+      "description": "Você é o monstro por trás de um conto popular, capitalizando rumores de perigo para caçar os curiosos."
+    },
+    "lurkerinthecrowd": {
+      "name": "Espreitador na Multidão",
+      "description": "Você escolhe alvos em multidões e se alimenta antes que alguém perceba, preferindo nunca se destacar."
+    },
+    "manicpixiepredator": {
+      "name": "Predador Maníaco",
+      "description": "Você prepara sua comida com relacionamentos curtos, mas apaixonados, deixando-os perdidos e com saudades."
+    },
+    "onlinepredator": {
+      "name": "Predador Online",
+      "description": "Você caça pela internet, encontrando informações de identificação ou cultivando relacionamentos."
+    },
+    "opportunist": {
+      "name": "Oportunista",
+      "description": "Você atrai clientes desesperados ou ingênuos através de negócios falsos ou contas em redes sociais."
+    },
+    "packhunter": {
+      "name": "Caçador de Matilha",
+      "description": "Você caça cercado por feras que o aceitam como um dos seus, perseguindo a presa."
+    },
+    "payforblood": {
+      "name": "Pague por Sangue",
+      "description": "Caçar é apenas mais uma transação para você; você tem os meios para que o sangue chegue até você."
+    },
+    "streetfeeder": {
+      "name": "Alimentador de Rua",
+      "description": "Você conhece bem as ruas da cidade, acalmando as vítimas em situações vulneráveis em áreas perigosas."
+    },
+    "watcherfromthewater": {
+      "name": "Observador da Água",
+      "description": "Você caça em corpos d'água, esperando indefinidamente por mergulhadores, pescadores ou marinheiros."
+    },
+    "wolfinsheepsclothing": {
+      "name": "Lobo em Pele de Cordeiro",
+      "description": "Você finge ser um alvo fácil em locais estratégicos, invertendo a dinâmica com potenciais predadores."
+    },
     "noAdvantages": "Nenhuma vantagem estática concedida.",
     "noFlaws": "Nenhum defeito estático obrigatório.",
     "specialties": {
@@ -2994,7 +3276,39 @@ const oPt = {
       "hunting": "Caça",
       "specificTradition": "Tradição Específica",
       "anesthetics": "Anestésicos",
-      "breakIn": "Invasão"
+      "breakIn": "Invasão",
+      "deals": "Acordos",
+      "moneyLaundering": "Lavagem de Dinheiro",
+      "empathy": "Empatia",
+      "psychology": "Psicologia",
+      "corporate": "Corporativo",
+      "extortion": "Extorsão",
+      "media": "Mídia",
+      "stalking": "Perseguição",
+      "ambushes": "Emboscadas",
+      "security": "Segurança",
+      "experiments": "Experimentos",
+      "diagnosis": "Diagnóstico",
+      "condolence": "Condolências",
+      "frighten": "Assustar",
+      "chasing": "Corrida",
+      "blendingIn": "Misturar-se",
+      "escaping": "Fuga",
+      "riskTaking": "Correr Riscos",
+      "insecurities": "Inseguranças",
+      "doxing": "Doxing",
+      "internetSubculture": "Subcultura da Internet",
+      "selling": "Vendas",
+      "desire": "Desejo",
+      "carnivores": "Carnívoros",
+      "packTactics": "Táticas de Matilha",
+      "feedingHabits": "Hábitos Alimentares",
+      "followTheMoney": "Siga o Dinheiro",
+      "highCrimeAreas": "Áreas de Alta Criminalidade",
+      "swimming": "Natação",
+      "water": "Água",
+      "feigningWeakness": "Fingir Fraqueza",
+      "hiddenWeapon": "Arma Oculta"
     }
   },
   "disciplines": {
@@ -4327,6 +4641,63 @@ const oPt = {
     "beautiful": {
       "name": "Belo"
     },
+    "calmheart": { "name": "Coração Calmo" },
+    "daredevil": { "name": "Temerário" },
+    "codeofhonor": { "name": "Código de Honra" },
+    "fastlearner": { "name": "Aprendizado Rápido" },
+    "focused": { "name": "Focado" },
+    "headstrong": { "name": "Obstinado" },
+    "highhumanity": { "name": "Humanidade Elevada" },
+    "ironwill": { "name": "Vontade de Ferro" },
+    "jackofalltrades": { "name": "Faz-tudo" },
+    "expertinstructor": { "name": "Instrutor Especialista" },
+    "remorseful": { "name": "Arrependido" },
+    "loremaster": { "name": "Mestre de Sabedoria" },
+    "totalrecall": { "name": "Memória Fotográfica" },
+    "crackdriver": { "name": "Motorista de Elite" },
+    "lightsleeper": { "name": "Sono Leve" },
+    "sharpsenses": { "name": "Sentidos Aguçados" },
+    "slippery": { "name": "Escorregadio" },
+    "skillaptitude": { "name": "Aptidão em Perícia" },
+    "tough": { "name": "Resistente" },
+    "unstakeable": { "name": "Inestacável" },
+    "claninfiltrator": { "name": "Infiltrado de Clã" },
+    "inspiringpresence": { "name": "Presença Inspiradora" },
+    "prestigioussire": { "name": "Senhor Prestigiado" },
+    "socialengineer": { "name": "Engenheiro Social" },
+    "stalwartloyalty": { "name": "Lealdade Inabalável" },
+    "underestimated": { "name": "Subestimado" },
+    "aftermealglow": { "name": "Brilho Pós-Refeição" },
+    "alchemyexpert": { "name": "Especialista em Alquimia" },
+    "animalaffinity": { "name": "Afinidade Animal" },
+    "apexpredator": { "name": "Predador Ápice" },
+    "berserker": { "name": "Berserker" },
+    "bloodhealer": { "name": "Curandeiro de Sangue" },
+    "delaydestruction": { "name": "Adiar Destruição" },
+    "dangersense": { "name": "Sentido de Perigo" },
+    "demonicpact": { "name": "Pacto Demoníaco" },
+    "diablerist": { "name": "Diabolista" },
+    "disciplinecompetence": { "name": "Competência em Disciplina" },
+    "efficienteater": { "name": "Alimentador Eficiente" },
+    "fasteater": { "name": "Alimentador Rápido" },
+    "fasthealer": { "name": "Cura Rápida" },
+    "friendtofae": { "name": "Amigo das Fadas" },
+    "holyaura": { "name": "Aura Sagrada" },
+    "improvedghouls": { "name": "Ghouls Aprimorados" },
+    "magicresistance": { "name": "Resistência Mágica" },
+    "memoriamdweller": { "name": "Habitante de Memória" },
+    "obscure": { "name": "Obscuro" },
+    "powerfulvitae": { "name": "Vitae Poderosa" },
+    "risingsun": { "name": "Sol Nascente" },
+    "spiritmentor": { "name": "Mentor Espiritual" },
+    "thaumaturgictraining": { "name": "Treinamento Taumatúrgico" },
+    "truebond": { "name": "Vínculo Verdadeiro" },
+    "truefaith": { "name": "Fé Verdadeira" },
+    "truesight": { "name": "Visão Verdadeira" },
+    "mysticalitem": { "name": "Item Místico" },
+    "businessowner": { "name": "Dono de Negócio" },
+    "powerbehindthrone": { "name": "Poder Atrás do Trono" },
+    "supportivepresence": { "name": "Presença de Apoio" },
     "bloodhound": {
       "name": "Faro de Sangue"
     },
@@ -4425,6 +4796,55 @@ const oPt = {
     "shunned": {
       "name": "Evitado"
     },
+    "amnesia": { "name": "Amnésia" },
+    "curiosity": { "name": "Curiosidade" },
+    "impatient": { "name": "Impaciente" },
+    "paranoia": { "name": "Paranoia" },
+    "routine": { "name": "Rotina" },
+    "morbidfascination": { "name": "Fascínio Mórbido" },
+    "nightmares": { "name": "Pesadelos" },
+    "sadist": { "name": "Sadista" },
+    "vengeful": { "name": "Vingativo" },
+    "weakwilled": { "name": "Vontade Fraca" },
+    "softhearted": { "name": "Coração Mole" },
+    "bluntedfangs": { "name": "Presas Rombas" },
+    "childlike": { "name": "Infantil" },
+    "fleshofthecorpse": { "name": "Carne de Cadáver" },
+    "fragile": { "name": "Frágil" },
+    "stenchofdeath": { "name": "Odor da Morte" },
+    "weakstomach": { "name": "Estômago Fraco" },
+    "mistakenidentity": { "name": "Identidade Trocada" },
+    "notorioussire": { "name": "Senhor Notório" },
+    "oathbreaker": { "name": "Quebrador de Juramento" },
+    "outsider": { "name": "Forasteiro" },
+    "brash": { "name": "Impetuoso" },
+    "conflictingloyalties": { "name": "Lealdades Conflitantes" },
+    "dull": { "name": "Monótono" },
+    "hunted": { "name": "Caçado" },
+    "intolerance": { "name": "Intolerância" },
+    "markedfordeath": { "name": "Marcado para Morrer" },
+    "overconfident": { "name": "Superconfiante" },
+    "twistedupbringing": { "name": "Criação Distorcida" },
+    "angrybeast": { "name": "Besta Enraivecida" },
+    "appetizingblood": { "name": "Sangue Apetitoso" },
+    "beaconofunholy": { "name": "Farol do Profano" },
+    "cannotembrace": { "name": "Incapaz de Abraçar" },
+    "cursed": { "name": "Amaldiçoado" },
+    "eeriepresence": { "name": "Presença Sinistra" },
+    "deathskiss": { "name": "Beijo da Morte" },
+    "deepsleeper": { "name": "Sono Profundo" },
+    "disciplineinept": { "name": "Inépcia em Disciplina" },
+    "frigidaura": { "name": "Aura Gélida" },
+    "magicsusceptibility": { "name": "Suscetibilidade Mágica" },
+    "grimwounds": { "name": "Ferimentos Sombrios" },
+    "repulsivetoanimals": { "name": "Repulsivo para Animais" },
+    "taintofcorruption": { "name": "Mácula da Corrupção" },
+    "taintedblood": { "name": "Sangue Maculado" },
+    "thirstforinnocence": { "name": "Sede de Inocência" },
+    "weakblood": { "name": "Sangue Fraco" },
+    "curseditem": { "name": "Item Amaldiçoado" },
+    "obviouspredator": { "name": "Predador Óbvio" },
+    "despised": { "name": "Desprezado" },
     "feeding": {
       "name": "Defeito de Alimentação"
     },

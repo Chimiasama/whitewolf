@@ -85,15 +85,12 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                 <h1 className="text-2xl sm:text-4xl md:text-5xl font-cinzel text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal leading-tight">
                     {fnT('gameSelection.title')}
                 </h1>
-                <p className="text-gray-400 text-lg italic max-w-2xl mx-auto break-words whitespace-normal">
-                    {fnT('gameSelection.subtitle')}
-                </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-12 min-w-0">
                 <div 
                     onClick={() => onSelect(GameType.Vampire)}
-                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-red-900/30 bg-black/40 p-4 sm:p-8 transition-all hover:border-red-600 hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]"
+                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-red-900/30 bg-black/40 p-3 sm:p-6 transition-all hover:border-red-600 hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]"
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-red-900/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                     <div className="relative z-10 space-y-6">
@@ -114,7 +111,7 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
 
                 <div 
                     onClick={() => onSelect(GameType.Werewolf)}
-                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-emerald-900/30 bg-black/40 p-4 sm:p-8 transition-all hover:border-emerald-600 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
+                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-emerald-900/30 bg-black/40 p-3 sm:p-6 transition-all hover:border-emerald-600 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                     <div className="relative z-10 space-y-6">
@@ -370,7 +367,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
 
     return (
         <div className="space-y-6">
-            <div className={`sticky top-[72px] z-30 bg-gray-900/95 backdrop-blur-sm p-4 rounded-b-xl border-x border-b border-gray-800 shadow-2xl transition-all duration-500 ${bIsPoolComplete ? 'border-b-green-900/50' : 'border-b-red-900/50'}`}>
+            <div className={`sticky top-[72px] z-30 bg-gray-900/95 backdrop-blur-sm p-3 rounded-b-xl border-x border-b border-gray-800 shadow-2xl transition-all duration-500 ${bIsPoolComplete ? 'border-b-green-900/50' : 'border-b-red-900/50'}`}>
                 <div className="flex flex-col items-center">
                     <span className={`text-xs font-bold uppercase tracking-[0.2em] mb-2 flex items-center gap-2 ${bIsPoolComplete ? 'text-green-500' : 'text-gray-400'}`}>
                         {nActivePaintValue ? (
@@ -408,7 +405,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                         onClick={() => fnHandleItemInteraction(sItem)}
                                         disabled={nActivePaintValue !== null && !bCanPaint}
                                         className={`
-                                            w-full flex justify-between items-center p-3 rounded-md border transition-all duration-200
+                                            w-full flex justify-between items-center p-2 rounded-md border transition-all duration-200
                                             ${nActivePaintValue !== null 
                                                 ? bCanPaint 
                                                     ? 'cursor-crosshair hover:bg-gray-800 border-gray-700 hover:border-red-500 hover:ring-1 hover:ring-red-500' 
@@ -597,7 +594,7 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
                             if (!aPowers) return null;
                             const bIsLevelUnlock = nDots >= nLevel;
                             return (
-                                <div key={nLevel} className={`relative pl-4 border-l-2 ${bIsLevelUnlock ? 'border-red-500' : 'border-gray-700'}`}>
+                                <div key={nLevel} className={`relative pl-3 border-l-2 ${bIsLevelUnlock ? 'border-red-500' : 'border-gray-700'}`}>
                                     <div className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 ${bIsLevelUnlock ? 'bg-red-500 border-red-500' : 'bg-gray-900 border-gray-700'}`}></div>
                                     <h4 className={`text-lg font-bold mb-3 ${bIsLevelUnlock ? 'text-red-400' : 'text-gray-600'}`}>
                                         {fnT('compendium.level')} {nLevel}
@@ -612,7 +609,7 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
                                                     key={oPower.id} 
                                                     onClick={() => bCanSelect && fnTogglePower(oPower.id)}
                                                     className={`
-                                                        p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 relative group overflow-hidden
+                                                        p-3 rounded-lg border-2 cursor-pointer transition-all duration-200 relative group overflow-hidden
                                                         ${bIsSelected 
                                                             ? 'bg-red-900/30 border-red-500 shadow-[0_0_15px_rgba(153,27,27,0.3)] ring-1 ring-red-500/50' 
                                                             : bCanSelect 
@@ -1423,7 +1420,7 @@ const App: React.FC = () => {
                             </p>
 
                             {/* Point Pool Indicator */}
-                            <div className="mb-6 flex flex-col items-center p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+                            <div className="mb-6 flex flex-col items-center p-3 bg-gray-900/50 rounded-lg border border-gray-700">
                                 {(() => {
                                     const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
                                     const aCreationPool = oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
@@ -1512,7 +1509,7 @@ const App: React.FC = () => {
                                         const nPredatorDots = bIsPredatorDisc ? oPredatorType?.disciplineAdd?.dots || 0 : 0;
 
                                         return (
-                                            <div key={sDisc} className="bg-gray-800 p-4 rounded-lg border border-gray-700 min-w-0">
+                                            <div key={sDisc} className="bg-gray-800 p-3 rounded-lg border border-gray-700 min-w-0">
                                                 <div className="flex flex-wrap justify-between items-center gap-3 mb-2">
                                                     <div className="flex flex-col">
                                                         <h4 className="font-bold text-gray-200 break-words">{oDetails?.name || sDisc}</h4>
@@ -1723,8 +1720,8 @@ const App: React.FC = () => {
                                             const oSelectedPredator = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
                                             if (!oSelectedPredator) return null;
                                             return (
-                                                <div className="p-6 bg-gray-900/80 rounded-lg border border-red-900/40 shadow-2xl">
-                                                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 border-b border-red-900/20 pb-4">
+                                                <div className="p-4 bg-gray-900/80 rounded-lg border border-red-900/40 shadow-2xl">
+                                                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4 border-b border-red-900/20 pb-4">
                                                         <h4 className="text-2xl font-bold text-white flex items-center gap-3">
                                                             <span className="p-2 bg-red-900/20 rounded-full text-red-500 shadow-[0_0_10px_rgba(153,27,27,0.4)]">
                                                                 <BloodIcon />
@@ -1755,9 +1752,9 @@ const App: React.FC = () => {
                                                                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
                                                                 {fnT('compendium.grantedBenefits')}
                                                             </h5>
-                                                            <div className="space-y-3">
+                                                            <div className="space-y-2">
                                                                 {oSelectedPredator.advantages.map((adv, idx) => (
-                                                                    <div key={`${adv.name}-${idx}`} className="flex items-start gap-3 bg-green-900/5 p-4 rounded-md border border-green-900/20 hover:bg-green-900/10 transition-colors">
+                                                                    <div key={`${adv.name}-${idx}`} className="flex items-start gap-3 bg-green-900/5 p-3 rounded-md border border-green-900/20 hover:bg-green-900/10 transition-colors">
                                                                         <div className="mt-1 text-green-500"><CheckCircle /></div>
                                                                         <div>
                                                                             <div className="text-[9px] uppercase tracking-widest text-green-600 font-bold mb-0.5">{fnT('compendium.advantage')}</div>
@@ -1777,9 +1774,9 @@ const App: React.FC = () => {
                                                                 <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
                                                                 {fnT('compendium.potentialCosts')}
                                                              </h5>
-                                                             <div className="space-y-3">
+                                                             <div className="space-y-2">
                                                                  {oSelectedPredator.flaws.map((flaw, idx) => (
-                                                                     <div key={`${flaw.name}-${idx}`} className="flex items-start gap-3 bg-red-900/5 p-4 rounded-md border border-red-900/20 hover:bg-red-900/10 transition-colors">
+                                                                     <div key={`${flaw.name}-${idx}`} className="flex items-start gap-3 bg-red-900/5 p-3 rounded-md border border-red-900/20 hover:bg-red-900/10 transition-colors">
                                                                          <div className="mt-1 text-red-500"><ExclamationCircle /></div>
                                                                          <div>
                                                                              <div className="text-[9px] uppercase tracking-widest text-red-600 font-bold mb-0.5">{fnT('compendium.flaw')}</div>
@@ -1854,7 +1851,7 @@ const App: React.FC = () => {
                                         const oSelected = oCharacter.loresheets.find(l => l.id === ls.id);
                                         const nLevel = oSelected ? oSelected.level : 0;
                                         return (
-                                            <div key={ls.id} className={`p-4 rounded-lg border-2 transition-all duration-300 ${nLevel > 0 ? 'bg-green-900/30 border-green-500' : 'bg-gray-800 border-gray-700'}`}>
+                                            <div key={ls.id} className={`p-3 rounded-lg border-2 transition-all duration-300 ${nLevel > 0 ? 'bg-green-900/30 border-green-500' : 'bg-gray-800 border-gray-700'}`}>
                                                 <div className="flex justify-between items-start mb-2">
                                                     <h4 className="font-bold text-gray-100">{ls.name}</h4>
                                                     <div className="flex flex-shrink-0 space-x-1">
@@ -2094,10 +2091,6 @@ const App: React.FC = () => {
                 <div className="min-h-screen w-full overflow-x-hidden text-white font-sans flex flex-col items-center justify-center p-4 relative" style={gothicBackgroundStyle}>
                     <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-10">
                         <RoseIcon className="absolute -right-16 -top-16 h-72 w-72 text-red-900 opacity-70 sm:-right-40 sm:-top-40 sm:h-[800px] sm:w-[800px] animate-pulse" />
-                    </div>
-                    <div className="z-20 text-center mb-12 px-4 w-full min-w-0">
-                        <h1 className="text-xl sm:text-4xl md:text-6xl font-cinzel font-bold text-red-600 tracking-widest mb-2 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal leading-tight">{fnT('app.title')}</h1>
-                        <p className="text-base sm:text-xl text-gray-400 italic max-w-2xl mx-auto break-words whitespace-normal">{fnT('app.subtitle')}</p>
                     </div>
                     <GameSelection onSelect={fnHandleGameSelect} />
                     <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 z-20 w-full px-2">

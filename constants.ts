@@ -147,6 +147,280 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
             { skill: Skill.Subterfuge, name: fnT('predatorTypes.specialties.seduction') }
         ]
     },
+    {
+        id: 'business_owner',
+        name: fnT('predatorTypes.businessowner.name'),
+        description: fnT('predatorTypes.businessowner.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "presence", dots: 1 }, // Selection between Dominate or Presence - defaulting or allowing both for logic
+        advantages: [{ id: 'business_owner_background', name: "Business Owner Background", description: "Three dots in Business Owner Background", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'routine_flaw', name: "Routine", description: "Routine Flaw (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Persuasion, name: fnT('predatorTypes.specialties.deals') },
+            { skill: Skill.Finance, name: fnT('predatorTypes.specialties.moneyLaundering') }
+        ]
+    },
+    {
+        id: 'confidant',
+        name: fnT('predatorTypes.confidant.name'),
+        description: fnT('predatorTypes.confidant.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "presence", dots: 1 },
+        advantages: [
+            { id: 'supportive_presence', name: "Supportive Presence", description: "Supportive Presence (•)", cost: 1, type: 'advantage', levels: [1] },
+            { id: 'remorseful', name: "Remorseful", description: "Remorseful (•)", cost: 1, type: 'advantage', levels: [1] },
+            { id: 'memoriam_dweller', name: "Memoriam Dweller", description: "Memoriam Dweller (•)", cost: 1, type: 'advantage', levels: [1] }
+        ],
+        flaws: [{ id: 'conflicting_loyalties', name: "Conflicting Loyalties", description: "Conflicting Loyalties (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Insight, name: fnT('predatorTypes.specialties.empathy') },
+            { skill: Skill.Academics, name: fnT('predatorTypes.specialties.psychology') }
+        ]
+    },
+    {
+        id: 'corporate_leech',
+        name: fnT('predatorTypes.corporateleech.name'),
+        description: fnT('predatorTypes.corporateleech.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "dominate", dots: 1 },
+        advantages: [{ id: 'power_behind_throne', name: "Power Behind the Throne", description: "Power Behind the Throne (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [
+            { id: 'dull_flaw', name: "Dull", description: "Dull (•)", cost: 1, type: 'flaw', levels: [1] },
+            { id: 'dark_secret_corporate', name: "Dark Secret", description: "Dark Secret (•)", cost: 1, type: 'flaw', levels: [1] }
+        ],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Finance, name: fnT('predatorTypes.specialties.corporate') },
+            { skill: Skill.Etiquette, name: fnT('predatorTypes.specialties.corporate') }
+        ]
+    },
+    {
+        id: 'eat_the_rich',
+        name: fnT('predatorTypes.eattherich.name'),
+        description: fnT('predatorTypes.eattherich.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "fortitude", dots: 1 },
+        advantages: [{ id: 'clan_infiltrator', name: "Clan Infiltrator", description: "Clan Infiltrator (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'angry_beast', name: "Angry Beast", description: "Angry Beast (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Intimidation, name: fnT('predatorTypes.specialties.extortion') },
+            { skill: Skill.Politics, name: fnT('predatorTypes.specialties.media') }
+        ]
+    },
+    {
+        id: 'hide_and_eat',
+        name: fnT('predatorTypes.hideandeat.name'),
+        description: fnT('predatorTypes.hideandeat.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "obfuscate", dots: 1 },
+        advantages: [
+            { id: 'efficient_eater', name: "Efficient Eater", description: "Efficient Eater (••)", cost: 2, type: 'advantage', levels: [2] },
+            { id: 'slippery', name: "Slippery", description: "Slippery (•)", cost: 1, type: 'advantage', levels: [1] }
+        ],
+        flaws: [{ id: 'obvious_predator', name: "Obvious Predator", description: "Obvious Predator (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Stealth, name: fnT('predatorTypes.specialties.stalking') },
+            { skill: Skill.Awareness, name: fnT('predatorTypes.specialties.ambushes') }
+        ]
+    },
+    {
+        id: 'kidnapper',
+        name: fnT('predatorTypes.kidnapper.name'),
+        description: fnT('predatorTypes.kidnapper.description'),
+        humanityModifier: -1,
+        disciplineAdd: { discipline: "dominate", dots: 1 },
+        advantages: [{ id: 'base_haven_cell', name: "Base Haven + Cell", description: "Base Haven (••) + Cell (•)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'sadistic_flaw', name: "Sadistic", description: "Sadistic (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Craft, name: fnT('predatorTypes.specialties.security') },
+            { skill: Skill.Investigation, name: fnT('predatorTypes.specialties.stalking') }
+        ]
+    },
+    {
+        id: 'lab_rat',
+        name: fnT('predatorTypes.labrat.name'),
+        description: fnT('predatorTypes.labrat.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "bloodsorcery", dots: 1 },
+        advantages: [{ id: 'improved_ghouls', name: "Improved Ghouls", description: "Improved Ghouls (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [
+            { id: 'blunted_fangs', name: "Blunted Fangs", description: "Blunted Fangs (•)", cost: 1, type: 'flaw', levels: [1] },
+            { id: 'addiction_labrat', name: "Addiction", description: "Addiction (•)", cost: 1, type: 'flaw', levels: [1] }
+        ],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Medicine, name: fnT('predatorTypes.specialties.experiments') },
+            { skill: Skill.Science, name: fnT('predatorTypes.specialties.experiments') }
+        ]
+    },
+    {
+        id: 'hospital_hunter',
+        name: fnT('predatorTypes.hospitalhunter.name'),
+        description: fnT('predatorTypes.hospitalhunter.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "fortitude", dots: 1 },
+        advantages: [{ id: 'blood_healer', name: "Blood Healer", description: "Blood Healer (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'frigid_aura', name: "Frigid Aura", description: "Frigid Aura (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Medicine, name: fnT('predatorTypes.specialties.diagnosis') },
+            { skill: Skill.Persuasion, name: fnT('predatorTypes.specialties.condolence') }
+        ]
+    },
+    {
+        id: 'local_haunt',
+        name: fnT('predatorTypes.localhaunt.name'),
+        description: fnT('predatorTypes.localhaunt.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "protean", dots: 1 },
+        advantages: [{ id: 'loremaster_merit', name: "Loremaster", description: "Loremaster (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'eerie_presence', name: "Eerie Presence", description: "Eerie Presence (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Intimidation, name: fnT('predatorTypes.specialties.frighten') },
+            { skill: Skill.Athletics, name: fnT('predatorTypes.specialties.chasing') }
+        ]
+    },
+    {
+        id: 'lurker_in_crowd',
+        name: fnT('predatorTypes.lurkerinthecrowd.name'),
+        description: fnT('predatorTypes.lurkerinthecrowd.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "obfuscate", dots: 1 },
+        advantages: [{ id: 'obscure_merit', name: "Obscure", description: "Obscure (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'outsider_flaw', name: "Outsider", description: "Outsider (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Stealth, name: fnT('predatorTypes.specialties.blendingIn') },
+            { skill: Skill.Athletics, name: fnT('predatorTypes.specialties.escaping') }
+        ]
+    },
+    {
+        id: 'manic_pixie',
+        name: fnT('predatorTypes.manicpixiepredator.name'),
+        description: fnT('predatorTypes.manicpixiepredator.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "presence", dots: 1 },
+        advantages: [{ id: 'social_engineer', name: "Social Engineer", description: "Social Engineer (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'cannot_embrace', name: "Cannot Embrace", description: "Cannot Embrace (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Persuasion, name: fnT('predatorTypes.specialties.riskTaking') },
+            { skill: Skill.Insight, name: fnT('predatorTypes.specialties.insecurities') }
+        ]
+    },
+    {
+        id: 'online_predator',
+        name: fnT('predatorTypes.onlinepredator.name'),
+        description: fnT('predatorTypes.onlinepredator.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "obfuscate", dots: 1 },
+        advantages: [{ id: 'mask_cobbler_online', name: "Mask (••) + Zeroed/Cobbler (•)", description: "Mask (••) + Zeroed (•) or Cobbler (•)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'paranoia_flaw', name: "Paranoia", description: "Paranoia (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Technology, name: fnT('predatorTypes.specialties.doxing') },
+            { skill: Skill.Etiquette, name: fnT('predatorTypes.specialties.internetSubculture') }
+        ]
+    },
+    {
+        id: 'opportunist',
+        name: fnT('predatorTypes.opportunist.name'),
+        description: fnT('predatorTypes.opportunist.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "presence", dots: 1 },
+        advantages: [{ id: 'delay_destruction', name: "Delay Destruction", description: "Delay Destruction (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'overconfident_flaw', name: "Overconfident", description: "Overconfident (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Persuasion, name: fnT('predatorTypes.specialties.selling') },
+            { skill: Skill.Insight, name: fnT('predatorTypes.specialties.desire') }
+        ]
+    },
+    {
+        id: 'pack_hunter',
+        name: fnT('predatorTypes.packhunter.name'),
+        description: fnT('predatorTypes.packhunter.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "protean", dots: 1 },
+        advantages: [{ id: 'apex_predator', name: "Apex Predator", description: "Apex Predator (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [
+            { id: 'brash_flaw', name: "Brash", description: "Brash (•)", cost: 1, type: 'flaw', levels: [1] },
+            { id: 'deep_sleeper', name: "Deep Sleeper", description: "Deep Sleeper (•)", cost: 1, type: 'flaw', levels: [1] }
+        ],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.AnimalKen, name: fnT('predatorTypes.specialties.carnivores') },
+            { skill: Skill.Brawl, name: fnT('predatorTypes.specialties.packTactics') }
+        ]
+    },
+    {
+        id: 'pay_for_blood',
+        name: fnT('predatorTypes.payforblood.name'),
+        description: fnT('predatorTypes.payforblood.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "dominate", dots: 1 },
+        advantages: [{ id: 'resources_influence', name: "Resources/Influence", description: "Spend three dots between Resources or Influence (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'despised_flaw', name: "Despised", description: "Despised (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Politics, name: fnT('predatorTypes.specialties.feedingHabits') },
+            { skill: Skill.Finance, name: fnT('predatorTypes.specialties.followTheMoney') }
+        ]
+    },
+    {
+        id: 'street_feeder',
+        name: fnT('predatorTypes.streetfeeder.name'),
+        description: fnT('predatorTypes.streetfeeder.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "potence", dots: 1 },
+        advantages: [{ id: 'danger_sense', name: "Danger Sense", description: "Danger Sense (•••)", cost: 3, type: 'advantage', levels: [3] }],
+        flaws: [{ id: 'destitute_flaw', name: "Destitute", description: "Destitute (•)", cost: 1, type: 'flaw', levels: [1] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Streetwise, name: fnT('predatorTypes.specialties.highCrimeAreas') },
+            { skill: Skill.Brawl, name: fnT('predatorTypes.specialties.ambushes') }
+        ]
+    },
+    {
+        id: 'watcher_from_water',
+        name: fnT('predatorTypes.watcherfromthewater.name'),
+        description: fnT('predatorTypes.watcherfromthewater.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "protean", dots: 1 },
+        advantages: [
+            { id: 'sharp_senses_merit', name: "Sharp Senses", description: "Sharp Senses (••)", cost: 2, type: 'advantage', levels: [2] },
+            { id: 'slippery_merit', name: "Slippery", description: "Slippery (•)", cost: 1, type: 'advantage', levels: [1] }
+        ],
+        flaws: [{ id: 'no_haven_flaw', name: "No Haven", description: "No Haven (•)", cost: 1, type: 'flaw', levels: [1] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Athletics, name: fnT('predatorTypes.specialties.swimming') },
+            { skill: Skill.Survival, name: fnT('predatorTypes.specialties.water') }
+        ]
+    },
+    {
+        id: 'wolf_sheep_clothing',
+        name: fnT('predatorTypes.wolfinsheepsclothing.name'),
+        description: fnT('predatorTypes.wolfinsheepsclothing.description'),
+        humanityModifier: 0,
+        disciplineAdd: { discipline: "fortitude", dots: 1 },
+        advantages: [
+            { id: 'daredevil_merit', name: "Daredevil", description: "Daredevil (•••)", cost: 3, type: 'advantage', levels: [3] },
+            { id: 'underestimated_merit', name: "Underestimated", description: "Underestimated (•)", cost: 1, type: 'advantage', levels: [1] }
+        ],
+        flaws: [{ id: 'deaths_kiss_flaw', name: "Death's Kiss", description: "Death's Kiss (••)", cost: 2, type: 'flaw', levels: [2] }],
+        specialties: [],
+        specialtyOptions: [
+            { skill: Skill.Subterfuge, name: fnT('predatorTypes.specialties.feigningWeakness') },
+            { skill: Skill.Melee, name: fnT('predatorTypes.specialties.hiddenWeapon') }
+        ]
+    }
 ];
 
 export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | null): AdvantageFlaw[] => {
@@ -218,9 +492,112 @@ export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | nul
         { id: 'haven', name: fnT('advantages.haven.name'), description: fnT('advantages.haven.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'herd', name: fnT('advantages.herd.name'), description: fnT('advantages.herd.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'bloodhound', name: fnT('advantages.bloodhound.name'), description: fnT('advantages.bloodhound.description'), cost: 1, type: 'advantage', levels: [1]},
+
+        { id: 'calmheart', name: fnT('advantages.calmheart.name'), description: "", cost: 4, type: 'advantage', levels: [4] },
+        { id: 'daredevil', name: fnT('advantages.daredevil.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'codeofhonor', name: fnT('advantages.codeofhonor.name'), description: "", cost: 2, type: 'advantage', levels: [2] },
+        { id: 'fastlearner', name: fnT('advantages.fastlearner.name'), description: "", cost: 5, type: 'advantage', levels: [5] },
+        { id: 'focused', name: fnT('advantages.focused.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'headstrong', name: fnT('advantages.headstrong.name'), description: "", cost: 4, type: 'advantage', levels: [4] },
+        { id: 'highhumanity', name: fnT('advantages.highhumanity.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'ironwill', name: fnT('advantages.ironwill.name'), description: "", cost: 4, type: 'advantage', levels: [4] },
+        { id: 'jackofalltrades', name: fnT('advantages.jackofalltrades.name'), description: "", cost: 4, type: 'advantage', levels: [4] },
+        { id: 'expertinstructor', name: fnT('advantages.expertinstructor.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'remorseful_merit', name: fnT('advantages.remorseful.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'loremaster_merit_v', name: fnT('advantages.loremaster.name'), description: "", cost: 2, type: 'advantage', levels: [2] },
+        { id: 'totalrecall', name: fnT('advantages.totalrecall.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'crackdriver', name: fnT('advantages.crackdriver.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'lightsleeper', name: fnT('advantages.lightsleeper.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'sharpsenses', name: fnT('advantages.sharpsenses.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'slippery_merit_v', name: fnT('advantages.slippery.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'skillaptitude', name: fnT('advantages.skillaptitude.name'), description: "", cost: 4, type: 'advantage', levels: [4] },
+        { id: 'tough_merit', name: fnT('advantages.tough.name'), description: "", cost: 4, type: 'advantage', levels: [4] },
+        { id: 'unstakeable', name: fnT('advantages.unstakeable.name'), description: "", cost: 6, type: 'advantage', levels: [6] },
+        { id: 'claninfiltrator_merit', name: fnT('advantages.claninfiltrator.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'inspiringpresence', name: fnT('advantages.inspiringpresence.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'prestigioussire', name: fnT('advantages.prestigioussire.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'socialengineer_merit', name: fnT('advantages.socialengineer.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'stalwartloyalty', name: fnT('advantages.stalwartloyalty.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'underestimated_merit_v', name: fnT('advantages.underestimated.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'aftermealglow', name: fnT('advantages.aftermealglow.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'alchemyexpert', name: fnT('advantages.alchemyexpert.name'), description: "", cost: 5, type: 'advantage', levels: [5] },
+        { id: 'animalaffinity', name: fnT('advantages.animalaffinity.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'apexpredator_merit', name: fnT('advantages.apexpredator.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'berserker', name: fnT('advantages.berserker.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'bloodhealer_merit', name: fnT('advantages.bloodhealer.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'delaydestruction_merit', name: fnT('advantages.delaydestruction.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'dangersense_merit', name: fnT('advantages.dangersense.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'demonicpact', name: fnT('advantages.demonicpact.name'), description: "", cost: 5, type: 'advantage', levels: [5] },
+        { id: 'diablerist', name: fnT('advantages.diablerist.name'), description: "", cost: 4, type: 'advantage', levels: [4] },
+        { id: 'disciplinecompetence', name: fnT('advantages.disciplinecompetence.name'), description: "", cost: 6, type: 'advantage', levels: [6] },
+        { id: 'efficienteater_merit', name: fnT('advantages.efficienteater.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'fasteater', name: fnT('advantages.fasteater.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'fasthealer', name: fnT('advantages.fasthealer.name'), description: "", cost: 4, type: 'advantage', levels: [4] },
+        { id: 'friendtofae', name: fnT('advantages.friendtofae.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'holyaura', name: fnT('advantages.holyaura.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'improvedghouls_merit', name: fnT('advantages.improvedghouls.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'magicresistance', name: fnT('advantages.magicresistance.name'), description: "", cost: 4, type: 'advantage', levels: [4] },
+        { id: 'memoriamdweller_merit', name: fnT('advantages.memoriamdweller.name'), description: "", cost: 1, type: 'advantage', levels: [1] },
+        { id: 'obscure_merit_v', name: fnT('advantages.obscure.name'), description: "", cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5] },
+        { id: 'powerfulvitae', name: fnT('advantages.powerfulvitae.name'), description: "", cost: 5, type: 'advantage', levels: [5] },
+        { id: 'risingsun', name: fnT('advantages.risingsun.name'), description: "", cost: 3, type: 'advantage', levels: [3] },
+        { id: 'spiritmentor', name: fnT('advantages.spiritmentor.name'), description: "", cost: 5, type: 'advantage', levels: [5] },
+        { id: 'thaumaturgictraining', name: fnT('advantages.thaumaturgictraining.name'), description: "", cost: 5, type: 'advantage', levels: [5] },
+        { id: 'truebond', name: fnT('advantages.truebond.name'), description: "", cost: 4, type: 'advantage', levels: [4] },
+        { id: 'truefaith', name: fnT('advantages.truefaith.name'), description: "", cost: 6, type: 'advantage', levels: [6] },
+        { id: 'truesight', name: fnT('advantages.truesight.name'), description: "", cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5] },
+        { id: 'mysticalitem', name: fnT('advantages.mysticalitem.name'), description: "", cost: 2, type: 'advantage', levels: [2] },
+
         { id: 'addiction', name: fnT('flaws.addiction.name'), description: fnT('flaws.addiction.description'), cost: 1, type: 'flaw', levels: [1, 2]},
-        { id: 'haunted', name: fnT('flaws.haunted.name'), description: fnT('flaws.haunted.description'), cost: 1, type: 'flaw', levels: [1, 2]},
+        { id: 'haunted', name: fnT('flaws.haunted.name'), description: fnT('flaws.haunted.description'), cost: 1, type: 'flaw', levels: [1, 2, 5]},
         { id: 'shunned', name: fnT('flaws.shunned.name'), description: fnT('flaws.shunned.description'), cost: 1, type: 'flaw', levels: [2]},
+        { id: 'amnesia', name: fnT('flaws.amnesia.name'), description: "", cost: 5, type: 'flaw', levels: [5] },
+        { id: 'curiosity', name: fnT('flaws.curiosity.name'), description: "", cost: 3, type: 'flaw', levels: [3] },
+        { id: 'impatient', name: fnT('flaws.impatient.name'), description: "", cost: 4, type: 'flaw', levels: [4] },
+        { id: 'paranoia', name: fnT('flaws.paranoia.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'routine', name: fnT('flaws.routine.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'morbidfascination', name: fnT('flaws.morbidfascination.name'), description: "", cost: 3, type: 'flaw', levels: [3] },
+        { id: 'nightmares', name: fnT('flaws.nightmares.name'), description: "", cost: 5, type: 'flaw', levels: [5] },
+        { id: 'sadist', name: fnT('flaws.sadist.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'vengeful', name: fnT('flaws.vengeful.name'), description: "", cost: 4, type: 'flaw', levels: [4] },
+        { id: 'weakwilled', name: fnT('flaws.weakwilled.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'softhearted', name: fnT('flaws.softhearted.name'), description: "", cost: 5, type: 'flaw', levels: [5] },
+        { id: 'bluntedfangs', name: fnT('flaws.bluntedfangs.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'childlike', name: fnT('flaws.childlike.name'), description: "", cost: 5, type: 'flaw', levels: [5] },
+        { id: 'fleshofthecorpse', name: fnT('flaws.fleshofthecorpse.name'), description: "", cost: 4, type: 'flaw', levels: [4] },
+        { id: 'fragile', name: fnT('flaws.fragile.name'), description: "", cost: 5, type: 'flaw', levels: [5] },
+        { id: 'stenchofdeath', name: fnT('flaws.stenchofdeath.name'), description: "", cost: 3, type: 'flaw', levels: [3] },
+        { id: 'weakstomach', name: fnT('flaws.weakstomach.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'mistakenidentity', name: fnT('flaws.mistakenidentity.name'), description: "", cost: 3, type: 'flaw', levels: [3] },
+        { id: 'notorioussire', name: fnT('flaws.notorioussire.name'), description: "", cost: 1, type: 'flaw', levels: [1] },
+        { id: 'oathbreaker', name: fnT('flaws.oathbreaker.name'), description: "", cost: 1, type: 'flaw', levels: [1] },
+        { id: 'outsider_flaw_v', name: fnT('flaws.outsider.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'brash_flaw_v', name: fnT('flaws.brash.name'), description: "", cost: 1, type: 'flaw', levels: [1] },
+        { id: 'conflictingloyalties_flaw', name: fnT('flaws.conflictingloyalties.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'dull_flaw_v', name: fnT('flaws.dull.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'hunted', name: fnT('flaws.hunted.name'), description: "", cost: 5, type: 'flaw', levels: [5] },
+        { id: 'intolerance', name: fnT('flaws.intolerance.name'), description: "", cost: 4, type: 'flaw', levels: [4] },
+        { id: 'markedfordeath', name: fnT('flaws.markedfordeath.name'), description: "", cost: 5, type: 'flaw', levels: [5] },
+        { id: 'overconfident_flaw_v', name: fnT('flaws.overconfident.name'), description: "", cost: 3, type: 'flaw', levels: [3] },
+        { id: 'twistedupbringing', name: fnT('flaws.twistedupbringing.name'), description: "", cost: 4, type: 'flaw', levels: [4] },
+        { id: 'angrybeast_flaw', name: fnT('flaws.angrybeast.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'appetizingblood', name: fnT('flaws.appetizingblood.name'), description: "", cost: 4, type: 'flaw', levels: [4] },
+        { id: 'beaconofunholy', name: fnT('flaws.beaconofunholy.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'cannotembrace_flaw', name: fnT('flaws.cannotembrace.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'cursed', name: fnT('flaws.cursed.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'eeriepresence_flaw', name: fnT('flaws.eeriepresence.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'deathskiss_flaw', name: fnT('flaws.deathskiss.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'deepsleeper_flaw', name: fnT('flaws.deepsleeper.name'), description: "", cost: 1, type: 'flaw', levels: [1] },
+        { id: 'disciplineinept', name: fnT('flaws.disciplineinept.name'), description: "", cost: 3, type: 'flaw', levels: [3] },
+        { id: 'frigidaura_flaw', name: fnT('flaws.frigidaura.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
+        { id: 'magicsusceptibility', name: fnT('flaws.magicsusceptibility.name'), description: "", cost: 4, type: 'flaw', levels: [4] },
+        { id: 'grimwounds', name: fnT('flaws.grimwounds.name'), description: "", cost: 3, type: 'flaw', levels: [3] },
+        { id: 'repulsivetoanimals', name: fnT('flaws.repulsivetoanimals.name'), description: "", cost: 3, type: 'flaw', levels: [3] },
+        { id: 'taintofcorruption', name: fnT('flaws.taintofcorruption.name'), description: "", cost: 3, type: 'flaw', levels: [3] },
+        { id: 'taintedblood', name: fnT('flaws.taintedblood.name'), description: "", cost: 5, type: 'flaw', levels: [5] },
+        { id: 'thirstforinnocence', name: fnT('flaws.thirstforinnocence.name'), description: "", cost: 4, type: 'flaw', levels: [4] },
+        { id: 'weakblood', name: fnT('flaws.weakblood.name'), description: "", cost: 5, type: 'flaw', levels: [5] },
+        { id: 'curseditem', name: fnT('flaws.curseditem.name'), description: "", cost: 2, type: 'flaw', levels: [2] },
     ];
 };
 
