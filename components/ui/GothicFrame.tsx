@@ -44,7 +44,7 @@ const ThornBorderY = () => (
 
 export const GothicFrame: React.FC<GothicFrameProps> = ({ children: oChildren, className: sClassName = '' }) => {
   return (
-    <div className={`relative overflow-hidden p-4 ${sClassName}`}>
+    <div className={`relative overflow-hidden p-2 sm:p-3 ${sClassName}`}>
         {/* Corners */}
         <div className="absolute top-0 left-0 w-6 h-6 sm:w-8 sm:h-8 z-10 text-red-800 pointer-events-none">
             <RoseIcon className="w-full h-full transform -rotate-45" />

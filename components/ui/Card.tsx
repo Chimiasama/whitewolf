@@ -15,7 +15,7 @@ export const Card: React.FC<CardProps> = ({
   isSelected: bIsSelected = false,
   variant = 'default'
 }) => {
-  const sBaseClasses = "ww-card backdrop-blur-md border rounded-xl shadow-xl transition-all duration-300 ease-out p-4 sm:p-6 text-center hover:shadow-2xl";
+  const sBaseClasses = "ww-card backdrop-blur-md border rounded-xl shadow-xl transition-all duration-300 ease-out p-3 sm:p-4 text-center hover:shadow-2xl";
   
   let sSelectedClasses = "";
   if (variant === 'werewolf') {
