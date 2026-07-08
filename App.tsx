@@ -264,7 +264,6 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
 }) => {
     const { t: fnT } = useI18n();
     const [sActiveItem, fnSetActiveItem] = useState<string | null>(null);
-    const [nActivePaintValue, fnSetActivePaintValue] = useState<number | null>(null);
 
     const aSortedPool = useMemo(() => [...aPool].sort((a: number, b: number) => b - a), [aPool]);
     const aAssignedValues = useMemo(() => aItems.map(sItem => oValues[sItem] || nBaseValue).filter(v => v > nBaseValue), [oValues, aItems, nBaseValue]);
@@ -309,86 +308,11 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
     const bIsPoolComplete = Object.values(oPoolUsage.available).every(val => val === 0);
 
     const fnHandleItemInteraction = (sItem: string) => {
-        if (nActivePaintValue !== null) {
-            const nAssigned = oValues[sItem] || nBaseValue;
-            if (nAssigned === nActivePaintValue) {
-                fnOnChange(sItem, nBaseValue);
-            } else {
-                if ((oPoolUsage.available[nActivePaintValue] || 0) > 0) {
-                    fnOnChange(sItem, nActivePaintValue);
-                }
-            }
-        } else {
-            fnSetActiveItem(sActiveItem === sItem ? null : sItem);
-        }
-    };
-
-    const fnRenderPoolVisuals = () => {
-        const aUniqueValues = [...new Set(aSortedPool)].sort((a: number, b: number) => b - a);
-        return (
-            <div className="flex flex-wrap justify-center gap-4">
-                {aUniqueValues.map(nVal => {
-                    const nTotal = oPoolUsage.counts[nVal] || 0;
-                    const nAvailable = oPoolUsage.available[nVal] || 0;
-                    const bIsActive = nActivePaintValue === nVal;
-                    const bIsExhausted = nAvailable === 0;
-                    return (
-                        <button
-                            key={nVal}
-                            onClick={() => {
-                                if (bIsExhausted && !bIsActive) return; 
-                                fnSetActivePaintValue(bIsActive ? null : nVal);
-                                fnSetActiveItem(null);
-                            }}
-                            className={`
-                                relative flex flex-col items-center justify-center p-3 rounded-lg border-2 transition-all duration-300 min-w-[70px]
-                                ${bIsActive 
-                                    ? `${colorClass} ${accentColorClass} scale-110` 
-                                    : bIsExhausted 
-                                        ? 'bg-gray-900 border-gray-800 opacity-50 grayscale' 
-                                        : 'bg-gray-800 border-gray-600 hover:border-gray-400 hover:bg-gray-700'}
-                            `}
-                        >
-                            <span className={`text-2xl font-bold font-cinzel ${bIsActive ? 'text-white' : bIsExhausted ? 'text-gray-600' : 'text-gray-300'}`}>{nVal}</span>
-                            <span className="text-[10px] uppercase tracking-wider text-gray-500 mt-1">
-                                {nAvailable} / {nTotal}
-                            </span>
-                            <div className="flex gap-1 mt-1">
-                                {[...Array(nTotal)].map((_, i) => (
-                                    <div key={i} className={`w-1.5 h-1.5 rounded-full ${i < nAvailable ? (bIsActive ? 'bg-red-500 animate-pulse' : 'bg-red-900') : 'bg-gray-700'}`}></div>
-                                ))}
-                            </div>
-                        </button>
-                    )
-                })}
-            </div>
-        );
+        fnSetActiveItem(sActiveItem === sItem ? null : sItem);
     };
 
     return (
         <div className="space-y-6">
-            <div className={`sticky top-[72px] z-30 bg-gray-900/95 backdrop-blur-sm p-3 rounded-b-xl border-x border-b border-gray-800 shadow-2xl transition-all duration-500 ${bIsPoolComplete ? 'border-b-green-900/50' : 'border-b-red-900/50'}`}>
-                <div className="flex flex-col items-center">
-                    <span className={`text-xs font-bold uppercase tracking-[0.2em] mb-2 flex items-center gap-2 ${bIsPoolComplete ? 'text-green-500' : 'text-gray-400'}`}>
-                        {nActivePaintValue ? (
-                            <span className="text-red-400 animate-pulse flex items-center gap-1">
-                                <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                                {fnT('common.paintMode', { value: nActivePaintValue })}
-                            </span>
-                        ) : (
-                            <>
-                                {fnT('common.poolDistribution')}
-                                {bIsPoolComplete && <CheckCircle />}
-                            </>
-                        )}
-                    </span>
-                    {fnRenderPoolVisuals()}
-                    <div className="text-center mt-2 text-[10px] text-gray-500 italic">
-                        {nActivePaintValue ? fnT('common.paintInstruction') : fnT('common.poolLegend')}
-                    </div>
-                </div>
-            </div>
-
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {Object.entries(oGroups).map(([sGroupName, aGroupItems]) => (
                     <div key={sGroupName} className={Object.keys(oGroups).length === 1 ? "lg:col-span-3" : ""}>
@@ -398,21 +322,15 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                         <div className="space-y-2">
                             {aGroupItems.map(sItem => {
                                 const nValue = oValues[sItem] || nBaseValue;
-                                const bCanPaint = nActivePaintValue !== null && (oPoolUsage.available[nActivePaintValue] > 0 || nValue === nActivePaintValue);
                                 return (
                                 <div key={sItem} className="relative group">
                                     <button
                                         onClick={() => fnHandleItemInteraction(sItem)}
-                                        disabled={nActivePaintValue !== null && !bCanPaint}
                                         className={`
                                             w-full flex justify-between items-center p-2 rounded-md border transition-all duration-200
-                                            ${nActivePaintValue !== null 
-                                                ? bCanPaint 
-                                                    ? 'cursor-crosshair hover:bg-gray-800 border-gray-700 hover:border-red-500 hover:ring-1 hover:ring-red-500' 
-                                                    : 'opacity-40 cursor-not-allowed border-gray-800 bg-gray-900'
-                                                : sActiveItem === sItem 
-                                                    ? 'bg-gray-800 border-red-500 ring-1 ring-red-500 shadow-lg' 
-                                                    : 'bg-gray-800/60 border-gray-700 hover:border-gray-500 hover:bg-gray-700'
+                                            ${sActiveItem === sItem
+                                                ? 'bg-gray-800 border-red-500 ring-1 ring-red-500 shadow-lg'
+                                                : 'bg-gray-800/60 border-gray-700 hover:border-gray-500 hover:bg-gray-700'
                                             }
                                         `}
                                     >
@@ -441,7 +359,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                             {fnRenderAfterItem(sItem, oValues[sItem])}
                                         </div>
                                     )}
-                                    {sActiveItem === sItem && nActivePaintValue === null && (
+                                    {sActiveItem === sItem && (
                                         <InfoModal title={sTranslationPrefix ? fnT(`${sTranslationPrefix}.${sItem}`) : sItem} onClose={() => fnSetActiveItem(null)}>
                                             <div className="space-y-6">
                                                 <div className="flex justify-center gap-3 flex-wrap">
@@ -1349,8 +1267,6 @@ const App: React.FC = () => {
             case 'attributes':
                 return (
                     <div className="text-center">
-                        <h2 className={`text-2xl font-cinzel mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-green-500' : 'text-red-500'}`}>{fnT('attributes.title')}</h2>
-                        <p className="text-gray-400 mb-6">{fnT('attributes.subtitle')}</p>
                         <PointAllocator 
                             items={aAttributeList} 
                             values={oCharacter.attributes} 
@@ -1366,24 +1282,6 @@ const App: React.FC = () => {
             case 'skills':
                 return (
                     <div className="text-center">
-                        <h2 className={`text-2xl font-cinzel mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-green-500' : 'text-red-500'}`}>{fnT('skills.title')}</h2>
-                        <p className="text-gray-400 mb-2">{fnT('skills.subtitle')}</p>
-
-                        <div className="mb-6 flex flex-col items-center">
-                            <div className="px-4 py-2 bg-black/40 border border-gray-700 rounded-full text-xs flex items-center gap-3">
-                                <span className="text-gray-500 font-bold uppercase tracking-widest">{fnT('skills.paths.title')}:</span>
-                                {oDetectedSkillPath.validPaths.length === 0 ? (
-                                    <span className="text-red-500 font-bold">{fnT('skills.paths.none')}</span>
-                                ) : oDetectedSkillPath.validPaths.length === 1 ? (
-                                    <span className="text-green-400 font-bold">{fnT(`skills.paths.${oDetectedSkillPath.validPaths[0]}`)}</span>
-                                ) : (
-                                    <span className="text-blue-400 font-bold">
-                                        {fnT('skills.paths.multiple', { paths: oDetectedSkillPath.validPaths.map(p => fnT(`skills.paths.${p}`)).join(', ') })}
-                                    </span>
-                                )}
-                            </div>
-                        </div>
-
                         <PointAllocator 
                             items={aSkillList} 
                             values={oCharacter.skills} 
@@ -1617,19 +1515,26 @@ const App: React.FC = () => {
                                                     {Object.keys(oDisciplineDetails)
                                                         .filter(d => !oCharacter.disciplines[d])
                                                         .filter(d => bIsWerewolf ? WEREWOLF_GIFTS.includes(d) : VAMPIRE_DISCIPLINES.includes(d))
-                                                        .map(d => (
-                                                        <Button
-                                                            key={d}
-                                                            variant="secondary"
-                                                            className="text-[10px] py-2"
-                                                            onClick={() => {
-                                                                fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [d]: 0 });
-                                                                fnSetActiveDetail(null);
-                                                            }}
-                                                        >
-                                                            {oDisciplineDetails[d].name}
-                                                        </Button>
-                                                    ))}
+                                                        .map(d => {
+                                                            const bIsThinBloodAlchemy = d === 'thinbloodalchemy';
+                                                            const bIsThinBloodClan = oCharacter.clan === Clan.ThinBlood;
+                                                            const bDisabled = bIsThinBloodAlchemy && !bIsThinBloodClan;
+
+                                                            return (
+                                                                <Button
+                                                                    key={d}
+                                                                    variant="secondary"
+                                                                    className={`text-[10px] py-2 ${bDisabled ? 'opacity-30 grayscale cursor-not-allowed' : ''}`}
+                                                                    disabled={bDisabled}
+                                                                    onClick={() => {
+                                                                        fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [d]: 0 });
+                                                                        fnSetActiveDetail(null);
+                                                                    }}
+                                                                >
+                                                                    {oDisciplineDetails[d].name}
+                                                                </Button>
+                                                            );
+                                                        })}
                                                 </div>
                                             )
                                         });
