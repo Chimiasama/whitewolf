@@ -21,7 +21,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
     onStepClick: fnOnStepClick
 }) => {
   return (
-    <div className="w-full mb-8 overflow-hidden pb-4">
+    <div className="w-full mb-2 overflow-hidden pb-0">
       <ol className="grid w-full" style={{ gridTemplateColumns: `repeat(${aSteps.length}, minmax(0, 1fr))` }}>
         {aSteps.map((oStep, nIndex) => {
           const nStepNumber = nIndex + 1;
