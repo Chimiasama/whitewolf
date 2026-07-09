@@ -1424,6 +1424,11 @@ const oEn = {
           "description": "Disable electronic equipment in an area.",
           "system": "Wits + Oblivion vs Difficulty. Cost: One Rouse Check."
         },
+        "witnessTheEnd": {
+          "name": "Witness the End",
+          "description": "Project a vision of the target's eventual demise.",
+          "system": "Manipulation + Oblivion vs Composure + Resolve. Cost: One Rouse Check."
+        },
         "touchOfOblivion": {
           "name": "Touch of Oblivion",
           "description": "Wither flesh and bone with a cold touch.",
@@ -1824,6 +1829,10 @@ const oEn = {
         "name": "Ritual of Abjuration",
         "description": "Purifies a person, place, or object of spiritual possession."
       },
+      "confinement": {
+        "name": "Ritual of Confinement",
+        "description": "Binds a spirit to a specific location or object."
+      },
       "patronage": {
         "name": "Ritual of Patronage",
         "description": "Adopts a Patron Spirit for the pack."
@@ -1895,6 +1904,12 @@ const oEn = {
     }
   },
   "advantages": {
+    "businessowner_background": { "name": "Business Owner Background", "desc": "Three dots in Business Owner Background" },
+    "supportive_presence": { "name": "Supportive Presence", "desc": "Supportive Presence (•)" },
+    "power_behind_throne": { "name": "Power Behind the Throne", "desc": "Power Behind the Throne (•••)" },
+    "base_haven_cell": { "name": "Base Haven + Cell", "desc": "Base Haven (••) + Cell (•)" },
+    "mask_cobbler_online": { "name": "Mask (••) + Zeroed/Cobbler (•)", "desc": "Mask (••) + Zeroed (•) or Cobbler (•)" },
+    "resources_influence": { "name": "Resources/Influence", "desc": "Spend three dots between Resources or Influence (•••)" },
     "resources": {
       "name": "Resources"
     },
@@ -2199,6 +2214,26 @@ const oEn = {
       "name": "Wolf-Man",
       "description": "Crinos form looks more human. Cannot bite, but less Delirium."
     },
+    "routine_flaw": { "name": "Routine", "desc": "Routine Flaw (••)" },
+    "conflicting_loyalties": { "name": "Conflicting Loyalties", "desc": "Conflicting Loyalties (••)" },
+    "dull_flaw": { "name": "Dull", "desc": "Dull (•)" },
+    "dark_secret_corporate": { "name": "Dark Secret", "desc": "Dark Secret (•)" },
+    "angry_beast_flaw": { "name": "Angry Beast", "desc": "Angry Beast (••)" },
+    "obvious_predator_flaw": { "name": "Obvious Predator", "desc": "Obvious Predator (••)" },
+    "sadistic_flaw": { "name": "Sadistic", "desc": "Sadistic (••)" },
+    "addiction_labrat": { "name": "Addiction", "desc": "Addiction (•)" },
+    "frigid_aura_flaw": { "name": "Frigid Aura", "desc": "Frigid Aura (••)" },
+    "eerie_presence_flaw": { "name": "Eerie Presence", "desc": "Eerie Presence (••)" },
+    "outsider_flaw_p": { "name": "Outsider", "desc": "Outsider (••)" },
+    "cannot_embrace_flaw": { "name": "Cannot Embrace", "desc": "Cannot Embrace (••)" },
+    "paranoia_flaw_p": { "name": "Paranoia", "desc": "Paranoia (••)" },
+    "overconfident_flaw_p": { "name": "Overconfident", "desc": "Overconfident (••)" },
+    "brash_flaw_p": { "name": "Brash", "desc": "Brash (•)" },
+    "deep_sleeper_flaw": { "name": "Deep Sleeper", "desc": "Deep Sleeper (•)" },
+    "despised_flaw_p": { "name": "Despised", "desc": "Despised (••)" },
+    "destitute_flaw_p": { "name": "Destitute", "desc": "Destitute (•)" },
+    "no_haven_flaw": { "name": "No Haven", "desc": "No Haven (•)" },
+    "deaths_kiss_flaw": { "name": "Death's Kiss", "desc": "Death's Kiss (••)" },
     "wyrmTouched": {
       "name": "Wyrm-Touched",
       "description": "The Wyrm has clawed into your soul.",
@@ -4146,6 +4181,11 @@ const oPt = {
           "description": "Desativa equipamentos eletrônicos em uma área.",
           "system": "Raciocínio + Olvido vs Dificuldade. Custo: Um Teste de Sangue."
         },
+        "witnessTheEnd": {
+          "name": "Testemunhar o Fim",
+          "description": "Projeta uma visão do fim eventual do alvo.",
+          "system": "Manipulação + Olvido vs Autocontrole + Determinação. Custo: Um Teste de Sangue."
+        },
         "touchOfOblivion": {
           "name": "Toque do Olvido",
           "description": "Murcha carne e osso com um toque frio.",
@@ -4546,6 +4586,10 @@ const oPt = {
         "name": "Ritual de Abjuração",
         "description": "Purifica pessoa, lugar ou objeto de possessão espiritual."
       },
+      "confinement": {
+        "name": "Ritual de Confinamento",
+        "description": "Prende um espírito a um local ou objeto específico."
+      },
       "patronage": {
         "name": "Ritual de Apadrinhamento",
         "description": "Adota um Espírito Padroeiro para a alcateia."
@@ -4617,6 +4661,12 @@ const oPt = {
     }
   },
   "advantages": {
+    "businessowner_background": { "name": "Antecedente de Dono de Negócio", "desc": "Três pontos em Antecedente de Dono de Negócio" },
+    "supportive_presence": { "name": "Presença de Apoio", "desc": "Presença de Apoio (•)" },
+    "power_behind_throne": { "name": "Poder Atrás do Trono", "desc": "Poder Atrás do Trono (•••)" },
+    "base_haven_cell": { "name": "Refúgio Base + Cela", "desc": "Refúgio Base (••) + Cela (•)" },
+    "mask_cobbler_online": { "name": "Máscara (••) + Zerado/Sapateiro (•)", "desc": "Máscara (••) + Zerado (•) ou Sapateiro (•)" },
+    "resources_influence": { "name": "Recursos/Influência", "desc": "Gaste três pontos entre Recursos ou Influência (•••)" },
     "resources": {
       "name": "Recursos"
     },
@@ -4921,6 +4971,26 @@ const oPt = {
       "name": "Homem-Lobo",
       "description": "Forma crinos se aproxima mais do lado humano. Impede mordida, mas reduz Delírio."
     },
+    "routine_flaw": { "name": "Rotina", "desc": "Defeito de Rotina (••)" },
+    "conflicting_loyalties": { "name": "Lealdades Conflitantes", "desc": "Lealdades Conflitantes (••)" },
+    "dull_flaw": { "name": "Monótono", "desc": "Monótono (•)" },
+    "dark_secret_corporate": { "name": "Segredo Sombrio", "desc": "Segredo Sombrio (•)" },
+    "angry_beast_flaw": { "name": "Besta Enraivecida", "desc": "Besta Enraivecida (••)" },
+    "obvious_predator_flaw": { "name": "Predador Óbvio", "desc": "Predador Óbvio (••)" },
+    "sadistic_flaw": { "name": "Sadista", "desc": "Sadista (••)" },
+    "addiction_labrat": { "name": "Vício", "desc": "Vício (•)" },
+    "frigid_aura_flaw": { "name": "Aura Gélida", "desc": "Aura Gélida (••)" },
+    "eerie_presence_flaw": { "name": "Presença Sinistra", "desc": "Presença Sinistra (••)" },
+    "outsider_flaw_p": { "name": "Forasteiro", "desc": "Forasteiro (••)" },
+    "cannot_embrace_flaw": { "name": "Incapaz de Abraçar", "desc": "Incapaz de Abraçar (••)" },
+    "paranoia_flaw_p": { "name": "Paranoia", "desc": "Paranoia (••)" },
+    "overconfident_flaw_p": { "name": "Superconfiante", "desc": "Superconfiante (••)" },
+    "brash_flaw_p": { "name": "Impetuoso", "desc": "Impetuoso (•)" },
+    "deep_sleeper_flaw": { "name": "Sono Profundo", "desc": "Sono Profundo (•)" },
+    "despised_flaw_p": { "name": "Desprezado", "desc": "Desprezado (••)" },
+    "destitute_flaw_p": { "name": "Destituído", "desc": "Destituído (•)" },
+    "no_haven_flaw": { "name": "Sem Refúgio", "desc": "Sem Refúgio (•)" },
+    "deaths_kiss_flaw": { "name": "Beijo da Morte", "desc": "Beijo da Morte (••)" },
     "wyrmTouched": {
       "name": "Tocado pela Wyrm",
       "description": "A Wyrm cravou-se profundamente em sua alma.",
