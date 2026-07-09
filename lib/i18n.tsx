@@ -124,6 +124,7 @@ const oEn = {
     "notDefined": "Not defined",
     "keyAttributes": "Key Attributes",
     "keySkills": "Key Skills",
+    "moreInfo": "More info",
     "noClanSelected": "No clan selected.",
     "selectClanToSeeDetails": "Select a Clan to see details",
     "selectTribeToSeeDetails": "Select a Tribe to see details",
@@ -708,7 +709,7 @@ const oEn = {
         "obeah": {
           "name": "Obeah",
           "description": "Calm an emotionally agitated target.",
-          "system": "Autocontrole + Auspex vs Difficulty 2. Cost: One Rouse Check."
+          "system": "Composure + Auspex vs Difficulty 2. Cost: One Rouse Check."
         },
         "implantDream": {
           "name": "Implant Dream",
@@ -765,10 +766,10 @@ const oEn = {
           "description": "Read deep thoughts or project your voice into minds.",
           "system": "Resolve + Auspex vs Composure + Subterfuge. Cost: One Rouse Check."
         },
-        "aliviandoAAlmaBestial": {
+        "relievingTheBestialSoul": {
           "name": "Relieving the Bestial Soul",
           "description": "Share moral serenity with another Kindred.",
-          "system": "Autocontrole + Auspícios vs Humanidade. Cost: Two Rouse Checks, 1 Stain."
+          "system": "Composure + Auspex vs Humanity. Cost: Two Rouse Checks, 1 Stain."
         },
         "telekinesis": {
           "name": "Telekinesis",
@@ -1088,11 +1089,6 @@ const oEn = {
           "name": "Fading Memory",
           "description": "Mask the very memory of your presence.",
           "system": "Resolve + Obfuscate vs Difficulty. Cost: One Rouse Check."
-        },
-        "mindPrison": {
-          "name": "Mind Prison",
-          "description": "Trap a person in a false dreamlike reality.",
-          "system": "Resolve + Presence vs Intelligence + Resolve. Cost: Two Rouse Checks."
         }
       }
     },
@@ -1225,6 +1221,11 @@ const oEn = {
           "name": "Star Magnetism",
           "description": "Your Presence is so strong it affects people even via media.",
           "system": "Passive. Works via TV, photos, etc."
+        },
+        "mindPrison": {
+          "name": "Mind Prison",
+          "description": "Trap a person in a false dreamlike reality.",
+          "system": "Resolve + Presence vs Intelligence + Resolve. Cost: Two Rouse Checks."
         }
       }
     },
@@ -1255,7 +1256,7 @@ const oEn = {
         "vicissitude": {
           "name": "Vicissitude",
           "description": "Malleable flesh, muscle, and bone.",
-          "system": "Determinação + Proteanismo. Cost: One Rouse Check."
+          "system": "Resolve + Protean. Cost: One Rouse Check."
         },
         "earthMeld": {
           "name": "Earth Meld",
@@ -1267,10 +1268,10 @@ const oEn = {
           "description": "Transform into a predatory animal.",
           "system": "Stamina + Protean. Cost: One Rouse Check."
         },
-        "modelagemDeCarne": {
+        "fleshCrafting": {
           "name": "Flesh Crafting",
           "description": "Inflict body alterations on others.",
-          "system": "Determinação + Proteanismo vs Vigor + Determinação. Cost: One Rouse Check."
+          "system": "Resolve + Protean vs Vigor + Determinação. Cost: One Rouse Check."
         },
         "toolsOfNature": {
           "name": "Tools of Nature",
@@ -1282,7 +1283,7 @@ const oEn = {
           "description": "Assume more varied or monstrous forms.",
           "system": "Passive enhancement to Shapechange."
         },
-        "formaHedionda": {
+        "horrificForm": {
           "name": "Horrific Form",
           "description": "Assume a monstrous vision of your Beast.",
           "system": "Passive. Cost: One Rouse Check."
@@ -1307,7 +1308,7 @@ const oEn = {
           "description": "Your internal organs move to avoid stakes.",
           "system": "Passive. Harder to stake the user."
         },
-        "umComATerra": {
+        "oneWithTheEarth": {
           "name": "One with the Earth",
           "description": "Experiment stimuli from nearby area while melded.",
           "system": "As Earth Meld, plus sensory stimuli. Cost: Two Rouse Checks."
@@ -1752,32 +1753,32 @@ const oEn = {
       "name": "Innate Gifts",
       "description": "Gifts available to all Garou.",
       "powers": {
-        "olharDesconcertante": {
+        "disconcertingGaze": {
           "name": "Disconcerting Gaze",
           "description": "Establish dominance at the top of the food chain.",
           "system": "Charisma + Honor vs Composure + Resolve. Target cowers or shows submission."
         },
-        "olhosDaCoruja": {
+        "eyesOfTheOwl": {
           "name": "Eyes of the Owl",
           "description": "See in complete darkness.",
           "system": "See in natural darkness. Wisdom bonus to resist supernatural darkness."
         },
-        "pancadaFuriosa": {
+        "furiousStrike": {
           "name": "Furious Strike",
           "description": "Concentrate Rage into blows.",
           "system": "Add Glory to a Brawl pool. Cost: 1 Rage check."
         },
-        "pesDeGato": {
+        "catsFeet": {
           "name": "Cat's Feet",
           "description": "Supernatural balance and agility.",
           "system": "Automatic success on balance. Immune to falling damage (10x Honor in meters)."
         },
-        "saltoDaLebre": {
+        "haresLeap": {
           "name": "Hare's Leap",
           "description": "Leap great distances.",
           "system": "Strength + Glory. 3m horizontal or 2m vertical per success."
         },
-        "sentidosCrepusculares": {
+        "twilightSenses": {
           "name": "Twilight Senses",
           "description": "Attunement to the physical realm and the Umbra simultaneously.",
           "system": "Intelligence + Wisdom. Interact with inhabitants of both worlds."
@@ -2876,6 +2877,7 @@ const oPt = {
     "notDefined": "Não definido",
     "keyAttributes": "Atributos Chave",
     "keySkills": "Perícias Chave",
+    "moreInfo": "Mais informações",
     "noClanSelected": "Nenhum clã selecionado.",
     "selectClanToSeeDetails": "Selecione um Clã para ver detalhes",
     "selectTribeToSeeDetails": "Selecione uma Tribo para ver detalhes",
@@ -3425,11 +3427,6 @@ const oPt = {
           "name": "Subjugar o Servo",
           "description": "Transfere a mente para um ghoul com seu sangue.",
           "system": "Manipulação + Animalismo. Custo: Dois Testes de Sangue."
-        },
-        "umComATerra": {
-          "name": "Um com a Terra",
-          "description": "Experimenta estímulos da área próxima enquanto fundido.",
-          "system": "Como Fusão com a Terra, mais estímulos sensoriais. Custo: Dois Testes de Sangue."
         }
       }
     },
@@ -3522,7 +3519,7 @@ const oPt = {
           "description": "Lê pensamentos profundos ou projeta sua voz em mentes.",
           "system": "Determinação + Auspícios vs Autocontrole + Lábia. Custo: Um Teste de Sangue."
         },
-        "aliviandoAAlmaBestial": {
+        "relievingTheBestialSoul": {
           "name": "Aliviando a Alma Bestial",
           "description": "Este poder compartilha uma porção da serenidade moral do vampiro com um Membro arrependido.",
           "system": "O vampiro passa uma cena isolado com o alvo e rola Autocontrole + Auspícios vs. A Humanidade do alvo. Para cada sucesso na margem, o vampiro pode remover uma Mácula do alvo, ou erguer um “escudo” psicológico. Custo: Dois Testes de Sangue, ganha uma Mácula."
@@ -3845,11 +3842,6 @@ const oPt = {
           "name": "Memória Desvanecente",
           "description": "Mascara a própria memória de sua presença.",
           "system": "Determinação + Ofuscação vs Dificuldade. Custo: Um Teste de Sangue."
-        },
-        "mindPrison": {
-          "name": "Prisão Mental",
-          "description": "Prende uma pessoa em uma realidade falsa de sonho.",
-          "system": "Determinação + Presença vs Inteligência + Determinação. Custo: Dois Testes de Sangue."
         }
       }
     },
@@ -3982,6 +3974,11 @@ const oPt = {
           "name": "Magnetismo Estelar",
           "description": "Sua Presença é tão forte que afeta as pessoas até via mídia.",
           "system": "Passivo. Funciona via TV, fotos, etc."
+        },
+        "mindPrison": {
+          "name": "Prisão Mental",
+          "description": "Prende uma pessoa em uma realidade falsa de sonho.",
+          "system": "Determinação + Presença vs Inteligência + Determinação. Custo: Dois Testes de Sangue."
         }
       }
     },
@@ -4024,7 +4021,7 @@ const oPt = {
           "description": "Transforma-se em um animal predador.",
           "system": "Vigor + Metamorfose. Custo: Um Teste de Sangue."
         },
-        "modelagemDeCarne": {
+        "fleshCrafting": {
           "name": "Modelagem de Carne",
           "description": "Estendendo sua maestria sobre a carne para corpos de terceiros.",
           "system": "Determinação + Metamorfose vs Vigor + Determinação. Custo: Um Teste de Sangue."
@@ -4039,7 +4036,7 @@ const oPt = {
           "description": "Assume formas mais variadas ou monstruosas.",
           "system": "Melhoria passiva para Mudança de Forma."
         },
-        "formaHedionda": {
+        "horrificForm": {
           "name": "Forma Hedionda",
           "description": "Assume uma forma monstruosa completa, visão da Besta encarnada.",
           "system": "Concede alterações livres de Vicissitude. Custo: Um Teste de Sangue."
@@ -4064,7 +4061,7 @@ const oPt = {
           "description": "Seus órgãos internos se movem para evitar estacas.",
           "system": "Passivo. Mais difícil de estacar o usuário."
         },
-        "umComATerra": {
+        "oneWithTheEarth": {
           "name": "Um com a Terra",
           "description": "Experimenta estímulos da área próxima enquanto fundido.",
           "system": "Como Fusão com a Terra, mais estímulos sensoriais. Custo: Dois Testes de Sangue."
@@ -4509,32 +4506,32 @@ const oPt = {
       "name": "Dons Inatos",
       "description": "Dons disponíveis para todos os Garou.",
       "powers": {
-        "olharDesconcertante": {
+        "disconcertingGaze": {
           "name": "Olhar Desconcertante",
           "description": "Estabelece dominância no topo da cadeia alimentar.",
           "system": "Carisma + Honra vs Autocontrole + Determinação. Alvo se encolhe ou demonstra submissão."
         },
-        "olhosDaCoruja": {
+        "eyesOfTheOwl": {
           "name": "Olhos da Coruja",
           "description": "Enxerga na escuridão completa.",
           "system": "Enxerga em escuridão natural. Bônus de Sabedoria para resistir a trevas sobrenaturais."
         },
-        "pancadaFuriosa": {
+        "furiousStrike": {
           "name": "Pancada Furiosa",
           "description": "Concentra Fúria nos golpes.",
           "system": "Soma Glória a uma parada de Briga. Custo: 1 checagem de Fúria."
         },
-        "pesDeGato": {
+        "catsFeet": {
           "name": "Pés de Gato",
           "description": "Equilíbrio e agilidade sobrenaturais.",
           "system": "Sucesso automático em equilíbrio. Imune a dano de queda (10x Honra em metros)."
         },
-        "saltoDaLebre": {
+        "haresLeap": {
           "name": "Salto da Lebre",
           "description": "Salta grandes distâncias.",
           "system": "Força + Glória. 3m horizontal ou 2m vertical por sucesso."
         },
-        "sentidosCrepusculares": {
+        "twilightSenses": {
           "name": "Sentidos Crepusculares",
           "description": "Sintonia com o reino físico e a Umbra simultaneamente.",
           "system": "Inteligência + Sabedoria. Interage com habitantes de ambos os mundos."
@@ -4733,7 +4730,7 @@ const oPt = {
     "fasthealer": { "name": "Cura Rápida" },
     "friendtofae": { "name": "Amigo das Fadas" },
     "holyaura": { "name": "Aura Sagrada" },
-    "improvedghouls": { "name": "Ghouls Aprimorados" },
+    "improvedghouls": { "name": "Carniçals Aprimorados" },
     "magicresistance": { "name": "Resistência Mágica" },
     "memoriamdweller": { "name": "Habitante de Memória" },
     "obscure": { "name": "Obscuro" },
@@ -5235,7 +5232,7 @@ const oPt = {
       }
     }
   }
-}
+};
 
 type Locale = 'en' | 'pt';
 type Translations = typeof oEn;

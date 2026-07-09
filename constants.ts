@@ -405,7 +405,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         ]
     },
     {
-        id: 'wolf_sheep_clothing',
+        id: 'wolfinsheepsclothing',
         name: fnT('predatorTypes.wolfinsheepsclothing.name'),
         description: fnT('predatorTypes.wolfinsheepsclothing.description'),
         humanityModifier: 0,
@@ -804,7 +804,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "auspex", 5, "clairvoyance"),
             fnGetP(fnT, "auspex", 5, "possession", [{ discipline: "dominate", level: 3 }]),
             fnGetP(fnT, "auspex", 5, "telepathy"),
-            fnGetP(fnT, "auspex", 5, "aliviandoAAlmaBestial", [{ discipline: "dominate", level: 3 }], "obeah")
+            fnGetP(fnT, "auspex", 5, "relievingTheBestialSoul", [{ discipline: "dominate", level: 3 }], "obeah")
         ]
     },
     "celerity": {
@@ -875,7 +875,7 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "obfuscate", 1, "silenceOfDeath"),
             fnGetP(fnT, "obfuscate", 2, "unseenPassage"),
             fnGetP(fnT, "obfuscate", 2, "shapeAura", [{ discipline: "presence", level: 1 }]),
-            fnGetP(fnT, "obfuscate", 2, "quimerismo", [{ discipline: "presence", level: 1 }]),
+            fnGetP(fnT, "obfuscate", 2, "chimerstry", [{ discipline: "presence", level: 1 }]),
             fnGetP(fnT, "obfuscate", 3, "ghostInTheMachine"),
             fnGetP(fnT, "obfuscate", 3, "maskOfAThousandFaces"),
             fnGetP(fnT, "obfuscate", 3, "duplicate", [{ discipline: "presence", level: 1 }], "cloakOfShadows"),
@@ -937,14 +937,14 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
             fnGetP(fnT, "protean", 3, "earthMeld"),
             fnGetP(fnT, "protean", 3, "shapechange"),
             fnGetP(fnT, "protean", 3, "toolsOfNature", undefined, "feralWeapons"),
-            fnGetP(fnT, "protean", 3, "modelagemDeCarne", [{ discipline: "dominate", level: 2 }], "vicissitude"),
+            fnGetP(fnT, "protean", 3, "fleshCrafting", [{ discipline: "dominate", level: 2 }], "vicissitude"),
             fnGetP(fnT, "protean", 4, "metamorphosis", undefined, "shapechange"),
             fnGetP(fnT, "protean", 4, "swarmForm", [{ discipline: "animalism", level: 2 }], "shapechange"),
             fnGetP(fnT, "protean", 4, "traverseTheEarth", undefined, "earthMeld"),
-            fnGetP(fnT, "protean", 4, "formaHedionda", [{ discipline: "dominate", level: 2 }], "vicissitude"),
+            fnGetP(fnT, "protean", 4, "horrificForm", [{ discipline: "dominate", level: 2 }], "vicissitude"),
             fnGetP(fnT, "protean", 5, "mistForm"),
             fnGetP(fnT, "protean", 5, "theUnfetteredHeart"),
-            fnGetP(fnT, "protean", 5, "umComATerra", [{ discipline: "animalism", level: 2 }], "earthMeld")
+            fnGetP(fnT, "protean", 5, "oneWithTheEarth", [{ discipline: "animalism", level: 2 }], "earthMeld")
         ]
     },
     "bloodsorcery": {
@@ -1129,12 +1129,12 @@ export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, Disciplin
         name: fnT('disciplines.innategifts.name'),
         description: fnT('disciplines.innategifts.description'),
         powers: [
-            fnGetP(fnT, "innategifts", 1, "olharDesconcertante"),
-            fnGetP(fnT, "innategifts", 1, "olhosDaCoruja"),
-            fnGetP(fnT, "innategifts", 1, "pancadaFuriosa"),
-            fnGetP(fnT, "innategifts", 1, "pesDeGato"),
-            fnGetP(fnT, "innategifts", 1, "saltoDaLebre"),
-            fnGetP(fnT, "innategifts", 1, "sentidosCrepusculares"),
+            fnGetP(fnT, "innategifts", 1, "disconcertingGaze"),
+            fnGetP(fnT, "innategifts", 1, "eyesOfTheOwl"),
+            fnGetP(fnT, "innategifts", 1, "furiousStrike"),
+            fnGetP(fnT, "innategifts", 1, "catsFeet"),
+            fnGetP(fnT, "innategifts", 1, "haresLeap"),
+            fnGetP(fnT, "innategifts", 1, "twilightSenses"),
             fnGetP(fnT, "innategifts", 1, "skinLaceration"),
             fnGetP(fnT, "innategifts", 1, "lycanthropeBite"),
             fnGetP(fnT, "innategifts", 1, "urbanHunter"),
