@@ -312,12 +312,12 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
     };
 
     return (
-        <div className="space-y-6">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="space-y-2">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {Object.entries(oGroups).map(([sGroupName, aGroupItems]) => (
                     <div key={sGroupName} className={Object.keys(oGroups).length === 1 ? "lg:col-span-3" : ""}>
                          {Object.keys(oGroups).length > 1 && (
-                            <h3 className="text-red-500 font-bold text-lg mb-3 border-b border-gray-700 pb-1 font-cinzel">{sGroupName}</h3>
+                            <h3 className="text-red-500 font-bold text-lg mb-1 border-b border-gray-700 pb-1 font-cinzel">{sGroupName}</h3>
                          )}
                         <div className="space-y-2">
                             {aGroupItems.map(sItem => {
@@ -1088,8 +1088,8 @@ const App: React.FC = () => {
                     const oClans = fnGetClanDetails(fnT);
                     const aClanKeys = Object.keys(oClans) as Clan[];
                     return (
-                        <div className="text-center space-y-8">
-                            <div className="space-y-4">
+                        <div className="text-center space-y-4">
+                            <div className="space-y-2">
                                 <h2 className="text-2xl font-cinzel text-red-500">{fnT('clan.title')}</h2>
                             </div>
 
@@ -1155,8 +1155,8 @@ const App: React.FC = () => {
                     const oTribes = fnGetTribeDetails(fnT);
                     const aTribeKeys = Object.keys(oTribes) as Tribe[];
                     return (
-                        <div className="text-center space-y-8">
-                            <div className="space-y-4">
+                        <div className="text-center space-y-4">
+                            <div className="space-y-2">
                                 <h2 className="text-2xl font-cinzel text-emerald-500">{fnT('steps.tribe')}</h2>
                             </div>
 
@@ -1222,8 +1222,8 @@ const App: React.FC = () => {
                     const oAuspices = fnGetAuspiceDetails(fnT);
                     const aAuspiceKeys = Object.keys(oAuspices) as Auspice[];
                     return (
-                        <div className="text-center space-y-8">
-                            <div className="space-y-4">
+                        <div className="text-center space-y-4">
+                            <div className="space-y-2">
                                 <h2 className="text-2xl font-cinzel text-emerald-500">{fnT('steps.auspice')}</h2>
                             </div>
 
@@ -1303,22 +1303,22 @@ const App: React.FC = () => {
                 const sThemeBg = bIsWerewolf ? 'bg-green-900/20' : 'bg-red-900/20';
 
                 return (
-                    <div className="text-center space-y-8">
+                    <div className="text-center space-y-4">
                         <h2 className={`text-2xl font-cinzel ${sThemeColor} mb-2`}>{fnT('finishingTouches.title')}</h2>
                         
                         {/* Disciplines / Gifts Section */}
                         <GothicFrame className="text-left">
-                            <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>
+                            <h3 className={`text-xl font-bold ${sThemeAccent} mb-2 border-b border-gray-700 pb-2`}>
                                 {bIsWerewolf ? fnT('characterSheet.gifts') : fnT('finishingTouches.disciplines.title')}
                             </h3>
-                            <p className="text-gray-400 mb-4">
+                            <p className="text-gray-400 mb-2">
                                 {bIsWerewolf 
                                     ? fnT('finishingTouches.gifts.subtitle')
                                     : fnT('finishingTouches.disciplines.subtitle')}
                             </p>
 
                             {/* Point Pool Indicator */}
-                            <div className="mb-6 flex flex-col items-center p-3 bg-gray-900/50 rounded-lg border border-gray-700">
+                            <div className="mb-4 flex flex-col items-center p-3 bg-gray-900/50 rounded-lg border border-gray-700">
                                 {(() => {
                                     const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
                                     const aCreationPool = oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
@@ -1548,13 +1548,13 @@ const App: React.FC = () => {
                         {/* Werewolf Specific Vitals (Renown, Harano, Hauglosk) */}
                         {bIsWerewolf && (
                             <GothicFrame className="text-left">
-                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>
+                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-2 border-b border-gray-700 pb-1`}>
                                     {fnT('characterSheet.vitals')}
                                 </h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="space-y-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="space-y-2">
                                         <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest">{fnT('characterSheet.renown')}</h4>
-                                        <div className="grid grid-cols-3 gap-4">
+                                        <div className="grid grid-cols-3 gap-2">
                                             {(['glory', 'honor', 'wisdom'] as const).map(sRenown => (
                                                 <div key={sRenown} className="bg-gray-800 p-3 rounded-lg border border-gray-700 text-center">
                                                     <div className="text-[10px] uppercase text-gray-500 mb-1">{fnT(`characterSheet.${sRenown}`)}</div>
@@ -1608,9 +1608,9 @@ const App: React.FC = () => {
                         {/* Vampire Predator Type Section */}
                         {!bIsWerewolf && (
                             <GothicFrame className="text-left">
-                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('finishingTouches.predatorType.title')}</h3>
+                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-2 border-b border-gray-700 pb-2`}>{fnT('finishingTouches.predatorType.title')}</h3>
                                 <select 
-                                   className="w-full bg-gray-800 border border-gray-600 rounded p-2 text-white mb-4 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
+                                   className="w-full bg-gray-800 border border-gray-600 rounded p-2 text-white mb-2 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
                                    value={oCharacter.predatorType || ''}
                                    onChange={(e) => fnHandlePredatorTypeChange(e.target.value)}
                                 >
@@ -1626,7 +1626,7 @@ const App: React.FC = () => {
                                             if (!oSelectedPredator) return null;
                                             return (
                                                 <div className="p-4 bg-gray-900/80 rounded-lg border border-red-900/40 shadow-2xl">
-                                                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4 border-b border-red-900/20 pb-4">
+                                                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-2 border-b border-red-900/20 pb-2">
                                                         <h4 className="text-2xl font-bold text-white flex items-center gap-3">
                                                             <span className="p-2 bg-red-900/20 rounded-full text-red-500 shadow-[0_0_10px_rgba(153,27,27,0.4)]">
                                                                 <BloodIcon />
@@ -1647,12 +1647,12 @@ const App: React.FC = () => {
                                                         </div>
                                                     </div>
                                                     
-                                                    <p className="text-gray-400 italic mb-8 text-sm leading-relaxed border-l-4 border-red-900/30 pl-4 py-1">
+                                                    <p className="text-gray-400 italic mb-4 text-sm leading-relaxed border-l-4 border-red-900/30 pl-4 py-1">
                                                        {oSelectedPredator.description}
                                                     </p>
 
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                                        <div className="space-y-4">
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        <div className="space-y-2">
                                                             <h5 className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold flex items-center gap-2">
                                                                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
                                                                 {fnT('compendium.grantedBenefits')}
@@ -1674,7 +1674,7 @@ const App: React.FC = () => {
                                                             </div>
                                                         </div>
 
-                                                        <div className="space-y-4">
+                                                        <div className="space-y-2">
                                                              <h5 className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold flex items-center gap-2">
                                                                 <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
                                                                 {fnT('compendium.potentialCosts')}
@@ -1705,7 +1705,7 @@ const App: React.FC = () => {
                         )}
 
                         {/* Common Advantages & Flaws Section */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <GothicFrame className="text-left">
                                 <h3 className={`text-xl font-bold ${sThemeAccent} mb-2`}>{fnT('finishingTouches.advantages.title')}</h3>
                                 <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
@@ -1803,7 +1803,7 @@ const App: React.FC = () => {
 
                         {/* Rituals & Talismans Section */}
                         {bIsWerewolf && (
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <GothicFrame className="text-left">
                                     <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('characterSheet.rituals')}</h3>
                                     <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
@@ -2101,7 +2101,7 @@ const App: React.FC = () => {
                         else if (s === nStep + 1 && bIsStepValid) fnSetStep(s);
                     }}
                 />
-                <div className="mt-6 sm:mt-8 animate-fadeIn min-w-0 overflow-hidden">
+                <div className="mt-1 animate-fadeIn min-w-0 overflow-hidden">
                     {renderStepContent()}
                 </div>
             </main>
