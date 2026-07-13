@@ -686,9 +686,9 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
         <h2 className={`text-2xl font-bold text-center mb-4 ${sThemeAccentClass}`}>{fnT('characterSheet.gemini.title')}</h2>
         <p className="text-center text-gray-400 mb-6">{fnT('characterSheet.gemini.subtitle')}</p>
         <div className="flex justify-center gap-4 flex-wrap">
-          <Button onClick={() => fnHandleGenerate('backstory')} disabled={bIsLoading}>{fnT('characterSheet.gemini.generateBackstory')}</Button>
-          <Button onClick={() => fnHandleGenerate('plotHook')} variant="secondary" disabled={bIsLoading}>{fnT('characterSheet.gemini.suggestPlotHooks')}</Button>
-          <Button onClick={() => fnHandleGenerate('portrait')} variant="secondary" disabled={bIsLoading}>{fnT('characterSheet.gemini.describePortrait')}</Button>
+          <Button onClick={() => fnHandleGenerate('backstory')} loading={bIsLoading}>{fnT('characterSheet.gemini.generateBackstory')}</Button>
+          <Button onClick={() => fnHandleGenerate('plotHook')} variant="secondary" loading={bIsLoading}>{fnT('characterSheet.gemini.suggestPlotHooks')}</Button>
+          <Button onClick={() => fnHandleGenerate('portrait')} variant="secondary" loading={bIsLoading}>{fnT('characterSheet.gemini.describePortrait')}</Button>
         </div>
         {bIsLoading && <div className="text-center mt-4">{fnT('gemini.loading')}</div>}
         {sGeneratedContent && <GeminiResult title={sGenerationTitle} content={sGeneratedContent} colorClass={sThemeAccentClass} isWerewolf={bIsWerewolf} />}
