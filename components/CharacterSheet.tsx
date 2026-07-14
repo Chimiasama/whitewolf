@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import type { Character, DisciplineDetail, AdvantageFlaw, Specialty } from '../types';
 import { Attribute, Skill, GameType } from '../types';
 import { Card } from './ui/Card';
@@ -37,6 +37,13 @@ const SaveIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) =
 );
 
 type GenerationType = 'backstory' | 'plotHook' | 'portrait';
+
+const aPhysicalAttrs = [Attribute.Strength, Attribute.Dexterity, Attribute.Stamina];
+const aSocialAttrs = [Attribute.Charisma, Attribute.Manipulation, Attribute.Composure];
+const aMentalAttrs = [Attribute.Intelligence, Attribute.Wits, Attribute.Resolve];
+const aPhysicalSkills = [Skill.Athletics, Skill.Brawl, Skill.Craft, Skill.Drive, Skill.Firearms, Skill.Larceny, Skill.Melee, Skill.Stealth, Skill.Survival];
+const aSocialSkills = [Skill.AnimalKen, Skill.Etiquette, Skill.Insight, Skill.Intimidation, Skill.Leadership, Skill.Performance, Skill.Persuasion, Skill.Streetwise, Skill.Subterfuge];
+const aMentalSkills = [Skill.Academics, Skill.Awareness, Skill.Finance, Skill.Investigation, Skill.Medicine, Skill.Occult, Skill.Politics, Skill.Science, Skill.Technology];
 
 // Fix: Adding React.FC type to BloodIcon to avoid key prop error in maps
 const BloodIcon: React.FC<{ className?: string, filled?: boolean }> = ({ className = "w-3 h-3 text-red-500 mr-1", filled = true }) => (
@@ -274,6 +281,15 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     onSave
 }) => {
     const { t: fnT, locale: sLocale } = useI18n();
+
+    // Performance Optimization: Memoize data objects to prevent expensive translation lookups and object reconstructions on every render.
+    // This is particularly important in the CharacterSheet where many small state updates (like hunger/health/willpower) happen.
+    const oClanDetails = useMemo(() => fnGetClanDetails(fnT), [fnT]);
+    const oDisciplineDetails = useMemo(() => fnGetDisciplineDetails(fnT), [fnT]);
+    const oTribeDetails = useMemo(() => fnGetTribeDetails(fnT), [fnT]);
+    const oAuspiceDetails = useMemo(() => fnGetAuspiceDetails(fnT), [fnT]);
+    const aLoresheetsDef = useMemo(() => fnGetLoresheets(fnT), [fnT]);
+
     const [sGeneratedContent, fnSetGeneratedContent] = useState<string | null>(null);
     const [sGenerationTitle, fnSetGenerationTitle] = useState<string>('');
     const [bIsLoading, fnSetIsLoading] = useState(false);
@@ -283,11 +299,6 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     const sThemeColorClass = bIsWerewolf ? 'text-green-500' : 'text-red-500';
     const sThemeBgClass = bIsWerewolf ? 'bg-green-600' : 'bg-red-500';
     const sThemeAccentClass = bIsWerewolf ? 'text-green-400' : 'text-red-400';
-
-    const oClanDetails = fnGetClanDetails(fnT);
-    const oDisciplineDetails = fnGetDisciplineDetails(fnT);
-    const oTribeDetails = fnGetTribeDetails(fnT);
-    const oAuspiceDetails = fnGetAuspiceDetails(fnT);
     
     const fnHandleGenerate = async (sType: GenerationType) => {
         fnSetIsLoading(true);
@@ -318,26 +329,24 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
         }
     };
     
-    const aPhysicalAttrs = [Attribute.Strength, Attribute.Dexterity, Attribute.Stamina];
-    const aSocialAttrs = [Attribute.Charisma, Attribute.Manipulation, Attribute.Composure];
-    const aMentalAttrs = [Attribute.Intelligence, Attribute.Wits, Attribute.Resolve];
-    const aPhysicalSkills = [Skill.Athletics, Skill.Brawl, Skill.Craft, Skill.Drive, Skill.Firearms, Skill.Larceny, Skill.Melee, Skill.Stealth, Skill.Survival];
-    const aSocialSkills = [Skill.AnimalKen, Skill.Etiquette, Skill.Insight, Skill.Intimidation, Skill.Leadership, Skill.Performance, Skill.Persuasion, Skill.Streetwise, Skill.Subterfuge];
-    const aMentalSkills = [Skill.Academics, Skill.Awareness, Skill.Finance, Skill.Investigation, Skill.Medicine, Skill.Occult, Skill.Politics, Skill.Science, Skill.Technology];
     
-    const oClanDetail = oCharacter.clan ? oClanDetails[oCharacter.clan] : null;
-    const oTribeDetail = oCharacter.tribe ? oTribeDetails[oCharacter.tribe] : null;
-    const oAuspiceDetail = oCharacter.auspice ? oAuspiceDetails[oCharacter.auspice] : null;
+    const oClanDetail = useMemo(() => oCharacter.clan ? oClanDetails[oCharacter.clan] : null, [oCharacter.clan, oClanDetails]);
+    const oTribeDetail = useMemo(() => oCharacter.tribe ? oTribeDetails[oCharacter.tribe] : null, [oCharacter.tribe, oTribeDetails]);
+    const oAuspiceDetail = useMemo(() => oCharacter.auspice ? oAuspiceDetails[oCharacter.auspice] : null, [oCharacter.auspice, oAuspiceDetails]);
 
-    const aLoresheets = fnGetLoresheets(fnT);
-    const aResolvedLoresheets = (oCharacter.loresheets || []).map(ls => {
-        const oDef = aLoresheets.find(d => d.id === ls.id);
+    const aResolvedLoresheets = useMemo(() => (oCharacter.loresheets || []).map(ls => {
+        const oDef = aLoresheetsDef.find(d => d.id === ls.id);
         if (!oDef) return null;
         return {
             ...oDef,
             levels: oDef.levels.filter(lvl => lvl.level <= ls.level)
         };
-    }).filter(ls => ls !== null);
+    }).filter(ls => ls !== null), [oCharacter.loresheets, aLoresheetsDef]);
+
+    const aSortedDisciplines = useMemo(() =>
+        Object.entries(oCharacter.disciplines).sort((a,b) => (b[1] as number) - (a[1] as number)),
+        [oCharacter.disciplines]
+    );
 
     const nComposure = oCharacter.attributes[Attribute.Composure] || 0;
     const nResolve = oCharacter.attributes[Attribute.Resolve] || 0;
@@ -436,9 +445,9 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <Card className="text-left" variant={bIsWerewolf ? 'werewolf' : 'vampire'}>
             <h3 className={`${sThemeColorClass} font-bold text-lg mb-2 border-b border-gray-700 pb-1`}>{bIsWerewolf ? fnT('characterSheet.gifts') : fnT('characterSheet.disciplines')}</h3>
-            {Object.keys(oCharacter.disciplines).length > 0 ? (
+            {aSortedDisciplines.length > 0 ? (
                 <ul className="mb-6">
-                {Object.entries(oCharacter.disciplines).sort((a,b) => (b[1] as number) - (a[1] as number)).map(([sKey, value]) => {
+                {aSortedDisciplines.map(([sKey, value]) => {
                     const oDisciplineDetail = oDisciplineDetails[sKey.toLowerCase()];
                     const sDisplayName = oDisciplineDetail ? oDisciplineDetail.name : sKey;
                     const aSelectedPowerIds = oCharacter.disciplinePowers[sKey] || [];
