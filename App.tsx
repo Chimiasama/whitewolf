@@ -603,6 +603,18 @@ const gothicBackgroundStyle = {
 // --- APP COMPONENT --- //
 const App: React.FC = () => {
     const { t: fnT, locale: sLocale } = useI18n(); 
+
+    // Performance Optimization: Memoize core data objects to avoid redundant translation lookups and object reconstructions on every render.
+    // These objects are relatively large and expensive to build, so memoizing them provides a measurable speed boost during state updates.
+    const oClanDetails = useMemo(() => fnGetClanDetails(fnT), [fnT]);
+    const oDisciplineDetails = useMemo(() => fnGetDisciplineDetails(fnT), [fnT]);
+    const aPredatorTypes = useMemo(() => fnGetPredatorTypes(fnT), [fnT]);
+    const oTribeDetails = useMemo(() => fnGetTribeDetails(fnT), [fnT]);
+    const oAuspiceDetails = useMemo(() => fnGetAuspiceDetails(fnT), [fnT]);
+    const aLoresheets = useMemo(() => fnGetLoresheets(fnT), [fnT]);
+    const aRituals = useMemo(() => fnGetRituals(fnT), [fnT]);
+    const aTalismans = useMemo(() => fnGetTalismans(fnT), [fnT]);
+
     const [view, setView] = useState<'home' | 'creator'>('home');
     const [nStep, fnSetStep] = useState(1);
 
@@ -611,6 +623,7 @@ const App: React.FC = () => {
     }, [nStep]);
     const [bShowModeSelection, fnSetShowModeSelection] = useState(false);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
+    const aAdvantagesAndFlaws = useMemo(() => fnGetAdvantagesAndFlaws(fnT, oCharacter.gameType), [fnT, oCharacter.gameType]);
     const [sSelectedSkill, setSelectedSkill] = useState<string>('');
     const [sSpecialtyName, setSpecialtyName] = useState<string>('');
     const [bShowStorage, fnSetShowStorage] = useState(false);
@@ -680,7 +693,7 @@ const App: React.FC = () => {
                     if (!oCharacter.predatorType) return false;
 
                     // Disciplines check
-                    const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
+                    const oPredatorType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
                     const oDiscs = { ...oCharacter.disciplines };
 
                     // Subtract predator bonus
@@ -696,14 +709,14 @@ const App: React.FC = () => {
                          const [name, val] = aRemaining[0];
                          if ((val as number) !== 3) return false;
                          // Check if clan discipline
-                         const oClan = fnGetClanDetails(fnT)[oCharacter.clan as Clan];
+                         const oClan = oClanDetails[oCharacter.clan as Clan];
                          if (oCharacter.clan !== Clan.Caitiff && !oClan?.disciplines.includes(name)) return false;
                     } else if (aRemaining.length === 2) {
                         const sorted = aRemaining.map(([_, v]) => v as number).sort((a, b) => b - a);
                         if (sorted[0] !== 2 || sorted[1] !== 1) return false;
 
                         // The 2-dot one must be Clan
-                        const oClan = fnGetClanDetails(fnT)[oCharacter.clan as Clan];
+                        const oClan = oClanDetails[oCharacter.clan as Clan];
                         const sTwoDotDisc = aRemaining.find(([_, v]) => v === 2)?.[0];
                         if (oCharacter.clan !== Clan.Caitiff && sTwoDotDisc && !oClan?.disciplines.includes(sTwoDotDisc)) return false;
                     } else {
@@ -718,7 +731,7 @@ const App: React.FC = () => {
             default:
                 return true;
         }
-    }, [oCharacter, nStep, fnT, aSteps]);
+    }, [oCharacter, nStep, aSteps, aPredatorTypes, oClanDetails]);
 
     useEffect(() => {
         if (!oCharacter.name) {
@@ -901,7 +914,7 @@ const App: React.FC = () => {
         const oNewDisciplinePowers = { ...oCharacter.disciplinePowers };
         let bChanged = false;
 
-        const oDetails = fnGetDisciplineDetails(fnT);
+        const oDetails = oDisciplineDetails;
 
         Object.keys(oNewDisciplinePowers).forEach(sDisc => {
             const aSelectedIds = oNewDisciplinePowers[sDisc];
@@ -951,7 +964,6 @@ const App: React.FC = () => {
     }, [oCharacter.disciplines, fnT]);
 
     const fnHandlePredatorTypeChange = (sNewId: string) => {
-        const aPredatorTypes = fnGetPredatorTypes(fnT);
         const oOldType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
         const oNewType = aPredatorTypes.find(pt => pt.id === sNewId);
 
@@ -1085,8 +1097,7 @@ const App: React.FC = () => {
                 );
             case 'clan':
                 {
-                    const oClans = fnGetClanDetails(fnT);
-                    const aClanKeys = Object.keys(oClans) as Clan[];
+                    const aClanKeys = Object.keys(oClanDetails) as Clan[];
                     return (
                         <div className="text-center space-y-4">
                             <div className="space-y-2">
@@ -1106,37 +1117,37 @@ const App: React.FC = () => {
                                                     : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-red-800 hover:text-red-400'}
                                             `}
                                         >
-                                            {oClans[sClan].name}
+                                            {oClanDetails[sClan].name}
                                         </button>
                                     ))}
                                 </div>
                             </div>
 
-                            {oCharacter.clan && oClans[oCharacter.clan as Clan] ? (
+                            {oCharacter.clan && oClanDetails[oCharacter.clan as Clan] ? (
                                 <GothicFrame className="text-left animate-fadeIn">
                                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                                         <div className="lg:col-span-2 space-y-4">
                                             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 border-b border-red-900/30 pb-4">
-                                                <h3 className="text-3xl sm:text-4xl font-cinzel text-red-500">{oClans[oCharacter.clan as Clan].name}</h3>
+                                                <h3 className="text-3xl sm:text-4xl font-cinzel text-red-500">{oClanDetails[oCharacter.clan as Clan].name}</h3>
                                                 <div className="flex flex-col sm:flex-row flex-wrap gap-2 items-center sm:items-end justify-center sm:justify-end w-full sm:w-auto">
-                                                    {oClans[oCharacter.clan as Clan].disciplines.map(d => (
+                                                    {oClanDetails[oCharacter.clan as Clan].disciplines.map(d => (
                                                     <span key={d} className="px-3 py-1 bg-red-900/20 border border-red-900/40 rounded text-xs text-red-400 font-bold uppercase tracking-widest w-full sm:w-auto text-center">
-                                                        {fnGetDisciplineDetails(fnT)[d.toLowerCase()]?.name || d}
+                                                        {oDisciplineDetails[d.toLowerCase()]?.name || d}
                                                     </span>
                                                     ))}
                                                 </div>
                                             </div>
-                                            <p className="text-gray-300 leading-relaxed italic text-lg">{oClans[oCharacter.clan as Clan].description}</p>
+                                            <p className="text-gray-300 leading-relaxed italic text-lg">{oClanDetails[oCharacter.clan as Clan].description}</p>
                                         </div>
 
                                         <div className="space-y-6 bg-black/40 p-6 rounded-xl border border-red-900/20">
                                             <div className="space-y-2">
                                                 <h4 className="text-red-500 font-bold uppercase text-xs tracking-[0.2em]">{fnT('characterSheet.clanBane')}</h4>
-                                                <p className="text-sm text-gray-400 leading-relaxed">{oClans[oCharacter.clan as Clan].bane}</p>
+                                                <p className="text-sm text-gray-400 leading-relaxed">{oClanDetails[oCharacter.clan as Clan].bane}</p>
                                             </div>
                                             <div className="space-y-2">
                                                 <h4 className="text-red-500 font-bold uppercase text-xs tracking-[0.2em]">{fnT('characterSheet.clanCompulsion')}</h4>
-                                                <p className="text-sm text-gray-400 leading-relaxed">{oClans[oCharacter.clan as Clan].compulsion}</p>
+                                                <p className="text-sm text-gray-400 leading-relaxed">{oClanDetails[oCharacter.clan as Clan].compulsion}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1152,8 +1163,7 @@ const App: React.FC = () => {
                 }
             case 'tribe':
                 {
-                    const oTribes = fnGetTribeDetails(fnT);
-                    const aTribeKeys = Object.keys(oTribes) as Tribe[];
+                    const aTribeKeys = Object.keys(oTribeDetails) as Tribe[];
                     return (
                         <div className="text-center space-y-4">
                             <div className="space-y-2">
@@ -1173,37 +1183,37 @@ const App: React.FC = () => {
                                                     : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-emerald-800 hover:text-emerald-400'}
                                             `}
                                         >
-                                            {oTribes[sTribe].name}
+                                            {oTribeDetails[sTribe].name}
                                         </button>
                                     ))}
                                 </div>
                             </div>
 
-                            {oCharacter.tribe && oTribes[oCharacter.tribe as Tribe] ? (
+                            {oCharacter.tribe && oTribeDetails[oCharacter.tribe as Tribe] ? (
                                 <GothicFrame className="text-left animate-fadeIn border-emerald-900/30">
                                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                                         <div className="lg:col-span-2 space-y-4">
                                             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 border-b border-emerald-900/30 pb-4">
-                                                <h3 className="text-3xl sm:text-4xl font-cinzel text-emerald-500">{oTribes[oCharacter.tribe as Tribe].name}</h3>
+                                                <h3 className="text-3xl sm:text-4xl font-cinzel text-emerald-500">{oTribeDetails[oCharacter.tribe as Tribe].name}</h3>
                                                 <div className="flex flex-col sm:flex-row flex-wrap gap-2 items-center sm:items-end justify-center sm:justify-end w-full sm:w-auto">
-                                                    {oTribes[oCharacter.tribe as Tribe].gifts.map(g => (
+                                                    {oTribeDetails[oCharacter.tribe as Tribe].gifts.map(g => (
                                                     <span key={g} className="px-3 py-1 bg-emerald-900/20 border border-emerald-900/40 rounded text-xs text-emerald-400 font-bold uppercase tracking-widest w-full sm:w-auto text-center">
-                                                        {fnGetDisciplineDetails(fnT)[g]?.name || g}
+                                                        {oDisciplineDetails[g]?.name || g}
                                                     </span>
                                                     ))}
                                                 </div>
                                             </div>
-                                            <p className="text-gray-300 leading-relaxed italic text-lg">{oTribes[oCharacter.tribe as Tribe].description}</p>
+                                            <p className="text-gray-300 leading-relaxed italic text-lg">{oTribeDetails[oCharacter.tribe as Tribe].description}</p>
                                         </div>
 
                                         <div className="space-y-6 bg-black/40 p-6 rounded-xl border border-emerald-900/20">
                                             <div className="space-y-2">
                                                 <h4 className="text-emerald-500 font-bold uppercase text-xs tracking-[0.2em]">{fnT('compendium.favor')}</h4>
-                                                <p className="text-sm text-gray-400 leading-relaxed">{oTribes[oCharacter.tribe as Tribe].favor}</p>
+                                                <p className="text-sm text-gray-400 leading-relaxed">{oTribeDetails[oCharacter.tribe as Tribe].favor}</p>
                                             </div>
                                             <div className="space-y-2">
                                                 <h4 className="text-red-500 font-bold uppercase text-xs tracking-[0.2em]">{fnT('compendium.bane')}</h4>
-                                                <p className="text-sm text-gray-400 leading-relaxed">{oTribes[oCharacter.tribe as Tribe].bane}</p>
+                                                <p className="text-sm text-gray-400 leading-relaxed">{oTribeDetails[oCharacter.tribe as Tribe].bane}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1219,8 +1229,7 @@ const App: React.FC = () => {
                 }
             case 'auspice':
                 {
-                    const oAuspices = fnGetAuspiceDetails(fnT);
-                    const aAuspiceKeys = Object.keys(oAuspices) as Auspice[];
+                    const aAuspiceKeys = Object.keys(oAuspiceDetails) as Auspice[];
                     return (
                         <div className="text-center space-y-4">
                             <div className="space-y-2">
@@ -1240,19 +1249,19 @@ const App: React.FC = () => {
                                                     : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-emerald-800 hover:text-emerald-400'}
                                             `}
                                         >
-                                            {oAuspices[sAuspice].name}
+                                            {oAuspiceDetails[sAuspice].name}
                                         </button>
                                     ))}
                                 </div>
                             </div>
 
-                            {oCharacter.auspice && oAuspices[oCharacter.auspice as Auspice] ? (
+                            {oCharacter.auspice && oAuspiceDetails[oCharacter.auspice as Auspice] ? (
                                 <GothicFrame className="text-left animate-fadeIn border-emerald-900/30">
                                     <div className="space-y-4">
                                         <div className="flex justify-between items-center border-b border-emerald-900/30 pb-4">
-                                            <h3 className="text-4xl font-cinzel text-emerald-500">{oAuspices[oCharacter.auspice as Auspice].name}</h3>
+                                            <h3 className="text-4xl font-cinzel text-emerald-500">{oAuspiceDetails[oCharacter.auspice as Auspice].name}</h3>
                                         </div>
-                                        <p className="text-gray-300 leading-relaxed italic text-lg">{oAuspices[oCharacter.auspice as Auspice].description}</p>
+                                        <p className="text-gray-300 leading-relaxed italic text-lg">{oAuspiceDetails[oCharacter.auspice as Auspice].description}</p>
                                     </div>
                                 </GothicFrame>
                             ) : (
@@ -1294,8 +1303,6 @@ const App: React.FC = () => {
                     </div>
                 );
             case 'finishing':
-                const oDisciplineDetails = fnGetDisciplineDetails(fnT);
-                const aAdvantagesAndFlaws = fnGetAdvantagesAndFlaws(fnT, oCharacter.gameType);
                 const bIsWerewolf = oCharacter.gameType === GameType.Werewolf;
                 const sThemeColor = bIsWerewolf ? 'text-green-500' : 'text-red-500';
                 const sThemeAccent = bIsWerewolf ? 'text-green-400' : 'text-red-400';
@@ -1320,7 +1327,7 @@ const App: React.FC = () => {
                             {/* Point Pool Indicator */}
                             <div className="mb-4 flex flex-col items-center p-3 bg-gray-900/50 rounded-lg border border-gray-700">
                                 {(() => {
-                                    const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
+                                    const oPredatorType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
                                     const aCreationPool = oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
 
                                     const oDiscs = { ...oCharacter.disciplines };
@@ -1384,10 +1391,10 @@ const App: React.FC = () => {
                                 {(() => {
                                     const aBaseDiscs = bIsWerewolf
                                         ? Array.from(new Set([
-                                            ...(oCharacter.tribe ? fnGetTribeDetails(fnT)[oCharacter.tribe].gifts : []),
-                                            ...(oCharacter.auspice ? fnGetAuspiceDetails(fnT)[oCharacter.auspice].gifts : [])
+                                            ...(oCharacter.tribe ? oTribeDetails[oCharacter.tribe].gifts : []),
+                                            ...(oCharacter.auspice ? oAuspiceDetails[oCharacter.auspice].gifts : [])
                                           ]))
-                                        : (oCharacter.clan ? fnGetClanDetails(fnT)[oCharacter.clan].disciplines : []);
+                                        : (oCharacter.clan ? oClanDetails[oCharacter.clan].disciplines : []);
                                     const aActiveDiscs = Object.keys(oCharacter.disciplines);
                                     const aAllDiscs = Array.from(new Set([...aBaseDiscs, ...aActiveDiscs]));
 
@@ -1402,7 +1409,7 @@ const App: React.FC = () => {
                                     return aAllDiscs.map(sDisc => {
                                         const nDots = oCharacter.disciplines[sDisc] || 0;
                                         const oDetails = oDisciplineDetails[sDisc.toLowerCase()];
-                                        const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
+                                        const oPredatorType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
                                         const bIsPredatorDisc = oPredatorType?.disciplineAdd?.discipline === sDisc;
                                         const nPredatorDots = bIsPredatorDisc ? oPredatorType?.disciplineAdd?.dots || 0 : 0;
 
@@ -1433,7 +1440,7 @@ const App: React.FC = () => {
                                                                     // Validation: Can only assign values from the pool
                                                                     const aCreationPool = oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
                                                                     const oCurrentDiscs = { ...oCharacter.disciplines, [sDisc]: nNewVal };
-                                                                    const oPredatorType = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
+                                                                    const oPredatorType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
                                                                     if (oPredatorType?.disciplineAdd) {
                                                                         const d = oPredatorType.disciplineAdd.discipline;
                                                                         if (oCurrentDiscs[d]) oCurrentDiscs[d] -= oPredatorType.disciplineAdd.dots;
@@ -1615,14 +1622,14 @@ const App: React.FC = () => {
                                    onChange={(e) => fnHandlePredatorTypeChange(e.target.value)}
                                 >
                                     <option value="">{fnT('common.selectPlaceholder')}</option>
-                                    {fnGetPredatorTypes(fnT).map(pt => (
+                                    {aPredatorTypes.map(pt => (
                                         <option key={pt.id} value={pt.id}>{pt.name}</option>
                                     ))}
                                 </select>
                                 {oCharacter.predatorType && (
                                     <div className="mt-4 animate-fadeIn">
                                         {(() => {
-                                            const oSelectedPredator = fnGetPredatorTypes(fnT).find(pt => pt.id === oCharacter.predatorType);
+                                            const oSelectedPredator = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
                                             if (!oSelectedPredator) return null;
                                             return (
                                                 <div className="p-4 bg-gray-900/80 rounded-lg border border-red-900/40 shadow-2xl">
@@ -1641,7 +1648,7 @@ const App: React.FC = () => {
                                                             )}
                                                             {oSelectedPredator.disciplineAdd && (
                                                                 <div className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tighter bg-purple-900/30 text-purple-400 border border-purple-900/50">
-                                                                    +{oSelectedPredator.disciplineAdd.dots} {fnGetDisciplineDetails(fnT)[oSelectedPredator.disciplineAdd.discipline]?.name || oSelectedPredator.disciplineAdd.discipline}
+                                                                    +{oSelectedPredator.disciplineAdd.dots} {oDisciplineDetails[oSelectedPredator.disciplineAdd.discipline]?.name || oSelectedPredator.disciplineAdd.discipline}
                                                                 </div>
                                                             )}
                                                         </div>
@@ -1752,7 +1759,7 @@ const App: React.FC = () => {
                                 <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('loresheets.title')}</h3>
                                 <p className="text-gray-400 mb-4">{fnT('loresheets.subtitle')}</p>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {fnGetLoresheets(fnT).map(ls => {
+                                    {aLoresheets.map(ls => {
                                         const oSelected = oCharacter.loresheets.find(l => l.id === ls.id);
                                         const nLevel = oSelected ? oSelected.level : 0;
                                         return (
@@ -1807,7 +1814,7 @@ const App: React.FC = () => {
                                 <GothicFrame className="text-left">
                                     <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('characterSheet.rituals')}</h3>
                                     <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
-                                        {fnGetRituals(fnT).map(rit => (
+                                        {aRituals.map(rit => (
                                             <div key={rit.id} className="flex justify-between items-center p-2 bg-gray-800 rounded border border-gray-700 hover:border-gray-500 group transition-colors">
                                                 <div className="flex flex-col">
                                                     <span className="text-sm font-bold">{rit.name}</span>
@@ -1839,7 +1846,7 @@ const App: React.FC = () => {
                                 <GothicFrame className="text-left">
                                     <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('characterSheet.talismans')}</h3>
                                     <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
-                                        {fnGetTalismans(fnT).map(tal => (
+                                        {aTalismans.map(tal => (
                                             <div key={tal.id} className="flex justify-between items-center p-2 bg-gray-800 rounded border border-gray-700 hover:border-gray-500 group transition-colors">
                                                 <div className="flex flex-col">
                                                     <span className="text-sm font-bold">{tal.name}</span>
