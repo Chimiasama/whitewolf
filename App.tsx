@@ -602,7 +602,7 @@ const gothicBackgroundStyle = {
 
 // --- APP COMPONENT --- //
 const App: React.FC = () => {
-    const { t: fnT, locale: sLocale } = useI18n(); 
+    const { t: fnT, locale: sLocale, setLocale: fnSetLocale } = useI18n();
 
     // Performance Optimization: Memoize core data objects to avoid redundant translation lookups and object reconstructions on every render.
     // These objects are relatively large and expensive to build, so memoizing them provides a measurable speed boost during state updates.
@@ -2084,6 +2084,14 @@ const App: React.FC = () => {
                         </div>
                     </div>
                     <div className="flex flex-wrap items-center justify-end gap-2 max-w-full">
+                        <Button
+                            variant="secondary"
+                            onClick={() => fnSetLocale(sLocale === 'en' ? 'pt' : 'en')}
+                            title={sLocale === 'en' ? 'Switch to Portuguese' : 'Switch to English'}
+                            className="font-bold text-xs uppercase"
+                        >
+                            {sLocale === 'en' ? 'EN' : 'PT'}
+                        </Button>
                         <Button variant="secondary" onClick={() => { fnSetStorageMode('save'); fnSetShowStorage(true); }} title={fnT('buttons.save')}><FloppyDiskIcon /></Button>
                         <Button variant="secondary" onClick={() => { fnSetStorageMode('load'); fnSetShowStorage(true); }} title={fnT('buttons.load')}><FolderOpenIcon /></Button>
                         <Button variant="secondary" onClick={fnResetCharacter} title={fnT('buttons.reset')}><ResetIcon /></Button>
