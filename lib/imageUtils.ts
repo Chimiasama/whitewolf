@@ -1,5 +1,12 @@
 export const fnProcessImage = (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {
+    // Security: Validate file type before processing to prevent loading or executing unsafe/unsupported files.
+    const aAllowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    if (!file || !aAllowedTypes.includes(file.type)) {
+      reject(new Error('Invalid file type. Only JPEG, PNG, and WEBP images are allowed.'));
+      return;
+    }
+
     if (file.size > 6 * 1024 * 1024) {
       reject(new Error('File size exceeds 6MB limit.'));
       return;
