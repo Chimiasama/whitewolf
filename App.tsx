@@ -76,6 +76,11 @@ const DiceIcon = () => (
     </svg>
 );
 
+// --- STATIC CONSTANTS TO AVOID RE-ALLOCATION --- //
+const DOTS_ARRAY_5 = [0, 1, 2, 3, 4];
+const DOTS_ARRAY_6 = [0, 1, 2, 3, 4, 5];
+const ATTRIBUTE_POOL_DISTR = [4, 3, 3, 3, 2, 2, 2, 2];
+
 // --- HELPER COMPONENTS --- //
 const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSelect }) => {
     const { t: fnT } = useI18n();
@@ -287,7 +292,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
         return { counts: oCounts, used: oUsed, available: oAvailable };
     }, [aSortedPool, aAssignedValues]);
 
-    const fnGetGroups = () => {
+    const oGroups = useMemo((): Record<string, string[]> => {
         if (aItems.length <= 3) return { [fnT('finishingTouches.disciplines.title')]: aItems };
         if (aItems.length === 9) {
             return {
@@ -295,16 +300,22 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                 [fnT('characterSheet.attributes.social')]: aItems.slice(3, 6),
                 [fnT('characterSheet.attributes.mental')]: aItems.slice(6, 9)
             };
-        } else {
-             return {
-                [fnT('characterSheet.skills.physical')]: aItems.slice(0, 9),
-                [fnT('characterSheet.skills.social')]: aItems.slice(9, 18),
-                [fnT('characterSheet.skills.mental')]: aItems.slice(18, 27)
-            };
         }
-    };
+        return {
+            [fnT('characterSheet.skills.physical')]: aItems.slice(0, 9),
+            [fnT('characterSheet.skills.social')]: aItems.slice(9, 18),
+            [fnT('characterSheet.skills.mental')]: aItems.slice(18, 27)
+        };
+    }, [aItems, fnT]);
 
-    const oGroups = fnGetGroups();
+    const oItemNames = useMemo(() => {
+        const oNames: Record<string, string> = {};
+        aItems.forEach(sItem => {
+            oNames[sItem] = sTranslationPrefix ? fnT(`${sTranslationPrefix}.${sItem}`) : sItem;
+        });
+        return oNames;
+    }, [aItems, sTranslationPrefix, fnT]);
+
     const bIsPoolComplete = Object.values(oPoolUsage.available).every(val => val === 0);
 
     const fnHandleItemInteraction = (sItem: string) => {
@@ -320,7 +331,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                             <h3 className="text-red-500 font-bold text-lg mb-1 border-b border-gray-700 pb-1 font-cinzel">{sGroupName}</h3>
                          )}
                         <div className="space-y-2">
-                            {aGroupItems.map(sItem => {
+                            {(aGroupItems as string[]).map(sItem => {
                                 const nValue = oValues[sItem] || nBaseValue;
                                 return (
                                 <div key={sItem} className="relative group">
@@ -335,14 +346,14 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                         `}
                                     >
                                         <span className="font-bold text-gray-200 text-sm">
-                                            {fnCustomRenderer ? fnCustomRenderer(sItem) : (sTranslationPrefix ? fnT(`${sTranslationPrefix}.${sItem}`) : sItem)}
+                                            {fnCustomRenderer ? fnCustomRenderer(sItem) : oItemNames[sItem]}
                                         </span>
                                         <div className="flex items-center gap-3">
                                             <span className={`text-xl font-bold w-6 text-right ${nValue > nBaseValue ? 'text-red-400' : 'text-gray-600'}`}>
                                                 {nValue}
                                             </span>
                                             <div className="flex flex-shrink-0 space-x-1">
-                                                 {[...Array(5)].map((_, nI) => (
+                                                 {DOTS_ARRAY_5.map((nI) => (
                                                     <div 
                                                         key={nI} 
                                                         className={`
@@ -360,11 +371,10 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                         </div>
                                     )}
                                     {sActiveItem === sItem && (
-                                        <InfoModal title={sTranslationPrefix ? fnT(`${sTranslationPrefix}.${sItem}`) : sItem} onClose={() => fnSetActiveItem(null)}>
+                                        <InfoModal title={sTranslationPrefix ? oItemNames[sItem] : sItem} onClose={() => fnSetActiveItem(null)}>
                                             <div className="space-y-6">
                                                 <div className="flex justify-center gap-3 flex-wrap">
-                                                    {[...Array(6)].map((_, i) => {
-                                                        const nVal = i;
+                                                    {DOTS_ARRAY_6.map((nVal) => {
                                                         const nCount = oPoolUsage.available[nVal] || 0;
                                                         const bIsCurrent = (oValues[sItem] || nBaseValue) === nVal;
                                                         const bIsDisabled = nCount === 0 && !bIsCurrent && nVal > 0;
@@ -1280,7 +1290,7 @@ const App: React.FC = () => {
                             items={aAttributeList} 
                             values={oCharacter.attributes} 
                             onChange={fnHandleAttributeChange} 
-                            pool={[4, 3, 3, 3, 2, 2, 2, 2]} 
+                            pool={ATTRIBUTE_POOL_DISTR}
                             translationPrefix="attributes.list"
                             baseValue={1}
                             colorClass={oCharacter.gameType === GameType.Werewolf ? "bg-green-900/40" : "bg-red-900/40"}
