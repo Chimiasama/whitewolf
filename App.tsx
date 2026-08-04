@@ -633,6 +633,22 @@ const App: React.FC = () => {
     }, [nStep]);
     const [bShowModeSelection, fnSetShowModeSelection] = useState(false);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
+
+    const fnNormalizeCharacter = useCallback((oLoaded: Partial<Character>): Character => ({
+        ...oInitialCharacter,
+        ...oLoaded,
+        attributes: { ...oInitialCharacter.attributes, ...(oLoaded.attributes || {}) },
+        skills: { ...oInitialCharacter.skills, ...(oLoaded.skills || {}) },
+        disciplines: oLoaded.disciplines || {},
+        disciplinePowers: oLoaded.disciplinePowers || {},
+        rituals: oLoaded.rituals || [],
+        talismans: oLoaded.talismans || [],
+        advantages: oLoaded.advantages || [],
+        flaws: oLoaded.flaws || [],
+        loresheets: oLoaded.loresheets || [],
+        specialties: oLoaded.specialties || [],
+        renown: { ...oInitialCharacter.renown, ...(oLoaded.renown || {}) }
+    }), []);
     const aAdvantagesAndFlaws = useMemo(() => fnGetAdvantagesAndFlaws(fnT, oCharacter.gameType), [fnT, oCharacter.gameType]);
     const [sSelectedSkill, setSelectedSkill] = useState<string>('');
     const [sSpecialtyName, setSpecialtyName] = useState<string>('');
@@ -833,7 +849,7 @@ const App: React.FC = () => {
         const char = fnCreateRandomCharacter(sLocale, level, fnT, oCharacter.gameType || GameType.Vampire);
         fnSetCharacter(char);
         setView('creator');
-        fnSetStep(aSteps.length - 1);
+        fnSetStep(aSteps.length);
         fnShowNotification(fnT('common.generateSuccess'));
     };
 
@@ -853,8 +869,8 @@ const App: React.FC = () => {
             const sData = localStorage.getItem(`vtm_save_${sName}`);
             if (sData) {
                 try {
-                    const oLoaded = JSON.parse(sData);
-                    fnSetCharacter(oLoaded);
+                    const oLoaded = JSON.parse(sData) as Partial<Character>;
+                    fnSetCharacter(fnNormalizeCharacter(oLoaded));
                     setView('creator');
                     fnSetStep(aSteps.length);
                     fnShowNotification(fnT('storage.loadSuccess'));
@@ -906,8 +922,8 @@ const App: React.FC = () => {
         const reader = new FileReader();
         reader.onload = (event) => {
             try {
-                const oLoaded = JSON.parse(event.target?.result as string);
-                fnSetCharacter(oLoaded);
+                const oLoaded = JSON.parse(event.target?.result as string) as Partial<Character>;
+                fnSetCharacter(fnNormalizeCharacter(oLoaded));
                 setView('creator');
                 fnSetStep(aSteps.length);
                 fnShowNotification(fnT('storage.importSuccess'));

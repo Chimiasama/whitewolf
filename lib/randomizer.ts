@@ -84,7 +84,7 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
 
     // 2. Skills
     const skills = { ...oInitialCharacter.skills };
-    const skillPool = [4, 3, 3, 3, 2, 2, 2, 1, 1, 1, 1]; 
+    const skillPool = [4, 3, 3, 3, 2, 2, 2, 1, 1, 1];
     const prioritySkills = shuffle(archetype.skills);
     const otherSkills = shuffle(aSkillList.filter(s => !archetype.skills.includes(s)));
     const allSkillsOrdered = [...prioritySkills, ...otherSkills];
