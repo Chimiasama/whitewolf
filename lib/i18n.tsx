@@ -113,6 +113,22 @@ const oEn = {
     "error_advantages": "Spend 7 points on Advantages.",
     "error_flaws": "Take 2 points of Flaws."
   },
+  "validation": {
+    "title": "Pending items before advancing",
+    "missingField": "Fill in: {{field}}.",
+    "selectGame": "Select Vampire or Werewolf.",
+    "selectClan": "Select a clan.",
+    "selectTribe": "Select a tribe.",
+    "selectAuspice": "Select an auspice.",
+    "attributeTotal": "Attributes currently total {{current}}; they must total {{expected}}.",
+    "skillPath": "Skills must match one of the supported creation paths.",
+    "advantages": "Advantages total {{current}}; spend at least {{expected}} points.",
+    "flaws": "Flaws total {{current}}; take at least {{expected}} points.",
+    "specialty": "Add at least one specialty.",
+    "predator": "Select a Predator Type.",
+    "disciplines": "Adjust Disciplines to match creation rules and Predator bonuses.",
+    "gifts": "Gifts currently total {{current}}; they must total {{expected}} dots."
+  },
   "common": {
     "selectPlaceholder": "Select...",
     "selectAttrPlaceholder": "Select Attribute",
@@ -2866,6 +2882,22 @@ const oPt = {
     "error_advantages": "Gaste 7 pontos em Vantagens.",
     "error_flaws": "Escolha 2 pontos em Defeitos."
   },
+  "validation": {
+    "title": "Pendências antes de avançar",
+    "missingField": "Preencha: {{field}}.",
+    "selectGame": "Selecione Vampiro ou Lobisomem.",
+    "selectClan": "Selecione um clã.",
+    "selectTribe": "Selecione uma tribo.",
+    "selectAuspice": "Selecione um augúrio.",
+    "attributeTotal": "Os atributos somam {{current}}; eles devem somar {{expected}}.",
+    "skillPath": "As perícias devem seguir uma das trilhas de criação suportadas.",
+    "advantages": "As vantagens somam {{current}}; gaste pelo menos {{expected}} pontos.",
+    "flaws": "Os defeitos somam {{current}}; escolha pelo menos {{expected}} pontos.",
+    "specialty": "Adicione pelo menos uma especialidade.",
+    "predator": "Selecione um Tipo de Predador.",
+    "disciplines": "Ajuste as Disciplinas para respeitar as regras de criação e bônus do Predador.",
+    "gifts": "Os Dons somam {{current}}; eles devem somar {{expected}} pontos."
+  },
   "common": {
     "selectPlaceholder": "Selecione...",
     "selectAttrPlaceholder": "Selecione Atributo",
@@ -3280,7 +3312,7 @@ const oPt = {
       "description": "Você atrai clientes desesperados ou ingênuos através de negócios falsos ou contas em redes sociais."
     },
     "packhunter": {
-      "name": "Caçador de Matilha",
+      "name": "Caçador de Alcatéia",
       "description": "Você caça cercado por feras que o aceitam como um dos seus, perseguindo a presa."
     },
     "payforblood": {
@@ -3338,7 +3370,7 @@ const oPt = {
       "selling": "Vendas",
       "desire": "Desejo",
       "carnivores": "Carnívoros",
-      "packTactics": "Táticas de Matilha",
+      "packTactics": "Táticas de Alcatéia",
       "feedingHabits": "Hábitos Alimentares",
       "followTheMoney": "Siga o Dinheiro",
       "highCrimeAreas": "Áreas de Alta Criminalidade",
@@ -3409,7 +3441,7 @@ const oPt = {
           "system": "Manipulação + Animalismo. Custo: Um Teste de Sangue."
         },
         "packFrenzy": {
-          "name": "Frenesi de Matilha",
+          "name": "Frenesi de Alcatéia",
           "description": "Espalha um frenesi entre membros dispostos.",
           "system": "Raciocínio + Animalismo. Custo: Um Teste de Sangue."
         },

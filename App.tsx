@@ -80,6 +80,8 @@ const DiceIcon = () => (
 const DOTS_ARRAY_5 = [0, 1, 2, 3, 4];
 const DOTS_ARRAY_6 = [0, 1, 2, 3, 4, 5];
 const ATTRIBUTE_POOL_DISTR = [4, 3, 3, 3, 2, 2, 2, 2];
+const SAVE_PREFIX = 'whitewolf_save_';
+const LEGACY_SAVE_PREFIX = 'vtm_save_';
 
 // --- HELPER COMPONENTS --- //
 const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSelect }) => {
@@ -158,11 +160,13 @@ const StorageModal: React.FC<StorageModalProps> = ({ mode: sMode, onClose: fnOnC
             const aKeys = [];
             for (let nI = 0; nI < localStorage.length; nI++) {
                 const sKey = localStorage.key(nI);
-                if (sKey && sKey.startsWith('vtm_save_')) {
-                    aKeys.push(sKey.replace('vtm_save_', ''));
+                if (sKey && sKey.startsWith(SAVE_PREFIX)) {
+                    aKeys.push(sKey.replace(SAVE_PREFIX, ''));
+                } else if (sKey && sKey.startsWith(LEGACY_SAVE_PREFIX)) {
+                    aKeys.push(sKey.replace(LEGACY_SAVE_PREFIX, ''));
                 }
             }
-            fnSetSavedFiles(aKeys.sort());
+            fnSetSavedFiles(Array.from(new Set(aKeys)).sort());
         }
     }, []);
 
@@ -759,6 +763,67 @@ const App: React.FC = () => {
         }
     }, [oCharacter, nStep, aSteps, aPredatorTypes, oClanDetails]);
 
+    const aValidationIssues = useMemo(() => {
+        const sStepId = aSteps[nStep - 1]?.id;
+        const aIssues: string[] = [];
+        if (!sStepId) return aIssues;
+
+        const fnMissing = (sLabel: string) => aIssues.push(fnT('validation.missingField', { field: sLabel }));
+
+        switch (sStepId) {
+            case 'game':
+                if (!oCharacter.gameType) aIssues.push(fnT('validation.selectGame'));
+                break;
+            case 'concept':
+                if (!oCharacter.name) fnMissing(fnT('concept.name'));
+                if (!oCharacter.concept) fnMissing(fnT('concept.concept'));
+                if (!oCharacter.ambition) fnMissing(fnT('concept.ambition'));
+                if (!oCharacter.desire) fnMissing(fnT('concept.desire'));
+                break;
+            case 'clan':
+                if (!oCharacter.clan) aIssues.push(fnT('validation.selectClan'));
+                break;
+            case 'tribe':
+                if (!oCharacter.tribe) aIssues.push(fnT('validation.selectTribe'));
+                break;
+            case 'auspice':
+                if (!oCharacter.auspice) aIssues.push(fnT('validation.selectAuspice'));
+                break;
+            case 'attributes': {
+                const nAttrSum = (Object.values(oCharacter.attributes) as number[]).reduce((acc, val) => acc + val, 0);
+                if (nAttrSum !== 22) aIssues.push(fnT('validation.attributeTotal', { current: nAttrSum, expected: 22 }));
+                break;
+            }
+            case 'skills': {
+                const aCurrentSkills = (Object.values(oCharacter.skills) as number[]).filter(v => v > 0).sort((a, b) => b - a);
+                const bValidPath = Object.values(oSkillPaths).some(aPathDots => {
+                    if (aCurrentSkills.length !== aPathDots.length) return false;
+                    const aSortedPath = [...aPathDots].sort((a, b) => b - a);
+                    return aCurrentSkills.every((v, i) => v === aSortedPath[i]);
+                });
+                if (!bValidPath) aIssues.push(fnT('validation.skillPath'));
+                break;
+            }
+            case 'finishing': {
+                const nAdvSum = oCharacter.advantages.reduce((acc, val) => acc + val.cost, 0);
+                const nFlawSum = oCharacter.flaws.reduce((acc, val) => acc + val.cost, 0);
+                if (nAdvSum < 7) aIssues.push(fnT('validation.advantages', { current: nAdvSum, expected: 7 }));
+                if (nFlawSum < 2) aIssues.push(fnT('validation.flaws', { current: nFlawSum, expected: 2 }));
+                if (oCharacter.specialties.length === 0) aIssues.push(fnT('validation.specialty'));
+                if (oCharacter.gameType === GameType.Vampire && !oCharacter.predatorType) aIssues.push(fnT('validation.predator'));
+                if (oCharacter.gameType === GameType.Vampire) {
+                    if (!bIsStepValid) aIssues.push(fnT('validation.disciplines'));
+                } else {
+                    const nGiftDots = (Object.values(oCharacter.disciplines) as number[]).reduce((acc, val) => acc + val, 0);
+                    if (nGiftDots !== 3) aIssues.push(fnT('validation.gifts', { current: nGiftDots, expected: 3 }));
+                }
+                break;
+            }
+        }
+
+        return Array.from(new Set(aIssues));
+    }, [aSteps, nStep, oCharacter, fnT, bIsStepValid]);
+
     useEffect(() => {
         if (!oCharacter.name) {
             const oIdentity = fnGenerateIdentity(sLocale, oCharacter.gameType); 
@@ -856,7 +921,7 @@ const App: React.FC = () => {
     const fnSaveCharacter = (sName: string) => {
         if (typeof window !== 'undefined') {
             try {
-                localStorage.setItem(`vtm_save_${sName}`, JSON.stringify(oCharacter));
+                localStorage.setItem(`${SAVE_PREFIX}${sName}`, JSON.stringify(oCharacter));
                 fnShowNotification(fnT('storage.saveSuccess'));
             } catch (e) {
                 fnShowNotification(fnT('storage.saveError'), "error");
@@ -866,7 +931,7 @@ const App: React.FC = () => {
 
     const fnLoadCharacter = (sName: string) => {
         if (typeof window !== 'undefined') {
-            const sData = localStorage.getItem(`vtm_save_${sName}`);
+            const sData = localStorage.getItem(`${SAVE_PREFIX}${sName}`) || localStorage.getItem(`${LEGACY_SAVE_PREFIX}${sName}`);
             if (sData) {
                 try {
                     const oLoaded = JSON.parse(sData) as Partial<Character>;
@@ -884,7 +949,8 @@ const App: React.FC = () => {
 
     const fnDeleteCharacter = (sName: string) => {
         if (typeof window !== 'undefined') {
-            localStorage.removeItem(`vtm_save_${sName}`);
+            localStorage.removeItem(`${SAVE_PREFIX}${sName}`);
+            localStorage.removeItem(`${LEGACY_SAVE_PREFIX}${sName}`);
             fnShowNotification(fnT('storage.deleteSuccess', { name: sName }));
         }
     };
@@ -2145,6 +2211,18 @@ const App: React.FC = () => {
                 <div className="mt-1 animate-fadeIn min-w-0 overflow-hidden">
                     {renderStepContent()}
                 </div>
+                {aValidationIssues.length > 0 && nStep < aSteps.length && (
+                    <div className={`mt-4 rounded-lg border p-4 text-sm ${oCharacter.gameType === GameType.Werewolf ? 'border-emerald-800/60 bg-emerald-950/20' : 'border-red-900/60 bg-red-950/20'}`}>
+                        <h3 className={`font-bold uppercase tracking-wider mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-emerald-300' : 'text-red-300'}`}>
+                            {fnT('validation.title')}
+                        </h3>
+                        <ul className="list-disc list-inside space-y-1 text-gray-300">
+                            {aValidationIssues.map((sIssue) => (
+                                <li key={sIssue}>{sIssue}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </main>
             <footer className="bg-black border-t border-gray-800 p-3 sm:p-6 sticky bottom-0 z-40 overflow-hidden">
                 <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">

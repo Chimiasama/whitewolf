@@ -146,8 +146,8 @@ const DATA: Record<'en' | 'pt', LocalizedData> = {
                 female: ["Sra.", "Srta.", "Dra.", "Prof.", "Irmã", "Mãe", "Det.", "Oficial", "Agente", "Juíza", "Senadora", "Prefeita", "Princesa", "Baronesa", "Primogênita", "Xerife", "Látego", "Guardiã", "Flagelo", "Dama", "Lady", "Duquesa", "Bispa", "Anciã"]
             },
             werewolf: {
-                male: ["Alfa", "Beta", "Galliard", "Ahroun", "Theurge", "Philodox", "Ragabash", "Ancião", "Líder de Seita", "Guardião", "Sentinela", "Irmão de Matilha", "Andarilho", "Falante de Espíritos"],
-                female: ["Alfa", "Beta", "Galliard", "Ahroun", "Theurge", "Philodox", "Ragabash", "Anciã", "Líder de Seita", "Guardiã", "Sentinela", "Irmã de Matilha", "Andarilha", "Falante de Espíritos"]
+                male: ["Alfa", "Beta", "Galliard", "Ahroun", "Theurge", "Philodox", "Ragabash", "Ancião", "Líder de Seita", "Guardião", "Sentinela", "Irmão de Alcatéia", "Andarilho", "Falante de Espíritos"],
+                female: ["Alfa", "Beta", "Galliard", "Ahroun", "Theurge", "Philodox", "Ragabash", "Anciã", "Líder de Seita", "Guardiã", "Sentinela", "Irmã de Alcatéia", "Andarilha", "Falante de Espíritos"]
             }
         },
         firstNames: {
@@ -212,7 +212,7 @@ const DATA: Record<'en' | 'pt', LocalizedData> = {
                 ["Espião", "Espiã"], ["Escolta", "Escolta"], ["Saqueador de Túmulos", "Saqueadora de Túmulos"], ["Cultista", "Cultista"]
             ],
             werewolf: [
-                ["Membro da Matilha", "Membro da Matilha"], ["Parentela", "Parentela"], ["Falante de Espíritos", "Falante de Espíritos"], 
+                ["Membro da Alcatéia", "Membro da Alcatéia"], ["Parentela", "Parentela"], ["Falante de Espíritos", "Falante de Espíritos"], 
                 ["Guardião", "Guardiã"], ["Rastreador", "Rastreadora"], ["Guerreiro", "Guerreira"],
                 ["Visionário", "Visionária"], ["Juiz", "Juíza"], ["Trapaceiro", "Trapaceira"],
                 ["Guardião do Caern", "Guardiã do Caern"], ["Cantor de Lendas", "Cantora de Lendas"], ["Caçador de Fantasmas", "Caçadora de Fantasmas"],
@@ -243,7 +243,7 @@ const DATA: Record<'en' | 'pt', LocalizedData> = {
                 ["caçando a Wyrm", "caçando a Wyrm"], ["servindo a Gaia", "servindo a Gaia"],
                 ["em fúria constante", "em fúria constante"], ["buscando sabedoria", "buscando sabedoria"],
                 ["honrando os ancestrais", "honrando os ancestrais"], ["fugindo da destruição", "fugindo da destruição"],
-                ["reconstruindo a matilha", "reconstruindo a matilha"], ["comungando com espíritos", "comungando com espíritos"],
+                ["reconstruindo a alcatéia", "reconstruindo a alcatéia"], ["comungando com espíritos", "comungando com espíritos"],
                 ["guardando o caern", "guardando o caern"], ["perdido na Umbra", "perdida na Umbra"],
                 ["lutando pelo futuro", "lutando pelo futuro"], ["vingando um parente caído", "vingando um parente caído"]
             ]
