@@ -601,6 +601,25 @@ export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | nul
     ];
 };
 
+export const fnTranslateAdvantageFlaw = (
+    oItem: AdvantageFlaw,
+    fnT: TFunction,
+    gameType: GameType | null
+): { name: string; description: string } => {
+    const aAll = [
+        ...fnGetAdvantagesAndFlaws(fnT, gameType),
+        ...fnGetPredatorTypes(fnT).flatMap(pt => [...pt.advantages, ...pt.flaws])
+    ];
+    const oMatch = aAll.find(x => x.id === oItem.id);
+    if (oMatch) {
+        return {
+            name: oMatch.name,
+            description: oMatch.description || oItem.description
+        };
+    }
+    return { name: oItem.name, description: oItem.description };
+};
+
 export const fnGetLoresheets = (fnT: TFunction): Loresheet[] => [
     {
         id: "watcherOfMalditos",

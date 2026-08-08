@@ -5,7 +5,7 @@ import { Attribute, Skill, GameType } from '../types';
 import { Card } from './ui/Card';
 import { Button } from './ui/Button';
 import { fnGenerateBackstory, fnGeneratePlotHook, fnGeneratePortraitDescription } from '../services/geminiService';
-import { fnGetClanDetails, fnGetDisciplineDetails, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets } from '../constants';
+import { fnGetClanDetails, fnGetDisciplineDetails, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnTranslateAdvantageFlaw } from '../constants';
 import { useI18n } from '../lib/i18n';
 import { InfoIcon } from './InfoIcon';
 import { InfoModal } from './InfoModal';
@@ -182,26 +182,33 @@ const AdvantageFlawList: React.FC<{ title: string, items: AdvantageFlaw[], color
             <h3 className={`${colorClass} font-bold text-lg mb-2 border-b border-gray-700 pb-1`}>{sTitle}</h3>
             {aItems.length > 0 ? (
                 <ul>
-                    {aItems.map((oItem, nIdx) => (
-                        <li key={`${oItem.name}-${nIdx}`} className="mb-2">
-                            <div className="flex justify-between items-center">
-                                <p className="font-bold text-gray-200">{oItem.name}</p>
-                                <div className="flex items-center">
-                                     {[...Array(5)].map((_, nI) => (
-                                        isWerewolf ? (
-                                            <ClawIcon key={nI} className={`w-2.5 h-2.5 ml-1 ${oItem.cost > nI ? 'text-green-500' : 'text-gray-800'}`} filled={oItem.cost > nI} />
-                                        ) : (
-                                            <div 
-                                                key={nI} 
-                                                className={`w-2 h-2 rounded-full border border-gray-600 ml-1 ${oItem.cost > nI ? colorClass.replace('text-', 'bg-') : 'bg-transparent opacity-20'}`}
-                                            ></div>
-                                        )
-                                    ))}
+                    {aItems.map((oItem, nIdx) => {
+                        const { name: sName, description: sDesc } = fnTranslateAdvantageFlaw(
+                            oItem,
+                            fnT,
+                            isWerewolf ? GameType.Werewolf : GameType.Vampire
+                        );
+                        return (
+                            <li key={`${oItem.id || oItem.name}-${nIdx}`} className="mb-2">
+                                <div className="flex justify-between items-center">
+                                    <p className="font-bold text-gray-200">{sName}</p>
+                                    <div className="flex items-center">
+                                         {[...Array(5)].map((_, nI) => (
+                                            isWerewolf ? (
+                                                <ClawIcon key={nI} className={`w-2.5 h-2.5 ml-1 ${oItem.cost > nI ? 'text-green-500' : 'text-gray-800'}`} filled={oItem.cost > nI} />
+                                            ) : (
+                                                <div
+                                                    key={nI}
+                                                    className={`w-2 h-2 rounded-full border border-gray-600 ml-1 ${oItem.cost > nI ? colorClass.replace('text-', 'bg-') : 'bg-transparent opacity-20'}`}
+                                                ></div>
+                                            )
+                                         ))}
+                                    </div>
                                 </div>
-                            </div>
-                            <p className="text-sm text-gray-400">{oItem.description}</p>
-                        </li>
-                    ))}
+                                <p className="text-sm text-gray-400">{sDesc}</p>
+                            </li>
+                        );
+                    })}
                 </ul>
             ) : <p className="text-gray-400 italic">{fnT('common.noneListed')}</p>}
         </Card>

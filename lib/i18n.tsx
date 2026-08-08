@@ -2765,7 +2765,9 @@ const oPt = {
       "bane": "Corrigir Injustiça: Se permitir injustiça, recupera apenas 1 de Vontade.",
       "archetypes": [
         "Procurado",
-        "Socorrista"
+        "Socorrista",
+        "Músico",
+        "Batedor"
       ]
     },
     "bonegnawers": {
@@ -2774,8 +2776,10 @@ const oPt = {
       "favor": "Achar o Oculto: +1 dado para achar algo perdido.",
       "bane": "Ajudar Desvalidos: Se ignorar quem precisa, recupera apenas 1 de Vontade.",
       "archetypes": [
-        "Cronista",
-        "Motorista"
+        "Cronista da Gazeta",
+        "Técnico de Som",
+        "Nosso Amigo",
+        "Motorista de Aplicativo"
       ]
     },
     "childrenofgaia": {
@@ -2785,7 +2789,9 @@ const oPt = {
       "bane": "Honestidade: Se mentir para ganho pessoal, recupera apenas 1 de Vontade.",
       "archetypes": [
         "Curandeiro",
-        "Viajante"
+        "Negociante",
+        "Viajante",
+        "Minerador"
       ]
     },
     "fiandeirosdevidro": {
