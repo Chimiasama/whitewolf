@@ -1,7 +1,7 @@
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, Specialty, DisciplinePower, GameType, Tribe, Auspice, Disciplines } from './types';
-import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths, oDisciplineCreationPools, VAMPIRE_DISCIPLINES, WEREWOLF_GIFTS } from './constants';
+import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths, oDisciplineCreationPools, VAMPIRE_DISCIPLINES, WEREWOLF_GIFTS, fnTranslateAdvantageFlaw } from './constants';
 import { Card } from './components/ui/Card';
 import { Button } from './components/ui/Button';
 import { Input, TextArea } from './components/ui/Input';
@@ -1757,16 +1757,19 @@ const App: React.FC = () => {
                                                                 {fnT('compendium.grantedBenefits')}
                                                             </h5>
                                                             <div className="space-y-2">
-                                                                {oSelectedPredator.advantages.map((adv, idx) => (
-                                                                    <div key={`${adv.name}-${idx}`} className="flex items-start gap-3 bg-green-900/5 p-3 rounded-md border border-green-900/20 hover:bg-green-900/10 transition-colors">
-                                                                        <div className="mt-1 text-green-500"><CheckCircle /></div>
-                                                                        <div>
-                                                                            <div className="text-[9px] uppercase tracking-widest text-green-600 font-bold mb-0.5">{fnT('compendium.advantage')}</div>
-                                                                            <div className="text-sm font-bold text-green-400">{adv.name}</div>
-                                                                            <div className="text-[10px] text-gray-500">{adv.cost} {fnT('compendium.dotsIncluded')}</div>
+                                                                {oSelectedPredator.advantages.map((adv, idx) => {
+                                                                    const { name: sName } = fnTranslateAdvantageFlaw(adv, fnT, oCharacter.gameType);
+                                                                    return (
+                                                                        <div key={`${adv.id || adv.name}-${idx}`} className="flex items-start gap-3 bg-green-900/5 p-3 rounded-md border border-green-900/20 hover:bg-green-900/10 transition-colors">
+                                                                            <div className="mt-1 text-green-500"><CheckCircle /></div>
+                                                                            <div>
+                                                                                <div className="text-[9px] uppercase tracking-widest text-green-600 font-bold mb-0.5">{fnT('compendium.advantage')}</div>
+                                                                                <div className="text-sm font-bold text-green-400">{sName}</div>
+                                                                                <div className="text-[10px] text-gray-500">{adv.cost} {fnT('compendium.dotsIncluded')}</div>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                ))}
+                                                                    );
+                                                                })}
                                                                 {oSelectedPredator.advantages.length === 0 && (
                                     <div className="text-xs text-gray-600 italic">{fnT('predatorTypes.noAdvantages')}</div>
                                                                 )}
@@ -1779,16 +1782,19 @@ const App: React.FC = () => {
                                                                 {fnT('compendium.potentialCosts')}
                                                              </h5>
                                                              <div className="space-y-2">
-                                                                 {oSelectedPredator.flaws.map((flaw, idx) => (
-                                                                     <div key={`${flaw.name}-${idx}`} className="flex items-start gap-3 bg-red-900/5 p-3 rounded-md border border-red-900/20 hover:bg-red-900/10 transition-colors">
-                                                                         <div className="mt-1 text-red-500"><ExclamationCircle /></div>
-                                                                         <div>
-                                                                             <div className="text-[9px] uppercase tracking-widest text-red-600 font-bold mb-0.5">{fnT('compendium.flaw')}</div>
-                                                                             <div className="text-sm font-bold text-red-400">{flaw.name}</div>
-                                                                             <div className="text-[10px] text-gray-500">{flaw.cost} {fnT('compendium.dotsPenalty')}</div>
+                                                                 {oSelectedPredator.flaws.map((flaw, idx) => {
+                                                                     const { name: sName } = fnTranslateAdvantageFlaw(flaw, fnT, oCharacter.gameType);
+                                                                     return (
+                                                                         <div key={`${flaw.id || flaw.name}-${idx}`} className="flex items-start gap-3 bg-red-900/5 p-3 rounded-md border border-red-900/20 hover:bg-red-900/10 transition-colors">
+                                                                             <div className="mt-1 text-red-500"><ExclamationCircle /></div>
+                                                                             <div>
+                                                                                 <div className="text-[9px] uppercase tracking-widest text-red-600 font-bold mb-0.5">{fnT('compendium.flaw')}</div>
+                                                                                 <div className="text-sm font-bold text-red-400">{sName}</div>
+                                                                                 <div className="text-[10px] text-gray-500">{flaw.cost} {fnT('compendium.dotsPenalty')}</div>
+                                                                             </div>
                                                                          </div>
-                                                                     </div>
-                                                                 ))}
+                                                                     );
+                                                                 })}
                                                                  {oSelectedPredator.flaws.length === 0 && (
                                      <div className="text-xs text-gray-600 italic">{fnT('predatorTypes.noFlaws')}</div>
                                                                  )}
@@ -1816,12 +1822,15 @@ const App: React.FC = () => {
                                     ))}
                                 </div>
                                 <div className="mt-4 border-t border-gray-700 pt-2 space-y-1">
-                                    {oCharacter.advantages.map((adv, i) => (
-                                        <div key={`${adv.name}-${i}`} className="flex justify-between text-xs text-gray-300 bg-green-900/10 px-2 py-1.5 rounded border border-green-900/20">
-                                            <span><span className="text-green-400 font-bold mr-2">{adv.cost}</span> {adv.name}</span>
-                                            <button onClick={() => fnUpdateCharacter('advantages', oCharacter.advantages.filter((_, idx) => idx !== i))} className="text-red-500 hover:text-red-300 font-bold px-1">✕</button>
-                                        </div>
-                                    ))}
+                                    {oCharacter.advantages.map((adv, i) => {
+                                        const { name: sName } = fnTranslateAdvantageFlaw(adv, fnT, oCharacter.gameType);
+                                        return (
+                                            <div key={`${adv.id || adv.name}-${i}`} className="flex justify-between text-xs text-gray-300 bg-green-900/10 px-2 py-1.5 rounded border border-green-900/20">
+                                                <span><span className="text-green-400 font-bold mr-2">{adv.cost}</span> {sName}</span>
+                                                <button onClick={() => fnUpdateCharacter('advantages', oCharacter.advantages.filter((_, idx) => idx !== i))} className="text-red-500 hover:text-red-300 font-bold px-1">✕</button>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </GothicFrame>
                             <GothicFrame className="text-left">
@@ -1835,12 +1844,15 @@ const App: React.FC = () => {
                                     ))}
                                 </div>
                                 <div className="mt-4 border-t border-gray-700 pt-2 space-y-1">
-                                    {oCharacter.flaws.map((flaw, i) => (
-                                        <div key={`${flaw.name}-${i}`} className="flex justify-between text-xs text-gray-300 bg-red-900/10 px-2 py-1.5 rounded border border-red-900/20">
-                                            <span><span className="text-red-400 font-bold mr-2">{flaw.cost}</span> {flaw.name}</span>
-                                            <button onClick={() => fnUpdateCharacter('flaws', oCharacter.flaws.filter((_, idx) => idx !== i))} className="text-red-500 hover:text-red-300 font-bold px-1">✕</button>
-                                        </div>
-                                    ))}
+                                    {oCharacter.flaws.map((flaw, i) => {
+                                        const { name: sName } = fnTranslateAdvantageFlaw(flaw, fnT, oCharacter.gameType);
+                                        return (
+                                            <div key={`${flaw.id || flaw.name}-${i}`} className="flex justify-between text-xs text-gray-300 bg-red-900/10 px-2 py-1.5 rounded border border-red-900/20">
+                                                <span><span className="text-red-400 font-bold mr-2">{flaw.cost}</span> {sName}</span>
+                                                <button onClick={() => fnUpdateCharacter('flaws', oCharacter.flaws.filter((_, idx) => idx !== i))} className="text-red-500 hover:text-red-300 font-bold px-1">✕</button>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </GothicFrame>
                         </div>
