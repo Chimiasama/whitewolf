@@ -96,8 +96,17 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-12 min-w-0">
                 <div 
+                    role="button"
+                    tabIndex={0}
                     onClick={() => onSelect(GameType.Vampire)}
-                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-red-900/30 bg-black/40 p-3 sm:p-6 transition-all hover:border-red-600 hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]"
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            onSelect(GameType.Vampire);
+                        }
+                    }}
+                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-red-900/30 bg-black/40 p-3 sm:p-6 transition-all hover:border-red-600 hover:shadow-[0_0_30px_rgba(220,38,38,0.2)] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950"
+                    aria-label={`${fnT('app.vampire')}: ${fnT('gameSelection.vampireDesc')}`}
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-red-900/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                     <div className="relative z-10 space-y-6">
@@ -110,15 +119,24 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                                 {fnT('gameSelection.vampireDesc')}
                             </p>
                         </div>
-                        <Button className="w-full bg-red-900/40 hover:bg-red-600 border border-red-500/50">
+                        <Button tabIndex={-1} className="w-full bg-red-900/40 hover:bg-red-600 border border-red-500/50">
                             {fnT('buttons.next')}
                         </Button>
                     </div>
                 </div>
 
                 <div 
+                    role="button"
+                    tabIndex={0}
                     onClick={() => onSelect(GameType.Werewolf)}
-                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-emerald-900/30 bg-black/40 p-3 sm:p-6 transition-all hover:border-emerald-600 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            onSelect(GameType.Werewolf);
+                        }
+                    }}
+                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-emerald-900/30 bg-black/40 p-3 sm:p-6 transition-all hover:border-emerald-600 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950"
+                    aria-label={`${fnT('app.werewolf')}: ${fnT('gameSelection.werewolfDesc')}`}
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                     <div className="relative z-10 space-y-6">
@@ -131,7 +149,7 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                                 {fnT('gameSelection.werewolfDesc')}
                             </p>
                         </div>
-                        <Button className="w-full bg-emerald-900/40 hover:bg-emerald-600 border border-emerald-500/50">
+                        <Button tabIndex={-1} className="w-full bg-emerald-900/40 hover:bg-emerald-600 border border-emerald-500/50">
                             {fnT('buttons.next')}
                         </Button>
                     </div>
@@ -213,26 +231,34 @@ const StorageModal: React.FC<StorageModalProps> = ({ mode: sMode, onClose: fnOnC
                             {aSavedFiles.map(sName => (
                                 <li 
                                     key={sName} 
-                                    onClick={() => {
-                                        if (sMode === 'load') {
-                                            fnOnLoad(sName);
-                                            fnOnClose();
-                                        } else {
-                                            fnSetNameInput(sName);
-                                        }
-                                    }}
                                     className={`
-                                        flex justify-between items-center p-3 rounded border cursor-pointer transition-colors
+                                        flex justify-between items-center rounded border transition-colors overflow-hidden
                                         ${sMode === 'save' && sNameInput === sName 
                                             ? 'bg-red-900/30 border-red-500 text-white' 
-                                            : 'bg-gray-800 border-gray-700 hover:bg-gray-700 hover:border-gray-600'}
+                                            : 'bg-gray-800 border-gray-700 hover:border-gray-600'}
                                     `}
                                 >
-                                    <span className="font-bold">{sName}</span>
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            if (sMode === 'load') {
+                                                fnOnLoad(sName);
+                                                fnOnClose();
+                                            } else {
+                                                fnSetNameInput(sName);
+                                            }
+                                        }}
+                                        className="flex-grow text-left font-bold p-3 focus:outline-none focus-visible:bg-gray-750 focus-visible:text-red-400 h-full w-full"
+                                        aria-label={sMode === 'load' ? `${fnT('buttons.load')}: ${sName}` : `${fnT('buttons.activate')}: ${sName}`}
+                                    >
+                                        {sName}
+                                    </button>
                                     <button 
+                                        type="button"
                                         onClick={(e) => fnHandleDelete(sName, e)}
-                                        className="p-1 hover:bg-red-900 rounded text-gray-500 hover:text-white transition-colors"
+                                        className="p-3 mr-1 hover:bg-red-900 rounded text-gray-500 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                                         title={fnT('buttons.delete')}
+                                        aria-label={`${fnT('buttons.delete')}: ${sName}`}
                                     >
                                         <TrashIcon />
                                     </button>
@@ -1707,9 +1733,12 @@ const App: React.FC = () => {
                         {/* Vampire Predator Type Section */}
                         {!bIsWerewolf && (
                             <GothicFrame className="text-left">
-                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-2 border-b border-gray-700 pb-2`}>{fnT('finishingTouches.predatorType.title')}</h3>
+                                <label htmlFor="predator-type-select" className={`block text-xl font-bold ${sThemeAccent} mb-2 border-b border-gray-700 pb-2 uppercase tracking-wide`}>
+                                    {fnT('finishingTouches.predatorType.title')}
+                                </label>
                                 <select 
-                                   className="w-full bg-gray-800 border border-gray-600 rounded p-2 text-white mb-2 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
+                                   id="predator-type-select"
+                                   className="w-full bg-gray-800 border border-gray-600 rounded p-2 text-white mb-2 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                                    value={oCharacter.predatorType || ''}
                                    onChange={(e) => fnHandlePredatorTypeChange(e.target.value)}
                                 >
@@ -2013,9 +2042,10 @@ const App: React.FC = () => {
                             <div className="space-y-4">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
                                     <div className="md:col-span-1">
-                                        <label className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">{fnT('common.skill')}</label>
+                                        <label htmlFor="specialty-skill-select" className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">{fnT('common.skill')}</label>
                                         <select
-                                            className="w-full bg-gray-800 border border-gray-600 rounded p-2 text-white outline-none focus:ring-2 focus:ring-red-500"
+                                            id="specialty-skill-select"
+                                            className="w-full bg-gray-800 border border-gray-600 rounded p-2 text-white outline-none focus:ring-2 focus:ring-red-500 focus-visible:ring-2 focus-visible:ring-red-500"
                                             onChange={(e) => setSelectedSkill(e.target.value)}
                                             value={sSelectedSkill}
                                         >
@@ -2027,6 +2057,7 @@ const App: React.FC = () => {
                                     </div>
                                     <div className="md:col-span-1">
                                         <Input
+                                            id="specialty-name-input"
                                             label={fnT('common.specialty')}
                                             placeholder={fnT('common.specialtyPlaceholder')}
                                             value={sSpecialtyName}
