@@ -169,8 +169,8 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         disciplineAdd: { discipline: "presence", dots: 1 },
         advantages: [
             { id: 'supportive_presence', name: fnT('advantages.supportive_presence.name'), description: fnT('advantages.supportive_presence.desc'), cost: 1, type: 'advantage', levels: [1] },
-            { id: 'remorseful_confidant', name: fnT('advantages.remorseful.name'), description: fnT('advantages.remorseful.name'), cost: 1, type: 'advantage', levels: [1] },
-            { id: 'memoriam_dweller_confidant', name: fnT('advantages.memoriamdweller.name'), description: fnT('advantages.memoriamdweller.name'), cost: 1, type: 'advantage', levels: [1] }
+            { id: 'remorseful_confidant', name: fnT('advantages.remorseful.name'), description: fnT('advantages.remorseful.desc'), cost: 1, type: 'advantage', levels: [1] },
+            { id: 'memoriam_dweller_confidant', name: fnT('advantages.memoriamdweller.name'), description: fnT('advantages.memoriamdweller.desc'), cost: 1, type: 'advantage', levels: [1] }
         ],
         flaws: [{ id: 'conflicting_loyalties', name: fnT('flaws.conflicting_loyalties.name'), description: fnT('flaws.conflicting_loyalties.desc'), cost: 2, type: 'flaw', levels: [2] }],
         specialties: [],
@@ -202,7 +202,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         description: fnT('predatorTypes.eattherich.description'),
         humanityModifier: 0,
         disciplineAdd: { discipline: "fortitude", dots: 1 },
-        advantages: [{ id: 'clan_infiltrator_eattherich', name: fnT('advantages.claninfiltrator.name'), description: fnT('advantages.claninfiltrator.name'), cost: 3, type: 'advantage', levels: [3] }],
+        advantages: [{ id: 'clan_infiltrator_eattherich', name: fnT('advantages.claninfiltrator.name'), description: fnT('advantages.claninfiltrator.desc'), cost: 3, type: 'advantage', levels: [3] }],
         flaws: [{ id: 'angry_beast_eattherich', name: fnT('flaws.angry_beast_flaw.name'), description: fnT('flaws.angry_beast_flaw.desc'), cost: 2, type: 'flaw', levels: [2] }],
         specialties: [],
         specialtyOptions: [
@@ -217,8 +217,8 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         humanityModifier: 0,
         disciplineAdd: { discipline: "obfuscate", dots: 1 },
         advantages: [
-            { id: 'efficient_eater_hideandeat', name: fnT('advantages.efficienteater.name'), description: fnT('advantages.efficienteater.name'), cost: 2, type: 'advantage', levels: [2] },
-            { id: 'slippery_hideandeat', name: fnT('advantages.slippery.name'), description: fnT('advantages.slippery.name'), cost: 1, type: 'advantage', levels: [1] }
+            { id: 'efficient_eater_hideandeat', name: fnT('advantages.efficienteater.name'), description: fnT('advantages.efficienteater.desc'), cost: 2, type: 'advantage', levels: [2] },
+            { id: 'slippery_hideandeat', name: fnT('advantages.slippery.name'), description: fnT('advantages.slippery.desc'), cost: 1, type: 'advantage', levels: [1] }
         ],
         flaws: [{ id: 'obvious_predator_hideandeat', name: fnT('flaws.obvious_predator_flaw.name'), description: fnT('flaws.obvious_predator_flaw.desc'), cost: 2, type: 'flaw', levels: [2] }],
         specialties: [],
@@ -247,9 +247,9 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         description: fnT('predatorTypes.labrat.description'),
         humanityModifier: 0,
         disciplineAdd: { discipline: "bloodsorcery", dots: 1 },
-        advantages: [{ id: 'improved_ghouls_labrat', name: fnT('advantages.improvedghouls.name'), description: fnT('advantages.improvedghouls.name'), cost: 3, type: 'advantage', levels: [3] }],
+        advantages: [{ id: 'improved_ghouls_labrat', name: fnT('advantages.improvedghouls.name'), description: fnT('advantages.improvedghouls.desc'), cost: 3, type: 'advantage', levels: [3] }],
         flaws: [
-            { id: 'blunted_fangs_labrat', name: fnT('flaws.bluntedfangs.name'), description: fnT('flaws.bluntedfangs.name'), cost: 1, type: 'flaw', levels: [1] },
+            { id: 'blunted_fangs_labrat', name: fnT('flaws.bluntedfangs.name'), description: fnT('flaws.bluntedfangs.desc'), cost: 1, type: 'flaw', levels: [1] },
             { id: 'addiction_labrat', name: fnT('flaws.addiction_labrat.name'), description: fnT('flaws.addiction_labrat.desc'), cost: 1, type: 'flaw', levels: [1] }
         ],
         specialties: [],
@@ -264,7 +264,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         description: fnT('predatorTypes.hospitalhunter.description'),
         humanityModifier: 0,
         disciplineAdd: { discipline: "fortitude", dots: 1 },
-        advantages: [{ id: 'blood_healer_hospitalhunter', name: fnT('advantages.bloodhealer.name'), description: fnT('advantages.bloodhealer.name'), cost: 3, type: 'advantage', levels: [3] }],
+        advantages: [{ id: 'blood_healer_hospitalhunter', name: fnT('advantages.bloodhealer.name'), description: fnT('advantages.bloodhealer.desc'), cost: 3, type: 'advantage', levels: [3] }],
         flaws: [{ id: 'frigid_aura_hospitalhunter', name: fnT('flaws.frigid_aura_flaw.name'), description: fnT('flaws.frigid_aura_flaw.desc'), cost: 2, type: 'flaw', levels: [2] }],
         specialties: [],
         specialtyOptions: [
@@ -292,7 +292,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         description: fnT('predatorTypes.lurkerinthecrowd.description'),
         humanityModifier: 0,
         disciplineAdd: { discipline: "obfuscate", dots: 1 },
-        advantages: [{ id: 'obscure_lurkerincrowd', name: fnT('advantages.obscure.name'), description: fnT('advantages.obscure.name'), cost: 3, type: 'advantage', levels: [3] }],
+        advantages: [{ id: 'obscure_lurkerincrowd', name: fnT('advantages.obscure.name'), description: fnT('advantages.obscure.desc'), cost: 3, type: 'advantage', levels: [3] }],
         flaws: [{ id: 'outsider_lurkerincrowd', name: fnT('flaws.outsider_flaw_p.name'), description: fnT('flaws.outsider_flaw_p.desc'), cost: 2, type: 'flaw', levels: [2] }],
         specialties: [],
         specialtyOptions: [
@@ -306,7 +306,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         description: fnT('predatorTypes.manicpixiepredator.description'),
         humanityModifier: 0,
         disciplineAdd: { discipline: "presence", dots: 1 },
-        advantages: [{ id: 'social_engineer_manicpixie', name: fnT('advantages.socialengineer.name'), description: fnT('advantages.socialengineer.name'), cost: 3, type: 'advantage', levels: [3] }],
+        advantages: [{ id: 'social_engineer_manicpixie', name: fnT('advantages.socialengineer.name'), description: fnT('advantages.socialengineer.desc'), cost: 3, type: 'advantage', levels: [3] }],
         flaws: [{ id: 'cannot_embrace_manicpixie', name: fnT('flaws.cannot_embrace_flaw.name'), description: fnT('flaws.cannot_embrace_flaw.desc'), cost: 2, type: 'flaw', levels: [2] }],
         specialties: [],
         specialtyOptions: [
@@ -334,7 +334,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         description: fnT('predatorTypes.opportunist.description'),
         humanityModifier: 0,
         disciplineAdd: { discipline: "presence", dots: 1 },
-        advantages: [{ id: 'delay_destruction_opportunist', name: fnT('advantages.delaydestruction.name'), description: fnT('advantages.delaydestruction.name'), cost: 3, type: 'advantage', levels: [3] }],
+        advantages: [{ id: 'delay_destruction_opportunist', name: fnT('advantages.delaydestruction.name'), description: fnT('advantages.delaydestruction.desc'), cost: 3, type: 'advantage', levels: [3] }],
         flaws: [{ id: 'overconfident_opportunist', name: fnT('flaws.overconfident_flaw_p.name'), description: fnT('flaws.overconfident_flaw_p.desc'), cost: 2, type: 'flaw', levels: [2] }],
         specialties: [],
         specialtyOptions: [
@@ -348,7 +348,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         description: fnT('predatorTypes.packhunter.description'),
         humanityModifier: 0,
         disciplineAdd: { discipline: "protean", dots: 1 },
-        advantages: [{ id: 'apex_predator_packhunter', name: fnT('advantages.apexpredator.name'), description: fnT('advantages.apexpredator.name'), cost: 3, type: 'advantage', levels: [3] }],
+        advantages: [{ id: 'apex_predator_packhunter', name: fnT('advantages.apexpredator.name'), description: fnT('advantages.apexpredator.desc'), cost: 3, type: 'advantage', levels: [3] }],
         flaws: [
             { id: 'brash_packhunter', name: fnT('flaws.brash_flaw_p.name'), description: fnT('flaws.brash_flaw_p.desc'), cost: 1, type: 'flaw', levels: [1] },
             { id: 'deep_sleeper_packhunter', name: fnT('flaws.deep_sleeper_flaw.name'), description: fnT('flaws.deep_sleeper_flaw.desc'), cost: 1, type: 'flaw', levels: [1] }
@@ -379,7 +379,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         description: fnT('predatorTypes.streetfeeder.description'),
         humanityModifier: 0,
         disciplineAdd: { discipline: "potence", dots: 1 },
-        advantages: [{ id: 'danger_sense_streetfeeder', name: fnT('advantages.dangersense.name'), description: fnT('advantages.dangersense.name'), cost: 3, type: 'advantage', levels: [3] }],
+        advantages: [{ id: 'danger_sense_streetfeeder', name: fnT('advantages.dangersense.name'), description: fnT('advantages.dangersense.desc'), cost: 3, type: 'advantage', levels: [3] }],
         flaws: [{ id: 'destitute_streetfeeder', name: fnT('flaws.destitute_flaw_p.name'), description: fnT('flaws.destitute_flaw_p.desc'), cost: 1, type: 'flaw', levels: [1] }],
         specialties: [],
         specialtyOptions: [
@@ -394,8 +394,8 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         humanityModifier: 0,
         disciplineAdd: { discipline: "protean", dots: 1 },
         advantages: [
-            { id: 'sharp_senses_watcher', name: fnT('advantages.sharpsenses.name'), description: fnT('advantages.sharpsenses.name'), cost: 2, type: 'advantage', levels: [2] },
-            { id: 'slippery_watcher', name: fnT('advantages.slippery.name'), description: fnT('advantages.slippery.name'), cost: 1, type: 'advantage', levels: [1] }
+            { id: 'sharp_senses_watcher', name: fnT('advantages.sharpsenses.name'), description: fnT('advantages.sharpsenses.desc'), cost: 2, type: 'advantage', levels: [2] },
+            { id: 'slippery_watcher', name: fnT('advantages.slippery.name'), description: fnT('advantages.slippery.desc'), cost: 1, type: 'advantage', levels: [1] }
         ],
         flaws: [{ id: 'no_haven_watcher', name: fnT('flaws.no_haven_flaw.name'), description: fnT('flaws.no_haven_flaw.desc'), cost: 1, type: 'flaw', levels: [1] }],
         specialties: [],
@@ -411,8 +411,8 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => [
         humanityModifier: 0,
         disciplineAdd: { discipline: "fortitude", dots: 1 },
         advantages: [
-            { id: 'daredevil_wolf', name: fnT('advantages.daredevil.name'), description: fnT('advantages.daredevil.name'), cost: 3, type: 'advantage', levels: [3] },
-            { id: 'underestimated_wolf', name: fnT('advantages.underestimated.name'), description: fnT('advantages.underestimated.name'), cost: 1, type: 'advantage', levels: [1] }
+            { id: 'daredevil_wolf', name: fnT('advantages.daredevil.name'), description: fnT('advantages.daredevil.desc'), cost: 3, type: 'advantage', levels: [3] },
+            { id: 'underestimated_wolf', name: fnT('advantages.underestimated.name'), description: fnT('advantages.underestimated.desc'), cost: 1, type: 'advantage', levels: [1] }
         ],
         flaws: [{ id: 'deaths_kiss_wolf', name: fnT('flaws.deaths_kiss_flaw.name'), description: fnT('flaws.deaths_kiss_flaw.desc'), cost: 2, type: 'flaw', levels: [2] }],
         specialties: [],
