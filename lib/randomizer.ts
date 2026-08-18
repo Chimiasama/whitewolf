@@ -236,7 +236,11 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
 
     // 5. Predator Type (localized and intelligent)
     const allPredatorTypes = fnGetPredatorTypes(fnT);
-    const possiblePredators = allPredatorTypes.filter(p => intel.predators.includes(p.name) || intel.predators.includes(fnT(`predatorTypes.${p.name.toLowerCase()}.name`)));
+    const targetPredatorKeys = intel.predators.map(p => p.toLowerCase().replace(/[^a-z0-9]/g, ''));
+    const possiblePredators = allPredatorTypes.filter(p => {
+        const sCleanId = p.id.toLowerCase().replace(/[^a-z0-9]/g, '');
+        return targetPredatorKeys.includes(sCleanId) || intel.predators.includes(p.name);
+    });
     const selectedPredator = possiblePredators.length > 0 
         ? possiblePredators[Math.floor(Math.random() * possiblePredators.length)] 
         : allPredatorTypes[Math.floor(Math.random() * allPredatorTypes.length)];
