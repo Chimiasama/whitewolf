@@ -14,7 +14,7 @@ export const InfoIcon: React.FC<InfoIconProps> = ({ onClick: fnOnClick, classNam
           e.stopPropagation();
           fnOnClick();
       }}
-      className={`ml-2 text-gray-500 hover:text-red-400 transition-colors duration-200 ${sClassName}`}
+      className={`ml-2 text-gray-500 hover:text-red-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded p-0.5 transition-colors duration-200 ${sClassName}`}
       aria-label={fnT('common.moreInfo')}
     >
       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

@@ -49,6 +49,20 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
   const bIsTop = nMyIndex === nTotalCount - 1;
   const nZIndex = 100 + nMyIndex * 10;
 
+  useEffect(() => {
+    if (!bIsTop) return;
+
+    const fnHandleKeyDown = (oEvent: KeyboardEvent) => {
+      if (oEvent.key === 'Escape') {
+        oEvent.stopPropagation();
+        fnOnClose();
+      }
+    };
+
+    window.addEventListener('keydown', fnHandleKeyDown);
+    return () => window.removeEventListener('keydown', fnHandleKeyDown);
+  }, [bIsTop, fnOnClose]);
+
   const oModal = (
     <div 
       className={`ww-modal-backdrop fixed inset-0 flex items-center justify-center p-4 transition-all duration-300 ${
@@ -71,7 +85,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
           <h2 id={`modal-title-${nMyIndex}`} className="text-xl sm:text-2xl font-black text-red-400 drop-shadow-[0_0_14px_rgba(248,113,113,0.35)] break-words pr-4">{sTitle}</h2>
           <button 
             onClick={fnOnClose} 
-            className="text-gray-400 hover:text-white transition-colors flex-shrink-0"
+            className="text-gray-400 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded p-0.5 transition-colors flex-shrink-0"
             aria-label={fnT('buttons.close')}
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
