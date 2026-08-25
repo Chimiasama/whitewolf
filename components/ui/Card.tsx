@@ -32,13 +32,22 @@ export const Card: React.FC<CardProps> = ({
       : fnOnClick ? "hover:border-red-500/40 hover:shadow-[0_0_15px_rgba(239,68,68,0.1)] hover:scale-[1.02]" : "";
   }
   
-  const sClickableClasses = fnOnClick ? "cursor-pointer" : "";
+  const sClickableClasses = fnOnClick ? "cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500" : "";
   const sThemeClass = variant === 'werewolf' ? 'ww-card-werewolf' : variant === 'vampire' ? 'ww-card-vampire' : '';
 
   return (
     <div
       className={`${sBaseClasses} ${sThemeClass} ${sSelectedClasses} ${sClickableClasses} ${sClassName}`}
       onClick={fnOnClick}
+      role={fnOnClick ? 'button' : undefined}
+      tabIndex={fnOnClick ? 0 : undefined}
+      aria-pressed={fnOnClick ? bIsSelected : undefined}
+      onKeyDown={fnOnClick ? (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          fnOnClick();
+        }
+      } : undefined}
     >
       {oChildren}
     </div>

@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Button } from './ui/Button';
 import { useI18n } from '../lib/i18n';
@@ -49,6 +49,13 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
   const bIsTop = nMyIndex === nTotalCount - 1;
   const nZIndex = 100 + nMyIndex * 10;
 
+  const oCloseButtonRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (bIsTop) oCloseButtonRef.current?.focus();
+  }, [bIsTop]);
+
+  const oPanelRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (!bIsTop) return;
 
@@ -56,6 +63,24 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
       if (oEvent.key === 'Escape') {
         oEvent.stopPropagation();
         fnOnClose();
+        return;
+      }
+
+      if (oEvent.key === 'Tab' && oPanelRef.current) {
+        const aFocusable = oPanelRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (aFocusable.length === 0) return;
+        const oFirst = aFocusable[0];
+        const oLast = aFocusable[aFocusable.length - 1];
+
+        if (oEvent.shiftKey && document.activeElement === oFirst) {
+          oEvent.preventDefault();
+          oLast.focus();
+        } else if (!oEvent.shiftKey && document.activeElement === oLast) {
+          oEvent.preventDefault();
+          oFirst.focus();
+        }
       }
     };
 
@@ -71,7 +96,8 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
       style={{ zIndex: nZIndex }}
       onClick={fnOnClose}
     >
-      <div 
+      <div
+        ref={oPanelRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby={`modal-title-${nMyIndex}`}
@@ -83,8 +109,9 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
       >
         <header className="flex justify-between items-center p-4 border-b border-red-950/70 flex-shrink-0">
           <h2 id={`modal-title-${nMyIndex}`} className="text-xl sm:text-2xl font-black text-red-400 drop-shadow-[0_0_14px_rgba(248,113,113,0.35)] break-words pr-4">{sTitle}</h2>
-          <button 
-            onClick={fnOnClose} 
+          <button
+            ref={oCloseButtonRef}
+            onClick={fnOnClose}
             className="text-gray-400 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded p-0.5 transition-colors flex-shrink-0"
             aria-label={fnT('buttons.close')}
           >

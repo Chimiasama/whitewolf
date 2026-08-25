@@ -47,6 +47,16 @@ const oEn = {
     "importError": "Invalid JSON file.",
     "namePlaceholder": "My Character"
   },
+  "errors": {
+    "image": {
+      "invalidFileType": "Invalid file type. Only JPEG, PNG, and WEBP images are allowed.",
+      "fileTooLarge": "File size exceeds 6MB limit.",
+      "canvasError": "Failed to process the image.",
+      "loadError": "Failed to load image.",
+      "readError": "Failed to read file.",
+      "generic": "Failed to process the image."
+    }
+  },
   "gameSelection": {
     "title": "Select Your Fate",
     "subtitle": "Choose the chronicle you wish to embark upon.",
@@ -127,7 +137,8 @@ const oEn = {
     "specialty": "Add at least one specialty.",
     "predator": "Select a Predator Type.",
     "disciplines": "Adjust Disciplines to match creation rules and Predator bonuses.",
-    "gifts": "Gifts currently total {{current}}; they must total {{expected}} dots."
+    "gifts": "Gifts currently total {{current}}; they must total {{expected}} dots.",
+    "giftsShape": "Gifts must be split into three different Gifts, 1 dot each."
   },
   "common": {
     "selectPlaceholder": "Select...",
@@ -170,6 +181,7 @@ const oEn = {
     "name": "Name",
     "sire": "Sire",
     "sirePlaceholder": "Who made you a vampire?",
+    "mentorPlaceholder": "Who taught you the ways of the pack?",
     "concept": "Concept",
     "conceptPlaceholder": "e.g., Disillusioned activist",
     "ambition": "Ambition",
@@ -365,6 +377,8 @@ const oEn = {
   "characterSheet": {
     "name": "Name",
     "clan": "Clan",
+    "tribe": "Tribe",
+    "auspice": "Auspice",
     "sire": "Sire",
     "mentor": "Mentor",
     "concept": "Concept",
@@ -851,7 +865,7 @@ const oEn = {
         "furiousFrenzy": {
           "name": "Furious Frenzy",
           "description": "Multiple actions per turn during Frenzy.",
-          "system": "Two actions per turn. Any Crítico é Crítico Bestial. After frenzy, full Superficial damage. Cost: Free."
+          "system": "Two actions per turn. Any Critical Win is a Bestial Critical Win. After frenzy, full Superficial damage. Cost: Free."
         },
         "longDistanceJourney": {
           "name": "Long Distance Journey",
@@ -983,7 +997,7 @@ const oEn = {
         "valeren": {
           "name": "Valeren",
           "description": "Heal another vampire's body.",
-          "system": "Inteligência + Fortitude vs Difficulty 2. Cost: One Rouse Check."
+          "system": "Intelligence + Fortitude vs Difficulty 2. Cost: One Rouse Check."
         },
         "mentalVault": {
           "name": "Mental Vault",
@@ -1287,7 +1301,7 @@ const oEn = {
         "fleshCrafting": {
           "name": "Flesh Crafting",
           "description": "Inflict body alterations on others.",
-          "system": "Resolve + Protean vs Vigor + Determinação. Cost: One Rouse Check."
+          "system": "Resolve + Protean vs Stamina + Resolve. Cost: One Rouse Check."
         },
         "toolsOfNature": {
           "name": "Tools of Nature",
@@ -1928,88 +1942,97 @@ const oEn = {
     "mask_cobbler_online": { "name": "Mask (••) + Zeroed/Cobbler (•)", "desc": "Mask (••) + Zeroed (•) or Cobbler (•)" },
     "resources_influence": { "name": "Resources/Influence", "desc": "Spend three dots between Resources or Influence (•••)" },
     "resources": {
-      "name": "Resources"
+      "name": "Resources",
+      "description": "Represents your access to money and material wealth, letting you bypass minor financial obstacles."
     },
     "allies": {
-      "name": "Allies"
+      "name": "Allies",
+      "description": "A person or group willing to help you with resources, information, or protection when you call on them."
     },
     "contacts": {
-      "name": "Contacts"
+      "name": "Contacts",
+      "description": "A network of people who can provide useful information or open doors in a specific field or area."
     },
     "fame": {
-      "name": "Fame"
+      "name": "Fame",
+      "description": "You are a recognizable public figure, which can open doors but also draws unwanted attention."
     },
     "haven": {
-      "name": "Haven"
+      "name": "Haven",
+      "description": "A secure and comfortable place to rest during the day, away from prying eyes."
     },
     "herd": {
-      "name": "Herd"
+      "name": "Herd",
+      "description": "A group of mortals who willingly provide you with blood on a regular basis."
     },
     "influence": {
-      "name": "Influence"
+      "name": "Influence",
+      "description": "You hold sway over a mortal institution or social circle, letting you pull strings behind the scenes."
     },
     "beautiful": {
-      "name": "Beautiful"
+      "name": "Beautiful",
+      "description": "Your striking appearance grants you an edge in social situations."
     },
-    "calmheart": { "name": "Calm Heart" },
-    "daredevil": { "name": "Daredevil" },
-    "codeofhonor": { "name": "Code of Honor" },
-    "fastlearner": { "name": "Fast Learner" },
-    "focused": { "name": "Focused" },
-    "headstrong": { "name": "Headstrong" },
-    "highhumanity": { "name": "High Humanity" },
-    "ironwill": { "name": "Iron Will" },
-    "jackofalltrades": { "name": "Jack of All Trades" },
-    "expertinstructor": { "name": "Expert Instructor" },
-    "remorseful": { "name": "Remorseful" },
-    "loremaster": { "name": "Lore Master" },
-    "totalrecall": { "name": "Total Recall" },
-    "crackdriver": { "name": "Crack Driver" },
-    "lightsleeper": { "name": "Light Sleeper" },
-    "sharpsenses": { "name": "Sharp Senses" },
-    "slippery": { "name": "Slippery" },
-    "skillaptitude": { "name": "Skill Aptitude" },
-    "tough": { "name": "Tough" },
-    "unstakeable": { "name": "Unstakeable" },
-    "claninfiltrator": { "name": "Clan Infiltrator" },
-    "inspiringpresence": { "name": "Inspiring Presence" },
-    "prestigioussire": { "name": "Prestigious Sire" },
-    "socialengineer": { "name": "Social Engineer" },
-    "stalwartloyalty": { "name": "Stalwart Loyalty" },
-    "underestimated": { "name": "Underestimated" },
-    "aftermealglow": { "name": "After Meal Glow" },
-    "alchemyexpert": { "name": "Alchemy Expert" },
-    "animalaffinity": { "name": "Animal Affinity" },
-    "apexpredator": { "name": "Apex Predator" },
-    "berserker": { "name": "Berserker" },
-    "bloodhealer": { "name": "Blood Healer" },
-    "delaydestruction": { "name": "Delay Destruction" },
-    "dangersense": { "name": "Danger Sense" },
-    "demonicpact": { "name": "Demonic Pact" },
-    "diablerist": { "name": "Diablerist" },
-    "disciplinecompetence": { "name": "Discipline Competence" },
-    "efficienteater": { "name": "Efficient Eater" },
-    "fasteater": { "name": "Fast Eater" },
-    "fasthealer": { "name": "Fast Healer" },
-    "friendtofae": { "name": "Friend to Fae" },
-    "holyaura": { "name": "Holy Aura" },
-    "improvedghouls": { "name": "Improved Ghouls" },
-    "magicresistance": { "name": "Magic Resistance" },
-    "memoriamdweller": { "name": "Memoriam Dweller" },
-    "obscure": { "name": "Obscure" },
-    "powerfulvitae": { "name": "Powerful Vitae" },
-    "risingsun": { "name": "Rising Sun" },
-    "spiritmentor": { "name": "Spirit Mentor" },
-    "thaumaturgictraining": { "name": "Thaumaturgic Training" },
-    "truebond": { "name": "True Bond" },
-    "truefaith": { "name": "True Faith" },
-    "truesight": { "name": "True Sight" },
-    "mysticalitem": { "name": "Mystical Item" },
+    "calmheart": { "name": "Calm Heart", "description": "Your unshakable calm makes you resistant to succumbing to fear-driven frenzy." },
+    "daredevil": { "name": "Daredevil", "description": "Reckless bravery in the face of danger grants you a boost when the risk pays off." },
+    "codeofhonor": { "name": "Code of Honor", "description": "You live by a strict personal code, drawing strength of will from following it." },
+    "fastlearner": { "name": "Fast Learner", "description": "You pick up new skills and knowledge far faster than most, reducing the cost of learning." },
+    "focused": { "name": "Focused", "description": "You can shut out distractions and commit fully to a single task." },
+    "headstrong": { "name": "Headstrong", "description": "Your sheer stubbornness makes you harder to manipulate or intimidate." },
+    "highhumanity": { "name": "High Humanity", "description": "Your unusually strong connection to your mortal morality helps you resist the Beast." },
+    "ironwill": { "name": "Iron Will", "description": "Your force of will makes you highly resistant to Dominate and other mind-affecting powers." },
+    "jackofalltrades": { "name": "Jack of All Trades", "description": "Your broad, if shallow, competence lets you attempt almost anything passably well." },
+    "expertinstructor": { "name": "Expert Instructor", "description": "You excel at teaching others, helping them learn skills faster under your guidance." },
+    "remorseful": { "name": "Remorseful", "description": "Your genuine guilt over your monstrous acts keeps your humanity grounded." },
+    "loremaster": { "name": "Lore Master", "description": "You've dedicated years to a specific body of lore. Add two dice to Academics or Investigation rolls when researching or recalling knowledge on your chosen subject." },
+    "totalrecall": { "name": "Total Recall", "description": "You remember everything you've ever read, seen, or heard in perfect detail." },
+    "crackdriver": { "name": "Crack Driver", "description": "Exceptional skill behind the wheel lets you pull off maneuvers other drivers couldn't dream of." },
+    "lightsleeper": { "name": "Light Sleeper", "description": "You wake instantly and alert at the slightest disturbance during your day-sleep." },
+    "sharpsenses": { "name": "Sharp Senses", "description": "One of your senses is preternaturally acute, letting you notice what others miss." },
+    "slippery": { "name": "Slippery", "description": "You have a knack for slipping out of tight situations and evading capture." },
+    "skillaptitude": { "name": "Skill Aptitude", "description": "You have a natural talent for a particular skill, excelling beyond your training." },
+    "tough": { "name": "Tough", "description": "Your body can absorb more punishment than most before it starts to fail." },
+    "unstakeable": { "name": "Unstakeable", "description": "Your unique physiology makes you resistant to being paralyzed by a stake through the heart." },
+    "claninfiltrator": { "name": "Clan Infiltrator", "description": "You blend in convincingly among a rival clan or hostile sect." },
+    "inspiringpresence": { "name": "Inspiring Presence", "description": "Your words and bearing rally others, bolstering their resolve in dire moments." },
+    "prestigioussire": { "name": "Prestigious Sire", "description": "Your sire is renowned among the Kindred, and their reputation reflects favorably on you." },
+    "socialengineer": { "name": "Social Engineer", "description": "You're skilled at manipulating social situations to steer outcomes in your favor." },
+    "stalwartloyalty": { "name": "Stalwart Loyalty", "description": "Those loyal to you remain steadfast even under pressure to betray you." },
+    "underestimated": { "name": "Underestimated", "description": "Your unassuming appearance causes others to dismiss you as a threat, to their detriment." },
+    "aftermealglow": { "name": "After Meal Glow", "description": "After feeding to satisfaction, you radiate a brief, seductive vitality." },
+    "alchemyexpert": { "name": "Alchemy Expert", "description": "You have mastered the creation of alchemical concoctions and tinctures." },
+    "animalaffinity": { "name": "Animal Affinity", "description": "Animals are naturally calm and cooperative around you." },
+    "apexpredator": { "name": "Apex Predator", "description": "Your predatory instincts are honed to a razor's edge when hunting prey." },
+    "berserker": { "name": "Berserker", "description": "Once frenzy takes you, you become an even more terrifying force of destruction." },
+    "bloodhealer": { "name": "Blood Healer", "description": "Your vitae has an unusually potent healing effect when used on others." },
+    "delaydestruction": { "name": "Delay Destruction", "description": "You can cling to unlife a little longer than most before final death claims you." },
+    "dangersense": { "name": "Danger Sense", "description": "An instinctive sixth sense warns you moments before danger strikes." },
+    "demonicpact": { "name": "Demonic Pact", "description": "You've struck a bargain with an infernal power, gaining unnatural aid at a steep cost." },
+    "diablerist": { "name": "Diablerist", "description": "Having diablerized another vampire, traces of their power linger within you." },
+    "disciplinecompetence": { "name": "Discipline Competence", "description": "You've achieved unusual mastery over a Discipline, pushing its limits further than most." },
+    "efficienteater": { "name": "Efficient Eater", "description": "You draw sustenance from far less blood than most vampires need to satisfy their Hunger." },
+    "fasteater": { "name": "Fast Eater", "description": "You can feed to satisfaction in a fraction of the time it takes others." },
+    "fasthealer": { "name": "Fast Healer", "description": "Your body mends its wounds faster than is typical even for a vampire." },
+    "friendtofae": { "name": "Friend to Fae", "description": "You've earned the goodwill of the fae, who are inclined to aid rather than torment you." },
+    "holyaura": { "name": "Holy Aura", "description": "An unnerving, almost sacred aura surrounds you, unsettling other supernatural creatures." },
+    "improvedghouls": { "name": "Improved Ghouls", "description": "The ghouls you create are unusually capable, stronger and more resilient than most." },
+    "magicresistance": { "name": "Magic Resistance", "description": "Your supernatural constitution makes you harder to affect with sorcery and rituals." },
+    "memoriamdweller": { "name": "Memoriam Dweller", "description": "You navigate the realm of memory and dreams with unusual ease." },
+    "obscure": { "name": "Obscure", "description": "You have an uncanny knack for staying unnoticed and out of the public eye." },
+    "powerfulvitae": { "name": "Powerful Vitae", "description": "Your blood carries unusual potency, making it more valuable and effective when used by others." },
+    "risingsun": { "name": "Rising Sun", "description": "You've adapted to withstand a little more sunlight exposure than most of your kind." },
+    "spiritmentor": { "name": "Spirit Mentor", "description": "A spirit or supernatural entity guides and advises you from beyond the physical world." },
+    "thaumaturgictraining": { "name": "Thaumaturgic Training", "description": "You've received formal instruction in the arts of blood sorcery." },
+    "truebond": { "name": "True Bond", "description": "You share an unusually deep and resilient Blood Bond with another." },
+    "truefaith": { "name": "True Faith", "description": "Your unwavering faith grants you supernatural protection against the forces of darkness." },
+    "truesight": { "name": "True Sight", "description": "You can perceive supernatural auras, disguises, and illusions that fool the naked eye." },
+    "mysticalitem": { "name": "Mystical Item", "description": "You possess a minor magical item with a useful, if limited, supernatural property." },
     "businessowner": { "name": "Business Owner" },
     "powerbehindthrone": { "name": "Power Behind the Throne" },
     "supportivepresence": { "name": "Supportive Presence" },
     "bloodhound": {
-      "name": "Bloodhound"
+      "name": "Bloodhound",
+      "description": "Your senses let you detect diseases, drugs, and supernatural taint in blood or prey before you feed."
     },
     "safehouse": {
       "name": "Safe House",
@@ -2092,71 +2115,77 @@ const oEn = {
   },
   "flaws": {
     "enemy": {
-      "name": "Enemy"
+      "name": "Enemy",
+      "description": "Someone actively wants you dead, ruined, or exposed, and will act on it."
     },
     "addiction": {
-      "name": "Addiction"
+      "name": "Addiction",
+      "description": "You are dependent on a substance or behavior that impairs you when denied."
     },
     "darksecret": {
-      "name": "Dark Secret"
+      "name": "Dark Secret",
+      "description": "You hide a secret that would ruin you, or worse, if it ever came to light."
     },
     "haunted": {
-      "name": "Haunted"
+      "name": "Haunted",
+      "description": "A ghost or vengeful spirit follows you, causing trouble at inopportune moments."
     },
     "shunned": {
-      "name": "Shunned"
+      "name": "Shunned",
+      "description": "You are ostracized by a community or group whose acceptance you once had."
     },
-    "amnesia": { "name": "Amnesia" },
-    "curiosity": { "name": "Curiosity" },
-    "impatient": { "name": "Impatient" },
-    "paranoia": { "name": "Paranoia" },
-    "routine": { "name": "Routine" },
-    "morbidfascination": { "name": "Morbid Fascination" },
-    "nightmares": { "name": "Nightmares" },
-    "sadist": { "name": "Sadist" },
-    "vengeful": { "name": "Vengeful" },
-    "weakwilled": { "name": "Weak-Willed" },
-    "softhearted": { "name": "Soft-Hearted" },
-    "bluntedfangs": { "name": "Blunted Fangs" },
-    "childlike": { "name": "Childlike" },
-    "fleshofthecorpse": { "name": "Flesh of the Corpse" },
-    "fragile": { "name": "Fragile" },
-    "stenchofdeath": { "name": "Stench of Death" },
-    "weakstomach": { "name": "Weak Stomach" },
-    "mistakenidentity": { "name": "Mistaken Identity" },
-    "notorioussire": { "name": "Notorious Sire" },
-    "oathbreaker": { "name": "Oath Breaker" },
-    "outsider": { "name": "Outsider" },
-    "brash": { "name": "Brash" },
-    "conflictingloyalties": { "name": "Conflicting Loyalties" },
-    "dull": { "name": "Dull" },
-    "hunted": { "name": "Hunted" },
-    "intolerance": { "name": "Intolerance" },
-    "markedfordeath": { "name": "Marked for Death" },
-    "overconfident": { "name": "Overconfident" },
-    "twistedupbringing": { "name": "Twisted Upbringing" },
-    "angrybeast": { "name": "Angry Beast" },
-    "appetizingblood": { "name": "Appetizing Blood" },
-    "beaconofunholy": { "name": "Beacon of Unholy" },
-    "cannotembrace": { "name": "Cannot Embrace" },
-    "cursed": { "name": "Cursed" },
-    "eeriepresence": { "name": "Eerie Presence" },
-    "deathskiss": { "name": "Death's Kiss" },
-    "deepsleeper": { "name": "Deep Sleeper" },
-    "disciplineinept": { "name": "Discipline Inept" },
-    "frigidaura": { "name": "Frigid Aura" },
-    "magicsusceptibility": { "name": "Magic Susceptibility" },
-    "grimwounds": { "name": "Grim Wounds" },
-    "repulsivetoanimals": { "name": "Repulsive to Animals" },
-    "taintofcorruption": { "name": "Taint of Corruption" },
-    "taintedblood": { "name": "Tainted Blood" },
-    "thirstforinnocence": { "name": "Thirst for Innocence" },
-    "weakblood": { "name": "Weak Blood" },
-    "curseditem": { "name": "Cursed Item" },
+    "amnesia": { "name": "Amnesia", "description": "Large portions of your memory, possibly including your entire mortal life, are gone." },
+    "curiosity": { "name": "Curiosity", "description": "An insatiable curiosity compels you to investigate mysteries even when it's unwise." },
+    "impatient": { "name": "Impatient", "description": "You struggle to wait for anything, often acting rashly rather than biding your time." },
+    "paranoia": { "name": "Paranoia", "description": "You see threats and conspiracies everywhere, even where none exist." },
+    "routine": { "name": "Routine", "description": "You are a creature of habit, uneasy and less effective when forced off your routine." },
+    "morbidfascination": { "name": "Morbid Fascination", "description": "You are drawn to death, gore, and suffering in a way that unsettles others." },
+    "nightmares": { "name": "Nightmares", "description": "Your day-sleep is plagued by visions that leave you shaken and unrested." },
+    "sadist": { "name": "Sadist", "description": "You take genuine pleasure in the suffering of others." },
+    "vengeful": { "name": "Vengeful", "description": "Slights and betrayals fester in you until you can make the offender pay." },
+    "weakwilled": { "name": "Weak-Willed", "description": "Your resolve crumbles easily against manipulation, threats, or supernatural coercion." },
+    "softhearted": { "name": "Soft-Hearted", "description": "You struggle to act ruthlessly, even when your unlife depends on it." },
+    "bluntedfangs": { "name": "Blunted Fangs", "description": "Your fangs are dull or malformed, making feeding by bite awkward and messy." },
+    "childlike": { "name": "Childlike", "description": "Embraced at a young age, your body is permanently trapped as a child's." },
+    "fleshofthecorpse": { "name": "Flesh of the Corpse", "description": "Your body looks and feels distinctly like a corpse, unsettling anyone who touches you." },
+    "fragile": { "name": "Fragile", "description": "Your body is unusually frail, breaking and bruising more easily than most of your kind." },
+    "stenchofdeath": { "name": "Stench of Death", "description": "A permanent odor of decay clings to you, giving you away and disturbing mortals nearby." },
+    "weakstomach": { "name": "Weak Stomach", "description": "Feeding from anything but fresh, healthy blood turns your stomach violently." },
+    "mistakenidentity": { "name": "Mistaken Identity", "description": "You are consistently mistaken for someone else, with consequences you can't always control." },
+    "notorioussire": { "name": "Notorious Sire", "description": "Your sire's infamy is well known, and it colors how other Kindred treat you." },
+    "oathbreaker": { "name": "Oath Breaker", "description": "You broke a sacred vow or promise, and word of your betrayal has spread." },
+    "outsider": { "name": "Outsider", "description": "You come from outside the local society and struggle to be fully accepted into it." },
+    "brash": { "name": "Brash", "description": "You act before thinking, often speaking or acting rashly in tense situations." },
+    "conflictingloyalties": { "name": "Conflicting Loyalties", "description": "You're torn between two factions or people, and choosing one risks betraying the other." },
+    "dull": { "name": "Dull", "description": "You lack imagination or wit, struggling in situations that call for cleverness." },
+    "hunted": { "name": "Hunted", "description": "A powerful and determined hunter or organization is actively tracking you down." },
+    "intolerance": { "name": "Intolerance", "description": "A specific person, group, or thing provokes an irrational, uncontrollable reaction in you." },
+    "markedfordeath": { "name": "Marked for Death", "description": "Something about you marks you as prey to supernatural predators or hunters." },
+    "overconfident": { "name": "Overconfident", "description": "You consistently overestimate your own abilities, often to your detriment." },
+    "twistedupbringing": { "name": "Twisted Upbringing", "description": "Your mortal upbringing left you with a warped worldview that colors your choices." },
+    "angrybeast": { "name": "Angry Beast", "description": "Your Beast is closer to the surface than most, quicker to anger and harder to leash." },
+    "appetizingblood": { "name": "Appetizing Blood", "description": "Your blood is unusually appealing to other vampires, making you a tempting target." },
+    "beaconofunholy": { "name": "Beacon of Unholy", "description": "Your unnatural presence is easily detected by those sensitive to the supernatural." },
+    "cannotembrace": { "name": "Cannot Embrace", "description": "You are physically unable to Embrace another, no matter how much you might wish to." },
+    "cursed": { "name": "Cursed", "description": "A curse hangs over you, causing misfortune to follow you or those close to you." },
+    "eeriepresence": { "name": "Eerie Presence", "description": "Mortals and animals instinctively sense something wrong about you and react with unease." },
+    "deathskiss": { "name": "Death's Kiss", "description": "Your bite leaves visible, telltale wounds that are hard to hide or explain away." },
+    "deepsleeper": { "name": "Deep Sleeper", "description": "You sleep so deeply during the day that almost nothing can rouse you before dusk." },
+    "disciplineinept": { "name": "Discipline Inept", "description": "One of your Disciplines is unusually difficult for you to master." },
+    "frigidaura": { "name": "Frigid Aura", "description": "An unnatural chill surrounds you, unsettling those nearby." },
+    "magicsusceptibility": { "name": "Magic Susceptibility", "description": "You are unusually vulnerable to sorcery, rituals, and other magical effects." },
+    "grimwounds": { "name": "Grim Wounds", "description": "Your injuries look far more gruesome and severe than they actually are." },
+    "repulsivetoanimals": { "name": "Repulsive to Animals", "description": "Animals react to your presence with fear or aggression, refusing to approach." },
+    "taintofcorruption": { "name": "Taint of Corruption", "description": "A supernatural taint clings to you, detectable by those attuned to such things." },
+    "taintedblood": { "name": "Tainted Blood", "description": "Something is wrong with your vitae, making it dangerous or unpleasant for others to drink." },
+    "thirstforinnocence": { "name": "Thirst for Innocence", "description": "You crave the blood of the innocent above all else, a hunger that's hard to resist." },
+    "weakblood": { "name": "Weak Blood", "description": "Your vitae is thin and weak, less potent and useful than that of other vampires." },
+    "curseditem": { "name": "Cursed Item", "description": "You carry or are bound to an item that brings misfortune wherever it goes." },
     "obviouspredator": { "name": "Obvious Predator" },
     "despised": { "name": "Despised" },
     "feeding": {
-      "name": "Feeding Flaw"
+      "name": "Feeding Flaw",
+      "description": "You suffer a complication tied to how, or from whom, you must feed."
     },
     "substanceAbuse": {
       "incurable": "Incurable Addiction: -2 dice when not using substance.",
@@ -2682,6 +2711,16 @@ const oPt = {
     "importError": "Arquivo JSON inválido.",
     "namePlaceholder": "Meu Personagem"
   },
+  "errors": {
+    "image": {
+      "invalidFileType": "Tipo de arquivo inválido. Apenas imagens JPEG, PNG e WEBP são permitidas.",
+      "fileTooLarge": "O arquivo excede o limite de 6MB.",
+      "canvasError": "Falha ao processar a imagem.",
+      "loadError": "Falha ao carregar a imagem.",
+      "readError": "Falha ao ler o arquivo.",
+      "generic": "Falha ao processar a imagem."
+    }
+  },
   "gameSelection": {
     "title": "Selecione o Jogo",
     "subtitle": "Escolha o cenário que deseja explorar.",
@@ -2902,7 +2941,8 @@ const oPt = {
     "specialty": "Adicione pelo menos uma especialidade.",
     "predator": "Selecione um Tipo de Predador.",
     "disciplines": "Ajuste as Disciplinas para respeitar as regras de criação e bônus do Predador.",
-    "gifts": "Os Dons somam {{current}}; eles devem somar {{expected}} pontos."
+    "gifts": "Os Dons somam {{current}}; eles devem somar {{expected}} pontos.",
+    "giftsShape": "Os Dons devem ser distribuídos em três Dons diferentes, com 1 ponto cada."
   },
   "common": {
     "selectPlaceholder": "Selecione...",
@@ -2945,6 +2985,7 @@ const oPt = {
     "name": "Nome",
     "sire": "Senhor",
     "sirePlaceholder": "Quem te transformou?",
+    "mentorPlaceholder": "Quem te ensinou os costumes da alcatéia?",
     "concept": "Conceito",
     "conceptPlaceholder": "ex: Ativista desiludido",
     "ambition": "Ambição",
@@ -3140,6 +3181,8 @@ const oPt = {
   "characterSheet": {
     "name": "Nome",
     "clan": "Clã",
+    "tribe": "Tribo",
+    "auspice": "Augúrio",
     "sire": "Senhor",
     "mentor": "Mentor",
     "concept": "Conceito",
@@ -4703,88 +4746,97 @@ const oPt = {
     "mask_cobbler_online": { "name": "Máscara (••) + Zerado/Sapateiro (•)", "desc": "Máscara (••) + Zerado (•) ou Sapateiro (•)" },
     "resources_influence": { "name": "Recursos/Influência", "desc": "Gaste três pontos entre Recursos ou Influência (•••)" },
     "resources": {
-      "name": "Recursos"
+      "name": "Recursos",
+      "description": "Representa seu acesso a dinheiro e bens materiais, permitindo contornar pequenos obstáculos financeiros."
     },
     "allies": {
-      "name": "Aliados"
+      "name": "Aliados",
+      "description": "Uma pessoa ou grupo disposto a te ajudar com recursos, informações ou proteção quando você precisar."
     },
     "contacts": {
-      "name": "Contatos"
+      "name": "Contatos",
+      "description": "Uma rede de pessoas que pode fornecer informações úteis ou abrir portas em uma área específica."
     },
     "fame": {
-      "name": "Fama"
+      "name": "Fama",
+      "description": "Você é uma figura pública reconhecível, o que pode abrir portas, mas também atrai atenção indesejada."
     },
     "haven": {
-      "name": "Refúgio"
+      "name": "Refúgio",
+      "description": "Um local seguro e confortável para descansar durante o dia, longe de olhares curiosos."
     },
     "herd": {
-      "name": "Rebanho"
+      "name": "Rebanho",
+      "description": "Um grupo de mortais que fornece sangue a você voluntariamente e com regularidade."
     },
     "influence": {
-      "name": "Influência"
+      "name": "Influência",
+      "description": "Você tem influência sobre uma instituição ou círculo social mortal, podendo mover os fios por trás das cortinas."
     },
     "beautiful": {
-      "name": "Belo"
+      "name": "Belo",
+      "description": "Sua aparência marcante te dá uma vantagem em situações sociais."
     },
-    "calmheart": { "name": "Coração Calmo" },
-    "daredevil": { "name": "Temerário" },
-    "codeofhonor": { "name": "Código de Honra" },
-    "fastlearner": { "name": "Aprendizado Rápido" },
-    "focused": { "name": "Focado" },
-    "headstrong": { "name": "Obstinado" },
-    "highhumanity": { "name": "Humanidade Elevada" },
-    "ironwill": { "name": "Vontade de Ferro" },
-    "jackofalltrades": { "name": "Faz-tudo" },
-    "expertinstructor": { "name": "Instrutor Especialista" },
-    "remorseful": { "name": "Arrependido" },
-    "loremaster": { "name": "Mestre de Sabedoria" },
-    "totalrecall": { "name": "Memória Fotográfica" },
-    "crackdriver": { "name": "Motorista de Elite" },
-    "lightsleeper": { "name": "Sono Leve" },
-    "sharpsenses": { "name": "Sentidos Aguçados" },
-    "slippery": { "name": "Escorregadio" },
-    "skillaptitude": { "name": "Aptidão em Perícia" },
-    "tough": { "name": "Resistente" },
-    "unstakeable": { "name": "Inestacável" },
-    "claninfiltrator": { "name": "Infiltrado de Clã" },
-    "inspiringpresence": { "name": "Presença Inspiradora" },
-    "prestigioussire": { "name": "Senhor Prestigiado" },
-    "socialengineer": { "name": "Engenheiro Social" },
-    "stalwartloyalty": { "name": "Lealdade Inabalável" },
-    "underestimated": { "name": "Subestimado" },
-    "aftermealglow": { "name": "Brilho Pós-Refeição" },
-    "alchemyexpert": { "name": "Especialista em Alquimia" },
-    "animalaffinity": { "name": "Afinidade Animal" },
-    "apexpredator": { "name": "Predador Ápice" },
-    "berserker": { "name": "Berserker" },
-    "bloodhealer": { "name": "Curandeiro de Sangue" },
-    "delaydestruction": { "name": "Adiar Destruição" },
-    "dangersense": { "name": "Sentido de Perigo" },
-    "demonicpact": { "name": "Pacto Demoníaco" },
-    "diablerist": { "name": "Diabolista" },
-    "disciplinecompetence": { "name": "Competência em Disciplina" },
-    "efficienteater": { "name": "Alimentador Eficiente" },
-    "fasteater": { "name": "Alimentador Rápido" },
-    "fasthealer": { "name": "Cura Rápida" },
-    "friendtofae": { "name": "Amigo das Fadas" },
-    "holyaura": { "name": "Aura Sagrada" },
-    "improvedghouls": { "name": "Carniçals Aprimorados" },
-    "magicresistance": { "name": "Resistência Mágica" },
-    "memoriamdweller": { "name": "Habitante de Memória" },
-    "obscure": { "name": "Obscuro" },
-    "powerfulvitae": { "name": "Vitae Poderosa" },
-    "risingsun": { "name": "Sol Nascente" },
-    "spiritmentor": { "name": "Mentor Espiritual" },
-    "thaumaturgictraining": { "name": "Treinamento Taumatúrgico" },
-    "truebond": { "name": "Vínculo Verdadeiro" },
-    "truefaith": { "name": "Fé Verdadeira" },
-    "truesight": { "name": "Visão Verdadeira" },
-    "mysticalitem": { "name": "Item Místico" },
+    "calmheart": { "name": "Coração Calmo", "description": "Sua calma inabalável te torna resistente a sucumbir ao frenesi causado pelo medo." },
+    "daredevil": { "name": "Temerário", "description": "Sua bravura imprudente diante do perigo te dá um impulso quando o risco compensa." },
+    "codeofhonor": { "name": "Código de Honra", "description": "Você vive segundo um código pessoal rígido, extraindo força de vontade ao segui-lo." },
+    "fastlearner": { "name": "Aprendizado Rápido", "description": "Você aprende novas habilidades e conhecimentos muito mais rápido que a maioria, reduzindo o custo de aprendizado." },
+    "focused": { "name": "Focado", "description": "Você consegue bloquear distrações e se dedicar totalmente a uma única tarefa." },
+    "headstrong": { "name": "Obstinado", "description": "Sua teimosia extrema torna mais difícil te manipular ou intimidar." },
+    "highhumanity": { "name": "Humanidade Elevada", "description": "Sua conexão incomumente forte com sua moralidade mortal te ajuda a resistir à Besta." },
+    "ironwill": { "name": "Vontade de Ferro", "description": "Sua força de vontade te torna altamente resistente a Dominação e outros poderes que afetam a mente." },
+    "jackofalltrades": { "name": "Faz-tudo", "description": "Sua competência ampla, ainda que superficial, permite tentar quase qualquer coisa com algum sucesso." },
+    "expertinstructor": { "name": "Instrutor Especialista", "description": "Você se destaca ao ensinar outras pessoas, ajudando-as a aprender habilidades mais rápido sob sua orientação." },
+    "remorseful": { "name": "Arrependido", "description": "Seu remorso genuíno pelos seus atos monstruosos mantém sua humanidade firme." },
+    "loremaster": { "name": "Mestre de Sabedoria", "description": "Você dedicou anos a um corpo de conhecimento específico. Adicione dois dados a testes de Acadêmicos ou Investigação ao pesquisar ou recordar informações sobre o assunto escolhido." },
+    "totalrecall": { "name": "Memória Fotográfica", "description": "Você se lembra, em detalhes perfeitos, de tudo o que já leu, viu ou ouviu." },
+    "crackdriver": { "name": "Motorista de Elite", "description": "Uma habilidade excepcional ao volante permite realizar manobras que outros motoristas nem sonhariam em tentar." },
+    "lightsleeper": { "name": "Sono Leve", "description": "Você acorda instantaneamente e alerta ao menor distúrbio durante seu sono diurno." },
+    "sharpsenses": { "name": "Sentidos Aguçados", "description": "Um dos seus sentidos é sobrenaturalmente aguçado, permitindo notar o que os outros deixam passar." },
+    "slippery": { "name": "Escorregadio", "description": "Você tem talento para escapar de situações difíceis e evitar ser capturado." },
+    "skillaptitude": { "name": "Aptidão em Perícia", "description": "Você tem talento natural para uma perícia específica, superando o que seu treino sugeriria." },
+    "tough": { "name": "Resistente", "description": "Seu corpo aguenta mais castigo do que a maioria antes de começar a falhar." },
+    "unstakeable": { "name": "Inestacável", "description": "Sua fisiologia única te torna resistente à paralisia causada por uma estaca no coração." },
+    "claninfiltrator": { "name": "Infiltrado de Clã", "description": "Você se infiltra de forma convincente em um clã rival ou seita hostil." },
+    "inspiringpresence": { "name": "Presença Inspiradora", "description": "Suas palavras e presença inspiram os outros, fortalecendo sua determinação em momentos difíceis." },
+    "prestigioussire": { "name": "Senhor Prestigiado", "description": "Seu Senhor é reconhecido entre os Kindred, e essa reputação reflete bem sobre você." },
+    "socialengineer": { "name": "Engenheiro Social", "description": "Você é habilidoso em manipular situações sociais para direcionar os resultados a seu favor." },
+    "stalwartloyalty": { "name": "Lealdade Inabalável", "description": "Aqueles leais a você permanecem firmes mesmo sob pressão para traí-lo." },
+    "underestimated": { "name": "Subestimado", "description": "Sua aparência discreta faz com que os outros te subestimem como ameaça, para o azar deles." },
+    "aftermealglow": { "name": "Brilho Pós-Refeição", "description": "Após se alimentar até a saciedade, você irradia por um breve momento uma vitalidade sedutora." },
+    "alchemyexpert": { "name": "Especialista em Alquimia", "description": "Você dominou a criação de poções e tinturas alquímicas." },
+    "animalaffinity": { "name": "Afinidade Animal", "description": "Os animais ficam naturalmente calmos e cooperativos perto de você." },
+    "apexpredator": { "name": "Predador Ápice", "description": "Seus instintos predatórios são afiados como navalha ao caçar presas." },
+    "berserker": { "name": "Berserker", "description": "Uma vez que o frenesi te domina, você se torna uma força de destruição ainda mais aterrorizante." },
+    "bloodhealer": { "name": "Curandeiro de Sangue", "description": "Sua vitae tem um efeito curativo incomumente potente quando usada em outras pessoas." },
+    "delaydestruction": { "name": "Adiar Destruição", "description": "Você consegue se agarrar à não-vida um pouco mais que a maioria antes que a morte final o alcance." },
+    "dangersense": { "name": "Sentido de Perigo", "description": "Um sexto sentido instintivo te avisa momentos antes que o perigo aconteça." },
+    "demonicpact": { "name": "Pacto Demoníaco", "description": "Você fez um pacto com um poder infernal, ganhando ajuda sobrenatural a um custo alto." },
+    "diablerist": { "name": "Diabolista", "description": "Por ter praticado diabolismo contra outro vampiro, resquícios do poder dele permanecem em você." },
+    "disciplinecompetence": { "name": "Competência em Disciplina", "description": "Você alcançou um domínio incomum sobre uma Disciplina, levando seus limites além do que a maioria consegue." },
+    "efficienteater": { "name": "Alimentador Eficiente", "description": "Você extrai sustento de muito menos sangue do que a maioria dos vampiros precisa para saciar a Fome." },
+    "fasteater": { "name": "Alimentador Rápido", "description": "Você consegue se alimentar até a saciedade em uma fração do tempo que os outros levam." },
+    "fasthealer": { "name": "Cura Rápida", "description": "Seu corpo cicatriza ferimentos mais rápido do que é comum até para um vampiro." },
+    "friendtofae": { "name": "Amigo das Fadas", "description": "Você conquistou a simpatia das fadas, que preferem ajudá-lo em vez de atormentá-lo." },
+    "holyaura": { "name": "Aura Sagrada", "description": "Uma aura inquietante, quase sagrada, envolve você, perturbando outras criaturas sobrenaturais." },
+    "improvedghouls": { "name": "Carniçals Aprimorados", "description": "Os carniçais que você cria são incomumente capazes, mais fortes e resistentes que a maioria." },
+    "magicresistance": { "name": "Resistência Mágica", "description": "Sua constituição sobrenatural torna mais difícil que feitiçaria e rituais te afetem." },
+    "memoriamdweller": { "name": "Habitante de Memória", "description": "Você navega pelo reino da memória e dos sonhos com uma facilidade incomum." },
+    "obscure": { "name": "Obscuro", "description": "Você tem um talento incomum para passar despercebido e ficar longe dos olhos do público." },
+    "powerfulvitae": { "name": "Vitae Poderosa", "description": "Seu sangue carrega uma potência incomum, tornando-o mais valioso e eficaz quando usado por outros." },
+    "risingsun": { "name": "Sol Nascente", "description": "Você se adaptou para suportar um pouco mais de exposição ao sol do que a maioria da sua espécie." },
+    "spiritmentor": { "name": "Mentor Espiritual", "description": "Um espírito ou entidade sobrenatural te orienta e aconselha a partir de além do mundo físico." },
+    "thaumaturgictraining": { "name": "Treinamento Taumatúrgico", "description": "Você recebeu instrução formal nas artes da feitiçaria de sangue." },
+    "truebond": { "name": "Vínculo Verdadeiro", "description": "Você compartilha um Vínculo de Sangue incomumente profundo e resiliente com outra pessoa." },
+    "truefaith": { "name": "Fé Verdadeira", "description": "Sua fé inabalável te concede proteção sobrenatural contra as forças das trevas." },
+    "truesight": { "name": "Visão Verdadeira", "description": "Você consegue perceber auras sobrenaturais, disfarces e ilusões que enganam o olho nu." },
+    "mysticalitem": { "name": "Item Místico", "description": "Você possui um item mágico menor com uma propriedade sobrenatural útil, ainda que limitada." },
     "businessowner": { "name": "Dono de Negócio" },
     "powerbehindthrone": { "name": "Poder Atrás do Trono" },
     "supportivepresence": { "name": "Presença de Apoio" },
     "bloodhound": {
-      "name": "Faro de Sangue"
+      "name": "Faro de Sangue",
+      "description": "Seus sentidos permitem detectar doenças, drogas e contaminação sobrenatural no sangue ou na presa antes de se alimentar."
     },
     "safehouse": {
       "name": "Aparelho",
@@ -4867,71 +4919,77 @@ const oPt = {
   },
   "flaws": {
     "enemy": {
-      "name": "Inimigo"
+      "name": "Inimigo",
+      "description": "Alguém deseja ativamente sua morte, ruína ou exposição, e agirá para isso."
     },
     "addiction": {
-      "name": "Vício"
+      "name": "Vício",
+      "description": "Você é dependente de uma substância ou comportamento que o prejudica quando privado dele."
     },
     "darksecret": {
-      "name": "Segredo Sombrio"
+      "name": "Segredo Sombrio",
+      "description": "Você esconde um segredo que o destruiria, ou pior, se algum dia viesse à tona."
     },
     "haunted": {
-      "name": "Assombrado"
+      "name": "Assombrado",
+      "description": "Um fantasma ou espírito vingativo o persegue, causando problemas nos momentos mais inoportunos."
     },
     "shunned": {
-      "name": "Evitado"
+      "name": "Evitado",
+      "description": "Você é rejeitado por uma comunidade ou grupo que antes o aceitava."
     },
-    "amnesia": { "name": "Amnésia" },
-    "curiosity": { "name": "Curiosidade" },
-    "impatient": { "name": "Impaciente" },
-    "paranoia": { "name": "Paranoia" },
-    "routine": { "name": "Rotina" },
-    "morbidfascination": { "name": "Fascínio Mórbido" },
-    "nightmares": { "name": "Pesadelos" },
-    "sadist": { "name": "Sadista" },
-    "vengeful": { "name": "Vingativo" },
-    "weakwilled": { "name": "Vontade Fraca" },
-    "softhearted": { "name": "Coração Mole" },
-    "bluntedfangs": { "name": "Presas Rombas" },
-    "childlike": { "name": "Infantil" },
-    "fleshofthecorpse": { "name": "Carne de Cadáver" },
-    "fragile": { "name": "Frágil" },
-    "stenchofdeath": { "name": "Odor da Morte" },
-    "weakstomach": { "name": "Estômago Fraco" },
-    "mistakenidentity": { "name": "Identidade Trocada" },
-    "notorioussire": { "name": "Senhor Notório" },
-    "oathbreaker": { "name": "Quebrador de Juramento" },
-    "outsider": { "name": "Forasteiro" },
-    "brash": { "name": "Impetuoso" },
-    "conflictingloyalties": { "name": "Lealdades Conflitantes" },
-    "dull": { "name": "Monótono" },
-    "hunted": { "name": "Caçado" },
-    "intolerance": { "name": "Intolerância" },
-    "markedfordeath": { "name": "Marcado para Morrer" },
-    "overconfident": { "name": "Superconfiante" },
-    "twistedupbringing": { "name": "Criação Distorcida" },
-    "angrybeast": { "name": "Besta Enraivecida" },
-    "appetizingblood": { "name": "Sangue Apetitoso" },
-    "beaconofunholy": { "name": "Farol do Profano" },
-    "cannotembrace": { "name": "Incapaz de Abraçar" },
-    "cursed": { "name": "Amaldiçoado" },
-    "eeriepresence": { "name": "Presença Sinistra" },
-    "deathskiss": { "name": "Beijo da Morte" },
-    "deepsleeper": { "name": "Sono Profundo" },
-    "disciplineinept": { "name": "Inépcia em Disciplina" },
-    "frigidaura": { "name": "Aura Gélida" },
-    "magicsusceptibility": { "name": "Suscetibilidade Mágica" },
-    "grimwounds": { "name": "Ferimentos Sombrios" },
-    "repulsivetoanimals": { "name": "Repulsivo para Animais" },
-    "taintofcorruption": { "name": "Mácula da Corrupção" },
-    "taintedblood": { "name": "Sangue Maculado" },
-    "thirstforinnocence": { "name": "Sede de Inocência" },
-    "weakblood": { "name": "Sangue Fraco" },
-    "curseditem": { "name": "Item Amaldiçoado" },
+    "amnesia": { "name": "Amnésia", "description": "Grandes partes da sua memória, possivelmente toda a sua vida mortal, desapareceram." },
+    "curiosity": { "name": "Curiosidade", "description": "Uma curiosidade insaciável o obriga a investigar mistérios mesmo quando isso é imprudente." },
+    "impatient": { "name": "Impaciente", "description": "Você tem dificuldade em esperar por qualquer coisa, agindo com frequência de forma precipitada." },
+    "paranoia": { "name": "Paranoia", "description": "Você enxerga ameaças e conspirações em todo lugar, mesmo onde não existem." },
+    "routine": { "name": "Rotina", "description": "Você é uma criatura de hábitos, ficando inseguro e menos eficaz quando tirado da sua rotina." },
+    "morbidfascination": { "name": "Fascínio Mórbido", "description": "Você é atraído pela morte, sangue e sofrimento de um jeito que perturba os outros." },
+    "nightmares": { "name": "Pesadelos", "description": "Seu sono diurno é atormentado por visões que o deixam abalado e sem descanso de verdade." },
+    "sadist": { "name": "Sadista", "description": "Você sente prazer genuíno com o sofrimento alheio." },
+    "vengeful": { "name": "Vingativo", "description": "Ofensas e traições se acumulam dentro de você até que possa fazer o responsável pagar." },
+    "weakwilled": { "name": "Vontade Fraca", "description": "Sua determinação cede facilmente diante de manipulação, ameaças ou coerção sobrenatural." },
+    "softhearted": { "name": "Coração Mole", "description": "Você tem dificuldade em agir com crueldade, mesmo quando sua não-vida depende disso." },
+    "bluntedfangs": { "name": "Presas Rombas", "description": "Suas presas são rombudas ou malformadas, tornando a mordida desajeitada e desastrada." },
+    "childlike": { "name": "Infantil", "description": "Feito vampiro ainda jovem, seu corpo ficou preso permanentemente na aparência de uma criança." },
+    "fleshofthecorpse": { "name": "Carne de Cadáver", "description": "Seu corpo parece e tem a textura nítida de um cadáver, incomodando quem o toca." },
+    "fragile": { "name": "Frágil", "description": "Seu corpo é incomumente frágil, quebrando e machucando com mais facilidade que a maioria da sua espécie." },
+    "stenchofdeath": { "name": "Odor da Morte", "description": "Um odor permanente de decomposição gruda em você, denunciando sua presença e incomodando os mortais próximos." },
+    "weakstomach": { "name": "Estômago Fraco", "description": "Alimentar-se de qualquer coisa que não seja sangue fresco e saudável revira seu estômago violentamente." },
+    "mistakenidentity": { "name": "Identidade Trocada", "description": "Você é constantemente confundido com outra pessoa, com consequências que nem sempre consegue controlar." },
+    "notorioussire": { "name": "Senhor Notório", "description": "A má fama do seu Senhor é conhecida, e isso influencia como outros Kindred o tratam." },
+    "oathbreaker": { "name": "Quebrador de Juramento", "description": "Você quebrou um juramento ou promessa sagrada, e a notícia dessa traição se espalhou." },
+    "outsider": { "name": "Forasteiro", "description": "Você vem de fora da sociedade local e tem dificuldade em ser plenamente aceito nela." },
+    "brash": { "name": "Impetuoso", "description": "Você age antes de pensar, muitas vezes falando ou agindo de forma precipitada em situações tensas." },
+    "conflictingloyalties": { "name": "Lealdades Conflitantes", "description": "Você está dividido entre duas facções ou pessoas, e escolher uma arrisca trair a outra." },
+    "dull": { "name": "Monótono", "description": "Você carece de imaginação ou perspicácia, tendo dificuldade em situações que exigem esperteza." },
+    "hunted": { "name": "Caçado", "description": "Um caçador ou organização poderoso e determinado está ativamente atrás de você." },
+    "intolerance": { "name": "Intolerância", "description": "Uma pessoa, grupo ou coisa específica provoca em você uma reação irracional e incontrolável." },
+    "markedfordeath": { "name": "Marcado para Morrer", "description": "Algo em você o marca como presa para predadores ou caçadores sobrenaturais." },
+    "overconfident": { "name": "Superconfiante", "description": "Você superestima constantemente suas próprias habilidades, muitas vezes para o seu próprio prejuízo." },
+    "twistedupbringing": { "name": "Criação Distorcida", "description": "Sua criação mortal deixou uma visão de mundo distorcida que influencia suas escolhas." },
+    "angrybeast": { "name": "Besta Enraivecida", "description": "Sua Besta está mais próxima da superfície que a da maioria, mais fácil de irritar e mais difícil de conter." },
+    "appetizingblood": { "name": "Sangue Apetitoso", "description": "Seu sangue é incomumente atraente para outros vampiros, tornando-o um alvo tentador." },
+    "beaconofunholy": { "name": "Farol do Profano", "description": "Sua presença antinatural é facilmente detectada por quem é sensível ao sobrenatural." },
+    "cannotembrace": { "name": "Incapaz de Abraçar", "description": "Você é fisicamente incapaz de gerar um Abraço, não importa o quanto deseje." },
+    "cursed": { "name": "Amaldiçoado", "description": "Uma maldição paira sobre você, trazendo azar para você ou para quem está perto." },
+    "eeriepresence": { "name": "Presença Sinistra", "description": "Mortais e animais sentem instintivamente que algo está errado com você e reagem com desconforto." },
+    "deathskiss": { "name": "Beijo da Morte", "description": "Sua mordida deixa marcas visíveis e reveladoras, difíceis de esconder ou justificar." },
+    "deepsleeper": { "name": "Sono Profundo", "description": "Você dorme tão profundamente durante o dia que quase nada consegue acordá-lo antes do anoitecer." },
+    "disciplineinept": { "name": "Inépcia em Disciplina", "description": "Uma de suas Disciplinas é incomumente difícil de dominar." },
+    "frigidaura": { "name": "Aura Gélida", "description": "Um frio antinatural o envolve, incomodando quem está por perto." },
+    "magicsusceptibility": { "name": "Suscetibilidade Mágica", "description": "Você é incomumente vulnerável a feitiçaria, rituais e outros efeitos mágicos." },
+    "grimwounds": { "name": "Ferimentos Sombrios", "description": "Seus ferimentos parecem muito mais grotescos e graves do que realmente são." },
+    "repulsivetoanimals": { "name": "Repulsivo para Animais", "description": "Os animais reagem à sua presença com medo ou agressividade, recusando-se a se aproximar." },
+    "taintofcorruption": { "name": "Mácula da Corrupção", "description": "Uma contaminação sobrenatural gruda em você, perceptível por quem é sensível a esse tipo de coisa." },
+    "taintedblood": { "name": "Sangue Maculado", "description": "Há algo errado com sua vitae, tornando-a perigosa ou desagradável para outros beberem." },
+    "thirstforinnocence": { "name": "Sede de Inocência", "description": "Você deseja acima de tudo o sangue dos inocentes, uma fome difícil de resistir." },
+    "weakblood": { "name": "Sangue Fraco", "description": "Sua vitae é fraca e diluída, menos potente e útil que a de outros vampiros." },
+    "curseditem": { "name": "Item Amaldiçoado", "description": "Você carrega, ou está ligado a, um item que traz azar aonde quer que vá." },
     "obviouspredator": { "name": "Predador Óbvio" },
     "despised": { "name": "Desprezado" },
     "feeding": {
-      "name": "Defeito de Alimentação"
+      "name": "Defeito de Alimentação",
+      "description": "Você sofre uma complicação ligada à forma como, ou de quem, precisa se alimentar."
     },
     "substanceAbuse": {
       "incurable": "Vício Incurável: -2 dados quando não usa a substância.",
