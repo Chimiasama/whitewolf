@@ -27,7 +27,6 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
           const nStepNumber = nIndex + 1;
           const bIsCompleted = nCurrentStep > nStepNumber;
           const bIsCurrent = nCurrentStep === nStepNumber;
-          const bCanClick = true;
 
           return (
             <li

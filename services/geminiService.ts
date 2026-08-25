@@ -11,6 +11,20 @@ const fnGetApiKey = () => {
 
 type TFunction = (key: string, replacements?: Record<string, string | number>) => string;
 
+const GEMINI_TIMEOUT_MS = 20000;
+
+// The Gemini SDK call has no built-in timeout; without this, a stalled network request would
+// leave the "generating..." UI stuck indefinitely instead of surfacing an error.
+function fnWithTimeout<T>(pPromise: Promise<T>, nTimeoutMs: number): Promise<T> {
+    return new Promise((resolve, reject) => {
+        const nTimer = setTimeout(() => reject(new Error('timeout')), nTimeoutMs);
+        pPromise.then(
+            (value) => { clearTimeout(nTimer); resolve(value); },
+            (err) => { clearTimeout(nTimer); reject(err); }
+        );
+    });
+}
+
 function fnBuildBasePrompt(oCharacter: Character, fnT: TFunction, sLocale: string): string {
     const sPromptLanguage = sLocale === 'pt' ? 'Brazilian Portuguese' : 'English';
     const bIsWerewolf = oCharacter.gameType === GameType.Werewolf;
@@ -71,10 +85,10 @@ export const fnGenerateBackstory = async (oCharacter: Character, fnT: TFunction,
         ${fnBuildBasePrompt(oCharacter, fnT, sLocale)}
         ${fnT('gemini.backstoryPrompt')}
         `;
-        const response = await genAI.models.generateContent({
+        const response = await fnWithTimeout(genAI.models.generateContent({
             model: "gemini-1.5-flash",
             contents: sPrompt
-        });
+        }), GEMINI_TIMEOUT_MS);
         return (response as any).text || "";
     } catch (error) {
         console.error("Error generating backstory:", error);
@@ -91,10 +105,10 @@ export const fnGeneratePlotHook = async (oCharacter: Character, fnT: TFunction, 
         ${fnBuildBasePrompt(oCharacter, fnT, sLocale)}
         ${fnT('gemini.plotHookPrompt')}
         `;
-        const response = await genAI.models.generateContent({
+        const response = await fnWithTimeout(genAI.models.generateContent({
             model: "gemini-1.5-flash",
             contents: sPrompt
-        });
+        }), GEMINI_TIMEOUT_MS);
         return (response as any).text || "";
     } catch (error) {
         console.error("Error generating plot hook:", error);
@@ -111,10 +125,10 @@ export const fnGeneratePortraitDescription = async (oCharacter: Character, fnT: 
         ${fnBuildBasePrompt(oCharacter, fnT, sLocale)}
         ${fnT('gemini.portraitPrompt')}
         `;
-        const response = await genAI.models.generateContent({
+        const response = await fnWithTimeout(genAI.models.generateContent({
             model: "gemini-1.5-flash",
             contents: sPrompt
-        });
+        }), GEMINI_TIMEOUT_MS);
         return (response as any).text || "";
     } catch (error) {
         console.error("Error generating portrait description:", error);

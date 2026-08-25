@@ -59,10 +59,35 @@ const ROLE_INTEL: Record<string, { archetype: keyof typeof ARCHETYPES, predators
     "Cultist": { archetype: "SOCIAL", predators: ["Osiris", "Sandman"] }
 };
 
+// Generic flavor names used for the one "bonus" specialty auto-granted by the randomizer
+// on a character's best skill (there's no per-skill flavor specialty list to draw from).
+const GENERIC_SPECIALTY_NAMES: Record<string, string[]> = {
+    en: ['Instinctive', 'Precise', 'Relentless', 'Focused', 'Adaptive', 'Efficient'],
+    pt: ['Instintivo', 'Preciso', 'Implacável', 'Focado', 'Adaptável', 'Eficiente']
+};
+
 const shuffle = <T>(array: T[]): T[] => {
     return array.map(value => ({ value, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort)
         .map(({ value }) => value);
+};
+
+// Ancilla-level XP grants a Resources bump and an Enemy flaw. If the character already has one
+// (e.g. from their Predator Type), bump its existing cost instead of adding a duplicate line item.
+const fnGrantAncillaBonus = (aAdvantages: AdvantageFlaw[], aFlaws: AdvantageFlaw[], fnT: (k: string) => string) => {
+    const oExistingResources = aAdvantages.find(a => a.id === 'resources' || a.id === 'resources_bonus');
+    if (oExistingResources) {
+        oExistingResources.cost = Math.min(5, oExistingResources.cost + 2);
+    } else {
+        aAdvantages.push({ id: 'resources_bonus', name: fnT('advantages.resources.name'), description: fnT('advantages.resources.description'), cost: 2, type: 'advantage', levels: [2] });
+    }
+
+    const oExistingEnemy = aFlaws.find(f => f.id === 'enemy' || f.id === 'enemy_bonus');
+    if (oExistingEnemy) {
+        oExistingEnemy.cost = Math.min(5, oExistingEnemy.cost + 1);
+    } else {
+        aFlaws.push({ id: 'enemy_bonus', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 1, type: 'flaw', levels: [1] });
+    }
 };
 
 export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (k: string) => string, gameType: GameType): Character => {
@@ -101,16 +126,12 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         const auspiceDetails = fnGetAuspiceDetails(fnT)[selectedAuspice];
 
         // 4. Gifts (Disciplines in our model)
+        // Creation rule: 1 dot each in 3 different Gifts (see oDisciplineCreationPools[Werewolf] = [1,1,1]).
         const disciplines: Record<string, number> = {};
         const disciplinePowers: Record<string, string[]> = {};
-        const giftNames = shuffle([...tribeDetails.gifts, ...auspiceDetails.gifts]);
-        
-        if (giftNames.length > 0) {
-            disciplines[giftNames[0]] = 2;
-            if (giftNames.length > 1) {
-                disciplines[giftNames[1]] = 1;
-            }
-        }
+        const giftNames = shuffle(Array.from(new Set([...tribeDetails.gifts, ...auspiceDetails.gifts])));
+
+        giftNames.slice(0, 3).forEach(sGift => { disciplines[sGift] = 1; });
 
         const allDiscDetails = fnGetDisciplineDetails(fnT);
         Object.keys(disciplines).forEach(dKey => {
@@ -145,7 +166,8 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         const specialties: { skill: Skill, name: string }[] = [];
         const highSkills = Object.entries(skills).filter(([_, v]) => v >= 3).map(([k]) => k as Skill);
         if (highSkills.length > 0) {
-            specialties.push({ skill: highSkills[0], name: fnT('common.unknown') });
+            const aSpecialtyNames = GENERIC_SPECIALTY_NAMES[sLocale] || GENERIC_SPECIALTY_NAMES.en;
+            specialties.push({ skill: highSkills[0], name: aSpecialtyNames[Math.floor(Math.random() * aSpecialtyNames.length)] });
         }
 
         // 8. Loresheets (Werewolf)
@@ -169,8 +191,7 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
                 const d1 = giftNames[0];
                 disciplines[d1] = Math.min(5, (disciplines[d1] || 0) + 1);
             }
-            advantages.push({ id: 'resources_bonus', name: fnT('advantages.resources.name'), description: fnT('common.unknown'), cost: 2, type: 'advantage', levels: [2] });
-            flaws.push({ id: 'enemy_bonus', name: fnT('flaws.enemy.name'), description: fnT('common.unknown'), cost: 1, type: 'flaw', levels: [1] });
+            fnGrantAncillaBonus(advantages, flaws, fnT);
         }
 
         return {
@@ -268,13 +289,11 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
     let flaws = [...selectedPredator.flaws];
 
     // 6. XP Level Adjustments
+    // Note: rage/harano/hauglosk/renown are Werewolf-only fields; they're intentionally left out of
+    // this Vampire character below so it inherits oInitialCharacter's safe zero defaults instead.
     let generation: number | undefined = 12;
     let bloodPotency: number | undefined = 1;
     let humanity: number | undefined = (7 + selectedPredator.humanityModifier);
-    let rage: number | undefined = undefined;
-    let harano: number | undefined = undefined;
-    let hauglosk: number | undefined = undefined;
-    let renown: Character['renown'] = undefined;
 
     const loresheets: { id: string, level: number }[] = [];
     if (sLevel !== 'fledgling') {
@@ -298,8 +317,7 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
             const d1 = clanDiscNames[0];
             disciplines[d1] = Math.min(5, (disciplines[d1] || 0) + 1);
         }
-        advantages.push({ id: 'resources_bonus', name: fnT('advantages.resources.name'), description: fnT('common.unknown'), cost: 2, type: 'advantage', levels: [2] });
-        flaws.push({ id: 'enemy_bonus', name: fnT('flaws.enemy.name'), description: fnT('common.unknown'), cost: 1, type: 'flaw', levels: [1] });
+        fnGrantAncillaBonus(advantages, flaws, fnT);
     }
 
     return {
@@ -312,10 +330,6 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         generation,
         bloodPotency,
         humanity,
-        rage,
-        harano,
-        hauglosk,
-        renown,
         attributes,
         skills,
         disciplines,

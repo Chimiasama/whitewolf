@@ -617,10 +617,16 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
 
 // --- NOTIFICATION COMPONENT --- //
 const Notification: React.FC<{ message: string; type: 'success' | 'error'; onClose: () => void }> = ({ message: sMessage, type: sType, onClose: fnOnClose }) => {
+    const fnOnCloseRef = useRef(fnOnClose);
+    useEffect(() => { fnOnCloseRef.current = fnOnClose; }, [fnOnClose]);
+
     useEffect(() => {
-        const timer = setTimeout(fnOnClose, 3000);
+        const timer = setTimeout(() => fnOnCloseRef.current(), 3000);
         return () => clearTimeout(timer);
-    }, [fnOnClose]);
+        // Only restart the auto-dismiss countdown when the toast's content actually changes,
+        // not on every parent re-render (which would otherwise recreate fnOnClose and reset the timer).
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [sMessage, sType]);
 
     return (
         <div className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-2xl border flex items-center gap-3 z-50 animate-fadeInUp ${
@@ -664,21 +670,30 @@ const App: React.FC = () => {
     const [bShowModeSelection, fnSetShowModeSelection] = useState(false);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
 
-    const fnNormalizeCharacter = useCallback((oLoaded: Partial<Character>): Character => ({
-        ...oInitialCharacter,
-        ...oLoaded,
-        attributes: { ...oInitialCharacter.attributes, ...(oLoaded.attributes || {}) },
-        skills: { ...oInitialCharacter.skills, ...(oLoaded.skills || {}) },
-        disciplines: oLoaded.disciplines || {},
-        disciplinePowers: oLoaded.disciplinePowers || {},
-        rituals: oLoaded.rituals || [],
-        talismans: oLoaded.talismans || [],
-        advantages: oLoaded.advantages || [],
-        flaws: oLoaded.flaws || [],
-        loresheets: oLoaded.loresheets || [],
-        specialties: oLoaded.specialties || [],
-        renown: { ...oInitialCharacter.renown, ...(oLoaded.renown || {}) }
-    }), []);
+    const fnNormalizeCharacter = useCallback((oLoaded: Partial<Character>): Character => {
+        // Defends against malformed/hand-edited JSON: a field of the wrong shape (e.g. a string
+        // where an object or array is expected) falls back to a safe default instead of being
+        // spread as-is, which would otherwise corrupt state (e.g. characters splitting into keys).
+        const fnIsPlainObject = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
+        const sGameType = oLoaded.gameType === GameType.Vampire || oLoaded.gameType === GameType.Werewolf ? oLoaded.gameType : null;
+
+        return {
+            ...oInitialCharacter,
+            ...oLoaded,
+            gameType: sGameType,
+            attributes: { ...oInitialCharacter.attributes, ...(fnIsPlainObject(oLoaded.attributes) ? oLoaded.attributes : {}) },
+            skills: { ...oInitialCharacter.skills, ...(fnIsPlainObject(oLoaded.skills) ? oLoaded.skills : {}) },
+            disciplines: fnIsPlainObject(oLoaded.disciplines) ? oLoaded.disciplines : {},
+            disciplinePowers: fnIsPlainObject(oLoaded.disciplinePowers) ? oLoaded.disciplinePowers : {},
+            rituals: Array.isArray(oLoaded.rituals) ? oLoaded.rituals : [],
+            talismans: Array.isArray(oLoaded.talismans) ? oLoaded.talismans : [],
+            advantages: Array.isArray(oLoaded.advantages) ? oLoaded.advantages : [],
+            flaws: Array.isArray(oLoaded.flaws) ? oLoaded.flaws : [],
+            loresheets: Array.isArray(oLoaded.loresheets) ? oLoaded.loresheets : [],
+            specialties: Array.isArray(oLoaded.specialties) ? oLoaded.specialties : [],
+            renown: { ...oInitialCharacter.renown, ...(fnIsPlainObject(oLoaded.renown) ? oLoaded.renown : {}) }
+        };
+    }, []);
     const aAdvantagesAndFlaws = useMemo(() => fnGetAdvantagesAndFlaws(fnT, oCharacter.gameType), [fnT, oCharacter.gameType]);
     const [sSelectedSkill, setSelectedSkill] = useState<string>('');
     const [sSpecialtyName, setSpecialtyName] = useState<string>('');
@@ -692,13 +707,15 @@ const App: React.FC = () => {
             { id: 'game', label: fnT('steps.gameSelectionStep') },
             { id: 'concept', label: fnT('steps.concept') }
         ];
-        if (oCharacter.gameType === GameType.Vampire) {
-            base.push({ id: 'clan', label: fnT('steps.clan') });
-        } else {
+        if (oCharacter.gameType === GameType.Werewolf) {
             base.push(
                 { id: 'tribe', label: fnT('steps.tribe') },
                 { id: 'auspice', label: fnT('steps.auspice') }
             );
+        } else {
+            // Vampire, or no game selected yet: fall back to the Vampire-shaped step
+            // (kept consistent with CharacterSheet's own gameType-null fallback).
+            base.push({ id: 'clan', label: fnT('steps.clan') });
         }
         base.push(
             { id: 'attributes', label: fnT('steps.attributes') },
@@ -708,6 +725,44 @@ const App: React.FC = () => {
         );
         return base;
     }, [fnT, oCharacter.gameType]);
+
+    const fnIsVampireDisciplinesValid = useCallback((oChar: Character) => {
+        const oPredatorType = aPredatorTypes.find(pt => pt.id === oChar.predatorType);
+        const oDiscs = { ...oChar.disciplines };
+
+        // Subtract predator bonus
+        if (oPredatorType?.disciplineAdd) {
+            const d = oPredatorType.disciplineAdd.discipline;
+            if (oDiscs[d]) oDiscs[d] -= oPredatorType.disciplineAdd.dots;
+            if (oDiscs[d] === 0) delete oDiscs[d];
+        }
+
+        const aRemaining = Object.entries(oDiscs).filter(([_, v]) => (v as number) > 0);
+        if (aRemaining.length === 1) {
+            // Must have spent 2 and 1 in same discipline? (not standard but possible if 1+2=3)
+            const [name, val] = aRemaining[0];
+            if ((val as number) !== 3) return false;
+            // Check if clan discipline
+            const oClan = oClanDetails[oChar.clan as Clan];
+            if (oChar.clan !== Clan.Caitiff && !oClan?.disciplines.includes(name)) return false;
+        } else if (aRemaining.length === 2) {
+            const sorted = aRemaining.map(([_, v]) => v as number).sort((a, b) => b - a);
+            if (sorted[0] !== 2 || sorted[1] !== 1) return false;
+
+            // The 2-dot one must be Clan
+            const oClan = oClanDetails[oChar.clan as Clan];
+            const sTwoDotDisc = aRemaining.find(([_, v]) => v === 2)?.[0];
+            if (oChar.clan !== Clan.Caitiff && sTwoDotDisc && !oClan?.disciplines.includes(sTwoDotDisc)) return false;
+        } else {
+            return false;
+        }
+        return true;
+    }, [aPredatorTypes, oClanDetails]);
+
+    const fnIsWerewolfGiftsValid = useCallback((oChar: Character) => {
+        const aGiftEntries = Object.entries(oChar.disciplines).filter(([_, v]) => (v as number) > 0);
+        return aGiftEntries.length === 3 && aGiftEntries.every(([_, v]) => v === 1);
+    }, []);
 
     const bIsStepValid = useMemo(() => {
         const sStepId = aSteps[nStep - 1]?.id;
@@ -747,47 +802,16 @@ const App: React.FC = () => {
 
                 if (bIsVampire) {
                     if (!oCharacter.predatorType) return false;
-
-                    // Disciplines check
-                    const oPredatorType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
-                    const oDiscs = { ...oCharacter.disciplines };
-
-                    // Subtract predator bonus
-                    if (oPredatorType?.disciplineAdd) {
-                        const d = oPredatorType.disciplineAdd.discipline;
-                        if (oDiscs[d]) oDiscs[d] -= oPredatorType.disciplineAdd.dots;
-                        if (oDiscs[d] === 0) delete oDiscs[d];
-                    }
-
-                    const aRemaining = Object.entries(oDiscs).filter(([_, v]) => (v as number) > 0);
-                    if (aRemaining.length === 1) {
-                         // Must have spent 2 and 1 in same discipline? (not standard but possible if 1+2=3)
-                         const [name, val] = aRemaining[0];
-                         if ((val as number) !== 3) return false;
-                         // Check if clan discipline
-                         const oClan = oClanDetails[oCharacter.clan as Clan];
-                         if (oCharacter.clan !== Clan.Caitiff && !oClan?.disciplines.includes(name)) return false;
-                    } else if (aRemaining.length === 2) {
-                        const sorted = aRemaining.map(([_, v]) => v as number).sort((a, b) => b - a);
-                        if (sorted[0] !== 2 || sorted[1] !== 1) return false;
-
-                        // The 2-dot one must be Clan
-                        const oClan = oClanDetails[oCharacter.clan as Clan];
-                        const sTwoDotDisc = aRemaining.find(([_, v]) => v === 2)?.[0];
-                        if (oCharacter.clan !== Clan.Caitiff && sTwoDotDisc && !oClan?.disciplines.includes(sTwoDotDisc)) return false;
-                    } else {
-                        return false;
-                    }
+                    if (!fnIsVampireDisciplinesValid(oCharacter)) return false;
                 } else {
-                    // Werewolf Gifts
-                    const nGiftDots = (Object.values(oCharacter.disciplines) as number[]).reduce((acc, val) => acc + val, 0);
-                    if (nGiftDots !== 3) return false;
+                    // Werewolf Gifts: exactly 3 different Gifts, 1 dot each
+                    if (!fnIsWerewolfGiftsValid(oCharacter)) return false;
                 }
                 return true;
             default:
                 return true;
         }
-    }, [oCharacter, nStep, aSteps, aPredatorTypes, oClanDetails]);
+    }, [oCharacter, nStep, aSteps, aPredatorTypes, oClanDetails, fnIsVampireDisciplinesValid, fnIsWerewolfGiftsValid]);
 
     const aValidationIssues = useMemo(() => {
         const sStepId = aSteps[nStep - 1]?.id;
@@ -838,17 +862,22 @@ const App: React.FC = () => {
                 if (oCharacter.specialties.length === 0) aIssues.push(fnT('validation.specialty'));
                 if (oCharacter.gameType === GameType.Vampire && !oCharacter.predatorType) aIssues.push(fnT('validation.predator'));
                 if (oCharacter.gameType === GameType.Vampire) {
-                    if (!bIsStepValid) aIssues.push(fnT('validation.disciplines'));
+                    if (oCharacter.predatorType && !fnIsVampireDisciplinesValid(oCharacter)) aIssues.push(fnT('validation.disciplines'));
                 } else {
-                    const nGiftDots = (Object.values(oCharacter.disciplines) as number[]).reduce((acc, val) => acc + val, 0);
-                    if (nGiftDots !== 3) aIssues.push(fnT('validation.gifts', { current: nGiftDots, expected: 3 }));
+                    const aGiftEntries = Object.entries(oCharacter.disciplines).filter(([_, v]) => (v as number) > 0);
+                    const nGiftDots = aGiftEntries.reduce((acc, [_, v]) => acc + (v as number), 0);
+                    if (nGiftDots !== 3) {
+                        aIssues.push(fnT('validation.gifts', { current: nGiftDots, expected: 3 }));
+                    } else if (!fnIsWerewolfGiftsValid(oCharacter)) {
+                        aIssues.push(fnT('validation.giftsShape'));
+                    }
                 }
                 break;
             }
         }
 
         return Array.from(new Set(aIssues));
-    }, [aSteps, nStep, oCharacter, fnT, bIsStepValid]);
+    }, [aSteps, nStep, oCharacter, fnT, fnIsVampireDisciplinesValid, fnIsWerewolfGiftsValid]);
 
     useEffect(() => {
         if (!oCharacter.name) {
@@ -1134,11 +1163,26 @@ const App: React.FC = () => {
             const sBase64 = await fnProcessImage(file);
             fnUpdateCharacter('portraitUrl', sBase64);
         } catch (err: any) {
-            fnShowNotification(err.message, 'error');
+            const sCode = err?.message as string | undefined;
+            const sKey = sCode && ['invalidFileType', 'fileTooLarge', 'canvasError', 'loadError', 'readError'].includes(sCode)
+                ? `errors.image.${sCode}`
+                : 'errors.image.generic';
+            fnShowNotification(fnT(sKey), 'error');
         }
     };
 
     const fnHandleGameSelect = (game: GameType) => {
+        // Already on this game type with creation progress underway (e.g. user navigated back to the
+        // game-selection step): re-picking the same game must not silently wipe the character.
+        const bHasProgress = view === 'creator' && !!oCharacter.name;
+        if (bHasProgress) {
+            if (game === oCharacter.gameType) {
+                fnSetStep(2);
+                return;
+            }
+            if (!window.confirm(fnT('common.resetWarning'))) return;
+        }
+
         // Full reset when switching game types
         const oIdentity = fnGenerateIdentity(sLocale, game);
         fnSetCharacter({
@@ -1149,7 +1193,7 @@ const App: React.FC = () => {
             mentor: (oIdentity as any).mentor,
             concept: oIdentity.concept
         });
-        
+
         if (view === 'home') {
             fnSetShowModeSelection(true);
         } else {
@@ -1179,7 +1223,7 @@ const App: React.FC = () => {
                         <p className="text-gray-400 mb-6 italic">{fnT('concept.subtitle')}</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                             <Input id="char-name" label={fnT('concept.name')} value={oCharacter.name} onChange={e => fnUpdateCharacter('name', e.target.value)} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
-                            <Input id="char-mentor" label={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sire')} value={oCharacter.gameType === GameType.Werewolf ? (oCharacter.mentor || '') : oCharacter.sire} onChange={e => fnUpdateCharacter(oCharacter.gameType === GameType.Werewolf ? 'mentor' : 'sire', e.target.value)} placeholder={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                            <Input id="char-mentor" label={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sire')} value={oCharacter.gameType === GameType.Werewolf ? (oCharacter.mentor || '') : oCharacter.sire} onChange={e => fnUpdateCharacter(oCharacter.gameType === GameType.Werewolf ? 'mentor' : 'sire', e.target.value)} placeholder={oCharacter.gameType === GameType.Werewolf ? fnT('concept.mentorPlaceholder') : fnT('concept.sirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             <div className="md:col-span-2">
                                 <Input id="char-concept" label={fnT('concept.concept')} value={oCharacter.concept} onChange={e => fnUpdateCharacter('concept', e.target.value)} placeholder={fnT('concept.conceptPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             </div>
@@ -1846,7 +1890,16 @@ const App: React.FC = () => {
                                     {aAdvantagesAndFlaws.filter(a => a.type === 'advantage').map((adv, idx) => (
                                         <div key={`${adv.name}-${idx}`} className="flex justify-between items-center p-2 bg-gray-800 rounded border border-gray-700 hover:border-gray-500 group transition-colors">
                                             <span className="text-sm">{adv.name} ({adv.cost})</span>
-                                            <Button variant="secondary" className="px-3 py-1 text-xs font-bold" onClick={() => fnUpdateCharacter('advantages', [...oCharacter.advantages, adv])}>{fnT('buttons.add')}</Button>
+                                            <Button
+                                                variant="secondary"
+                                                className="px-3 py-1 text-xs font-bold"
+                                                disabled={oCharacter.advantages.some(a => a.id === adv.id)}
+                                                onClick={() => {
+                                                    if (!oCharacter.advantages.some(a => a.id === adv.id)) {
+                                                        fnUpdateCharacter('advantages', [...oCharacter.advantages, adv]);
+                                                    }
+                                                }}
+                                            >{fnT('buttons.add')}</Button>
                                         </div>
                                     ))}
                                 </div>
@@ -1868,7 +1921,16 @@ const App: React.FC = () => {
                                     {aAdvantagesAndFlaws.filter(a => a.type === 'flaw').map((flaw, idx) => (
                                         <div key={`${flaw.name}-${idx}`} className="flex justify-between items-center p-2 bg-gray-800 rounded border border-gray-700 hover:border-gray-500 group transition-colors">
                                             <span className="text-sm">{flaw.name} ({flaw.cost})</span>
-                                            <Button variant="secondary" className="px-3 py-1 text-xs font-bold" onClick={() => fnUpdateCharacter('flaws', [...oCharacter.flaws, flaw])}>{fnT('buttons.add')}</Button>
+                                            <Button
+                                                variant="secondary"
+                                                className="px-3 py-1 text-xs font-bold"
+                                                disabled={oCharacter.flaws.some(f => f.id === flaw.id)}
+                                                onClick={() => {
+                                                    if (!oCharacter.flaws.some(f => f.id === flaw.id)) {
+                                                        fnUpdateCharacter('flaws', [...oCharacter.flaws, flaw]);
+                                                    }
+                                                }}
+                                            >{fnT('buttons.add')}</Button>
                                         </div>
                                     ))}
                                 </div>
@@ -2272,7 +2334,7 @@ const App: React.FC = () => {
                     <Button onClick={() => fnSetStep(prev => Math.max(1, prev - 1))} disabled={nStep === 1} variant="secondary">{fnT('buttons.back')}</Button>
                     {nStep < aSteps.length ? (
                         <div className="flex flex-wrap justify-end gap-2 sm:gap-4">
-                            <Button variant="secondary" onClick={() => fnSetStep(aSteps.length)}>{fnT('buttons.jumpToSheet')}</Button>
+                            <Button variant="secondary" disabled={!oCharacter.gameType} onClick={() => fnSetStep(aSteps.length)}>{fnT('buttons.jumpToSheet')}</Button>
                             <Button
                                 onClick={() => fnSetStep(prev => Math.min(aSteps.length, prev + 1))}
                                 disabled={!bIsStepValid}
