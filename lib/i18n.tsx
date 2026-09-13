@@ -431,27 +431,7 @@ const oEn = {
     "advantages": "Advantages",
     "flaws": "Flaws",
     "specialties": "Specialties",
-    "touchstones": "Touchstones & Convictions",
-    "gemini": {
-      "title": "Gemini AI Assistant",
-      "subtitle": "Use AI to flesh out your character's story and motivations.",
-      "generateBackstory": "Generate Backstory",
-      "suggestPlotHooks": "Suggest Plot Hooks",
-      "describePortrait": "Describe Portrait",
-      "backstoryTitle": "Generated Backstory",
-      "plotHookTitle": "Generated Plot Hooks",
-      "portraitTitle": "Generated Portrait Description"
-    }
-  },
-  "gemini": {
-    "loading": "Generating... The darkness is contemplating...",
-    "errorGeneric": "An error occurred during generation.",
-    "errorBackstory": "Failed to generate backstory.",
-    "errorPlotHook": "Failed to generate plot hooks.",
-    "errorPortrait": "Failed to generate portrait description.",
-    "backstoryPrompt": "Write a dark backstory (3-4 paragraphs).",
-    "plotHookPrompt": "Generate three distinct plot hooks.",
-    "portraitPrompt": "Provide a vivid description of the appearance."
+    "touchstones": "Touchstones & Convictions"
   },
   "compendium": {
     "level": "Level",
@@ -3235,27 +3215,7 @@ const oPt = {
     "advantages": "Vantagens",
     "flaws": "Defeitos",
     "specialties": "Especialidades",
-    "touchstones": "Pedras de Toque",
-    "gemini": {
-      "title": "Assistente Gemini",
-      "subtitle": "Desenvolva sua história com IA.",
-      "generateBackstory": "Gerar História",
-      "suggestPlotHooks": "Sugerir Ganchos",
-      "describePortrait": "Descrever Retrato",
-      "backstoryTitle": "História Gerada",
-      "plotHookTitle": "Ganchos Gerados",
-      "portraitTitle": "Retrato Gerado"
-    }
-  },
-  "gemini": {
-    "loading": "Gerando...",
-    "errorGeneric": "Erro na geração.",
-    "errorBackstory": "Falha ao gerar a história.",
-    "errorPlotHook": "Falha ao gerar ganchos de trama.",
-    "errorPortrait": "Falha ao gerar descrição do retrato.",
-    "backstoryPrompt": "Escreva uma história.",
-    "plotHookPrompt": "Gere três ganchos.",
-    "portraitPrompt": "Descreva a aparência."
+    "touchstones": "Pedras de Toque"
   },
   "compendium": {
     "level": "Nível",

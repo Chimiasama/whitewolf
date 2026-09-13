@@ -4,8 +4,7 @@ import type { Character, DisciplineDetail, AdvantageFlaw, Specialty } from '../t
 import { Attribute, Skill, GameType } from '../types';
 import { Card } from './ui/Card';
 import { Button } from './ui/Button';
-import { fnGenerateBackstory, fnGeneratePlotHook, fnGeneratePortraitDescription } from '../services/geminiService';
-import { fnGetClanDetails, fnGetDisciplineDetails, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnTranslateAdvantageFlaw } from '../constants';
+import { fnGetClanDetails, fnGetDisciplineDetails, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetPredatorTypes, fnTranslateAdvantageFlaw } from '../constants';
 import { useI18n } from '../lib/i18n';
 import { InfoIcon } from './InfoIcon';
 import { InfoModal } from './InfoModal';
@@ -35,8 +34,6 @@ const SaveIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) =
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
     </svg>
 );
-
-type GenerationType = 'backstory' | 'plotHook' | 'portrait';
 
 const aPhysicalAttrs = [Attribute.Strength, Attribute.Dexterity, Attribute.Stamina];
 const aSocialAttrs = [Attribute.Charisma, Attribute.Manipulation, Attribute.Composure];
@@ -215,13 +212,6 @@ const AdvantageFlawList: React.FC<{ title: string, items: AdvantageFlaw[], color
     );
 }
 
-const GeminiResult: React.FC<{title: string, content: string, colorClass?: string, isWerewolf?: boolean}> = ({title: sTitle, content: sContent, colorClass = "text-red-400", isWerewolf = false}) => (
-    <Card className="mt-6 text-left" variant={isWerewolf ? 'werewolf' : 'vampire'}>
-        <h3 className={`text-xl font-bold mb-3 ${colorClass}`}>{sTitle}</h3>
-        <p className="text-gray-300 whitespace-pre-wrap">{sContent}</p>
-    </Card>
-);
-
 const VitalsPool: React.FC<{ 
     label: string, 
     value: number, 
@@ -287,7 +277,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     onBack,
     onSave
 }) => {
-    const { t: fnT, locale: sLocale } = useI18n();
+    const { t: fnT } = useI18n();
 
     // Performance Optimization: Memoize data objects to prevent expensive translation lookups and object reconstructions on every render.
     // This is particularly important in the CharacterSheet where many small state updates (like hunger/health/willpower) happen.
@@ -296,50 +286,19 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     const oTribeDetails = useMemo(() => fnGetTribeDetails(fnT), [fnT]);
     const oAuspiceDetails = useMemo(() => fnGetAuspiceDetails(fnT), [fnT]);
     const aLoresheetsDef = useMemo(() => fnGetLoresheets(fnT), [fnT]);
+    const aPredatorTypes = useMemo(() => fnGetPredatorTypes(fnT), [fnT]);
 
-    const [sGeneratedContent, fnSetGeneratedContent] = useState<string | null>(null);
-    const [sGenerationTitle, fnSetGenerationTitle] = useState<string>('');
-    const [bIsLoading, fnSetIsLoading] = useState(false);
     const [oSelectedDiscipline, fnSetSelectedDiscipline] = useState<DisciplineDetail | null>(null);
 
     const bIsWerewolf = oCharacter.gameType === GameType.Werewolf;
     const sThemeColorClass = bIsWerewolf ? 'text-green-500' : 'text-red-500';
     const sThemeBgClass = bIsWerewolf ? 'bg-green-600' : 'bg-red-500';
     const sThemeAccentClass = bIsWerewolf ? 'text-green-400' : 'text-red-400';
-    
-    const fnHandleGenerate = async (sType: GenerationType) => {
-        fnSetIsLoading(true);
-        fnSetGeneratedContent(null);
-        let sContent = '';
-        let sTitle = '';
-        try {
-            switch (sType) {
-                case 'backstory':
-                    sTitle = fnT('characterSheet.gemini.backstoryTitle');
-                    sContent = await fnGenerateBackstory(oCharacter, fnT, sLocale);
-                    break;
-                case 'plotHook':
-                    sTitle = fnT('characterSheet.gemini.plotHookTitle');
-                    sContent = await fnGeneratePlotHook(oCharacter, fnT, sLocale);
-                    break;
-                case 'portrait':
-                    sTitle = fnT('characterSheet.gemini.portraitTitle');
-                    sContent = await fnGeneratePortraitDescription(oCharacter, fnT, sLocale);
-                    break;
-            }
-        } catch (e) {
-            sContent = fnT('gemini.errorGeneric');
-        } finally {
-            fnSetGeneratedContent(sContent);
-            fnSetGenerationTitle(sTitle);
-            fnSetIsLoading(false);
-        }
-    };
-    
-    
+
     const oClanDetail = useMemo(() => oCharacter.clan ? oClanDetails[oCharacter.clan] : null, [oCharacter.clan, oClanDetails]);
     const oTribeDetail = useMemo(() => oCharacter.tribe ? oTribeDetails[oCharacter.tribe] : null, [oCharacter.tribe, oTribeDetails]);
     const oAuspiceDetail = useMemo(() => oCharacter.auspice ? oAuspiceDetails[oCharacter.auspice] : null, [oCharacter.auspice, oAuspiceDetails]);
+    const oPredatorTypeDetail = useMemo(() => oCharacter.predatorType ? aPredatorTypes.find(pt => pt.id === oCharacter.predatorType) || null : null, [oCharacter.predatorType, aPredatorTypes]);
 
     const aResolvedLoresheets = useMemo(() => (oCharacter.loresheets || []).map(ls => {
         const oDef = aLoresheetsDef.find(d => d.id === ls.id);
@@ -405,7 +364,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                       <>
                         <div className="md:col-span-3"><strong className={sThemeAccentClass}>{fnT('characterSheet.clanBane')}:</strong> {oClanDetail?.bane || fnT('common.noClanSelected')}</div>
                         <div className="md:col-span-3"><strong className={sThemeAccentClass}>{fnT('characterSheet.clanCompulsion')}:</strong> {oClanDetail?.compulsion || fnT('common.noClanSelected')}</div>
-                        <div><strong className={sThemeAccentClass}>{fnT('characterSheet.predatorType')}:</strong> {oCharacter.predatorType ? (fnT(`predatorTypes.${oCharacter.predatorType}.name`) || oCharacter.predatorType) : fnT('common.none')}</div>
+                        <div><strong className={sThemeAccentClass}>{fnT('characterSheet.predatorType')}:</strong> {oPredatorTypeDetail ? oPredatorTypeDetail.name : fnT('common.none')}</div>
                         <div><strong className={sThemeAccentClass}>{fnT('characterSheet.generation')}:</strong> {oCharacter.generation}</div>
                         <div><strong className={sThemeAccentClass}>{fnT('characterSheet.bloodPotency')}:</strong> {oCharacter.bloodPotency}</div>
                       </>
@@ -549,17 +508,17 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                         labelColorClass="text-green-400"
                     />
                 )}
-                <VitalsPool 
+                <VitalsPool
                     label={fnT('characterSheet.willpower')}
-                    value={oCharacter.willpower ?? nWillpower}
+                    value={Math.min(oCharacter.willpower ?? nWillpower, nWillpower)}
                     max={nWillpower}
                     colorClass="bg-blue-600"
                     onUpdate={fnOnUpdateWillpower}
                     labelColorClass="text-blue-400"
                 />
-                <VitalsPool 
+                <VitalsPool
                     label={fnT('characterSheet.health')}
-                    value={oCharacter.health ?? nHealth}
+                    value={Math.min(oCharacter.health ?? nHealth, nHealth)}
                     max={nHealth}
                     colorClass="bg-red-800"
                     onUpdate={fnOnUpdateHealth}
@@ -697,17 +656,6 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
       <Card className="text-left" variant={bIsWerewolf ? 'werewolf' : 'vampire'}>
         <h3 className={`${sThemeColorClass} font-bold text-lg mb-2 border-b border-gray-700 pb-1`}>{fnT('characterSheet.touchstones')}</h3>
         <p className="text-gray-300 whitespace-pre-wrap">{oCharacter.touchstones || fnT('common.noneListed')}</p>
-      </Card>
-       <Card className="text-left" variant={bIsWerewolf ? 'werewolf' : 'vampire'}>
-        <h2 className={`text-2xl font-bold text-center mb-4 ${sThemeAccentClass}`}>{fnT('characterSheet.gemini.title')}</h2>
-        <p className="text-center text-gray-400 mb-6">{fnT('characterSheet.gemini.subtitle')}</p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <Button onClick={() => fnHandleGenerate('backstory')} loading={bIsLoading}>{fnT('characterSheet.gemini.generateBackstory')}</Button>
-          <Button onClick={() => fnHandleGenerate('plotHook')} variant="secondary" loading={bIsLoading}>{fnT('characterSheet.gemini.suggestPlotHooks')}</Button>
-          <Button onClick={() => fnHandleGenerate('portrait')} variant="secondary" loading={bIsLoading}>{fnT('characterSheet.gemini.describePortrait')}</Button>
-        </div>
-        {bIsLoading && <div className="text-center mt-4">{fnT('gemini.loading')}</div>}
-        {sGeneratedContent && <GeminiResult title={sGenerationTitle} content={sGeneratedContent} colorClass={sThemeAccentClass} isWerewolf={bIsWerewolf} />}
       </Card>
         {oSelectedDiscipline && (
             <InfoModal title={oSelectedDiscipline.name} onClose={() => fnSetSelectedDiscipline(null)}>

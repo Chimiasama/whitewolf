@@ -13,7 +13,6 @@ Aplicativo React/Vite para criar personagens de RPG de **Vampiro: A Máscara 5ª
 - Upload de retrato do personagem.
 - Salvamento local, carregamento, importação e exportação JSON.
 - Conteúdo bilíngue em inglês e português.
-- Integração opcional com Gemini para história, ganchos de trama e descrição de retrato.
 
 ## Fluxo de criação
 
@@ -48,16 +47,7 @@ O plano completo de melhorias está em [`docs/IMPLEMENTATION_PLAN.md`](docs/IMPL
    ```bash
    npm install
    ```
-2. Configure a chave do Gemini em `.env.local` se quiser usar geração por IA:
-   ```bash
-   GEMINI_API_KEY=sua_chave_aqui
-   ```
-   > **Aviso de segurança:** este é um app 100% client-side (sem backend), então a chave configurada
-   > aqui é embutida no bundle JavaScript publicado — tanto na versão web quanto no APK Android via
-   > Capacitor. Qualquer pessoa pode extraí-la inspecionando o build. Use uma chave dedicada a este
-   > projeto, com cota/orçamento limitado, e nunca reaproveite uma chave usada em outros sistemas.
-   > Corrigir isso de forma definitiva exigiria um backend/proxy que guarde a chave no servidor.
-3. Rode o app:
+2. Rode o app:
    ```bash
    npm run dev
    ```
