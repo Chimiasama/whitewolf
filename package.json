@@ -8,6 +8,7 @@
     "build": "vite build",
     "lint": "tsc --noEmit",
     "preview": "vite preview",
+    "test": "playwright test",
     "cap:sync": "npm run build && npx cap sync",
     "cap:open": "npx cap open android",
     "cap:run": "npx cap run android"
@@ -16,7 +17,6 @@
     "@capacitor/android": "^8.4.1",
     "@capacitor/cli": "^8.4.1",
     "@capacitor/core": "^8.4.1",
-    "@google/genai": "^1.29.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

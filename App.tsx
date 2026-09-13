@@ -14,6 +14,7 @@ import { StepIndicator } from './components/StepIndicator';
 import { fnGenerateIdentity } from './lib/generators';
 import { fnCreateRandomCharacter } from './lib/randomizer';
 import { fnProcessImage } from './lib/imageUtils';
+import sGothicBackgroundUrl from './src/assets/images/gothic_background_1782838973165.jpg';
 
 // --- ICONS --- //
 const CheckCircle = () => (
@@ -640,7 +641,7 @@ const Notification: React.FC<{ message: string; type: 'success' | 'error'; onClo
 
 // --- GOTHIC BACKGROUND STYLE --- //
 const gothicBackgroundStyle = {
-    backgroundImage: `linear-gradient(rgba(10, 15, 25, 0.88), rgba(10, 15, 25, 0.96)), url('/src/assets/images/gothic_background_1782838973165.jpg')`,
+    backgroundImage: `linear-gradient(rgba(10, 15, 25, 0.88), rgba(10, 15, 25, 0.96)), url('${sGothicBackgroundUrl}')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -2082,7 +2083,10 @@ const App: React.FC = () => {
                                         label={fnT('characterSheet.generation')}
                                         type="number"
                                         value={oCharacter.generation}
-                                        onChange={e => fnUpdateCharacter('generation', parseInt(e.target.value))}
+                                        onChange={e => {
+                                            const nVal = parseInt(e.target.value, 10);
+                                            if (!isNaN(nVal)) fnUpdateCharacter('generation', nVal);
+                                        }}
                                         min={4}
                                         max={16}
                                     />
@@ -2090,7 +2094,10 @@ const App: React.FC = () => {
                                         label={fnT('characterSheet.bloodPotency')}
                                         type="number"
                                         value={oCharacter.bloodPotency}
-                                        onChange={e => fnUpdateCharacter('bloodPotency', parseInt(e.target.value))}
+                                        onChange={e => {
+                                            const nVal = parseInt(e.target.value, 10);
+                                            if (!isNaN(nVal)) fnUpdateCharacter('bloodPotency', nVal);
+                                        }}
                                         min={0}
                                         max={10}
                                     />
