@@ -1315,7 +1315,7 @@ const App: React.FC = () => {
                     <Button onClick={() => fnSetStep(prev => Math.max(1, prev - 1))} disabled={nStep === 1} variant="secondary">{fnT('buttons.back')}</Button>
                     {nStep < aSteps.length ? (
                         <div className="app-footer-actions flex flex-wrap justify-end gap-2 sm:gap-4">
-                            <Button variant="secondary" disabled={!oCharacter.gameType} onClick={() => fnSetStep(aSteps.length)}>Revisar pendências</Button>
+                            <Button aria-label="Revisar pendências" variant="secondary" disabled={!oCharacter.gameType} onClick={() => fnSetStep(aSteps.length)}><span className="sm:hidden">Revisar</span><span className="hidden sm:inline">Revisar pendências</span></Button>
                             <Button
                                 onClick={() => fnSetStep(prev => Math.min(aSteps.length, prev + 1))}
 

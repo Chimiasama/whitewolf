@@ -16,4 +16,5 @@ test('recursos começa pelas escolhas; ajustes ficam em aba própria',async({pag
  await expect(page.getByRole('heading',{name:'Idade e criação avançada',exact:true})).toHaveCount(0);
  await page.getByRole('tab',{name:'Ajustes e dano',exact:true}).click();await expect(page.getByRole('heading',{name:'Idade e criação avançada',exact:true})).toBeVisible();
  const scroll=await tabs.evaluate(el=>({client:el.clientWidth,scroll:el.scrollWidth,height:el.getBoundingClientRect().height}));expect(scroll.height).toBeLessThan(80);expect(scroll.scroll).toBeGreaterThan(scroll.client);
+ const active=await tabs.locator('[aria-selected="true"]').boundingBox(),strip=await tabs.boundingBox();expect(active.x).toBeGreaterThanOrEqual(strip.x-1);expect(active.x+active.width).toBeLessThanOrEqual(strip.x+strip.width+1);
 });

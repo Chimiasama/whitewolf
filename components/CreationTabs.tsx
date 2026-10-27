@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React, { useId, useEffect, useRef } from "react";
 export function CreationTabs({
   items,
   active,
@@ -11,10 +11,17 @@ export function CreationTabs({
   children: (id: string) => React.ReactNode;
 }) {
   const uid = useId();
+  const stripRef=useRef<HTMLDivElement>(null);
   const selected = items.some((i) => i.id === active) ? active : items[0]?.id;
+  useEffect(()=>{
+    const strip=stripRef.current;
+    const reveal=()=>{const button=document.getElementById(`${uid}-${selected}`);if(!strip||!button)return;const b=button.getBoundingClientRect(),s=strip.getBoundingClientRect();if(b.right>s.right)strip.scrollLeft+=b.right-s.right+2;else if(b.left<s.left)strip.scrollLeft-=s.left-b.left+2;};
+    reveal();if(!strip)return;const observer=new ResizeObserver(reveal);observer.observe(strip);return()=>observer.disconnect();
+  },[selected,uid]);
   return (
     <section className="creation-tabs space-y-5">
       <div
+        ref={stripRef}
         role="tablist"
         aria-label="Seções da etapa"
         className="flex flex-wrap gap-2 border-b border-gray-700 pb-3"
