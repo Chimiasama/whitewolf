@@ -55,6 +55,9 @@ test('segurar atributo abre consulta sem escolher pontos; movimento cancela o ge
  await page.keyboard.press('Escape');
  const b=await target.boundingBox();await page.mouse.move(b.x+10,b.y+10);await page.mouse.down();await page.mouse.move(b.x+30,b.y+30);await page.waitForTimeout(650);await page.mouse.move(2,2);await page.mouse.up();await expect(page.getByRole('dialog',{name:'Força',exact:true})).toHaveCount(0);
  expect((await draft(page)).attributes).toEqual(before);
+ await target.dispatchEvent('contextmenu');await target.locator('button').dispatchEvent('click');
+ await expect(page.getByRole('dialog',{name:'Força',exact:true})).toContainText('potência muscular');
+ await expect(page.getByRole('dialog')).toHaveCount(1);expect((await draft(page)).attributes).toEqual(before);
 });
 test('todos os predadores têm consulta de caçada com fontes e distinção comunitária',async({page})=>{
  await page.goto('/');const result=await page.evaluate(async()=>{const {fnGetPredatorTypes}=await import('/constants.ts');const {HUNTING_POOLS}=await import('/data/huntingHelp.ts');const p=fnGetPredatorTypes(k=>k);return {missing:p.filter(p=>!(p.id in HUNTING_POOLS)).map(p=>p.id),farmer:HUNTING_POOLS.farmer,bloodleech:HUNTING_POOLS.bloodleech};});expect(result.missing).toEqual([]);expect(result.farmer).toEqual(['Autocontrole + Empatia com Animais']);expect(result.bloodleech).toEqual([]);
