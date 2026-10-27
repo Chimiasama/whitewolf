@@ -1,3 +1,4 @@
+import {THIN_MERITS,THIN_FLAWS,thinBloodIssues} from '../data/thinBlood';
 import { Character, GameType, Clan, Tribe, Auspice, Attribute, Skill } from '../types';
 import { oInitialCharacter, oSkillPaths, aMandatorySpecialtySkills, fnGetClanDetails, fnGetDisciplineDetails, fnGetPredatorTypes } from '../constants';
 import { W5_GIFTS, W5_TRIBES } from '../data/w5';
@@ -9,6 +10,8 @@ const integer = (v:unknown,min:number,max:number) => typeof v==='number' && Numb
 export function parseCharacter(input:unknown):Character {
  if(!object(input)) return fail('documento');
  if(input.schemaVersion!==undefined && ![1,SCHEMA_VERSION].includes(input.schemaVersion)) return fail('versão não suportada');
+ for(const [key,catalog] of [['thinMerits',THIN_MERITS],['thinFlaws',THIN_FLAWS]] as const)if(input[key]!==undefined&&(!Array.isArray(input[key])||input[key].length>3||new Set(input[key]).size!==input[key].length||input[key].some(id=>typeof id!=='string'||!(id in catalog))))return fail(key);
+ if(input.thinCurse!==undefined&&!Object.values(Clan).includes(input.thinCurse))return fail('Maldição herdada');
  const raw:Record<string,any>=JSON.parse(JSON.stringify(input));
  if(!Object.values(GameType).includes(raw.gameType)) return fail('jogo');
  if(raw.profile!==undefined && !['player','npc'].includes(raw.profile)) return fail('perfil');
@@ -65,7 +68,7 @@ export function finishingIssues(c:Character):string[]{
   for(const origin of ['native','auspice','tribe']){const selected=(c.gifts||[]).filter(g=>g.origin===origin);if(selected.length!==1||!W5_GIFTS.some(g=>g.id===selected[0]?.id&&g.origin===origin&&g.totalRenown<=3&&(origin==='native'||g.owner===(origin==='tribe'?c.tribe:c.auspice))))issues.push(`Escolha um Dom ${origin==='native'?'nativo':origin==='tribe'?'da tribo':'do augúrio'} elegível.`);}
   if(c.rituals.length!==1)issues.push('Escolha um Rito inicial (W5, p. 180).');
  } else {
-  if(c.clan===Clan.ThinBlood) issues.push('Sangue-Fraco: criação exige revisão específica de Méritos, Defeitos e Alquimia; validação automática ainda indisponível.');
+  if(c.clan===Clan.ThinBlood) issues.push(...thinBloodIssues(c));
   else {
    const remaining={...c.disciplines};
    if(predator?.disciplineAdd){const d=predator.disciplineAdd;remaining[d.discipline]=(remaining[d.discipline]||0)-d.dots;}

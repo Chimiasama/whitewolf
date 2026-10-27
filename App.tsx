@@ -1,3 +1,4 @@
+import { ThinBloodCreation } from './components/ThinBloodCreation';
 import { WerewolfCreation } from './components/WerewolfCreation';
 import { parseCharacter, finishingIssues, validAttributes, playerIssues, SCHEMA_VERSION } from './lib/characterValidation';
 import { W5_TRIBES } from './data/w5';
@@ -1428,6 +1429,7 @@ const App: React.FC = () => {
                         <h2 className={`text-2xl font-cinzel ${sThemeColor} mb-2`}>{fnT('finishingTouches.title')}</h2>
                         
                         {bIsWerewolf ? <WerewolfCreation character={oCharacter} onChange={fnUpdateCharacter}/> : (<>
+                        {oCharacter.clan===Clan.ThinBlood && <ThinBloodCreation character={oCharacter} onChange={fnUpdateCharacter}/>}
                         {/* Disciplines / Gifts Section */}
                         <GothicFrame className="text-left">
                             <h3 className={`text-xl font-bold ${sThemeAccent} mb-2 border-b border-gray-700 pb-2`}>

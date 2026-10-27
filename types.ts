@@ -150,6 +150,9 @@ export interface Loresheet {
 }
 
 export interface Character {
+  thinMerits?: string[];
+  thinFlaws?: string[];
+  thinCurse?: string;
   schemaVersion?: number;
   profile?: "player" | "npc";
   narrative?: { role: string; motivation: string; secret: string; relationship: string; hook: string };

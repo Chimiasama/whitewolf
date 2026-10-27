@@ -84,3 +84,12 @@ test('pacotes de predador conferidos e orçamento adicional de Loresheets',async
  });
  expect(r.osiris).toEqual({humanity:0,adv:3,flaws:2});expect(r.farmer).toBe(1);expect(r.bagger).toContain('iron_gullet_bagger');expect(r.budgetIssues).toEqual([]);expect(r.community).toContain('Comunitário');
 });
+
+ test('Sangue-Fraco: equilíbrio, incompatibilidades e requisito Tremere',async({page})=>{
+ const result=await page.evaluate(async()=>{
+ const {thinBloodIssues}=await import('/data/thinBlood.ts');
+ const base={thinMerits:['lifelike'],thinFlaws:['dead'],generation:14,bloodPotency:0,predatorType:null};
+ return {conflict:thinBloodIssues(base),tremere:thinBloodIssues({...base,thinMerits:['day'],thinFlaws:['curse'],thinCurse:'tremere'}),valid:thinBloodIssues({...base,thinMerits:['catenating'],thinFlaws:['curse'],thinCurse:'tremere'})};
+ });
+ expect(result.conflict.some(x=>x.includes('incompatíveis'))).toBe(true);expect(result.tremere.some(x=>x.includes('Sangue Vinculante'))).toBe(true);expect(result.valid).toEqual([]);
+ });

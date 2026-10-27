@@ -1,3 +1,4 @@
+import {THIN_MERITS,THIN_FLAWS} from '../data/thinBlood';
 import { playerIssues } from '../lib/characterValidation';
 import { W5_GIFTS } from '../data/w5';
 
@@ -327,6 +328,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
       <aside className="rounded border border-gray-600 p-4 text-left bg-gray-950">
        <strong>{oCharacter.profile==='npc'?'NPC temático — sem orçamento de XP':'Personagem de jogador — confira as pendências de criação'}</strong>
        {oCharacter.profile!=='npc' && <ul className="text-amber-200">{playerIssues(oCharacter).map((issue,i)=><li key={i}>{issue}</li>)}</ul>}
+       {oCharacter.clan==='thinblood' && <section><h3>Sangue-Fraco</h3><p>Méritos: {(oCharacter.thinMerits||[]).map(id=>THIN_MERITS[id]).join(', ')||'—'}</p><p>Defeitos: {(oCharacter.thinFlaws||[]).map(id=>THIN_FLAWS[id]).join(', ')||'—'}</p><p>Maldição herdada: {oCharacter.thinCurse||'—'}</p></section>}
        {oCharacter.narrative && <dl>{Object.entries(oCharacter.narrative).map(([key,value])=><div key={key}><dt className="font-bold text-amber-200">{{role:'Papel',motivation:'Motivação',secret:'Segredo',relationship:'Vínculo',hook:'Gancho'}[key]}</dt><dd>{value}</dd></div>)}</dl>}
        {bIsWerewolf && <section className="mt-3"><h3>Dons de W5</h3><ul>{(oCharacter.gifts||[]).map(g=>{const d=W5_GIFTS.find(x=>x.id===g.id);return <li key={g.id}>{d?.name} ({d?.english}) — {d?.reference}</li>})}</ul><h3>Ritos</h3><ul>{oCharacter.rituals.map(r=><li key={r.id}>{r.name} — {r.description}</li>)}</ul></section>}
        <button className="mt-3 px-3 py-2 border rounded" onClick={()=>window.print()}>Imprimir / salvar PDF</button>
