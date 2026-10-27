@@ -1,3 +1,4 @@
+import {useTheme,MoonGlyph} from '../../lib/theme';
 import React from 'react';
 
 interface GothicFrameProps {
@@ -43,6 +44,9 @@ const ThornBorderY = () => (
 );
 
 export const GothicFrame: React.FC<GothicFrameProps> = ({ children: oChildren, className: sClassName = '' }) => {
+  const {game,resolved}=useTheme();
+  if(['minimal','neon','paper','contrast'].includes(resolved))return <div className={`neutral-frame rounded-xl border border-gray-700 p-4 sm:p-6 ${sClassName}`}>{oChildren}</div>;
+  if(game==='Werewolf')return <div className={`nature-frame relative rounded-xl border border-gray-700 p-4 sm:p-6 ${sClassName}`}><MoonGlyph className="mb-3 h-7 w-7 text-emerald-300"/>{oChildren}</div>;
   return (
     <div className={`relative overflow-hidden p-2 sm:p-3 ${sClassName}`}>
         {/* Corners */}
@@ -73,7 +77,7 @@ export const GothicFrame: React.FC<GothicFrameProps> = ({ children: oChildren, c
             <ThornBorderY />
         </div>
 
-      <div className="relative z-0 bg-gray-900/80 rounded-sm border border-transparent">
+      <div className="gothic-surface relative z-0 rounded-sm border border-transparent p-4 sm:p-6">
         {oChildren}
       </div>
     </div>

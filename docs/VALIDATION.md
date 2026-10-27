@@ -36,3 +36,11 @@ Resultado final desta revisão: `npm run lint` e `npm run build` aprovados; `PLA
 ## Predadores e pacotes de Perícias
 
 `npm run lint` e `npm run build` aprovados; suíte Chromium com **19 testes aprovados em 19,9 s**. Inclui os 34 tipos, opções padrão dos dois guias, transições sem acumular benefícios, importação dos pacotes e confirmação/cancelamento de mudança de distribuição de Perícias. Veja [PREDATOR_CATALOG.md](PREDATOR_CATALOG.md). O aviso de chunk acima de 500 kB permanece.
+
+## Temas, narrativa e ficha de sessão
+
+TypeScript e build aprovados; suíte completa com **23 testes aprovados em 27,5 s**. Quatro testes novos exercitam as nove opções de aparência, galeria, persistência e independência do jogo; exportação/importação de Convicções, crônica, sessão zero e XP; saldo insuficiente; Pilares próprios de W5; edição de narrativa de NPC; alternância de ficha compacta/completa e atualização de Fome; seleção de Ritual inicial de Feitiçaria de Sangue e rejeição dos novos campos malformados.
+
+Inspeção de capturas desktop dos estilos Medieval, Neon, Terror e Papel, galeria e Minimalista no celular. Corrigidos fundos de superfícies antigas e indicadores de etapas para seguir os tokens do tema. Essa inspeção não equivale a auditoria WCAG. O build deixa de incluir o fundo JPEG antigo de aproximadamente 625 kB; o chunk principal JavaScript continua acima de 500 kB (aprox. 632 kB / 187 kB gzip).
+
+Funcionalidades e limites em [APPEARANCE_AND_STORY.md](APPEARANCE_AND_STORY.md). Nenhuma nova revisão integral dos livros é declarada nesta entrega.

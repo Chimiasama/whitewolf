@@ -160,6 +160,12 @@ export interface Loresheet {
 }
 
 export interface Character {
+  convictions?: {belief:string;touchstone:string}[];
+  touchstoneLinks?: {name:string;relationship:string}[];
+  chronicle?: {faction?:string;group?:string;territory?:string;haven?:string;caern?:string;patron?:string;publicMask?:string;sireRelationship?:string;debts?:string;resonance?:string;spiritRelations?:string;personalTaboo?:string;haranoTriggers?:string;haugloskTriggers?:string};
+  sessionZero?: {tone?:string;lines?:string;veils?:string;tools?:string};
+  experience?: {id:string;date:string;kind:'earned'|'spent';amount:number;note:string}[];
+
   skillPath?: 'jackOfAllTrades'|'balanced'|'specialist';
   predatorDiscipline?: string;
   predatorChoices?: Record<string,string>;

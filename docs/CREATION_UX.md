@@ -51,3 +51,7 @@ Build e TypeScript; 14 testes de navegador incluindo navegação livre, resoluç
 Os testes de integridade anteriores foram mantidos e adaptados à nova navegação. O teste antigo de Ravnos, cujo nome prometia tradução de nível 5 sem verificá-la, foi substituído por asserções explícitas do fluxo V5 e dos requisitos do catálogo.
 
 A etapa Perícias agora começa pela escolha explícita de pacote. Veja [catálogo e regras de escolha](PREDATOR_CATALOG.md).
+
+## Estilos e ferramentas de sessão
+
+A aparência agora pode ser escolhida: oito estilos visuais e uma opção automática por jogo, disponíveis na entrada e em Mais ações. Galeria, persistência, ficha compacta, narrativa, XP e limites do Ritual inicial V5 estão descritos em [APPEARANCE_AND_STORY.md](APPEARANCE_AND_STORY.md). A preferência não integra o JSON do personagem; os registros de história e experiência integram.

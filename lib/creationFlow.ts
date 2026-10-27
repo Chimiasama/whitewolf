@@ -24,6 +24,8 @@ export function issueDestination(
           ? "attributes"
           : "skills",
     };
+  if (/Convicção|Pilar/i.test(issue)) return {step:5,panel:'ties'};
+  if (/Ritual de Sangue/i.test(issue)) return {step:4,panel:(c.disciplines.bloodsorcery||0)>0?'bloodrituals':'disciplines'};
   if (/Vantagens|Defeitos.*(pontos|adicionais)/i.test(issue))
     return { step: 5, panel: "advantages" };
   if (

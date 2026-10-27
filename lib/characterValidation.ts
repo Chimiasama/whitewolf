@@ -1,3 +1,5 @@
+import {INITIAL_BLOOD_RITUALS} from '../data/bloodRituals';
+import {experienceBalance} from './experience';
 import {characterPredator,availablePredatorDisciplines} from './predatorRules';
 import {THIN_MERITS,THIN_FLAWS,thinBloodIssues} from '../data/thinBlood';
 import { Character, GameType, Clan, Tribe, Auspice, Attribute, Skill } from '../types';
@@ -55,6 +57,15 @@ export function parseCharacter(input:unknown):Character {
  if(result.gameType===GameType.Vampire&&raw.gifts?.length)return fail('Dons de W5 em personagem V5');
  if(raw.gifts!==undefined&&(!Array.isArray(raw.gifts)||raw.gifts.length>100||raw.gifts.some(g=>!object(g)||!W5_GIFTS.some(x=>x.id===g.id&&x.origin===g.origin))))return fail('Dons');
  if(raw.narrative!==undefined&&(!object(raw.narrative)||['role','motivation','secret','relationship','hook'].some(k=>typeof raw.narrative[k]!=='string')))return fail('narrativa');
+ for(const [key,allowed] of [['chronicle',['faction','group','territory','haven','caern','patron','publicMask','sireRelationship','debts','resonance','spiritRelations','personalTaboo','haranoTriggers','haugloskTriggers']],['sessionZero',['tone','lines','veils','tools']]] as const){
+  if(raw[key]!==undefined&&(!object(raw[key])||Object.entries(raw[key]).some(([k,v])=>!(allowed as readonly string[]).includes(k)||typeof v!=='string'||v.length>10000)))return fail(key);
+ }
+ for(const [key,fields,max] of [['convictions',['belief','touchstone'],3],['touchstoneLinks',['name','relationship'],20]] as const){
+  const value=raw[key];if(value!==undefined&&(!Array.isArray(value)||value.length>max||value.some(v=>!object(v)||fields.some(k=>typeof v[k]!=='string'||v[k].length>10000))))return fail(key);
+ }
+ if(raw.experience!==undefined){
+  if(!Array.isArray(raw.experience)||raw.experience.length>2000||raw.experience.some(e=>!object(e)||typeof e.id!=='string'||typeof e.note!=='string'||e.note.length>1000||!['earned','spent'].includes(e.kind)||!integer(e.amount,1,100000)||typeof e.date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(e.date))||new Set(raw.experience.map(e=>e.id)).size!==raw.experience.length||experienceBalance(result)<0)return fail('histórico de XP');
+ }
  return result;
 }
 export const validAttributes=(c:Character)=>Object.values(c.attributes).sort().join() === [1,2,2,2,2,3,3,3,4].join();
@@ -96,6 +107,9 @@ export function finishingIssues(c:Character):string[]{
 export function playerIssues(c:Character):string[]{
  if(c.profile==='npc')return [];
  const issues=finishingIssues(c);
+ if(c.gameType===GameType.Vampire&&c.convictions?.some(v=>!v.belief.trim()||!v.touchstone.trim()))issues.push('Preencha cada Convicção e seu Pilar associado.');
+ if(c.gameType===GameType.Werewolf&&c.touchstoneLinks?.some(v=>!v.name.trim()))issues.push('Preencha o nome dos Pilares adicionados.');
+ if(c.gameType===GameType.Vampire&&c.rituals.some(r=>INITIAL_BLOOD_RITUALS.some(x=>x.id===r.id))&&(c.disciplines.bloodsorcery||0)<1)issues.push('Ritual de Sangue exige Feitiçaria de Sangue 1.');
  if(!c.skillPath)issues.push('Escolha um pacote de Perícias: Generalista, Equilibrado ou Especialista.');
  if(c.skillPath&&Object.values(c.skills).filter(n=>n>0).sort((a,b)=>a-b).join()!==[...oSkillPaths[c.skillPath]].sort((a,b)=>a-b).join())issues.push('Conclua a distribuição do pacote de Perícias escolhido.');
  if(!c.name.trim()||!c.concept.trim())issues.push('Preencha nome e conceito.');

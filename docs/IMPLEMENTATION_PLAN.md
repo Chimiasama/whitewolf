@@ -62,3 +62,9 @@ A proposta de simplificação foi aplicada: entrada por intenção, seis etapas,
 ## Predadores dos dois guias e pacote de Perícias — implementado
 
 Os 34 tipos estão disponíveis por padrão, com escolhas de Disciplinas, benefícios e Antecedentes. A escolha Generalista/Equilibrado/Especialista precede a alocação de Perícias. Isso resolve as pendências anteriores dos três predadores básicos e das alternativas de pacotes; detalhes em [PREDATOR_CATALOG.md](PREDATOR_CATALOG.md). As demais pendências de conteúdo permanecem separadas.
+
+## Temas e ferramentas de crônica — implementado
+
+Galeria com oito estilos e modo automático, independente do jogo; preferência persistida, paletas claras/escuras e modais temáticos. Convicções/Pilares estruturados, anotações de coterie/alcateia e território, sessão zero, edição de narrativa de NPC, histórico manual de XP e ficha compacta cobrem parte dos itens 5–6 da expansão editorial. Seleção de Ritual inicial do básico V5 adicionada. Detalhes em [APPEARANCE_AND_STORY.md](APPEARANCE_AND_STORY.md).
+
+Continuam pendentes: conferir os catálogos completos e traduções, rituais de suplementos e cerimônias, regras avançadas de criação, espécies adicionais de NPC e auditoria completa de acessibilidade. Histórico de XP não automatiza evolução; campos narrativos não aplicam benefícios. Esta atualização substitui a indicação de que vínculos estruturados, edição de NPC, temas e histórico de XP ainda estavam integralmente por fazer.

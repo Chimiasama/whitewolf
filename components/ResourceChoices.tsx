@@ -1,4 +1,6 @@
-import {characterPredator} from '../lib/predatorRules';
+import { CharacterStory } from "./CharacterStory";
+import { ExperienceLedger } from "./ExperienceLedger";
+import { characterPredator } from "../lib/predatorRules";
 import React, { useState } from "react";
 import { Character, GameType, Skill } from "../types";
 import {
@@ -141,54 +143,14 @@ export function ResourceChoices({
             ? [{ id: "loresheets", label: "Loresheets" }]
             : []),
           { id: "ties", label: "Vínculos" },
+          { id: "experience", label: "Experiência" },
         ]}
       >
         {(key) =>
-          key === "ties" ? (
-            <div className="space-y-5">
-              <label className="block">
-                Pilares e vínculos narrativos
-                <textarea
-                  className="block w-full mt-2 bg-gray-900 rounded p-3"
-                  rows={6}
-                  value={c.touchstones}
-                  onChange={(e) => onChange("touchstones", e.target.value)}
-                  placeholder={
-                    c.gameType === GameType.Werewolf
-                      ? "Quem ou o que mantém sua ligação com o mundo?"
-                      : "Pilares, Convicções e relações importantes."
-                  }
-                />
-              </label>
-              {c.gameType === GameType.Vampire && (
-                <details>
-                  <summary>Idade e características avançadas</summary>
-                  <div className="grid grid-cols-2 gap-4 mt-3">
-                    {(["generation", "bloodPotency"] as const).map((k) => (
-                      <label key={k}>
-                        {k === "generation" ? "Geração" : "Potência de Sangue"}
-                        <input
-                          type="number"
-                          min={k === "generation" ? 4 : 0}
-                          max={k === "generation" ? 16 : 10}
-                          value={c[k]}
-                          onChange={(e) => {
-                            const n = Number(e.target.value);
-                            if (
-                              Number.isInteger(n) &&
-                              n >= (k === "generation" ? 4 : 0) &&
-                              n <= (k === "generation" ? 16 : 10)
-                            )
-                              onChange(k, n);
-                          }}
-                          className="block w-full bg-gray-900 p-3"
-                        />
-                      </label>
-                    ))}
-                  </div>
-                </details>
-              )}
-            </div>
+          key === "experience" ? (
+            <ExperienceLedger character={c} onChange={onChange} />
+          ) : key === "ties" ? (
+            <CharacterStory character={c} onChange={onChange} />
           ) : key === "loresheets" ? (
             <CatalogPicker
               label="Loresheets"

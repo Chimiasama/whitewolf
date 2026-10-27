@@ -1,3 +1,5 @@
+import {BloodRitualPicker} from './components/BloodRitualPicker';
+import {useTheme,ThemeControl,MoonGlyph} from './lib/theme';
 import {characterPredator,changePredator} from './lib/predatorRules';
 import {PredatorCustomization} from './components/PredatorCustomization';
 import {SkillDistribution} from './components/SkillDistribution';
@@ -27,7 +29,6 @@ import { StepIndicator } from './components/StepIndicator';
 import { fnGenerateIdentity } from './lib/generators';
 import { fnCreateRandomCharacter } from './lib/randomizer';
 import { fnProcessImage } from './lib/imageUtils';
-import sGothicBackgroundUrl from './src/assets/images/gothic_background_1782838973165.jpg';
 
 // --- ICONS --- //
 const CheckCircle = () => (
@@ -459,16 +460,12 @@ const Notification: React.FC<{ message: string; type: 'success' | 'error'; onClo
 };
 
 // --- GOTHIC BACKGROUND STYLE --- //
-const gothicBackgroundStyle = {
-    backgroundImage: `linear-gradient(rgba(10, 15, 25, 0.88), rgba(10, 15, 25, 0.96)), url('${sGothicBackgroundUrl}')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-};
+const gothicBackgroundStyle = {background:'var(--app-bg)'};
 
 // --- APP COMPONENT --- //
 const App: React.FC = () => {
     const { t: fnT, locale: sLocale, setLocale: fnSetLocale } = useI18n();
+    const theme=useTheme();
 
     // Performance Optimization: Memoize core data objects to avoid redundant translation lookups and object reconstructions on every render.
     // These objects are relatively large and expensive to build, so memoizing them provides a measurable speed boost during state updates.
@@ -485,6 +482,7 @@ const App: React.FC = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [nStep]);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
+    useEffect(()=>theme.setGame(oCharacter.gameType),[oCharacter.gameType]);
     useEffect(()=>setCompleted(false),[oCharacter]);
 
     useEffect(()=>{
@@ -989,7 +987,9 @@ const App: React.FC = () => {
             case 'capacities':
                 return <CreationTabs items={[{id:'attributes',label:'Atributos'},{id:'skills',label:'Perícias'},{id:'specialties',label:'Especialidades'}]} active={panels.capacities} onChange={id=>setPanel('capacities',id)}>{id=>id==='specialties'?<SpecialtyEditor character={oCharacter} onChange={fnUpdateCharacter}/>:renderStepContent(id)}</CreationTabs>;
             case 'powers':
-                return bIsWerewolf?renderStepContent('wolf'):<CreationTabs items={oCharacter.clan===Clan.ThinBlood?[{id:'thinblood',label:'Méritos e Defeitos'},{id:'disciplines',label:'Disciplinas e fórmulas'}]:[{id:'predator',label:'Alimentação'},{id:'disciplines',label:'Disciplinas e poderes'}]} active={panels.powers} onChange={id=>setPanel('powers',id)}>{id=>renderStepContent(id)}</CreationTabs>;
+                return bIsWerewolf?renderStepContent('wolf'):<CreationTabs items={oCharacter.clan===Clan.ThinBlood?[{id:'thinblood',label:'Méritos e Defeitos'},{id:'disciplines',label:'Disciplinas e fórmulas'}]:[{id:'predator',label:'Alimentação'},{id:'disciplines',label:'Disciplinas e poderes'},...((oCharacter.disciplines.bloodsorcery||0)>0?[{id:'bloodrituals',label:'Rituais de Sangue'}]:[])]} active={panels.powers} onChange={id=>setPanel('powers',id)}>{id=>renderStepContent(id)}</CreationTabs>;
+            case 'bloodrituals':
+                return <BloodRitualPicker character={oCharacter} onChange={fnUpdateCharacter}/>;
             case 'resources':
                 return <ResourceChoices character={oCharacter} onChange={fnUpdateCharacter} panel={panels.resources} onPanel={id=>setPanel('resources',id)}/>;
             case 'predator':
@@ -1249,7 +1249,7 @@ const App: React.FC = () => {
             <header className="bg-black border-b-2 border-red-900 p-3 sm:p-4 sticky top-0 z-50 shadow-sm">
                 <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3 min-w-0">
                     <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => setView('home')}>
-                         <div className="text-red-600"><RoseIcon className="w-10 h-10" /></div>
+                         <div className="text-red-600">{oCharacter.gameType===GameType.Werewolf?<MoonGlyph className="w-10 h-10"/>:<RoseIcon className="w-10 h-10"/>}</div>
                         <div>
                             <h1 className="text-lg sm:text-2xl font-cinzel font-bold text-red-600 tracking-widest [text-wrap:balance] break-words whitespace-normal leading-tight"><span className="hidden sm:inline">{fnT('app.title')}</span><span className="sm:hidden">Whitewolf</span></h1>
                             <p className="text-xs text-gray-500 hidden md:block break-words whitespace-normal">{fnT('app.subtitle')}</p>
@@ -1258,7 +1258,7 @@ const App: React.FC = () => {
                     <div className="flex items-center gap-3 text-sm">
                         <button type="button" aria-label="Salvar rascunho" className="border border-gray-600 rounded px-3 py-2" onClick={()=>{fnSetStorageMode('save');fnSetShowStorage(true);}}><span className="hidden sm:inline">Salvar rascunho</span><span className="sm:hidden">Salvar</span></button>
                         <details className="relative"><summary className="cursor-pointer border border-gray-600 rounded px-3 py-2">Mais ações</summary><div className="absolute right-0 top-full mt-2 z-50 w-56 p-3 rounded border border-gray-600 bg-gray-950 grid gap-3">
-                            <button type="button" onClick={fnExportJSON}>Exportar JSON</button>
+                            <ThemeControl/><button type="button" onClick={fnExportJSON}>Exportar JSON</button>
                             <label className="cursor-pointer">Importar JSON<input type="file" accept=".json" className="sr-only" onChange={fnImportJSON}/></label>
                             <button type="button" onClick={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}}>Meus personagens</button>
                             <button type="button" onClick={fnResetCharacter}>Reiniciar personagem</button>

@@ -1,3 +1,4 @@
+import {ThemeControl} from '../lib/theme';
 import React, { useState } from "react";
 import { GameType } from "../types";
 export function StartScreen({
@@ -24,6 +25,7 @@ export function StartScreen({
     [scale, setScale] = useState("fledgling");
   return (
     <main className="start-screen max-w-3xl mx-auto w-full px-5 py-12 sm:py-20">
+      <div className="mb-6 max-w-xs"><ThemeControl/></div>
       <h1 className="text-3xl sm:text-4xl font-cinzel text-gray-100">
         Personagens do Mundo das Trevas
       </h1>

@@ -1,3 +1,4 @@
+import {ThemeProvider} from './lib/theme';
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-600.css';
 import '@fontsource/cinzel/latin-700.css';
@@ -15,8 +16,8 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <I18nProvider>
+    <ThemeProvider><I18nProvider>
       <App />
-    </I18nProvider>
+    </I18nProvider></ThemeProvider>
   </React.StrictMode>
 );
