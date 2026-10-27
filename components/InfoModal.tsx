@@ -15,6 +15,7 @@ let nGlobalModalCount = 0;
 export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fnOnClose, children: oChildren }) => {
   const { t: fnT } = useI18n();
   const [nMyIndex, fnSetMyIndex] = useState(0);
+  const modalIndexRef=useRef(0);
   const [nTotalCount, fnSetTotalCount] = useState(0);
 
   const fnHandleCountChange = useCallback(() => {
@@ -24,6 +25,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
   useEffect(() => {
     const previousFocus = document.activeElement as HTMLElement | null;
     const nIdx = nGlobalModalCount;
+    modalIndexRef.current=nIdx;
     nGlobalModalCount++;
     fnSetMyIndex(nIdx);
 
@@ -37,8 +39,8 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
       window.dispatchEvent(new CustomEvent('vtm_modal_count_change'));
       if (nGlobalModalCount === 0) {
         document.body.style.overflow = '';
-        previousFocus?.focus();
       }
+      if(previousFocus?.isConnected)previousFocus.focus();
     };
   }, []);
 
@@ -59,11 +61,10 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
   const oPanelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!bIsTop) return;
-
     const fnHandleKeyDown = (oEvent: KeyboardEvent) => {
+      if(modalIndexRef.current!==nGlobalModalCount-1)return;
       if (oEvent.key === 'Escape') {
-        oEvent.stopPropagation();
+        oEvent.stopImmediatePropagation();
         fnOnClose();
         return;
       }

@@ -173,8 +173,7 @@ test("troca de pacote incompatível pede confirmação, sem apagar pontos ao can
   await page.getByRole("tab", { name: "Perícias", exact: true }).click();
   await page.getByLabel("Especialista", { exact: false }).check();
   await page
-    .getByRole("button", { name: /Atletismo/ })
-    .last()
+    .locator('[data-help-label="Atletismo"] button')
     .click();
   await page
     .getByRole("dialog")

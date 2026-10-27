@@ -48,7 +48,7 @@ test('biblioteca consulta os cinco níveis e fecha com Escape sem alterar a fich
  await page.keyboard.press('Escape');await expect(detail).toHaveCount(0);await expect(library).toBeVisible();await page.keyboard.press('Escape');await expect(library).toHaveCount(0);expect(await draft(page)).toEqual(before);
 });
 test('segurar atributo abre consulta sem escolher pontos; movimento cancela o gesto',async({page})=>{
- await page.setViewportSize({width:390,height:844});await start(page);await page.getByRole('button',{name:'Capacidades',exact:false}).click();
+ await page.setViewportSize({width:390,height:844});await start(page);await page.getByRole('button',{name:'Continuar',exact:true}).click();await page.getByRole('button',{name:'Continuar',exact:true}).click();
  const target=page.locator('[data-help-label="Força"]').first();await target.scrollIntoViewIfNeeded();const box=await target.boundingBox();const before=(await draft(page)).attributes;
  await page.mouse.move(box.x+10,box.y+10);await page.mouse.down();await page.waitForTimeout(650);await page.mouse.up();
  const dialog=page.getByRole('dialog',{name:'Força',exact:true});await expect(dialog).toContainText('potência muscular');await expect(dialog.getByRole('button',{name:/^[0-5]/})).toHaveCount(0);expect((await draft(page)).attributes).toEqual(before);
