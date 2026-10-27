@@ -1,6 +1,6 @@
 import type {Character,DamageTrack} from '../types';
 export const EMPTY_DAMAGE:DamageTrack={superficial:0,aggravated:0};
-export function validDamage(track:DamageTrack,capacity:number):boolean{return !!track&&Number.isInteger(track.superficial)&&Number.isInteger(track.aggravated)&&track.superficial>=0&&track.aggravated>=0&&track.superficial+track.aggravated<=capacity;}
+export function validDamage(value:unknown,capacity:number):value is DamageTrack{if(!value||typeof value!=='object'||Array.isArray(value))return false;const track=value as DamageTrack;return Number.isInteger(track.superficial)&&Number.isInteger(track.aggravated)&&track.superficial>=0&&track.aggravated>=0&&track.superficial+track.aggravated<=capacity;}
 /** Amount is final damage after resistance and any halving determined at the table. */
 export function applyDamage(track:DamageTrack,capacity:number,kind:'superficial'|'aggravated',amount:number):DamageTrack{
  if(!Number.isInteger(capacity)||capacity<0||!validDamage(track,capacity)||!Number.isInteger(amount)||amount<0||amount>100)throw new Error('Dano ou capacidade inválidos.');

@@ -620,7 +620,7 @@ test("Loresheets V5 corrigidas: níveis independentes, legado preservado e desco
       duplicate,
     };
   });
-  expect(r.catalog).toHaveLength(4);
+  expect(r.catalog).toHaveLength(25);
   expect(r.catalog).not.toContain("watcherOfMalditos");
   expect(r.sheets).toEqual([
     { id: "watcherOfMalditos", level: 2 },

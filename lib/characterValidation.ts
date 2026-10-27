@@ -130,6 +130,7 @@ export function playerIssues(c:Character):string[]{
  if(c.profile==='npc')return [];
  if(c.creationCompletedAt)return advancementIssues(c);
  const issues=finishingIssues(c);
+ issues.push(...advancementIssues(c).filter(issue=>/Ritual exige|Cerimônia exige|Maldição alternativa/.test(issue)));
  if(c.gameType===GameType.Vampire){
   if(c.creationAge==='ancilla'&&(![10,11].includes(c.generation)||c.bloodPotency!==2))issues.push('Ancilla exige geração 10–11 e Potência de Sangue 2.');
   if(c.creationAge==='neonate'&&(![12,13].includes(c.generation)||c.bloodPotency!==1))issues.push('Neófito exige geração 12–13 e Potência de Sangue 1.');

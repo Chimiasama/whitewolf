@@ -685,7 +685,7 @@ V5_LORESHEETS.push(...([
       },
       {
         "level": 5,
-        "name": "Camarilla",
+        "name": "Sabbat Becomes Camarilla",
         "description": "Benefício 5 de Descendant of Vasantasena. Consulte o efeito em V5 básico, p. 399.",
         "system": "Camarilla — V5 básico, p. 399. Benefícios situacionais, pontos concedidos e escolhas são resolvidos com o Narrador; não alteram outras características automaticamente."
       }
@@ -796,7 +796,7 @@ V5_LORESHEETS.push(...([
       },
       {
         "level": 5,
-        "name": "Entirely",
+        "name": "On Another Grid Entirely",
         "description": "Benefício 5 de Ambrus Maropis. Consulte o efeito em V5 básico, p. 402.",
         "system": "Entirely — V5 básico, p. 402. Benefícios situacionais, pontos concedidos e escolhas são resolvidos com o Narrador; não alteram outras características automaticamente."
       }
