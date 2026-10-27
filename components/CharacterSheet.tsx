@@ -1,3 +1,7 @@
+import {HelpLabel} from './HelpLabel';
+import {DisciplineReference} from './DisciplineReference';
+import {TRAIT_HELP} from '../data/traitHelp';
+import {hasAlternativeBane} from '../data/alternativeBanes';
 import {DamageTracker} from './DamageTracker';
 import {NpcSheet} from './NpcSheet';
 import {alternativeBane} from '../data/alternativeBanes';
@@ -89,7 +93,7 @@ const AttributeGroup: React.FC<{title: string, attributes: Attribute[], values: 
             <ul>
                 {aAttributes.map(sAttr => (
                     <li key={sAttr} className="flex justify-between items-center mb-1">
-                        <span>{fnT(`attributes.list.${sAttr}`)}</span>
+                        <HelpLabel title={fnT(`attributes.list.${sAttr}`)} content={TRAIT_HELP[sAttr]}>{fnT(`attributes.list.${sAttr}`)}</HelpLabel>
                         <div className="flex items-center">
                             {[...Array(5)].map((_, nI) => (
                                 isWerewolf ? (
@@ -164,7 +168,7 @@ const SkillGroup: React.FC<{title: string, skills: Skill[], values: Record<Skill
                     if (oValues[sSkill] > 0) {
                         return (
                             <li key={sSkill} className="flex justify-between items-center mb-1">
-                                <span>{fnT(`skills.list.${sSkill}`)} {sSkillSpecialties && <span className="text-xs text-gray-400">({sSkillSpecialties})</span>}</span>
+                                <span><HelpLabel title={fnT(`skills.list.${sSkill}`)} content={TRAIT_HELP[sSkill]}>{fnT(`skills.list.${sSkill}`)}</HelpLabel> {sSkillSpecialties && <span className="text-xs text-gray-400">({sSkillSpecialties})</span>}</span>
                                 <div className="flex items-center">
                                     {[...Array(5)].map((_, nI) => (
                                         isWerewolf ? (
@@ -344,7 +348,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     <div className="space-y-8">
       {modeControls}
       {damagePanel}
-      {oCharacter.baneVariant==='alternative'&&alternativeBane(oCharacter)&&<aside className="border rounded p-4"><strong>{alternativeBane(oCharacter).name}</strong><p>{alternativeBane(oCharacter).summary}</p></aside>}
+      {hasAlternativeBane(oCharacter)&&alternativeBane(oCharacter)&&<aside className="border rounded p-4"><strong>{alternativeBane(oCharacter).name}</strong><p>{alternativeBane(oCharacter).summary}</p></aside>}
       <StorySummary character={oCharacter}/>
       {oCharacter.resourceChoices&&<dl className="border rounded p-4">{Object.entries(oCharacter.resourceChoices).filter(([key])=>[...oCharacter.advantages,...oCharacter.flaws].some(a=>a.id===key)).map(([key,value])=><div key={key}><dt>{[...oCharacter.advantages,...oCharacter.flaws].find(a=>a.id===key)?.name}</dt><dd>{value}</dd></div>)}</dl>}
       <LegacyLoresheets character={oCharacter}/>
@@ -397,7 +401,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                   <div className="md:col-span-3"><strong className={sThemeAccentClass}>{fnT('characterSheet.desire')}:</strong> {oCharacter.desire}</div>
                   {!bIsWerewolf ? (
                       <>
-                        <div className="md:col-span-3"><strong className={sThemeAccentClass}>{fnT('characterSheet.clanBane')}:</strong> {oClanDetail?.bane || fnT('common.noClanSelected')}</div>
+                        <div className="md:col-span-3"><strong className={sThemeAccentClass}>{fnT('characterSheet.clanBane')}:</strong> {oCharacter.baneVariant==='alternative'&&!oCharacter.flaws.some(f=>f.id==='twicecursed'||f.id==='twice-cursed')?(alternativeBane(oCharacter)?.name||oClanDetail?.bane):oClanDetail?.bane || fnT('common.noClanSelected')}</div>
                         <div className="md:col-span-3"><strong className={sThemeAccentClass}>{fnT('characterSheet.clanCompulsion')}:</strong> {oClanDetail?.compulsion || fnT('common.noClanSelected')}</div>
                         <div><strong className={sThemeAccentClass}>{fnT('characterSheet.predatorType')}:</strong> {oPredatorTypeDetail ? oPredatorTypeDetail.name : fnT('common.none')}</div>
                         <div><strong className={sThemeAccentClass}>{fnT('characterSheet.generation')}:</strong> {oCharacter.generation}</div>
@@ -454,10 +458,9 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                     const aSelectedPowerIds = oCharacter.disciplinePowers[sKey] || [];
                     return (
                         <li key={sKey} className="mb-3 hover:bg-gray-800/50 rounded px-2 -mx-2 transition-colors py-2">
-                            <div className="flex justify-between items-center cursor-pointer" onClick={() => oDisciplineDetail && fnSetSelectedDiscipline(oDisciplineDetail)}>
+                            <div className="flex justify-between items-center">
                                 <div className="flex items-center">
-                                    <span className={`font-bold text-gray-300 transition-colors ${bIsWerewolf ? 'hover:text-green-400' : 'hover:text-red-400'}`}>{sDisplayName}</span>
-                                    {oDisciplineDetail && <InfoIcon onClick={() => fnSetSelectedDiscipline(oDisciplineDetail)} />}
+                                    <HelpLabel title={sDisplayName} content={oDisciplineDetail?<DisciplineReference discipline={oDisciplineDetail}/>:undefined}>{sDisplayName}</HelpLabel>
                                 </div>
                                 <div className="flex items-center">
                                     {[...Array(5)].map((_, nI) => (

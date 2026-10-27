@@ -1,3 +1,9 @@
+import {RulesLibrary} from './components/RulesLibrary';
+import {HelpLabel} from './components/HelpLabel';
+import {DisciplineReference} from './components/DisciplineReference';
+import {HuntingReference} from './components/HuntingReference';
+import {GoalIdeas} from './components/GoalIdeas';
+import {TRAIT_HELP} from './data/traitHelp';
 import {withNpcTemplate} from './lib/npcTemplates';
 import {BloodRitualPicker} from './components/BloodRitualPicker';
 import {useTheme,ThemeControl,MoonGlyph} from './lib/theme';
@@ -309,7 +315,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                 const nValue = oValues[sItem] || nBaseValue;
                                 return (
                                 <div key={sItem} className="relative group">
-                                    <button
+                                    <HelpLabel block title={oItemNames[sItem]||sItem} content={TRAIT_HELP[sItem]}><button
                                         onClick={() => fnHandleItemInteraction(sItem)}
                                         className={`
                                             w-full flex justify-between items-center p-2 rounded-md border transition-all duration-200
@@ -338,7 +344,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                                 ))}
                                             </div>
                                         </div>
-                                    </button>
+                                    </button></HelpLabel>
                                     {(oValues[sItem] || 0) > 0 && fnRenderAfterItem && (
                                         <div className="mt-2 ml-2">
                                             {fnRenderAfterItem(sItem, oValues[sItem])}
@@ -347,6 +353,7 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
                                     {sActiveItem === sItem && (
                                         <InfoModal title={sTranslationPrefix ? oItemNames[sItem] : sItem} onClose={() => fnSetActiveItem(null)}>
                                             <div className="space-y-6">
+                                                {TRAIT_HELP[sItem]&&<p>{TRAIT_HELP[sItem]}</p>}
                                                 <div className="flex justify-center gap-3 flex-wrap">
                                                     {DOTS_ARRAY_6.map((nVal) => {
                                                         const nCount = oPoolUsage.available[nVal] || 0;
@@ -756,8 +763,8 @@ const App: React.FC = () => {
                             <div className="md:col-span-2">
                                 <Input id="char-concept" label={fnT('concept.concept')} value={oCharacter.concept} onChange={e => fnUpdateCharacter('concept', e.target.value)} placeholder={fnT('concept.conceptPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             </div>
-                            <Input id="char-ambition" label={fnT('concept.ambition')} value={oCharacter.ambition} onChange={e => fnUpdateCharacter('ambition', e.target.value)} placeholder={fnT('concept.ambitionPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
-                            <Input id="char-desire" label={fnT('concept.desire')} value={oCharacter.desire} onChange={e => fnUpdateCharacter('desire', e.target.value)} placeholder={fnT('concept.desirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                            <div><Input id="char-ambition" label={fnT('concept.ambition')} value={oCharacter.ambition} onChange={e => fnUpdateCharacter('ambition', e.target.value)} placeholder={fnT('concept.ambitionPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} /><GoalIdeas character={oCharacter} kind="ambition" onChange={fnUpdateCharacter}/></div>
+                            <div><Input id="char-desire" label={fnT('concept.desire')} value={oCharacter.desire} onChange={e => fnUpdateCharacter('desire', e.target.value)} placeholder={fnT('concept.desirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} /><GoalIdeas character={oCharacter} kind="desire" onChange={fnUpdateCharacter}/></div>
                              <div className="md:col-span-2">
                                 <label className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">
                                     {fnT('concept.portrait')}
@@ -1116,7 +1123,7 @@ const App: React.FC = () => {
                                             <div key={sDisc} className="bg-gray-800 p-3 rounded-lg border border-gray-700 min-w-0">
                                                 <div className="flex flex-wrap justify-between items-center gap-3 mb-2">
                                                     <div className="flex flex-col">
-                                                        <h4 className="font-bold text-gray-200 break-words">{oDetails?.name || sDisc}</h4>
+                                                        <h4 className="font-bold text-gray-200 break-words"><HelpLabel title={oDetails?.name||sDisc} content={oDetails?<DisciplineReference discipline={oDetails}/>:undefined}>{oDetails?.name||sDisc}</HelpLabel></h4>
                                                         <div className="flex gap-1">
                                                             {!aBaseDiscs.includes(sDisc) && (
                                                                 <span className="text-[9px] uppercase text-gray-500 font-bold">{fnT('common.unknown')}</span>
@@ -1210,13 +1217,13 @@ const App: React.FC = () => {
                                 })()}
                             </div>
 
-                            <div className="mt-6"><CatalogPicker label="Disciplinas disponíveis" selected={[]} onToggle={id=>fnUpdateCharacter('disciplines',{...oCharacter.disciplines,[id]:0})} options={VAMPIRE_DISCIPLINES.filter(id=>!(id in oCharacter.disciplines)).map(id=>({id,name:oDisciplineDetails[id]?.name||id,summary:oDisciplineDetails[id]?.description,unavailable:id==='thinbloodalchemy'?(oCharacter.clan!==Clan.ThinBlood||!oCharacter.thinMerits?.includes('alchemist')?'Exige Alquimista de Sangue-Fraco.':undefined):oCharacter.clan===Clan.ThinBlood&&!oCharacter.thinMerits?.includes('affinity')?'Exige Afinidade com Disciplina.':undefined}))}/></div>
+                            <div className="mt-6"><CatalogPicker label="Disciplinas disponíveis" selected={[]} onToggle={id=>fnUpdateCharacter('disciplines',{...oCharacter.disciplines,[id]:0})} options={VAMPIRE_DISCIPLINES.filter(id=>!(id in oCharacter.disciplines)).map(id=>({id,name:oDisciplineDetails[id]?.name||id,summary:oDisciplineDetails[id]?.description,details:oDisciplineDetails[id]?<DisciplineReference discipline={oDisciplineDetails[id]}/>:undefined,unavailable:id==='thinbloodalchemy'?(oCharacter.clan!==Clan.ThinBlood||!oCharacter.thinMerits?.includes('alchemist')?'Exige Alquimista de Sangue-Fraco.':undefined):oCharacter.clan===Clan.ThinBlood&&!oCharacter.thinMerits?.includes('affinity')?'Exige Afinidade com Disciplina.':undefined}))}/></div>
                         </GothicFrame>
 
                         </>):null}
                         {sStepId==='predator'&&<div className="space-y-5">
                         <p className="text-sm text-gray-300">Como você se alimenta? O predador concede benefícios adicionais e pode alterar suas Disciplinas.</p>
-                        <CatalogPicker label="Tipo de predador" selected={oCharacter.predatorType?[oCharacter.predatorType]:[]} onToggle={id=>fnHandlePredatorTypeChange(id===oCharacter.predatorType?'':id)} options={aPredatorTypes.map(pt=>({id:pt.id,name:pt.name.replace('[Comunitário / opcional] ',''),summary:pt.description.split('. ')[0],unavailable:oCharacter.clan===Clan.Ventrue&&['farmer','bagger'].includes(pt.id)?'Incompatível com Ventrue.':pt.id==='farmer'&&oCharacter.bloodPotency>=3?'Exige Potência de Sangue menor que 3.':undefined,details:<><p>{pt.description}</p><p>{pt.source}</p><h4 className="mt-3">Concedido pelo predador</h4>{pt.disciplineAdd&&<p>{oDisciplineDetails[pt.disciplineAdd.discipline]?.name} +{pt.disciplineAdd.dots}</p>}<p>Humanidade: {pt.humanityModifier>0?'+':''}{pt.humanityModifier}</p>{[...pt.advantages,...pt.flaws].map(a=><p key={a.id}>{a.name} · {a.cost} pontos</p>)}</>}))}/>
+                        <CatalogPicker label="Tipo de predador" selected={oCharacter.predatorType?[oCharacter.predatorType]:[]} onToggle={id=>fnHandlePredatorTypeChange(id===oCharacter.predatorType?'':id)} options={aPredatorTypes.map(pt=>({id:pt.id,name:pt.name.replace('[Comunitário / opcional] ',''),summary:pt.description.split('. ')[0],unavailable:oCharacter.clan===Clan.Ventrue&&['farmer','bagger'].includes(pt.id)?'Incompatível com Ventrue.':pt.id==='farmer'&&oCharacter.bloodPotency>=3?'Exige Potência de Sangue menor que 3.':undefined,details:<><p>{pt.description}</p><HuntingReference predator={pt}/><p>{pt.source}</p><h4 className="mt-3">Concedido pelo predador</h4>{pt.disciplineAdd&&<p>{oDisciplineDetails[pt.disciplineAdd.discipline]?.name} +{pt.disciplineAdd.dots}</p>}<p>Humanidade: {pt.humanityModifier>0?'+':''}{pt.humanityModifier}</p>{[...pt.advantages,...pt.flaws].map(a=><p key={a.id}>{a.name} · {a.cost} pontos</p>)}</>}))}/>
                         {characterPredator(oCharacter,aPredatorTypes)&&<PredatorCustomization character={oCharacter} predator={characterPredator(oCharacter,aPredatorTypes)!} onChange={patch=>fnHandlePredatorTypeChange(oCharacter.predatorType,patch)} disciplineName={key=>oDisciplineDetails[key]?.name||key}/>}
                         {(()=>{const p=characterPredator(oCharacter,aPredatorTypes);const choices=p?.specialtyOptions||[];return choices.length>0&&<CatalogPicker label="Especialidade do predador" selected={choices.filter(o=>oCharacter.specialties.some(s=>s.skill===o.skill&&s.name===o.name)).map(o=>o.skill+':'+o.name)} options={choices.map(o=>({id:o.skill+':'+o.name,name:`${fnT('skills.list.'+o.skill)}: ${o.name}`,summary:'Benefício adicional do predador.'}))} onToggle={id=>{const choice=choices.find(o=>o.skill+':'+o.name===id);const other=oCharacter.specialties.filter(s=>!choices.some(o=>o.name===s.name&&o.skill===s.skill));if(choice)fnUpdateCharacter('specialties',oCharacter.specialties.some(s=>s.skill===choice.skill&&s.name===choice.name)?other:[...other,choice]);}}/>;})()}
                         </div>}
@@ -1269,7 +1276,8 @@ const App: React.FC = () => {
                             <p className="text-xs text-gray-500 hidden md:block break-words whitespace-normal">{fnT('app.subtitle')}</p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-3 text-sm">
+                    <div className="flex flex-wrap items-center gap-3 text-sm">
+                        <RulesLibrary character={oCharacter}/>
                         <button type="button" aria-label="Salvar rascunho" className="border border-gray-600 rounded px-3 py-2" onClick={()=>{fnSetStorageMode('save');fnSetShowStorage(true);}}><span className="hidden sm:inline">Salvar rascunho</span><span className="sm:hidden">Salvar</span></button>
                         <details className="relative"><summary className="cursor-pointer border border-gray-600 rounded px-3 py-2">Mais ações</summary><div className="absolute right-0 top-full mt-2 z-50 w-56 p-3 rounded border border-gray-600 bg-gray-950 grid gap-3">
                             <ThemeControl/><button type="button" onClick={fnExportJSON}>Exportar JSON</button>

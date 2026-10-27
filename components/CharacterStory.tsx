@@ -1,3 +1,5 @@
+import {RelationshipRecord,RelationshipsSummary} from './RelationshipRecord';
+import {CaernRecord,CaernSummary} from './CaernRecord';
 import React from "react";
 import { Character, GameType } from "../types";
 import { CreationTabs } from "./CreationTabs";
@@ -52,6 +54,8 @@ export function CharacterStory({
         items={[
           { id: "links", label: wolf ? "Pilares" : "Convicções e Pilares" },
           { id: "chronicle", label: "Crônica" },
+          { id: "relationships", label: "Relacionamentos" },
+          ...(wolf?[{id:"caern",label:"Registro do caern"}]:[]),
           ...(c.narrative || c.profile === "npc"
             ? [{ id: "npc", label: "Narrativa do NPC" }]
             : []),
@@ -59,7 +63,7 @@ export function CharacterStory({
         ]}
       >
         {(id) =>
-          id === "chronicle" ? (
+          id === "relationships" ? <RelationshipRecord character={c} onChange={onChange}/> : id === "caern" ? <CaernRecord character={c} onChange={onChange}/> : id === "chronicle" ? (
             <div className="grid gap-4 sm:grid-cols-2">
               {Object.entries(fields).map(([key, label]) => (
                 <label key={key}>
@@ -328,6 +332,8 @@ export function StorySummary({ character: c }: { character: Character }) {
     c.gameType === GameType.Werewolf ? WEREWOLF_STORY : VAMPIRE_STORY;
   return (
     <section aria-label="Vínculos estruturados" className="space-y-4 text-left">
+      <RelationshipsSummary character={c}/>
+      {c.gameType===GameType.Werewolf&&<CaernSummary character={c}/>}
       {c.convictions?.length > 0 && (
         <div>
           <h3>Convicções e Pilares</h3>

@@ -1,3 +1,4 @@
+import {HelpLabel} from './HelpLabel';
 import React, { useState, useId } from "react";
 export interface CatalogOption {
   id: string;
@@ -63,7 +64,7 @@ export function CatalogPicker({
             return (
               <li key={key} className="rounded-lg bg-gray-900 p-3">
                 <div className="flex justify-between items-center gap-3">
-                  <strong>{item?.name || key}</strong>
+                  <strong><HelpLabel title={item?.name||key} content={item?.details||item?.summary}>{item?.name||key}</HelpLabel></strong>
                   <button
                     type="button"
                     className="text-sm text-gray-300 underline"
@@ -74,12 +75,6 @@ export function CatalogPicker({
                   </button>
                 </div>
                 {item?.control}
-                {item?.details && (
-                  <details className="mt-2 text-sm text-gray-300">
-                    <summary>Detalhes e referência</summary>
-                    <div className="pt-2">{item.details}</div>
-                  </details>
-                )}
               </li>
             );
           })}
@@ -129,13 +124,13 @@ export function CatalogPicker({
               <li key={o.id} className="border border-gray-700 rounded-lg p-3">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <strong>{o.name}</strong>
+                    <strong><HelpLabel title={o.name} content={o.details||o.summary}>{o.name}</HelpLabel></strong>
                     {o.community && (
                       <span className="block text-xs text-amber-200">
                         Comunitário · opcional
                       </span>
                     )}
-                    <p className="mt-1 text-sm text-gray-300">{o.summary}</p>
+
                   </div>
                   <button
                     type="button"
@@ -151,12 +146,6 @@ export function CatalogPicker({
                 </div>
                 {o.unavailable && (
                   <p className="mt-2 text-sm text-amber-200">{o.unavailable}</p>
-                )}
-                {o.details && (
-                  <details className="mt-2 text-sm text-gray-300">
-                    <summary>Ver detalhes</summary>
-                    <div className="pt-2">{o.details}</div>
-                  </details>
                 )}
               </li>
             ))}

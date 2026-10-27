@@ -482,6 +482,7 @@ export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | nul
     }
 
     return [
+        { id: 'twicecursed', name: 'Duas Vezes Amaldiçoado (Twice-Cursed)', description: 'Defeito de 2 pontos: conserva a Maldição padrão e acrescenta a variante do próprio clã. A adequação à crônica fica com o Narrador. Players Guide oficial, p. 121; variantes pp. 56–59.', cost: 2, type: 'flaw', levels: [2] },
         ...common,
         { id: 'haven', name: fnT('advantages.haven.name'), description: fnT('advantages.haven.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'herd', name: fnT('advantages.herd.name'), description: fnT('advantages.herd.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},

@@ -1,3 +1,4 @@
+import {alternativeBane} from '../data/alternativeBanes';
 import {BenefitChoices} from './BenefitChoices';
 import {AdvancedCreation} from './AdvancedCreation';
 import {AGE_PROFILES} from '../lib/advancedCreation';
@@ -116,7 +117,7 @@ export function ResourceChoices({
   onTransaction: CharacterTransaction;
 }) {
   const { t } = useI18n();
-  const catalogue = fnGetAdvantagesAndFlaws(t, c.gameType),
+  const catalogue = fnGetAdvantagesAndFlaws(t, c.gameType).filter(a=>a.id!=='twicecursed'||!!alternativeBane(c)),
     loresheets = fnGetLoresheets(t),
     predator =
       c.gameType === GameType.Vampire

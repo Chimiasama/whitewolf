@@ -1,3 +1,5 @@
+import {HelpLabel} from './HelpLabel';
+import {HuntingReference} from './HuntingReference';
 import React from "react";
 import { Character, PredatorTypeDetail } from "../types";
 import { availablePredatorDisciplines } from "../lib/predatorRules";
@@ -17,6 +19,7 @@ export function PredatorCustomization({
       aria-label="Escolhas do predador"
       className="space-y-4 rounded-lg border border-gray-700 p-4"
     >
+      <HelpLabel title={"Caçada: "+p.name.replace("[Comunitário / opcional] ","")} content={<HuntingReference predator={p}/>}>Como caçar com este predador</HelpLabel>
       <p className="text-sm text-gray-300">
         Fonte: {p.source}. Os benefícios abaixo são adicionais ao orçamento
         comum.

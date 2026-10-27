@@ -1,3 +1,4 @@
+import {hasAlternativeBane} from '../data/alternativeBanes';
 import {BLOOD_RITUALS} from '../data/bloodRituals';
 import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
 import {AGE_PROFILES} from './advancedCreation';
@@ -28,6 +29,11 @@ export function parseCharacter(input:unknown):Character {
  if(input.initialExperienceGranted!==undefined&&typeof input.initialExperienceGranted!=='boolean')return fail('XP inicial');
  if(input.baneVariant!==undefined&&!['standard','alternative'].includes(input.baneVariant))return fail('Maldição alternativa');
  if(input.resourceChoices!==undefined&&(!object(input.resourceChoices)||Object.keys(input.resourceChoices).length>300||Object.values(input.resourceChoices).some(v=>typeof v!=='string'||v.length>10000)))return fail('escolhas de recursos');
+ if(input.relationships!==undefined){
+  const fields=['name','kind','clan','tribe','faction','role','feeling','theirFeeling','notes'];
+  if(!Array.isArray(input.relationships)||input.relationships.length>100||input.relationships.some(r=>!object(r)||typeof r.id!=='string'||r.id.length>100||!r.id||fields.some(k=>typeof r[k]!=='string'||r[k].length>(k==='notes'?10000:1000))||(r.clan&&!Object.values(Clan).includes(r.clan))||(r.tribe&&!Object.values(Tribe).includes(r.tribe)))||new Set(input.relationships.map(r=>r.id)).size!==input.relationships.length)return fail('relacionamentos');
+ }
+ if(input.caernRecord!==undefined&&(!object(input.caernRecord)||Object.entries(input.caernRecord).some(([k,v])=>!['name','location','description','guardian','spirits','caretakers','rites','threats','agreements','notes'].includes(k)||typeof v!=='string'||v.length>10000)))return fail('registro do caern');
  const raw:Record<string,any>=JSON.parse(JSON.stringify(input));
  if(!Object.values(GameType).includes(raw.gameType)) return fail('jogo');
  if(raw.creationCompletedAt!==undefined&&(typeof raw.creationCompletedAt!=='string'||!/^\d{4}-\d{2}-\d{2}T/.test(raw.creationCompletedAt)||Number.isNaN(Date.parse(raw.creationCompletedAt))))return fail('data de conclusão');
@@ -162,7 +168,7 @@ export function advancementIssues(c:Character):string[]{
   if(blood&&(c.disciplines.bloodsorcery||0)<blood.level)issues.push('Ritual exige Feitiçaria de Sangue '+blood.level+'.');
   if(ceremony&&((c.disciplines.oblivion||0)<ceremony.level||!c.disciplinePowers.oblivion?.includes(ceremony.prerequisite)))issues.push('Cerimônia exige Oblívio e seu poder obrigatório.');
  }
- if(c.baneVariant==='alternative'&&!ALTERNATIVE_BANES.some(b=>b.clan===c.clan))issues.push('O perfil escolhido não possui Maldição alternativa.');
+ if(hasAlternativeBane(c)&&!ALTERNATIVE_BANES.some(b=>b.clan===c.clan))issues.push('O perfil escolhido não possui Maldição alternativa.');
  if(c.gameType===GameType.Vampire){
   if(!c.clan)issues.push('Selecione o clã ou perfil vampírico.');
   for(const [key,dots] of Object.entries(c.disciplines)){

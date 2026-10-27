@@ -166,7 +166,14 @@ export interface ExperienceEntry {
 }
 export interface DamageTrack { superficial:number; aggravated:number; }
 export interface NpcTemplate {kind:'human'|'ghoul'|'spirit'|'fomor';power:number;physical:number;social:number;mental:number;health:number;willpower:number;exceptional:string;abilities:string;}
+export interface CharacterRelation {
+ id:string;name:string;kind:string;clan:string;tribe:string;faction:string;role:string;feeling:string;theirFeeling:string;notes:string;
+}
+export interface CaernRecord {name?:string;location?:string;description?:string;guardian?:string;spirits?:string;caretakers?:string;rites?:string;threats?:string;agreements?:string;notes?:string;}
 export interface Character {
+ relationships?:CharacterRelation[];
+ caernRecord?:CaernRecord;
+
   creationAge?:'childer'|'neonate'|'ancilla';
   initialExperienceGranted?:boolean;
   baneVariant?:'standard'|'alternative';
