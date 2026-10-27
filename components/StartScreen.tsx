@@ -101,7 +101,7 @@ export function StartScreen({
           </fieldset>
           {mode === "npc" && (
             <>
-              <label className="block">Tipo de NPC<select className="block mt-2 w-full bg-gray-950 p-3 rounded" value={template} onChange={e=>setTemplate(e.target.value)}><option value="">{game===GameType.Vampire?'Vampiro':'Garou'}</option><option value="human">Humano</option><option value="ghoul">Carniçal</option>{game===GameType.Werewolf&&<><option value="spirit">Espírito</option><option value="fomor">Fomor</option></>}</select></label>
+              <label className="block">Tipo de NPC<select aria-label="Tipo de NPC" className="block mt-2 w-full bg-gray-950 p-3 rounded" value={template} onChange={e=>setTemplate(e.target.value)}><option value="">{game===GameType.Vampire?'Vampiro':'Garou'}</option><option value="human">Humano</option><option value="ghoul">Carniçal</option>{game===GameType.Werewolf&&<><option value="spirit">Espírito</option><option value="fomor">Fomor</option></>}</select></label>
               <label className="block">
                 Papel narrativo
                 <select
