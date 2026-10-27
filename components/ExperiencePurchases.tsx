@@ -1,3 +1,4 @@
+import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
 import React, { useState } from "react";
 import { Attribute, Character, Clan, GameType, Skill } from "../types";
 import { useI18n } from "../lib/i18n";
@@ -7,7 +8,7 @@ import {
   fnGetLoresheets,
 } from "../constants";
 import { W5_GIFTS, W5_RITES } from "../data/w5";
-import { INITIAL_BLOOD_RITUALS } from "../data/bloodRituals";
+import { BLOOD_RITUALS } from "../data/bloodRituals";
 import { experienceBalance, experienceDate } from "../lib/experience";
 import {
   PurchaseKind,
@@ -69,6 +70,7 @@ export function ExperiencePurchases({
       : [
           { id: "discipline", label: "Disciplina" },
           { id: "ritual", label: "Ritual de Sangue" },
+          { id: "ceremony", label: "Cerimônia de Oblívio" },
           { id: "loresheet", label: "Loresheet" },
           { id: "bloodPotency", label: "Potência de Sangue" },
           { id: "humanity", label: "Humanidade" },
@@ -113,8 +115,10 @@ export function ExperiencePurchases({
     options = [
       { id: "thinbloodalchemy", name: disciplines.thinbloodalchemy.name },
     ];
+  else if (kind === "ceremony")
+    options = OBLIVION_CEREMONIES.map(r=>({id:r.id,name:r.name+" · "+r.level}));
   else if (kind === "ritual")
-    options = INITIAL_BLOOD_RITUALS.map((r) => ({ id: r.id, name: r.name }));
+    options = BLOOD_RITUALS.map((r) => ({ id: r.id, name: r.name }));
   else if (kind === "loresheet")
     options = fnGetLoresheets(t).flatMap((s) =>
       s.levels.map((l) => ({

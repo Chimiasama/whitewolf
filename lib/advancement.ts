@@ -1,3 +1,5 @@
+import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
+import {baneSeverity,hasAlternativeBane} from '../data/alternativeBanes';
 import { Attribute, Character, Clan, GameType, Skill } from "../types";
 import {
   fnGetAdvantagesAndFlaws,
@@ -6,7 +8,7 @@ import {
   fnGetLoresheets,
 } from "../constants";
 import { W5_GIFTS, W5_RITES, w5GiftIdentity } from "../data/w5";
-import { INITIAL_BLOOD_RITUALS } from "../data/bloodRituals";
+import { BLOOD_RITUALS } from "../data/bloodRituals";
 import { appendExperience, experienceBalance } from "./experience";
 
 export type PurchaseKind =
@@ -18,6 +20,7 @@ export type PurchaseKind =
   | "discipline"
   | "formula"
   | "ritual"
+  | "ceremony"
   | "bloodPotency"
   | "humanity"
   | "renown"
@@ -84,6 +87,7 @@ export function quotePurchase(
     "discipline",
     "formula",
     "ritual",
+    "ceremony",
     "bloodPotency",
     "humanity",
     "loresheet",
@@ -174,6 +178,7 @@ export function quotePurchase(
       reject("Vantagem no nível máximo.");
     cost = (to - from) * 3;
     formula = `${to - from} ponto(s) × 3 = ${cost} XP`;
+    if(c.clan===Clan.Hecata&&hasAlternativeBane(c)&&/^(retainers?|haven|resources)$/.test(r.key)){const surcharge=baneSeverity(c.bloodPotency);cost+=surcharge;formula+=` + ${surcharge} XP · Decomposição`;reference="Players Guide, p. 57";}
     label = a.name;
     patch = {
       advantages: [
@@ -301,8 +306,17 @@ export function quotePurchase(
     if (alchemy && thin)
       reference =
         "V5, pp. 152, 283; Players Guide 01, seção Thin-Blood Alchemy (taxa de clã mesmo sem o Mérito)";
+  } else if (r.kind === "ceremony") {
+    const ceremony=OBLIVION_CEREMONIES.find(x=>x.id===r.key);
+    if(!ceremony)reject("Cerimônia fora do catálogo.");
+    if((c.disciplines.oblivion||0)<ceremony.level)reject("Cerimônia exige Oblívio do mesmo nível ou superior.");
+    if(!c.disciplinePowers.oblivion?.includes(ceremony.prerequisite))reject("Falta o poder obrigatório desta Cerimônia.");
+    if(c.rituals.some(x=>x.id===ceremony.id))reject("Cerimônia já adquirida.");
+    to=ceremony.level;cost=to*3;formula=`Cerimônia nível ${to} × 3 = ${cost} XP`;
+    label=ceremony.name;reference=ceremony.description;
+    patch={rituals:[...c.rituals,{id:ceremony.id,name:ceremony.name,description:ceremony.description}]};
   } else if (r.kind === "ritual") {
-    const ritual = INITIAL_BLOOD_RITUALS.find((x) => x.id === r.key);
+    const ritual = BLOOD_RITUALS.find((x) => x.id === r.key);
     if (!ritual) reject("Ritual fora do catálogo revisado.");
     if ((c.disciplines.bloodsorcery || 0) < ritual.level)
       reject("Ritual exige Feitiçaria de Sangue do mesmo nível ou superior.");
@@ -311,7 +325,7 @@ export function quotePurchase(
     cost = to * 3;
     formula = `Ritual nível ${to} × 3 = ${cost} XP`;
     label = ritual.name;
-    reference = "V5, p. 272";
+    reference = ritual.reference;
     patch = {
       rituals: [
         ...c.rituals,
@@ -349,8 +363,8 @@ export function quotePurchase(
     )
       reject("Dom exige a tribo ou o augúrio correspondente.");
     const total = c.renown.glory + c.renown.honor + c.renown.wisdom;
-    if (total < g.totalRenown)
-      reject(`Dom exige Renome total ${g.totalRenown}.`);
+    const required=Math.min(...W5_GIFTS.filter(x=>giftIdentity(x.id)===giftIdentity(g.id)&&(x.origin==='native'||x.owner===(x.origin==='tribe'?c.tribe:c.auspice))).map(x=>x.totalRenown));
+    if(total<required)reject(`Dom exige Renome total ${required}.`);
     if ((c.gifts || []).some((x) => giftIdentity(x.id) === giftIdentity(g.id)))
       reject("Este Dom já foi aprendido, inclusive por outro acesso.");
     from = new Set((c.gifts || []).map((g) => giftIdentity(g.id))).size;

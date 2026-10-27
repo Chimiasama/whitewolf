@@ -164,7 +164,16 @@ export interface ExperienceEntry {
   id:string; date:string; kind:'earned'|'spent'; amount:number; note:string;
   purchase?: {kind:string; key:string; choice?:string; from:number; to:number; formula:string; reference:string};
 }
+export interface DamageTrack { superficial:number; aggravated:number; }
+export interface NpcTemplate {kind:'human'|'ghoul'|'spirit'|'fomor';power:number;physical:number;social:number;mental:number;health:number;willpower:number;exceptional:string;abilities:string;}
 export interface Character {
+  creationAge?:'childer'|'neonate'|'ancilla';
+  initialExperienceGranted?:boolean;
+  baneVariant?:'standard'|'alternative';
+  resourceChoices?:Record<string,string>;
+  damage?:{health:DamageTrack;willpower:DamageTrack};
+  npcTemplate?:NpcTemplate;
+
   creationCompletedAt?: string;
   loreChoices?: Record<string,string>;
   disciplineCompetence?: string;

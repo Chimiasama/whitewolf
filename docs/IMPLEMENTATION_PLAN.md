@@ -76,3 +76,7 @@ O histórico manual ganhou compras mecânicas com prévia, débito, atualizaçã
 Foi corrigida outra pendência: o catálogo de Loresheets V5 oferecia oito entradas legadas de Lobisomem. A seleção passou a usar quatro fichas V5 referenciadas, com níveis independentes, restrições de clã e preservação dos registros antigos. Dons acessíveis por mais de uma origem não são duplicados na criação ou geração.
 
 Regras, fontes, limites e fila mecânica atualizada em [EXPERIENCE_ADVANCEMENT.md](EXPERIENCE_ADVANCEMENT.md). Isso substitui as indicações anteriores de que XP era apenas um histórico manual. Continuam pendentes os catálogos completos, caern coletivo, outros modificadores/exceções e criação avançada; não são tarefas concluídas por esta atualização.
+
+## Reconstrução da ampliação após indisponibilidade do workspace
+
+Catálogos, criação por idade, Maldições alternativas, dano e espécies de NPC foram ampliados novamente a partir de fd2e5b3. Escopo e limites atuais em [EXPANDED_RULES.md](EXPANDED_RULES.md). O caern coletivo permanece fora do escopo. Resultados da sessão perdida não certificam esta reconstrução.

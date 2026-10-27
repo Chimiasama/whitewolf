@@ -13,12 +13,14 @@ export function StartScreen({
     game: GameType,
     role: string,
     scale: string,
+    template?: string,
   ) => void;
   onContinue: () => void;
   onLibrary: () => void;
   onImport: (e: React.ChangeEvent<HTMLInputElement>) => void;
   draft: { name: string; gameType: GameType } | null;
 }) {
+  const [template,setTemplate]=useState("");
   const [mode, setMode] = useState<"player" | "npc" | null>(null),
     [game, setGame] = useState(GameType.Vampire),
     [role, setRole] = useState(""),
@@ -90,6 +92,7 @@ export function StartScreen({
                   onChange={() => {
                     setGame(g.id);
                     setRole("");
+                    setTemplate("");
                   }}
                 />{" "}
                 {g.name}
@@ -98,6 +101,7 @@ export function StartScreen({
           </fieldset>
           {mode === "npc" && (
             <>
+              <label className="block">Tipo de NPC<select className="block mt-2 w-full bg-gray-950 p-3 rounded" value={template} onChange={e=>setTemplate(e.target.value)}><option value="">{game===GameType.Vampire?'Vampiro':'Garou'}</option><option value="human">Humano</option><option value="ghoul">Carniçal</option>{game===GameType.Werewolf&&<><option value="spirit">Espírito</option><option value="fomor">Fomor</option></>}</select></label>
               <label className="block">
                 Papel narrativo
                 <select
@@ -141,7 +145,7 @@ export function StartScreen({
           )}
           <button
             className="rounded-lg bg-red-800 hover:bg-red-700 px-5 py-3"
-            onClick={() => onStart(mode, game, role, scale)}
+            onClick={() => onStart(mode, game, role, scale, template)}
           >
             {mode === "player" ? "Começar criação" : "Gerar NPC"}
           </button>

@@ -1,3 +1,6 @@
+import {BenefitChoices} from './BenefitChoices';
+import {AdvancedCreation} from './AdvancedCreation';
+import {AGE_PROFILES} from '../lib/advancedCreation';
 import { LegacyLoresheets } from "./LegacyLoresheets";
 import { CharacterStory } from "./CharacterStory";
 import {
@@ -129,17 +132,19 @@ export function ResourceChoices({
   return (
     <div className="space-y-5">
       <LegacyLoresheets character={c} />
+      <BenefitChoices character={c} onChange={onChange}/>
+      <AdvancedCreation character={c} onTransaction={onTransaction} onChange={onChange}/>
       {!c.creationCompletedAt && (
         <div className="grid grid-cols-2 gap-3 rounded-lg bg-gray-900 p-4 text-sm">
           <div>
             Vantagens e Loresheets
             <strong className="block text-xl">
-              {advantagePoints} / 7 pontos
+              {advantagePoints} / {AGE_PROFILES[c.creationAge||'childer'].advantages} pontos
             </strong>
           </div>
           <div>
             Defeitos
-            <strong className="block text-xl">{flawPoints} / 2 pontos</strong>
+            <strong className="block text-xl">{flawPoints} / {AGE_PROFILES[c.creationAge||'childer'].flaws} pontos</strong>
           </div>
         </div>
       )}

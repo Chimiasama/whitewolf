@@ -1,3 +1,4 @@
+import {withNpcTemplate} from './lib/npcTemplates';
 import {BloodRitualPicker} from './components/BloodRitualPicker';
 import {useTheme,ThemeControl,MoonGlyph} from './lib/theme';
 import {characterPredator,changePredator} from './lib/predatorRules';
@@ -997,7 +998,7 @@ const App: React.FC = () => {
             case 'capacities':
                 return <CreationTabs items={[{id:'attributes',label:'Atributos'},{id:'skills',label:'Perícias'},{id:'specialties',label:'Especialidades'}]} active={panels.capacities} onChange={id=>setPanel('capacities',id)}>{id=>id==='specialties'?<SpecialtyEditor character={oCharacter} onChange={fnUpdateCharacter}/>:renderStepContent(id)}</CreationTabs>;
             case 'powers':
-                return bIsWerewolf?renderStepContent('wolf'):<CreationTabs items={oCharacter.clan===Clan.ThinBlood?[{id:'thinblood',label:'Méritos e Defeitos'},{id:'disciplines',label:'Disciplinas e fórmulas'}]:[{id:'predator',label:'Alimentação'},{id:'disciplines',label:'Disciplinas e poderes'},...((oCharacter.disciplines.bloodsorcery||0)>0?[{id:'bloodrituals',label:'Rituais de Sangue'}]:[])]} active={panels.powers} onChange={id=>setPanel('powers',id)}>{id=>renderStepContent(id)}</CreationTabs>;
+                return bIsWerewolf?renderStepContent('wolf'):<CreationTabs items={oCharacter.clan===Clan.ThinBlood?[{id:'thinblood',label:'Méritos e Defeitos'},{id:'disciplines',label:'Disciplinas e fórmulas'}]:[{id:'predator',label:'Alimentação'},{id:'disciplines',label:'Disciplinas e poderes'},...(((oCharacter.disciplines.bloodsorcery||0)>0||(oCharacter.disciplines.oblivion||0)>0)?[{id:'bloodrituals',label:'Rituais e cerimônias'}]:[])]} active={panels.powers} onChange={id=>setPanel('powers',id)}>{id=>renderStepContent(id)}</CreationTabs>;
             case 'bloodrituals':
                 return <BloodRitualPicker character={oCharacter} onChange={fnUpdateCharacter}/>;
             case 'resources':
@@ -1225,6 +1226,7 @@ const App: React.FC = () => {
                 return (
                     <CharacterSheet 
                         character={oCharacter} 
+                        onChange={fnUpdateCharacter}
                         onAdvance={()=>{setPanel('resources','experience');fnSetStep(5);}}
                         onUpdateHunger={(h) => fnUpdateCharacter('hunger', h)} 
                         onUpdateHumanity={(h) => fnUpdateCharacter('humanity', h)}
@@ -1243,10 +1245,11 @@ const App: React.FC = () => {
     };
 
     if(view==='home')return <div className="min-h-screen clean-creation" style={gothicBackgroundStyle}>
-        <StartScreen draft={draftSummary} onStart={(mode,game,role,scale)=>{
+        <StartScreen draft={draftSummary} onStart={(mode,game,role,scale,template)=>{
             const identity=fnGenerateIdentity(sLocale,game);
             if(mode==='npc'){
-                const c=asNarrativeNpc(fnCreateRandomCharacter(sLocale,scale as any,fnT,game),scale,role);
+                const base=asNarrativeNpc(fnCreateRandomCharacter(sLocale,scale as any,fnT,game),scale,role);
+                const c=template?withNpcTemplate(base,template as any):base;
                 fnSetCharacter(c);fnSetStep(REVIEW_STEP);
             }else{fnSetCharacter({...oInitialCharacter,gameType:game,profile:'player',name:identity.name,concept:identity.concept});fnSetStep(1);setPanels({nature:'tribe',capacities:'attributes',powers:'predator',resources:'advantages'});}
             setView('creator');

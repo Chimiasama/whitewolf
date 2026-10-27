@@ -1,3 +1,6 @@
+import {DamageTracker} from './DamageTracker';
+import {NpcSheet} from './NpcSheet';
+import {alternativeBane} from '../data/alternativeBanes';
 import {LegacyLoresheets} from './LegacyLoresheets';
 import {CompactSheet} from './CompactSheet';
 import {StorySummary} from './CharacterStory';
@@ -29,6 +32,7 @@ interface CharacterSheetProps {
   onBack?: () => void;
   onSave?: () => void;
   onAdvance?: () => void;
+  onChange?: (key:keyof Character,value:any)=>void;
 }
 
 const ChevronLeft: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
@@ -284,7 +288,8 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     onUpdateHauglosk: fnOnUpdateHauglosk,
     onBack,
     onSave,
-    onAdvance
+    onAdvance,
+    onChange
 }) => {
     const { t: fnT } = useI18n();
 
@@ -332,11 +337,16 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     const nWillpower = nComposure + nResolve;
     const nHealth = nStamina + 3;
 
-    if(sheetMode==='compact')return <div>{modeControls}<CompactSheet character={oCharacter} onSave={onSave} onBack={onBack} onChange={(key,value)=>{const handlers={hunger:fnOnUpdateHunger,humanity:fnOnUpdateHumanity,willpower:fnOnUpdateWillpower,health:fnOnUpdateHealth,rage:fnOnUpdateRage,harano:fnOnUpdateHarano,hauglosk:fnOnUpdateHauglosk};handlers[key]?.(value);}}/></div>;
+    const damagePanel=<DamageTracker character={oCharacter} onChange={onChange?value=>onChange('damage',value):undefined}/>;
+    if(oCharacter.npcTemplate)return <NpcSheet character={oCharacter} onChange={onChange} onBack={onBack} onSave={onSave}/>;
+    if(sheetMode==='compact')return <div>{modeControls}{damagePanel}<CompactSheet character={oCharacter} onSave={onSave} onBack={onBack} onChange={(key,value)=>{const handlers={hunger:fnOnUpdateHunger,humanity:fnOnUpdateHumanity,willpower:fnOnUpdateWillpower,health:fnOnUpdateHealth,rage:fnOnUpdateRage,harano:fnOnUpdateHarano,hauglosk:fnOnUpdateHauglosk};handlers[key]?.(value);}}/></div>;
     return (
     <div className="space-y-8">
       {modeControls}
+      {damagePanel}
+      {oCharacter.baneVariant==='alternative'&&alternativeBane(oCharacter)&&<aside className="border rounded p-4"><strong>{alternativeBane(oCharacter).name}</strong><p>{alternativeBane(oCharacter).summary}</p></aside>}
       <StorySummary character={oCharacter}/>
+      {oCharacter.resourceChoices&&<dl className="border rounded p-4">{Object.entries(oCharacter.resourceChoices).filter(([key])=>[...oCharacter.advantages,...oCharacter.flaws].some(a=>a.id===key)).map(([key,value])=><div key={key}><dt>{[...oCharacter.advantages,...oCharacter.flaws].find(a=>a.id===key)?.name}</dt><dd>{value}</dd></div>)}</dl>}
       <LegacyLoresheets character={oCharacter}/>
       <aside className="rounded border border-gray-600 p-4 text-left bg-gray-950">
        <strong>{oCharacter.profile==='npc'?'NPC temático — sem orçamento de XP':oCharacter.creationCompletedAt?'Personagem em jogo — evolução com XP habilitada':'Personagem de jogador — confira as pendências de criação'}</strong>

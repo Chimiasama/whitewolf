@@ -1,3 +1,4 @@
+import {expandPowers} from './data/expandedPowers';
 import {V5_LORESHEETS} from './data/v5Loresheets';
 import {completePredators} from './data/predators';
 import { W5_TRIBES } from './data/w5';
@@ -672,7 +673,7 @@ export const VAMPIRE_DISCIPLINES = [
 // W5 Gifts live in data/w5.ts; no Discipline category aliases.
 export const WEREWOLF_GIFTS: string[] = [];
 
-export const fnGetDisciplineDetails = (fnT: TFunction): Record<string, DisciplineDetail> => ({
+const fnGetBaseDisciplineDetails = (fnT: TFunction): Record<string, DisciplineDetail> => ({
     "animalism": {
         name: fnT('disciplines.animalism.name'),
         description: fnT('disciplines.animalism.description'),
@@ -960,3 +961,5 @@ export const oInitialCharacter: Character = {
   portraitUrl: '',
   loresheets: []
 };
+
+export const fnGetDisciplineDetails = (t:TFunction):Record<string,DisciplineDetail> => expandPowers(fnGetBaseDisciplineDetails(t));
