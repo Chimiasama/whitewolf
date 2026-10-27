@@ -487,7 +487,7 @@ const App: React.FC = () => {
     const [nStep, fnSetStep] = useState(1);
 
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'auto' });
     }, [nStep]);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
     useEffect(()=>theme.setGame(oCharacter.gameType),[oCharacter.gameType]);
@@ -1233,6 +1233,7 @@ const App: React.FC = () => {
                 return (
                     <CharacterSheet 
                         character={oCharacter} 
+                        showIssues={false}
                         onChange={fnUpdateCharacter}
                         onAdvance={()=>{setPanel('resources','experience');fnSetStep(5);}}
                         onUpdateHunger={(h) => fnUpdateCharacter('hunger', h)} 
@@ -1267,16 +1268,16 @@ const App: React.FC = () => {
 
     return (
         <div className="min-h-screen clean-creation w-full overflow-x-hidden text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
-            <header className="bg-black border-b-2 border-red-900 p-3 sm:p-4 sticky top-0 z-50 shadow-sm">
-                <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3 min-w-0">
-                    <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => setView('home')}>
+            <header className="app-header bg-black border-b-2 border-red-900 p-3 sm:p-4 sticky top-0 z-50 shadow-sm">
+                <div className="app-header-layout max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3 min-w-0">
+                    <div className="app-brand flex min-w-0 flex-1 items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => setView('home')}>
                          <div className="text-red-600">{oCharacter.gameType===GameType.Werewolf?<MoonGlyph className="w-10 h-10"/>:<RoseIcon className="w-10 h-10"/>}</div>
-                        <div>
+                        <div className="app-brand-copy">
                             <h1 className="text-lg sm:text-2xl font-cinzel font-bold text-red-600 tracking-widest [text-wrap:balance] break-words whitespace-normal leading-tight"><span className="hidden sm:inline">{fnT('app.title')}</span><span className="sm:hidden">Whitewolf</span></h1>
                             <p className="text-xs text-gray-500 hidden md:block break-words whitespace-normal">{fnT('app.subtitle')}</p>
                         </div>
                     </div>
-                    <div className="flex flex-wrap items-center gap-3 text-sm">
+                    <div className="app-toolbar flex flex-wrap items-center gap-3 text-sm">
                         <RulesLibrary character={oCharacter}/>
                         <button type="button" aria-label="Salvar rascunho" className="border border-gray-600 rounded px-3 py-2" onClick={()=>{fnSetStorageMode('save');fnSetShowStorage(true);}}><span className="hidden sm:inline">Salvar rascunho</span><span className="sm:hidden">Salvar</span></button>
                         <details className="relative"><summary className="cursor-pointer border border-gray-600 rounded px-3 py-2">Mais ações</summary><div className="absolute right-0 top-full mt-2 z-50 w-56 p-3 rounded border border-gray-600 bg-gray-950 grid gap-3">
@@ -1289,7 +1290,7 @@ const App: React.FC = () => {
                     </div>
                 </div>
             </header>
-            <main className="flex-grow p-3 sm:p-4 md:p-8 pb-36 sm:pb-36 md:pb-36 max-w-6xl mx-auto w-full min-w-0 overflow-x-hidden">
+            <main className="app-main flex-grow p-3 sm:p-4 md:p-8 pb-36 sm:pb-36 md:pb-36 max-w-6xl mx-auto w-full min-w-0 overflow-x-hidden">
                 <StepIndicator
                     completedSteps={aSteps.map((_,i)=>i+1).filter(step=>step<REVIEW_STEP&&allIssues.every(issue=>issueDestination(issue,oCharacter).step!==step))}
                     currentStep={nStep}
@@ -1309,11 +1310,11 @@ const App: React.FC = () => {
                 <div className="mt-1 min-w-0">{renderStepContent()}</div>
                 {aValidationIssues.length>0&&nStep<REVIEW_STEP&&<details className="mt-6 border border-gray-700 rounded-lg p-4 text-sm"><summary>{aValidationIssues.length} pendências nesta etapa · você pode continuar</summary><ul className="mt-3 space-y-2">{aValidationIssues.map(issue=><li key={issue}>{displayIssue(issue)}</li>)}</ul></details>}
             </main>
-            <footer className="bg-black border-t border-gray-800 p-3 sm:p-6 fixed bottom-0 inset-x-0 z-40">
-                <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
+            <footer className="app-footer bg-black border-t border-gray-800 p-3 sm:p-6 fixed bottom-0 inset-x-0 z-40">
+                <div className="app-footer-layout max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
                     <Button onClick={() => fnSetStep(prev => Math.max(1, prev - 1))} disabled={nStep === 1} variant="secondary">{fnT('buttons.back')}</Button>
                     {nStep < aSteps.length ? (
-                        <div className="flex flex-wrap justify-end gap-2 sm:gap-4">
+                        <div className="app-footer-actions flex flex-wrap justify-end gap-2 sm:gap-4">
                             <Button variant="secondary" disabled={!oCharacter.gameType} onClick={() => fnSetStep(aSteps.length)}>Revisar pendências</Button>
                             <Button
                                 onClick={() => fnSetStep(prev => Math.min(aSteps.length, prev + 1))}

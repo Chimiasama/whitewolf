@@ -66,6 +66,7 @@ test('todos os predadores têm consulta de caçada com fontes e distinção comu
 test('Twice-Cursed é Defeito de dois pontos e conserva as duas Maldições',async({page})=>{
  await start(page);await page.getByRole('button',{name:'Natureza',exact:false}).click();await page.getByRole('button',{name:'Brujah',exact:true}).click();await page.getByRole('button',{name:'Vínculos e recursos',exact:false}).click();await page.getByRole('tab',{name:'Defeitos',exact:true}).click();
  const region=page.getByRole('region',{name:'Defeitos',exact:true});await region.getByRole('button',{name:'Escolher',exact:true}).click();await region.getByRole('searchbox').fill('Twice-Cursed');await region.locator('li').getByRole('button',{name:'Escolher',exact:true}).click();
+ await page.getByRole('tab',{name:'Ajustes e dano',exact:true}).click();
  await expect(page.getByLabel('Maldição aplicada',{exact:true})).toHaveValue('both');await expect(page.getByLabel('Maldição aplicada',{exact:true})).toBeDisabled();const c=await draft(page);expect(c.flaws.find(f=>f.id==='twicecursed').cost).toBe(2);
- await region.getByRole('button',{name:'Remover Duas Vezes Amaldiçoado (Twice-Cursed)',exact:true}).click();await expect(page.getByLabel('Maldição aplicada',{exact:true})).toHaveValue('standard');await expect(page.getByLabel('Maldição aplicada',{exact:true})).toBeEnabled();
+ await page.getByRole('tab',{name:'Defeitos',exact:true}).click();await region.getByRole('button',{name:'Remover Duas Vezes Amaldiçoado (Twice-Cursed)',exact:true}).click();await page.getByRole('tab',{name:'Ajustes e dano',exact:true}).click();await expect(page.getByLabel('Maldição aplicada',{exact:true})).toHaveValue('standard');await expect(page.getByLabel('Maldição aplicada',{exact:true})).toBeEnabled();
 });

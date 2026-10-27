@@ -134,7 +134,7 @@ export function ResourceChoices({
     <div className="space-y-5">
       <LegacyLoresheets character={c} />
       <BenefitChoices character={c} onChange={onChange}/>
-      <AdvancedCreation character={c} onTransaction={onTransaction} onChange={onChange}/>
+
       {!c.creationCompletedAt && (
         <div className="grid grid-cols-2 gap-3 rounded-lg bg-gray-900 p-4 text-sm">
           <div>
@@ -187,10 +187,11 @@ export function ResourceChoices({
             : []),
           { id: "ties", label: "Vínculos" },
           { id: "experience", label: "Experiência" },
+          { id: "adjustments", label: "Ajustes e dano" },
         ]}
       >
         {(key) =>
-          key === "experience" ? (
+          key === "adjustments" ? <AdvancedCreation character={c} onTransaction={onTransaction} onChange={onChange}/> : key === "experience" ? (
             <div className="space-y-6">
               <ExperiencePurchases
                 character={c}

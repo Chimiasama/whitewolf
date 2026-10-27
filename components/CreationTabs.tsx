@@ -13,7 +13,7 @@ export function CreationTabs({
   const uid = useId();
   const selected = items.some((i) => i.id === active) ? active : items[0]?.id;
   return (
-    <section className="space-y-5">
+    <section className="creation-tabs space-y-5">
       <div
         role="tablist"
         aria-label="Seções da etapa"
