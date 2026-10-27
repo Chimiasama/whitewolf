@@ -72,3 +72,16 @@ Validação executada no GitHub Actions, sem acessar o workspace indisponível. 
 - APK Android é verificado pelo workflow Android CI, separado da suíte web. Não equivale a publicação em loja.
 
 Escopo e limites em [EXPANDED_RULES.md](EXPANDED_RULES.md). O caern coletivo continua excluído; testes não certificam todos os efeitos situacionais ou traduções dos livros.
+
+## Relacionamentos, caern narrativo e consultas — 27/10/2026
+
+Código validado: `49abbcb5228925815cc061f49b17b3dfb52324fa`. GitHub Actions: https://github.com/Chimiasama/whitewolf/actions/runs/40583670673
+
+- TypeScript (`npm run lint`) e build aprovados.
+- Suíte completa: **53 testes aprovados em 39,3 segundos**, dois workers, sem testes ignorados.
+- Sete testes novos cobrem JSON/validação de relacionamentos e caern, edição e exportação/reimportação pela interface, sugestões sem sobrescrita automática, consulta de todos os níveis de Disciplina com teclado/Escape, pressão longa e cancelamento por movimento em viewport móvel, supressão do clique posterior ao menu nativo de toque, cobertura de caçada para os 34 predadores e Twice-Cursed como Defeito de 2 pontos.
+- Consultas sobrepostas usam a janela ativa para o Escape e devolvem o foco ao controle anterior.
+- Uma verificação existente passou a selecionar explicitamente o controle de pontos, distinguindo-o do novo botão de informação.
+- Execução por conexão GitHub/Actions; o ambiente solicitado como indisponível não foi acessado.
+
+Uso e limites em [STORY_AND_REFERENCE.md](STORY_AND_REFERENCE.md). O caern guarda somente informações narrativas; não há gasto coletivo de XP.

@@ -80,3 +80,7 @@ Regras, fontes, limites e fila mecânica atualizada em [EXPERIENCE_ADVANCEMENT.m
 ## Reconstrução da ampliação após indisponibilidade do workspace
 
 Catálogos, criação por idade, Maldições alternativas, dano e espécies de NPC foram ampliados novamente a partir de fd2e5b3. Escopo e limites atuais em [EXPANDED_RULES.md](EXPANDED_RULES.md). O caern coletivo permanece fora do escopo. Resultados da sessão perdida não certificam esta reconstrução.
+
+## Registros narrativos e informações sob demanda — implementado
+
+Relacionamentos estruturados, registro narrativo do caern sem mecânicas coletivas, ideias opcionais para Ambição/Desejo, consultas por pressão longa ou botão de informação, biblioteca geral, caçada dos 34 predadores e Defeito Twice-Cursed foram incorporados. Detalhes em [STORY_AND_REFERENCE.md](STORY_AND_REFERENCE.md). Validação: 53 testes, TypeScript e build aprovados; resultados em [VALIDATION.md](VALIDATION.md).
