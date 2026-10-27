@@ -87,7 +87,7 @@ test('Comércio entre Iguais usa taxa de clã na Disciplina escolhida',async({pa
 
 test('interface gera espírito, edita Poder e dano e retoma o rascunho',async({page})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
- await page.getByRole('button',{name:'Criar NPC',exact:true}).click();
+ await page.getByRole('button',{name:/^Criar NPC/}).click();
  await page.getByRole('radio',{name:'Lobisomem: O Apocalipse',exact:true}).check();
  await page.getByLabel('Tipo de NPC',{exact:true}).selectOption('spirit');
  await page.getByRole('button',{name:'Gerar NPC',exact:true}).click();
