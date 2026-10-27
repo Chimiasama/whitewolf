@@ -84,3 +84,26 @@ test('Comércio entre Iguais usa taxa de clã na Disciplina escolhida',async({pa
   return {normal:quotePurchase({...c,resourceChoices:{}},{kind:'discipline',key:'protean',choice}).cost,traded:quotePurchase(c,{kind:'discipline',key:'protean',choice}).cost};
  });expect(result).toEqual({normal:7,traded:5});
 });
+
+test('interface gera espírito, edita Poder e dano e retoma o rascunho',async({page})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.getByRole('button',{name:'Criar NPC',exact:true}).click();
+ await page.getByRole('radio',{name:'Lobisomem: O Apocalipse',exact:true}).check();
+ await page.getByLabel('Tipo de NPC',{exact:true}).selectOption('spirit');
+ await page.getByRole('button',{name:'Gerar NPC',exact:true}).click();
+ await expect(page.getByRole('heading',{name:/Espírito/})).toBeVisible();
+ await page.getByLabel('Poder',{exact:true}).fill('4');
+ await expect(page.getByText('Vitalidade: 8 (Poder ×2).',{exact:false})).toBeVisible();
+ await page.getByRole('button',{name:'+1 superficial',exact:true}).click();
+ await expect.poll(async()=>page.evaluate(()=>{const c=JSON.parse(localStorage.getItem('whitewolf_draft_v2')||'null');return c?.damage?.health?.superficial;})).toBe(1);
+ await page.reload();await page.getByRole('button',{name:/Continuar personagem/}).click();
+ await expect(page.getByRole('heading',{name:/Espírito/})).toBeVisible();
+ await expect(page.getByLabel('Poder',{exact:true})).toHaveValue('4');
+ expect(errors).toEqual([]);
+});
+test('modelos humano, carniçal e fomor sobrevivem ao JSON sem Dons de jogador',async({page})=>{
+ const result=await page.evaluate(async()=>{
+  const {oInitialCharacter}=await import('/constants.ts');const {withNpcTemplate}=await import('/lib/npcTemplates.ts');const {parseCharacter}=await import('/lib/characterValidation.ts');
+  return ['human','ghoul','fomor'].map(kind=>{const c=parseCharacter(JSON.parse(JSON.stringify(withNpcTemplate({...structuredClone(oInitialCharacter),gameType:'Vampire'},kind))));return {kind:c.npcTemplate.kind,clan:c.clan,gifts:c.gifts.length};});
+ });expect(result).toEqual([{kind:'human',clan:null,gifts:0},{kind:'ghoul',clan:null,gifts:0},{kind:'fomor',clan:null,gifts:0}]);
+});
