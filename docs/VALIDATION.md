@@ -58,3 +58,17 @@ Funcionalidades e limites em [APPEARANCE_AND_STORY.md](APPEARANCE_AND_STORY.md).
 - Loresheets V5 revisadas, dois níveis independentes na criação e evolução, preservação de legado e desconto de Talento Verdadeiro; Méritos comunitários Fast Learner, Discipline Competence e Alchemy Expert, incluindo importação de Mérito de 6 pontos.
 
 Inspeção visual da tela de XP no celular; campos receberam bordas visíveis e saldo no topo da compra. O aviso de chunk acima de 500 kB permanece (aprox. 651 kB / 194 kB gzip). Catálogos ainda parciais e caern coletivo estão explicitados em [EXPERIENCE_ADVANCEMENT.md](EXPERIENCE_ADVANCEMENT.md); estes testes não certificam todo o conteúdo dos livros.
+
+## Reconstrução da ampliação — 27/10/2026
+
+Validação executada no GitHub Actions, sem acessar o workspace indisponível. Commit de código validado: `9838ccb6c5dc61433209cbf3ae1f421bf918fe46`.
+
+- `npm ci`, `npm run lint` (TypeScript) e `npm run build`: aprovados.
+- Suíte completa: **46 testes aprovados em 1,2 minuto**, com dois workers, sem testes ignorados.
+- Execução: https://github.com/Chimiasama/whitewolf/actions/runs/40576991805
+- Regressões novas: cardinalidade/identidade dos catálogos; poder obrigatório de cerimônia e duplicação; XP inicial por idade e proteção contra concessão repetida; dano superficial/agravado e overflow; modelos de NPC e importação; fórmulas de imitação; Dons avançados; sobretaxa Hecata; Comércio entre Iguais; criação de espírito pela interface, edição de Poder/dano e recuperação de rascunho.
+- Verificações anteriores de compras, salvamento, exportação/importação, geração, temas e criação permanecem aprovadas. Expectativas de tamanho do catálogo e título da aba foram atualizadas para a ampliação.
+- O workflow web usa Chrome instalado no runner Ubuntu 24.04; elimina a espera pela instalação de outro navegador.
+- APK Android é verificado pelo workflow Android CI, separado da suíte web. Não equivale a publicação em loja.
+
+Escopo e limites em [EXPANDED_RULES.md](EXPANDED_RULES.md). O caern coletivo continua excluído; testes não certificam todos os efeitos situacionais ou traduções dos livros.

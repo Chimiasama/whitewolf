@@ -73,3 +73,7 @@ Os demais benefícios dessas Loresheets são mostrados na ficha para consulta; b
 5. Rastreadores de dano superficial/agravado e modelos adicionais de NPCs continuam separados desta compra de características.
 
 Itens narrativos opcionais não bloqueiam essas entregas. A implantação atual automatiza os custos e transações acima, dentro dos catálogos disponíveis; não declara reprodução integral de todo o acervo.
+
+## Ampliação reconstruída em 27/10/2026
+
+Os catálogos e parte das pendências acima foram ampliados: 127 Dons/182 acessos, 47 rituais, 10 cerimônias, novas fórmulas e poderes, 25 Loresheets, 14 Maldições alternativas, idade/XP inicial, escolhas de benefícios, dano e modelos adicionais de NPC. Comércio entre Iguais e sobretaxa de Decomposição foram incorporados às compras. Estado atual, regras cobertas e limitações: [EXPANDED_RULES.md](EXPANDED_RULES.md). Validação desta reconstrução: 46 testes aprovados, TypeScript e build; [VALIDATION.md](VALIDATION.md). Caern coletivo permanece fora do escopo.
