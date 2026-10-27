@@ -153,18 +153,26 @@ export interface LoresheetLevel {
 }
 
 export interface Loresheet {
+    allowedClans?: Clan[];
     id: string;
     name: string;
     description: string;
     levels: LoresheetLevel[];
 }
 
+export interface ExperienceEntry {
+  id:string; date:string; kind:'earned'|'spent'; amount:number; note:string;
+  purchase?: {kind:string; key:string; choice?:string; from:number; to:number; formula:string; reference:string};
+}
 export interface Character {
+  creationCompletedAt?: string;
+  loreChoices?: Record<string,string>;
+  disciplineCompetence?: string;
   convictions?: {belief:string;touchstone:string}[];
   touchstoneLinks?: {name:string;relationship:string}[];
   chronicle?: {faction?:string;group?:string;territory?:string;haven?:string;caern?:string;patron?:string;publicMask?:string;sireRelationship?:string;debts?:string;resonance?:string;spiritRelations?:string;personalTaboo?:string;haranoTriggers?:string;haugloskTriggers?:string};
   sessionZero?: {tone?:string;lines?:string;veils?:string;tools?:string};
-  experience?: {id:string;date:string;kind:'earned'|'spent';amount:number;note:string}[];
+  experience?: ExperienceEntry[];
 
   skillPath?: 'jackOfAllTrades'|'balanced'|'specialist';
   predatorDiscipline?: string;

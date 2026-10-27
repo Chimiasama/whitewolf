@@ -1,3 +1,5 @@
+import {LegacyLoresheets} from './LegacyLoresheets';
+import {V5_LORESHEETS} from '../data/v5Loresheets';
 import React from "react";
 import { Character, GameType, Attribute } from "../types";
 import { useI18n } from "../lib/i18n";
@@ -149,6 +151,8 @@ export function CompactSheet({
         </section>
       )}
       <StorySummary character={c} />
+      <LegacyLoresheets character={c}/>
+      {c.loresheets.length>0&&<section><h3>Fichas de Conhecimento</h3><ul>{c.loresheets.filter(l=>V5_LORESHEETS.some(s=>s.id===l.id)).map(l=><li key={l.id+":"+l.level}>{V5_LORESHEETS.find(s=>s.id===l.id)?.name} · {l.level}</li>)}</ul></section>}
       {c.narrative && (
         <details>
           <summary>Narrativa do NPC</summary>

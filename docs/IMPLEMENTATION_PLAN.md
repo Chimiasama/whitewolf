@@ -68,3 +68,11 @@ Os 34 tipos estão disponíveis por padrão, com escolhas de Disciplinas, benef�
 Galeria com oito estilos e modo automático, independente do jogo; preferência persistida, paletas claras/escuras e modais temáticos. Convicções/Pilares estruturados, anotações de coterie/alcateia e território, sessão zero, edição de narrativa de NPC, histórico manual de XP e ficha compacta cobrem parte dos itens 5–6 da expansão editorial. Seleção de Ritual inicial do básico V5 adicionada. Detalhes em [APPEARANCE_AND_STORY.md](APPEARANCE_AND_STORY.md).
 
 Continuam pendentes: conferir os catálogos completos e traduções, rituais de suplementos e cerimônias, regras avançadas de criação, espécies adicionais de NPC e auditoria completa de acessibilidade. Histórico de XP não automatiza evolução; campos narrativos não aplicam benefícios. Esta atualização substitui a indicação de que vínculos estruturados, edição de NPC, temas e histórico de XP ainda estavam integralmente por fazer.
+
+## Evolução por XP e nova revisão de pendências — implementado
+
+O histórico manual ganhou compras mecânicas com prévia, débito, atualização da ficha e recibo automático. Há estágio persistente de ficha pronta, compatibilidade com fichas antigas e validação distinta dos orçamentos iniciais. Vexame, sessão zero e requisitos narrativos não bloqueiam compras; conferência do Narrador, conforme orientação do usuário.
+
+Foi corrigida outra pendência: o catálogo de Loresheets V5 oferecia oito entradas legadas de Lobisomem. A seleção passou a usar quatro fichas V5 referenciadas, com níveis independentes, restrições de clã e preservação dos registros antigos. Dons acessíveis por mais de uma origem não são duplicados na criação ou geração.
+
+Regras, fontes, limites e fila mecânica atualizada em [EXPERIENCE_ADVANCEMENT.md](EXPERIENCE_ADVANCEMENT.md). Isso substitui as indicações anteriores de que XP era apenas um histórico manual. Continuam pendentes os catálogos completos, caern coletivo, outros modificadores/exceções e criação avançada; não são tarefas concluídas por esta atualização.

@@ -45,3 +45,7 @@ Na revisão, o jogador alterna entre **Ficha completa** e **Ficha compacta**. A 
 A seção **Poderes → Rituais de Sangue** aparece com Feitiçaria de Sangue 1 ou mais. Permite escolher um Ritual inicial de nível 1, separadamente dos poderes de Disciplina, entre os cinco do básico (pp. 272, 276–277). Referências e nomes ingleses acompanham traduções de trabalho. Trocar a escolha não acumula Rituais gratuitos e preserva entradas externas ao catálogo inicial.
 
 Essa entrega não completa rituais de suplementos, cerimônias de Oblívio nem a revisão integral de todos os poderes existentes. Essas pendências continuam no plano editorial. Não é uma certificação de reprodução perfeita dos livros.
+
+## Atualização: compras reais com XP
+
+O histórico manual descrito acima foi ampliado. A ficha agora oferece prévia de compras, débito e evolução automática de características, incluindo registro detalhado e estágio de criação concluída. Consulte [EXPERIENCE_ADVANCEMENT.md](EXPERIENCE_ADVANCEMENT.md) para regras, compatibilidade e limites. Sessão zero e Vexame não bloqueiam compras.

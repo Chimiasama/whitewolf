@@ -4,9 +4,11 @@ import { appendExperience, experienceBalance } from "../lib/experience";
 export function ExperienceLedger({
   character: c,
   onChange,
+  onTransaction,
 }: {
   character: Character;
   onChange: (key: keyof Character, value: any) => void;
+  onTransaction?: (transform: (current: Character) => Character) => void;
 }) {
   const [kind, setKind] = useState<"earned" | "spent">("earned"),
     [amount, setAmount] = useState(""),
@@ -21,8 +23,9 @@ export function ExperienceLedger({
     <section aria-label="Histórico de XP" className="space-y-4">
       <h3 className="text-xl">Histórico de experiência</h3>
       <p className="text-sm text-gray-300">
-        Registro de ganhos e gastos. Este controle não altera características
-        automaticamente; confira o custo no livro antes de editar a ficha.
+        Adicione o XP recebido ou o saldo acumulado de uma ficha existente. Use
+        Evoluir com XP para comprar melhorias; gastos manuais servem para
+        ajustes da mesa.
       </p>
       <strong className="block text-2xl">
         Saldo: {experienceBalance(c)} XP
@@ -37,10 +40,13 @@ export function ExperienceLedger({
               kind,
               amount: Number(amount),
               date,
-              note: note.trim(),
+              note:
+                note.trim() ||
+                (kind === "earned" ? "XP recebido" : "Ajuste manual de XP"),
             };
-            const next = appendExperience(c, entry);
-            onChange("experience", next.experience);
+            if (onTransaction)
+              onTransaction((current) => appendExperience(current, entry));
+            else onChange("experience", appendExperience(c, entry).experience);
             setAmount("");
             setNote("");
             setError("");
@@ -56,18 +62,18 @@ export function ExperienceLedger({
         <label>
           Movimentação
           <select
-            className="mt-2 block w-full rounded p-3"
+            className="mt-2 block w-full rounded border border-gray-600 p-3"
             value={kind}
             onChange={(e) => setKind(e.target.value as typeof kind)}
           >
             <option value="earned">XP recebido</option>
-            <option value="spent">XP gasto</option>
+            <option value="spent">Gasto manual / ajuste</option>
           </select>
         </label>
         <label>
           Quantidade de XP
           <input
-            className="mt-2 block w-full rounded p-3"
+            className="mt-2 block w-full rounded border border-gray-600 p-3"
             type="number"
             min={1}
             max={100000}
@@ -80,7 +86,7 @@ export function ExperienceLedger({
         <label>
           Data
           <input
-            className="mt-2 block w-full rounded p-3"
+            className="mt-2 block w-full rounded border border-gray-600 p-3"
             type="date"
             required
             value={date}
@@ -88,10 +94,9 @@ export function ExperienceLedger({
           />
         </label>
         <label>
-          Descrição do registro
+          Descrição do registro (opcional)
           <input
-            className="mt-2 block w-full rounded p-3"
-            required
+            className="mt-2 block w-full rounded border border-gray-600 p-3"
             value={note}
             maxLength={1000}
             onChange={(e) => setNote(e.target.value)}
@@ -111,6 +116,9 @@ export function ExperienceLedger({
             </strong>{" "}
             · {e.date}
             <p>{e.note}</p>
+            {e.purchase && (
+              <small>Compra automática · {e.purchase.reference}</small>
+            )}
           </li>
         ))}
       </ol>

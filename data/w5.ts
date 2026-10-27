@@ -753,3 +753,6 @@ export const W5_RITES = [
     "description": "Rite of the Winter Wolf — W5, docs/Werewolf5ed:L12818. Conferir condições, parada e efeitos no livro."
   }
 ];
+
+/** A Gift can have several auspice/tribe access entries without becoming several Gifts. */
+export const w5GiftIdentity=(id:string)=>W5_GIFTS.find(g=>g.id===id)?.english.toLowerCase().replace(/[^a-z0-9]/g,'')||id;

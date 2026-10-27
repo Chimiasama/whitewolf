@@ -1,3 +1,4 @@
+import {V5_LORESHEETS} from './data/v5Loresheets';
 import {completePredators} from './data/predators';
 import { W5_TRIBES } from './data/w5';
 
@@ -612,104 +613,7 @@ export const fnTranslateAdvantageFlaw = (
     return { name: oItem.name, description: oItem.description };
 };
 
-export const fnGetLoresheets = (fnT: TFunction): Loresheet[] => [
-    {
-        id: "watcherOfMalditos",
-        name: fnT('loresheets.watcherOfMalditos.name'),
-        description: fnT('loresheets.watcherOfMalditos.description'),
-        levels: [
-            { level: 1, name: fnT('loresheets.watcherOfMalditos.level1.name'), description: fnT('loresheets.watcherOfMalditos.level1.description'), system: fnT('loresheets.watcherOfMalditos.level1.system') },
-            { level: 2, name: fnT('loresheets.watcherOfMalditos.level2.name'), description: fnT('loresheets.watcherOfMalditos.level2.description'), system: fnT('loresheets.watcherOfMalditos.level2.system') },
-            { level: 3, name: fnT('loresheets.watcherOfMalditos.level3.name'), description: fnT('loresheets.watcherOfMalditos.level3.description'), system: fnT('loresheets.watcherOfMalditos.level3.system') },
-            { level: 4, name: fnT('loresheets.watcherOfMalditos.level4.name'), description: fnT('loresheets.watcherOfMalditos.level4.description'), system: fnT('loresheets.watcherOfMalditos.level4.system') },
-            { level: 5, name: fnT('loresheets.watcherOfMalditos.level5.name'), description: fnT('loresheets.watcherOfMalditos.level5.description'), system: fnT('loresheets.watcherOfMalditos.level5.system') },
-        ]
-    },
-    {
-        id: "theSkinner",
-        name: fnT('loresheets.theSkinner.name'),
-        description: fnT('loresheets.theSkinner.description'),
-        levels: [
-            { level: 1, name: fnT('loresheets.theSkinner.level1.name'), description: fnT('loresheets.theSkinner.level1.description'), system: fnT('loresheets.theSkinner.level1.system') },
-            { level: 2, name: fnT('loresheets.theSkinner.level2.name'), description: fnT('loresheets.theSkinner.level2.description'), system: fnT('loresheets.theSkinner.level2.system') },
-            { level: 3, name: fnT('loresheets.theSkinner.level3.name'), description: fnT('loresheets.theSkinner.level3.description'), system: fnT('loresheets.theSkinner.level3.system') },
-            { level: 4, name: fnT('loresheets.theSkinner.level4.name'), description: fnT('loresheets.theSkinner.level4.description'), system: fnT('loresheets.theSkinner.level4.system') },
-            { level: 5, name: fnT('loresheets.theSkinner.level5.name'), description: fnT('loresheets.theSkinner.level5.description'), system: fnT('loresheets.theSkinner.level5.system') },
-        ]
-    },
-    {
-        id: "zhyzhak",
-        name: fnT('loresheets.zhyzhak.name'),
-        description: fnT('loresheets.zhyzhak.description'),
-        levels: [
-            { level: 1, name: fnT('loresheets.zhyzhak.level1.name'), description: fnT('loresheets.zhyzhak.level1.description'), system: fnT('loresheets.zhyzhak.level1.system') },
-            { level: 2, name: fnT('loresheets.zhyzhak.level2.name'), description: fnT('loresheets.zhyzhak.level2.description'), system: fnT('loresheets.zhyzhak.level2.system') },
-            { level: 3, name: fnT('loresheets.zhyzhak.level3.name'), description: fnT('loresheets.zhyzhak.level3.description'), system: fnT('loresheets.zhyzhak.level3.system') },
-            { level: 4, name: fnT('loresheets.zhyzhak.level4.name'), description: fnT('loresheets.zhyzhak.level4.description'), system: fnT('loresheets.zhyzhak.level4.system') },
-            { level: 5, name: fnT('loresheets.zhyzhak.level5.name'), description: fnT('loresheets.zhyzhak.level5.description'), system: fnT('loresheets.zhyzhak.level5.system') },
-        ]
-    },
-    {
-        id: "saboteurs",
-        name: fnT('loresheets.saboteurs.name'),
-        description: fnT('loresheets.saboteurs.description'),
-        levels: [
-            { level: 1, name: fnT('loresheets.saboteurs.level1.name'), description: fnT('loresheets.saboteurs.level1.description'), system: fnT('loresheets.saboteurs.level1.system') },
-            { level: 2, name: fnT('loresheets.saboteurs.level2.name'), description: fnT('loresheets.saboteurs.level2.description'), system: fnT('loresheets.saboteurs.level2.system') },
-            { level: 3, name: fnT('loresheets.saboteurs.level3.name'), description: fnT('loresheets.saboteurs.level3.description'), system: fnT('loresheets.saboteurs.level3.system') },
-            { level: 4, name: fnT('loresheets.saboteurs.level4.name'), description: fnT('loresheets.saboteurs.level4.description'), system: fnT('loresheets.saboteurs.level4.system') },
-            { level: 5, name: fnT('loresheets.saboteurs.level5.name'), description: fnT('loresheets.saboteurs.level5.description'), system: fnT('loresheets.saboteurs.level5.system') },
-        ]
-    },
-    {
-        id: "projectTwilight",
-        name: fnT('loresheets.projectTwilight.name'),
-        description: fnT('loresheets.projectTwilight.description'),
-        levels: [
-            { level: 1, name: fnT('loresheets.projectTwilight.level1.name'), description: fnT('loresheets.projectTwilight.level1.description'), system: fnT('loresheets.projectTwilight.level1.system') },
-            { level: 2, name: fnT('loresheets.projectTwilight.level2.name'), description: fnT('loresheets.projectTwilight.level2.description'), system: fnT('loresheets.projectTwilight.level2.system') },
-            { level: 3, name: fnT('loresheets.projectTwilight.level3.name'), description: fnT('loresheets.projectTwilight.level3.description'), system: fnT('loresheets.projectTwilight.level3.system') },
-            { level: 4, name: fnT('loresheets.projectTwilight.level4.name'), description: fnT('loresheets.projectTwilight.level4.description'), system: fnT('loresheets.projectTwilight.level4.system') },
-            { level: 5, name: fnT('loresheets.projectTwilight.level5.name'), description: fnT('loresheets.projectTwilight.level5.description'), system: fnT('loresheets.projectTwilight.level5.system') },
-        ]
-    },
-    {
-        id: "umbralTraveler",
-        name: fnT('loresheets.umbralTraveler.name'),
-        description: fnT('loresheets.umbralTraveler.description'),
-        levels: [
-            { level: 1, name: fnT('loresheets.umbralTraveler.level1.name'), description: fnT('loresheets.umbralTraveler.level1.description'), system: fnT('loresheets.umbralTraveler.level1.system') },
-            { level: 2, name: fnT('loresheets.umbralTraveler.level2.name'), description: fnT('loresheets.umbralTraveler.level2.description'), system: fnT('loresheets.umbralTraveler.level2.system') },
-            { level: 3, name: fnT('loresheets.umbralTraveler.level3.name'), description: fnT('loresheets.umbralTraveler.level3.description'), system: fnT('loresheets.umbralTraveler.level3.system') },
-            { level: 4, name: fnT('loresheets.umbralTraveler.level4.name'), description: fnT('loresheets.umbralTraveler.level4.description'), system: fnT('loresheets.umbralTraveler.level4.system') },
-            { level: 5, name: fnT('loresheets.umbralTraveler.level5.name'), description: fnT('loresheets.umbralTraveler.level5.description'), system: fnT('loresheets.umbralTraveler.level5.system') },
-        ]
-    },
-    {
-        id: "renegadeFenrir",
-        name: fnT('loresheets.renegadeFenrir.name'),
-        description: fnT('loresheets.renegadeFenrir.description'),
-        levels: [
-            { level: 1, name: fnT('loresheets.renegadeFenrir.level1.name'), description: fnT('loresheets.renegadeFenrir.level1.description'), system: fnT('loresheets.renegadeFenrir.level1.system') },
-            { level: 2, name: fnT('loresheets.renegadeFenrir.level2.name'), description: fnT('loresheets.renegadeFenrir.level2.description'), system: fnT('loresheets.renegadeFenrir.level2.system') },
-            { level: 3, name: fnT('loresheets.renegadeFenrir.level3.name'), description: fnT('loresheets.renegadeFenrir.level3.description'), system: fnT('loresheets.renegadeFenrir.level3.system') },
-            { level: 4, name: fnT('loresheets.renegadeFenrir.level4.name'), description: fnT('loresheets.renegadeFenrir.level4.description'), system: fnT('loresheets.renegadeFenrir.level4.system') },
-            { level: 5, name: fnT('loresheets.renegadeFenrir.level5.name'), description: fnT('loresheets.renegadeFenrir.level5.description'), system: fnT('loresheets.renegadeFenrir.level5.system') },
-        ]
-    },
-    {
-        id: "theBlackSpiral",
-        name: fnT('loresheets.theBlackSpiral.name'),
-        description: fnT('loresheets.theBlackSpiral.description'),
-        levels: [
-            { level: 1, name: fnT('loresheets.theBlackSpiral.level1.name'), description: fnT('loresheets.theBlackSpiral.level1.description'), system: fnT('loresheets.theBlackSpiral.level1.system') },
-            { level: 2, name: fnT('loresheets.theBlackSpiral.level2.name'), description: fnT('loresheets.theBlackSpiral.level2.description'), system: fnT('loresheets.theBlackSpiral.level2.system') },
-            { level: 3, name: fnT('loresheets.theBlackSpiral.level3.name'), description: fnT('loresheets.theBlackSpiral.level3.description'), system: fnT('loresheets.theBlackSpiral.level3.system') },
-            { level: 4, name: fnT('loresheets.theBlackSpiral.level4.name'), description: fnT('loresheets.theBlackSpiral.level4.description'), system: fnT('loresheets.theBlackSpiral.level4.system') },
-            { level: 5, name: fnT('loresheets.theBlackSpiral.level5.name'), description: fnT('loresheets.theBlackSpiral.level5.description'), system: fnT('loresheets.theBlackSpiral.level5.system') },
-        ]
-    }
-];
+export const fnGetLoresheets = (_fnT: TFunction): Loresheet[] => V5_LORESHEETS;
 
 export const fnGetRituals = (fnT: TFunction): { id: string, name: string, description: string }[] => [
     { id: "confinement", name: fnT('disciplines.werewolfRituals.confinement.name'), description: fnT('disciplines.werewolfRituals.confinement.description') },

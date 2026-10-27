@@ -483,7 +483,14 @@ const App: React.FC = () => {
     }, [nStep]);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
     useEffect(()=>theme.setGame(oCharacter.gameType),[oCharacter.gameType]);
-    useEffect(()=>setCompleted(false),[oCharacter]);
+    const characterRef=useRef(oCharacter);
+    characterRef.current=oCharacter;
+    const fnApplyTransaction=(transform:(current:Character)=>Character)=>{
+        const next=transform(characterRef.current);
+        characterRef.current=next;
+        fnSetCharacter(next);
+    };
+    useEffect(()=>setCompleted(Boolean(oCharacter.creationCompletedAt)),[oCharacter.creationCompletedAt]);
 
     useEffect(()=>{
         if(view==='creator'&&oCharacter.gameType){
@@ -557,7 +564,9 @@ const App: React.FC = () => {
     const fnSaveCharacter = (sName: string) => {
         if (typeof window !== 'undefined') {
             try {
-                localStorage.setItem(`${SAVE_PREFIX}${sName}`, JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}));
+                const next={...oCharacter,schemaVersion:SCHEMA_VERSION,...(completionRequested&&allIssues.length===0?{creationCompletedAt:oCharacter.creationCompletedAt||new Date().toISOString()}:{})};
+                localStorage.setItem(`${SAVE_PREFIX}${sName}`, JSON.stringify(next));
+                fnSetCharacter(next);
                 fnShowNotification(fnT('storage.saveSuccess'));
                 if(completionRequested&&allIssues.length===0)setCompleted(true);
                 setCompletionRequested(false);
@@ -722,6 +731,7 @@ const App: React.FC = () => {
         const sThemeAccent=sThemeColor;
         const sThemeBorder=bIsWerewolf?'border-emerald-800':'border-red-800';
         const sThemeBg='bg-gray-900';
+        if(oCharacter.creationCompletedAt&&['nature','capacities','powers'].includes(sStepId))return <section className="rounded-lg border border-gray-600 bg-gray-900 p-6 space-y-4"><h2 className="text-xl">Ficha em jogo</h2><p>A distribuição inicial foi encerrada. Use a evolução com XP para aumentar características e adquirir novos benefícios.</p><button className="rounded border p-3" onClick={()=>{setPanel('resources','experience');fnSetStep(5);}}>Evoluir com XP</button></section>;
         switch (sStepId) {
             case 'concept':
                 return (
@@ -991,7 +1001,7 @@ const App: React.FC = () => {
             case 'bloodrituals':
                 return <BloodRitualPicker character={oCharacter} onChange={fnUpdateCharacter}/>;
             case 'resources':
-                return <ResourceChoices character={oCharacter} onChange={fnUpdateCharacter} panel={panels.resources} onPanel={id=>setPanel('resources',id)}/>;
+                return <ResourceChoices character={oCharacter} onTransaction={fnApplyTransaction} onChange={fnUpdateCharacter} panel={panels.resources} onPanel={id=>setPanel('resources',id)}/>;
             case 'predator':
             case 'disciplines':
             case 'thinblood':
@@ -1215,6 +1225,7 @@ const App: React.FC = () => {
                 return (
                     <CharacterSheet 
                         character={oCharacter} 
+                        onAdvance={()=>{setPanel('resources','experience');fnSetStep(5);}}
                         onUpdateHunger={(h) => fnUpdateCharacter('hunger', h)} 
                         onUpdateHumanity={(h) => fnUpdateCharacter('humanity', h)}
                         onUpdateWillpower={(w) => fnUpdateCharacter('willpower', w)}
@@ -1278,7 +1289,7 @@ const App: React.FC = () => {
                 />
                 <div className="mb-5 mt-4 flex flex-wrap justify-between gap-2 text-sm text-gray-400"><p>Etapa {nStep} de {aSteps.length} · {aSteps[nStep-1]?.label}</p><p role="status">{saveStatus}</p></div>
                 {nStep===REVIEW_STEP&&<section aria-label="Revisão da criação" className="mb-6 rounded-xl border border-gray-600 p-5 bg-gray-900">
-                    <h2 className="text-xl">{allIssues.length?`Faltam ${allIssues.length} escolhas`:oCharacter.profile==='npc'?'NPC pronto para revisão do Narrador':'Escolhas de criação preenchidas'}</h2>
+                    <h2 className="text-xl">{allIssues.length?`Faltam ${allIssues.length} escolhas`:oCharacter.creationCompletedAt?'Ficha em jogo':oCharacter.profile==='npc'?'NPC pronto para revisão do Narrador':'Escolhas de criação preenchidas'}</h2>
                     <p className="mt-2 text-sm text-gray-300">{oCharacter.profile==='npc'?'Confira a coerência da ficha com a sua história.':'Confira os detalhes e as regras antes de concluir. Você pode salvar um rascunho a qualquer momento.'}</p>
                     <ul className="mt-4 space-y-3">{allIssues.map(issue=><li key={issue} className="flex justify-between gap-3 text-sm"><span>{displayIssue(issue)}</span><button type="button" className="underline shrink-0" onClick={()=>goToIssue(issue)}>Resolver</button></li>)}</ul>
                     <button type="button" disabled={allIssues.length>0} className="mt-4 rounded bg-emerald-800 px-4 py-3 disabled:opacity-40" onClick={()=>{setCompletionRequested(true);fnSetStorageMode('save');fnSetShowStorage(true);}}>{completed?'Criação concluída':'Concluir criação'}</button>

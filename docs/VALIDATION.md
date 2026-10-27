@@ -44,3 +44,17 @@ TypeScript e build aprovados; suíte completa com **23 testes aprovados em 27,5 
 Inspeção de capturas desktop dos estilos Medieval, Neon, Terror e Papel, galeria e Minimalista no celular. Corrigidos fundos de superfícies antigas e indicadores de etapas para seguir os tokens do tema. Essa inspeção não equivale a auditoria WCAG. O build deixa de incluir o fundo JPEG antigo de aproximadamente 625 kB; o chunk principal JavaScript continua acima de 500 kB (aprox. 632 kB / 187 kB gzip).
 
 Funcionalidades e limites em [APPEARANCE_AND_STORY.md](APPEARANCE_AND_STORY.md). Nenhuma nova revisão integral dos livros é declarada nesta entrega.
+
+## Compras com experiência — V5 e W5
+
+`npm run lint` e build aprovados; suíte completa com **33 testes aprovados em 32,0 s**, sem testes ignorados. Dez testes novos cobrem:
+
+- 40 XP, Força 3 → 4 por 20 XP, prévia, débito, atualização e recibo; salvamento, exportação e reimportação preservam a compra e a conclusão da criação.
+- Ficha antiga habilita evolução sem sessão zero, aprovação ou justificativa; compra de Perícia que estava em zero.
+- W5: Renome evolui mesmo com marcador de Vexame, conforme política solicitada; Rito custa 5 XP; catálogos dos jogos não se cruzam; largura mobile 390 px.
+- Compras sequenciais 2 → 3 → 4 por 15 + 20 XP; teto 5, saldo insuficiente, prévia obsoleta/duplo clique, datas inválidas e operação malsucedida sem alteração do original.
+- Disciplina do clã ×5, fora do clã ×7, Caitiff ×6, poder incluído, pré-requisitos/Amálgama; Alquimia, fórmula extra, Ritual, especialidade, Vantagem, Humanidade e teto de Potência por geração.
+- Custo do próximo Dom pela quantidade total conhecida; origem, Renome e duplicação; amostra de 120 NPCs W5 sem repetir o mesmo Dom por acessos distintos.
+- Loresheets V5 revisadas, dois níveis independentes na criação e evolução, preservação de legado e desconto de Talento Verdadeiro; Méritos comunitários Fast Learner, Discipline Competence e Alchemy Expert, incluindo importação de Mérito de 6 pontos.
+
+Inspeção visual da tela de XP no celular; campos receberam bordas visíveis e saldo no topo da compra. O aviso de chunk acima de 500 kB permanece (aprox. 651 kB / 194 kB gzip). Catálogos ainda parciais e caern coletivo estão explicitados em [EXPERIENCE_ADVANCEMENT.md](EXPERIENCE_ADVANCEMENT.md); estes testes não certificam todo o conteúdo dos livros.

@@ -1,3 +1,4 @@
+import {LegacyLoresheets} from './LegacyLoresheets';
 import {CompactSheet} from './CompactSheet';
 import {StorySummary} from './CharacterStory';
 import {experienceBalance} from '../lib/experience';
@@ -27,6 +28,7 @@ interface CharacterSheetProps {
   onUpdateHauglosk?: (hauglosk: number) => void;
   onBack?: () => void;
   onSave?: () => void;
+  onAdvance?: () => void;
 }
 
 const ChevronLeft: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
@@ -281,7 +283,8 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     onUpdateHarano: fnOnUpdateHarano,
     onUpdateHauglosk: fnOnUpdateHauglosk,
     onBack,
-    onSave
+    onSave,
+    onAdvance
 }) => {
     const { t: fnT } = useI18n();
 
@@ -297,7 +300,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     const [oSelectedDiscipline, fnSetSelectedDiscipline] = useState<DisciplineDetail | null>(null);
 
     const [sheetMode,setSheetMode]=useState<'full'|'compact'>(()=>{try{return localStorage.getItem('whitewolf_sheet_mode')==='compact'?'compact':'full';}catch{return 'full';}});
-    const modeControls=<div className="mb-5 flex flex-wrap items-center justify-between gap-3"><fieldset className="flex gap-3"><legend className="sr-only">Modo de ficha</legend>{[{id:'full',label:'Ficha completa'},{id:'compact',label:'Ficha compacta'}].map(m=><label key={m.id} className="rounded border border-gray-600 p-2"><input type="radio" name="sheet-mode" checked={sheetMode===m.id} onChange={()=>{setSheetMode(m.id as typeof sheetMode);try{localStorage.setItem('whitewolf_sheet_mode',m.id);}catch{}}}/> {m.label}</label>)}</fieldset><p className="text-sm">XP disponível: {experienceBalance(oCharacter)}</p></div>;
+    const modeControls=<div className="mb-5 flex flex-wrap items-center justify-between gap-3"><fieldset className="flex gap-3"><legend className="sr-only">Modo de ficha</legend>{[{id:'full',label:'Ficha completa'},{id:'compact',label:'Ficha compacta'}].map(m=><label key={m.id} className="rounded border border-gray-600 p-2"><input type="radio" name="sheet-mode" checked={sheetMode===m.id} onChange={()=>{setSheetMode(m.id as typeof sheetMode);try{localStorage.setItem('whitewolf_sheet_mode',m.id);}catch{}}}/> {m.label}</label>)}</fieldset><div className="flex gap-3 items-center"><p className="text-sm">XP disponível: {experienceBalance(oCharacter)}</p><button className="rounded border p-2" type="button" onClick={onAdvance}>Evoluir com XP</button></div></div>;
 
     const bIsWerewolf = oCharacter.gameType === GameType.Werewolf;
     const sThemeColorClass = bIsWerewolf ? 'text-green-500' : 'text-red-500';
@@ -334,8 +337,9 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     <div className="space-y-8">
       {modeControls}
       <StorySummary character={oCharacter}/>
+      <LegacyLoresheets character={oCharacter}/>
       <aside className="rounded border border-gray-600 p-4 text-left bg-gray-950">
-       <strong>{oCharacter.profile==='npc'?'NPC temático — sem orçamento de XP':'Personagem de jogador — confira as pendências de criação'}</strong>
+       <strong>{oCharacter.profile==='npc'?'NPC temático — sem orçamento de XP':oCharacter.creationCompletedAt?'Personagem em jogo — evolução com XP habilitada':'Personagem de jogador — confira as pendências de criação'}</strong>
        {oCharacter.profile!=='npc' && <ul className="text-amber-200">{playerIssues(oCharacter).map((issue,i)=><li key={i}>{issue}</li>)}</ul>}
        {oCharacter.clan==='thinblood' && <section><h3>Sangue-Fraco</h3><p>Méritos: {(oCharacter.thinMerits||[]).map(id=>THIN_MERITS[id]).join(', ')||'—'}</p><p>Defeitos: {(oCharacter.thinFlaws||[]).map(id=>THIN_FLAWS[id]).join(', ')||'—'}</p><p>Maldição herdada: {oCharacter.thinCurse||'—'}</p></section>}
        {oCharacter.narrative && <dl>{Object.entries(oCharacter.narrative).map(([key,value])=><div key={key}><dt className="font-bold text-amber-200">{{role:'Papel',motivation:'Motivação',secret:'Segredo',relationship:'Vínculo',hook:'Gancho'}[key]}</dt><dd>{value}</dd></div>)}</dl>}

@@ -55,3 +55,7 @@ A etapa Perícias agora começa pela escolha explícita de pacote. Veja [catálo
 ## Estilos e ferramentas de sessão
 
 A aparência agora pode ser escolhida: oito estilos visuais e uma opção automática por jogo, disponíveis na entrada e em Mais ações. Galeria, persistência, ficha compacta, narrativa, XP e limites do Ritual inicial V5 estão descritos em [APPEARANCE_AND_STORY.md](APPEARANCE_AND_STORY.md). A preferência não integra o JSON do personagem; os registros de história e experiência integram.
+
+## Depois da criação
+
+A ficha concluída permanece nesse estágio após salvar/importar. **Evoluir com XP** abre compras com fórmula, saldo resultante e recibo; os editores de distribuição inicial encaminham à evolução. Fichas antigas podem habilitar esse estágio diretamente. A experiência não exige acordos narrativos nem sessão zero. Veja [EXPERIENCE_ADVANCEMENT.md](EXPERIENCE_ADVANCEMENT.md).

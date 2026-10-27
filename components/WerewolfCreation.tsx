@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Character } from "../types";
-import { W5_GIFTS, W5_TRIBES, W5_RITES } from "../data/w5";
+import { W5_GIFTS, W5_TRIBES, W5_RITES, w5GiftIdentity } from "../data/w5";
 import { CreationTabs } from "./CreationTabs";
 import { CatalogPicker } from "./CatalogPicker";
 export function WerewolfCreation({
@@ -118,7 +118,7 @@ export function WerewolfCreation({
                 name: g.name,
                 summary: g.summary,
                 unavailable:
-                  g.totalRenown > 3
+                  (c.gifts||[]).some(x=>x.origin!==key&&w5GiftIdentity(x.id)===w5GiftIdentity(g.id))?'Este Dom já foi escolhido por outra origem.':g.totalRenown > 3
                     ? `Exige Renome total ${g.totalRenown}.`
                     : undefined,
                 details: (

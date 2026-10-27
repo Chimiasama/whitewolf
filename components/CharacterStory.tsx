@@ -292,7 +292,7 @@ export function CharacterStory({
           )
         }
       </CreationTabs>
-      {!wolf && (
+      {!wolf && !c.creationCompletedAt && (
         <details>
           <summary>Idade e características avançadas</summary>
           <div className="grid grid-cols-2 gap-4 mt-3">

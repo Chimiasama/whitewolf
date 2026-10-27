@@ -1,4 +1,9 @@
+import { LegacyLoresheets } from "./LegacyLoresheets";
 import { CharacterStory } from "./CharacterStory";
+import {
+  ExperiencePurchases,
+  CharacterTransaction,
+} from "./ExperiencePurchases";
 import { ExperienceLedger } from "./ExperienceLedger";
 import { characterPredator } from "../lib/predatorRules";
 import React, { useState } from "react";
@@ -99,11 +104,13 @@ export function ResourceChoices({
   onChange,
   panel,
   onPanel,
+  onTransaction,
 }: {
   character: Character;
   onChange: (key: keyof Character, value: any) => void;
   panel: string;
   onPanel: (key: string) => void;
+  onTransaction: CharacterTransaction;
 }) {
   const { t } = useI18n();
   const catalogue = fnGetAdvantagesAndFlaws(t, c.gameType),
@@ -121,26 +128,56 @@ export function ResourceChoices({
     (predator?.flaws.reduce((s, a) => s + a.cost, 0) || 0);
   return (
     <div className="space-y-5">
-      <div className="grid grid-cols-2 gap-3 rounded-lg bg-gray-900 p-4 text-sm">
-        <div>
-          Vantagens e Loresheets
-          <strong className="block text-xl">
-            {advantagePoints} / 7 pontos
-          </strong>
+      <LegacyLoresheets character={c} />
+      {!c.creationCompletedAt && (
+        <div className="grid grid-cols-2 gap-3 rounded-lg bg-gray-900 p-4 text-sm">
+          <div>
+            Vantagens e Loresheets
+            <strong className="block text-xl">
+              {advantagePoints} / 7 pontos
+            </strong>
+          </div>
+          <div>
+            Defeitos
+            <strong className="block text-xl">{flawPoints} / 2 pontos</strong>
+          </div>
         </div>
-        <div>
-          Defeitos
-          <strong className="block text-xl">{flawPoints} / 2 pontos</strong>
-        </div>
-      </div>
+      )}
+      {panel === "loresheets" &&
+        c.loresheets.some((l) => l.id === "v5-helena" && l.level === 2) && (
+          <label className="block">
+            Perícia de Talento Verdadeiro
+            <select
+              className="mt-2 block rounded p-3"
+              value={c.loreChoices?.helenaTalent || ""}
+              onChange={(e) =>
+                onChange("loreChoices", {
+                  ...c.loreChoices,
+                  helenaTalent: e.target.value,
+                })
+              }
+            >
+              <option value="">Escolha</option>
+              {["Craft", "Etiquette", "Performance"].map((k) => (
+                <option key={k} value={k}>
+                  {t("skills.list." + k)}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
       <CreationTabs
         active={panel}
         onChange={onPanel}
         items={[
-          { id: "advantages", label: "Vantagens" },
-          { id: "flaws", label: "Defeitos" },
-          ...(c.gameType === GameType.Vampire
-            ? [{ id: "loresheets", label: "Loresheets" }]
+          ...(!c.creationCompletedAt
+            ? [
+                { id: "advantages", label: "Vantagens" },
+                { id: "flaws", label: "Defeitos" },
+                ...(c.gameType === GameType.Vampire
+                  ? [{ id: "loresheets", label: "Loresheets" }]
+                  : []),
+              ]
             : []),
           { id: "ties", label: "Vínculos" },
           { id: "experience", label: "Experiência" },
@@ -148,7 +185,17 @@ export function ResourceChoices({
       >
         {(key) =>
           key === "experience" ? (
-            <ExperienceLedger character={c} onChange={onChange} />
+            <div className="space-y-6">
+              <ExperiencePurchases
+                character={c}
+                onTransaction={onTransaction}
+              />
+              <ExperienceLedger
+                character={c}
+                onChange={onChange}
+                onTransaction={onTransaction}
+              />
+            </div>
           ) : key === "ties" ? (
             <CharacterStory character={c} onChange={onChange} />
           ) : key === "loresheets" ? (
@@ -161,6 +208,10 @@ export function ResourceChoices({
                   id: l.id + ":" + level.level,
                   name: `${l.name} · ${level.level} pontos`,
                   summary: level.name,
+                  unavailable:
+                    l.allowedClans && !l.allowedClans.includes(c.clan)
+                      ? "Exige o clã indicado na referência."
+                      : undefined,
                   details: (
                     <>
                       <p>{l.description}</p>
@@ -177,11 +228,10 @@ export function ResourceChoices({
                   c.loresheets.some(
                     (l) => l.id === key && l.level === Number(n),
                   )
-                    ? c.loresheets.filter((l) => l.id !== key)
-                    : [
-                        ...c.loresheets.filter((l) => l.id !== key),
-                        { id: key, level: Number(n) },
-                      ],
+                    ? c.loresheets.filter(
+                        (l) => !(l.id === key && l.level === Number(n)),
+                      )
+                    : [...c.loresheets, { id: key, level: Number(n) }],
                 );
               }}
             />

@@ -1,4 +1,4 @@
-import { W5_GIFTS, W5_TRIBES, W5_RITES } from '../data/w5';
+import { W5_GIFTS, W5_TRIBES, W5_RITES, w5GiftIdentity } from '../data/w5';
 
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, GameType, Tribe, Auspice } from '../types';
 import { oInitialCharacter, fnGetClanDetails, fnGetPredatorTypes, fnGetDisciplineDetails, aAttributeList, aSkillList, fnGetTribeDetails, fnGetAuspiceDetails, fnGetAdvantagesAndFlaws, fnGetLoresheets } from '../constants';
@@ -128,10 +128,12 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
 
         const disciplines = {};
         const disciplinePowers = {};
-        const gifts = (['native','auspice','tribe'] as const).map(origin=> {
-            const choices=W5_GIFTS.filter(g=>g.origin===origin&&g.totalRenown<=3&&(origin==='native'||g.owner===(origin==='tribe'?selectedTribe:selectedAuspice)));
-            const gift=choices[Math.floor(Math.random()*choices.length)];return {id:gift.id,origin};
-        });
+        const gifts:NonNullable<Character['gifts']>=[];
+        for(const origin of ['native','auspice','tribe'] as const){
+            const choices=W5_GIFTS.filter(g=>g.origin===origin&&g.totalRenown<=3&&(origin==='native'||g.owner===(origin==='tribe'?selectedTribe:selectedAuspice))&&!gifts.some(owned=>w5GiftIdentity(owned.id)===w5GiftIdentity(g.id)));
+            const gift=choices[Math.floor(Math.random()*choices.length)];
+            if(gift)gifts.push({id:gift.id,origin});
+        }
         const renown = {glory:0,honor:0,wisdom:0};
         const primaryRenown = W5_TRIBES[selectedTribe].renown;
         renown[primaryRenown]=2;
@@ -269,10 +271,12 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
     let humanity: number | undefined = (7 + selectedPredator.humanityModifier);
 
     const loresheets: { id: string, level: number }[] = [];
+    const loreChoices:Record<string,string>={};
     if (sLevel !== 'fledgling') {
-        const allLoresheets = fnGetLoresheets(fnT);
+        const allLoresheets = fnGetLoresheets(fnT).filter(s=>!s.allowedClans||s.allowedClans.includes(selectedClan));
         const selectedLS = allLoresheets[Math.floor(Math.random() * allLoresheets.length)];
         loresheets.push({ id: selectedLS.id, level: sLevel === 'ancilla' ? 2 : 1 });
+        if(selectedLS.id==='v5-helena'&&sLevel==='ancilla')loreChoices.helenaTalent='Performance';
     }
 
     if (sLevel === 'neonate') {
@@ -314,6 +318,7 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         health: attributes[Attribute.Stamina] + 3,
         willpower: attributes[Attribute.Composure] + attributes[Attribute.Resolve],
         hunger: 1,
-        loresheets
+        loresheets,
+        loreChoices
     };
 };
