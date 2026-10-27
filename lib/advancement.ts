@@ -1,3 +1,4 @@
+import {LOW_CLAN_DISCIPLINES} from '../data/v5Loresheets';
 import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
 import {baneSeverity,hasAlternativeBane} from '../data/alternativeBanes';
 import { Attribute, Character, Clan, GameType, Skill } from "../types";
@@ -256,7 +257,8 @@ export function quotePurchase(
     const newDisc = { ...c.disciplines, [r.key]: to };
     if (p.amalgam?.some((a) => (newDisc[a.discipline] || 0) < a.level))
       reject("Faltam pontos para o Amálgama deste poder.");
-    const favored =
+    const traded = c.loresheets.some(l=>l.id==="v5-low-clan"&&l.level===4)&&c.resourceChoices?.lowClanDiscipline===r.key&&LOW_CLAN_DISCIPLINES.includes(r.key);
+    const favored = traded ||
       c.advantages.some(
         (a) => a.id === "disciplinecompetence" && a.cost === 6,
       ) && c.disciplineCompetence === r.key;
@@ -291,8 +293,8 @@ export function quotePurchase(
             : " · fora do clã";
     }
     if (favored && r.kind === "discipline") {
-      formula += " · Competência em Disciplina";
-      reference = "Player’s Guide 02 (Bully), seção Discipline Competence";
+      formula += traded ? " · Comércio entre Iguais" : " · Competência em Disciplina";
+      reference = traded ? "V5, p. 401 — Trade Among Equals" : "Player’s Guide 02 (Bully), seção Discipline Competence";
     }
     label = `${discipline.name}${r.kind === "discipline" ? ` ${from} → ${to}` : ""} · ${p.name}`;
     patch = {

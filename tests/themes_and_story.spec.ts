@@ -179,7 +179,7 @@ test("ritual inicial selecionável e novos dados inválidos rejeitados", async (
     });
   await page.getByRole("button", { name: "Poderes", exact: false }).click();
   await page
-    .getByRole("tab", { name: "Rituais de Sangue", exact: true })
+    .getByRole("tab", { name: "Rituais e cerimônias", exact: true })
     .click();
   const picker = page.getByRole("region", {
     name: "Ritual inicial de Feitiçaria de Sangue",

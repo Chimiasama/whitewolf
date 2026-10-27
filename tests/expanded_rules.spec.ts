@@ -75,3 +75,12 @@ test('Hecata alternativo aplica sobretaxa na compra de Refúgio',async({page})=>
   return {standard:quotePurchase(c,{kind:'advantage',key:'haven'}).cost,alternative:quotePurchase({...c,baneVariant:'alternative'},{kind:'advantage',key:'haven'}).cost};
  });expect(result).toEqual({standard:3,alternative:5});
 });
+
+test('Comércio entre Iguais usa taxa de clã na Disciplina escolhida',async({page})=>{
+ const result=await page.evaluate(async()=>{
+  const {oInitialCharacter,fnGetDisciplineDetails}=await import('/constants.ts');const {quotePurchase}=await import('/lib/advancement.ts');
+  const c={...structuredClone(oInitialCharacter),gameType:'Vampire',clan:'ventrue',creationCompletedAt:'2026-10-27T12:00:00Z',loresheets:[{id:'v5-low-clan',level:4}],resourceChoices:{lowClanDiscipline:'protean'}};
+  const choice=fnGetDisciplineDetails(k=>k).protean.powers.find(p=>p.level===1).id;
+  return {normal:quotePurchase({...c,resourceChoices:{}},{kind:'discipline',key:'protean',choice}).cost,traded:quotePurchase(c,{kind:'discipline',key:'protean',choice}).cost};
+ });expect(result).toEqual({normal:7,traded:5});
+});

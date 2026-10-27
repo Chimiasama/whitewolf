@@ -5,7 +5,8 @@ Base: fd2e5b3. Reconstrução a partir das fontes do repositório, sem recuperar
 - W5: 127 identidades de Dons, 182 acessos nativos/de augúrio/de tribo, com patamares avançados e identidade única. Na interseção de acessos elegíveis vale o menor requisito. IDs anteriores preservados. Renome 9 no último bloco de Silver Fangs corrige o cabeçalho extraído como “Renown 3”; canções iniciais de Galliard preservadas no patamar 2 apesar da extração intercalada.
 - V5: 47 entradas de rituais (básico, Players Guide, Cults e Forbidden Religions), níveis 1–5; 10 cerimônias de Cults com poder obrigatório de Oblívio e custo nível ×3. Na criação, uma entrada nível 1 de cada categoria, com requisitos.
 - Adicionados poderes necromânticos que habilitam cerimônias, nove fórmulas do Players Guide e fórmulas de imitação de poderes níveis 1–4, adquiridas no nível de Alquimia imediatamente superior.
-- 25 Loresheets do básico com cinco níveis independentes. As quatro preexistentes mantêm os resumos; as outras apresentam títulos dos benefícios e referência de página. Não há aplicação automática dos benefícios dessas 21 novas fichas.
+- 25 Loresheets do básico com cinco níveis independentes. Todas apresentam resumos autorais e referência de página. Benefícios situacionais não são aplicados automaticamente; os descontos de XP explicitamente implementados ficam no motor de evolução.
+- Comércio entre Iguais (Baixo Clã 4) registra a Disciplina escolhida e aplica taxa de clã; mantém os descontos anteriores de Helena e Méritos comunitários.
 - 14 Maldições alternativas do Players Guide; efeitos descritos para consulta. Hecata/Decay acrescenta gravidade ao custo de XP de Refúgio, Recursos e Lacaios reconhecidos pelo ID do catálogo.
 - Variantes de rituais de Cults e Players Guide mantêm IDs e fonte distintos: não são efeitos cumulativos certificados.
 
