@@ -1,0 +1,212 @@
+[
+  {
+    "file": "Vampire5edAnarch",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "a2d5364e472018c27c56ab3f8f8362faa1836cb01e590b7facb07075d19fc0f0",
+    "lines": 12292,
+    "categories": {
+      "criação e progressão": 2,
+      "identidade e narrativa": 0,
+      "poderes e requisitos": 3,
+      "NPCs e antagonistas": 0,
+      "vantagens, ritos e equipamento": 9
+    }
+  },
+  {
+    "file": "Vampire5edChicagobyNight",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "fdaa9ceac5284077c5d29ec0d291afe12a7fab2ad02d88765d9bdf7b8f8c2899",
+    "lines": 29511,
+    "categories": {
+      "criação e progressão": 4,
+      "identidade e narrativa": 289,
+      "poderes e requisitos": 11,
+      "NPCs e antagonistas": 78,
+      "vantagens, ritos e equipamento": 20
+    }
+  },
+  {
+    "file": "Vampire5edCultsoftheBloddGods",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "c8b2071e54d785644d90b97410ea6aeac947878d04e84cea9747866a5b09d269",
+    "lines": 22973,
+    "categories": {
+      "criação e progressão": 10,
+      "identidade e narrativa": 125,
+      "poderes e requisitos": 45,
+      "NPCs e antagonistas": 159,
+      "vantagens, ritos e equipamento": 7
+    }
+  },
+  {
+    "file": "Vampire5edFallofLondom",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "e244536770eede4056ce7189df20ed6425d75f16390a1d8062daf33156034fcb",
+    "lines": 16285,
+    "categories": {
+      "criação e progressão": 2,
+      "identidade e narrativa": 50,
+      "poderes e requisitos": 2,
+      "NPCs e antagonistas": 55,
+      "vantagens, ritos e equipamento": 0
+    }
+  },
+  {
+    "file": "Vampire5edForbiddenReligions",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "9c630c36f621f503ad29b446489d4a2b7be6ae057cbdbba252ae5de6696ef292",
+    "lines": 7123,
+    "categories": {
+      "criação e progressão": 3,
+      "identidade e narrativa": 15,
+      "poderes e requisitos": 3,
+      "NPCs e antagonistas": 11,
+      "vantagens, ritos e equipamento": 4
+    }
+  },
+  {
+    "file": "Vampire5edLettheStreetsRunRed",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "130d8544d7aded57dcaeac49534cc2bf87f7701e5ff7c880e294ce73850929a7",
+    "lines": 21224,
+    "categories": {
+      "criação e progressão": 3,
+      "identidade e narrativa": 194,
+      "poderes e requisitos": 0,
+      "NPCs e antagonistas": 163,
+      "vantagens, ritos e equipamento": 2
+    }
+  },
+  {
+    "file": "Vampire5edPlayersGuide01",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "a2007402c4c260aae4157a1ec0245954ca02948654af22bc548648b4a462c563",
+    "lines": 15486,
+    "categories": {
+      "criação e progressão": 29,
+      "identidade e narrativa": 28,
+      "poderes e requisitos": 173,
+      "NPCs e antagonistas": 24,
+      "vantagens, ritos e equipamento": 13
+    }
+  },
+  {
+    "file": "Vampire5edPlayersGuide02",
+    "edition": "V5",
+    "source_class": "community",
+    "sha256": "47fffdca2e7c3865eb6cecd8b2e6545cfd2fab3d7b0e5caacddd19d3722cee47",
+    "lines": 3473,
+    "categories": {
+      "criação e progressão": 5,
+      "identidade e narrativa": 0,
+      "poderes e requisitos": 7,
+      "NPCs e antagonistas": 0,
+      "vantagens, ritos e equipamento": 4
+    }
+  },
+  {
+    "file": "Vampire5edSabat",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "1deb25b258426e7d68a1ae46ac83d02e8f6151e0b5a3b935468c0205df6ebeaa",
+    "lines": 7891,
+    "categories": {
+      "criação e progressão": 4,
+      "identidade e narrativa": 0,
+      "poderes e requisitos": 25,
+      "NPCs e antagonistas": 72,
+      "vantagens, ritos e equipamento": 3
+    }
+  },
+  {
+    "file": "Vampire5edSecondInquisition",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "41929423c10bf2792557f803b74d07605a3350c8f6ce03dc53ce45691d16281a",
+    "lines": 10930,
+    "categories": {
+      "criação e progressão": 2,
+      "identidade e narrativa": 0,
+      "poderes e requisitos": 0,
+      "NPCs e antagonistas": 251,
+      "vantagens, ritos e equipamento": 0
+    }
+  },
+  {
+    "file": "Vampiro5edCompaniomptbr",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "35069f3ce8b8c64e441df9d74f5b3b3f0c61136e1755006f0f07e25cfdf09ce2",
+    "lines": 3893,
+    "categories": {
+      "criação e progressão": 0,
+      "identidade e narrativa": 0,
+      "poderes e requisitos": 0,
+      "NPCs e antagonistas": 0,
+      "vantagens, ritos e equipamento": 0
+    }
+  },
+  {
+    "file": "Vapire5edCamarilla",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "903945aa3147f4b4ac645b391dcb19955a2d86e0b08fd717c943d76216ca7b9f",
+    "lines": 12379,
+    "categories": {
+      "criação e progressão": 1,
+      "identidade e narrativa": 1,
+      "poderes e requisitos": 0,
+      "NPCs e antagonistas": 0,
+      "vantagens, ritos e equipamento": 8
+    }
+  },
+  {
+    "file": "Vapire5edenglish",
+    "edition": "V5",
+    "source_class": "publisher",
+    "sha256": "2874009b82a6f0e8f62af1791e943fe7e5a4c8f011a0ad857397c4bc5db86a9c",
+    "lines": 31304,
+    "categories": {
+      "criação e progressão": 38,
+      "identidade e narrativa": 10,
+      "poderes e requisitos": 4,
+      "NPCs e antagonistas": 39,
+      "vantagens, ritos e equipamento": 34
+    }
+  },
+  {
+    "file": "Werewolf5ed",
+    "edition": "W5",
+    "source_class": "publisher",
+    "sha256": "095e3b98f2ec9ecad8faa0935bec34c3f26eb3a84cb77a7e855191c9ea5f283a",
+    "lines": 23704,
+    "categories": {
+      "criação e progressão": 21,
+      "identidade e narrativa": 15,
+      "poderes e requisitos": 321,
+      "NPCs e antagonistas": 265,
+      "vantagens, ritos e equipamento": 6
+    }
+  },
+  {
+    "file": "Werewolf5edWyrmtide",
+    "edition": "W5",
+    "source_class": "publisher",
+    "sha256": "6692e9403d07e15c5d90b32a13d173f1b863ac8a992e2c0ad7b2e3c9f701d3ff",
+    "lines": 11836,
+    "categories": {
+      "criação e progressão": 3,
+      "identidade e narrativa": 1,
+      "poderes e requisitos": 26,
+      "NPCs e antagonistas": 296,
+      "vantagens, ritos e equipamento": 3
+    }
+  }
+]

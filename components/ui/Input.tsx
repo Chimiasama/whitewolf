@@ -5,7 +5,9 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   isWerewolf?: boolean;
 }
 
-export const Input: React.FC<InputProps> = ({ label: sLabel, id: sId, isWerewolf = false, ...oProps }) => {
+export const Input: React.FC<InputProps> = ({ label: sLabel, id: providedId, isWerewolf = false, ...oProps }) => {
+  const generatedId = React.useId();
+  const sId = providedId || generatedId;
   return (
     <div className="w-full">
       <label htmlFor={sId} className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">
@@ -29,7 +31,9 @@ interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
   isWerewolf?: boolean;
 }
 
-export const TextArea: React.FC<TextAreaProps> = ({ label: sLabel, id: sId, isWerewolf = false, ...oProps }) => {
+export const TextArea: React.FC<TextAreaProps> = ({ label: sLabel, id: providedId, isWerewolf = false, ...oProps }) => {
+  const generatedId = React.useId();
+  const sId = providedId || generatedId;
   return (
     <div className="w-full">
       <label htmlFor={sId} className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">

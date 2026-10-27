@@ -1,3 +1,4 @@
+import { W5_GIFTS, W5_TRIBES, W5_RITES } from '../data/w5';
 
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, GameType, Tribe, Auspice } from '../types';
 import { oInitialCharacter, fnGetClanDetails, fnGetPredatorTypes, fnGetDisciplineDetails, aAttributeList, aSkillList, fnGetTribeDetails, fnGetAuspiceDetails, fnGetAdvantagesAndFlaws, fnGetLoresheets } from '../constants';
@@ -125,38 +126,17 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         const tribeDetails = fnGetTribeDetails(fnT)[selectedTribe];
         const auspiceDetails = fnGetAuspiceDetails(fnT)[selectedAuspice];
 
-        // 4. Gifts (Disciplines in our model)
-        // Creation rule: 1 dot each in 3 different Gifts (see oDisciplineCreationPools[Werewolf] = [1,1,1]).
-        const disciplines: Record<string, number> = {};
-        const disciplinePowers: Record<string, string[]> = {};
-        const giftNames = shuffle(Array.from(new Set([...tribeDetails.gifts, ...auspiceDetails.gifts])));
-
-        giftNames.slice(0, 3).forEach(sGift => { disciplines[sGift] = 1; });
-
-        const allDiscDetails = fnGetDisciplineDetails(fnT);
-        Object.keys(disciplines).forEach(dKey => {
-            const dots = disciplines[dKey];
-            const details = allDiscDetails[dKey];
-            if (details) {
-                const selected: string[] = [];
-                const l1s = details.powers.filter(p => p.level === 1);
-                if (l1s.length > 0) selected.push(l1s[Math.floor(Math.random() * l1s.length)].id);
-                if (dots >= 2) {
-                    const l2s = details.powers.filter(p => p.level <= 2 && !selected.includes(p.id));
-                    if (l2s.length > 0) selected.push(l2s[Math.floor(Math.random() * l2s.length)].id);
-                }
-                disciplinePowers[dKey] = selected;
-            }
+        const disciplines = {};
+        const disciplinePowers = {};
+        const gifts = (['native','auspice','tribe'] as const).map(origin=> {
+            const choices=W5_GIFTS.filter(g=>g.origin===origin&&g.totalRenown<=3&&(origin==='native'||g.owner===(origin==='tribe'?selectedTribe:selectedAuspice)));
+            const gift=choices[Math.floor(Math.random()*choices.length)];return {id:gift.id,origin};
         });
-
-        // 5. Renown (2 in tribe primary, 1 in another)
-        const renown = { glory: 0, honor: 0, wisdom: 0 };
-        const renownTypes: (keyof typeof renown)[] = ['glory', 'honor', 'wisdom'];
-        const primaryRenown = renownTypes[Math.floor(Math.random() * 3)];
-        const secondaryRenown = renownTypes.filter(r => r !== primaryRenown)[Math.floor(Math.random() * 2)];
-        renown[primaryRenown] = 2;
-        renown[secondaryRenown] = 1;
-
+        const renown = {glory:0,honor:0,wisdom:0};
+        const primaryRenown = W5_TRIBES[selectedTribe].renown;
+        renown[primaryRenown]=2;
+        const other = (['glory','honor','wisdom'] as const).filter(k=>k!==primaryRenown);
+        renown[other[Math.floor(Math.random()*other.length)]]=1;
         // 6. Advantages & Flaws
         const allAdvFlaws: AdvantageFlaw[] = fnGetAdvantagesAndFlaws(fnT, GameType.Werewolf);
         const advantages = shuffle(allAdvFlaws.filter(af => af.type === 'advantage')).slice(0, 2).map(af => ({ ...af, cost: af.levels ? af.levels[0] : af.cost }));
@@ -170,13 +150,8 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
             specialties.push({ skill: highSkills[0], name: aSpecialtyNames[Math.floor(Math.random() * aSpecialtyNames.length)] });
         }
 
-        // 8. Loresheets (Werewolf)
-        const loresheets: { id: string, level: number }[] = [];
-        if (sLevel !== 'fledgling') {
-            const allLoresheets = fnGetLoresheets(fnT);
-            const selectedLS = allLoresheets[Math.floor(Math.random() * allLoresheets.length)];
-            loresheets.push({ id: selectedLS.id, level: sLevel === 'ancilla' ? 2 : 1 });
-        }
+        // No cross-game Loresheets: W5 supplementation requires its own reviewed catalogue.
+        const loresheets: {id:string,level:number}[]=[];
 
         // 9. XP Level Adjustments (Werewolf)
         if (sLevel === 'neonate') {
@@ -187,10 +162,6 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
             attributes[bestAttr] = Math.min(5, attributes[bestAttr] + 1);
             const bestSkill = prioritySkills[0];
             skills[bestSkill] = Math.min(5, skills[bestSkill] + 1);
-            if (giftNames.length > 0) {
-                const d1 = giftNames[0];
-                disciplines[d1] = Math.min(5, (disciplines[d1] || 0) + 1);
-            }
             fnGrantAncillaBonus(advantages, flaws, fnT);
         }
 
@@ -205,6 +176,8 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
             attributes,
             skills,
             specialties,
+            gifts,
+            rituals:[W5_RITES.find(r=>r.id==="w5-rite-dedication")!],
             disciplines,
             disciplinePowers,
             health: attributes[Attribute.Stamina] + 3,
@@ -218,7 +191,7 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
     }
 
     // 3. Clan (Vampire)
-    const clanList = Object.values(Clan);
+    const clanList = Object.values(Clan).filter(c=>c!==Clan.ThinBlood);
     const selectedClan = clanList[Math.floor(Math.random() * clanList.length)];
     const clanDetails = fnGetClanDetails(fnT)[selectedClan];
 
@@ -285,8 +258,8 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         specialties.push(selectedPredator.specialtyOptions[Math.floor(Math.random() * selectedPredator.specialtyOptions.length)]);
     }
 
-    let advantages = [...selectedPredator.advantages];
-    let flaws = [...selectedPredator.flaws];
+    let advantages = selectedPredator.advantages.map(a=>({...a}));
+    let flaws = selectedPredator.flaws.map(a=>({...a}));
 
     // 6. XP Level Adjustments
     // Note: rage/harano/hauglosk/renown are Werewolf-only fields; they're intentionally left out of

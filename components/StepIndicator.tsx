@@ -36,6 +36,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
               } ${bIsCompleted ? (isWerewolf ? "after:border-emerald-800" : "after:border-red-800") : "after:border-gray-800"}`}
             >
               <button
+                aria-current={bIsCurrent ? "step" : undefined}
                 onClick={() => fnOnStepClick?.(nStepNumber)}
                 className="relative z-10 flex min-w-0 max-w-full flex-col items-center justify-start focus:outline-none transition-all cursor-pointer hover:opacity-80"
               >
@@ -49,7 +50,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
                   ) : nStepNumber}
                 </span>
-                <span className={`mt-2 w-full max-w-[4.5rem] sm:max-w-24 px-0.5 text-[8px] sm:text-[10px] uppercase tracking-wide sm:tracking-wider text-center leading-tight break-words transition-colors duration-300 ${bIsCurrent ? (isWerewolf ? 'text-emerald-400 font-bold' : 'text-red-400 font-bold') : 'text-gray-500'}`}>{oStep.label}</span>
+                <span className={`mt-2 w-full max-w-[4.5rem] sm:max-w-24 px-0.5 text-[10px] sm:text-xs uppercase tracking-wide sm:tracking-wider text-center leading-tight break-words transition-colors duration-300 ${bIsCurrent ? (isWerewolf ? 'text-emerald-400 font-bold' : 'text-red-400 font-bold') : 'text-gray-500'}`}>{oStep.label}</span>
               </button>
             </li>
           );

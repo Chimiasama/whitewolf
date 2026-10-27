@@ -1,67 +1,56 @@
-# Plano de implantação das melhorias
+# Plano de implantação — V5/W5
 
-Este plano organiza a evolução do criador de personagens de Vampiro e Lobisomem 5ª edição. Para Lobisomem, a terminologia preferida do app em português é **alcatéia**.
+Base: [guia técnico e editorial](CHARACTER_CREATION_GUIDE.md). Esta revisão substitui o plano anterior; preserva os objetivos e explicita entrega e pendências. Não confundir uma fonte indexada com uma regra disponível no aplicativo.
 
-## Fase 1 — Fundação e confiança
+## 1. Referências e edições — entregue nesta revisão
 
-### 1. Documentação real do produto
-- Substituir README genérico por uma apresentação do app.
-- Explicar jogos suportados, fluxo, recursos e limitações.
-- Incluir aviso de ferramenta não oficial e de que não substitui os livros.
+- Inventário de quinze fontes com hashes, classificação e 3.001 âncoras de criação, narrativa, poderes, vantagens e NPCs.
+- Separação V5/W5 e identificação do Player’s Guide de Bully como conteúdo comunitário, distinto do Players Guide oficial.
+- Guia de regras-base, glossário pt/en, política editorial, exemplos de leitura de NPCs e processo de aprovação de novas entradas.
+- Consulta online tentada; wiki Storyteller e Fandom bloquearam acesso. Novas traduções de W5 são provisórias e mostram inglês.
 
-### 2. Checklist visível de criação
-- Transformar validações booleanas em mensagens de pendência por etapa.
-- Exibir painel de pendências antes do botão Avançar.
-- Manter o bloqueio de avanço, mas explicar o motivo.
+Aceitação: índice reproduzível; fontes originais sem alteração; conteúdo não revisado não anunciado como oficial.
 
-### 3. Salvamento neutro e migração
-- Usar prefixo neutro para novos saves.
-- Continuar lendo saves antigos com prefixo `vtm_save_`.
-- Preparar o formato para versionamento de schema.
+## 2. Integridade e salvamento — entregue nesta revisão
 
-### 4. Terminologia de Lobisomem
-- Padronizar português para **alcatéia**.
-- Revisar textos gerados, vantagens, especialidades e prompts narrativos.
+- Validação de tipos, limites, listas, edição e versão antes de importar; erro visível em vez de tela em branco.
+- Schema v2, exportação no celular, leitura dos prefixos de saves existentes e recuperação de rascunho local.
+- Legados com identidades antigas ou Dons como Disciplinas exigem revisão, sem conversão automática destrutiva.
+- Correção da etapa final ao importar/carregar W5 pela tela inicial.
 
-## Fase 2 — Profundidade narrativa
+Aceitação: arquivos malformados rejeitados; NPCs dos dois jogos sobrevivem ao ciclo gerar → exportar → importar → salvar → carregar → recuperar rascunho.
 
-### 5. Campos narrativos de Vampiro
-- Estruturar Touchstones, Convicções, Máscara pública, Refúgio, seita/domínio, relação com sire, dívidas/boons e ressonância.
+## 3. Regras e NPCs — entregue nesta revisão, com catálogo explicitamente parcial
 
-### 6. Campos narrativos de Lobisomem
-- Adicionar Alcatéia, Caern, Totem/espírito patrono, território, tabu pessoal, relação com espíritos e gatilhos de Harano/Hauglosk.
+- Onze tribos W5, patronos, Renome favorecido, seleção de Dons com origem própria e Ritos referenciados.
+- Exclusão de categorias antigas de Dons do catálogo de Disciplinas. Nenhuma migração automática de tribos de outras edições.
+- Hecata; distribuição de Atributos e Disciplinas convencionais; checagem de especialidades e poderes; orçamento de Vantagens incluindo Loresheets e separando bônus de predador.
+- Correções pontuais em Bagger/Osíris e restrições de Fazendeiro/Ventrue. Predadores comunitários identificados.
+- Gerador explicitamente NPC, sem promessa de XP legal: motivação, segredo, vínculo e gancho; escalas narrativas. Poderes selecionados novamente com requisitos e quantidade coerentes.
+- Remoção da escolha de Loresheets vampíricas no gerador W5. Níveis de Loresheet não concedem automaticamente todos os anteriores.
 
-### 7. Modo Narrador / NPC rápido
-- Criar geração compacta para antagonistas, aliados, contatos mortais e membros de alcatéia.
-- Oferecer ficha reduzida por pools relevantes, poderes, motivação e segredo.
+Aceitação: amostragem dos dois jogos, sem categorias cruzadas, três origens de Dons, Renome do patrono correto e narrativa preservada. Isto não certifica todos os poderes preexistentes nem substitui revisão do Narrador.
 
-## Fase 3 — Regras e conteúdo
+## 4. Aparência e acesso — entregue nesta revisão
 
-### 8. Separação técnica entre Disciplinas e Dons
-- Migrar o modelo para distinguir Disciplinas vampíricas de Dons de Lobisomem.
-- Manter adaptadores para compatibilidade com saves antigos.
+- Tailwind compilado e fontes locais, sem serviços externos para renderizar o app.
+- Idioma pt-BR como padrão, preferência persistida, atributo lang atualizado.
+- Foco visível, interação de poderes por teclado, redução de movimento, rótulos associados, etapas maiores e anúncio de notificações.
+- Impressão/PDF pelo navegador; botão de Lobisomem com tema verde.
 
-### 9. Validações oficiais mais completas
-- Validar pré-requisitos, amalgamas, limites por categoria, especialidades obrigatórias e exceções de Caitiff/Thin-Blood.
-- Validar Dons, Renome, Rituais e Talismãs por origem e pré-requisitos.
+Aceitação: build, TypeScript, testes de navegador e inspeção visual desktop/celular. Exportar JSON continua sendo o backup completo; PDF é apresentação, não formato reimportável.
 
-### 10. Busca, filtros e recomendações
-- Adicionar busca textual para vantagens, defeitos, loresheets, rituais e talismãs.
-- Filtrar por custo, tipo, jogo e relevância para clã/tribo/augúrio/conceito.
+## 5. Expansão editorial — trabalho restante, não anunciado como concluído
 
-## Fase 4 — Uso em mesa
+1. Confirmar novas traduções W5 com fontes pt-BR acessíveis; manter inglês e não usar nomes de edições antigas como aliases.
+2. Conferir cada entrada de Disciplina/poder/Vantagem já existente, e promover entradas do índice para catálogo revisado com referência individual. Revisar também opções comunitárias.
+3. Completar alternativas de predador, os três predadores básicos ausentes, Maldições alternativas, Caitiff avançado e fluxo de Sangue-Fraco com seus Méritos, Defeitos e Fórmulas.
+4. Evoluir Dons para todos os requisitos e acessos alternativos; validar Ritos/Talismãs e conteúdo de Wyrmtide sem inventar efeitos a partir de OCR.
+5. Estruturar Convicções/Pilares, coterie/alcateia, caern, território, segurança de mesa e preferências de conteúdo. Adicionar edição da narrativa gerada e NPCs humanos/espíritos/fomori com paradas próprias.
+6. Histórico de XP para jogadores, ferramentas de busca/filtro, auditoria de acessibilidade completa e comparação visual entre plataformas.
 
-### 11. Exportação avançada
-- Implementar PDF/impressão limpa.
-- Criar modo compacto de mesa e modo narrativo.
-- Incluir metadados de versão no JSON exportado.
+Para cada expansão: referência + resumo autoral + nome pt/en + elegibilidade + testes positivos/negativos + teste de salvamento. Nenhuma opção deve entrar em produção apenas por estar num arquivo com “V5” no nome.
 
-### 12. Segurança e sessão zero
-- Adicionar aviso de conteúdo, linhas e véus, intensidade de horror e temas proibidos da crônica.
+## Publicação e verificação
 
-### 13. Identidade visual refinada
-- Vampiro: reforçar fome, humanidade, sangue, brasões e a Besta.
-- Lobisomem: reforçar lua, garras, mundo espiritual, Renome, Harano e Hauglosk.
-
-### 14. Governança de conteúdo
-- Documentar fontes, limites de conteúdo, material homebrew e política de compatibilidade.
+Executar `npm ci`, `npm run lint`, `npm run build` e `npm test`. Em máquina com Chromium do sistema, usar `PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm test`; em outra máquina instalar o Chromium gerenciado pelo Playwright. Não versionar relatórios e screenshots de testes. Registrar o resultado em [VALIDATION.md](VALIDATION.md), revisar o diff e publicar o commit no GitHub. Push não comprova deploy de site nem publicação do ambiente de nuvem.

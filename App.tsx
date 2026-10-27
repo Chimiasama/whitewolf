@@ -1,3 +1,7 @@
+import { WerewolfCreation } from './components/WerewolfCreation';
+import { parseCharacter, finishingIssues, validAttributes, playerIssues, SCHEMA_VERSION } from './lib/characterValidation';
+import { W5_TRIBES } from './data/w5';
+import { asNarrativeNpc } from './lib/npc';
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, Specialty, DisciplinePower, GameType, Tribe, Auspice, Disciplines } from './types';
@@ -150,7 +154,7 @@ const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSel
                                 {fnT('gameSelection.werewolfDesc')}
                             </p>
                         </div>
-                        <Button tabIndex={-1} className="w-full bg-emerald-900/40 hover:bg-emerald-600 border border-emerald-500/50">
+                        <Button variant="secondary" tabIndex={-1} className="w-full !bg-emerald-900 hover:!bg-emerald-600 border border-emerald-500/50">
                             {fnT('buttons.next')}
                         </Button>
                     </div>
@@ -630,7 +634,7 @@ const Notification: React.FC<{ message: string; type: 'success' | 'error'; onClo
     }, [sMessage, sType]);
 
     return (
-        <div className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-2xl border flex items-center gap-3 z-50 animate-fadeInUp ${
+        <div role="status" aria-live="polite" className={`fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-2xl border flex items-center gap-3 z-50 animate-fadeInUp ${
             sType === 'success' ? 'bg-gray-900 border-green-500 text-green-400' : 'bg-gray-900 border-red-500 text-red-400'
         }`}>
             {sType === 'success' ? <CheckCircle /> : <ExclamationCircle />}
@@ -671,30 +675,12 @@ const App: React.FC = () => {
     const [bShowModeSelection, fnSetShowModeSelection] = useState(false);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
 
-    const fnNormalizeCharacter = useCallback((oLoaded: Partial<Character>): Character => {
-        // Defends against malformed/hand-edited JSON: a field of the wrong shape (e.g. a string
-        // where an object or array is expected) falls back to a safe default instead of being
-        // spread as-is, which would otherwise corrupt state (e.g. characters splitting into keys).
-        const fnIsPlainObject = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
-        const sGameType = oLoaded.gameType === GameType.Vampire || oLoaded.gameType === GameType.Werewolf ? oLoaded.gameType : null;
-
-        return {
-            ...oInitialCharacter,
-            ...oLoaded,
-            gameType: sGameType,
-            attributes: { ...oInitialCharacter.attributes, ...(fnIsPlainObject(oLoaded.attributes) ? oLoaded.attributes : {}) },
-            skills: { ...oInitialCharacter.skills, ...(fnIsPlainObject(oLoaded.skills) ? oLoaded.skills : {}) },
-            disciplines: fnIsPlainObject(oLoaded.disciplines) ? oLoaded.disciplines : {},
-            disciplinePowers: fnIsPlainObject(oLoaded.disciplinePowers) ? oLoaded.disciplinePowers : {},
-            rituals: Array.isArray(oLoaded.rituals) ? oLoaded.rituals : [],
-            talismans: Array.isArray(oLoaded.talismans) ? oLoaded.talismans : [],
-            advantages: Array.isArray(oLoaded.advantages) ? oLoaded.advantages : [],
-            flaws: Array.isArray(oLoaded.flaws) ? oLoaded.flaws : [],
-            loresheets: Array.isArray(oLoaded.loresheets) ? oLoaded.loresheets : [],
-            specialties: Array.isArray(oLoaded.specialties) ? oLoaded.specialties : [],
-            renown: { ...oInitialCharacter.renown, ...(fnIsPlainObject(oLoaded.renown) ? oLoaded.renown : {}) }
-        };
-    }, []);
+    useEffect(()=>{
+        if(view==='creator'&&oCharacter.gameType){
+            try {localStorage.setItem('whitewolf_draft_v2',JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}));} catch { /* Manual save reports quota errors; never destroy existing saves. */ }
+        }
+    },[oCharacter,view]);
+    const fnNormalizeCharacter = useCallback(parseCharacter, []);
     const aAdvantagesAndFlaws = useMemo(() => fnGetAdvantagesAndFlaws(fnT, oCharacter.gameType), [fnT, oCharacter.gameType]);
     const [sSelectedSkill, setSelectedSkill] = useState<string>('');
     const [sSpecialtyName, setSpecialtyName] = useState<string>('');
@@ -739,21 +725,14 @@ const App: React.FC = () => {
         }
 
         const aRemaining = Object.entries(oDiscs).filter(([_, v]) => (v as number) > 0);
-        if (aRemaining.length === 1) {
-            // Must have spent 2 and 1 in same discipline? (not standard but possible if 1+2=3)
-            const [name, val] = aRemaining[0];
-            if ((val as number) !== 3) return false;
-            // Check if clan discipline
-            const oClan = oClanDetails[oChar.clan as Clan];
-            if (oChar.clan !== Clan.Caitiff && !oClan?.disciplines.includes(name)) return false;
-        } else if (aRemaining.length === 2) {
+        if (aRemaining.length === 2) {
             const sorted = aRemaining.map(([_, v]) => v as number).sort((a, b) => b - a);
             if (sorted[0] !== 2 || sorted[1] !== 1) return false;
 
             // The 2-dot one must be Clan
             const oClan = oClanDetails[oChar.clan as Clan];
             const sTwoDotDisc = aRemaining.find(([_, v]) => v === 2)?.[0];
-            if (oChar.clan !== Clan.Caitiff && sTwoDotDisc && !oClan?.disciplines.includes(sTwoDotDisc)) return false;
+            if (oChar.clan !== Clan.Caitiff && aRemaining.some(([name])=>!oClan?.disciplines.includes(name))) return false;
         } else {
             return false;
         }
@@ -773,7 +752,7 @@ const App: React.FC = () => {
             case 'game':
                 return !!oCharacter.gameType;
             case 'concept':
-                return !!(oCharacter.name && oCharacter.concept && oCharacter.ambition && oCharacter.desire);
+                return !!(oCharacter.name.trim() && oCharacter.concept.trim() && oCharacter.ambition.trim());
             case 'clan':
                 return !!oCharacter.clan;
             case 'tribe':
@@ -782,7 +761,7 @@ const App: React.FC = () => {
                 return !!oCharacter.auspice;
             case 'attributes':
                 const nAttrSum = (Object.values(oCharacter.attributes) as number[]).reduce((acc, val) => acc + val, 0);
-                return nAttrSum === 22; // Values: 4, 3, 3, 3, 2, 2, 2, 2, 1
+                return validAttributes(oCharacter); // Values: 4, 3, 3, 3, 2, 2, 2, 2, 1
             case 'skills':
                 const aCurrentSkills = (Object.values(oCharacter.skills) as number[]).filter(v => v > 0).sort((a, b) => b - a);
                 return Object.values(oSkillPaths).some(aPathDots => {
@@ -791,24 +770,7 @@ const App: React.FC = () => {
                     return aCurrentSkills.every((v, i) => v === aSortedPath[i]);
                 });
             case 'finishing':
-                const bIsVampire = oCharacter.gameType === GameType.Vampire;
-
-                // Advantages/Flaws
-                const nAdvSum = oCharacter.advantages.reduce((acc, val) => acc + val.cost, 0);
-                const nFlawSum = oCharacter.flaws.reduce((acc, val) => acc + val.cost, 0);
-                if (nAdvSum < 7 || nFlawSum < 2) return false;
-
-                // Specialties
-                if (oCharacter.specialties.length === 0) return false;
-
-                if (bIsVampire) {
-                    if (!oCharacter.predatorType) return false;
-                    if (!fnIsVampireDisciplinesValid(oCharacter)) return false;
-                } else {
-                    // Werewolf Gifts: exactly 3 different Gifts, 1 dot each
-                    if (!fnIsWerewolfGiftsValid(oCharacter)) return false;
-                }
-                return true;
+                return finishingIssues(oCharacter).length === 0;
             default:
                 return true;
         }
@@ -829,7 +791,7 @@ const App: React.FC = () => {
                 if (!oCharacter.name) fnMissing(fnT('concept.name'));
                 if (!oCharacter.concept) fnMissing(fnT('concept.concept'));
                 if (!oCharacter.ambition) fnMissing(fnT('concept.ambition'));
-                if (!oCharacter.desire) fnMissing(fnT('concept.desire'));
+
                 break;
             case 'clan':
                 if (!oCharacter.clan) aIssues.push(fnT('validation.selectClan'));
@@ -842,7 +804,7 @@ const App: React.FC = () => {
                 break;
             case 'attributes': {
                 const nAttrSum = (Object.values(oCharacter.attributes) as number[]).reduce((acc, val) => acc + val, 0);
-                if (nAttrSum !== 22) aIssues.push(fnT('validation.attributeTotal', { current: nAttrSum, expected: 22 }));
+                if (!validAttributes(oCharacter)) aIssues.push('Atributos: um 4, três 3, quatro 2 e um 1.');
                 break;
             }
             case 'skills': {
@@ -856,23 +818,7 @@ const App: React.FC = () => {
                 break;
             }
             case 'finishing': {
-                const nAdvSum = oCharacter.advantages.reduce((acc, val) => acc + val.cost, 0);
-                const nFlawSum = oCharacter.flaws.reduce((acc, val) => acc + val.cost, 0);
-                if (nAdvSum < 7) aIssues.push(fnT('validation.advantages', { current: nAdvSum, expected: 7 }));
-                if (nFlawSum < 2) aIssues.push(fnT('validation.flaws', { current: nFlawSum, expected: 2 }));
-                if (oCharacter.specialties.length === 0) aIssues.push(fnT('validation.specialty'));
-                if (oCharacter.gameType === GameType.Vampire && !oCharacter.predatorType) aIssues.push(fnT('validation.predator'));
-                if (oCharacter.gameType === GameType.Vampire) {
-                    if (oCharacter.predatorType && !fnIsVampireDisciplinesValid(oCharacter)) aIssues.push(fnT('validation.disciplines'));
-                } else {
-                    const aGiftEntries = Object.entries(oCharacter.disciplines).filter(([_, v]) => (v as number) > 0);
-                    const nGiftDots = aGiftEntries.reduce((acc, [_, v]) => acc + (v as number), 0);
-                    if (nGiftDots !== 3) {
-                        aIssues.push(fnT('validation.gifts', { current: nGiftDots, expected: 3 }));
-                    } else if (!fnIsWerewolfGiftsValid(oCharacter)) {
-                        aIssues.push(fnT('validation.giftsShape'));
-                    }
-                }
+                aIssues.push(...finishingIssues(oCharacter));
                 break;
             }
         }
@@ -967,7 +913,7 @@ const App: React.FC = () => {
     };
 
     const fnCreateRandom = (level: 'fledgling' | 'neonate' | 'ancilla') => {
-        const char = fnCreateRandomCharacter(sLocale, level, fnT, oCharacter.gameType || GameType.Vampire);
+        const char = asNarrativeNpc(fnCreateRandomCharacter(sLocale, level, fnT, oCharacter.gameType || GameType.Vampire), level);
         fnSetCharacter(char);
         setView('creator');
         fnSetStep(aSteps.length);
@@ -977,7 +923,7 @@ const App: React.FC = () => {
     const fnSaveCharacter = (sName: string) => {
         if (typeof window !== 'undefined') {
             try {
-                localStorage.setItem(`${SAVE_PREFIX}${sName}`, JSON.stringify(oCharacter));
+                localStorage.setItem(`${SAVE_PREFIX}${sName}`, JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}));
                 fnShowNotification(fnT('storage.saveSuccess'));
             } catch (e) {
                 fnShowNotification(fnT('storage.saveError'), "error");
@@ -991,9 +937,10 @@ const App: React.FC = () => {
             if (sData) {
                 try {
                     const oLoaded = JSON.parse(sData) as Partial<Character>;
-                    fnSetCharacter(fnNormalizeCharacter(oLoaded));
+                    const normalized=fnNormalizeCharacter(oLoaded);
+                    fnSetCharacter(normalized);
                     setView('creator');
-                    fnSetStep(aSteps.length);
+                    fnSetStep(normalized.gameType===GameType.Werewolf?8:7);
                     fnShowNotification(fnT('storage.loadSuccess'));
                 } catch (e) {
                     console.error("Failed to parse save", e);
@@ -1028,7 +975,7 @@ const App: React.FC = () => {
     };
 
     const fnExportJSON = () => {
-        const sData = JSON.stringify(oCharacter, null, 2);
+        const sData = JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}, null, 2);
         const blob = new Blob([sData], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
@@ -1041,20 +988,24 @@ const App: React.FC = () => {
     const fnImportJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (!file) return;
+        if (file.size > 8 * 1024 * 1024) { fnShowNotification('JSON excede 8 MB.', 'error'); e.target.value=''; return; }
         const reader = new FileReader();
+        reader.onerror = () => fnShowNotification('Não foi possível ler o arquivo.', 'error');
         reader.onload = (event) => {
             try {
                 const oLoaded = JSON.parse(event.target?.result as string) as Partial<Character>;
-                fnSetCharacter(fnNormalizeCharacter(oLoaded));
+                const normalized=fnNormalizeCharacter(oLoaded);
+                fnSetCharacter(normalized);
                 setView('creator');
-                fnSetStep(aSteps.length);
+                fnSetStep(normalized.gameType===GameType.Werewolf?8:7);
                 fnShowNotification(fnT('storage.importSuccess'));
             } catch (err) {
                 console.error(err);
-                fnShowNotification(fnT('storage.importError'), "error");
+                fnShowNotification(err instanceof Error ? err.message : fnT('storage.importError'), "error");
             }
         };
         reader.readAsText(file);
+        e.target.value = "";
     };
 
     // Prune invalid powers (amalgams/prerequisites) when disciplines change
@@ -1338,7 +1289,7 @@ const App: React.FC = () => {
                                     {aTribeKeys.map(sTribe => (
                                         <button
                                             key={sTribe}
-                                            onClick={() => fnUpdateCharacter('tribe', sTribe)}
+                                            onClick={() => fnSetCharacter(prev=>({...prev,tribe:sTribe,gifts:[],renown:{glory:0,honor:0,wisdom:0,[W5_TRIBES[sTribe].renown]:2}}))}
                                             className={`
                                                 px-4 py-2 rounded-lg border font-cinzel text-sm transition-all duration-300
                                                 ${oCharacter.tribe === sTribe
@@ -1476,6 +1427,7 @@ const App: React.FC = () => {
                     <div className="text-center space-y-4">
                         <h2 className={`text-2xl font-cinzel ${sThemeColor} mb-2`}>{fnT('finishingTouches.title')}</h2>
                         
+                        {bIsWerewolf ? <WerewolfCreation character={oCharacter} onChange={fnUpdateCharacter}/> : (<>
                         {/* Disciplines / Gifts Section */}
                         <GothicFrame className="text-left">
                             <h3 className={`text-xl font-bold ${sThemeAccent} mb-2 border-b border-gray-700 pb-2`}>
@@ -1715,6 +1667,7 @@ const App: React.FC = () => {
                             </div>
                         </GothicFrame>
 
+                        </>)}
                         {/* Werewolf Specific Vitals (Renown, Harano, Hauglosk) */}
                         {bIsWerewolf && (
                             <GothicFrame className="text-left">
@@ -1989,7 +1942,7 @@ const App: React.FC = () => {
                                                 <p className="text-xs text-gray-400 mb-2">{ls.description}</p>
                                                 {nLevel > 0 && (
                                                     <div className="mt-2 space-y-2">
-                                                        {ls.levels.filter(lvl => lvl.level <= nLevel).map(lvl => (
+                                                        {ls.levels.filter(lvl => lvl.level === nLevel).map(lvl => (
                                                             <div key={lvl.level} className="text-[10px] bg-black/40 p-2 rounded border-l border-green-500">
                                                                 <div className="font-bold text-green-400 mb-0.5">{lvl.name}</div>
                                                                 <div className="text-gray-500 italic">{lvl.system}</div>
@@ -2004,77 +1957,6 @@ const App: React.FC = () => {
                             </GothicFrame>
                         )}
 
-                        {/* Rituals & Talismans Section */}
-                        {bIsWerewolf && (
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <GothicFrame className="text-left">
-                                    <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('characterSheet.rituals')}</h3>
-                                    <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
-                                        {aRituals.map(rit => (
-                                            <div key={rit.id} className="flex justify-between items-center p-2 bg-gray-800 rounded border border-gray-700 hover:border-gray-500 group transition-colors">
-                                                <div className="flex flex-col">
-                                                    <span className="text-sm font-bold">{rit.name}</span>
-                                                    <span className="text-[10px] text-gray-400 line-clamp-1">{rit.description}</span>
-                                                </div>
-                                                <Button 
-                                                    variant="secondary" 
-                                                    className="px-3 py-1 text-xs font-bold" 
-                                                    onClick={() => {
-                                                        if (!oCharacter.rituals.some(r => r.id === rit.id)) {
-                                                            fnUpdateCharacter('rituals', [...oCharacter.rituals, rit]);
-                                                        }
-                                                    }}
-                                                >
-                                                    {fnT('buttons.add')}
-                                                </Button>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="mt-4 border-t border-gray-700 pt-2 space-y-1">
-                                        {oCharacter.rituals.map((rit, i) => (
-                                            <div key={`${rit.id}-${i}`} className="flex justify-between text-xs text-gray-300 bg-green-900/10 px-2 py-1.5 rounded border border-green-900/20">
-                                                <span>{rit.name}</span>
-                                                <button onClick={() => fnUpdateCharacter('rituals', oCharacter.rituals.filter((_, idx) => idx !== i))} className="text-red-500 hover:text-red-300 font-bold px-1">✕</button>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </GothicFrame>
-                                <GothicFrame className="text-left">
-                                    <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('characterSheet.talismans')}</h3>
-                                    <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
-                                        {aTalismans.map(tal => (
-                                            <div key={tal.id} className="flex justify-between items-center p-2 bg-gray-800 rounded border border-gray-700 hover:border-gray-500 group transition-colors">
-                                                <div className="flex flex-col">
-                                                    <span className="text-sm font-bold">{tal.name}</span>
-                                                    <span className="text-[10px] text-gray-400 line-clamp-1">{tal.description}</span>
-                                                </div>
-                                                <Button 
-                                                    variant="secondary" 
-                                                    className="px-3 py-1 text-xs font-bold" 
-                                                    onClick={() => {
-                                                        if (!oCharacter.talismans.some(t => t.id === tal.id)) {
-                                                            fnUpdateCharacter('talismans', [...oCharacter.talismans, tal]);
-                                                        }
-                                                    }}
-                                                >
-                                                    {fnT('buttons.add')}
-                                                </Button>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="mt-4 border-t border-gray-700 pt-2 space-y-1">
-                                        {oCharacter.talismans.map((tal, i) => (
-                                            <div key={`${tal.id}-${i}`} className="flex justify-between text-xs text-gray-300 bg-green-900/10 px-2 py-1.5 rounded border border-green-900/20">
-                                                <span>{tal.name}</span>
-                                                <button onClick={() => fnUpdateCharacter('talismans', oCharacter.talismans.filter((_, idx) => idx !== i))} className="text-red-500 hover:text-red-300 font-bold px-1">✕</button>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </GothicFrame>
-                            </div>
-                        )}
-
-                        {/* Vampire Specific Stats */}
                         {!bIsWerewolf && (
                             <GothicFrame className="text-left">
                                 <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('steps.finishingTouches')}</h3>
@@ -2208,8 +2090,12 @@ const App: React.FC = () => {
                     <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-10">
                         <RoseIcon className="absolute -right-16 -top-16 h-72 w-72 text-red-900 opacity-70 sm:-right-40 sm:-top-40 sm:h-[800px] sm:w-[800px] animate-pulse" />
                     </div>
+                    {oNotification && <Notification message={oNotification.message} type={oNotification.type} onClose={()=>fnSetNotification(null)}/>}
                     <GameSelection onSelect={fnHandleGameSelect} />
                     <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 z-20 w-full px-2">
+                         <Button variant="secondary" onClick={()=>{
+                            try {const saved=localStorage.getItem('whitewolf_draft_v2');if(!saved){fnShowNotification('Nenhum rascunho neste navegador.','error');return;}const c=parseCharacter(JSON.parse(saved));fnSetCharacter(c);setView('creator');fnSetStep(c.gameType===GameType.Werewolf?8:7);}catch(err){fnShowNotification(err instanceof Error?err.message:'Falha ao recuperar rascunho.','error');}
+                         }}>Recuperar rascunho</Button>
                          <Button variant="secondary" onClick={() => { fnSetStorageMode('load'); fnSetShowStorage(true); }} title={fnT('buttons.load')}>
                             <FolderOpenIcon /> {fnT('buttons.load')}
                         </Button>
@@ -2235,7 +2121,7 @@ const App: React.FC = () => {
                         {bIsWerewolf ? fnT('app.werewolf') : fnT('app.vampire')}
                     </h1>
                     <p className={`text-lg sm:text-xl text-gray-400 mb-12 italic border-b ${sThemeBorder}/50 pb-6 mx-auto w-3/4 break-words whitespace-normal`}>
-                        {fnT('creationMethod.subtitle')}
+                        {fnT('creationMethod.subtitle')}<span className="block text-sm mt-3">Criação manual: personagem de jogador. Geração rápida: NPC temático, sem orçamento de XP.</span>
                     </p>
                     
                     <div className="space-y-4">
@@ -2249,16 +2135,16 @@ const App: React.FC = () => {
                         
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 pt-8 border-t border-gray-800">
                             <Button variant="secondary" className="py-3 text-sm flex flex-col items-center gap-1 hover:border-gray-400 border border-gray-700 bg-gray-800" onClick={() => fnCreateRandom('fledgling')}>
-                                <span className="font-bold text-white">{fnT('creationMethod.randomLevel', { level: fnT(`xpLevels.fledgling.${oCharacter.gameType.toLowerCase()}`) })}</span>
-                                <span className="text-xs text-gray-500">{fnT(`creationMethod.randomFledglingDesc.${oCharacter.gameType.toLowerCase()}`)}</span>
+                                <span className="font-bold text-white">NPC em ascensão</span>
+                                <span className="text-xs text-gray-500">Inspiração narrativa</span>
                             </Button>
                             <Button variant="secondary" className="py-3 text-sm flex flex-col items-center gap-1 hover:border-gray-400 border border-gray-700 bg-gray-800" onClick={() => fnCreateRandom('neonate')}>
-                                <span className="font-bold text-white">{fnT('creationMethod.randomLevel', { level: fnT(`xpLevels.neonate.${oCharacter.gameType.toLowerCase()}`) })}</span>
-                                <span className="text-xs text-gray-500">{fnT(`creationMethod.randomNeonateDesc.${oCharacter.gameType.toLowerCase()}`)}</span>
+                                <span className="font-bold text-white">NPC estabelecido</span>
+                                <span className="text-xs text-gray-500">Sem orçamento de XP</span>
                             </Button>
                             <Button variant="secondary" className="py-3 text-sm flex flex-col items-center gap-1 hover:border-gray-400 border border-gray-700 bg-gray-800" onClick={() => fnCreateRandom('ancilla')}>
-                                <span className="font-bold text-white">{fnT('creationMethod.randomLevel', { level: fnT(`xpLevels.ancilla.${oCharacter.gameType.toLowerCase()}`) })}</span>
-                                <span className="text-xs text-gray-500">{fnT(`creationMethod.randomAncillaDesc.${oCharacter.gameType.toLowerCase()}`)}</span>
+                                <span className="font-bold text-white">NPC influente</span>
+                                <span className="text-xs text-gray-500">Sem orçamento de XP</span>
                             </Button>
                         </div>
                     </div>
@@ -2300,7 +2186,7 @@ const App: React.FC = () => {
                         <Button variant="secondary" onClick={() => { fnSetStorageMode('load'); fnSetShowStorage(true); }} title={fnT('buttons.load')}><FolderOpenIcon /></Button>
                         <Button variant="secondary" onClick={fnResetCharacter} title={fnT('buttons.reset')}><ResetIcon /></Button>
                          <div className="ml-2 border-l border-gray-700 pl-2 flex gap-2">
-                            <Button variant="secondary" onClick={fnExportJSON} className="text-xs hidden md:block">{fnT('buttons.export')}</Button>
+                            <Button variant="secondary" onClick={fnExportJSON} className="text-xs">{fnT('buttons.export')}</Button>
                             <label className="cursor-pointer bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-xs font-bold flex items-center hidden md:flex">
                                 {fnT('buttons.import')}
                                 <input type="file" className="hidden" accept=".json" onChange={fnImportJSON} />

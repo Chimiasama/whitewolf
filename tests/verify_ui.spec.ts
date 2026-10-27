@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test('verify ravnos chimerstry and presence level 5 translations', async ({ page }) => {
+test('verify ravnos chimerstry and presence level 5 translations', async ({ page }, testInfo) => {
+  await page.addInitScript(()=>localStorage.setItem('whitewolf_locale','en'));
   await page.goto('http://localhost:3000');
 
   // Select Vampire
@@ -96,19 +97,20 @@ test('verify ravnos chimerstry and presence level 5 translations', async ({ page
   // 2. Presence to 2 dots (nth(1) because 0 is filled/disabled by Siren predator type)
   await page.locator('div:has-text("Presence")').locator('button.rounded-full').nth(1).click();
 
+  await expect(page.getByRole('heading', {name:'Presence',exact:true}).first()).toBeVisible();
   // Check English first
-  await page.screenshot({ path: '/home/jules/verification/screenshots/disciplines_en.png', fullPage: true });
+  await page.screenshot({ path: testInfo.outputPath('disciplines_en.png'), fullPage: true });
 
   // Manage Obfuscate to see Chimerstry
   const obfuscateCard = page.locator('div:has-text("Obfuscate")').filter({ has: page.locator('button:has-text("Manage Powers")') }).first();
   await obfuscateCard.locator('button:has-text("Manage Powers")').click();
 
-  await page.screenshot({ path: '/home/jules/verification/screenshots/obfuscate_powers_en.png' });
+  await page.screenshot({ path: testInfo.outputPath('obfuscate_powers_en.png') });
 
   await page.click('button:has-text("Confirm")'); // Close modal
 
   // Switch to Portuguese
   await page.click('button:has-text("EN")'); // Switch from English to Portuguese
 
-  await page.screenshot({ path: '/home/jules/verification/screenshots/disciplines_pt.png', fullPage: true });
+  await page.screenshot({ path: testInfo.outputPath('disciplines_pt.png'), fullPage: true });
 });

@@ -1,3 +1,5 @@
+import { playerIssues } from '../lib/characterValidation';
+import { W5_GIFTS } from '../data/w5';
 
 import React, { useState, useMemo } from 'react';
 import type { Character, DisciplineDetail, AdvantageFlaw, Specialty } from '../types';
@@ -305,7 +307,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
         if (!oDef) return null;
         return {
             ...oDef,
-            levels: oDef.levels.filter(lvl => lvl.level <= ls.level)
+            levels: oDef.levels.filter(lvl => lvl.level === ls.level)
         };
     }).filter(ls => ls !== null), [oCharacter.loresheets, aLoresheetsDef]);
 
@@ -322,6 +324,13 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
 
     return (
     <div className="space-y-8">
+      <aside className="rounded border border-gray-600 p-4 text-left bg-gray-950">
+       <strong>{oCharacter.profile==='npc'?'NPC temático — sem orçamento de XP':'Personagem de jogador — confira as pendências de criação'}</strong>
+       {oCharacter.profile!=='npc' && <ul className="text-amber-200">{playerIssues(oCharacter).map((issue,i)=><li key={i}>{issue}</li>)}</ul>}
+       {oCharacter.narrative && <dl>{Object.entries(oCharacter.narrative).map(([key,value])=><div key={key}><dt className="font-bold text-amber-200">{{role:'Papel',motivation:'Motivação',secret:'Segredo',relationship:'Vínculo',hook:'Gancho'}[key]}</dt><dd>{value}</dd></div>)}</dl>}
+       {bIsWerewolf && <section className="mt-3"><h3>Dons de W5</h3><ul>{(oCharacter.gifts||[]).map(g=>{const d=W5_GIFTS.find(x=>x.id===g.id);return <li key={g.id}>{d?.name} ({d?.english}) — {d?.reference}</li>})}</ul><h3>Ritos</h3><ul>{oCharacter.rituals.map(r=><li key={r.id}>{r.name} — {r.description}</li>)}</ul></section>}
+       <button className="mt-3 px-3 py-2 border rounded" onClick={()=>window.print()}>Imprimir / salvar PDF</button>
+      </aside>
       <div className="flex justify-between items-center bg-black/40 p-4 rounded-xl border border-gray-800 shadow-lg backdrop-blur-sm">
           <Button onClick={onBack} variant="secondary" className="flex items-center gap-2">
               <ChevronLeft className="w-4 h-4" /> {fnT('buttons.back')}

@@ -22,6 +22,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
   }, []);
 
   useEffect(() => {
+    const previousFocus = document.activeElement as HTMLElement | null;
     const nIdx = nGlobalModalCount;
     nGlobalModalCount++;
     fnSetMyIndex(nIdx);
@@ -36,6 +37,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
       window.dispatchEvent(new CustomEvent('vtm_modal_count_change'));
       if (nGlobalModalCount === 0) {
         document.body.style.overflow = '';
+        previousFocus?.focus();
       }
     };
   }, []);

@@ -1,0 +1,1 @@
+module.exports = {content:['./index.html','./App.tsx','./index.tsx','./components/**/*.{ts,tsx}','./lib/**/*.{ts,tsx}'],theme:{extend:{fontFamily:{sans:['Inter','sans-serif'],cinzel:['Cinzel','serif']}}},plugins:[]};

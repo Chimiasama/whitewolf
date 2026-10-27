@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, useState, useCallback, useMemo } from 'react';
+import React, { createContext, useContext, useState, useCallback, useMemo, useEffect } from 'react';
 
 // Inlined translations to ensure consistency and avoid module resolution issues
 const oEn = {
@@ -99,15 +99,15 @@ const oEn = {
     "randomLevel": "Random {{level}}",
     "randomFledglingDesc": {
       "vampire": "0 XP • 13th Gen",
-      "werewolf": "0 XP"
+      "werewolf": "Inspiração narrativa"
     },
     "randomNeonateDesc": {
       "vampire": "15 XP • 12th Gen",
-      "werewolf": "15 XP"
+      "werewolf": "Sem orçamento de XP"
     },
     "randomAncillaDesc": {
       "vampire": "35 XP • 11th Gen",
-      "werewolf": "35 XP"
+      "werewolf": "Sem orçamento de XP"
     }
   },
   "summary": {
@@ -2743,15 +2743,15 @@ const oPt = {
     "randomLevel": "Aleatório {{level}}",
     "randomFledglingDesc": {
       "vampire": "0 XP • 13ª Ger",
-      "werewolf": "0 XP"
+      "werewolf": "Inspiração narrativa"
     },
     "randomNeonateDesc": {
       "vampire": "15 XP • 12ª Ger",
-      "werewolf": "15 XP"
+      "werewolf": "Sem orçamento de XP"
     },
     "randomAncillaDesc": {
       "vampire": "35 XP • 11ª Ger",
-      "werewolf": "35 XP"
+      "werewolf": "Sem orçamento de XP"
     }
   },
   "auspices": {
@@ -5303,11 +5303,12 @@ interface I18nContextType {
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 const fnGetInitialLocale = (): Locale => {
+  try { const saved=localStorage.getItem('whitewolf_locale'); if(saved==='pt'||saved==='en') return saved; } catch {}
   if (typeof window !== 'undefined' && window.navigator) {
     const sBrowserLang = window.navigator.language.toLowerCase();
     if (sBrowserLang.startsWith('pt')) return 'pt';
   }
-  return 'en';
+  return 'pt';
 };
 
 const fnGetNestedTranslation = (oObj: any, sKey: string): string | undefined => {
@@ -5317,6 +5318,7 @@ const fnGetNestedTranslation = (oObj: any, sKey: string): string | undefined => 
 export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children: oChildren }) => {
   const [sLocale, fnSetLocale] = useState<Locale>(fnGetInitialLocale());
 
+  useEffect(()=>{ document.documentElement.lang=sLocale==='pt'?'pt-BR':'en'; try {localStorage.setItem('whitewolf_locale',sLocale);} catch {} },[sLocale]);
   const fnT = useCallback((sKey: string, oReplacements?: Record<string, string | number>): string => {
     let sTranslation = fnGetNestedTranslation(oTranslations[sLocale], sKey) || fnGetNestedTranslation(oTranslations['en'], sKey) || sKey;
     if (oReplacements) {

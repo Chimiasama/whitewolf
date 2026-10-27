@@ -1,0 +1,3289 @@
+# Índice de referências V5/W5
+
+Gerado por `python scripts/index-references.py`. Todos os arquivos são percorridos integralmente. As âncoras abaixo são resultados de busca em texto extraído/OCR, **não regras aprovadas nem confirmação de que cada parágrafo foi revisado**. Uma linha pode pertencer a mais de uma categoria. Leia o contexto no livro; a ordem de colunas pode estar alterada. Linhas são reproduzíveis para os hashes registrados; não são números de página.
+
+## Vampire5edAnarch
+
+V5 · publisher · 12292 linhas · SHA-256 `a2d5364e472018c27c56ab3f8f8362faa1836cb01e590b7facb07075d19fc0f0`
+
+### criação e progressão (2)
+
+- [L720](Vampire5edAnarch#L720): the best and most successful attempt at creating a
+- [L9616](Vampire5edAnarch#L9616): creating an ever-present desire for
+
+### identidade e narrativa (0)
+
+
+### poderes e requisitos (3)
+
+- [L11293](Vampire5edAnarch#L11293): amalgam: Protean 1
+- [L11299](Vampire5edAnarch#L11299): cost: Free
+- [L11300](Vampire5edAnarch#L11300): Dice Pools: Charisma + Presence vs. Wits + Composure
+
+### NPCs e antagonistas (0)
+
+
+### vantagens, ritos e equipamento (9)
+
+- [L11509](Vampire5edAnarch#L11509): LORESHEET
+- [L11591](Vampire5edAnarch#L11591): LORESHEET
+- [L11679](Vampire5edAnarch#L11679): LORESHEET
+- [L11763](Vampire5edAnarch#L11763): LORESHEET
+- [L11839](Vampire5edAnarch#L11839): LORESHEET
+- [L11922](Vampire5edAnarch#L11922): LORESHEET
+- [L12004](Vampire5edAnarch#L12004): LORESHEET
+- [L12105](Vampire5edAnarch#L12105): LORESHEET
+- [L12198](Vampire5edAnarch#L12198): LORESHEET
+
+## Vampire5edChicagobyNight
+
+V5 · publisher · 29511 linhas · SHA-256 `fdaa9ceac5284077c5d29ec0d291afe12a7fab2ad02d88765d9bdf7b8f8c2899`
+
+### criação e progressão (4)
+
+- [L6976](Vampire5edChicagobyNight#L6976): performances. He is creating a lifeline for the band,
+- [L8058](Vampire5edChicagobyNight#L8058): adopt them, therefore creating a flurry of Caitiff.
+- [L17552](Vampire5edChicagobyNight#L17552): creating a healthy separation between them.
+- [L23651](Vampire5edChicagobyNight#L23651): developing a knack for creating advanced clockwork
+
+### identidade e narrativa (289)
+
+- [L6160](Vampire5edChicagobyNight#L6160): Epitaph: The Disquieting Diplomat
+- [L6164](Vampire5edChicagobyNight#L6164): Clan: Banu Haqim
+- [L6345](Vampire5edChicagobyNight#L6345): Ambition: Develop a bond of trust with Prince
+- [L6347](Vampire5edChicagobyNight#L6347): Convictions: None
+- [L6348](Vampire5edChicagobyNight#L6348): Touchstones: None
+- [L6363](Vampire5edChicagobyNight#L6363): Epitaph: The Moral Hustler
+- [L6366](Vampire5edChicagobyNight#L6366): Clan: Banu Haqim
+- [L6536](Vampire5edChicagobyNight#L6536): Ambition: Ingratiate herself with the Chicago
+- [L6538](Vampire5edChicagobyNight#L6538): Convictions: Always encourage other Kindred to
+- [L6540](Vampire5edChicagobyNight#L6540): Touchstones: Her family, far away back home
+- [L6575](Vampire5edChicagobyNight#L6575): Epitaph: Philosopher, Polemicist, Brujah Primogen
+- [L6578](Vampire5edChicagobyNight#L6578): Clan: Brujah
+- [L6850](Vampire5edChicagobyNight#L6850): Ambition: Discover the real Critias
+- [L6851](Vampire5edChicagobyNight#L6851): Convictions: Never be manipulated by anyone
+- [L6853](Vampire5edChicagobyNight#L6853): Touchstones: Mahavir, his most devoted mortal
+- [L6869](Vampire5edChicagobyNight#L6869): Epitaph: Reluctant Sheriff. Anything to get the band
+- [L6872](Vampire5edChicagobyNight#L6872): Clan: Brujah
+- [L7079](Vampire5edChicagobyNight#L7079): Ambition: Get Baby Chorus trending (despite the
+- [L7081](Vampire5edChicagobyNight#L7081): Convictions: Maintain order for the Prince
+- [L7084](Vampire5edChicagobyNight#L7084): Touchstones: Julia and John Rich — the grandchildren
+- [L7102](Vampire5edChicagobyNight#L7102): Epitaph: Live rich and covered in the blood of war
+- [L7103](Vampire5edChicagobyNight#L7103): Clan: Brujah
+- [L7299](Vampire5edChicagobyNight#L7299): Ambition: Prove I’m better than the upstart Prince
+- [L7300](Vampire5edChicagobyNight#L7300): Convictions: Never hesitate to accept an easy
+- [L7302](Vampire5edChicagobyNight#L7302): Touchstones: LZ, a gang member and drug dealer
+- [L7330](Vampire5edChicagobyNight#L7330): Epitaph: Anarch Intelligence Exchange
+- [L7334](Vampire5edChicagobyNight#L7334): Clan: Brujah
+- [L7547](Vampire5edChicagobyNight#L7547): Ambition: Eradicate the Lupines who killed my
+- [L7549](Vampire5edChicagobyNight#L7549): Convictions: Protect my memory of Dooley
+- [L7550](Vampire5edChicagobyNight#L7550): Touchstones: Francis — the ghoul who reminds her
+- [L7567](Vampire5edChicagobyNight#L7567): Epitaph: Self-appointed Anarch Visionary
+- [L7569](Vampire5edChicagobyNight#L7569): Clan: Brujah
+- [L7798](Vampire5edChicagobyNight#L7798): Ambition: Forge a permanent place for the Anarchs
+- [L7800](Vampire5edChicagobyNight#L7800): Convictions: Always fight oppression
+- [L7801](Vampire5edChicagobyNight#L7801): Touchstones: Perez — Latin Kings gang member
+- [L7819](Vampire5edChicagobyNight#L7819): Epitaph: Scarred Brujah Firebrand
+- [L7822](Vampire5edChicagobyNight#L7822): Clan: Brujah
+- [L8016](Vampire5edChicagobyNight#L8016): Ambition: Launch a devastating attack that humiliates
+- [L8018](Vampire5edChicagobyNight#L8018): Convictions: Always take an eye for an eye
+- [L8019](Vampire5edChicagobyNight#L8019): Touchstones: Genevieve McCallister — the woman
+- [L8068](Vampire5edChicagobyNight#L8068): Epitaph: Revitalized Anarch Organizer
+- [L8071](Vampire5edChicagobyNight#L8071): Clan: Caitiff
+- [L8262](Vampire5edChicagobyNight#L8262): Ambition: Destroy Prince Jackson and don’t allow
+- [L8264](Vampire5edChicagobyNight#L8264): Convictions: I will always oppose tyranny; never
+- [L8266](Vampire5edChicagobyNight#L8266): Touchstones: Paige Hall — promising political
+- [L8285](Vampire5edChicagobyNight#L8285): Epitaph: Host of Red Noº 5, The Heir Apparent
+- [L8288](Vampire5edChicagobyNight#L8288): Clan: Caitiff
+- [L8479](Vampire5edChicagobyNight#L8479): Ambition: Be my own man outside the Nosferatu’s
+- [L8481](Vampire5edChicagobyNight#L8481): Convictions: All actions must solidify my position;
+- [L8483](Vampire5edChicagobyNight#L8483): Touchstones: Phoenix — Modelesque server at
+- [L8500](Vampire5edChicagobyNight#L8500): Epitaph: Mother to the House of Mamuwalde, MC
+- [L8508](Vampire5edChicagobyNight#L8508): Clan: Caitiff
+- [L8707](Vampire5edChicagobyNight#L8707): Ambition: Earn respect from the elite
+- [L8708](Vampire5edChicagobyNight#L8708): Convictions: I will make you respect my name
+- [L8709](Vampire5edChicagobyNight#L8709): Touchstones: LaVell Stevens — 18-year old African
+- [L8722](Vampire5edChicagobyNight#L8722): Epitaph: Rebel without any fucks
+- [L8726](Vampire5edChicagobyNight#L8726): Clan: Caitiff
+- [L8928](Vampire5edChicagobyNight#L8928): Ambition: Take control of the Almighty Black P.
+- [L8930](Vampire5edChicagobyNight#L8930): Convictions: I will break everyone who gets in my
+- [L8932](Vampire5edChicagobyNight#L8932): Touchstones: Loretta James — A member of the
+- [L8950](Vampire5edChicagobyNight#L8950): Epitaph: Friendly Neighborhood Vampire Social
+- [L8954](Vampire5edChicagobyNight#L8954): Clan: Caitiff
+- [L9148](Vampire5edChicagobyNight#L9148): Ambition: Understand the Kindred world
+- [L9149](Vampire5edChicagobyNight#L9149): Convictions: I must protect my neighborhood
+- [L9150](Vampire5edChicagobyNight#L9150): Touchstones: Abe Valdez — Her youngest brother
+- [L9168](Vampire5edChicagobyNight#L9168): Epitaph: The Interlocutor, First Daughter, Matriarch
+- [L9172](Vampire5edChicagobyNight#L9172): Clan: Unknown
+- [L9349](Vampire5edChicagobyNight#L9349): Ambition: Erode Helena’s influence over the city
+- [L9350](Vampire5edChicagobyNight#L9350): Convictions: Always aim to restore the Mother’s
+- [L9352](Vampire5edChicagobyNight#L9352): Touchstones: Mavis Blackwater — descendant
+- [L9421](Vampire5edChicagobyNight#L9421): Epitaph: The Warden at the Gate
+- [L9424](Vampire5edChicagobyNight#L9424): Clan: Gangrel
+- [L9629](Vampire5edChicagobyNight#L9629): Ambition: Drive every Lupine out of Chicago
+- [L9630](Vampire5edChicagobyNight#L9630): Convictions: Do not suffer a werewolf to live
+- [L9631](Vampire5edChicagobyNight#L9631): Touchstones: Arnold Whitmore — Iraq veteran
+- [L9649](Vampire5edChicagobyNight#L9649): Epitaph: Flustered Caretaker
+- [L9653](Vampire5edChicagobyNight#L9653): Clan: Gangrel
+- [L9841](Vampire5edChicagobyNight#L9841): Ambition: Don’t allow the masters beneath the
+- [L9843](Vampire5edChicagobyNight#L9843): Convictions: Always keep the masters fed
+- [L9844](Vampire5edChicagobyNight#L9844): Touchstones: Ernie Head — an abusive Native
+- [L9861](Vampire5edChicagobyNight#L9861): Epitaph: SAS Soldier and Anarch Enforcer
+- [L9864](Vampire5edChicagobyNight#L9864): Clan: Gangrel
+- [L10052](Vampire5edChicagobyNight#L10052): Ambition: Revisit any action against the Anarchs
+- [L10054](Vampire5edChicagobyNight#L10054): Convictions: Protect the Flock
+- [L10055](Vampire5edChicagobyNight#L10055): Touchstones: Christine Summers — Schoolkid he is
+- [L10115](Vampire5edChicagobyNight#L10115): Epitaph: Ruthless Negotiator
+- [L10120](Vampire5edChicagobyNight#L10120): Clan: Lasombra
+- [L10343](Vampire5edChicagobyNight#L10343): Ambition: Have the Lasombra accepted within the
+- [L10345](Vampire5edChicagobyNight#L10345): Convictions: I will never show weakness
+- [L10346](Vampire5edChicagobyNight#L10346): Touchstones: Asako Aiko — beloved grandmother
+- [L10363](Vampire5edChicagobyNight#L10363): Epitaph: Spanner in the Works
+- [L10365](Vampire5edChicagobyNight#L10365): Clan: Lasombra
+- [L10549](Vampire5edChicagobyNight#L10549): Ambition: Overcome this condition
+- [L10550](Vampire5edChicagobyNight#L10550): Convictions: I will never be the victim; always
+- [L10552](Vampire5edChicagobyNight#L10552): Touchstones: Marisol Rivera — Mother; Nailea
+- [L10568](Vampire5edChicagobyNight#L10568): Epitaph: Nihilistic Theologian
+- [L10572](Vampire5edChicagobyNight#L10572): Clan: Lasombra
+- [L10770](Vampire5edChicagobyNight#L10770): Ambition: Establish a cult of enlightenment
+- [L10771](Vampire5edChicagobyNight#L10771): Convictions: Never abandon a trusted companion
+- [L10772](Vampire5edChicagobyNight#L10772): Touchstones: Farah Yussuf — Palestinian Convert
+- [L10787](Vampire5edChicagobyNight#L10787): Epitaph: The Black Knight
+- [L10790](Vampire5edChicagobyNight#L10790): Clan: Lasombra
+- [L11041](Vampire5edChicagobyNight#L11041): Ambition: Shepherd the Lasombra transition into
+- [L11043](Vampire5edChicagobyNight#L11043): Convictions: None
+- [L11044](Vampire5edChicagobyNight#L11044): Touchstones: None
+- [L11088](Vampire5edChicagobyNight#L11088): Epitaph: Malkavian Primogen, Monster in Wolf’s
+- [L11093](Vampire5edChicagobyNight#L11093): Clan: Malkavian
+- [L11323](Vampire5edChicagobyNight#L11323): Ambition: Prevent Lasombra entry into the Chicago
+- [L11325](Vampire5edChicagobyNight#L11325): Convictions: Make sure they know you’re better
+- [L11327](Vampire5edChicagobyNight#L11327): Touchstones: Harry Magnotta — sadistic nurse at
+- [L11347](Vampire5edChicagobyNight#L11347): Clan: Malkavian
+- [L11558](Vampire5edChicagobyNight#L11558): Ambition: Become the center of Kindred intelligence
+- [L11560](Vampire5edChicagobyNight#L11560): Convictions: Make others earn your trust
+- [L11561](Vampire5edChicagobyNight#L11561): Touchstones: Ian Gibson — ghoul and Blue Velvet
+- [L11581](Vampire5edChicagobyNight#L11581): Epitaph: The Unquestioning Blade
+- [L11583](Vampire5edChicagobyNight#L11583): Clan: Malkavian
+- [L11778](Vampire5edChicagobyNight#L11778): Ambition: Disable the city’s Anarchs
+- [L11779](Vampire5edChicagobyNight#L11779): Convictions: Never fail to study death as it occurs
+- [L11780](Vampire5edChicagobyNight#L11780): Touchstones: Father Ambrosio Valdez — priest
+- [L11798](Vampire5edChicagobyNight#L11798): Epitaph: Shattered Identity
+- [L11801](Vampire5edChicagobyNight#L11801): Clan: Malkavian
+- [L11990](Vampire5edChicagobyNight#L11990): Ambition: Recruit a team to fully catalogue his
+- [L11992](Vampire5edChicagobyNight#L11992): Convictions: Always maintain control (rarely
+- [L11994](Vampire5edChicagobyNight#L11994): Touchstones: Klein’s Touchstones vary from
+- [L12075](Vampire5edChicagobyNight#L12075): Epitaph: The Useful Outsider
+- [L12080](Vampire5edChicagobyNight#L12080): Clan: The Ministry
+- [L12226](Vampire5edChicagobyNight#L12226): Ambition: Acquire a major boon from the Prince
+- [L12228](Vampire5edChicagobyNight#L12228): Convictions: Never debase the undeserving
+- [L12229](Vampire5edChicagobyNight#L12229): Touchstones: Deon Adams — a neighborhood kid
+- [L12246](Vampire5edChicagobyNight#L12246): Epitaph: Corruption Is Just Another Privilege
+- [L12250](Vampire5edChicagobyNight#L12250): Clan: The Ministry
+- [L12440](Vampire5edChicagobyNight#L12440): Ambition: Experience something new every night
+- [L12441](Vampire5edChicagobyNight#L12441): Convictions: Never accept a master
+- [L12442](Vampire5edChicagobyNight#L12442): Touchstones: Thea’s parents — their degradation
+- [L12460](Vampire5edChicagobyNight#L12460): Epitaph: Art Collector, Artist Patron
+- [L12465](Vampire5edChicagobyNight#L12465): Clan: The Ministry
+- [L12656](Vampire5edChicagobyNight#L12656): Ambition: Build support for a praxis claim
+- [L12657](Vampire5edChicagobyNight#L12657): Convictions: Always try to experience something
+- [L12659](Vampire5edChicagobyNight#L12659): Touchstones: Rhys Warren — burlesque performer
+- [L12717](Vampire5edChicagobyNight#L12717): Clan: Nosferatu
+- [L12898](Vampire5edChicagobyNight#L12898): Ambition: Lay the groundwork for “Cedrick
+- [L12901](Vampire5edChicagobyNight#L12901): Convictions: I will never let my family come to
+- [L12903](Vampire5edChicagobyNight#L12903): Touchstones: Lana Calhoun — grand-niece; Rufus
+- [L12922](Vampire5edChicagobyNight#L12922): Epitaph: Information Broker
+- [L12926](Vampire5edChicagobyNight#L12926): Clan: Nosferatu
+- [L13113](Vampire5edChicagobyNight#L13113): Ambition: Financially ruin the “failed Cams”
+- [L13114](Vampire5edChicagobyNight#L13114): Convictions: Always remain loyal to your superiors
+- [L13115](Vampire5edChicagobyNight#L13115): Touchstones: Rip Eldon — former private and
+- [L13133](Vampire5edChicagobyNight#L13133): Epitaph: The Painted Lady, Mistress of the Coil,
+- [L13137](Vampire5edChicagobyNight#L13137): Clan: Nosferatu
+- [L13330](Vampire5edChicagobyNight#L13330): Ambition: Find new methods to sate my Hunger
+- [L13331](Vampire5edChicagobyNight#L13331): Convictions: Experience a new pain each night
+- [L13332](Vampire5edChicagobyNight#L13332): Touchstones: Mavis Blackwater — object of
+- [L13349](Vampire5edChicagobyNight#L13349): Epitaph: The scourge sent to end Kindred wickedness
+- [L13353](Vampire5edChicagobyNight#L13353): Clan: Nosferatu
+- [L13544](Vampire5edChicagobyNight#L13544): Ambition: Destroy Prince Jackson’s stable regime
+- [L13545](Vampire5edChicagobyNight#L13545): Convictions: I will show Kindred the light of God
+- [L13546](Vampire5edChicagobyNight#L13546): Touchstones: Dr. Jeffrey Taylor — his voice in the
+- [L13563](Vampire5edChicagobyNight#L13563): Epitaph: Happy-Go-Lucky Killer
+- [L13568](Vampire5edChicagobyNight#L13568): Clan: Nosferatu
+- [L13747](Vampire5edChicagobyNight#L13747): Ambition: Burn Bordruff down to his skeleton
+- [L13748](Vampire5edChicagobyNight#L13748): Convictions: Never allow myself to become the
+- [L13750](Vampire5edChicagobyNight#L13750): Touchstones: Ina Miller – Owner of the Steel
+- [L13767](Vampire5edChicagobyNight#L13767): Epitaph: Change is Inevitable
+- [L13770](Vampire5edChicagobyNight#L13770): Clan: Nosferatu
+- [L13960](Vampire5edChicagobyNight#L13960): Ambition: I will claim the burners as my herd and
+- [L13962](Vampire5edChicagobyNight#L13962): Convictions: Never blindly follow orders
+- [L13963](Vampire5edChicagobyNight#L13963): Touchstones: Basil — a local burner who has
+- [L13981](Vampire5edChicagobyNight#L13981): Epitaph: Owner of Red Noº 5, Father-Above-All
+- [L13986](Vampire5edChicagobyNight#L13986): Clan: Nosferatu
+- [L14188](Vampire5edChicagobyNight#L14188): Ambition: Implement a new order in this city
+- [L14189](Vampire5edChicagobyNight#L14189): Convictions: Always provide a home to those
+- [L14191](Vampire5edChicagobyNight#L14191): Touchstones: Barney Hubbard — Lost child,
+- [L14264](Vampire5edChicagobyNight#L14264): Epitaph: The Chicago Cassandra
+- [L14267](Vampire5edChicagobyNight#L14267): Clan: Thin-Blood
+- [L14426](Vampire5edChicagobyNight#L14426): Ambition: Make Prince Jackson see my uses
+- [L14427](Vampire5edChicagobyNight#L14427): Convictions: Always weather ridicule
+- [L14428](Vampire5edChicagobyNight#L14428): Touchstones: Ching-He Ni — fortune teller and
+- [L14444](Vampire5edChicagobyNight#L14444): Epitaph: The Enemy Within
+- [L14447](Vampire5edChicagobyNight#L14447): Clan: Thin-Blood
+- [L14645](Vampire5edChicagobyNight#L14645): Ambition: Secure O’Hare Airport as my own,
+- [L14647](Vampire5edChicagobyNight#L14647): Convictions: I must always rise to the top; I will
+- [L14649](Vampire5edChicagobyNight#L14649): Touchstones: Felicity Miller — Aviation commissioner
+- [L14666](Vampire5edChicagobyNight#L14666): Epitaph: Vengeful Revolutionary
+- [L14669](Vampire5edChicagobyNight#L14669): Clan: Thin-Blood
+- [L14855](Vampire5edChicagobyNight#L14855): Ambition: Form a coterie with other vampires like
+- [L14857](Vampire5edChicagobyNight#L14857): Convictions: I will never be a victim again
+- [L14858](Vampire5edChicagobyNight#L14858): Touchstones: Jay Burridge — ex-boyfriend and
+- [L14881](Vampire5edChicagobyNight#L14881): Clan: Toreador
+- [L15142](Vampire5edChicagobyNight#L15142): Ambition: Be the final decider on the Lasombra
+- [L15144](Vampire5edChicagobyNight#L15144): Convictions: Art is essential and must be supported
+- [L15145](Vampire5edChicagobyNight#L15145): Touchstones: John Greer — husband, for whom
+- [L15163](Vampire5edChicagobyNight#L15163): Epitaph: Excess is the best drug
+- [L15166](Vampire5edChicagobyNight#L15166): Clan: Toreador
+- [L15363](Vampire5edChicagobyNight#L15363): Ambition: Discover how to break the Blood Bond
+- [L15364](Vampire5edChicagobyNight#L15364): Convictions: Reject all those who would make me
+- [L15366](Vampire5edChicagobyNight#L15366): Touchstones: Taryn — a friend and confidante,
+- [L15383](Vampire5edChicagobyNight#L15383): Epitaph: Playing as Chicago shimmers on the edge
+- [L15387](Vampire5edChicagobyNight#L15387): Clan: Toreador
+- [L15592](Vampire5edChicagobyNight#L15592): Ambition: I will rediscover my humanity through
+- [L15594](Vampire5edChicagobyNight#L15594): Convictions: I must make music from every joy
+- [L15596](Vampire5edChicagobyNight#L15596): Touchstones: Rozele Vaitekunas — a local Lithuanian
+- [L15613](Vampire5edChicagobyNight#L15613): Epitaph: Enlightenment through music and actions
+- [L15616](Vampire5edChicagobyNight#L15616): Clan: Toreador
+- [L15811](Vampire5edChicagobyNight#L15811): Ambition: Discern the truth behind the concept of
+- [L15813](Vampire5edChicagobyNight#L15813): Convictions: Bring peace to those who are troubled;
+- [L15815](Vampire5edChicagobyNight#L15815): Touchstones: Sravya — Unknowing niece; Gagandeep
+- [L15834](Vampire5edChicagobyNight#L15834): Epitaph: Vampire activist, Mother-Above-All,
+- [L15838](Vampire5edChicagobyNight#L15838): Clan: Toreador
+- [L16043](Vampire5edChicagobyNight#L16043): Ambition: Build a kingdom in Chicago with Adze
+- [L16044](Vampire5edChicagobyNight#L16044): Convictions: Protect the innocents from harm;
+- [L16046](Vampire5edChicagobyNight#L16046): Touchstones: Bianca Maldonado — 19-year old
+- [L16067](Vampire5edChicagobyNight#L16067): Clan: Toreador
+- [L16312](Vampire5edChicagobyNight#L16312): Ambition: Find a sure way to stave off the Beckoning
+- [L16313](Vampire5edChicagobyNight#L16313): Convictions: Always outsmart your enemies
+- [L16314](Vampire5edChicagobyNight#L16314): Touchstones: Trina Dimitriou — distant descendant
+- [L16364](Vampire5edChicagobyNight#L16364): Epitaph: Father-Turned-Commander of the Tremere
+- [L16365](Vampire5edChicagobyNight#L16365): Clan: Tremere
+- [L16610](Vampire5edChicagobyNight#L16610): Ambition: Unify Clan Tremere in Chicago
+- [L16611](Vampire5edChicagobyNight#L16611): Convictions: Self-Discipline is the Path to Eternity;
+- [L16613](Vampire5edChicagobyNight#L16613): Touchstones: Freddie Davis — Anthropology Student
+- [L16631](Vampire5edChicagobyNight#L16631): Epitaph: Bridge Between Blood Magicians, Wisdom
+- [L16633](Vampire5edChicagobyNight#L16633): Clan: Tremere
+- [L16850](Vampire5edChicagobyNight#L16850): Ambition: Form a bond with House Carna
+- [L16851](Vampire5edChicagobyNight#L16851): Convictions: Enlightenment is the Enemy of the Blood
+- [L16852](Vampire5edChicagobyNight#L16852): Touchstones: Arnold Ducheski — Eccentric Tinkerer
+- [L16871](Vampire5edChicagobyNight#L16871): Epitaph: A Curse is a Curse
+- [L16874](Vampire5edChicagobyNight#L16874): Clan: Tremere
+- [L17059](Vampire5edChicagobyNight#L17059): Ambition: Discover the truth of what lurks inside
+- [L17061](Vampire5edChicagobyNight#L17061): Convictions: Protect everyone from myself
+- [L17062](Vampire5edChicagobyNight#L17062): Touchstones: Kaitlyn Hammerstein — ghoul and
+- [L17082](Vampire5edChicagobyNight#L17082): Epitaph: Prince of Chicago, The New Face of the
+- [L17088](Vampire5edChicagobyNight#L17088): Clan: Ventrue
+- [L17456](Vampire5edChicagobyNight#L17456): Ambition: Make Chicago great by cutting away
+- [L17458](Vampire5edChicagobyNight#L17458): Convictions: I will make Chicago better for everyone
+- [L17459](Vampire5edChicagobyNight#L17459): Touchstones: Bayard — Younger brother and
+- [L17485](Vampire5edChicagobyNight#L17485): Epitaph: The Old Guard
+- [L17490](Vampire5edChicagobyNight#L17490): Clan: Ventrue
+- [L17706](Vampire5edChicagobyNight#L17706): Ambition: Regain what I lost and take what I never
+- [L17708](Vampire5edChicagobyNight#L17708): Convictions: Never leave money on the table
+- [L17709](Vampire5edChicagobyNight#L17709): Touchstones: Christopher Augustus Ballard — favorite
+- [L17730](Vampire5edChicagobyNight#L17730): Epitaph: Nervous Financier
+- [L17733](Vampire5edChicagobyNight#L17733): Clan: Ventrue
+- [L17935](Vampire5edChicagobyNight#L17935): Ambition: Wrest power (and potentially soul) from
+- [L17937](Vampire5edChicagobyNight#L17937): Convictions: Never kill a vessel; Always remember
+- [L17939](Vampire5edChicagobyNight#L17939): Touchstones: Ingrid Fallon — Personal Assistant;
+- [L17959](Vampire5edChicagobyNight#L17959): Epitaph: Empowering Matriarch
+- [L17963](Vampire5edChicagobyNight#L17963): Clan: Ventrue
+- [L18157](Vampire5edChicagobyNight#L18157): Ambition: Manipulate mortal politics to better my
+- [L18159](Vampire5edChicagobyNight#L18159): Convictions: Never settle for the bottom rung
+- [L18160](Vampire5edChicagobyNight#L18160): Touchstones: Merriam Brown — City Alderwoman
+- [L18192](Vampire5edChicagobyNight#L18192): Epitaph: Fallen Noble, Street Level Kingpin
+- [L18196](Vampire5edChicagobyNight#L18196): Clan: Ventrue
+- [L18390](Vampire5edChicagobyNight#L18390): Ambition: Become the Shadow Prince of Chicago
+- [L18391](Vampire5edChicagobyNight#L18391): Convictions: Never succumb to self-pity
+- [L18392](Vampire5edChicagobyNight#L18392): Touchstones: Eleanor Freeman – University Law
+- [L18415](Vampire5edChicagobyNight#L18415): Epitaph: Burned-out Defector
+- [L18418](Vampire5edChicagobyNight#L18418): Clan: Ventrue
+- [L18619](Vampire5edChicagobyNight#L18619): Ambition: Rise to the position of Seneschal or
+- [L18621](Vampire5edChicagobyNight#L18621): Convictions: Never betray my city again
+- [L18622](Vampire5edChicagobyNight#L18622): Touchstones: Oscar Thornhill — nephew to deceased
+- [L18640](Vampire5edChicagobyNight#L18640): Epitaph: Anarch Spy
+- [L18643](Vampire5edChicagobyNight#L18643): Clan: Ventrue
+- [L18864](Vampire5edChicagobyNight#L18864): Ambition: Disable all Second Inquisition actions in
+- [L18866](Vampire5edChicagobyNight#L18866): Convictions: I can solve any problem; Love is the
+- [L18868](Vampire5edChicagobyNight#L18868): Touchstones: Sang-min “Slip Up” Seop — Hacking
+- [L22418](Vampire5edChicagobyNight#L22418): Ambition: Dominate the Chicago drug trade
+- [L22419](Vampire5edChicagobyNight#L22419): Convictions: Never brook disrespect
+- [L22420](Vampire5edChicagobyNight#L22420): Touchstones: Lily DeAngelis — ghoul and front for
+- [L24184](Vampire5edChicagobyNight#L24184): Lasombra Archetypes
+- [L24937](Vampire5edChicagobyNight#L24937): Ambition: Achieve Golconda by becoming one
+- [L24939](Vampire5edChicagobyNight#L24939): Convictions: None
+- [L24940](Vampire5edChicagobyNight#L24940): Touchstones: None
+- [L25461](Vampire5edChicagobyNight#L25461): Ambition: Remain away from other Kindred
+- [L25462](Vampire5edChicagobyNight#L25462): Convictions: Never form an emotional attachment
+- [L25464](Vampire5edChicagobyNight#L25464): Touchstones: Paul Haddock — Long-lost son
+- [L25551](Vampire5edChicagobyNight#L25551): Ambition: Put an end to this blight on Chicago
+- [L25874](Vampire5edChicagobyNight#L25874): Ambition: Lead the cult into becoming vessels for
+- [L25876](Vampire5edChicagobyNight#L25876): Convictions: None
+- [L25877](Vampire5edChicagobyNight#L25877): Touchstones: None
+- [L28559](Vampire5edChicagobyNight#L28559): Epitaph: Lasombra War Hero
+- [L28562](Vampire5edChicagobyNight#L28562): Clan: Lasombra
+- [L28766](Vampire5edChicagobyNight#L28766): Ambition: Find another war to fight
+- [L28767](Vampire5edChicagobyNight#L28767): Convictions: Obey authority
+- [L28768](Vampire5edChicagobyNight#L28768): Touchstones: Arkady Lavrov — Soviet army veteran
+- [L28876](Vampire5edChicagobyNight#L28876): Clan: Gangrel
+- [L28891](Vampire5edChicagobyNight#L28891): Clan: Brujah
+- [L28907](Vampire5edChicagobyNight#L28907): Clan: Gangrel
+- [L28922](Vampire5edChicagobyNight#L28922): Clan: Nosferatu
+
+### poderes e requisitos (11)
+
+- [L24428](Vampire5edChicagobyNight#L24428): Cost: Free
+- [L24438](Vampire5edChicagobyNight#L24438): Cost: Free
+- [L24469](Vampire5edChicagobyNight#L24469): Cost: One Rouse Check
+- [L24488](Vampire5edChicagobyNight#L24488): Amalgam: Potence 2
+- [L24496](Vampire5edChicagobyNight#L24496): Cost: One Rouse Check
+- [L24497](Vampire5edChicagobyNight#L24497): Dice Pools: Wits + Oblivion
+- [L24540](Vampire5edChicagobyNight#L24540): Cost: One Rouse Check
+- [L24561](Vampire5edChicagobyNight#L24561): Cost: One Rouse Check
+- [L24589](Vampire5edChicagobyNight#L24589): Cost: One Rouse Check.
+- [L24612](Vampire5edChicagobyNight#L24612): Cost: One Rouse Check
+- [L24629](Vampire5edChicagobyNight#L24629): Cost: Two Rouse Checks.
+
+### NPCs e antagonistas (78)
+
+- [L6361](Vampire5edChicagobyNight#L6361): Disciplines: Celerity 4, Dominate 2, Obfuscate 3
+- [L6554](Vampire5edChicagobyNight#L6554): Disciplines: Celerity 2, Obfuscate 2
+- [L6866](Vampire5edChicagobyNight#L6866): Disciplines: Auspex 4, Celerity 2, Dominate 4,
+- [L7099](Vampire5edChicagobyNight#L7099): Disciplines: Auspex 1, Celerity 3, Potence 3,
+- [L7316](Vampire5edChicagobyNight#L7316): Disciplines: Celerity 2, Fortitude 2, Potence 4,
+- [L7564](Vampire5edChicagobyNight#L7564): Disciplines: Celerity 3, Fortitude 1, Potence 1,
+- [L7816](Vampire5edChicagobyNight#L7816): Disciplines: Celerity 2, Fortitude 1, Potence 2,
+- [L8032](Vampire5edChicagobyNight#L8032): Disciplines: Celerity 3, Potence 4, Presence 2,
+- [L8280](Vampire5edChicagobyNight#L8280): Disciplines: Auspex 3, Dominate 2, Fortitude 2,
+- [L8498](Vampire5edChicagobyNight#L8498): Disciplines: Auspex 2, Dominate 1
+- [L8794](Vampire5edChicagobyNight#L8794): Disciplines: Animalism 2, Auspex 2
+- [L8948](Vampire5edChicagobyNight#L8948): Disciplines: Dominate 1, Fortitude 2, Potence 3
+- [L9166](Vampire5edChicagobyNight#L9166): Disciplines: Auspex 2, Potence 1
+- [L9367](Vampire5edChicagobyNight#L9367): Disciplines: Auspex 5, Celerity 4, Dominate 3,
+- [L9644](Vampire5edChicagobyNight#L9644): Disciplines: Animalism 3, Auspex 2 Fortitude 1,
+- [L9859](Vampire5edChicagobyNight#L9859): Disciplines: Animalism 4
+- [L10071](Vampire5edChicagobyNight#L10071): Disciplines: Fortitude 2, Protean 4
+- [L10360](Vampire5edChicagobyNight#L10360): Disciplines: Dominate 2, Fortitude 3, Oblivion 2,
+- [L10566](Vampire5edChicagobyNight#L10566): Disciplines: Oblivion 2, Potence 1
+- [L10785](Vampire5edChicagobyNight#L10785): Disciplines: Dominate 2, Oblivion 3, Potence 1
+- [L11060](Vampire5edChicagobyNight#L11060): Disciplines: Celerity 2, Dominate 4, Fortitude 3,
+- [L11341](Vampire5edChicagobyNight#L11341): Disciplines: Auspex 3, Dominate 4, Obfuscate 3,
+- [L11576](Vampire5edChicagobyNight#L11576): Disciplines: Auspex 4, Dominate 4, Obfuscate 2,
+- [L11795](Vampire5edChicagobyNight#L11795): Disciplines: Auspex 3, Obfuscate 2, Oblivion 2
+- [L12011](Vampire5edChicagobyNight#L12011): Disciplines: Auspex 1, Obfuscate 5, Presence 2
+- [L12244](Vampire5edChicagobyNight#L12244): Disciplines: Obfuscate 1, Presence 2, Protean 3
+- [L12458](Vampire5edChicagobyNight#L12458): Disciplines: Potence 1, Presence 2
+- [L12673](Vampire5edChicagobyNight#L12673): Disciplines: Auspex 2, Obfuscate 2, Presence 4,
+- [L12917](Vampire5edChicagobyNight#L12917): Disciplines: Animalism 2, Dominate 3, Obfuscate
+- [L13131](Vampire5edChicagobyNight#L13131): Disciplines: Auspex 1, Animalism 1, Potence 3
+- [L13347](Vampire5edChicagobyNight#L13347): Disciplines: Obfuscate 5, Potence 2
+- [L13561](Vampire5edChicagobyNight#L13561): Disciplines: Dominate 3, Obfuscate 4, Potence 4
+- [L13765](Vampire5edChicagobyNight#L13765): Disciplines: Fortitude 1, Obfuscate 1, Potence 3
+- [L13977](Vampire5edChicagobyNight#L13977): Disciplines: Animalism 3, Potence 1
+- [L14205](Vampire5edChicagobyNight#L14205): Disciplines: Animalism 2, Obfuscate 4, Potence 3,
+- [L14442](Vampire5edChicagobyNight#L14442): Disciplines: Blood Alchemy 3
+- [L14664](Vampire5edChicagobyNight#L14664): Disciplines: Blood Alchemy 2
+- [L14871](Vampire5edChicagobyNight#L14871): Disciplines: Blood Alchemy 1
+- [L15160](Vampire5edChicagobyNight#L15160): Disciplines: Auspex 4, Celerity 4, Dominate 2,
+- [L15379](Vampire5edChicagobyNight#L15379): Disciplines: Celerity 3, Presence 3
+- [L15611](Vampire5edChicagobyNight#L15611): Disciplines: Auspex 2, Celerity 3, Presence 4
+- [L15831](Vampire5edChicagobyNight#L15831): Disciplines: Auspex 2, Celerity 3, Presence 3,
+- [L16062](Vampire5edChicagobyNight#L16062): Disciplines: Auspex 1, Presence 3, Protean 3
+- [L16330](Vampire5edChicagobyNight#L16330): Disciplines: Auspex 5, Blood Sorcery 3, Celerity
+- [L16628](Vampire5edChicagobyNight#L16628): Disciplines: Auspex 3, Dominate 2, Fortitude 3,
+- [L16868](Vampire5edChicagobyNight#L16868): Disciplines: Auspex 5, Dominate 4, Obfuscate 2,
+- [L17076](Vampire5edChicagobyNight#L17076): Disciplines: Auspex 2, Blood Sorcery 3
+- [L17476](Vampire5edChicagobyNight#L17476): Disciplines: Dominate 3, Fortitude 4, Presence 3
+- [L17727](Vampire5edChicagobyNight#L17727): Disciplines: Dominate 4, Fortitude 4, Potence 2,
+- [L17954](Vampire5edChicagobyNight#L17954): Disciplines: Auspex 2, Dominate 4, Fortitude 3,
+- [L18176](Vampire5edChicagobyNight#L18176): Disciplines: Dominate 3, Fortitude 4, Presence 4
+- [L18412](Vampire5edChicagobyNight#L18412): Disciplines: Dominate 4, Fortitude 3, Potence 1,
+- [L18637](Vampire5edChicagobyNight#L18637): Disciplines: Dominate 4, Fortitude 3, Presence 2
+- [L18882](Vampire5edChicagobyNight#L18882): Disciplines: Dominate 1, Fortitude 2, Obfuscate 1,
+- [L22435](Vampire5edChicagobyNight#L22435): Disciplines: Dominate 1, Fortitude 2, Presence 1
+- [L24955](Vampire5edChicagobyNight#L24955): Disciplines: Dominate 1, Fortitude 3, Potence 3
+- [L25476](Vampire5edChicagobyNight#L25476): Disciplines: Animalism 2, Potence 2
+- [L25554](Vampire5edChicagobyNight#L25554): Standard Dice Pools: Physical 4, Social 3,
+- [L25557](Vampire5edChicagobyNight#L25557): Exceptional Dice Pools: Athletics 5, Brawl
+- [L25891](Vampire5edChicagobyNight#L25891): Disciplines: Celerity 1, Obfuscate 2, Potence 2,
+- [L28782](Vampire5edChicagobyNight#L28782): Disciplines: Dominate 1, Oblivion 4, Potence 3
+- [L28789](Vampire5edChicagobyNight#L28789): Standard Dice Pools: Physical 5, Social 3,
+- [L28792](Vampire5edChicagobyNight#L28792): Exceptional Dice Pools: Athletics 6, Brawl 6,
+- [L28800](Vampire5edChicagobyNight#L28800): Standard Dice Pools: Physical 3, Social 5,
+- [L28803](Vampire5edChicagobyNight#L28803): Exceptional Dice Pools: Academics 6, Finance
+- [L28810](Vampire5edChicagobyNight#L28810): Standard Dice Pools: Physical 3, Social 3,
+- [L28813](Vampire5edChicagobyNight#L28813): Exceptional Dice Pools: Athletics 5, Brawl 4,
+- [L28822](Vampire5edChicagobyNight#L28822): Standard Dice Pools: Physical 4, Social 3,
+- [L28825](Vampire5edChicagobyNight#L28825): Exceptional Dice Pools: Brawl 6, Intimidation 5,
+- [L28838](Vampire5edChicagobyNight#L28838): Standard Dice Pools: Physical 5, Social 3,
+- [L28841](Vampire5edChicagobyNight#L28841): Exceptional Dice Pools: Awareness 6, Brawl 6,
+- [L28843](Vampire5edChicagobyNight#L28843): Disciplines: Potence 1
+- [L28858](Vampire5edChicagobyNight#L28858): Standard Dice Pools: Physical 3, Social 3,
+- [L28861](Vampire5edChicagobyNight#L28861): Exceptional Dice Pools: Academics (Chicago)
+- [L28886](Vampire5edChicagobyNight#L28886): Disciplines: Fortitude 2, Protean 2
+- [L28903](Vampire5edChicagobyNight#L28903): Disciplines: Celerity 1, Potence 3
+- [L28918](Vampire5edChicagobyNight#L28918): Disciplines: Animalism 2, Protean 2
+- [L28933](Vampire5edChicagobyNight#L28933): Disciplines: Obfuscate 3, Potence 1
+
+### vantagens, ritos e equipamento (20)
+
+- [L18986](Vampire5edChicagobyNight#L18986): Backgrounds
+- [L19359](Vampire5edChicagobyNight#L19359): Backgrounds
+- [L19736](Vampire5edChicagobyNight#L19736): Backgrounds
+- [L20235](Vampire5edChicagobyNight#L20235): Backgrounds
+- [L20628](Vampire5edChicagobyNight#L20628): Backgrounds
+- [L21158](Vampire5edChicagobyNight#L21158): Backgrounds
+- [L21504](Vampire5edChicagobyNight#L21504): Backgrounds
+- [L21848](Vampire5edChicagobyNight#L21848): loresheets
+- [L22029](Vampire5edChicagobyNight#L22029): loresheets
+- [L22204](Vampire5edChicagobyNight#L22204): loresheets
+- [L22391](Vampire5edChicagobyNight#L22391): loresheets
+- [L22519](Vampire5edChicagobyNight#L22519): loresheets
+- [L22722](Vampire5edChicagobyNight#L22722): loresheets
+- [L22905](Vampire5edChicagobyNight#L22905): loresheets
+- [L23070](Vampire5edChicagobyNight#L23070): loresheets
+- [L23228](Vampire5edChicagobyNight#L23228): loresheets
+- [L23436](Vampire5edChicagobyNight#L23436): loresheets
+- [L23641](Vampire5edChicagobyNight#L23641): loresheets
+- [L23794](Vampire5edChicagobyNight#L23794): loresheets
+- [L24013](Vampire5edChicagobyNight#L24013): loresheets
+
+## Vampire5edCultsoftheBloddGods
+
+V5 · publisher · 22973 linhas · SHA-256 `c8b2071e54d785644d90b97410ea6aeac947878d04e84cea9747866a5b09d269`
+
+### criação e progressão (10)
+
+- [L4379](Vampire5edCultsoftheBloddGods#L4379): all with a different dogma, creating a tapestry of faith
+- [L9623](Vampire5edCultsoftheBloddGods#L9623): The Nosferatu started adorning their hideous faces and bodies with paint, baubles, masks, and elaborate outfits, to accentuate beauty and prove their purpose as more than horrors and lepers. The Cleopatrans selected only the canniest wits to make their cult of advisors and leaders, creating a bubble in time between the 1st and 4th centuries CE where Nosferatu occupied rare places
+- [L10223](Vampire5edCultsoftheBloddGods#L10223): interested vampires, creating a sense
+- [L11633](Vampire5edCultsoftheBloddGods#L11633): creating a firm bond between victims.
+- [L12976](Vampire5edCultsoftheBloddGods#L12976): regardless of proof. To an enterprising lick, creating a
+- [L15159](Vampire5edCultsoftheBloddGods#L15159): so part of the fun in creating a cult
+- [L17017](Vampire5edCultsoftheBloddGods#L17017): on the heavy, wooden desk, creating a
+- [L19304](Vampire5edCultsoftheBloddGods#L19304): even after character creation.
+- [L19587](Vampire5edCultsoftheBloddGods#L19587): and will assist the players in creating a deeper connection
+- [L21327](Vampire5edCultsoftheBloddGods#L21327): By creating an ever-expanding pattern of crosses,
+
+### identidade e narrativa (125)
+
+- [L2524](Vampire5edCultsoftheBloddGods#L2524): Epitaph: Ashfinder Yogi and Influence Junkie
+- [L2532](Vampire5edCultsoftheBloddGods#L2532): Clan: Thin-Blood
+- [L2679](Vampire5edCultsoftheBloddGods#L2679): Ambition: Find a step on the path to enlightenment
+- [L2680](Vampire5edCultsoftheBloddGods#L2680): Convictions: Never stop striving for wellness
+- [L2681](Vampire5edCultsoftheBloddGods#L2681): Touchstones: Sandra Kowalski — Amber’s
+- [L2699](Vampire5edCultsoftheBloddGods#L2699): Epitaph: Thaumaturgical Scientist
+- [L2702](Vampire5edCultsoftheBloddGods#L2702): Clan: Tremere
+- [L2937](Vampire5edCultsoftheBloddGods#L2937): Ambition: Further “the work”
+- [L2938](Vampire5edCultsoftheBloddGods#L2938): Convictions: Never turn down
+- [L2940](Vampire5edCultsoftheBloddGods#L2940): Touchstones: Grace Brooker —
+- [L6607](Vampire5edCultsoftheBloddGods#L6607): Epitaph: Blackmailer for the Greater Good
+- [L6611](Vampire5edCultsoftheBloddGods#L6611): Clan: Caitiff
+- [L6879](Vampire5edCultsoftheBloddGods#L6879): Ambition: See a permanent
+- [L6882](Vampire5edCultsoftheBloddGods#L6882): Convictions: Never refuse
+- [L6886](Vampire5edCultsoftheBloddGods#L6886): Touchstones: Tara Bakurova —
+- [L7607](Vampire5edCultsoftheBloddGods#L7607): Epitaph: Cultist or Apostate?
+- [L7610](Vampire5edCultsoftheBloddGods#L7610): Clan: Malkavian
+- [L7842](Vampire5edCultsoftheBloddGods#L7842): Convictions: Don’t forget where I came from
+- [L7843](Vampire5edCultsoftheBloddGods#L7843): Touchstones: Frances Gault — fan, following in Patricia’s footsteps
+- [L9377](Vampire5edCultsoftheBloddGods#L9377): Epitaph: True Nephilim
+- [L9381](Vampire5edCultsoftheBloddGods#L9381): Clan: Toreador
+- [L9535](Vampire5edCultsoftheBloddGods#L9535): Ambition: Sing the dreamers to the Dream
+- [L9536](Vampire5edCultsoftheBloddGods#L9536): Convictions: Make the world into the heaven I
+- [L9538](Vampire5edCultsoftheBloddGods#L9538): Touchstones: Bertrand Phelan — Virtuoso Cellist;
+- [L13297](Vampire5edCultsoftheBloddGods#L13297): Clan: Ventrue
+- [L13300](Vampire5edCultsoftheBloddGods#L13300): Ambition: Don’t let other Kindred
+- [L13302](Vampire5edCultsoftheBloddGods#L13302): Convictions: Always defend
+- [L13305](Vampire5edCultsoftheBloddGods#L13305): Touchstones: Andrew Eaden —
+- [L13328](Vampire5edCultsoftheBloddGods#L13328): Clan: Ventrue
+- [L13331](Vampire5edCultsoftheBloddGods#L13331): Ambition: Expand the cult to
+- [L13333](Vampire5edCultsoftheBloddGods#L13333): Convictions: Never refuse
+- [L13335](Vampire5edCultsoftheBloddGods#L13335): Touchstones: Nadia Eaden —
+- [L13692](Vampire5edCultsoftheBloddGods#L13692): Clan: Tremere
+- [L13695](Vampire5edCultsoftheBloddGods#L13695): Ambition: Locate a domain in
+- [L13697](Vampire5edCultsoftheBloddGods#L13697): Convictions: Never show fear
+- [L13699](Vampire5edCultsoftheBloddGods#L13699): Touchstones: Millicent Jarvey
+- [L13998](Vampire5edCultsoftheBloddGods#L13998): Clan: Caitiff
+- [L14001](Vampire5edCultsoftheBloddGods#L14001): Ambition: Find my sire
+- [L14002](Vampire5edCultsoftheBloddGods#L14002): Convictions: Always protect the innocent
+- [L14003](Vampire5edCultsoftheBloddGods#L14003): Touchstones: Mikah Bittermann — friend from
+- [L14691](Vampire5edCultsoftheBloddGods#L14691): Clan: Nosferatu
+- [L14694](Vampire5edCultsoftheBloddGods#L14694): Ambition: Discover what became
+- [L14697](Vampire5edCultsoftheBloddGods#L14697): Convictions: Always fight
+- [L14699](Vampire5edCultsoftheBloddGods#L14699): Touchstones: Lars Magnusson
+- [L16799](Vampire5edCultsoftheBloddGods#L16799): Hecata Archetypes
+- [L21445](Vampire5edCultsoftheBloddGods#L21445): Epitaph: Ruthless Entrepreneur
+- [L21449](Vampire5edCultsoftheBloddGods#L21449): Clan: Hecata
+- [L21565](Vampire5edCultsoftheBloddGods#L21565): Ambition: To take over the export trade in Munich
+- [L21566](Vampire5edCultsoftheBloddGods#L21566): Convictions: Never leave a debt unpaid
+- [L21567](Vampire5edCultsoftheBloddGods#L21567): Touchstones: Günter Hildebrant — the grandson of
+- [L21595](Vampire5edCultsoftheBloddGods#L21595): Clan: Ventrue
+- [L21598](Vampire5edCultsoftheBloddGods#L21598): Ambition: To strengthen the Cult of Mithras
+- [L21599](Vampire5edCultsoftheBloddGods#L21599): Convictions: Always uphold Mithras’ laws
+- [L21600](Vampire5edCultsoftheBloddGods#L21600): Touchstones: Werner Keitel — attendant and loyal
+- [L21616](Vampire5edCultsoftheBloddGods#L21616): Clan: Ventrue
+- [L21619](Vampire5edCultsoftheBloddGods#L21619): Ambition: Further my own position in the cult
+- [L21620](Vampire5edCultsoftheBloddGods#L21620): Convictions: Never lose self-control
+- [L21621](Vampire5edCultsoftheBloddGods#L21621): Touchstones: Magda Rathenau — mortal grandchild
+- [L21637](Vampire5edCultsoftheBloddGods#L21637): Clan: Gangrel
+- [L21640](Vampire5edCultsoftheBloddGods#L21640): Ambition: Extend the Anarch reach into Munich
+- [L21641](Vampire5edCultsoftheBloddGods#L21641): Convictions: None
+- [L21642](Vampire5edCultsoftheBloddGods#L21642): Touchstones: None
+- [L21659](Vampire5edCultsoftheBloddGods#L21659): Clan: Brujah
+- [L21662](Vampire5edCultsoftheBloddGods#L21662): Ambition: Mediate a treaty between Camarilla and
+- [L21664](Vampire5edCultsoftheBloddGods#L21664): Convictions: Always fight in the pursuit of peace
+- [L21667](Vampire5edCultsoftheBloddGods#L21667): Touchstones: Kurt von Weber — best friend from
+- [L21692](Vampire5edCultsoftheBloddGods#L21692): Clan: Hecata (nominally)
+- [L21695](Vampire5edCultsoftheBloddGods#L21695): Ambition: Usher the Horsemen into this city
+- [L21696](Vampire5edCultsoftheBloddGods#L21696): Convictions: None
+- [L21697](Vampire5edCultsoftheBloddGods#L21697): Touchstones: None
+- [L21770](Vampire5edCultsoftheBloddGods#L21770): Clan: Hecata
+- [L21821](Vampire5edCultsoftheBloddGods#L21821): Ambition: Earn the respect of the elite
+- [L21824](Vampire5edCultsoftheBloddGods#L21824): Convictions: Do not let someone use you as a pawn
+- [L21825](Vampire5edCultsoftheBloddGods#L21825): Touchstones: Stefanie Knapp — your last true friend
+- [L21846](Vampire5edCultsoftheBloddGods#L21846): Clan: Hecata
+- [L21907](Vampire5edCultsoftheBloddGods#L21907): Ambition: To one night take over the Cult of Death
+- [L21910](Vampire5edCultsoftheBloddGods#L21910): Convictions: Respect the Cult of Death and Undeath
+- [L21912](Vampire5edCultsoftheBloddGods#L21912): Touchstones: Lea Dudenhoeffer — one of her followers
+- [L21933](Vampire5edCultsoftheBloddGods#L21933): Clan: Hecata
+- [L21989](Vampire5edCultsoftheBloddGods#L21989): Ambition: To transform the Hecata of Munich into a
+- [L21993](Vampire5edCultsoftheBloddGods#L21993): Convictions: Protect the innocent from harm
+- [L21994](Vampire5edCultsoftheBloddGods#L21994): Touchstones: Sabine Lauterbach — a fellow retired
+- [L22012](Vampire5edCultsoftheBloddGods#L22012): Clan: Hecata
+- [L22058](Vampire5edCultsoftheBloddGods#L22058): Ambition: To become the cyber security lead for the
+- [L22062](Vampire5edCultsoftheBloddGods#L22062): Convictions: Always stop to help someone in
+- [L22064](Vampire5edCultsoftheBloddGods#L22064): Touchstones: Klara Gade — your former classmate
+- [L22084](Vampire5edCultsoftheBloddGods#L22084): Clan: Toreador
+- [L22142](Vampire5edCultsoftheBloddGods#L22142): Ambition: To avenge your sire
+- [L22145](Vampire5edCultsoftheBloddGods#L22145): Convictions: Stand up for women
+- [L22146](Vampire5edCultsoftheBloddGods#L22146): Touchstones: Oskar Kretschmann — who reminds
+- [L22165](Vampire5edCultsoftheBloddGods#L22165): Clan: Thin-Blood
+- [L22214](Vampire5edCultsoftheBloddGods#L22214): Ambition: Find your sire
+- [L22216](Vampire5edCultsoftheBloddGods#L22216): Convictions: Take from the wealthy, give to the poor
+- [L22217](Vampire5edCultsoftheBloddGods#L22217): Touchstones: Father Daniel Vogel — a Catholic priest
+- [L22291](Vampire5edCultsoftheBloddGods#L22291): Clan: Brujah
+- [L22294](Vampire5edCultsoftheBloddGods#L22294): Ambition: To take down a Ventrue fat-cat
+- [L22295](Vampire5edCultsoftheBloddGods#L22295): Convictions: Never kneel to a Ventrue
+- [L22296](Vampire5edCultsoftheBloddGods#L22296): Touchstones: Billy Ockwell — trade union leader
+- [L22351](Vampire5edCultsoftheBloddGods#L22351): Clan: Toreador
+- [L22354](Vampire5edCultsoftheBloddGods#L22354): Ambition: To prepare Kindred society for the end of
+- [L22356](Vampire5edCultsoftheBloddGods#L22356): Convictions: Always tell and reveal the truth
+- [L22357](Vampire5edCultsoftheBloddGods#L22357): Touchstones: Patricia Romero — their still-living
+- [L22404](Vampire5edCultsoftheBloddGods#L22404): Clan: Caitiff
+- [L22409](Vampire5edCultsoftheBloddGods#L22409): Ambition: Destroy a place of
+- [L22411](Vampire5edCultsoftheBloddGods#L22411): Convictions: None
+- [L22412](Vampire5edCultsoftheBloddGods#L22412): Touchstones: None
+- [L22535](Vampire5edCultsoftheBloddGods#L22535): Clan: Ventrue
+- [L22538](Vampire5edCultsoftheBloddGods#L22538): Ambition: Win the loyalty of
+- [L22540](Vampire5edCultsoftheBloddGods#L22540): Convictions: None
+- [L22541](Vampire5edCultsoftheBloddGods#L22541): Touchstones: None
+- [L22633](Vampire5edCultsoftheBloddGods#L22633): Clan: Nosferatu
+- [L22636](Vampire5edCultsoftheBloddGods#L22636): Ambition: Earn a degree of forgiveness
+- [L22637](Vampire5edCultsoftheBloddGods#L22637): Convictions: Always turn the other cheek
+- [L22638](Vampire5edCultsoftheBloddGods#L22638): Touchstones: Charley Lang — a child in Ethan’s care
+- [L22740](Vampire5edCultsoftheBloddGods#L22740): Clan: Toreador
+- [L22743](Vampire5edCultsoftheBloddGods#L22743): Ambition: Prove my blessed lineage
+- [L22746](Vampire5edCultsoftheBloddGods#L22746): Convictions: Never allow a heresy to pass unchallenged
+- [L22747](Vampire5edCultsoftheBloddGods#L22747): Touchstones: Angelica Waterhouse — my innocent
+- [L22865](Vampire5edCultsoftheBloddGods#L22865): Clan: Brujah
+- [L22881](Vampire5edCultsoftheBloddGods#L22881): Clan: Toreador
+- [L22896](Vampire5edCultsoftheBloddGods#L22896): Clan: Gangrel
+- [L22913](Vampire5edCultsoftheBloddGods#L22913): Clan: Ventrue
+- [L22928](Vampire5edCultsoftheBloddGods#L22928): Clan: Toreador
+- [L22943](Vampire5edCultsoftheBloddGods#L22943): Clan: Malkavian
+- [L22958](Vampire5edCultsoftheBloddGods#L22958): Clan: Lasombra
+
+### poderes e requisitos (45)
+
+- [L2996](Vampire5edCultsoftheBloddGods#L2996): Prerequisite: Concoct Ashe
+- [L3004](Vampire5edCultsoftheBloddGods#L3004): Prerequisite: Concoct Ashe
+- [L6966](Vampire5edCultsoftheBloddGods#L6966): Amalgam: Dominate 1
+- [L6984](Vampire5edCultsoftheBloddGods#L6984): Cost: One or Three Rouse
+- [L6986](Vampire5edCultsoftheBloddGods#L6986): Dice Pools: Charisma + Obfuscate
+- [L7023](Vampire5edCultsoftheBloddGods#L7023): Amalgam: Obfuscate 3
+- [L7035](Vampire5edCultsoftheBloddGods#L7035): Cost: One Rouse Check
+- [L7036](Vampire5edCultsoftheBloddGods#L7036): Dice Pools: Manipulation + Presence
+- [L7071](Vampire5edCultsoftheBloddGods#L7071): Amalgam: Fortitude 2
+- [L8788](Vampire5edCultsoftheBloddGods#L8788): Amalgam: Presence 1
+- [L8792](Vampire5edCultsoftheBloddGods#L8792): Cost: No additional cost
+- [L8800](Vampire5edCultsoftheBloddGods#L8800): Amalgam: Blood Sorcery 3
+- [L8809](Vampire5edCultsoftheBloddGods#L8809): Cost: One Rouse Check
+- [L8810](Vampire5edCultsoftheBloddGods#L8810): Dice Pools: Manipulation + Dominate vs. Intelligence
+- [L8838](Vampire5edCultsoftheBloddGods#L8838): Cost: One Rouse Check
+- [L8839](Vampire5edCultsoftheBloddGods#L8839): Dice Pools: Stamina + Fortitude vs. Stamina (+ Fortitude,
+- [L17146](Vampire5edCultsoftheBloddGods#L17146): Cost: One Rouse Check
+- [L17147](Vampire5edCultsoftheBloddGods#L17147): Dice Pools: Stamina + Oblivion
+- [L17187](Vampire5edCultsoftheBloddGods#L17187): Cost: Free
+- [L17188](Vampire5edCultsoftheBloddGods#L17188): Dice Pools: Wits + Oblivion
+- [L17202](Vampire5edCultsoftheBloddGods#L17202): Amalgam: Auspex 2
+- [L17219](Vampire5edCultsoftheBloddGods#L17219): Cost: One Rouse Check
+- [L17220](Vampire5edCultsoftheBloddGods#L17220): Dice Pools: Resolve + Oblivion
+- [L17266](Vampire5edCultsoftheBloddGods#L17266): Cost: One Rouse Check
+- [L17267](Vampire5edCultsoftheBloddGods#L17267): Dice Pools: Wits + Oblivion
+- [L17328](Vampire5edCultsoftheBloddGods#L17328): Cost: One Rouse Check
+- [L17329](Vampire5edCultsoftheBloddGods#L17329): Dice Pools: Stamina + Oblivion vs. Stamina +
+- [L17362](Vampire5edCultsoftheBloddGods#L17362): Amalgam: Fortitude 2
+- [L17378](Vampire5edCultsoftheBloddGods#L17378): Cost: Free
+- [L17379](Vampire5edCultsoftheBloddGods#L17379): Dice Pools: Resolve + Oblivion vs. Resolve +
+- [L17420](Vampire5edCultsoftheBloddGods#L17420): Cost: One Rouse Check, Two
+- [L17422](Vampire5edCultsoftheBloddGods#L17422): Dice Pools: Intelligence +
+- [L17484](Vampire5edCultsoftheBloddGods#L17484): Cost: Two Rouse Checks
+- [L17485](Vampire5edCultsoftheBloddGods#L17485): Dice Pools: Stamina + Oblivion
+- [L17549](Vampire5edCultsoftheBloddGods#L17549): Cost: Two Rouse Checks, Stains (variable amount)
+- [L17550](Vampire5edCultsoftheBloddGods#L17550): Dice Pools: Resolve + Oblivion vs. Resolve + Occult
+- [L17597](Vampire5edCultsoftheBloddGods#L17597): Prerequisite Power: Ashes to Ashes
+- [L17656](Vampire5edCultsoftheBloddGods#L17656): Prerequisite Power: The Binding Fetter
+- [L17695](Vampire5edCultsoftheBloddGods#L17695): Prerequisite Power: Where the Shroud Thins
+- [L17742](Vampire5edCultsoftheBloddGods#L17742): Prerequisite Power: Where the Shroud Thins
+- [L17792](Vampire5edCultsoftheBloddGods#L17792): Prerequisite Power: Aura of Decay
+- [L17864](Vampire5edCultsoftheBloddGods#L17864): Prerequisite Power: Aura of Decay
+- [L17946](Vampire5edCultsoftheBloddGods#L17946): Prerequisite Power: Necrotic
+- [L18018](Vampire5edCultsoftheBloddGods#L18018): Prerequisite Power: Necrotic
+- [L18073](Vampire5edCultsoftheBloddGods#L18073): Prerequisite Power: Withering
+
+### NPCs e antagonistas (159)
+
+- [L1049](Vampire5edCultsoftheBloddGods#L1049): GENERAL DIFFICULTIES
+- [L2512](Vampire5edCultsoftheBloddGods#L2512): Disciplines: Animalism 1, Dominate 2, Obfuscate 3
+- [L2513](Vampire5edCultsoftheBloddGods#L2513): General Difficulties: 4/2
+- [L2695](Vampire5edCultsoftheBloddGods#L2695): Disciplines: Thin-Blood Alchemy 4
+- [L2696](Vampire5edCultsoftheBloddGods#L2696): General Difficulties: 4/2
+- [L2960](Vampire5edCultsoftheBloddGods#L2960): Disciplines: Auspex 5, Blood
+- [L2962](Vampire5edCultsoftheBloddGods#L2962): General Difficulties: 7/5
+- [L6570](Vampire5edCultsoftheBloddGods#L6570): Standard Dice Pools: Physical 5, Social 1, Mental 1
+- [L6572](Vampire5edCultsoftheBloddGods#L6572): Exceptional Dice Pools: Brawl 6, Stealth 6; Intimidation
+- [L6584](Vampire5edCultsoftheBloddGods#L6584): Standard Dice Pools: Physical 4, Social 1, Mental 1
+- [L6586](Vampire5edCultsoftheBloddGods#L6586): Exceptional Dice Pools: Brawl 6, Stealth 7; Intimidation
+- [L6599](Vampire5edCultsoftheBloddGods#L6599): Standard Dice Pools: Physical 5, Social 1, Mental 1
+- [L6601](Vampire5edCultsoftheBloddGods#L6601): Exceptional Dice Pools: Athletics 7, Stealth 6;
+- [L6908](Vampire5edCultsoftheBloddGods#L6908): Disciplines: Auspex 2, Presence
+- [L6910](Vampire5edCultsoftheBloddGods#L6910): General Difficulties: 4/2
+- [L9554](Vampire5edCultsoftheBloddGods#L9554): Disciplines: Auspex 3, Celerity 3, Presence 4
+- [L9555](Vampire5edCultsoftheBloddGods#L9555): General Difficulties: 7/4
+- [L13208](Vampire5edCultsoftheBloddGods#L13208): Standard Dice Pools: Physical
+- [L13212](Vampire5edCultsoftheBloddGods#L13212): Exceptional Dice Pools:
+- [L13215](Vampire5edCultsoftheBloddGods#L13215): General Difficulties: 4/2
+- [L13233](Vampire5edCultsoftheBloddGods#L13233): Standard Dice Pools: Physical
+- [L13237](Vampire5edCultsoftheBloddGods#L13237): Exceptional Dice Pools: Etiquette
+- [L13240](Vampire5edCultsoftheBloddGods#L13240): Disciplines: Presence 1
+- [L13241](Vampire5edCultsoftheBloddGods#L13241): General Difficulties: 3/2
+- [L13257](Vampire5edCultsoftheBloddGods#L13257): Standard Dice Pools: Physical
+- [L13261](Vampire5edCultsoftheBloddGods#L13261): Exceptional Dice Pools:
+- [L13264](Vampire5edCultsoftheBloddGods#L13264): General Difficulties: 3/2
+- [L13324](Vampire5edCultsoftheBloddGods#L13324): Disciplines: Auspex 2, Dominate
+- [L13326](Vampire5edCultsoftheBloddGods#L13326): General Difficulties: 5/3
+- [L13352](Vampire5edCultsoftheBloddGods#L13352): Disciplines: Dominate 2, Fortitude
+- [L13354](Vampire5edCultsoftheBloddGods#L13354): General Difficulties: 5/3
+- [L13605](Vampire5edCultsoftheBloddGods#L13605): Standard Dice Pools: Physical
+- [L13609](Vampire5edCultsoftheBloddGods#L13609): Exceptional Dice Pools:
+- [L13613](Vampire5edCultsoftheBloddGods#L13613): Disciplines: Celerity 1
+- [L13614](Vampire5edCultsoftheBloddGods#L13614): General Difficulties: 4/2
+- [L13635](Vampire5edCultsoftheBloddGods#L13635): Standard Dice Pools: Physical
+- [L13639](Vampire5edCultsoftheBloddGods#L13639): Exceptional Dice Pools: Drive
+- [L13642](Vampire5edCultsoftheBloddGods#L13642): General Difficulties: 4/2
+- [L13669](Vampire5edCultsoftheBloddGods#L13669): Standard Dice Pools: Physical
+- [L13673](Vampire5edCultsoftheBloddGods#L13673): Exceptional Dice Pools:
+- [L13677](Vampire5edCultsoftheBloddGods#L13677): General Difficulties: 4/2
+- [L13740](Vampire5edCultsoftheBloddGods#L13740): Disciplines: Celerity 2, Dominate
+- [L13742](Vampire5edCultsoftheBloddGods#L13742): General Difficulties: 6/4
+- [L13945](Vampire5edCultsoftheBloddGods#L13945): Standard Dice Pools: Physical 5, Social 4, Mental 3
+- [L13947](Vampire5edCultsoftheBloddGods#L13947): Exceptional Dice Pools: Athletics 6, Brawl 8; Intimidation
+- [L13949](Vampire5edCultsoftheBloddGods#L13949): Disciplines: Potence 1
+- [L13950](Vampire5edCultsoftheBloddGods#L13950): General Difficulties: 4/2
+- [L13962](Vampire5edCultsoftheBloddGods#L13962): Standard Dice Pools: Physical 3, Social 4, Mental 5
+- [L13964](Vampire5edCultsoftheBloddGods#L13964): Exceptional Dice Pools: Craft 4; Subterfuge 5;
+- [L13966](Vampire5edCultsoftheBloddGods#L13966): General Difficulties: 3/2
+- [L13980](Vampire5edCultsoftheBloddGods#L13980): Standard Dice Pools: Physical 6, Social 3, Mental 4
+- [L13982](Vampire5edCultsoftheBloddGods#L13982): Exceptional Dice Pools: Brawl 7, Survival 7; Intimidation
+- [L13984](Vampire5edCultsoftheBloddGods#L13984): Disciplines: Celerity 1
+- [L13985](Vampire5edCultsoftheBloddGods#L13985): General Difficulties: 4/2
+- [L14016](Vampire5edCultsoftheBloddGods#L14016): Disciplines: Celerity 2, Potence 1, Protean 1
+- [L14017](Vampire5edCultsoftheBloddGods#L14017): General Difficulties: 4/2
+- [L14208](Vampire5edCultsoftheBloddGods#L14208): Standard Dice Pools: Physical
+- [L14212](Vampire5edCultsoftheBloddGods#L14212): Exceptional Dice Pools:
+- [L14216](Vampire5edCultsoftheBloddGods#L14216): General Difficulties: 4/2
+- [L14238](Vampire5edCultsoftheBloddGods#L14238): Standard Dice Pools: Physical
+- [L14242](Vampire5edCultsoftheBloddGods#L14242): Exceptional Dice Pools:
+- [L14245](Vampire5edCultsoftheBloddGods#L14245): General Difficulties: 4/2
+- [L14261](Vampire5edCultsoftheBloddGods#L14261): Standard Dice Pools: Physical
+- [L14265](Vampire5edCultsoftheBloddGods#L14265): Exceptional Dice Pools: Brawl
+- [L14268](Vampire5edCultsoftheBloddGods#L14268): General Difficulties: 3/2
+- [L14285](Vampire5edCultsoftheBloddGods#L14285): Standard Dice Pools: Physical
+- [L14289](Vampire5edCultsoftheBloddGods#L14289): Exceptional Dice Pools: Firearms
+- [L14291](Vampire5edCultsoftheBloddGods#L14291): General Difficulties: 3/2
+- [L14307](Vampire5edCultsoftheBloddGods#L14307): Standard Dice Pools: Physical
+- [L14313](Vampire5edCultsoftheBloddGods#L14313): Exceptional Dice Pools:
+- [L14317](Vampire5edCultsoftheBloddGods#L14317): Disciplines: Auspex 1
+- [L14318](Vampire5edCultsoftheBloddGods#L14318): General Difficulties: 4/2
+- [L14641](Vampire5edCultsoftheBloddGods#L14641): Standard Dice Pools: Physical
+- [L14645](Vampire5edCultsoftheBloddGods#L14645): Exceptional Dice Pools:
+- [L14648](Vampire5edCultsoftheBloddGods#L14648): General Difficulties: 4/2
+- [L14664](Vampire5edCultsoftheBloddGods#L14664): Standard Dice Pools: Physical
+- [L14668](Vampire5edCultsoftheBloddGods#L14668): Exceptional Dice Pools: Intimidation
+- [L14671](Vampire5edCultsoftheBloddGods#L14671): General Difficulties: 3/2
+- [L14719](Vampire5edCultsoftheBloddGods#L14719): Disciplines: Animalism 1, Obfuscate
+- [L14721](Vampire5edCultsoftheBloddGods#L14721): General Difficulties: 6/4
+- [L17623](Vampire5edCultsoftheBloddGods#L17623): Standard Dice Pools: Physical 2, Social 0,
+- [L17626](Vampire5edCultsoftheBloddGods#L17626): Exceptional Dice Pools: Intimidation 4
+- [L17652](Vampire5edCultsoftheBloddGods#L17652): General Difficulties: 2/1
+- [L17724](Vampire5edCultsoftheBloddGods#L17724): Standard Dice Pools: Physical 1, Social 0,
+- [L17727](Vampire5edCultsoftheBloddGods#L17727): Exceptional Dice Pools: Athletics 4, Stealth 6;
+- [L17738](Vampire5edCultsoftheBloddGods#L17738): General Difficulties: 3/1
+- [L17917](Vampire5edCultsoftheBloddGods#L17917): Standard Dice Pools:
+- [L17921](Vampire5edCultsoftheBloddGods#L17921): Exceptional Dice Pools:
+- [L17939](Vampire5edCultsoftheBloddGods#L17939): General Difficulties: 3/2
+- [L18259](Vampire5edCultsoftheBloddGods#L18259): Standard Dice Pools: Physical 3, Social 3,
+- [L18262](Vampire5edCultsoftheBloddGods#L18262): Exceptional Dice Pools: Craft 6, Drive 7, Stealth
+- [L18274](Vampire5edCultsoftheBloddGods#L18274): General Difficulties: 3/2
+- [L18285](Vampire5edCultsoftheBloddGods#L18285): Standard Dice Pools: Physical 5, Social 3,
+- [L18288](Vampire5edCultsoftheBloddGods#L18288): Exceptional Dice Pools: Athletics 6, Brawl 7,
+- [L18305](Vampire5edCultsoftheBloddGods#L18305): General Difficulties: 3/2
+- [L18316](Vampire5edCultsoftheBloddGods#L18316): Standard Dice Pools: Physical 4, Social 4,
+- [L18319](Vampire5edCultsoftheBloddGods#L18319): Exceptional Dice Pools: Brawl 6, Drive 7,
+- [L18331](Vampire5edCultsoftheBloddGods#L18331): General Difficulties: 4/2
+- [L18342](Vampire5edCultsoftheBloddGods#L18342): Standard Dice Pools: Physical 3, Social 5,
+- [L18347](Vampire5edCultsoftheBloddGods#L18347): Exceptional Dice Pools: Stealth 5; Intimidation
+- [L18358](Vampire5edCultsoftheBloddGods#L18358): General Difficulties: 4/2
+- [L21581](Vampire5edCultsoftheBloddGods#L21581): Disciplines: Auspex 2, Celerity 1, Fortitude 4,
+- [L21583](Vampire5edCultsoftheBloddGods#L21583): General Difficulties: 6/4
+- [L21612](Vampire5edCultsoftheBloddGods#L21612): Disciplines: Dominate 3, Fortitude 4, Presence 3
+- [L21613](Vampire5edCultsoftheBloddGods#L21613): General Difficulties: 6/4
+- [L21633](Vampire5edCultsoftheBloddGods#L21633): Disciplines: Auspex 2, Fortitude 3, Presence 2
+- [L21634](Vampire5edCultsoftheBloddGods#L21634): General Difficulties: 5/3
+- [L21655](Vampire5edCultsoftheBloddGods#L21655): Disciplines: Animalism 1, Celerity 2, Fortitude 3,
+- [L21657](Vampire5edCultsoftheBloddGods#L21657): General Difficulties: 5/4
+- [L21681](Vampire5edCultsoftheBloddGods#L21681): Disciplines: Celerity 2, Potence 3
+- [L21682](Vampire5edCultsoftheBloddGods#L21682): General Difficulties: 4/3
+- [L21712](Vampire5edCultsoftheBloddGods#L21712): Disciplines: Auspex 2, Celerity 2, Fortitude 2,
+- [L21714](Vampire5edCultsoftheBloddGods#L21714): General Difficulties: 7/5
+- [L21721](Vampire5edCultsoftheBloddGods#L21721): Standard Dice Pools: Physical 5, Social 3, Mental
+- [L21724](Vampire5edCultsoftheBloddGods#L21724): Exceptional Dice Pools: Athletics 6, Brawl 6, Drive
+- [L21731](Vampire5edCultsoftheBloddGods#L21731): General Difficulties: 4/3
+- [L21741](Vampire5edCultsoftheBloddGods#L21741): Standard Dice Pools: Physical 4, Social 2, Mental
+- [L21744](Vampire5edCultsoftheBloddGods#L21744): Exceptional Dice Pools: Athletics 5, Brawl 5, Drive
+- [L21750](Vampire5edCultsoftheBloddGods#L21750): General Difficulties: 4/2
+- [L21756](Vampire5edCultsoftheBloddGods#L21756): Standard Dice Pools: Physical 3, Social 3, Mental
+- [L21759](Vampire5edCultsoftheBloddGods#L21759): Exceptional Dice Pools: Insight 4, Streetwise 4;
+- [L21761](Vampire5edCultsoftheBloddGods#L21761): General Difficulties: 3/2
+- [L21839](Vampire5edCultsoftheBloddGods#L21839): Disciplines: Auspex 1, Dominate 2, Fortitude 1,
+- [L21926](Vampire5edCultsoftheBloddGods#L21926): Disciplines: Auspex 3, Oblivion 3, Presence 1
+- [L22007](Vampire5edCultsoftheBloddGods#L22007): Disciplines: Auspex 1, Fortitude 3, Oblivion 2,
+- [L22078](Vampire5edCultsoftheBloddGods#L22078): Disciplines: Auspex 4, Fortitude 1, Obfuscate 1,
+- [L22159](Vampire5edCultsoftheBloddGods#L22159): Disciplines: Auspex 2, Celerity 2, Presence 3
+- [L22230](Vampire5edCultsoftheBloddGods#L22230): Disciplines: Thin-Blood Alchemy 3
+- [L22308](Vampire5edCultsoftheBloddGods#L22308): Disciplines: Celerity 2, Presence 3
+- [L22309](Vampire5edCultsoftheBloddGods#L22309): General Difficulties: 5/3
+- [L22373](Vampire5edCultsoftheBloddGods#L22373): Disciplines: Auspex 3, Celerity 2, Fortitude 1
+- [L22374](Vampire5edCultsoftheBloddGods#L22374): General Difficulties: 4/2
+- [L22429](Vampire5edCultsoftheBloddGods#L22429): Disciplines: Celerity 2, Dominate
+- [L22431](Vampire5edCultsoftheBloddGods#L22431): General Difficulties: 4/2
+- [L22559](Vampire5edCultsoftheBloddGods#L22559): Disciplines: Celerity 3, Dominate
+- [L22561](Vampire5edCultsoftheBloddGods#L22561): General Difficulties: 5/3
+- [L22650](Vampire5edCultsoftheBloddGods#L22650): Disciplines: Obfuscate 4, Potence 4
+- [L22651](Vampire5edCultsoftheBloddGods#L22651): General Difficulties: 6/4
+- [L22695](Vampire5edCultsoftheBloddGods#L22695): Disciplines: Celerity 2, Fortitude 2, Potence 2
+- [L22702](Vampire5edCultsoftheBloddGods#L22702): General Difficulties: 6/4
+- [L22760](Vampire5edCultsoftheBloddGods#L22760): Disciplines: Auspex 3, Celerity 1, Presence 3
+- [L22761](Vampire5edCultsoftheBloddGods#L22761): General Difficulties: 6/4
+- [L22819](Vampire5edCultsoftheBloddGods#L22819): Standard Dice Pools: Physical 4, Social 4, Mental 5
+- [L22821](Vampire5edCultsoftheBloddGods#L22821): Exceptional Dice Pools: Firearms 5, Melee 5;
+- [L22824](Vampire5edCultsoftheBloddGods#L22824): General Difficulties: 6/3
+- [L22878](Vampire5edCultsoftheBloddGods#L22878): Disciplines: Celerity 2, Potence 2
+- [L22879](Vampire5edCultsoftheBloddGods#L22879): General Difficulties: 4/2
+- [L22893](Vampire5edCultsoftheBloddGods#L22893): Disciplines: Auspex 2, Celerity 3, Presence 1
+- [L22894](Vampire5edCultsoftheBloddGods#L22894): General Difficulties: 5/3
+- [L22908](Vampire5edCultsoftheBloddGods#L22908): Disciplines: Celerity 2, Fortitude 2, Protean 4
+- [L22909](Vampire5edCultsoftheBloddGods#L22909): General Difficulties: 5/4
+- [L22925](Vampire5edCultsoftheBloddGods#L22925): Disciplines: Dominate 2, Fortitude 4, Presence 2
+- [L22926](Vampire5edCultsoftheBloddGods#L22926): General Difficulties: 6/3
+- [L22940](Vampire5edCultsoftheBloddGods#L22940): Disciplines: Auspex 4, Celerity 2, Presence 4
+- [L22941](Vampire5edCultsoftheBloddGods#L22941): General Difficulties: 6/4
+- [L22955](Vampire5edCultsoftheBloddGods#L22955): Disciplines: Auspex 4, Dominate 2, Obfuscate 4
+- [L22956](Vampire5edCultsoftheBloddGods#L22956): General Difficulties: 6/5
+- [L22970](Vampire5edCultsoftheBloddGods#L22970): Disciplines: Dominate 2, Fortitude 2, Oblivion 4,
+- [L22972](Vampire5edCultsoftheBloddGods#L22972): General Difficulties: 7/5
+
+### vantagens, ritos e equipamento (7)
+
+- [L7860](Vampire5edCultsoftheBloddGods#L7860): Ceremonies
+- [L12925](Vampire5edCultsoftheBloddGods#L12925): Backgrounds
+- [L15346](Vampire5edCultsoftheBloddGods#L15346): Rituals
+- [L15631](Vampire5edCultsoftheBloddGods#L15631): Backgrounds
+- [L17566](Vampire5edCultsoftheBloddGods#L17566): Ceremonies
+- [L19259](Vampire5edCultsoftheBloddGods#L19259): Loresheets
+- [L19447](Vampire5edCultsoftheBloddGods#L19447): Loresheets
+
+## Vampire5edFallofLondom
+
+V5 · publisher · 16285 linhas · SHA-256 `e244536770eede4056ce7189df20ed6425d75f16390a1d8062daf33156034fcb`
+
+### criação e progressão (2)
+
+- [L11107](Vampire5edFallofLondom#L11107): the Storyteller, thereby creating a satisfying conclusion
+- [L15267](Vampire5edFallofLondom#L15267): herself creating an imaginary stock
+
+### identidade e narrativa (50)
+
+- [L1976](Vampire5edFallofLondom#L1976): EPITAPH: Chronicler of the Mithraic Mysteries
+- [L1980](Vampire5edFallofLondom#L1980): CLAN: Malkavian
+- [L2023](Vampire5edFallofLondom#L2023): CONVICTIONS: I always keep my sworn word. I always seek the truth.
+- [L2025](Vampire5edFallofLondom#L2025): TOUCHSTONES: Rachel Newstead – Curator of the Roman Collection at the Museum of London; Emma Capaldi – next-door neighbor and part-time housekeeper.
+- [L4238](Vampire5edFallofLondom#L4238): AMBITION: To survive the great game and become more powerful than Mithras
+- [L4676](Vampire5edFallofLondom#L4676): CLAN: Ventrue
+- [L5050](Vampire5edFallofLondom#L5050): EPITAPH: The Guru of Southall / The Mountebank of Southall (depending on the speaker)
+- [L5054](Vampire5edFallofLondom#L5054): CLAN: Tremere
+- [L5261](Vampire5edFallofLondom#L5261): CLAN: Tremere (Ghoul)
+- [L5572](Vampire5edFallofLondom#L5572): EPITAPH: The Lone Sheep
+- [L5576](Vampire5edFallofLondom#L5576): CLAN: Tremere – House Carna
+- [L5631](Vampire5edFallofLondom#L5631): AMBITION: Achieve Enlightenment
+- [L5633](Vampire5edFallofLondom#L5633): CONVICTIONS: To seek the divine is all that matters.
+- [L6329](Vampire5edFallofLondom#L6329): AMBITION: To acquire occult knowledge
+- [L7580](Vampire5edFallofLondom#L7580): CLAN: Nosferatu
+- [L7696](Vampire5edFallofLondom#L7696): CLAN: Caitiff
+- [L7705](Vampire5edFallofLondom#L7705): AMBITION: Ambition
+- [L7707](Vampire5edFallofLondom#L7707): CONVICTIONS: Convictions
+- [L7709](Vampire5edFallofLondom#L7709): TOUCHSTONES: Touchstones
+- [L9236](Vampire5edFallofLondom#L9236): CLAN: Clan
+- [L9245](Vampire5edFallofLondom#L9245): CLAN: Brujah
+- [L9356](Vampire5edFallofLondom#L9356): EPITAPH: Arwyn’s Enforcer
+- [L9360](Vampire5edFallofLondom#L9360): CLAN: Brujah
+- [L9677](Vampire5edFallofLondom#L9677): AMBITION: To be wholly independent from the machinations of others
+- [L9679](Vampire5edFallofLondom#L9679): CONVICTIONS: I act with kindness even in a cruel world.
+- [L9682](Vampire5edFallofLondom#L9682): TOUCHSTONES: Tianna Palmer, Trenton Adebayo
+- [L9942](Vampire5edFallofLondom#L9942): CLAN: Nosferatu
+- [L9953](Vampire5edFallofLondom#L9953): CLAN: Nosferatu
+- [L10335](Vampire5edFallofLondom#L10335): EPITAPH: The Praetorian
+- [L10339](Vampire5edFallofLondom#L10339): CLAN: Ventrue
+- [L10983](Vampire5edFallofLondom#L10983): AMBITION: To claim London as her own, independent of sect or clan.
+- [L10985](Vampire5edFallofLondom#L10985): CONVICTIONS: None active.
+- [L10987](Vampire5edFallofLondom#L10987): TOUCHSTONES: Arwyn abandoned silly mortal sentiments long ago.
+- [L12001](Vampire5edFallofLondom#L12001): EPITAPH: The Prince of Light, The Conqueror of Britain, The Lord of Light, The Sun
+- [L12005](Vampire5edFallofLondom#L12005): CLAN: Ventrue
+- [L12206](Vampire5edFallofLondom#L12206): EPITAPH: Speaker for the Dead
+- [L12210](Vampire5edFallofLondom#L12210): CLAN: Hecata
+- [L12662](Vampire5edFallofLondom#L12662): EPITAPH: Ruthless Assassin
+- [L12684](Vampire5edFallofLondom#L12684): AMBITION: To eradicate all IC0s in London.
+- [L12686](Vampire5edFallofLondom#L12686): CONVICTIONS: The IC0s are a plague, and I am the cure.
+- [L12700](Vampire5edFallofLondom#L12700): EPITAPH: The Incinerator
+- [L15025](Vampire5edFallofLondom#L15025): CLAN: Nosferatu
+- [L15031](Vampire5edFallofLondom#L15031): AMBITION: To create your own empire of Kindred, a new order outside the Camarilla.
+- [L15035](Vampire5edFallofLondom#L15035): CONVICTIONS: Protect those who can’t protect themselves.
+- [L15202](Vampire5edFallofLondom#L15202): CLAN: Ventrue
+- [L15208](Vampire5edFallofLondom#L15208): AMBITION: To protect the city of London.
+- [L15212](Vampire5edFallofLondom#L15212): CONVICTIONS: Sovereignty springs from from breeding and style.
+- [L15370](Vampire5edFallofLondom#L15370): CLAN: Hecata
+- [L15376](Vampire5edFallofLondom#L15376): AMBITION: To see Mithras returned to this throne.
+- [L15380](Vampire5edFallofLondom#L15380): CONVICTIONS: People are just like clockwork – intricate, fascinating, and easy to take apart. Never miss a chance to study them.
+
+### poderes e requisitos (2)
+
+- [L9223](Vampire5edFallofLondom#L9223): COST: One Rouse check
+- [L9231](Vampire5edFallofLondom#L9231): COST: One Rouse check
+
+### NPCs e antagonistas (55)
+
+- [L1522](Vampire5edFallofLondom#L1522): STANDARD DICE POOLS:
+- [L1528](Vampire5edFallofLondom#L1528): EXCEPTIONAL DICE POOLS:
+- [L1536](Vampire5edFallofLondom#L1536): STANDARD DICE POOLS:
+- [L1542](Vampire5edFallofLondom#L1542): EXCEPTIONAL DICE POOLS:
+- [L1565](Vampire5edFallofLondom#L1565): STANDARD DICE POOLS:
+- [L1571](Vampire5edFallofLondom#L1571): EXCEPTIONAL DICE POOLS:
+- [L1577](Vampire5edFallofLondom#L1577): DISCIPLINES: Thin-Blood Alchemy 1
+- [L1584](Vampire5edFallofLondom#L1584): STANDARD DICE POOLS:
+- [L1590](Vampire5edFallofLondom#L1590): EXCEPTIONAL DICE POOLS:
+- [L1597](Vampire5edFallofLondom#L1597): STANDARD DICE POOLS:
+- [L1603](Vampire5edFallofLondom#L1603): EXCEPTIONAL DICE POOLS:
+- [L1612](Vampire5edFallofLondom#L1612): STANDARD DICE POOLS:
+- [L1618](Vampire5edFallofLondom#L1618): EXCEPTIONAL DICE POOLS:
+- [L1627](Vampire5edFallofLondom#L1627): STANDARD DICE POOLS: Physical 3, Social 4, Mental 7
+- [L1631](Vampire5edFallofLondom#L1631): EXCEPTIONAL DICE POOLS: Academics 9, Awareness 8, Firearms 6, Insight 7, Investigation 7, Melee 6, Occult 7
+- [L2042](Vampire5edFallofLondom#L2042): DISCIPLINES: Auspex 3, Dominate 4, Obfuscate 3
+- [L5273](Vampire5edFallofLondom#L5273): DISCIPLINES: Dominate 2
+- [L5378](Vampire5edFallofLondom#L5378): STANDARD DICE POOLS: Physical 5, Mental 3, Social 4
+- [L5382](Vampire5edFallofLondom#L5382): EXCEPTIONAL DICE POOLS: Brawl (Grappling) 6, Streetwise 5 Finance (Drug Dealing) 4
+- [L5386](Vampire5edFallofLondom#L5386): DISCIPLINES: Celerity 1
+- [L5390](Vampire5edFallofLondom#L5390): STANDARD DICE POOLS: Physical 3, Mental 5, Social 3
+- [L5394](Vampire5edFallofLondom#L5394): EXCEPTIONAL DICE POOLS: Craft (Model Making) 5, Academics (Math) 5,
+- [L5650](Vampire5edFallofLondom#L5650): DISCIPLINES: Auspex 1, Blood Sorcery 2, Dominate 2 9 5
+- [L6003](Vampire5edFallofLondom#L6003): STANDARD DICE POOLS: Physical 3, Mental 3, Social 4
+- [L6007](Vampire5edFallofLondom#L6007): EXCEPTIONAL DICE POOLS: Athletics 6, Larceny 5
+- [L6011](Vampire5edFallofLondom#L6011): STANDARD DICE POOLS: Physical 2, Mental 3, Social 4
+- [L6015](Vampire5edFallofLondom#L6015): EXCEPTIONAL DICE POOLS: Craft (Seamstress) 5,
+- [L6032](Vampire5edFallofLondom#L6032): STANDARD DICE POOLS: Physical 4, Mental 3, Social 3
+- [L6036](Vampire5edFallofLondom#L6036): EXCEPTIONAL DICE POOLS: Firearms 5, Intimidation 5, Subterfuge 4
+- [L6343](Vampire5edFallofLondom#L6343): DISCIPLINES: Auspex 3, Dominate 3, Obfuscate 3, Blood Sorcery 1, Fortitude 2
+- [L7599](Vampire5edFallofLondom#L7599): DISCIPLINES: Animalism 3, Celerity 1, Fortitude 1, Potence 3
+- [L7735](Vampire5edFallofLondom#L7735): DISCIPLINES: Obfuscate 2,
+- [L9238](Vampire5edFallofLondom#L9238): STANDARD DICE POOLS: Physical 5, Social 4, Mental 3
+- [L9242](Vampire5edFallofLondom#L9242): EXCEPTIONAL DICE POOLS: Brawl 6, Firearms 6, Intimidation 5, Streetwise 5
+- [L9247](Vampire5edFallofLondom#L9247): STANDARD DICE POOLS: Physical 5, Social 4, Mental 3
+- [L9251](Vampire5edFallofLondom#L9251): EXCEPTIONAL DICE POOLS: Brawl 6, Melee 6, Intimidation 5, Streetwise 5
+- [L9253](Vampire5edFallofLondom#L9253): DISCIPLINES: Potence 1
+- [L9697](Vampire5edFallofLondom#L9697): DISCIPLINES: Auspex 2,
+- [L9944](Vampire5edFallofLondom#L9944): STANDARD DICE POOLS: Physical 6, Social 1, Mental 5
+- [L9948](Vampire5edFallofLondom#L9948): EXCEPTIONAL DICE POOLS: Animal Ken 5, Intimidation 5, Stealth 7
+- [L9950](Vampire5edFallofLondom#L9950): DISCIPLINES: Animalism 3, Obfuscate 1, Potence 1
+- [L9955](Vampire5edFallofLondom#L9955): STANDARD DICE POOLS: Physical 5, Social 1, Mental 4
+- [L9959](Vampire5edFallofLondom#L9959): EXCEPTIONAL DICE POOLS: Brawl 6, Melee 6,
+- [L9962](Vampire5edFallofLondom#L9962): DISCIPLINES: Potence 1
+- [L9965](Vampire5edFallofLondom#L9965): STANDARD DICE POOLS: Physical 4, Social 1, Mental 2
+- [L9969](Vampire5edFallofLondom#L9969): EXCEPTIONAL DICE POOLS: Athletics 4, Brawl (Claws) 4, Stealth 4, Awareness (Tracking) 5
+- [L9971](Vampire5edFallofLondom#L9971): DISCIPLINES: Potence 1
+- [L12181](Vampire5edFallofLondom#L12181): DISCIPLINES: Auspex 3,
+- [L12201](Vampire5edFallofLondom#L12201): DISCIPLINES: Animalism 2, Auspex 3, Blood Sorcery (Quietus) 3, Celerity 3,
+- [L14161](Vampire5edFallofLondom#L14161): STANDARD DICE POOLS: Physical 3, Social 3, Mental 4
+- [L14165](Vampire5edFallofLondom#L14165): EXCEPTIONAL DICE POOLS: Academics 7, Awareness 6,
+- [L14171](Vampire5edFallofLondom#L14171): STANDARD DICE POOLS: Physical 4, Social 3, Mental 4
+- [L14175](Vampire5edFallofLondom#L14175): EXCEPTIONAL DICE POOLS: Athletics 6, Brawl 7, Drive 7,
+- [L15054](Vampire5edFallofLondom#L15054): DISCIPLINES: Animalism 1
+- [L15399](Vampire5edFallofLondom#L15399): DISCIPLINES: Auspex 2 (Heightened Senses, Sense the Unseen). Obfuscate 1 (Silence of Death) and Oblivion 1 (The Eldritch Beacon)
+
+### vantagens, ritos e equipamento (0)
+
+
+## Vampire5edForbiddenReligions
+
+V5 · publisher · 7123 linhas · SHA-256 `9c630c36f621f503ad29b446489d4a2b7be6ae057cbdbba252ae5de6696ef292`
+
+### criação e progressão (3)
+
+- [L860](Vampire5edForbiddenReligions#L860): marks and few risk creating a personal
+- [L6396](Vampire5edForbiddenReligions#L6396): are best used at character creation. However, through
+- [L6400](Vampire5edForbiddenReligions#L6400): with Flaw dots taken after character creation granting
+
+### identidade e narrativa (15)
+
+- [L2100](Vampire5edForbiddenReligions#L2100): Epitaph: Reformed Bahari
+- [L2102](Vampire5edForbiddenReligions#L2102): Clan: Tremere
+- [L2358](Vampire5edForbiddenReligions#L2358): Ambition: I will find the bloody woman’s identity
+- [L2359](Vampire5edForbiddenReligions#L2359): Convictions: Die before succumbing to captivity
+- [L2360](Vampire5edForbiddenReligions#L2360): Touchstones: Vlas Kosior, one of the mortals assigned
+- [L5164](Vampire5edForbiddenReligions#L5164): Epitaph: Cannibal in a preacher’s clothes
+- [L5167](Vampire5edForbiddenReligions#L5167): Clan: Caitiff
+- [L5341](Vampire5edForbiddenReligions#L5341): Ambition: Devour my way to power and
+- [L5343](Vampire5edForbiddenReligions#L5343): Convictions: Never sin through touching human
+- [L5345](Vampire5edForbiddenReligions#L5345): Touchstones: Diana Leigh, mortal cultist and devoted
+- [L6202](Vampire5edForbiddenReligions#L6202): Epitaph: Prophet of the Adversary
+- [L6205](Vampire5edForbiddenReligions#L6205): Clan: Brujah
+- [L6311](Vampire5edForbiddenReligions#L6311): Ambition: Defeat the Oppressor and save all Kindred
+- [L6313](Vampire5edForbiddenReligions#L6313): Convictions: None
+- [L6314](Vampire5edForbiddenReligions#L6314): Touchstones: None
+
+### poderes e requisitos (3)
+
+- [L1487](Vampire5edForbiddenReligions#L1487): Amalgam: Animalism 1
+- [L1491](Vampire5edForbiddenReligions#L1491): Cost: One Rouse Check
+- [L3533](Vampire5edForbiddenReligions#L3533): Cost: Two Rouse Checks
+
+### NPCs e antagonistas (11)
+
+- [L663](Vampire5edForbiddenReligions#L663): GENERAL DIFFICULTIES
+- [L2373](Vampire5edForbiddenReligions#L2373): Disciplines: Auspex 3, Blood Sorcery 3, Dominate 2,
+- [L2377](Vampire5edForbiddenReligions#L2377): General Difficulties: 5/3
+- [L3099](Vampire5edForbiddenReligions#L3099): Standard Dice Pools: Physical 2, Social 5, Mental 4
+- [L3101](Vampire5edForbiddenReligions#L3101): Exceptional Dice Pools: Etiquette 6, Leadership 7,
+- [L3103](Vampire5edForbiddenReligions#L3103): Disciplines: Auspex 1
+- [L3105](Vampire5edForbiddenReligions#L3105): General Difficulties: 5/3
+- [L5362](Vampire5edForbiddenReligions#L5362): Disciplines: Blood Sorcery 3, Celerity 1, Dominate
+- [L5366](Vampire5edForbiddenReligions#L5366): General Difficulties: 6/4
+- [L6327](Vampire5edForbiddenReligions#L6327): Disciplines: Auspex 1, Celerity 1, Dominate 1, Potence
+- [L6331](Vampire5edForbiddenReligions#L6331): General Difficulties: 5/3
+
+### vantagens, ritos e equipamento (4)
+
+- [L6528](Vampire5edForbiddenReligions#L6528): Loresheets
+- [L6564](Vampire5edForbiddenReligions#L6564): Loresheets
+- [L6751](Vampire5edForbiddenReligions#L6751): Loresheets
+- [L6953](Vampire5edForbiddenReligions#L6953): Loresheets
+
+## Vampire5edLettheStreetsRunRed
+
+V5 · publisher · 21224 linhas · SHA-256 `130d8544d7aded57dcaeac49534cc2bf87f7701e5ff7c880e294ce73850929a7`
+
+### criação e progressão (3)
+
+- [L3330](Vampire5edLettheStreetsRunRed#L3330): target and igniting it, creating a flash
+- [L20838](Vampire5edLettheStreetsRunRed#L20838): life like hers, creating a sort of support group for
+- [L21024](Vampire5edLettheStreetsRunRed#L21024): • Rather than creating a new or fake identity, Benny
+
+### identidade e narrativa (194)
+
+- [L8026](Vampire5edLettheStreetsRunRed#L8026): Ambition: Prove her worth to Milwaukee
+- [L8029](Vampire5edLettheStreetsRunRed#L8029): Convictions: Always help my friends
+- [L8030](Vampire5edLettheStreetsRunRed#L8030): Touchstones: Israel Rogowski, a personal friend
+- [L8107](Vampire5edLettheStreetsRunRed#L8107): Ambition: Get the goods on
+- [L8109](Vampire5edLettheStreetsRunRed#L8109): Convictions: Never back down
+- [L8111](Vampire5edLettheStreetsRunRed#L8111): Touchstones: Dr. Munson — a
+- [L8833](Vampire5edLettheStreetsRunRed#L8833): Ambition: Feed the Beast
+- [L8834](Vampire5edLettheStreetsRunRed#L8834): Convictions: None
+- [L8835](Vampire5edLettheStreetsRunRed#L8835): Touchstones: None
+- [L10454](Vampire5edLettheStreetsRunRed#L10454): Ambition: Use Honor Mercer
+- [L10457](Vampire5edLettheStreetsRunRed#L10457): Convictions: Always indulge
+- [L10459](Vampire5edLettheStreetsRunRed#L10459): Touchstones: Stacy Willis —
+- [L10568](Vampire5edLettheStreetsRunRed#L10568): Ambition: Return the Followers of Set to their former
+- [L10570](Vampire5edLettheStreetsRunRed#L10570): Convictions: Never allow a challenge to my faith to
+- [L10572](Vampire5edLettheStreetsRunRed#L10572): Touchstones: Arnold Warner, mortal nurse and
+- [L10594](Vampire5edLettheStreetsRunRed#L10594): Ambition: To loyally serve the Church of Set
+- [L10595](Vampire5edLettheStreetsRunRed#L10595): Convictions: None
+- [L10596](Vampire5edLettheStreetsRunRed#L10596): Touchstones: None
+- [L13066](Vampire5edLettheStreetsRunRed#L13066): Clan: Gangrel
+- [L13084](Vampire5edLettheStreetsRunRed#L13084): Clan: Gangrel
+- [L13104](Vampire5edLettheStreetsRunRed#L13104): Clan: Brujah
+- [L13123](Vampire5edLettheStreetsRunRed#L13123): Clan: Nosferatu
+- [L13142](Vampire5edLettheStreetsRunRed#L13142): Clan: Toreador
+- [L13160](Vampire5edLettheStreetsRunRed#L13160): Clan: Tremere
+- [L13179](Vampire5edLettheStreetsRunRed#L13179): Clan: Malkavian
+- [L13201](Vampire5edLettheStreetsRunRed#L13201): Clan: Brujah
+- [L13204](Vampire5edLettheStreetsRunRed#L13204): Ambition: Help Maxwell become Prince of Chicago
+- [L13205](Vampire5edLettheStreetsRunRed#L13205): Convictions: Survival of the fittest
+- [L13206](Vampire5edLettheStreetsRunRed#L13206): Touchstones: Jose Hernandez — a local professional boxer
+- [L13222](Vampire5edLettheStreetsRunRed#L13222): Clan: Brujah
+- [L13225](Vampire5edLettheStreetsRunRed#L13225): Ambition: To expunge the lingering Sabbat from
+- [L13227](Vampire5edLettheStreetsRunRed#L13227): Convictions: Never brook disrespect
+- [L13228](Vampire5edLettheStreetsRunRed#L13228): Touchstones: Nydia Aceveda — a performer at the
+- [L13337](Vampire5edLettheStreetsRunRed#L13337): Epitaph: Baron of Gary, currently missing
+- [L13339](Vampire5edLettheStreetsRunRed#L13339): Clan: Brujah
+- [L13533](Vampire5edLettheStreetsRunRed#L13533): Ambition: To bring about constant improvement
+- [L13535](Vampire5edLettheStreetsRunRed#L13535): Convictions: None
+- [L13536](Vampire5edLettheStreetsRunRed#L13536): Touchstones: None
+- [L13551](Vampire5edLettheStreetsRunRed#L13551): Epitaph: Former Prince of Chicago
+- [L13555](Vampire5edLettheStreetsRunRed#L13555): Clan: Brujah
+- [L13747](Vampire5edLettheStreetsRunRed#L13747): Ambition: Take back Chicago
+- [L13748](Vampire5edLettheStreetsRunRed#L13748): Convictions: None may rule over me
+- [L13749](Vampire5edLettheStreetsRunRed#L13749): Touchstones: Geraldine, his devoted mortal ghoul
+- [L13769](Vampire5edLettheStreetsRunRed#L13769): Epitaph: Baron of Gary
+- [L13773](Vampire5edLettheStreetsRunRed#L13773): Clan: Brujah
+- [L13940](Vampire5edLettheStreetsRunRed#L13940): Ambition: To maintain Gary as an Anarch Free
+- [L13942](Vampire5edLettheStreetsRunRed#L13942): Convictions: To hurt those who wantonly hurt others
+- [L13943](Vampire5edLettheStreetsRunRed#L13943): Touchstones: Gregory Stephens, her older brother
+- [L13968](Vampire5edLettheStreetsRunRed#L13968): Epitaph: Much desired by dangerous creatures
+- [L13970](Vampire5edLettheStreetsRunRed#L13970): Clan: Caitiff
+- [L14152](Vampire5edLettheStreetsRunRed#L14152): Ambition: To establish a place for herself in society
+- [L14153](Vampire5edLettheStreetsRunRed#L14153): Convictions: Don’t fight when you can run
+- [L14169](Vampire5edLettheStreetsRunRed#L14169): Epitaph: Dockworker and Simple Man
+- [L14173](Vampire5edLettheStreetsRunRed#L14173): Clan: Caitiff
+- [L14368](Vampire5edLettheStreetsRunRed#L14368): Ambition: Gain recognition for hard work
+- [L14369](Vampire5edLettheStreetsRunRed#L14369): Convictions: Always protect the family
+- [L14370](Vampire5edLettheStreetsRunRed#L14370): Touchstones: Andrew Blue, J.W.’s son
+- [L14395](Vampire5edLettheStreetsRunRed#L14395): Epitaph: Negotiator and Information Gatherer
+- [L14397](Vampire5edLettheStreetsRunRed#L14397): Clan: Gangrel
+- [L14580](Vampire5edLettheStreetsRunRed#L14580): Ambition: To help the Anarchs and Camarilla find
+- [L14582](Vampire5edLettheStreetsRunRed#L14582): Convictions: To overindulge is the greatest sin
+- [L14583](Vampire5edLettheStreetsRunRed#L14583): Touchstones: Holly Nightchild — one of the children
+- [L14598](Vampire5edLettheStreetsRunRed#L14598): Epitaph: Biker and adherent of the One True Way
+- [L14603](Vampire5edLettheStreetsRunRed#L14603): Clan: Gangrel
+- [L14779](Vampire5edLettheStreetsRunRed#L14779): Ambition: Learn more of the One True Way
+- [L14780](Vampire5edLettheStreetsRunRed#L14780): Convictions: Always behave as an apex predator
+- [L14781](Vampire5edLettheStreetsRunRed#L14781): Touchstones: Fabrizio Huerta, her brother
+- [L14796](Vampire5edLettheStreetsRunRed#L14796): Epitaph: The Prince of Milwaukee’s rebellious childe
+- [L14798](Vampire5edLettheStreetsRunRed#L14798): Clan: Gangrel
+- [L14983](Vampire5edLettheStreetsRunRed#L14983): Ambition: Get out from under her sire’s thumb
+- [L14984](Vampire5edLettheStreetsRunRed#L14984): Convictions: We must protect the environment; Family
+- [L14986](Vampire5edLettheStreetsRunRed#L14986): Touchstones: Margie and Tom Mercer, siblings
+- [L15004](Vampire5edLettheStreetsRunRed#L15004): Epitaph: The Tyrant Prince of Milwaukee
+- [L15008](Vampire5edLettheStreetsRunRed#L15008): Clan: Gangrel
+- [L15271](Vampire5edLettheStreetsRunRed#L15271): Ambition: Ensure Milwaukee’s safety
+- [L15272](Vampire5edLettheStreetsRunRed#L15272): Convictions: None
+- [L15273](Vampire5edLettheStreetsRunRed#L15273): Touchstones: None
+- [L15299](Vampire5edLettheStreetsRunRed#L15299): Epitaph: Cursed Geek
+- [L15303](Vampire5edLettheStreetsRunRed#L15303): Clan: Malkavian
+- [L15487](Vampire5edLettheStreetsRunRed#L15487): Ambition: To be strong enough that no one abuses
+- [L15489](Vampire5edLettheStreetsRunRed#L15489): Convictions: Protect his friends
+- [L15490](Vampire5edLettheStreetsRunRed#L15490): Touchstones: Joseph Suttkus, his best friend and
+- [L15506](Vampire5edLettheStreetsRunRed#L15506): Epitaph: Irate Camarilla Archon
+- [L15510](Vampire5edLettheStreetsRunRed#L15510): Clan: Malkavian
+- [L15731](Vampire5edLettheStreetsRunRed#L15731): Ambition: To steamroll these Midwest Masquerade
+- [L15733](Vampire5edLettheStreetsRunRed#L15733): Convictions: Never allow a Tradition violation to go
+- [L15735](Vampire5edLettheStreetsRunRed#L15735): Touchstones: Hanna Nakada — mortal niece who
+- [L15752](Vampire5edLettheStreetsRunRed#L15752): Epitaph: Original hippie and Priest of the Harvest
+- [L15941](Vampire5edLettheStreetsRunRed#L15941): Ambition: Facilitate the upcoming sacrifice
+- [L15963](Vampire5edLettheStreetsRunRed#L15963): Epitaph: Gospel Singer, Temptress, and Dignitary
+- [L15967](Vampire5edLettheStreetsRunRed#L15967): Clan: Ministry
+- [L16133](Vampire5edLettheStreetsRunRed#L16133): Ambition: Put Honor on the right path
+- [L16134](Vampire5edLettheStreetsRunRed#L16134): Convictions: Break others free from the ties that bind
+- [L16136](Vampire5edLettheStreetsRunRed#L16136): Touchstones: Imam Solomon Farooqi, local religious
+- [L16152](Vampire5edLettheStreetsRunRed#L16152): Epitaph: Born-again Setite
+- [L16155](Vampire5edLettheStreetsRunRed#L16155): Clan: Ministry
+- [L16344](Vampire5edLettheStreetsRunRed#L16344): Ambition: Get everyone on board the enlightenment
+- [L16346](Vampire5edLettheStreetsRunRed#L16346): Convictions: Always take in the unloved
+- [L16347](Vampire5edLettheStreetsRunRed#L16347): Touchstones: Branden Walker, a volunteer at the
+- [L16372](Vampire5edLettheStreetsRunRed#L16372): Epitaph: Cyber Hound
+- [L16374](Vampire5edLettheStreetsRunRed#L16374): Clan: Nosferatu
+- [L16546](Vampire5edLettheStreetsRunRed#L16546): Ambition: Prove her worth as a young Hound
+- [L16547](Vampire5edLettheStreetsRunRed#L16547): Convictions: Never ever lose your temper when
+- [L16549](Vampire5edLettheStreetsRunRed#L16549): Touchstones: Her parents, Nigel and Becky Rudge
+- [L16564](Vampire5edLettheStreetsRunRed#L16564): Epitaph: Crimefighting Cockroach
+- [L16567](Vampire5edLettheStreetsRunRed#L16567): Clan: Nosferatu
+- [L16746](Vampire5edLettheStreetsRunRed#L16746): Ambition: Find my sire
+- [L16747](Vampire5edLettheStreetsRunRed#L16747): Convictions: I must protect my colleagues whatever
+- [L16774](Vampire5edLettheStreetsRunRed#L16774): Epitaph: The Street Spy
+- [L16779](Vampire5edLettheStreetsRunRed#L16779): Clan: Thin-Blood
+- [L16934](Vampire5edLettheStreetsRunRed#L16934): Ambition: Build a network of spies and informants
+- [L16936](Vampire5edLettheStreetsRunRed#L16936): Convictions: Protect the homeless, sex workers, and
+- [L16938](Vampire5edLettheStreetsRunRed#L16938): Touchstones: Officer Nelson, the police officer who
+- [L16954](Vampire5edLettheStreetsRunRed#L16954): Epitaph: Social Media Influencer, Cult Leader,
+- [L16958](Vampire5edLettheStreetsRunRed#L16958): Clan: Thin-Blood
+- [L17160](Vampire5edLettheStreetsRunRed#L17160): Ambition: To get back into influencing online action
+- [L17161](Vampire5edLettheStreetsRunRed#L17161): Convictions: Never abandon my friends
+- [L17162](Vampire5edLettheStreetsRunRed#L17162): Touchstones: Leeroy Woodard, lifelong best friend
+- [L17189](Vampire5edLettheStreetsRunRed#L17189): Epitaph: Accidently Anarch
+- [L17191](Vampire5edLettheStreetsRunRed#L17191): Clan: Toreador
+- [L17340](Vampire5edLettheStreetsRunRed#L17340): Ambition: To find a real family among the Anarchs
+- [L17341](Vampire5edLettheStreetsRunRed#L17341): Convictions: Freedom above all things
+- [L17342](Vampire5edLettheStreetsRunRed#L17342): Touchstones: Carmen King, a jazz singer in Chicago
+- [L17357](Vampire5edLettheStreetsRunRed#L17357): Epitaph: An artist in thrall
+- [L17359](Vampire5edLettheStreetsRunRed#L17359): Clan: Toreador
+- [L17541](Vampire5edLettheStreetsRunRed#L17541): Ambition: Become free of Helena
+- [L17542](Vampire5edLettheStreetsRunRed#L17542): Convictions: Always encourage an artist
+- [L17543](Vampire5edLettheStreetsRunRed#L17543): Touchstones: Maria Cole, tortured artist: Maria
+- [L17563](Vampire5edLettheStreetsRunRed#L17563): Epitaph: Former pauper Prince of Gary
+- [L17566](Vampire5edLettheStreetsRunRed#L17566): Clan: Toreador
+- [L17745](Vampire5edLettheStreetsRunRed#L17745): Ambition: Claim Chicago
+- [L17746](Vampire5edLettheStreetsRunRed#L17746): Convictions: Always seize a presented opportunity.
+- [L17747](Vampire5edLettheStreetsRunRed#L17747): Touchstones: Eric Johnson, groundskeeper: The
+- [L17766](Vampire5edLettheStreetsRunRed#L17766): Epitaph: Glam-Grrl Bartender
+- [L17770](Vampire5edLettheStreetsRunRed#L17770): Clan: Toreador
+- [L17934](Vampire5edLettheStreetsRunRed#L17934): Ambition: To shine among the stars
+- [L17935](Vampire5edLettheStreetsRunRed#L17935): Convictions: Never lie about your feelings
+- [L17936](Vampire5edLettheStreetsRunRed#L17936): Touchstones: William Mueller. Marion recently
+- [L17961](Vampire5edLettheStreetsRunRed#L17961): Epitaph: Proud upholder of the Tremere Tradition
+- [L17965](Vampire5edLettheStreetsRunRed#L17965): Clan: Tremere
+- [L18186](Vampire5edLettheStreetsRunRed#L18186): Ambition: To gain acceptance for what I am
+- [L18187](Vampire5edLettheStreetsRunRed#L18187): Convictions: Study and books are sacred
+- [L18188](Vampire5edLettheStreetsRunRed#L18188): Touchstones: Audrey Pendle — librarian and object
+- [L18208](Vampire5edLettheStreetsRunRed#L18208): Epitaph: Child of the ‘80s
+- [L18211](Vampire5edLettheStreetsRunRed#L18211): Clan: Tremere
+- [L18410](Vampire5edLettheStreetsRunRed#L18410): Ambition: To put my life back together
+- [L18411](Vampire5edLettheStreetsRunRed#L18411): Convictions: Failure is not an option
+- [L18412](Vampire5edLettheStreetsRunRed#L18412): Touchstones: Macha, her lover from Tripoli
+- [L18436](Vampire5edLettheStreetsRunRed#L18436): Epitaph: Camarilla Hardliner
+- [L18439](Vampire5edLettheStreetsRunRed#L18439): Clan: Ventrue
+- [L18584](Vampire5edLettheStreetsRunRed#L18584): Ambition: Find a real war to fight
+- [L18585](Vampire5edLettheStreetsRunRed#L18585): Convictions: Never concede to an Anarch
+- [L18586](Vampire5edLettheStreetsRunRed#L18586): Touchstones: Lieutenant Mary Matthews, who
+- [L18601](Vampire5edLettheStreetsRunRed#L18601): Epitaph: Playing with Fire
+- [L18605](Vampire5edLettheStreetsRunRed#L18605): Clan: Ventrue
+- [L18803](Vampire5edLettheStreetsRunRed#L18803): Ambition: Be seen as more than a liability
+- [L18804](Vampire5edLettheStreetsRunRed#L18804): Convictions: None
+- [L18805](Vampire5edLettheStreetsRunRed#L18805): Touchstones: None
+- [L19806](Vampire5edLettheStreetsRunRed#L19806): Clan: Brujah
+- [L19937](Vampire5edLettheStreetsRunRed#L19937): Ambition: Ensure that Candace’s homeless shelter is
+- [L19942](Vampire5edLettheStreetsRunRed#L19942): Convictions: Always push your friends to succeed
+- [L19943](Vampire5edLettheStreetsRunRed#L19943): Touchstones: Candace — director of the local
+- [L19964](Vampire5edLettheStreetsRunRed#L19964): Clan: Gangrel
+- [L20093](Vampire5edLettheStreetsRunRed#L20093): Ambition: Create her own circus for Kindred society,
+- [L20098](Vampire5edLettheStreetsRunRed#L20098): Convictions: None shall control me
+- [L20099](Vampire5edLettheStreetsRunRed#L20099): Touchstones: Her mother, who she still loves and
+- [L20119](Vampire5edLettheStreetsRunRed#L20119): Clan: Caitiff
+- [L20236](Vampire5edLettheStreetsRunRed#L20236): Ambition: Hit the remaining six states he didn’t
+- [L20240](Vampire5edLettheStreetsRunRed#L20240): Convictions: Always help the needy when asked.
+- [L20241](Vampire5edLettheStreetsRunRed#L20241): Touchstones: His granddaughter, Ellie, who means
+- [L20261](Vampire5edLettheStreetsRunRed#L20261): Clan: Malkavian
+- [L20415](Vampire5edLettheStreetsRunRed#L20415): Ambition: She wants to increase funding for the arts
+- [L20420](Vampire5edLettheStreetsRunRed#L20420): Convictions: Do not expose children to violence.
+- [L20421](Vampire5edLettheStreetsRunRed#L20421): Touchstones: Donovan, a student that meant a lot to
+- [L20440](Vampire5edLettheStreetsRunRed#L20440): Clan: Nosferatu
+- [L20572](Vampire5edLettheStreetsRunRed#L20572): Ambition: He wants to be a Michelin star rated
+- [L20576](Vampire5edLettheStreetsRunRed#L20576): Convictions: Don’t become a monster (Shelly).
+- [L20579](Vampire5edLettheStreetsRunRed#L20579): Touchstones:
+- [L20610](Vampire5edLettheStreetsRunRed#L20610): Clan: Toreador
+- [L20742](Vampire5edLettheStreetsRunRed#L20742): Ambition: She wants to catch up to her fellow Toreador
+- [L20745](Vampire5edLettheStreetsRunRed#L20745): Convictions: Never accept second best when first is
+- [L20747](Vampire5edLettheStreetsRunRed#L20747): Touchstones: Frankie — a local club promoter and
+- [L20767](Vampire5edLettheStreetsRunRed#L20767): Clan: Thin-blood
+- [L20879](Vampire5edLettheStreetsRunRed#L20879): Ambition: Her deepest desire is to keep her family
+- [L20883](Vampire5edLettheStreetsRunRed#L20883): Convictions: After accidentally killing her cat, she
+- [L20887](Vampire5edLettheStreetsRunRed#L20887): Touchstones: Her wife and son. Her entire life revolves
+- [L20909](Vampire5edLettheStreetsRunRed#L20909): Clan: Tremere
+- [L21042](Vampire5edLettheStreetsRunRed#L21042): Ambition: Finish the art pieces that should have
+- [L21046](Vampire5edLettheStreetsRunRed#L21046): Convictions: Punish those who destroy art.
+- [L21047](Vampire5edLettheStreetsRunRed#L21047): Touchstones: Alan Quartermaine — noted art critic
+- [L21068](Vampire5edLettheStreetsRunRed#L21068): Clan: Ventrue
+- [L21203](Vampire5edLettheStreetsRunRed#L21203): Ambition: Sire his own personal assistant once his
+- [L21208](Vampire5edLettheStreetsRunRed#L21208): Convictions: Let none of his mortal associates find
+- [L21210](Vampire5edLettheStreetsRunRed#L21210): Touchstones: His ex-girlfriend Julia, to whom he is
+
+### poderes e requisitos (0)
+
+
+### NPCs e antagonistas (163)
+
+- [L746](Vampire5edLettheStreetsRunRed#L746): GENERAL DIFFICULTIES
+- [L2515](Vampire5edLettheStreetsRunRed#L2515): Standard Dice Pools: Physical 6, Social 3, Mental 3
+- [L2517](Vampire5edLettheStreetsRunRed#L2517): Exceptional Dice Pools: Intimidation 5; Investigation
+- [L2525](Vampire5edLettheStreetsRunRed#L2525): General Difficulties: 4/2
+- [L2611](Vampire5edLettheStreetsRunRed#L2611): Standard Dice Pools: Physical
+- [L2615](Vampire5edLettheStreetsRunRed#L2615): Exceptional Dice Pools: Brawl
+- [L2620](Vampire5edLettheStreetsRunRed#L2620): General Difficulties: 3/2
+- [L2679](Vampire5edLettheStreetsRunRed#L2679): Standard Dice Pools: Physical 5, Social 3, Mental 4
+- [L2681](Vampire5edLettheStreetsRunRed#L2681): Exceptional Dice Pools: Athletics 6, Brawl 6,
+- [L2691](Vampire5edLettheStreetsRunRed#L2691): General Difficulties: 5/2
+- [L2777](Vampire5edLettheStreetsRunRed#L2777): Standard Dice Pools: Physical 6, Social 4, Mental 5
+- [L2779](Vampire5edLettheStreetsRunRed#L2779): Exceptional Dice Pools: Brawl 7, Firearms 7, Melee
+- [L3215](Vampire5edLettheStreetsRunRed#L3215): Standard Dice Pools: Physical 6, Social 1, Mental 1
+- [L3217](Vampire5edLettheStreetsRunRed#L3217): Exceptional Dice Pools: Brawl 7; Animal Ken 4,
+- [L3223](Vampire5edLettheStreetsRunRed#L3223): General Difficulties: 4/1
+- [L3531](Vampire5edLettheStreetsRunRed#L3531): Standard Dice Pools: Physical 6, Social 2, Mental 4
+- [L3533](Vampire5edLettheStreetsRunRed#L3533): Exceptional Dice Pools: Melee 7, Stealth 7; Intimidation
+- [L3541](Vampire5edLettheStreetsRunRed#L3541): General Difficulties: 5/2
+- [L3866](Vampire5edLettheStreetsRunRed#L3866): Standard Dice Pools: Physical
+- [L3870](Vampire5edLettheStreetsRunRed#L3870): Exceptional Dice Pools: Melee
+- [L3875](Vampire5edLettheStreetsRunRed#L3875): General Difficulties: 6/2
+- [L6661](Vampire5edLettheStreetsRunRed#L6661): Standard Dice Pools: Physical 4, Social 3, Mental 4
+- [L6663](Vampire5edLettheStreetsRunRed#L6663): Exceptional Dice Pools: Awareness 5, Brawl or
+- [L6665](Vampire5edLettheStreetsRunRed#L6665): General Difficulties: 4/2
+- [L6667](Vampire5edLettheStreetsRunRed#L6667): Standard Dice Pools: Physical 4, Social 4, Mental 3
+- [L6669](Vampire5edLettheStreetsRunRed#L6669): Exceptional Dice Pools: Awareness 5, Brawl 5,
+- [L6671](Vampire5edLettheStreetsRunRed#L6671): General Difficulties: 3/2
+- [L6673](Vampire5edLettheStreetsRunRed#L6673): Standard Dice Pools: Physical 4, Social 3, Mental 3
+- [L6675](Vampire5edLettheStreetsRunRed#L6675): Exceptional Dice Pools: Brawl 5, Intimidation 5,
+- [L6677](Vampire5edLettheStreetsRunRed#L6677): General Difficulties: 3/2
+- [L6679](Vampire5edLettheStreetsRunRed#L6679): Standard Dice Pools: Physical 6, Social 4, Mental 5
+- [L6681](Vampire5edLettheStreetsRunRed#L6681): Exceptional Dice Pools: Athletics 8, Awareness 7,
+- [L6683](Vampire5edLettheStreetsRunRed#L6683): General Difficulties: 4/2
+- [L6687](Vampire5edLettheStreetsRunRed#L6687): Standard Dice Pools: Physical 2, Social 5, Mental 4
+- [L6689](Vampire5edLettheStreetsRunRed#L6689): Exceptional Dice Pools: Athletics 3, Etiquette 6,
+- [L6691](Vampire5edLettheStreetsRunRed#L6691): General Difficulties: 2/1
+- [L7790](Vampire5edLettheStreetsRunRed#L7790): Disciplines: Animalism 3, Celerity 3, Fortitude 3,
+- [L7799](Vampire5edLettheStreetsRunRed#L7799): General Difficulties: 6/2
+- [L7810](Vampire5edLettheStreetsRunRed#L7810): Disciplines: Animalism 5, Auspex 2, Celerity 2,
+- [L7819](Vampire5edLettheStreetsRunRed#L7819): General Difficulties: 6/3
+- [L7829](Vampire5edLettheStreetsRunRed#L7829): Disciplines: Animalism 2, Celerity 4, Fortitude 4,
+- [L7838](Vampire5edLettheStreetsRunRed#L7838): General Difficulties: 7/3
+- [L7866](Vampire5edLettheStreetsRunRed#L7866): Disciplines: Dominate 1
+- [L7867](Vampire5edLettheStreetsRunRed#L7867): General Difficulties: 4/2
+- [L7878](Vampire5edLettheStreetsRunRed#L7878): General Difficulties: 4/2
+- [L8043](Vampire5edLettheStreetsRunRed#L8043): Disciplines: Thin-Blood Alchemy 1
+- [L8044](Vampire5edLettheStreetsRunRed#L8044): General Difficulties: 3/1
+- [L8129](Vampire5edLettheStreetsRunRed#L8129): Disciplines: Animalism 3, Obfuscate
+- [L8131](Vampire5edLettheStreetsRunRed#L8131): General Difficulties: 6/3
+- [L8566](Vampire5edLettheStreetsRunRed#L8566): General Difficulties: 4/2
+- [L8788](Vampire5edLettheStreetsRunRed#L8788): Standard Dice Pools: Physical
+- [L8792](Vampire5edLettheStreetsRunRed#L8792): Exceptional Dice Pools: Brawl
+- [L8802](Vampire5edLettheStreetsRunRed#L8802): General Difficulties: 3/1
+- [L8848](Vampire5edLettheStreetsRunRed#L8848): Disciplines: Animalism 5, Celerity 1, Obfuscate 4,
+- [L8850](Vampire5edLettheStreetsRunRed#L8850): General Difficulties: 7/4
+- [L9198](Vampire5edLettheStreetsRunRed#L9198): Standard Dice Pools: Physical 6, Social 2, Mental
+- [L9201](Vampire5edLettheStreetsRunRed#L9201): Exceptional Dice Pools: Firearms 7, Survival 7;
+- [L9207](Vampire5edLettheStreetsRunRed#L9207): General Difficulties: 4/2
+- [L9326](Vampire5edLettheStreetsRunRed#L9326): Standard Dice Pools: Physical 3, Social 4, Mental 6
+- [L9328](Vampire5edLettheStreetsRunRed#L9328): Exceptional Dice Pools: Drive 6, Survival 6;
+- [L9330](Vampire5edLettheStreetsRunRed#L9330): General Difficulties: 4/1
+- [L10497](Vampire5edLettheStreetsRunRed#L10497): Disciplines: Animalism 2, Presence 3, Protean 3
+- [L10498](Vampire5edLettheStreetsRunRed#L10498): General Difficulties: 6/3
+- [L10589](Vampire5edLettheStreetsRunRed#L10589): Disciplines: Obfuscate 4, Presence 4, Protean 3
+- [L10590](Vampire5edLettheStreetsRunRed#L10590): General Difficulties: 7/4
+- [L10607](Vampire5edLettheStreetsRunRed#L10607): Disciplines: Obfuscate 1, Presence 2, Potence 1
+- [L10608](Vampire5edLettheStreetsRunRed#L10608): General Difficulties: 6/2
+- [L10618](Vampire5edLettheStreetsRunRed#L10618): Disciplines: Potence 1
+- [L10619](Vampire5edLettheStreetsRunRed#L10619): General Difficulties: 4/2
+- [L10732](Vampire5edLettheStreetsRunRed#L10732): Standard Dice Pools: Physical 4, Social 5, Mental 6
+- [L10734](Vampire5edLettheStreetsRunRed#L10734): Exceptional Dice Pools: Firearms 5, Melee 5;
+- [L10738](Vampire5edLettheStreetsRunRed#L10738): General Difficulties: 5/2
+- [L12003](Vampire5edLettheStreetsRunRed#L12003): Disciplines: Celerity 3, Fortitude 2, Potence 3
+- [L12010](Vampire5edLettheStreetsRunRed#L12010): General Difficulties: 4/2
+- [L12058](Vampire5edLettheStreetsRunRed#L12058): General Difficulties: 5/3
+- [L13080](Vampire5edLettheStreetsRunRed#L13080): Disciplines: Fortitude 2, Protean 2
+- [L13081](Vampire5edLettheStreetsRunRed#L13081): General Difficulties: 4/2
+- [L13099](Vampire5edLettheStreetsRunRed#L13099): Disciplines: Fortitude 1, Protean 3
+- [L13100](Vampire5edLettheStreetsRunRed#L13100): General Difficulties: 5/2
+- [L13119](Vampire5edLettheStreetsRunRed#L13119): Disciplines: Celerity 1, Potence 3
+- [L13120](Vampire5edLettheStreetsRunRed#L13120): General Difficulties: 4/2
+- [L13138](Vampire5edLettheStreetsRunRed#L13138): Disciplines: Obfuscate 3, Potence 3
+- [L13139](Vampire5edLettheStreetsRunRed#L13139): General Difficulties: 5/2
+- [L13156](Vampire5edLettheStreetsRunRed#L13156): Disciplines: Auspex 2, Celerity 3, Presence 2
+- [L13157](Vampire5edLettheStreetsRunRed#L13157): General Difficulties: 5/2
+- [L13175](Vampire5edLettheStreetsRunRed#L13175): Disciplines: Auspex 2, Blood Sorcery 3
+- [L13176](Vampire5edLettheStreetsRunRed#L13176): General Difficulties: 4/3
+- [L13192](Vampire5edLettheStreetsRunRed#L13192): Disciplines: Auspex 2, Obfuscate 2
+- [L13193](Vampire5edLettheStreetsRunRed#L13193): General Difficulties: 5/2
+- [L13218](Vampire5edLettheStreetsRunRed#L13218): Disciplines: Auspex 2, Celerity 3, Potence 4,
+- [L13220](Vampire5edLettheStreetsRunRed#L13220): General Difficulties: 4/3
+- [L13241](Vampire5edLettheStreetsRunRed#L13241): Disciplines: Celerity 2, Potence 2, Presence 2
+- [L13242](Vampire5edLettheStreetsRunRed#L13242): General Difficulties: 5/3
+- [L13260](Vampire5edLettheStreetsRunRed#L13260): Standard Dice Pools: Physical 4, Social 2, Mental 4
+- [L13262](Vampire5edLettheStreetsRunRed#L13262): Exceptional Dice Pools: Firearms 5; Leadership 3;
+- [L13266](Vampire5edLettheStreetsRunRed#L13266): General Difficulties: 4/2
+- [L13273](Vampire5edLettheStreetsRunRed#L13273): Standard Dice Pools: Physical 5, Social 2, Mental 3
+- [L13275](Vampire5edLettheStreetsRunRed#L13275): Exceptional Dice Pools: Streetwise 4; Investigation
+- [L13280](Vampire5edLettheStreetsRunRed#L13280): General Difficulties: 3/2
+- [L13286](Vampire5edLettheStreetsRunRed#L13286): Standard Dice Pools: Physical 4, Social 2, Mental 3
+- [L13288](Vampire5edLettheStreetsRunRed#L13288): Exceptional Dice Pools: Larceny 5; Technology 4
+- [L13292](Vampire5edLettheStreetsRunRed#L13292): General Difficulties: 3/1
+- [L13299](Vampire5edLettheStreetsRunRed#L13299): Standard Dice Pools: Physical 3, Social 3,
+- [L13302](Vampire5edLettheStreetsRunRed#L13302): Exceptional Dice Pools: Insight 4; Awareness 4
+- [L13303](Vampire5edLettheStreetsRunRed#L13303): General Difficulties: 2/1
+- [L13548](Vampire5edLettheStreetsRunRed#L13548): Disciplines: Celerity 3, Dominate 2, Fortitude 1,
+- [L13766](Vampire5edLettheStreetsRunRed#L13766): Disciplines: Auspex 2, Celerity 4, Fortitude 3,
+- [L13956](Vampire5edLettheStreetsRunRed#L13956): Disciplines: Auspex 1, Celerity 3, Potence 3, Presence
+- [L14167](Vampire5edLettheStreetsRunRed#L14167): Disciplines: Auspex 2, Blood Sorcery 2
+- [L14383](Vampire5edLettheStreetsRunRed#L14383): Disciplines: Dominate 1, Fortitude 2, Potence 3
+- [L14596](Vampire5edLettheStreetsRunRed#L14596): Disciplines: Obfuscate 3, Fortitude 2
+- [L14794](Vampire5edLettheStreetsRunRed#L14794): Disciplines: Fortitude 1, Protean 5
+- [L15002](Vampire5edLettheStreetsRunRed#L15002): Disciplines: Animalism 2, Fortitude 1, Protean 3
+- [L15287](Vampire5edLettheStreetsRunRed#L15287): Disciplines: Animalism 3, Celerity 4, Fortitude 3,
+- [L15504](Vampire5edLettheStreetsRunRed#L15504): Disciplines: Auspex 1, Dominate 2, Potence 1
+- [L15750](Vampire5edLettheStreetsRunRed#L15750): Disciplines: Auspex 4, Dominate 3, Obfuscate 4
+- [L15952](Vampire5edLettheStreetsRunRed#L15952): Disciplines: Auspex 1
+- [L16150](Vampire5edLettheStreetsRunRed#L16150): Disciplines: Dominate 1, Obfuscate 1, Presence 5
+- [L16361](Vampire5edLettheStreetsRunRed#L16361): Disciplines: Obfuscate 1, Presence 3, Protean 1
+- [L16562](Vampire5edLettheStreetsRunRed#L16562): Disciplines: Obfuscate 3, Potence 2
+- [L16762](Vampire5edLettheStreetsRunRed#L16762): Disciplines: Animalism 3, Obfuscate 2
+- [L16952](Vampire5edLettheStreetsRunRed#L16952): Disciplines: Thin-Blood Alchemy 2
+- [L17175](Vampire5edLettheStreetsRunRed#L17175): Disciplines: Thin-Blood Alchemy 1, Presence 1
+- [L17355](Vampire5edLettheStreetsRunRed#L17355): Disciplines: Auspex 4, Celerity 2, Presence 4
+- [L17560](Vampire5edLettheStreetsRunRed#L17560): Disciplines: Auspex 5, Celerity 4, Dominate 4,
+- [L17763](Vampire5edLettheStreetsRunRed#L17763): Disciplines: Auspex 4, Celerity 2, Dominate 2,
+- [L17949](Vampire5edLettheStreetsRunRed#L17949): Disciplines: Auspex 1, Presence 3
+- [L18205](Vampire5edLettheStreetsRunRed#L18205): Disciplines: Auspex 3, Blood Sorcery 3, Dominate
+- [L18424](Vampire5edLettheStreetsRunRed#L18424): Disciplines: Auspex 3, Blood Sorcery 1, Dominate
+- [L18599](Vampire5edLettheStreetsRunRed#L18599): Disciplines: Dominate 2, Fortitude 3, Presence 1
+- [L18819](Vampire5edLettheStreetsRunRed#L18819): Disciplines: Celerity 1, Dominate 3, Fortitude 2,
+- [L18836](Vampire5edLettheStreetsRunRed#L18836): General Difficulties are a shorthand version of these
+- [L18843](Vampire5edLettheStreetsRunRed#L18843): Standard Dice Pools: Physical 4, Social 3, Mental 2
+- [L18845](Vampire5edLettheStreetsRunRed#L18845): Exceptional Dice Pools: Drive 6; Awareness 5
+- [L18846](Vampire5edLettheStreetsRunRed#L18846): Disciplines: Celerity 1
+- [L18849](Vampire5edLettheStreetsRunRed#L18849): General Difficulties: 4/2
+- [L18851](Vampire5edLettheStreetsRunRed#L18851): Standard Dice Pools: Physical 7, Social 3, Mental 3
+- [L18853](Vampire5edLettheStreetsRunRed#L18853): Exceptional Dice Pools: Intimidation 5; Politics 5,
+- [L18855](Vampire5edLettheStreetsRunRed#L18855): Disciplines: Dominate 1
+- [L18858](Vampire5edLettheStreetsRunRed#L18858): General Difficulties: 5/3
+- [L18860](Vampire5edLettheStreetsRunRed#L18860): Standard Dice Pools: Physical 2, Social 5, Mental 3
+- [L18862](Vampire5edLettheStreetsRunRed#L18862): Exceptional Dice Pools: Performance 6
+- [L18863](Vampire5edLettheStreetsRunRed#L18863): Disciplines: Presence 1
+- [L18866](Vampire5edLettheStreetsRunRed#L18866): General Difficulties: 4/2
+- [L18868](Vampire5edLettheStreetsRunRed#L18868): Standard Dice Pools: Physical 5, Social 1, Mental 2
+- [L18870](Vampire5edLettheStreetsRunRed#L18870): Exceptional Dice Pools: Brawl 6, Melee 6, Survival
+- [L18872](Vampire5edLettheStreetsRunRed#L18872): Disciplines: Potence 1
+- [L18875](Vampire5edLettheStreetsRunRed#L18875): General Difficulties: 4/2
+- [L18877](Vampire5edLettheStreetsRunRed#L18877): Standard Dice Pools: Physical 4, Social 4, Mental 2
+- [L18879](Vampire5edLettheStreetsRunRed#L18879): Exceptional Dice Pools: Persuasion 5, Streetwise 7
+- [L18883](Vampire5edLettheStreetsRunRed#L18883): General Difficulties: 4/2
+- [L18885](Vampire5edLettheStreetsRunRed#L18885): Standard Dice Pools: Physical 2, Social 3, Mental 5
+- [L18887](Vampire5edLettheStreetsRunRed#L18887): Exceptional Dice Pools: Melee 3; Animal Ken 5,
+- [L18891](Vampire5edLettheStreetsRunRed#L18891): General Difficulties: 4/2
+- [L19956](Vampire5edLettheStreetsRunRed#L19956): Disciplines: Celerity 2 (Rapid Reflexes, Fleetness),
+- [L20112](Vampire5edLettheStreetsRunRed#L20112): Disciplines: Animalism 1 (Sense the Beast), Auspex
+- [L20255](Vampire5edLettheStreetsRunRed#L20255): Disciplines: Fortitude 1 (Resilience), Obfuscate 3 (Cloak
+- [L20433](Vampire5edLettheStreetsRunRed#L20433): Disciplines: Auspex 1 (Sense the Unseen), Obfuscate
+- [L20603](Vampire5edLettheStreetsRunRed#L20603): Disciplines: Animalism 2 (Bond Famulus, Feral
+- [L20761](Vampire5edLettheStreetsRunRed#L20761): Disciplines: Celerity 2 (Cat’s Grace, Fleetness),
+- [L20904](Vampire5edLettheStreetsRunRed#L20904): Disciplines: None
+- [L21059](Vampire5edLettheStreetsRunRed#L21059): Disciplines: Blood Sorcery 2 (A Taste for Blood,
+- [L21222](Vampire5edLettheStreetsRunRed#L21222): Disciplines: Dominate 2 (Cloud Memory, Mesmerize),
+
+### vantagens, ritos e equipamento (2)
+
+- [L775](Vampire5edLettheStreetsRunRed#L775): Loresheets
+- [L6591](Vampire5edLettheStreetsRunRed#L6591): FLAWS
+
+## Vampire5edPlayersGuide01
+
+V5 · publisher · 15486 linhas · SHA-256 `a2007402c4c260aae4157a1ec0245954ca02948654af22bc548648b4a462c563`
+
+### criação e progressão (29)
+
+- [L240](Vampire5edPlayersGuide01#L240): Castoff Summary Sheet 124
+- [L257](Vampire5edPlayersGuide01#L257): Creating a Ghoul Character 139
+- [L265](Vampire5edPlayersGuide01#L265): Creating a Mortal Character 148
+- [L1379](Vampire5edPlayersGuide01#L1379): advantage, well, that’s practically creating a divinity in
+- [L1732](Vampire5edPlayersGuide01#L1732): at character creation.
+- [L2352](Vampire5edPlayersGuide01#L2352): These can either be taken at character creation
+- [L2812](Vampire5edPlayersGuide01#L2812): Pick a Skill distribution:
+- [L2827](Vampire5edPlayersGuide01#L2827): If you’re not sure which skill distribution is best for your
+- [L2871](Vampire5edPlayersGuide01#L2871): TRAIT COSTS: EXPERIENCE
+- [L4066](Vampire5edPlayersGuide01#L4066): this power, such as creating a secret pouch
+- [L4791](Vampire5edPlayersGuide01#L4791): power. At character creation a player can choose one
+- [L5645](Vampire5edPlayersGuide01#L5645): character creation.
+- [L6596](Vampire5edPlayersGuide01#L6596): at character creation without explicit Storyteller
+- [L6620](Vampire5edPlayersGuide01#L6620): off with experience points. After character creation,
+- [L6900](Vampire5edPlayersGuide01#L6900): At character creation, pick a topic that your
+- [L6922](Vampire5edPlayersGuide01#L6922): pp. 193 and 315) at character creation. You cannot
+- [L6998](Vampire5edPlayersGuide01#L6998): Castoff Summary Sheet
+- [L7015](Vampire5edPlayersGuide01#L7015): character creation.
+- [L7719](Vampire5edPlayersGuide01#L7719): and Flaws allowed during character creation or
+- [L8074](Vampire5edPlayersGuide01#L8074): Creating a Ghoul Character
+- [L8680](Vampire5edPlayersGuide01#L8680): Creating a Mortal Character
+- [L8681](Vampire5edPlayersGuide01#L8681): The process of creating a mortal character is very
+- [L8682](Vampire5edPlayersGuide01#L8682): similar to that of creating a vampire, with a few
+- [L10063](Vampire5edPlayersGuide01#L10063): In many ways, creating a coterie is even more
+- [L10064](Vampire5edPlayersGuide01#L10064): important than creating a character. If play happens
+- [L10089](Vampire5edPlayersGuide01#L10089): streamlined Coterie Creation Summary puts all
+- [L10850](Vampire5edPlayersGuide01#L10850): character creation, or the coterie as a whole can
+- [L13037](Vampire5edPlayersGuide01#L13037):  Involuntary Investigator: Creating a smart,
+- [L13708](Vampire5edPlayersGuide01#L13708): of creating a Malkavian Compulsion. Use extreme
+
+### identidade e narrativa (28)
+
+- [L787](Vampire5edPlayersGuide01#L787): Banu Haqim Archetypes
+- [L1016](Vampire5edPlayersGuide01#L1016): Hecata Archetypes
+- [L1255](Vampire5edPlayersGuide01#L1255): Lasombra Archetypes
+- [L1499](Vampire5edPlayersGuide01#L1499): Ministry Archetypes
+- [L1746](Vampire5edPlayersGuide01#L1746): Ravnos Archetypes
+- [L1957](Vampire5edPlayersGuide01#L1957): Salubri Archetypes
+- [L2209](Vampire5edPlayersGuide01#L2209): Tzimisce Archetypes
+- [L3008](Vampire5edPlayersGuide01#L3008): Ambition: Destroy those who hurt me (pick
+- [L3019](Vampire5edPlayersGuide01#L3019): Ambition: Take control of my domain (pick
+- [L3032](Vampire5edPlayersGuide01#L3032): Ambition: Make up for your past mistakes (pick
+- [L3047](Vampire5edPlayersGuide01#L3047): Clan: Banu Haqim, 12th Generation,
+- [L3057](Vampire5edPlayersGuide01#L3057): Clan: Brujah, 13th Generation, Blood Potency 1
+- [L3063](Vampire5edPlayersGuide01#L3063): Clan: Hecata, 13th Generation, Blood Potency 1
+- [L3073](Vampire5edPlayersGuide01#L3073): Clan: Gangrel, 13th Generation, Blood Potency 1
+- [L3079](Vampire5edPlayersGuide01#L3079): Clan: Lasombra, 13th Generation, Blood Potency 1
+- [L3086](Vampire5edPlayersGuide01#L3086): Clan: Malkavian, 12th Generation, Blood Potency 1
+- [L3092](Vampire5edPlayersGuide01#L3092): Clan: Ministry, 12th Generation, Blood Potency 1
+- [L3098](Vampire5edPlayersGuide01#L3098): Clan: Nosferatu, 13th Generation, Blood Potency 1
+- [L3105](Vampire5edPlayersGuide01#L3105): Clan: Ravnos, 13th Generation, Blood Potency 1
+- [L3112](Vampire5edPlayersGuide01#L3112): Clan: Salubri, 12th Generation, Blood Potency 1
+- [L3118](Vampire5edPlayersGuide01#L3118): Clan: Toreador, 12th Generation, Blood Potency 1
+- [L3124](Vampire5edPlayersGuide01#L3124): Clan: Tremere, 12th Generation, Blood Potency 1
+- [L3130](Vampire5edPlayersGuide01#L3130): Clan: Tzimisce, 12th Generation, Blood Potency 1
+- [L3136](Vampire5edPlayersGuide01#L3136): Clan: Ventrue, 12th Generation, Blood Potency 1
+- [L7647](Vampire5edPlayersGuide01#L7647): Thin-Blood Archetypes
+- [L7652](Vampire5edPlayersGuide01#L7652): to the limits. Beyond the original Archetypes
+- [L7997](Vampire5edPlayersGuide01#L7997): Ghoul Archetypes
+- [L8558](Vampire5edPlayersGuide01#L8558): Mortal Archetypes
+
+### poderes e requisitos (173)
+
+- [L3146](Vampire5edPlayersGuide01#L3146): Amalgam: Auspex 1
+- [L3152](Vampire5edPlayersGuide01#L3152): Cost: One Rouse Check for each night.
+- [L3153](Vampire5edPlayersGuide01#L3153): Dice Pools: None, though the Famulus must test
+- [L3171](Vampire5edPlayersGuide01#L3171): Prerequisite: Animal Messenger, Compel or
+- [L3173](Vampire5edPlayersGuide01#L3173): Amalgam: Dominate 1
+- [L3177](Vampire5edPlayersGuide01#L3177): Cost: None
+- [L3178](Vampire5edPlayersGuide01#L3178): Dice Pools: See Compel or Mesmerize, but the
+- [L3194](Vampire5edPlayersGuide01#L3194): Cost: One Rouse Check
+- [L3195](Vampire5edPlayersGuide01#L3195): Dice Pools: Manipulation + Animalism vs
+- [L3224](Vampire5edPlayersGuide01#L3224): Cost: One or more Rouse Checks
+- [L3225](Vampire5edPlayersGuide01#L3225): Dice Pools: Composure + Animalism
+- [L3249](Vampire5edPlayersGuide01#L3249): Cost: One Rouse Check
+- [L3250](Vampire5edPlayersGuide01#L3250): Dice Pools: Manipulation + Animalism
+- [L3264](Vampire5edPlayersGuide01#L3264): Amalgam: Fortitude 1
+- [L3271](Vampire5edPlayersGuide01#L3271): Cost: One Rouse Check and additional Willpower
+- [L3273](Vampire5edPlayersGuide01#L3273): Dice Pool: Composure + Auspex
+- [L3299](Vampire5edPlayersGuide01#L3299): Cost: One Rouse Check
+- [L3300](Vampire5edPlayersGuide01#L3300): Dice Pools: Intelligence + Auspex vs Composure +
+- [L3320](Vampire5edPlayersGuide01#L3320): Amalgam: Oblivion 1
+- [L3326](Vampire5edPlayersGuide01#L3326): Cost: One Rouse Check
+- [L3327](Vampire5edPlayersGuide01#L3327): Dice Pools: Intelligence + Auspex vs Composure or
+- [L3342](Vampire5edPlayersGuide01#L3342): Amalgam: Dominate 3
+- [L3343](Vampire5edPlayersGuide01#L3343): Prerequisite: Panacea
+- [L3355](Vampire5edPlayersGuide01#L3355): Cost: Two Rouse Checks, gain one Stain
+- [L3356](Vampire5edPlayersGuide01#L3356): Dice Pool: Composure + Auspex vs. Humanity
+- [L3395](Vampire5edPlayersGuide01#L3395): Cost: One Rouse Check
+- [L3396](Vampire5edPlayersGuide01#L3396): Dice Pools: N/A
+- [L3410](Vampire5edPlayersGuide01#L3410): Prerequisite: Rapid Reflexes
+- [L3414](Vampire5edPlayersGuide01#L3414): Cost: One Rouse Check
+- [L3415](Vampire5edPlayersGuide01#L3415): Dice Pools: N/A
+- [L3428](Vampire5edPlayersGuide01#L3428): Cost: One Rouse Check per turn
+- [L3429](Vampire5edPlayersGuide01#L3429): Dice Pools: N/A
+- [L3442](Vampire5edPlayersGuide01#L3442): Prerequisite: Blink
+- [L3443](Vampire5edPlayersGuide01#L3443): Amalgam: Obfuscate 4
+- [L3450](Vampire5edPlayersGuide01#L3450): Cost: Two Rouse Checks
+- [L3451](Vampire5edPlayersGuide01#L3451): Dice Pools: Dexterity + Celerity vs Wits + Awareness
+- [L3470](Vampire5edPlayersGuide01#L3470): Amalgam: Fortitude 1
+- [L3474](Vampire5edPlayersGuide01#L3474): Cost: No additional cost
+- [L3491](Vampire5edPlayersGuide01#L3491): Cost: One Rouse Check
+- [L3502](Vampire5edPlayersGuide01#L3502): Prerequisite: Mesmerize
+- [L3503](Vampire5edPlayersGuide01#L3503): Amalgam: Blood Sorcery 2
+- [L3512](Vampire5edPlayersGuide01#L3512): Cost: One Rouse Check
+- [L3513](Vampire5edPlayersGuide01#L3513): Dice Pools: Manipulation + Dominate vs. Resolve
+- [L3531](Vampire5edPlayersGuide01#L3531): Amalgam: Presence 1
+- [L3542](Vampire5edPlayersGuide01#L3542): Cost: One Rouse Check
+- [L3543](Vampire5edPlayersGuide01#L3543): Dice Pools: Manipulation + Dominate vs
+- [L3565](Vampire5edPlayersGuide01#L3565): Cost: One Rouse check
+- [L3574](Vampire5edPlayersGuide01#L3574): Amalgam: Auspex 1
+- [L3579](Vampire5edPlayersGuide01#L3579): Cost: None beyond Rouse Checks for giving Blood
+- [L3580](Vampire5edPlayersGuide01#L3580): Dice Pools: N/A
+- [L3588](Vampire5edPlayersGuide01#L3588): Amalgam: Auspex 1
+- [L3592](Vampire5edPlayersGuide01#L3592): Cost: One Rouse Check and additional Health
+- [L3594](Vampire5edPlayersGuide01#L3594): Dice Pool: Intelligence + Fortitude
+- [L3624](Vampire5edPlayersGuide01#L3624): Cost: One Rouse Check
+- [L3625](Vampire5edPlayersGuide01#L3625): Dice Pools: N/A
+- [L3652](Vampire5edPlayersGuide01#L3652): Amalgam: Presence 1
+- [L3664](Vampire5edPlayersGuide01#L3664): Dice Pools: Manipulation + Obfuscate vs
+- [L3666](Vampire5edPlayersGuide01#L3666): Cost: One Rouse Check
+- [L3691](Vampire5edPlayersGuide01#L3691): Amalgam: Presence 2
+- [L3721](Vampire5edPlayersGuide01#L3721): Cost: One Rouse Check
+- [L3722](Vampire5edPlayersGuide01#L3722): Dice Pool: Manipulation + Obfuscate
+- [L3760](Vampire5edPlayersGuide01#L3760): Amalgam: Dominate 1
+- [L3773](Vampire5edPlayersGuide01#L3773): Cost: One or Three Rouse Checks
+- [L3774](Vampire5edPlayersGuide01#L3774): Dice Pools: Charisma + Obfuscate vs. Wits + Resolve
+- [L3799](Vampire5edPlayersGuide01#L3799): Amalgam: Dominate 2
+- [L3808](Vampire5edPlayersGuide01#L3808): Cost: One Rouse Check
+- [L3809](Vampire5edPlayersGuide01#L3809): Dice Pools: Intelligence + Obfuscate
+- [L3834](Vampire5edPlayersGuide01#L3834): Cost: One Rouse Check
+- [L3835](Vampire5edPlayersGuide01#L3835): Dice Pools: N/A
+- [L3844](Vampire5edPlayersGuide01#L3844): Prerequisite: Prowess
+- [L3852](Vampire5edPlayersGuide01#L3852): Cost: Free
+- [L3853](Vampire5edPlayersGuide01#L3853): Dice Pools: N/A
+- [L3860](Vampire5edPlayersGuide01#L3860): Prerequisite: Soaring Leap
+- [L3866](Vampire5edPlayersGuide01#L3866): Cost: One Rouse Check
+- [L3867](Vampire5edPlayersGuide01#L3867): Dice Pool: Strength + Potence
+- [L3890](Vampire5edPlayersGuide01#L3890): Cost: Free
+- [L3891](Vampire5edPlayersGuide01#L3891): Dice Pools: N/A
+- [L3910](Vampire5edPlayersGuide01#L3910): Amalgam: Protean 1
+- [L3916](Vampire5edPlayersGuide01#L3916): Cost: Free
+- [L3917](Vampire5edPlayersGuide01#L3917): Dice Pools: Charisma + Presence vs. Wits +
+- [L3941](Vampire5edPlayersGuide01#L3941): Cost: Free
+- [L3942](Vampire5edPlayersGuide01#L3942): Dice Pools: N/A
+- [L3951](Vampire5edPlayersGuide01#L3951): Amalgam: Auspex 1
+- [L3960](Vampire5edPlayersGuide01#L3960): Cost: One Rouse Check
+- [L3961](Vampire5edPlayersGuide01#L3961): Dice Pools: N/A
+- [L3975](Vampire5edPlayersGuide01#L3975): Cost: N/A
+- [L3978](Vampire5edPlayersGuide01#L3978): Dice Pools: As power transmitted
+- [L3997](Vampire5edPlayersGuide01#L3997): Amalgam: Dominate 2
+- [L4010](Vampire5edPlayersGuide01#L4010): Cost: One Rouse Check
+- [L4011](Vampire5edPlayersGuide01#L4011): Dice Pool: Resolve + Protean
+- [L4080](Vampire5edPlayersGuide01#L4080): Amalgam: Dominate 2
+- [L4081](Vampire5edPlayersGuide01#L4081): Prerequisite: Vicissitude
+- [L4088](Vampire5edPlayersGuide01#L4088): Cost: One Rouse Check
+- [L4089](Vampire5edPlayersGuide01#L4089): Dice Pools: Resolve + Protean vs. Stamina +
+- [L4111](Vampire5edPlayersGuide01#L4111): Amalgam: Dominate 2
+- [L4112](Vampire5edPlayersGuide01#L4112): Prerequisite: Vicissitude
+- [L4127](Vampire5edPlayersGuide01#L4127): Cost: One Rouse Check
+- [L4149](Vampire5edPlayersGuide01#L4149): Amalgam: Animalism 2
+- [L4150](Vampire5edPlayersGuide01#L4150): Prerequisite: Earth Meld
+- [L4156](Vampire5edPlayersGuide01#L4156): Cost: Two Rouse Checks
+- [L4282](Vampire5edPlayersGuide01#L4282): Cost: One Rouse Check
+- [L4283](Vampire5edPlayersGuide01#L4283): Dice Pools: Stamina + Oblivion vs. Stamina +
+- [L4309](Vampire5edPlayersGuide01#L4309): Cost: Free
+- [L4310](Vampire5edPlayersGuide01#L4310): Dice Pools: Wits + Oblivion
+- [L4323](Vampire5edPlayersGuide01#L4323): Cost: Free
+- [L4350](Vampire5edPlayersGuide01#L4350): Cost: Free
+- [L4356](Vampire5edPlayersGuide01#L4356): Amalgam: Potence 2
+- [L4365](Vampire5edPlayersGuide01#L4365): Cost: One Rouse Check
+- [L4366](Vampire5edPlayersGuide01#L4366): Dice Pools: Wits + Oblivion
+- [L4396](Vampire5edPlayersGuide01#L4396): Amalgam: Auspex 2
+- [L4403](Vampire5edPlayersGuide01#L4403): Cost: One Rouse Check
+- [L4404](Vampire5edPlayersGuide01#L4404): Dice Pools: Resolve + Oblivion vs Wits + Occult
+- [L4435](Vampire5edPlayersGuide01#L4435): Cost: One Rouse Check
+- [L4462](Vampire5edPlayersGuide01#L4462): Cost: One Rouse Check
+- [L4463](Vampire5edPlayersGuide01#L4463): Dice Pools: Intelligence + Oblivion
+- [L4487](Vampire5edPlayersGuide01#L4487): Cost: One Rouse Check
+- [L4488](Vampire5edPlayersGuide01#L4488): Dice Pools: Stamina + Oblivion vs. Stamina +
+- [L4519](Vampire5edPlayersGuide01#L4519): Amalgam: Fortitude 2
+- [L4527](Vampire5edPlayersGuide01#L4527): Cost: Free
+- [L4528](Vampire5edPlayersGuide01#L4528): Dice Pools: Resolve + Oblivion vs. Resolve +
+- [L4576](Vampire5edPlayersGuide01#L4576): Cost: One Rouse Check
+- [L4586](Vampire5edPlayersGuide01#L4586): Amalgam: Auspex 1
+- [L4590](Vampire5edPlayersGuide01#L4590): Cost: One Rouse Check
+- [L4591](Vampire5edPlayersGuide01#L4591): Dice Pools: None
+- [L4612](Vampire5edPlayersGuide01#L4612): Cost: One Rouse Check
+- [L4640](Vampire5edPlayersGuide01#L4640): Cost: One Rouse Check
+- [L4641](Vampire5edPlayersGuide01#L4641): Dice Pools: Intelligence + Oblivion vs. Stamina +
+- [L4678](Vampire5edPlayersGuide01#L4678): Cost: One Rouse Check.
+- [L4702](Vampire5edPlayersGuide01#L4702): Cost: One Rouse Check
+- [L4724](Vampire5edPlayersGuide01#L4724): Cost: Two Rouse Checks
+- [L4725](Vampire5edPlayersGuide01#L4725): Dice Pools: Stamina + Oblivion vs. Stamina +
+- [L4759](Vampire5edPlayersGuide01#L4759): Cost: Two Rouse Checks.
+- [L4808](Vampire5edPlayersGuide01#L4808): Prerequisite Power: Ashes to Ashes
+- [L4855](Vampire5edPlayersGuide01#L4855): Prerequisite Power: The Binding Fetter
+- [L4917](Vampire5edPlayersGuide01#L4917): Prerequisite Power: Where the Veil Thins
+- [L4967](Vampire5edPlayersGuide01#L4967): Prerequisite Power: Where the Veil Thins
+- [L5017](Vampire5edPlayersGuide01#L5017): Prerequisite Power: Aura of Decay
+- [L5068](Vampire5edPlayersGuide01#L5068): Prerequisite Power: Aura of Decay
+- [L5127](Vampire5edPlayersGuide01#L5127): Prerequisite Power: Necrotic Plague
+- [L5183](Vampire5edPlayersGuide01#L5183): Prerequisite Power: Necrotic Plague
+- [L5214](Vampire5edPlayersGuide01#L5214): Prerequisite Power: Skuld Fulfilled
+- [L5270](Vampire5edPlayersGuide01#L5270): Cost: One Rouse Check
+- [L5295](Vampire5edPlayersGuide01#L5295): Cost: One or more Rouse Checks
+- [L5531](Vampire5edPlayersGuide01#L5531): prerequisite power.
+- [L5673](Vampire5edPlayersGuide01#L5673): Dice Pool: Resolve + Alchemy
+- [L5695](Vampire5edPlayersGuide01#L5695): Dice Pool: Intelligence + Alchemy
+- [L5723](Vampire5edPlayersGuide01#L5723): Dice Pool: Stamina + Alchemy vs. Stamina + Resolve
+- [L5745](Vampire5edPlayersGuide01#L5745): Dice Pool: Manipulation + Alchemy vs Wits +
+- [L5799](Vampire5edPlayersGuide01#L5799): Dice Pools: Strength or Dexterity + Alchemy vs.
+- [L5840](Vampire5edPlayersGuide01#L5840): Dice Pool: Resolve + Alchemy vs. Willpower pool +
+- [L9079](Vampire5edPlayersGuide01#L9079): prerequisite among the listed types.
+- [L9226](Vampire5edPlayersGuide01#L9226): Prerequisites:
+- [L9268](Vampire5edPlayersGuide01#L9268): Prerequisites:
+- [L9310](Vampire5edPlayersGuide01#L9310): Prerequisites:
+- [L9347](Vampire5edPlayersGuide01#L9347): Prerequisites:
+- [L9393](Vampire5edPlayersGuide01#L9393): Prerequisites:
+- [L9429](Vampire5edPlayersGuide01#L9429): Prerequisites:
+- [L9466](Vampire5edPlayersGuide01#L9466): Prerequisites:
+- [L9509](Vampire5edPlayersGuide01#L9509): Prerequisites:
+- [L9547](Vampire5edPlayersGuide01#L9547): Prerequisites:
+- [L9593](Vampire5edPlayersGuide01#L9593): Prerequisites:
+- [L9635](Vampire5edPlayersGuide01#L9635): Prerequisites:
+- [L9676](Vampire5edPlayersGuide01#L9676): Prerequisites:
+- [L9714](Vampire5edPlayersGuide01#L9714): Prerequisites:
+- [L9754](Vampire5edPlayersGuide01#L9754): Prerequisites:
+- [L9797](Vampire5edPlayersGuide01#L9797): Prerequisites:
+- [L9842](Vampire5edPlayersGuide01#L9842): Prerequisites:
+- [L9881](Vampire5edPlayersGuide01#L9881): Prerequisites:
+- [L9924](Vampire5edPlayersGuide01#L9924): Prerequisites:
+- [L9973](Vampire5edPlayersGuide01#L9973): Prerequisites:
+- [L10014](Vampire5edPlayersGuide01#L10014): Prerequisites:
+- [L10053](Vampire5edPlayersGuide01#L10053): Prerequisites:
+- [L10581](Vampire5edPlayersGuide01#L10581): prerequisites. Unless noted in the description, the
+
+### NPCs e antagonistas (24)
+
+- [L4837](Vampire5edPlayersGuide01#L4837): Standard Dice Pools: Physical 2, Social 0, Mental 0
+- [L4839](Vampire5edPlayersGuide01#L4839): Exceptional Dice Pools: Intimidation 4
+- [L4851](Vampire5edPlayersGuide01#L4851): General Difficulties: 2/1
+- [L4948](Vampire5edPlayersGuide01#L4948): Standard Dice Pools: Physical 1, Social 0, Mental 1
+- [L4950](Vampire5edPlayersGuide01#L4950): Exceptional Dice Pools: Athletics 4, Stealth 6;
+- [L4961](Vampire5edPlayersGuide01#L4961): General Difficulties: 3/1
+- [L5109](Vampire5edPlayersGuide01#L5109): Standard Dice Pools: Physical 4, Social 0, Mental 0
+- [L5111](Vampire5edPlayersGuide01#L5111): Exceptional Dice Pools: Brawl 6; Intimidation 5
+- [L5121](Vampire5edPlayersGuide01#L5121): General Difficulties: 3/2
+- [L15150](Vampire5edPlayersGuide01#L15150): Standard Dice Pools: Physical 4, Social 2, Mental 4
+- [L15152](Vampire5edPlayersGuide01#L15152): Exceptional Dice Pools: One specialized skill at 8
+- [L15153](Vampire5edPlayersGuide01#L15153): Disciplines: Two level 1 powers
+- [L15183](Vampire5edPlayersGuide01#L15183): Standard Dice Pools: Physical 10, Social 0, Mental 4
+- [L15185](Vampire5edPlayersGuide01#L15185): Exceptional Dice Pools: Brawl 12, Melee 12
+- [L15186](Vampire5edPlayersGuide01#L15186): Disciplines: Potence 3 Fortitude 3
+- [L15207](Vampire5edPlayersGuide01#L15207): Standard Dice Pools: Physical 2, Social 0, Mental 0
+- [L15209](Vampire5edPlayersGuide01#L15209): Exceptional Dice Pools: Intimidation 4
+- [L15221](Vampire5edPlayersGuide01#L15221): General Difficulties: 2/1
+- [L15223](Vampire5edPlayersGuide01#L15223): Standard Dice Pools: Physical 4, Social 0, Mental 0
+- [L15225](Vampire5edPlayersGuide01#L15225): Exceptional Dice Pools: Brawl 6; Intimidation 5
+- [L15236](Vampire5edPlayersGuide01#L15236): General Difficulties: 3/2
+- [L15248](Vampire5edPlayersGuide01#L15248): Standard Dice Pools: Physical 1, Social 0, Mental 1
+- [L15250](Vampire5edPlayersGuide01#L15250): Exceptional Dice Pools: Athletics 4, Stealth 6;
+- [L15262](Vampire5edPlayersGuide01#L15262): General Difficulties: 3/1 ■
+
+### vantagens, ritos e equipamento (13)
+
+- [L2707](Vampire5edPlayersGuide01#L2707): Backgrounds
+- [L5532](Vampire5edPlayersGuide01#L5532): Merits
+- [L5635](Vampire5edPlayersGuide01#L5635): Thin-Blood Alchemy
+- [L6039](Vampire5edPlayersGuide01#L6039): Backgrounds
+- [L6427](Vampire5edPlayersGuide01#L6427): Loresheets
+- [L6720](Vampire5edPlayersGuide01#L6720): Merits
+- [L6847](Vampire5edPlayersGuide01#L6847): Flaws
+- [L7714](Vampire5edPlayersGuide01#L7714): Flaws
+- [L13852](Vampire5edPlayersGuide01#L13852): LORESHEETS
+- [L14585](Vampire5edPlayersGuide01#L14585): Backgrounds
+- [L14608](Vampire5edPlayersGuide01#L14608): Backgrounds
+- [L14647](Vampire5edPlayersGuide01#L14647): Merits
+- [L14800](Vampire5edPlayersGuide01#L14800): Flaws
+
+## Vampire5edPlayersGuide02
+
+V5 · community · 3473 linhas · SHA-256 `47fffdca2e7c3865eb6cecd8b2e6545cfd2fab3d7b0e5caacddd19d3722cee47`
+
+### criação e progressão (5)
+
+- [L422](Vampire5edPlayersGuide02#L422): Alternate Character Creation Rules
+- [L425](Vampire5edPlayersGuide02#L425): points allocated at character creation. This optional rule
+- [L429](Vampire5edPlayersGuide02#L429): (or more if older) designated in character creation
+- [L436](Vampire5edPlayersGuide02#L436): purchased using Flaws during character creation.
+- [L2629](Vampire5edPlayersGuide02#L2629): or object, creating a sense of
+
+### identidade e narrativa (0)
+
+
+### poderes e requisitos (7)
+
+- [L1922](Vampire5edPlayersGuide02#L1922): Cost: One Rouse Check
+- [L1923](Vampire5edPlayersGuide02#L1923): Dice Pools: Wits +
+- [L1943](Vampire5edPlayersGuide02#L1943): Cost: One Rouse Check
+- [L1944](Vampire5edPlayersGuide02#L1944): Dice Pools: Dexterity or
+- [L1982](Vampire5edPlayersGuide02#L1982): Cost: One Rouse Check
+- [L2021](Vampire5edPlayersGuide02#L2021): Cost: One Rouse Check
+- [L2046](Vampire5edPlayersGuide02#L2046): Cost: Free
+
+### NPCs e antagonistas (0)
+
+
+### vantagens, ritos e equipamento (4)
+
+- [L86](Vampire5edPlayersGuide02#L86): Background
+- [L1376](Vampire5edPlayersGuide02#L1376): Backgrounds
+- [L3131](Vampire5edPlayersGuide02#L3131): Rituals
+- [L3461](Vampire5edPlayersGuide02#L3461): Ceremonies
+
+## Vampire5edSabat
+
+V5 · publisher · 7891 linhas · SHA-256 `1deb25b258426e7d68a1ae46ac83d02e8f6151e0b5a3b935468c0205df6ebeaa`
+
+### criação e progressão (4)
+
+- [L1505](Vampire5edSabat#L1505): – leashing the mind to the Beast and creating a
+- [L3218](Vampire5edSabat#L3218): The act of creating a new vampire has special significance
+- [L4292](Vampire5edSabat#L4292): among Sabbat, creating an almost uncanny valley
+- [L5581](Vampire5edSabat#L5581): of creating a world based on Caine’s vision of open
+
+### identidade e narrativa (0)
+
+
+### poderes e requisitos (25)
+
+- [L2435](Vampire5edSabat#L2435): Amalgam: Dominate 1
+- [L2448](Vampire5edSabat#L2448): Cost: One Rouse Check
+- [L2449](Vampire5edSabat#L2449): Dice Pool: Resolve + Auspex
+- [L2501](Vampire5edSabat#L2501): Cost: One Rouse Check
+- [L2502](Vampire5edSabat#L2502): Dice Pool: Resolve + Animalism
+- [L2530](Vampire5edSabat#L2530): Cost: Two Rouse Checks
+- [L2531](Vampire5edSabat#L2531): Dice Pool: Resolve + Dominate vs. Composure +
+- [L2571](Vampire5edSabat#L2571): Amalgam: Dominate 1
+- [L2572](Vampire5edSabat#L2572): Prerequisite: Mask of a Thousand Faces
+- [L2582](Vampire5edSabat#L2582): Cost: One Rouse Check
+- [L2583](Vampire5edSabat#L2583): Dice Pool: Manipulation + Obfuscate vs. Charisma
+- [L2613](Vampire5edSabat#L2613): Amalgam: Blood Sorcery 2
+- [L2625](Vampire5edSabat#L2625): Cost: 1 Rouse Check
+- [L2626](Vampire5edSabat#L2626): Dice Pool: Strength + Protean
+- [L2658](Vampire5edSabat#L2658): Cost: One Rouse Check, Gain one Stain
+- [L2659](Vampire5edSabat#L2659): Dice Pool: Wits + Oblivion vs. Dexterity + Wits
+- [L2693](Vampire5edSabat#L2693): Cost: One Rouse Check
+- [L2694](Vampire5edSabat#L2694): Dice Pool: None
+- [L2720](Vampire5edSabat#L2720): Cost: One or more Stains (when called to return)
+- [L2721](Vampire5edSabat#L2721): Dice Pool: None
+- [L2860](Vampire5edSabat#L2860): Prerequisite: Shadow Cast
+- [L2895](Vampire5edSabat#L2895): Prerequisite: Aura of Decay
+- [L2920](Vampire5edSabat#L2920): Prerequisite: Necrotic Touch
+- [L2964](Vampire5edSabat#L2964): Dice Pools: Stamina + Alchemy
+- [L2996](Vampire5edSabat#L2996): Dice Pools: None
+
+### NPCs e antagonistas (72)
+
+- [L1680](Vampire5edSabat#L1680): General Difficulty: 3/2
+- [L1681](Vampire5edSabat#L1681): Standard Dice Pools: Physical 5, Social 1,
+- [L1684](Vampire5edSabat#L1684): Exceptional Dice Pools: Awareness (Spotting Kindred)
+- [L1686](Vampire5edSabat#L1686): Disciplines: Potence 1
+- [L1701](Vampire5edSabat#L1701): General Difficulty: 4/3
+- [L1702](Vampire5edSabat#L1702): Standard Dice Pools: Physical 6, Social 2,
+- [L1705](Vampire5edSabat#L1705): Exceptional Dice Pools: Melee (Kukri) 8, Awareness
+- [L1707](Vampire5edSabat#L1707): Disciplines: Animalism 2, Obfuscate 2, Potence 2
+- [L1718](Vampire5edSabat#L1718): General Difficulty: 6/4
+- [L1719](Vampire5edSabat#L1719): Standard Dice Pools: Physical 8, Social 3,
+- [L1723](Vampire5edSabat#L1723): Exceptional Dice Pools: Brawl (Grapple) 10, Melee
+- [L1725](Vampire5edSabat#L1725): Disciplines: Celerity 4, Potence 3, Blood Sorcery 3,
+- [L1818](Vampire5edSabat#L1818): General Difficulty: 3/2
+- [L1819](Vampire5edSabat#L1819): Standard Dice Pools: Physical 3, Social 5,
+- [L1822](Vampire5edSabat#L1822): Exceptional Dice Pools: Subterfuge (Entrapment)
+- [L1824](Vampire5edSabat#L1824): Disciplines: Presence 1
+- [L1847](Vampire5edSabat#L1847): General Difficulty: 4/3
+- [L1848](Vampire5edSabat#L1848): Standard Dice Pools: Physical 3, Social 5,
+- [L1851](Vampire5edSabat#L1851): Exceptional Dice Pools: Persuasion 8, Insight
+- [L1854](Vampire5edSabat#L1854): Disciplines: Auspex 3, Presence 4, Protean 2
+- [L1873](Vampire5edSabat#L1873): General Difficulty: 5/3
+- [L1874](Vampire5edSabat#L1874): Standard Dice Pools: Physical 4, Social 7, Mental 5
+- [L1876](Vampire5edSabat#L1876): Exceptional Dice Pools: Performance (Acting like
+- [L1878](Vampire5edSabat#L1878): Disciplines: Dominate 4, Protean 4, Animalism 3
+- [L1958](Vampire5edSabat#L1958): General Difficulty: 3/2
+- [L1959](Vampire5edSabat#L1959): Standard Dice Pools: Physical 2, Social 3,
+- [L1962](Vampire5edSabat#L1962): Exceptional Dice Pools: Subterfuge (Bonded
+- [L1964](Vampire5edSabat#L1964): Disciplines: Obfuscate 1
+- [L1984](Vampire5edSabat#L1984): General Difficulty: 4/3
+- [L1985](Vampire5edSabat#L1985): Standard Dice Pools: Physical 3, Social 3,
+- [L1988](Vampire5edSabat#L1988): Exceptional Dice Pools: Persuasion (Agitate) 7,
+- [L1991](Vampire5edSabat#L1991): Disciplines: Auspex 3, Fortitude 1, Oblivion 4
+- [L2010](Vampire5edSabat#L2010): General Difficulty: 5/3
+- [L2011](Vampire5edSabat#L2011): Standard Dice Pools: Physical 3, Social 5,
+- [L2014](Vampire5edSabat#L2014): Exceptional Dice Pools: Crafting (Living flesh) 9,
+- [L2016](Vampire5edSabat#L2016): Disciplines: Dominate 4, Protean 4, Animalism 2,
+- [L2105](Vampire5edSabat#L2105): General Difficulty: 2
+- [L2106](Vampire5edSabat#L2106): Standard Dice Pools: Physical 3, Social 4,
+- [L2109](Vampire5edSabat#L2109): Exceptional Dice Pools: Etiquette (Elysium) 6,
+- [L2111](Vampire5edSabat#L2111): Disciplines: Fortitude 1
+- [L2135](Vampire5edSabat#L2135): General Difficulty: 4/3
+- [L2136](Vampire5edSabat#L2136): Standard Dice Pools: Physical 5, Social 4,
+- [L2142](Vampire5edSabat#L2142): Exceptional Dice Pools: Firearms (Submachine
+- [L2145](Vampire5edSabat#L2145): Disciplines: Dominate 3, Fortitude 3, Auspex 2
+- [L2166](Vampire5edSabat#L2166): General Difficulty: 5/4
+- [L2167](Vampire5edSabat#L2167): Standard Dice Pools: Physical 6, Social 6,
+- [L2170](Vampire5edSabat#L2170): Exceptional Dice Pools: Melee (Cavalry saber) 9,
+- [L2172](Vampire5edSabat#L2172): Disciplines: Dominate 5, Potence 5, Presence 3
+- [L2197](Vampire5edSabat#L2197): General Difficulty: 3
+- [L2198](Vampire5edSabat#L2198): Standard Dice Pools: Physical 4, Social 4,
+- [L2201](Vampire5edSabat#L2201): Exceptional Dice Pools: Brawl 6, Streetwise 6,
+- [L2203](Vampire5edSabat#L2203): Disciplines: Celerity 2, Potence 2, Presence 1
+- [L2219](Vampire5edSabat#L2219): General Difficulty: 3/2
+- [L2220](Vampire5edSabat#L2220): Standard Dice Pools: Physical 4, Social 4,
+- [L2223](Vampire5edSabat#L2223): Exceptional Dice Pools: Firearms 5, Stealth 5,
+- [L2228](Vampire5edSabat#L2228): Disciplines: Fortitude 2, Thin-Blood Alchemy 3
+- [L2258](Vampire5edSabat#L2258): General Difficulty: 3
+- [L2259](Vampire5edSabat#L2259): Standard Dice Pools: Physical 5, Social 1,
+- [L2262](Vampire5edSabat#L2262): Exceptional Dice Pools: Brawl 6
+- [L2263](Vampire5edSabat#L2263): Disciplines: Potence 2
+- [L2287](Vampire5edSabat#L2287): General Difficulty: 4/2
+- [L2288](Vampire5edSabat#L2288): Standard Dice Pools: Physical 2(6), Social 3(1),
+- [L2291](Vampire5edSabat#L2291): Exceptional Dice Pools: Brawl (Spectral Blow): 8,
+- [L2294](Vampire5edSabat#L2294): Disciplines: Equivalent of Potence 3 and F
+- [L2358](Vampire5edSabat#L2358): General Difficulty: 3/2
+- [L2359](Vampire5edSabat#L2359): Standard Dice Pools: Physical 5, Social 3,
+- [L2362](Vampire5edSabat#L2362): Exceptional Dice Pools: Brawl 6, Stealth (Hide in
+- [L2364](Vampire5edSabat#L2364): Disciplines: Protean 2
+- [L2393](Vampire5edSabat#L2393): General Difficulty: 5/3
+- [L2394](Vampire5edSabat#L2394): Standard Dice Pools: Physical 9, Social 0, Mental 4
+- [L2396](Vampire5edSabat#L2396): Exceptional Dice Pools: Brawl 12, Intimidation 10
+- [L2397](Vampire5edSabat#L2397): Disciplines: Potence 3, Fortitude 2, Protean 2
+
+### vantagens, ritos e equipamento (3)
+
+- [L2734](Vampire5edSabat#L2734): Rituals
+- [L2857](Vampire5edSabat#L2857): Ceremonies
+- [L2947](Vampire5edSabat#L2947): Thin-Blood Alchemy
+
+## Vampire5edSecondInquisition
+
+V5 · publisher · 10930 linhas · SHA-256 `41929423c10bf2792557f803b74d07605a3350c8f6ce03dc53ce45691d16281a`
+
+### criação e progressão (2)
+
+- [L3224](Vampire5edSecondInquisition#L3224): ways to organize themselves. When creating an
+- [L7162](Vampire5edSecondInquisition#L7162): dot: creating a news story that makes them more
+
+### identidade e narrativa (0)
+
+
+### poderes e requisitos (0)
+
+
+### NPCs e antagonistas (251)
+
+- [L490](Vampire5edSecondInquisition#L490): GENERAL DIFFICULTIES
+- [L531](Vampire5edSecondInquisition#L531): General Difficulty: 4/2
+- [L532](Vampire5edSecondInquisition#L532): Standard Dice Pools: Physical 3, Social
+- [L535](Vampire5edSecondInquisition#L535): Exceptional Dice Pools: Firearms 5,
+- [L563](Vampire5edSecondInquisition#L563): General Difficulty: 3/2
+- [L564](Vampire5edSecondInquisition#L564): Standard Dice Pools: Physical 3, Social
+- [L567](Vampire5edSecondInquisition#L567): Exceptional Dice Pools: Firearms 6,
+- [L602](Vampire5edSecondInquisition#L602): General Difficulty: 3/2
+- [L603](Vampire5edSecondInquisition#L603): Standard Dice Pools: Physical 4, Social
+- [L606](Vampire5edSecondInquisition#L606): Exceptional Dice Pools: Awareness 6, Etiquette
+- [L627](Vampire5edSecondInquisition#L627): General Difficulty: 4/2
+- [L628](Vampire5edSecondInquisition#L628): Standard Dice Pools: Physical 4, Social
+- [L631](Vampire5edSecondInquisition#L631): Exceptional Dice Pools: Persuasion 8, Stealth 8
+- [L667](Vampire5edSecondInquisition#L667): General Difficulty: 4/2
+- [L668](Vampire5edSecondInquisition#L668): Standard Dice Pools: Physical 4, Social
+- [L671](Vampire5edSecondInquisition#L671): Exceptional Dice Pools: Academics 7, Medicine
+- [L710](Vampire5edSecondInquisition#L710): General Difficulty: 4/3
+- [L711](Vampire5edSecondInquisition#L711): Standard Dice Pools: Physical 6, Social
+- [L714](Vampire5edSecondInquisition#L714): Exceptional Dice Pools: Brawl 8, Stealth 7,
+- [L717](Vampire5edSecondInquisition#L717): Disciplines: Animalism 1, Celerity 2, Potence 2
+- [L739](Vampire5edSecondInquisition#L739): General Difficulty: 4/2
+- [L740](Vampire5edSecondInquisition#L740): Standard Dice Pools: Physical 4, Social
+- [L743](Vampire5edSecondInquisition#L743): Exceptional Dice Pools: relevant Psychic
+- [L779](Vampire5edSecondInquisition#L779): General Difficulty: 4/3
+- [L780](Vampire5edSecondInquisition#L780): Standard Dice Pools: Physical 5, Social
+- [L783](Vampire5edSecondInquisition#L783): Exceptional Dice Pools: Etiquette 8, Persuasion
+- [L823](Vampire5edSecondInquisition#L823): General Difficulty: 3/2
+- [L824](Vampire5edSecondInquisition#L824): Standard Dice Pools: Physical 4, Social
+- [L827](Vampire5edSecondInquisition#L827): Exceptional Dice Pools: Finance (Real Estate) 7,
+- [L862](Vampire5edSecondInquisition#L862): General Difficulty: 3/2
+- [L863](Vampire5edSecondInquisition#L863): Standard Dice Pools: Physical 4, Social
+- [L866](Vampire5edSecondInquisition#L866): Exceptional Dice Pools: Investigation 7, Politics
+- [L890](Vampire5edSecondInquisition#L890): General Difficulty: 2/1
+- [L891](Vampire5edSecondInquisition#L891): Standard Dice Pools: Physical 3, Social
+- [L894](Vampire5edSecondInquisition#L894): Exceptional Dice Pools: Larceny 5, Medicine 5,
+- [L929](Vampire5edSecondInquisition#L929): General Difficulty: 3/1
+- [L931](Vampire5edSecondInquisition#L931): Standard Dice Pools: Physical 3, Social
+- [L934](Vampire5edSecondInquisition#L934): Exceptional Dice Pools: Subterfuge 7, Insight
+- [L958](Vampire5edSecondInquisition#L958): General Difficulty: 4/1
+- [L959](Vampire5edSecondInquisition#L959): Standard Dice Pools: Physical 3, Social
+- [L962](Vampire5edSecondInquisition#L962): Exceptional Dice Pools: Subterfuge 7, Insight
+- [L1003](Vampire5edSecondInquisition#L1003): General Difficulty: 4/2
+- [L1004](Vampire5edSecondInquisition#L1004): Standard Dice Pools: Physical 3, Social
+- [L1007](Vampire5edSecondInquisition#L1007): Exceptional Dice Pools: Etiquette 8, Finance 7,
+- [L1061](Vampire5edSecondInquisition#L1061): General Difficulty: 4/2
+- [L1062](Vampire5edSecondInquisition#L1062): Standard Dice Pools: Physical 3, Social
+- [L1065](Vampire5edSecondInquisition#L1065): Exceptional Dice Pools: Awareness 7, Etiquette
+- [L1092](Vampire5edSecondInquisition#L1092): General Difficulty: 4/1
+- [L1093](Vampire5edSecondInquisition#L1093): Standard Dice Pools: Physical 3, Social
+- [L1096](Vampire5edSecondInquisition#L1096): Exceptional Dice Pools: Insight 9, Performance
+- [L1144](Vampire5edSecondInquisition#L1144): General Difficulty: 4/2
+- [L1145](Vampire5edSecondInquisition#L1145): Standard Dice Pools: Physical 4, Social
+- [L1148](Vampire5edSecondInquisition#L1148): Exceptional Dice Pools: Insight 8, Leadership 8,
+- [L1195](Vampire5edSecondInquisition#L1195): General Difficulty: 4/2
+- [L1197](Vampire5edSecondInquisition#L1197): Standard Dice Pools: Physical 4, Social
+- [L1200](Vampire5edSecondInquisition#L1200): Exceptional Dice Pools: Athletics 6, Larceny
+- [L1217](Vampire5edSecondInquisition#L1217): General Difficulty: 4/1
+- [L1218](Vampire5edSecondInquisition#L1218): Standard Dice Pools: Physical 5, Social
+- [L1221](Vampire5edSecondInquisition#L1221): Exceptional Dice Pools: Athletics 7, Craft
+- [L1254](Vampire5edSecondInquisition#L1254): General Difficulty: 4/1
+- [L1255](Vampire5edSecondInquisition#L1255): Standard Dice Pools: Physical 3, Social
+- [L1258](Vampire5edSecondInquisition#L1258): Exceptional Dice Pools: Academics 9, Insight 7,
+- [L1294](Vampire5edSecondInquisition#L1294): General Difficulty: 4/1
+- [L1295](Vampire5edSecondInquisition#L1295): Standard Dice Pools: Physical 3, Social
+- [L1298](Vampire5edSecondInquisition#L1298): Exceptional Dice Pools: Academics 7, Finance 9,
+- [L1339](Vampire5edSecondInquisition#L1339): General Difficulty: 3/2
+- [L1340](Vampire5edSecondInquisition#L1340): Standard Dice Pools: Physical 5, Social
+- [L1343](Vampire5edSecondInquisition#L1343): Exceptional Dice Pools: Awareness 6, Firearms
+- [L1370](Vampire5edSecondInquisition#L1370): General Difficulty: 3/2
+- [L1371](Vampire5edSecondInquisition#L1371): Standard Dice Pools: Physical 6, Social
+- [L1375](Vampire5edSecondInquisition#L1375): Exceptional Dice Pools: Brawl 7, Firearms 7,
+- [L1404](Vampire5edSecondInquisition#L1404): General Difficulty: 3/2
+- [L1405](Vampire5edSecondInquisition#L1405): Standard Dice Pools: Physical 4, Social
+- [L1408](Vampire5edSecondInquisition#L1408): Exceptional Dice Pools: Academics 7, Insight 7,
+- [L1437](Vampire5edSecondInquisition#L1437): General Difficulty: 4/1
+- [L1438](Vampire5edSecondInquisition#L1438): Standard Dice Pools: Physical 3, Social
+- [L1441](Vampire5edSecondInquisition#L1441): Exceptional Dice Pools: Insight 7, Larceny 5,
+- [L1465](Vampire5edSecondInquisition#L1465): General Difficulty: 4/2
+- [L1466](Vampire5edSecondInquisition#L1466): Standard Dice Pools: Physical 4, Social
+- [L1469](Vampire5edSecondInquisition#L1469): Exceptional Dice Pools: Craft 7, Larceny 8,
+- [L1500](Vampire5edSecondInquisition#L1500): General Difficulty: 3/2
+- [L1501](Vampire5edSecondInquisition#L1501): Standard Dice Pools: Physical 4, Social
+- [L1504](Vampire5edSecondInquisition#L1504): Exceptional Dice Pools: Athletics 6, Awareness
+- [L1523](Vampire5edSecondInquisition#L1523): General Difficulty: 3/2
+- [L1524](Vampire5edSecondInquisition#L1524): Standard Dice Pools: Physical 4, Social
+- [L1527](Vampire5edSecondInquisition#L1527): Exceptional Dice Pools: Awareness 7, Larceny 7,
+- [L1549](Vampire5edSecondInquisition#L1549): General Difficulty: 4/2
+- [L1550](Vampire5edSecondInquisition#L1550): Standard Dice Pools: Physical 4, Social
+- [L1553](Vampire5edSecondInquisition#L1553): Exceptional Dice Pools: Awareness 7, Leadership
+- [L1592](Vampire5edSecondInquisition#L1592): General Difficulty: 4/2
+- [L1593](Vampire5edSecondInquisition#L1593): Standard Dice Pools: Physical 5, Social
+- [L1596](Vampire5edSecondInquisition#L1596): Exceptional Dice Pools: Craft 8, Science 8,
+- [L1629](Vampire5edSecondInquisition#L1629): General Difficulty: 4/2
+- [L1630](Vampire5edSecondInquisition#L1630): Standard Dice Pools: Physical 4, Social
+- [L1633](Vampire5edSecondInquisition#L1633): Exceptional Dice Pools: Craft 8, Science 9,
+- [L1704](Vampire5edSecondInquisition#L1704): General Difficulty: 3/2
+- [L1705](Vampire5edSecondInquisition#L1705): Standard Dice Pools: Physical 4, Social
+- [L1708](Vampire5edSecondInquisition#L1708): Exceptional Dice Pools: Athletics 6, Brawl 6,
+- [L1740](Vampire5edSecondInquisition#L1740): General Difficulty: 4/2
+- [L1741](Vampire5edSecondInquisition#L1741): Standard Dice Pools: Physical 5, Social
+- [L1744](Vampire5edSecondInquisition#L1744): Exceptional Dice Pools: Athletics 7, Craft 7,
+- [L1792](Vampire5edSecondInquisition#L1792): General Difficulty: 4/2
+- [L1793](Vampire5edSecondInquisition#L1793): Standard Dice Pools: Physical 6, Social
+- [L1796](Vampire5edSecondInquisition#L1796): Exceptional Dice Pools: Athletics (grenades) 6,
+- [L1812](Vampire5edSecondInquisition#L1812): General Difficulty: 4/2
+- [L1813](Vampire5edSecondInquisition#L1813): Standard Dice Pools: Physical 6, Social
+- [L1816](Vampire5edSecondInquisition#L1816): Exceptional Dice Pools: Athletics 6, Firearms
+- [L1835](Vampire5edSecondInquisition#L1835): General Difficulty: 4/3
+- [L1836](Vampire5edSecondInquisition#L1836): Standard Dice Pools: Physical 6, Social
+- [L1839](Vampire5edSecondInquisition#L1839): Exceptional Dice Pools: Awareness (traps) 8,
+- [L1861](Vampire5edSecondInquisition#L1861): General Difficulty: 4/3
+- [L1862](Vampire5edSecondInquisition#L1862): Standard Dice Pools: Physical 6, Social
+- [L1865](Vampire5edSecondInquisition#L1865): Exceptional Dice Pools: Awareness (traps) 9,
+- [L1908](Vampire5edSecondInquisition#L1908): General Difficulty: 4/2
+- [L1909](Vampire5edSecondInquisition#L1909): Standard Dice Pools: Physical 6, Social
+- [L1912](Vampire5edSecondInquisition#L1912): Exceptional Dice Pools: Athletics 8, Brawl 9,
+- [L1943](Vampire5edSecondInquisition#L1943): General Difficulty: 4/2
+- [L1944](Vampire5edSecondInquisition#L1944): Standard Dice Pools: Physical 4, Social
+- [L1947](Vampire5edSecondInquisition#L1947): Exceptional Dice Pools: Insight 8, Intimidation
+- [L1974](Vampire5edSecondInquisition#L1974): General Difficulty: 4/1
+- [L1975](Vampire5edSecondInquisition#L1975): Standard Dice Pools: Physical 6, Social
+- [L1978](Vampire5edSecondInquisition#L1978): Exceptional Dice Pools: Awareness 7, Brawl 7,
+- [L2017](Vampire5edSecondInquisition#L2017): General Difficulty: 4/2
+- [L2018](Vampire5edSecondInquisition#L2018): Standard Dice Pools: Physical 6, Social
+- [L2021](Vampire5edSecondInquisition#L2021): Exceptional Dice Pools: Awareness 7, Firearms
+- [L2030](Vampire5edSecondInquisition#L2030): General Difficulty: 4/2
+- [L2031](Vampire5edSecondInquisition#L2031): Standard Dice Pools: Physical 7, Social
+- [L2034](Vampire5edSecondInquisition#L2034): Exceptional Dice Pools: Athletics 8, Awareness
+- [L2051](Vampire5edSecondInquisition#L2051): General Difficulty: 4/2
+- [L2052](Vampire5edSecondInquisition#L2052): Standard Dice Pools: Physical 6, Social
+- [L2055](Vampire5edSecondInquisition#L2055): Exceptional Dice Pools: Athletics 7, Awareness
+- [L2070](Vampire5edSecondInquisition#L2070): General Difficulty: 5/2
+- [L2071](Vampire5edSecondInquisition#L2071): Standard Dice Pools: Physical 6, Social
+- [L2074](Vampire5edSecondInquisition#L2074): Exceptional Dice Pools: Athletics 7, Awareness 7,
+- [L2089](Vampire5edSecondInquisition#L2089): General Difficulty: +0/+1
+- [L2090](Vampire5edSecondInquisition#L2090): Standard Dice Pools: Physical +1
+- [L2092](Vampire5edSecondInquisition#L2092): Disciplines: Celerity 1, Potence 1 (or 2 dots of
+- [L2167](Vampire5edSecondInquisition#L2167): General Difficulty: 3/2
+- [L2168](Vampire5edSecondInquisition#L2168): Standard Dice Pools: Physical 4, Social
+- [L2171](Vampire5edSecondInquisition#L2171): Exceptional Dice Pools: Insight 7, Medicine
+- [L2219](Vampire5edSecondInquisition#L2219): General Difficulty: 4/2
+- [L2220](Vampire5edSecondInquisition#L2220): Standard Dice Pools: Physical 4, Social
+- [L2223](Vampire5edSecondInquisition#L2223): Exceptional Dice Pools: Animal Ken 8,
+- [L2272](Vampire5edSecondInquisition#L2272): General Difficulty: 3/2
+- [L2275](Vampire5edSecondInquisition#L2275): Standard Dice Pools: Physical 5, Social
+- [L2278](Vampire5edSecondInquisition#L2278): Exceptional Dice Pools: Awareness 6, Insight
+- [L2295](Vampire5edSecondInquisition#L2295): General Difficulty: 4/2
+- [L2296](Vampire5edSecondInquisition#L2296): Standard Dice Pools: Physical 5, Social
+- [L2299](Vampire5edSecondInquisition#L2299): Exceptional Dice Pools: Athletics 7, Awareness
+- [L2347](Vampire5edSecondInquisition#L2347): General Difficulty: 4/2
+- [L2348](Vampire5edSecondInquisition#L2348): Standard Dice Pools: Physical 5, Social
+- [L2351](Vampire5edSecondInquisition#L2351): Exceptional Dice Pools: Athletics 7, Awareness
+- [L2386](Vampire5edSecondInquisition#L2386): General Difficulty: 3/2
+- [L2387](Vampire5edSecondInquisition#L2387): Standard Dice Pools: Physical 3, Social
+- [L2390](Vampire5edSecondInquisition#L2390): Exceptional Dice Pools: Awareness 7, Occult
+- [L2440](Vampire5edSecondInquisition#L2440): General Difficulty: 5/2
+- [L2441](Vampire5edSecondInquisition#L2441): Standard Dice Pools: Physical 4, Social
+- [L2444](Vampire5edSecondInquisition#L2444): Exceptional Dice Pools: Awareness 9,
+- [L2504](Vampire5edSecondInquisition#L2504): General Difficulty: 4/2
+- [L2505](Vampire5edSecondInquisition#L2505): Standard Dice Pools: Physical 5, Social
+- [L2508](Vampire5edSecondInquisition#L2508): Exceptional Dice Pools: Awareness 8, Science
+- [L2543](Vampire5edSecondInquisition#L2543): General Difficulty: 4/2
+- [L2544](Vampire5edSecondInquisition#L2544): Standard Dice Pools: Physical 5, Social
+- [L2547](Vampire5edSecondInquisition#L2547): Exceptional Dice Pools: Awareness 8, Science
+- [L2584](Vampire5edSecondInquisition#L2584): General Difficulty: 4/2
+- [L2585](Vampire5edSecondInquisition#L2585): Standard Dice Pools: Physical 4, Social
+- [L2588](Vampire5edSecondInquisition#L2588): Exceptional Dice Pools: Academics 7, Awareness
+- [L2736](Vampire5edSecondInquisition#L2736): General Difficulty: 4/3
+- [L2737](Vampire5edSecondInquisition#L2737): Standard Dice Pools: Physical 4, Social
+- [L2740](Vampire5edSecondInquisition#L2740): Exceptional Dice Pools: Medicine (Pharmacy) or
+- [L2743](Vampire5edSecondInquisition#L2743): Disciplines: Thin-Blood Alchemy 4, one dot in
+- [L2855](Vampire5edSecondInquisition#L2855): General Difficulty: 5/2
+- [L2856](Vampire5edSecondInquisition#L2856): Standard Dice Pools: Physical 6, Social
+- [L2859](Vampire5edSecondInquisition#L2859): Exceptional Dice Pools: Brawl 8, Intimidation 8,
+- [L2862](Vampire5edSecondInquisition#L2862): Disciplines: Auspex 1, Celerity 2, Potence 2
+- [L2900](Vampire5edSecondInquisition#L2900): General Difficulty: 6/2
+- [L2901](Vampire5edSecondInquisition#L2901): Standard Dice Pools: Physical 7, Social
+- [L2904](Vampire5edSecondInquisition#L2904): Exceptional Dice Pools: Brawl 9, Intimidation 8,
+- [L2906](Vampire5edSecondInquisition#L2906): Disciplines: Dominate 2, Fortitude 3, Potence
+- [L2941](Vampire5edSecondInquisition#L2941): General Difficulty: 5/3
+- [L2942](Vampire5edSecondInquisition#L2942): Standard Dice Pools: Physical 5, Social
+- [L2945](Vampire5edSecondInquisition#L2945): Exceptional Dice Pools: Melee 7, Stealth 7
+- [L2947](Vampire5edSecondInquisition#L2947): Disciplines: Auspex 3, Dominate 3, Obfuscate 2
+- [L2983](Vampire5edSecondInquisition#L2983): General Difficulty: 4/3
+- [L2984](Vampire5edSecondInquisition#L2984): Standard Dice Pools: Physical 4, Social
+- [L2987](Vampire5edSecondInquisition#L2987): Exceptional Dice Pools: One combat skill at 6,
+- [L2992](Vampire5edSecondInquisition#L2992): Disciplines: Potence 1 or Auspex 1; Thin-
+- [L3016](Vampire5edSecondInquisition#L3016): General Difficulty: 4/3
+- [L3017](Vampire5edSecondInquisition#L3017): Standard Dice Pools: Physical 4, Social
+- [L3020](Vampire5edSecondInquisition#L3020): Exceptional Dice Pools: Etiquette (Kindred) 8,
+- [L3041](Vampire5edSecondInquisition#L3041): General Difficulty: 5/3
+- [L3042](Vampire5edSecondInquisition#L3042): Standard Dice Pools: Physical 6, Social
+- [L3045](Vampire5edSecondInquisition#L3045): Exceptional Dice Pools: Athletics 7, Awareness
+- [L3050](Vampire5edSecondInquisition#L3050): Disciplines: Celerity or Potence 1
+- [L3075](Vampire5edSecondInquisition#L3075): General Difficulty: 3/2
+- [L3076](Vampire5edSecondInquisition#L3076): Standard Dice Pools: Physical 6, Social
+- [L3079](Vampire5edSecondInquisition#L3079): Exceptional Dice Pools: Brawl 7, Drive
+- [L3086](Vampire5edSecondInquisition#L3086): Disciplines: Potence 1, or another dot of the
+- [L4279](Vampire5edSecondInquisition#L4279): Disciplines: Auspex 2, Fortitude 1, Presence 2
+- [L7557](Vampire5edSecondInquisition#L7557): General Difficulty: 4/2
+- [L7558](Vampire5edSecondInquisition#L7558): Standard Dice Pools: Physical 4, Social
+- [L7561](Vampire5edSecondInquisition#L7561): Exceptional Dice Pools: Awareness 8, Firearms
+- [L7697](Vampire5edSecondInquisition#L7697): General Difficulty: 4/2
+- [L7698](Vampire5edSecondInquisition#L7698): Standard Dice Pools: Physical 8, Social
+- [L7701](Vampire5edSecondInquisition#L7701): Exceptional Dice Pools: Athletics (swim) 8,
+- [L7780](Vampire5edSecondInquisition#L7780): General Difficulty: 3/2
+- [L7781](Vampire5edSecondInquisition#L7781): Standard Dice Pools: Physical 5, Social
+- [L7784](Vampire5edSecondInquisition#L7784): Exceptional Dice Pools: Firearms 7, Insight 7,
+- [L7949](Vampire5edSecondInquisition#L7949): General Difficulty: 3/1
+- [L7950](Vampire5edSecondInquisition#L7950): Standard Dice Pools: Physical 4, Social
+- [L7953](Vampire5edSecondInquisition#L7953): Exceptional Dice Pools: Awareness 8,
+- [L8040](Vampire5edSecondInquisition#L8040): General Difficulty: 4/2
+- [L8041](Vampire5edSecondInquisition#L8041): Standard Dice Pools: Physical 6, Social
+- [L8044](Vampire5edSecondInquisition#L8044): Exceptional Dice Pools: Awareness 8, Firearms
+- [L8155](Vampire5edSecondInquisition#L8155): General Difficulty: 3/2
+- [L8156](Vampire5edSecondInquisition#L8156): Standard Dice Pools: Physical 5, Social
+- [L8159](Vampire5edSecondInquisition#L8159): Exceptional Dice Pools: Larceny 8, Firearms
+- [L8217](Vampire5edSecondInquisition#L8217): General Difficulty: 5/3
+- [L8218](Vampire5edSecondInquisition#L8218): Standard Dice Pools: Physical 7, Social
+- [L8221](Vampire5edSecondInquisition#L8221): Exceptional Dice Pools: Awareness 9, Brawl 9,
+- [L8225](Vampire5edSecondInquisition#L8225): Disciplines: Fortitude 1 or one dot in any other
+- [L8414](Vampire5edSecondInquisition#L8414): General Difficulty: 3/2
+- [L8415](Vampire5edSecondInquisition#L8415): Standard Dice Pools: Physical 6, Social
+- [L8418](Vampire5edSecondInquisition#L8418): Exceptional Dice Pools: Leadership 6, Occult
+- [L8555](Vampire5edSecondInquisition#L8555): General Difficulty: 3/1
+- [L8556](Vampire5edSecondInquisition#L8556): Standard Dice Pools: Physical 3, Social
+- [L8559](Vampire5edSecondInquisition#L8559): Exceptional Dice Pools: Insight 8, Larceny 5,
+- [L8772](Vampire5edSecondInquisition#L8772): General Difficulty: 4/3
+- [L8773](Vampire5edSecondInquisition#L8773): Standard Dice Pools: Physical 6, Social
+- [L8776](Vampire5edSecondInquisition#L8776): Exceptional Dice Pools: Insight 8, Intimidation
+- [L8892](Vampire5edSecondInquisition#L8892): General Difficulty: 3/2
+- [L8893](Vampire5edSecondInquisition#L8893): Standard Dice Pools: Physical 6, Social
+- [L8896](Vampire5edSecondInquisition#L8896): Exceptional Dice Pools: Melee 8 (Shortsword),
+- [L8906](Vampire5edSecondInquisition#L8906): General Difficulty: 4/2
+- [L8907](Vampire5edSecondInquisition#L8907): Standard Dice Pools: Physical 5, Social
+- [L8910](Vampire5edSecondInquisition#L8910): Exceptional Dice Pools: Firearms 7, Leadership
+- [L8995](Vampire5edSecondInquisition#L8995): General Difficulty: 4/1
+- [L8996](Vampire5edSecondInquisition#L8996): Standard Dice Pools: Physical 3, Social
+- [L8999](Vampire5edSecondInquisition#L8999): Exceptional Dice Pools: Etiquette 8, Persuasion
+- [L9266](Vampire5edSecondInquisition#L9266): General Difficulty: 3/2
+- [L9267](Vampire5edSecondInquisition#L9267): Standard Dice Pools: Physical 5, Social
+- [L9270](Vampire5edSecondInquisition#L9270): Exceptional Dice Pools: Brawl 7, Firearms 7,
+- [L9283](Vampire5edSecondInquisition#L9283): General Difficulty: 3/3
+- [L9284](Vampire5edSecondInquisition#L9284): Standard Dice Pools: Physical 5, Social
+- [L9287](Vampire5edSecondInquisition#L9287): Exceptional Dice Pools: Academics 7, Firearms
+- [L9380](Vampire5edSecondInquisition#L9380): General Difficulty: 3/2
+- [L9383](Vampire5edSecondInquisition#L9383): Standard Dice Pools: Physical 5, Social
+- [L9386](Vampire5edSecondInquisition#L9386): Exceptional Dice Pools: Brawl 7, Firearms 7,
+- [L9476](Vampire5edSecondInquisition#L9476): General Difficulty: 4/2
+- [L9477](Vampire5edSecondInquisition#L9477): Standard Dice Pools: Physical N/A, Social
+- [L9480](Vampire5edSecondInquisition#L9480): Exceptional Dice Pools: Academics 8,
+
+### vantagens, ritos e equipamento (0)
+
+
+## Vampiro5edCompaniomptbr
+
+V5 · publisher · 3893 linhas · SHA-256 `35069f3ce8b8c64e441df9d74f5b3b3f0c61136e1755006f0f07e25cfdf09ce2`
+
+### criação e progressão (0)
+
+
+### identidade e narrativa (0)
+
+
+### poderes e requisitos (0)
+
+
+### NPCs e antagonistas (0)
+
+
+### vantagens, ritos e equipamento (0)
+
+
+## Vapire5edCamarilla
+
+V5 · publisher · 12379 linhas · SHA-256 `903945aa3147f4b4ac645b391dcb19955a2d86e0b08fd717c943d76216ca7b9f`
+
+### criação e progressão (1)
+
+- [L1582](Vapire5edCamarilla#L1582): themselves as the Brahman’s deities, creating an intriguing
+
+### identidade e narrativa (1)
+
+- [L10335](Vapire5edCamarilla#L10335): Banu Haqim Archetypes
+
+### poderes e requisitos (0)
+
+
+### NPCs e antagonistas (0)
+
+
+### vantagens, ritos e equipamento (8)
+
+- [L10436](Vapire5edCamarilla#L10436): Rituals
+- [L11549](Vapire5edCamarilla#L11549): LORESHEET
+- [L11634](Vapire5edCamarilla#L11634): LORESHEET
+- [L11712](Vapire5edCamarilla#L11712): LORESHEET
+- [L11806](Vapire5edCamarilla#L11806): LORESHEET
+- [L11900](Vapire5edCamarilla#L11900): LORESHEET
+- [L11978](Vapire5edCamarilla#L11978): LORESHEET
+- [L12058](Vapire5edCamarilla#L12058): LORESHEET
+
+## Vapire5edenglish
+
+V5 · publisher · 31304 linhas · SHA-256 `2874009b82a6f0e8f62af1791e943fe7e5a4c8f011a0ad857397c4bc5db86a9c`
+
+### criação e progressão (38)
+
+- [L140](Vapire5edenglish#L140): CHARACTER CREATION 135
+- [L3231](Vapire5edenglish#L3231): during character creation ■
+- [L4320](Vapire5edenglish#L4320): during character creation. The Storyteller
+- [L4373](Vapire5edenglish#L4373): she is creating a worthy member for her clan.
+- [L4873](Vapire5edenglish#L4873): Challenging (locating the source of a whisper, creating a
+- [L5836](Vapire5edenglish#L5836): fellow players and the Storyteller than creating a professional
+- [L5930](Vapire5edenglish#L5930): Character Creation
+- [L6021](Vapire5edenglish#L6021): Pick one Skill distribution.
+- [L6028](Vapire5edenglish#L6028): summary Character Creation
+- [L6075](Vapire5edenglish#L6075): TRAIT COSTS: EXPERIENCE
+- [L6423](Vapire5edenglish#L6423): creating a thin-blood character
+- [L6426](Vapire5edenglish#L6426): character creation. Thin-bloods
+- [L6538](Vapire5edenglish#L6538): the better or worse during character creation if you
+- [L6585](Vapire5edenglish#L6585): of character creation, but the Storyteller should let
+- [L6834](Vapire5edenglish#L6834): Pick one Skill distribution:
+- [L6893](Vapire5edenglish#L6893): want to have character creation
+- [L7044](Vapire5edenglish#L7044): during character creation. (A
+- [L7068](Vapire5edenglish#L7068): In this stage of character creation,
+- [L7125](Vapire5edenglish#L7125): character creation. Add any new
+- [L7171](Vapire5edenglish#L7171): to any rules. When creating a
+- [L7221](Vapire5edenglish#L7221): TRAIT COSTS: EXPERIENCE
+- [L7247](Vapire5edenglish#L7247): in that Trait. The Trait Costs
+- [L7771](Vapire5edenglish#L7771): during character creation or with
+- [L7904](Vapire5edenglish#L7904): Characters receive one free specialty during character creation to apply
+- [L9452](Vapire5edenglish#L9452): character creation. If something
+- [L9609](Vapire5edenglish#L9609): be selected during character creation
+- [L14144](Vapire5edenglish#L14144): human. This penalty also applies to creating art
+- [L14491](Vapire5edenglish#L14491): Discipline either at character creation
+- [L14512](Vapire5edenglish#L14512): At character creation, Martha has
+- [L17203](Vapire5edenglish#L17203): foot into the ground, creating a
+- [L23506](Vapire5edenglish#L23506): collaborate in creating a shared experience.
+- [L23572](Vapire5edenglish#L23572): During character creation you
+- [L23623](Vapire5edenglish#L23623): before character creation begins, it
+- [L23647](Vapire5edenglish#L23647): As you run character creation,
+- [L23654](Vapire5edenglish#L23654): After character creation is done,
+- [L26719](Vapire5edenglish#L26719): into another liquid, creating a
+- [L28809](Vapire5edenglish#L28809): Character Creation 135
+- [L31226](Vapire5edenglish#L31226): ■■ “Creating a Culture of Trust Through Safety and Calibration
+
+### identidade e narrativa (10)
+
+- [L2193](Vapire5edenglish#L2193): clan: a group of vampires who
+- [L2595](Vapire5edenglish#L2595): Brujah Archetypes
+- [L2815](Vapire5edenglish#L2815): Gangrel Archetypes
+- [L3091](Vapire5edenglish#L3091): Malkavian Archetypes
+- [L3317](Vapire5edenglish#L3317): Nosferatu Archetypes
+- [L3581](Vapire5edenglish#L3581): Toreador Archetypes
+- [L3895](Vapire5edenglish#L3895): Tremere Archetypes
+- [L4080](Vapire5edenglish#L4080): Ventrue Archetypes
+- [L4237](Vapire5edenglish#L4237): Caitiff Archetypes
+- [L4403](Vapire5edenglish#L4403): Thin-Blood Archetypes
+
+### poderes e requisitos (4)
+
+- [L5406](Vapire5edenglish#L5406): dice pools: Physical pools from Impaired
+- [L22459](Vapire5edenglish#L22459): Dice Pool: Intelligence + Streetwise
+- [L22478](Vapire5edenglish#L22478): Dice Pool: Intelligence + Craft
+- [L22502](Vapire5edenglish#L22502): Dice Pool: Roll to encode
+
+### NPCs e antagonistas (39)
+
+- [L13462](Vapire5edenglish#L13462): disciplines: with a combination of feeding from
+- [L25775](Vapire5edenglish#L25775): Standard Dice Pools: Physical
+- [L25779](Vapire5edenglish#L25779): Exceptional Dice Pools:
+- [L25797](Vapire5edenglish#L25797): Standard Dice Pools: Physical 4,
+- [L25801](Vapire5edenglish#L25801): Exceptional Dice Pools: Brawl 5,
+- [L25816](Vapire5edenglish#L25816): Standard Dice Pools: Physical 3,
+- [L25820](Vapire5edenglish#L25820): Exceptional Dice Pools: Academics
+- [L25838](Vapire5edenglish#L25838): Standard Dice Pools: Physical 4,
+- [L25842](Vapire5edenglish#L25842): Exceptional Dice Pools: Academics
+- [L25870](Vapire5edenglish#L25870): Standard Dice Pools: Physical 5,
+- [L25874](Vapire5edenglish#L25874): Exceptional Dice Pools: Academics
+- [L25886](Vapire5edenglish#L25886): Standard Dice Pools: Physical 6,
+- [L25890](Vapire5edenglish#L25890): Exceptional Dice Pools: Athletics
+- [L25913](Vapire5edenglish#L25913): Standard Dice Pools: Physical 4,
+- [L25917](Vapire5edenglish#L25917): Exceptional Dice Pools: Awareness
+- [L25920](Vapire5edenglish#L25920): Disciplines: One Discipline at 1
+- [L25946](Vapire5edenglish#L25946): Standard Dice Pools: Physical 3, Social 1, Mental 1
+- [L25948](Vapire5edenglish#L25948): Exceptional Dice Pools: Awareness 7, Stealth 5
+- [L25953](Vapire5edenglish#L25953): Standard Dice Pools: Physical 7, Social 1, Mental 1
+- [L25955](Vapire5edenglish#L25955): Exceptional Dice Pools: Awareness 3, Intimidation 6
+- [L25962](Vapire5edenglish#L25962): Standard Dice Pools: Physical 4, Social 1, Mental 1
+- [L25964](Vapire5edenglish#L25964): Exceptional Dice Pools: Awareness 6, Brawl 5,
+- [L25971](Vapire5edenglish#L25971): Standard Dice Pools: Physical 5, Social 1, Mental 1
+- [L25973](Vapire5edenglish#L25973): Exceptional Dice Pools: Awareness 4, Brawl 6, Intimidation
+- [L25980](Vapire5edenglish#L25980): Standard Dice Pools: Physical 6, Social 1, Mental 1
+- [L25982](Vapire5edenglish#L25982): Exceptional Dice Pools: Awareness 4
+- [L25990](Vapire5edenglish#L25990): Standard Dice Pools: Physical 3, Social 1, Mental 1
+- [L25992](Vapire5edenglish#L25992): Exceptional Dice Pools: Awareness 5, Brawl 4,
+- [L25999](Vapire5edenglish#L25999): Standard Dice Pools: Physical 6, Social 1, Mental 1
+- [L26001](Vapire5edenglish#L26001): Exceptional Dice Pools: Awareness 3, Intimidation 5,
+- [L26039](Vapire5edenglish#L26039): Disciplines: Auspex 3, Celerity 2, Fortitude 1, Presence 3
+- [L26061](Vapire5edenglish#L26061): Disciplines: Animalism 2, Celerity 2, Fortitude 3,
+- [L26099](Vapire5edenglish#L26099): Disciplines: Auspex 2, Dominate 2, Fortitude 3, Presence
+- [L26120](Vapire5edenglish#L26120): Disciplines: Animalism 2, Celerity 3, Obfuscate 3,
+- [L26141](Vapire5edenglish#L26141): Disciplines: Animalism 3, Celerity 4, Fortitude 3,
+- [L26219](Vapire5edenglish#L26219): Disciplines: Animalism 5, Auspex
+- [L26260](Vapire5edenglish#L26260): Disciplines: Auspex 4, Blood Sorcery
+- [L26286](Vapire5edenglish#L26286): Disciplines: Celerity 1, Dominate
+- [L26320](Vapire5edenglish#L26320): Disciplines: Auspex 4, Celerity 2,
+
+### vantagens, ritos e equipamento (34)
+
+- [L7237](Vapire5edenglish#L7237): Ritual
+- [L7397](Vapire5edenglish#L7397): BACKGROUNDS
+- [L9239](Vapire5edenglish#L9239): Backgrounds
+- [L9241](Vapire5edenglish#L9241): Flaws
+- [L9333](Vapire5edenglish#L9333): Merits
+- [L9795](Vapire5edenglish#L9795): Backgrounds
+- [L10348](Vapire5edenglish#L10348): Loresheet
+- [L10872](Vapire5edenglish#L10872): Backgrounds
+- [L18344](Vapire5edenglish#L18344): Rituals
+- [L26725](Vapire5edenglish#L26725): LORESHEET
+- [L26803](Vapire5edenglish#L26803): LORESHEET
+- [L26874](Vapire5edenglish#L26874): LORESHEET
+- [L26941](Vapire5edenglish#L26941): LORESHEET
+- [L27029](Vapire5edenglish#L27029): LORESHEET
+- [L27110](Vapire5edenglish#L27110): LORESHEET
+- [L27210](Vapire5edenglish#L27210): LORESHEET
+- [L27275](Vapire5edenglish#L27275): LORESHEET
+- [L27358](Vapire5edenglish#L27358): LORESHEET
+- [L27428](Vapire5edenglish#L27428): LORESHEET
+- [L27495](Vapire5edenglish#L27495): LORESHEET
+- [L27577](Vapire5edenglish#L27577): LORESHEET
+- [L27676](Vapire5edenglish#L27676): LORESHEET
+- [L27758](Vapire5edenglish#L27758): LORESHEET
+- [L27831](Vapire5edenglish#L27831): LORESHEET
+- [L27926](Vapire5edenglish#L27926): LORESHEET
+- [L28006](Vapire5edenglish#L28006): LORESHEET
+- [L28075](Vapire5edenglish#L28075): LORESHEET
+- [L28146](Vapire5edenglish#L28146): LORESHEET
+- [L28231](Vapire5edenglish#L28231): LORESHEET
+- [L28300](Vapire5edenglish#L28300): LORESHEET
+- [L28381](Vapire5edenglish#L28381): LORESHEET
+- [L28467](Vapire5edenglish#L28467): LORESHEET
+- [L28561](Vapire5edenglish#L28561): LORESHEET
+- [L28627](Vapire5edenglish#L28627): LORESHEET
+
+## Werewolf5ed
+
+W5 · publisher · 23704 linhas · SHA-256 `095e3b98f2ec9ecad8faa0935bec34c3f26eb3a84cb77a7e855191c9ea5f283a`
+
+### criação e progressão (21)
+
+- [L1844](Werewolf5ed#L1844): in overdrive, creating a world of glass and networks, rules
+- [L5249](Werewolf5ed#L5249): Character Creation Summary
+- [L5293](Werewolf5ed#L5293): A good question to ask when creating a character
+- [L5303](Werewolf5ed#L5303): Creating a Garou descended from wolves does not
+- [L5367](Werewolf5ed#L5367): At character creation, take one Attribute at 4; three
+- [L5552](Werewolf5ed#L5552): during character creation, except as a result of increasing
+- [L5565](Werewolf5ed#L5565): either during character creation or with experience
+- [L5601](Werewolf5ed#L5601): At character creation, pick one Skill distribution.
+- [L6950](Werewolf5ed#L6950): During character creation, the player allocates two
+- [L7513](Werewolf5ed#L7513): better or worse during character creation if you think of
+- [L7835](Werewolf5ed#L7835): whisper, creating a memorable piece
+- [L12001](Werewolf5ed#L12001): The Garou slams their hands together, creating a mighty
+- [L12851](Werewolf5ed#L12851): these items during character creation.) Storytellers are
+- [L13914](Werewolf5ed#L13914): 0 Character creation and session zero (build Relationship
+- [L14007](Werewolf5ed#L14007): perform character creation, with attention paid to each
+- [L18108](Werewolf5ed#L18108): by creating a moonlight path that acts as a shortcut
+- [L21261](Werewolf5ed#L21261): It stirred, creating a “spirit-quake” that even beings on
+- [L22670](Werewolf5ed#L22670): you’re also creating a better play environment for
+- [L22893](Werewolf5ed#L22893): You can do the same if you wish, creating a Werewolf
+- [L22932](Werewolf5ed#L22932): 0 “Creating a Culture of Trust Through Safety and
+- [L23073](Werewolf5ed#L23073): Character Creation Summary 83
+
+### identidade e narrativa (15)
+
+- [L801](Werewolf5ed#L801): Auspice: The moon-sign under which one experiences
+- [L868](Werewolf5ed#L868): Tribe: A faction of werewolves pledged in service to a particular
+- [L3680](Werewolf5ed#L3680): Archetypes
+- [L3799](Werewolf5ed#L3799): Black Fury Archetypes
+- [L3940](Werewolf5ed#L3940): Bone Gnawer Archetypes
+- [L4069](Werewolf5ed#L4069): Children of Gaia Archetypes
+- [L4190](Werewolf5ed#L4190): Galestalker Archetypes
+- [L4332](Werewolf5ed#L4332): Ghost Council Archetypes
+- [L4473](Werewolf5ed#L4473): Glass Walker Archetypes
+- [L4613](Werewolf5ed#L4613): Hart Warden Archetypes
+- [L4745](Werewolf5ed#L4745): Red Talon Archetypes
+- [L4888](Werewolf5ed#L4888): Shadow Lord Archetypes
+- [L5028](Werewolf5ed#L5028): Silent Strider Archetypes
+- [L5159](Werewolf5ed#L5159): Silver Fang Archetypes
+- [L20442](Werewolf5ed#L20442): due to shapeshifting and animal-commanding archetypes
+
+### poderes e requisitos (321)
+
+- [L6984](Werewolf5ed#L6984): TOTAL RENOWN
+- [L6985](Werewolf5ed#L6985): Total Renown is a term for the sum of all kinds of Renown
+- [L8993](Werewolf5ed#L8993): Cost: None
+- [L9007](Werewolf5ed#L9007): Cost: One Rage check
+- [L9029](Werewolf5ed#L9029): Cost: Two Rage checks
+- [L9062](Werewolf5ed#L9062): Cost: One Rage check
+- [L9081](Werewolf5ed#L9081): Cost: None
+- [L9193](Werewolf5ed#L9193): Cost: Free
+- [L9195](Werewolf5ed#L9195): Cost: One Rage Check
+- [L9199](Werewolf5ed#L9199): Cost: Free
+- [L9203](Werewolf5ed#L9203): Cost: One Rage Check
+- [L9211](Werewolf5ed#L9211): Cost: Two Rage Checks
+- [L9572](Werewolf5ed#L9572): Renown: The type of Renown associated with the
+- [L9575](Werewolf5ed#L9575): Cost: The expenditure of either Rage or Willpower
+- [L9599](Werewolf5ed#L9599): prerequisites, in the form of auspice or tribe. All Gifts
+- [L9613](Werewolf5ed#L9613): Total Renown 1
+- [L9620](Werewolf5ed#L9620): Renown: Honor
+- [L9621](Werewolf5ed#L9621): Cost: 1 Willpower
+- [L9636](Werewolf5ed#L9636): Renown: Wisdom
+- [L9637](Werewolf5ed#L9637): Cost: 1 Willpower
+- [L9651](Werewolf5ed#L9651): Renown: Glory
+- [L9652](Werewolf5ed#L9652): Cost: 1 Rage Check
+- [L9664](Werewolf5ed#L9664): Renown: Wisdom
+- [L9665](Werewolf5ed#L9665): Cost: 1 Willpower
+- [L9680](Werewolf5ed#L9680): Renown: Glory
+- [L9681](Werewolf5ed#L9681): Cost: 1 Rage Check
+- [L9694](Werewolf5ed#L9694): Renown: Honor
+- [L9695](Werewolf5ed#L9695): Cost: 1 Rage Check
+- [L9710](Werewolf5ed#L9710): Total Renown 4
+- [L9717](Werewolf5ed#L9717): Renown: Wisdom
+- [L9718](Werewolf5ed#L9718): Cost: 1 Willpower
+- [L9731](Werewolf5ed#L9731): Renown: Glory
+- [L9732](Werewolf5ed#L9732): Cost: One Rage Check per additional opponent
+- [L9748](Werewolf5ed#L9748): Renown: Honor
+- [L9749](Werewolf5ed#L9749): Cost: 1 Willpower
+- [L9756](Werewolf5ed#L9756): Total Renown 7
+- [L9762](Werewolf5ed#L9762): Renown: Glory
+- [L9763](Werewolf5ed#L9763): Cost: 1 Rage Check
+- [L9786](Werewolf5ed#L9786): Renown: Honor
+- [L9787](Werewolf5ed#L9787): Cost: 1 Rage Check
+- [L9815](Werewolf5ed#L9815): Renown: Wisdom
+- [L9816](Werewolf5ed#L9816): Cost: 1 Willpower
+- [L9833](Werewolf5ed#L9833): Total Renown 2
+- [L9839](Werewolf5ed#L9839): Renown: Wisdom
+- [L9840](Werewolf5ed#L9840): Cost: 1 Willpower
+- [L9861](Werewolf5ed#L9861): Renown: Honor
+- [L9862](Werewolf5ed#L9862): Cost: 1 Rage Check
+- [L9877](Werewolf5ed#L9877): Renown: Glory
+- [L9878](Werewolf5ed#L9878): Cost: 1 Rage Check
+- [L9905](Werewolf5ed#L9905): Renown: Wisdom
+- [L9906](Werewolf5ed#L9906): Cost: 1 Willpower
+- [L9922](Werewolf5ed#L9922): Total Renown 5
+- [L9930](Werewolf5ed#L9930): Renown: Wisdom
+- [L9931](Werewolf5ed#L9931): Cost: 1 Rage Check
+- [L9945](Werewolf5ed#L9945): Renown: Honor
+- [L9946](Werewolf5ed#L9946): Cost: 1 Rage Check
+- [L9964](Werewolf5ed#L9964): Renown: Wisdom
+- [L9965](Werewolf5ed#L9965): Cost: 1 Willpower
+- [L9985](Werewolf5ed#L9985): Renown: Wisdom
+- [L9986](Werewolf5ed#L9986): Cost: Free / 1 Willpower
+- [L9998](Werewolf5ed#L9998): Total Renown 8
+- [L10006](Werewolf5ed#L10006): Renown: Wisdom
+- [L10007](Werewolf5ed#L10007): Cost: 1 Rage Check + 1 Willpower
+- [L10021](Werewolf5ed#L10021): Renown: Honor
+- [L10022](Werewolf5ed#L10022): Cost: 1 Willpower
+- [L10051](Werewolf5ed#L10051): Renown: Glory
+- [L10052](Werewolf5ed#L10052): Cost: 1 or more Rage Checks
+- [L10075](Werewolf5ed#L10075): Renown: Honor
+- [L10076](Werewolf5ed#L10076): Cost: 1 Rage Check
+- [L10091](Werewolf5ed#L10091): Total Renown 2
+- [L10099](Werewolf5ed#L10099): Renown: Honor
+- [L10100](Werewolf5ed#L10100): Cost: 1 Willpower
+- [L10119](Werewolf5ed#L10119): Renown: Glory
+- [L10120](Werewolf5ed#L10120): Cost: 1 Willpower
+- [L10136](Werewolf5ed#L10136): Renown: Wisdom
+- [L10137](Werewolf5ed#L10137): Cost: 1 Willpower
+- [L10156](Werewolf5ed#L10156): Renown: Wisdom
+- [L10157](Werewolf5ed#L10157): Cost: 1 Willpower or free
+- [L10171](Werewolf5ed#L10171): Total Renown 5
+- [L10177](Werewolf5ed#L10177): Renown: Glory
+- [L10178](Werewolf5ed#L10178): Cost: 1 Rage
+- [L10200](Werewolf5ed#L10200): Renown: Wisdom
+- [L10201](Werewolf5ed#L10201): Cost: 1–3 Willpower
+- [L10218](Werewolf5ed#L10218): Renown: Wisdom
+- [L10219](Werewolf5ed#L10219): Cost: 1 Willpower
+- [L10247](Werewolf5ed#L10247): Renown: Wisdom
+- [L10248](Werewolf5ed#L10248): Cost: 1 Willpower
+- [L10260](Werewolf5ed#L10260): Total Renown 8
+- [L10270](Werewolf5ed#L10270): Renown: Honor
+- [L10273](Werewolf5ed#L10273): Cost: 1 Willpower
+- [L10294](Werewolf5ed#L10294): Renown: Glory
+- [L10295](Werewolf5ed#L10295): Cost: 1 Rage
+- [L10315](Werewolf5ed#L10315): Renown: Glory
+- [L10316](Werewolf5ed#L10316): Cost: 1 Rage
+- [L10335](Werewolf5ed#L10335): Renown: Honor
+- [L10336](Werewolf5ed#L10336): Cost: 1 Rage Check
+- [L10348](Werewolf5ed#L10348): Total Renown 2
+- [L10353](Werewolf5ed#L10353): Renown: Honor
+- [L10354](Werewolf5ed#L10354): Cost: 1 Willpower
+- [L10369](Werewolf5ed#L10369): Renown: Glory
+- [L10370](Werewolf5ed#L10370): Cost: 1 Rage Check
+- [L10384](Werewolf5ed#L10384): Renown: Glory
+- [L10385](Werewolf5ed#L10385): Cost: 1 Rage Check
+- [L10401](Werewolf5ed#L10401): Renown: Wisdom
+- [L10402](Werewolf5ed#L10402): Cost: 1 Willpower
+- [L10415](Werewolf5ed#L10415): Total Renown 5
+- [L10421](Werewolf5ed#L10421): Renown: Honor
+- [L10422](Werewolf5ed#L10422): Cost: 1 Rage Check
+- [L10444](Werewolf5ed#L10444): Renown: Glory
+- [L10445](Werewolf5ed#L10445): Cost: 1 Rage Check
+- [L10465](Werewolf5ed#L10465): Renown: Honor
+- [L10466](Werewolf5ed#L10466): Cost: 1 Willpower
+- [L10489](Werewolf5ed#L10489): Renown: Wisdom
+- [L10490](Werewolf5ed#L10490): Cost: 1 Willpower
+- [L10503](Werewolf5ed#L10503): Total Renown 8
+- [L10512](Werewolf5ed#L10512): Renown: Glory
+- [L10513](Werewolf5ed#L10513): Cost: 1 Rage Check
+- [L10535](Werewolf5ed#L10535): Renown: Honor
+- [L10536](Werewolf5ed#L10536): Cost: 1 Willpower
+- [L10556](Werewolf5ed#L10556): Renown: Honor
+- [L10557](Werewolf5ed#L10557): Cost: 1 Rage Check
+- [L10573](Werewolf5ed#L10573): Renown: Honor
+- [L10574](Werewolf5ed#L10574): Cost: 1 Willpower
+- [L10598](Werewolf5ed#L10598): Total Renown 2
+- [L10604](Werewolf5ed#L10604): Renown: Glory
+- [L10605](Werewolf5ed#L10605): Cost: 1 Rage Check
+- [L10620](Werewolf5ed#L10620): Total Renown 5
+- [L10625](Werewolf5ed#L10625): Renown: Honor
+- [L10626](Werewolf5ed#L10626): Cost: 1 Willpower
+- [L10641](Werewolf5ed#L10641): Renown: Glory
+- [L10642](Werewolf5ed#L10642): Cost: 1 Willpower
+- [L10663](Werewolf5ed#L10663): Renown: Honor
+- [L10664](Werewolf5ed#L10664): Cost: 1 Rage Check
+- [L10679](Werewolf5ed#L10679): Renown: Glory
+- [L10680](Werewolf5ed#L10680): Cost: 1 Rage Check
+- [L10692](Werewolf5ed#L10692): Renown: Honor
+- [L10693](Werewolf5ed#L10693): Cost: 1 Willpower
+- [L10708](Werewolf5ed#L10708): Renown: Honor
+- [L10709](Werewolf5ed#L10709): Cost: 1 Rage Check
+- [L10724](Werewolf5ed#L10724): Renown: Wisdom
+- [L10725](Werewolf5ed#L10725): Cost: 1 Willpower
+- [L10735](Werewolf5ed#L10735): Total Renown 8
+- [L10741](Werewolf5ed#L10741): Renown: Glory
+- [L10742](Werewolf5ed#L10742): Cost: 1 Rage Check
+- [L10756](Werewolf5ed#L10756): Renown: Glory
+- [L10757](Werewolf5ed#L10757): Cost: 1 Rage Check
+- [L10772](Werewolf5ed#L10772): Renown: Honor
+- [L10773](Werewolf5ed#L10773): Cost: Free
+- [L10792](Werewolf5ed#L10792): Renown: Wisdom
+- [L10793](Werewolf5ed#L10793): Cost: 1 Willpower
+- [L10823](Werewolf5ed#L10823): Renown: Honor
+- [L10824](Werewolf5ed#L10824): Cost: 1 Rage Check
+- [L10845](Werewolf5ed#L10845): Renown: Glory
+- [L10846](Werewolf5ed#L10846): Cost: Free (Shift cost still applies)
+- [L10862](Werewolf5ed#L10862): Renown: Glory
+- [L10863](Werewolf5ed#L10863): Cost: Free / 1 Rage Check
+- [L10877](Werewolf5ed#L10877): Renown: Wisdom
+- [L10878](Werewolf5ed#L10878): Cost: —
+- [L10887](Werewolf5ed#L10887): Total Renown 5
+- [L10893](Werewolf5ed#L10893): Renown: Glory
+- [L10894](Werewolf5ed#L10894): Cost: —
+- [L10907](Werewolf5ed#L10907): Renown: Honor
+- [L10908](Werewolf5ed#L10908): Cost: 1 Rage Check
+- [L10927](Werewolf5ed#L10927): Renown: Glory
+- [L10928](Werewolf5ed#L10928): Cost: 1 Rage Check
+- [L10946](Werewolf5ed#L10946): Renown: Wisdom
+- [L10947](Werewolf5ed#L10947): Cost: Free / 1 Willpower
+- [L10959](Werewolf5ed#L10959): Total Renown 8
+- [L10965](Werewolf5ed#L10965): Renown: Glory
+- [L10966](Werewolf5ed#L10966): Cost: 1 Rage Check
+- [L10984](Werewolf5ed#L10984): Renown: Glory
+- [L10985](Werewolf5ed#L10985): Cost: 1 Rage Check
+- [L11000](Werewolf5ed#L11000): Renown: Honor
+- [L11001](Werewolf5ed#L11001): Cost: 1 Willpower
+- [L11015](Werewolf5ed#L11015): Renown: Honor
+- [L11016](Werewolf5ed#L11016): Cost: Free / 1 Willpower
+- [L11031](Werewolf5ed#L11031): Total Renown 3
+- [L11036](Werewolf5ed#L11036): Renown: Glory
+- [L11037](Werewolf5ed#L11037): Cost: 1 Willpower
+- [L11049](Werewolf5ed#L11049): Total Renown 6
+- [L11054](Werewolf5ed#L11054): Renown: Glory
+- [L11055](Werewolf5ed#L11055): Cost: 1 Willpower
+- [L11072](Werewolf5ed#L11072): Renown: Glory
+- [L11073](Werewolf5ed#L11073): Cost: 1 Rage Check
+- [L11094](Werewolf5ed#L11094): Renown: Glory
+- [L11095](Werewolf5ed#L11095): Cost: —
+- [L11107](Werewolf5ed#L11107): Total Renown 9
+- [L11116](Werewolf5ed#L11116): Renown: Glory
+- [L11117](Werewolf5ed#L11117): Cost: 1 Willpower
+- [L11134](Werewolf5ed#L11134): Total Renown 3
+- [L11142](Werewolf5ed#L11142): Renown: Honor
+- [L11143](Werewolf5ed#L11143): Cost: 1 Rage Check
+- [L11154](Werewolf5ed#L11154): Total Renown 6
+- [L11160](Werewolf5ed#L11160): Renown: Honor
+- [L11161](Werewolf5ed#L11161): Cost: 1 Willpower
+- [L11176](Werewolf5ed#L11176): Renown: Honor
+- [L11177](Werewolf5ed#L11177): Cost: 1 Willpower
+- [L11194](Werewolf5ed#L11194): Total Renown 9
+- [L11200](Werewolf5ed#L11200): Renown: Honor
+- [L11201](Werewolf5ed#L11201): Cost: 1 Willpower
+- [L11224](Werewolf5ed#L11224): Renown: Honor
+- [L11225](Werewolf5ed#L11225): Cost: 1 Rage Check
+- [L11241](Werewolf5ed#L11241): Total Renown 3
+- [L11249](Werewolf5ed#L11249): Renown: Wisdom
+- [L11250](Werewolf5ed#L11250): Cost: 1 Willpower
+- [L11272](Werewolf5ed#L11272): Total Renown 6
+- [L11277](Werewolf5ed#L11277): Renown: Wisdom
+- [L11278](Werewolf5ed#L11278): Cost: 1 Willpower
+- [L11297](Werewolf5ed#L11297): Renown: Wisdom
+- [L11298](Werewolf5ed#L11298): Cost: 1 Willpower
+- [L11312](Werewolf5ed#L11312): Total Renown 9
+- [L11321](Werewolf5ed#L11321): Renown: Wisdom
+- [L11322](Werewolf5ed#L11322): Cost: 1 Willpower
+- [L11341](Werewolf5ed#L11341): Renown: Wisdom
+- [L11342](Werewolf5ed#L11342): Cost: 1 Rage Check
+- [L11353](Werewolf5ed#L11353): Total Renown 3
+- [L11359](Werewolf5ed#L11359): Renown: Honor
+- [L11360](Werewolf5ed#L11360): Cost: Free / 1 Willpower
+- [L11379](Werewolf5ed#L11379): Renown: Honor
+- [L11380](Werewolf5ed#L11380): Cost: 1 Rage Check
+- [L11395](Werewolf5ed#L11395): Total Renown 6
+- [L11401](Werewolf5ed#L11401): Renown: Honor
+- [L11402](Werewolf5ed#L11402): Cost: Free / 1 Willpower
+- [L11418](Werewolf5ed#L11418): Total Renown 9
+- [L11424](Werewolf5ed#L11424): Renown: Honor
+- [L11425](Werewolf5ed#L11425): Cost: Free
+- [L11442](Werewolf5ed#L11442): Renown: Honor
+- [L11443](Werewolf5ed#L11443): Cost: Free / 1 Rage
+- [L11457](Werewolf5ed#L11457): Total Renown 3
+- [L11463](Werewolf5ed#L11463): Renown: Wisdom
+- [L11464](Werewolf5ed#L11464): Cost: 1 Willpower
+- [L11485](Werewolf5ed#L11485): Renown: Wisdom
+- [L11486](Werewolf5ed#L11486): Cost: 1 Rage Check
+- [L11495](Werewolf5ed#L11495): Total Renown 6
+- [L11502](Werewolf5ed#L11502): Renown: Wisdom
+- [L11503](Werewolf5ed#L11503): Cost: 1 Rage Check
+- [L11522](Werewolf5ed#L11522): Renown: Wisdom
+- [L11523](Werewolf5ed#L11523): Cost: 1 Rage Check
+- [L11539](Werewolf5ed#L11539): Total Renown 9
+- [L11547](Werewolf5ed#L11547): Renown: Wisdom
+- [L11548](Werewolf5ed#L11548): Cost: 1 Willpower
+- [L11564](Werewolf5ed#L11564): Total Renown 3
+- [L11572](Werewolf5ed#L11572): Renown: Wisdom
+- [L11573](Werewolf5ed#L11573): Cost: 1 Willpower
+- [L11590](Werewolf5ed#L11590): Total Renown 6
+- [L11598](Werewolf5ed#L11598): Renown: Wisdom
+- [L11599](Werewolf5ed#L11599): Cost: 1+ Rage Checks
+- [L11613](Werewolf5ed#L11613): Total Renown 9
+- [L11619](Werewolf5ed#L11619): Cost: 1 Rage Check
+- [L11648](Werewolf5ed#L11648): Cost: 1 Willpower
+- [L11669](Werewolf5ed#L11669): Renown: Wisdom
+- [L11670](Werewolf5ed#L11670): Cost: 1 Willpower
+- [L11690](Werewolf5ed#L11690): Total Renown 3
+- [L11698](Werewolf5ed#L11698): Renown: Glory
+- [L11699](Werewolf5ed#L11699): Cost: Free
+- [L11723](Werewolf5ed#L11723): Renown: Glory
+- [L11724](Werewolf5ed#L11724): Cost: 1 Willpower
+- [L11737](Werewolf5ed#L11737): Total Renown 6
+- [L11746](Werewolf5ed#L11746): Renown: Glory
+- [L11747](Werewolf5ed#L11747): Cost: 1 Rage Check
+- [L11769](Werewolf5ed#L11769): Total Renown 9
+- [L11774](Werewolf5ed#L11774): Renown: Glory
+- [L11775](Werewolf5ed#L11775): Cost: 1 Willpower
+- [L11792](Werewolf5ed#L11792): Renown: Glory
+- [L11793](Werewolf5ed#L11793): Cost: 1 Rage Check
+- [L11811](Werewolf5ed#L11811): Total Renown 3
+- [L11817](Werewolf5ed#L11817): Renown: Honor
+- [L11818](Werewolf5ed#L11818): Cost: 1 Willpower
+- [L11841](Werewolf5ed#L11841): Renown: Honor
+- [L11842](Werewolf5ed#L11842): Cost: 1 Rage Check
+- [L11862](Werewolf5ed#L11862): Total Renown 6
+- [L11870](Werewolf5ed#L11870): Renown: Honor
+- [L11871](Werewolf5ed#L11871): Cost: 1 Rage Check
+- [L11894](Werewolf5ed#L11894): Renown: Honor
+- [L11895](Werewolf5ed#L11895): Cost: 1 Rage Check
+- [L11909](Werewolf5ed#L11909): Total Renown 9
+- [L11917](Werewolf5ed#L11917): Renown: Honor
+- [L11918](Werewolf5ed#L11918): Cost: 1 Willpower
+- [L11932](Werewolf5ed#L11932): Total Renown 3
+- [L11940](Werewolf5ed#L11940): Renown: Glory
+- [L11941](Werewolf5ed#L11941): Cost: 1 Willpower
+- [L11963](Werewolf5ed#L11963): Renown: Glory
+- [L11964](Werewolf5ed#L11964): Cost: 1 Rage Check
+- [L11974](Werewolf5ed#L11974): Total Renown 6
+- [L11980](Werewolf5ed#L11980): Renown: Glory
+- [L11981](Werewolf5ed#L11981): Cost: 1 Willpower
+- [L11998](Werewolf5ed#L11998): Total Renown 9
+- [L12006](Werewolf5ed#L12006): Renown: Glory
+- [L12007](Werewolf5ed#L12007): Cost: 1 Rage Check
+- [L12023](Werewolf5ed#L12023): Renown: Glory
+- [L12024](Werewolf5ed#L12024): Cost: 1 Willpower
+- [L12038](Werewolf5ed#L12038): Total Renown 3
+- [L12046](Werewolf5ed#L12046): Renown: Wisdom
+- [L12047](Werewolf5ed#L12047): Cost: 1 Willpower
+- [L12074](Werewolf5ed#L12074): Renown: Wisdom
+- [L12075](Werewolf5ed#L12075): Cost: 1 Willpower
+- [L12094](Werewolf5ed#L12094): Renown: Wisdom
+- [L12095](Werewolf5ed#L12095): Cost: 1 Willpower
+- [L12106](Werewolf5ed#L12106): Total Renown 6
+- [L12114](Werewolf5ed#L12114): Renown: Wisdom
+- [L12115](Werewolf5ed#L12115): Cost: 1 Rage check
+- [L12131](Werewolf5ed#L12131): Total Renown 9
+- [L12141](Werewolf5ed#L12141): Renown: Wisdom
+- [L12142](Werewolf5ed#L12142): Cost: 1 Willpower
+- [L12157](Werewolf5ed#L12157): Total Renown 3
+- [L12164](Werewolf5ed#L12164): Renown: Honor
+- [L12165](Werewolf5ed#L12165): Cost: Free / 1 Willpower
+- [L12185](Werewolf5ed#L12185): Renown: Honor
+- [L12186](Werewolf5ed#L12186): Cost: 1 Rage Check
+- [L12196](Werewolf5ed#L12196): Total Renown 6
+- [L12202](Werewolf5ed#L12202): Renown: Honor
+- [L12203](Werewolf5ed#L12203): Cost: 1 Rage Check
+- [L12219](Werewolf5ed#L12219): Renown: Honor
+- [L12220](Werewolf5ed#L12220): Cost: 1 Willpower
+- [L12237](Werewolf5ed#L12237): Renown: Honor
+- [L12238](Werewolf5ed#L12238): Cost: 1 Rage Check
+- [L23543](Werewolf5ed#L23543): Cost: Free
+- [L23545](Werewolf5ed#L23545): Cost: One Rage Check
+- [L23549](Werewolf5ed#L23549): Cost: Free
+- [L23553](Werewolf5ed#L23553): Cost: One Rage Check
+- [L23561](Werewolf5ed#L23561): Cost: Two Rage Checks
+
+### NPCs e antagonistas (265)
+
+- [L16492](Werewolf5ed#L16492): General Difficulties: The General Difficulty
+- [L16870](Werewolf5ed#L16870): Exceptional Dice Pools: Brawl +2, Stealth +2
+- [L16871](Werewolf5ed#L16871): Notes / Other Traits:
+- [L16881](Werewolf5ed#L16881): General Difficulty: 3 / 2
+- [L16882](Werewolf5ed#L16882): Standard Dice Pools: Physical 3, Social 4, Mental 4
+- [L16884](Werewolf5ed#L16884): Exceptional Dice Pools: Persuasion (Garner Sympathy)
+- [L16886](Werewolf5ed#L16886): Notes / Other Traits:
+- [L16929](Werewolf5ed#L16929): Exceptional Dice Pools: Insight (Sore Spot) +6, Persuasion
+- [L16932](Werewolf5ed#L16932): Notes / Other Traits:
+- [L16978](Werewolf5ed#L16978): Exceptional Dice Pools: Brawl (Puppeteer) +2, Intimidate
+- [L16980](Werewolf5ed#L16980): Notes / Other Traits:
+- [L16993](Werewolf5ed#L16993): General Difficulty: 4 / 2
+- [L16994](Werewolf5ed#L16994): Standard Dice Pools: Physical 4, Social 6, Mental 6
+- [L16996](Werewolf5ed#L16996): Exceptional Dice Pools: Intimidate 8, Leadership 7,
+- [L16998](Werewolf5ed#L16998): Notes / Other Traits:
+- [L17037](Werewolf5ed#L17037): Exceptional Dice Pools: Brawl +4, Intimidate +4
+- [L17038](Werewolf5ed#L17038): Notes / Other Traits:
+- [L17045](Werewolf5ed#L17045): General Difficulty: 6 / 2
+- [L17046](Werewolf5ed#L17046): Standard Dice Pools: Physical 9, Social 3, Mental 3
+- [L17049](Werewolf5ed#L17049): Exceptional Dice Pools: Brawl (Grapple) 12, Stealth
+- [L17051](Werewolf5ed#L17051): Notes / Other Traits:
+- [L17086](Werewolf5ed#L17086): Exceptional Dice Pools: Firearms (Balefire) +2,
+- [L17089](Werewolf5ed#L17089): Notes / Other Traits:
+- [L17092](Werewolf5ed#L17092): General Difficulty: 4 / 2
+- [L17093](Werewolf5ed#L17093): Standard Dice Pools: Physical 4, Social 2, Mental 3
+- [L17096](Werewolf5ed#L17096): Exceptional Dice Pools: Brawl 6, Stealth 8
+- [L17097](Werewolf5ed#L17097): Notes / Other Traits:
+- [L17152](Werewolf5ed#L17152): General Difficulty: 2 / 1
+- [L17153](Werewolf5ed#L17153): Standard Dice Pools: Physical 3, Social 2, Mental 2
+- [L17155](Werewolf5ed#L17155): Exceptional Dice Pools: Brawl 4
+- [L17156](Werewolf5ed#L17156): Notes / Other Traits:
+- [L17204](Werewolf5ed#L17204): Exceptional Dice Pools: Brawl +4, Stealth +2
+- [L17205](Werewolf5ed#L17205): Notes / Other Traits:
+- [L17214](Werewolf5ed#L17214): General Difficulty: 4 / 2
+- [L17215](Werewolf5ed#L17215): Standard Dice Pools: Physical 8, Social 4, Mental 4
+- [L17217](Werewolf5ed#L17217): Exceptional Dice Pools: None
+- [L17218](Werewolf5ed#L17218): Notes / Other Traits:
+- [L17251](Werewolf5ed#L17251): Exceptional Dice Pools: Melee +3, Insight (Violent
+- [L17254](Werewolf5ed#L17254): Notes / Other Traits:
+- [L17266](Werewolf5ed#L17266): General Difficulty: 4 / 2
+- [L17267](Werewolf5ed#L17267): Standard Dice Pools: Physical 5, Social 5, Mental 5
+- [L17269](Werewolf5ed#L17269): Exceptional Dice Pools: Melee 7, Intimidate 7,
+- [L17271](Werewolf5ed#L17271): Notes / Other Traits:
+- [L17312](Werewolf5ed#L17312): Exceptional Dice Pools: Brawl +3
+- [L17313](Werewolf5ed#L17313): Notes / Other Traits:
+- [L17324](Werewolf5ed#L17324): General Difficulty: 3 / 1
+- [L17325](Werewolf5ed#L17325): Standard Dice Pools: Physical 5, Social 2, Mental 2
+- [L17327](Werewolf5ed#L17327): Exceptional Dice Pools: Brawl 7, Athletics (Pursuit) 7
+- [L17328](Werewolf5ed#L17328): Notes / Other Traits:
+- [L17355](Werewolf5ed#L17355): Exceptional Dice Pools: Brawl +4
+- [L17356](Werewolf5ed#L17356): Notes / Other Traits:
+- [L17361](Werewolf5ed#L17361): General Difficulty: 4 / 2
+- [L17362](Werewolf5ed#L17362): Standard Dice Pools: Physical 6, Social 3, Mental 3
+- [L17365](Werewolf5ed#L17365): Exceptional Dice Pools: Melee 8, Firearms 8
+- [L17366](Werewolf5ed#L17366): Notes / Other Traits:
+- [L17393](Werewolf5ed#L17393): Exceptional Dice Pools: Awareness +10
+- [L17394](Werewolf5ed#L17394): Notes / Other Traits:
+- [L17426](Werewolf5ed#L17426): Exceptional Dice Pools: —
+- [L17427](Werewolf5ed#L17427): Notes / Other Traits:
+- [L17475](Werewolf5ed#L17475): General Difficulty: 8 / 4
+- [L17476](Werewolf5ed#L17476): Standard Dice Pools: Physical 16, Social 7, Mental 10
+- [L17479](Werewolf5ed#L17479): Exceptional Dice Pools: See notes
+- [L17480](Werewolf5ed#L17480): Notes / Other Traits:
+- [L17545](Werewolf5ed#L17545): Exceptional Dice Pools: Physical Pools +8,
+- [L17547](Werewolf5ed#L17547): Notes / Other Traits:
+- [L17609](Werewolf5ed#L17609): Exceptional Dice Pools: Technology +6
+- [L17610](Werewolf5ed#L17610): Notes / Other Traits:
+- [L17692](Werewolf5ed#L17692): Exceptional Dice Pools: Depending on type, various
+- [L17695](Werewolf5ed#L17695): Notes / Other Traits:
+- [L17757](Werewolf5ed#L17757): Exceptional Dice Pools: A single Mental Skill at +4
+- [L17758](Werewolf5ed#L17758): Notes / Other Traits:
+- [L17839](Werewolf5ed#L17839): Exceptional Dice Pools: Insight (Sense Honesty) +3
+- [L17840](Werewolf5ed#L17840): Notes / Other Traits:
+- [L17884](Werewolf5ed#L17884): Exceptional Dice Pools: Occult (Void Aspect) +3 (See
+- [L17886](Werewolf5ed#L17886): Notes / Other Traits:
+- [L17923](Werewolf5ed#L17923): Exceptional Dice Pools: Medicine (Healing Surge) +4
+- [L17924](Werewolf5ed#L17924): Notes / Other Traits:
+- [L18025](Werewolf5ed#L18025): Exceptional Dice Pools: One or two Skills associated
+- [L18065](Werewolf5ed#L18065): Exceptional Dice Pools: Awareness (Own Domain) +3,
+- [L18067](Werewolf5ed#L18067): Notes / Other Traits:
+- [L18105](Werewolf5ed#L18105): Exceptional Dice Pools: Occult (Umbral Guidance) +3
+- [L18106](Werewolf5ed#L18106): Notes / Other Traits:
+- [L18177](Werewolf5ed#L18177): Exceptional Dice Pools: One or two Skills associated
+- [L18196](Werewolf5ed#L18196): Exceptional Dice Pools: Occult (Phenomena) +4
+- [L18197](Werewolf5ed#L18197): Notes / Other Traits:
+- [L18287](Werewolf5ed#L18287): General Difficulty: 4 / 2
+- [L18288](Werewolf5ed#L18288): Standard Dice Pools: Physical 5, Social 3, Mental 4
+- [L18291](Werewolf5ed#L18291): Exceptional Dice Pools: Athletics 8, Awareness 6, Firearms
+- [L18293](Werewolf5ed#L18293): Notes / Other Traits:
+- [L18312](Werewolf5ed#L18312): General Difficulty: 4 / 2
+- [L18313](Werewolf5ed#L18313): Standard Dice Pools: Physical 6, Social 2, Mental 3
+- [L18316](Werewolf5ed#L18316): Exceptional Dice Pools: Athletics 8, Awareness 8,
+- [L18318](Werewolf5ed#L18318): Notes / Other Traits:
+- [L18347](Werewolf5ed#L18347): General Difficulty: 3 / 2
+- [L18348](Werewolf5ed#L18348): Standard Dice Pools: Physical 4, Social 3, Mental 5
+- [L18351](Werewolf5ed#L18351): Exceptional Dice Pools: Athletics 6, Awareness 6, Brawl
+- [L18353](Werewolf5ed#L18353): Notes / Other Traits:
+- [L18377](Werewolf5ed#L18377): General Difficulty: 4 / 3
+- [L18378](Werewolf5ed#L18378): Standard Dice Pools: Physical 5, Social 5, Mental 5
+- [L18380](Werewolf5ed#L18380): Exceptional Dice Pools: Brawl 8, Firearms 6, Leadership
+- [L18382](Werewolf5ed#L18382): Notes / Other Traits:
+- [L18460](Werewolf5ed#L18460): General Difficulty: 4 / 2
+- [L18461](Werewolf5ed#L18461): Standard Dice Pools: Physical 4, Social 6, Mental 5
+- [L18463](Werewolf5ed#L18463): Exceptional Dice Pools: Awareness 7, Driving 7,
+- [L18466](Werewolf5ed#L18466): Notes / Other Traits:
+- [L18485](Werewolf5ed#L18485): General Difficulty: 4 / 2
+- [L18486](Werewolf5ed#L18486): Standard Dice Pools: Physical 4, Social 5, Mental 6
+- [L18489](Werewolf5ed#L18489): Exceptional Dice Pools: Awareness 8, Brawl 7, Occult 8,
+- [L18491](Werewolf5ed#L18491): Notes / Other Traits:
+- [L18997](Werewolf5ed#L18997): General Difficulty: 3 / 1
+- [L18998](Werewolf5ed#L18998): Standard Dice Pools: Physical 2, Social 3, Mental 5
+- [L19000](Werewolf5ed#L19000): Exceptional Dice Pools: Technology (Anti-Personnel
+- [L19002](Werewolf5ed#L19002): Notes / Other Traits:
+- [L19027](Werewolf5ed#L19027): General Difficulty: 2 / 2
+- [L19028](Werewolf5ed#L19028): Standard Dice Pools: Physical 3, Social 3, Mental 3
+- [L19030](Werewolf5ed#L19030): Exceptional Dice Pools: Athletics 4, Firearms 4, Intimidation
+- [L19032](Werewolf5ed#L19032): Notes / Other Traits:
+- [L19063](Werewolf5ed#L19063): Exceptional Dice Pools: Brawl 5, Firearms (Balefire) 5,
+- [L19065](Werewolf5ed#L19065): Notes / Other Traits: One or more of the following:
+- [L19112](Werewolf5ed#L19112): General Difficulty: 4 / 3
+- [L19113](Werewolf5ed#L19113): Standard Dice Pools: Physical 6, Social 4, Mental 5
+- [L19115](Werewolf5ed#L19115): Exceptional Dice Pools: Brawl (Meaty Fists) 8,
+- [L19118](Werewolf5ed#L19118): Notes / Other Traits:
+- [L19158](Werewolf5ed#L19158): Exceptional Dice Pools: Brawl 12, Intimidate 12,
+- [L19160](Werewolf5ed#L19160): Notes / Other Traits:
+- [L19237](Werewolf5ed#L19237): General Difficulty: 4 / 3
+- [L19238](Werewolf5ed#L19238): Standard Dice Pools: Physical 6, Social 5, Mental 6
+- [L19240](Werewolf5ed#L19240): Exceptional Dice Pools: Firearms 8, Stealth 8, Investigation
+- [L19242](Werewolf5ed#L19242): Notes / Other Traits:
+- [L19297](Werewolf5ed#L19297): General Difficulty: 5 / 2
+- [L19298](Werewolf5ed#L19298): Standard Dice Pools: Physical 4, Social 7, Mental 7
+- [L19300](Werewolf5ed#L19300): Exceptional Dice Pools: Firearms 8, Intimidation 9,
+- [L19302](Werewolf5ed#L19302): Notes / Other Traits:
+- [L19396](Werewolf5ed#L19396): General Difficulty: 4 / 2
+- [L19397](Werewolf5ed#L19397): Standard Dice Pools: Physical 5, Social 4, Mental 4
+- [L19399](Werewolf5ed#L19399): Exceptional Dice Pools: Awareness 8, Larceny 8,
+- [L19401](Werewolf5ed#L19401): Notes / Other Traits:
+- [L19418](Werewolf5ed#L19418): General Difficulty: 5 / 3
+- [L19419](Werewolf5ed#L19419): Standard Dice Pools: Physical 6, Social 4, Mental 5
+- [L19421](Werewolf5ed#L19421): Exceptional Dice Pools: Brawl 8, Melee 8,
+- [L19423](Werewolf5ed#L19423): Notes / Other Traits:
+- [L19441](Werewolf5ed#L19441): General Difficulty: 5 / 3
+- [L19442](Werewolf5ed#L19442): Standard Dice Pools: Physical 5, Social 6, Mental 6
+- [L19444](Werewolf5ed#L19444): Exceptional Dice Pools:
+- [L19450](Werewolf5ed#L19450): Notes / Other Traits:
+- [L19548](Werewolf5ed#L19548): General Difficulty: 4 / 3
+- [L19549](Werewolf5ed#L19549): Standard Dice Pools: Physical 5, Social 6, Mental 6
+- [L19551](Werewolf5ed#L19551): Exceptional Dice Pools: Athletics (Infuriating Dodge)
+- [L19554](Werewolf5ed#L19554): Notes / Other Traits:
+- [L19571](Werewolf5ed#L19571): General Difficulty: 5 / 2
+- [L19572](Werewolf5ed#L19572): Standard Dice Pools: Physical 4, Social 5, Mental 7
+- [L19574](Werewolf5ed#L19574): Exceptional Dice Pools: Leadership (Rile Pack) 7, Intimidate
+- [L19576](Werewolf5ed#L19576): Notes / Other Traits:
+- [L19604](Werewolf5ed#L19604): General Difficulty: 5 / 2
+- [L19605](Werewolf5ed#L19605): Standard Dice Pools: Physical 6, Social 4, Mental 3
+- [L19607](Werewolf5ed#L19607): Exceptional Dice Pools: Brawl 8, Melee 8, Intimidate 7,
+- [L19609](Werewolf5ed#L19609): Notes / Other Traits: The Berserk Ahroun has the
+- [L19687](Werewolf5ed#L19687): General Difficulty: 4 / 3
+- [L19688](Werewolf5ed#L19688): Standard Dice Pools: Physical 6, Social 6, Mental 6
+- [L19690](Werewolf5ed#L19690): Exceptional Dice Pools: Insight (Lies) 8, Persuasion
+- [L19692](Werewolf5ed#L19692): Notes / Other Traits:
+- [L19753](Werewolf5ed#L19753): General Difficulty: 4 / 2
+- [L19754](Werewolf5ed#L19754): Standard Dice Pools: Physical 6, Social 4, Mental 3
+- [L19756](Werewolf5ed#L19756): Exceptional Dice Pools: Brawl 9, Larceny (Home
+- [L19759](Werewolf5ed#L19759): Notes / Other Traits:
+- [L19782](Werewolf5ed#L19782): General Difficulty: 3 / 2
+- [L19783](Werewolf5ed#L19783): Standard Dice Pools: Physical 4, Social 4, Mental 4
+- [L19785](Werewolf5ed#L19785): Exceptional Dice Pools: Brawl 6, Stealth (Stalk) 6,
+- [L19787](Werewolf5ed#L19787): Notes / Other Traits:
+- [L19814](Werewolf5ed#L19814): General Difficulty: 6 / 2
+- [L19815](Werewolf5ed#L19815): Standard Dice Pools: Physical 6, Social 4, Mental 4
+- [L19817](Werewolf5ed#L19817): Exceptional Dice Pools: Brawl 8, Stealth 8, Subterfuge
+- [L19819](Werewolf5ed#L19819): Notes / Other Traits:
+- [L19858](Werewolf5ed#L19858): General Difficulty: 4 / 3
+- [L19859](Werewolf5ed#L19859): Standard Dice Pools: Physical 5, Social 6, Mental 5
+- [L19862](Werewolf5ed#L19862): Exceptional Dice Pools: Larceny (Pickpocket) 8,
+- [L19864](Werewolf5ed#L19864): Notes / Other Traits:
+- [L19889](Werewolf5ed#L19889): General Difficulty: 4 / 3
+- [L19890](Werewolf5ed#L19890): Standard Dice Pools: Physical 5, Social 5, Mental 6
+- [L19893](Werewolf5ed#L19893): Exceptional Dice Pools: Athletics (Climb) 9,
+- [L19896](Werewolf5ed#L19896): Notes / Other Traits:
+- [L19973](Werewolf5ed#L19973): General Difficulty: 4 / 3
+- [L19974](Werewolf5ed#L19974): Standard Dice Pools: Physical 5, Social 6, Mental 5
+- [L19976](Werewolf5ed#L19976): Exceptional Dice Pools: Firearms (Pistol) 6, Persuasion
+- [L19979](Werewolf5ed#L19979): Notes / Other Traits:
+- [L20008](Werewolf5ed#L20008): General Difficulty: 5 / 4
+- [L20009](Werewolf5ed#L20009): Standard Dice Pools: Physical 7, Social 4, Mental 7
+- [L20011](Werewolf5ed#L20011): Exceptional Dice Pools: Brawl (Grapple) 10, Stealth
+- [L20014](Werewolf5ed#L20014): Notes / Other Traits:
+- [L20057](Werewolf5ed#L20057): General Difficulty: 4 / 3
+- [L20058](Werewolf5ed#L20058): Standard Dice Pools: Physical 4,
+- [L20062](Werewolf5ed#L20062): Exceptional Dice Pools: Insight
+- [L20067](Werewolf5ed#L20067): Notes / Other Traits:
+- [L20088](Werewolf5ed#L20088): General Difficulty: 3 / 2
+- [L20089](Werewolf5ed#L20089): Standard Dice Pools: Physical 3, Social 4, Mental 4
+- [L20091](Werewolf5ed#L20091): Exceptional Dice Pools: Intimidation (Jump-Scare) 6,
+- [L20093](Werewolf5ed#L20093): Notes / Other Traits:
+- [L20116](Werewolf5ed#L20116): General Difficulty: 4 / 3
+- [L20117](Werewolf5ed#L20117): Standard Dice Pools: Physical 4, Social 7, Mental 4
+- [L20120](Werewolf5ed#L20120): Exceptional Dice Pools: Melee (Archaic Sword) 8,
+- [L20123](Werewolf5ed#L20123): Notes / Other Traits:
+- [L20190](Werewolf5ed#L20190): General Difficulty: 4 / 2
+- [L20191](Werewolf5ed#L20191): Standard Dice Pools: Physical 6, Social 3, Mental 5
+- [L20193](Werewolf5ed#L20193): Exceptional Dice Pools: Athletics 6, Firearms 8, Intimidation
+- [L20195](Werewolf5ed#L20195): Notes / Other Traits:
+- [L20222](Werewolf5ed#L20222): General Difficulty: 3 / 2
+- [L20223](Werewolf5ed#L20223): Standard Dice Pools: Physical 4, Social 4, Mental 5
+- [L20225](Werewolf5ed#L20225): Exceptional Dice Pools: Awareness 7, Larceny 7, Stealth
+- [L20227](Werewolf5ed#L20227): Notes / Other Traits:
+- [L20259](Werewolf5ed#L20259): General Difficulty: 4 / 2
+- [L20260](Werewolf5ed#L20260): Standard Dice Pools: Physical 6, Social 3, Mental 4
+- [L20262](Werewolf5ed#L20262): Exceptional Dice Pools: Awareness 7, Brawl 7, Firearms
+- [L20264](Werewolf5ed#L20264): Notes / Other Traits:
+- [L20318](Werewolf5ed#L20318): General Difficulty: 3 / 2
+- [L20319](Werewolf5ed#L20319): Standard Dice Pools: Physical 4, Social 2, Mental 3
+- [L20321](Werewolf5ed#L20321): Exceptional Dice Pools: Athletics 5, Firearms (Stationary
+- [L20323](Werewolf5ed#L20323): Notes / Other Traits:
+- [L20336](Werewolf5ed#L20336): General Difficulty: 3 / 2
+- [L20337](Werewolf5ed#L20337): Standard Dice Pools: Physical 4, Social 3, Mental 4
+- [L20339](Werewolf5ed#L20339): Exceptional Dice Pools: Athletics 5, Firearms 5,
+- [L20354](Werewolf5ed#L20354): General Difficulty: 3 / 2
+- [L20355](Werewolf5ed#L20355): Standard Dice Pools: Physical 5, Social 4, Mental 4
+- [L20357](Werewolf5ed#L20357): Exceptional Dice Pools: Firearms 6, Melee (Unarmed
+- [L20359](Werewolf5ed#L20359): Notes / Other Traits:
+- [L20373](Werewolf5ed#L20373): General Difficulty: 3 / 2
+- [L20374](Werewolf5ed#L20374): Standard Dice Pools: Physical 4, Social 3, Mental 3
+- [L20376](Werewolf5ed#L20376): Exceptional Dice Pools: Brawl 5, Firearms 5,
+- [L20386](Werewolf5ed#L20386): Standard Dice Pools: Physical 3, Social 5, Mental 4
+- [L20388](Werewolf5ed#L20388): Exceptional Dice Pools: Academics 6, Insight 7,
+- [L20433](Werewolf5ed#L20433): Standard Dice Pools: Physical 6, Social 1, Mental 1
+- [L20435](Werewolf5ed#L20435): Exceptional Dice Pools: Awareness 3, Intimidation 5,
+- [L20437](Werewolf5ed#L20437): Notes / Other Traits:
+- [L20446](Werewolf5ed#L20446): Standard Dice Pools: Physical 3, Social 1, Mental 1
+- [L20448](Werewolf5ed#L20448): Exceptional Dice Pools: Awareness 7, Stealth 5
+- [L20453](Werewolf5ed#L20453): Standard Dice Pools: Physical 7, Social 1, Mental 1
+- [L20455](Werewolf5ed#L20455): Exceptional Dice Pools: Awareness 3, Intimidation 6
+- [L20456](Werewolf5ed#L20456): Notes / Other Traits:
+- [L20469](Werewolf5ed#L20469): Standard Dice Pools: Physical 6, Social 1, Mental 1
+- [L20471](Werewolf5ed#L20471): Exceptional Dice Pools: Awareness 3, Intimidation 5,
+- [L20473](Werewolf5ed#L20473): Notes / Other Traits:
+- [L20482](Werewolf5ed#L20482): Standard Dice Pools: Physical 4, Social 1, Mental 1
+- [L20484](Werewolf5ed#L20484): Exceptional Dice Pools: Awareness 6, Brawl 5, Stealth 6
+- [L20492](Werewolf5ed#L20492): Standard Dice Pools: Physical 5, Social 1, Mental 1
+- [L20494](Werewolf5ed#L20494): Exceptional Dice Pools: Awareness 4, Brawl 6, Intimidation
+- [L20496](Werewolf5ed#L20496): Notes / Other Traits:
+- [L20505](Werewolf5ed#L20505): Standard Dice Pools: Physical 6, Social 1, Mental 1
+- [L20507](Werewolf5ed#L20507): Exceptional Dice Pools: Awareness 4
+- [L20516](Werewolf5ed#L20516): Standard Dice Pools: Physical 3, Social 1, Mental 1
+- [L20518](Werewolf5ed#L20518): Exceptional Dice Pools: Awareness 5, Brawl 4, Stealth 7
+- [L20519](Werewolf5ed#L20519): Notes / Other Traits:
+- [L22026](Werewolf5ed#L22026): General Difficulty: 4 / 2
+- [L22027](Werewolf5ed#L22027): Standard Dice Pools: Physical 4, Social 2, Mental 3
+- [L22030](Werewolf5ed#L22030): Exceptional Dice Pools: Brawl 8, Stealth 8
+- [L22031](Werewolf5ed#L22031): Notes / Other Traits:
+- [L22433](Werewolf5ed#L22433): General Difficulty: 5 / 2
+- [L22434](Werewolf5ed#L22434): Standard Dice Pools: Physical 8, Social 4, Mental 3
+- [L22437](Werewolf5ed#L22437): Exceptional Dice Pools: Awareness 8, Brawl (Thornlike
+- [L22439](Werewolf5ed#L22439): Notes / Other Traits:
+- [L22457](Werewolf5ed#L22457): Exceptional Dice Pools: Brawl 8, Survival (Hide
+- [L22459](Werewolf5ed#L22459): Notes / Other Traits:
+- [L22565](Werewolf5ed#L22565): General Difficulty: 6 / 2
+- [L22566](Werewolf5ed#L22566): Standard Dice Pools: Physical 8, Social 3, Mental 6
+- [L22569](Werewolf5ed#L22569): Exceptional Dice Pools: Brawl (Shredding Limbs)
+- [L22572](Werewolf5ed#L22572): Notes / Other Traits:
+- [L23139](Werewolf5ed#L23139): General Difficulties 240
+
+### vantagens, ritos e equipamento (6)
+
+- [L6253](Werewolf5ed#L6253): Merits
+- [L6471](Werewolf5ed#L6471): Backgrounds
+- [L6688](Werewolf5ed#L6688): Loresheet
+- [L6904](Werewolf5ed#L6904): Talisman
+- [L12252](Werewolf5ed#L12252): Rites
+- [L12835](Werewolf5ed#L12835): Talismans
+
+## Werewolf5edWyrmtide
+
+W5 · publisher · 11836 linhas · SHA-256 `6692e9403d07e15c5d90b32a13d173f1b863ac8a992e2c0ad7b2e3c9f701d3ff`
+
+### criação e progressão (3)
+
+- [L3999](Werewolf5edWyrmtide#L3999): have become fomori, creating an ethical dilemma.
+- [L11027](Werewolf5edWyrmtide#L11027): The pack aids their sept in creating a
+- [L11101](Werewolf5edWyrmtide#L11101): story’s hook could be a story of its own. Creating a
+
+### identidade e narrativa (1)
+
+- [L4920](Werewolf5edWyrmtide#L4920): Ambition: The Bane wishes to enter the physical
+
+### poderes e requisitos (26)
+
+- [L1453](Werewolf5edWyrmtide#L1453): Total Renown 1
+- [L1459](Werewolf5edWyrmtide#L1459): Renown: Honor
+- [L1460](Werewolf5edWyrmtide#L1460): Cost: Free, see System detail
+- [L1470](Werewolf5edWyrmtide#L1470): Total Renown 4
+- [L1481](Werewolf5edWyrmtide#L1481): Renown: Glory
+- [L1482](Werewolf5edWyrmtide#L1482): Cost: 1 Rage Check
+- [L1503](Werewolf5edWyrmtide#L1503): Renown: Wisdom
+- [L1504](Werewolf5edWyrmtide#L1504): Cost: 1 Willpower
+- [L1514](Werewolf5edWyrmtide#L1514): Total Renown 2
+- [L1522](Werewolf5edWyrmtide#L1522): Renown: Wisdom
+- [L1523](Werewolf5edWyrmtide#L1523): Cost: 1 Willpower
+- [L1540](Werewolf5edWyrmtide#L1540): Total Renown 2
+- [L1549](Werewolf5edWyrmtide#L1549): Renown: Honor
+- [L1550](Werewolf5edWyrmtide#L1550): Cost: 1 Rage Check
+- [L1570](Werewolf5edWyrmtide#L1570): Total Renown 2
+- [L1580](Werewolf5edWyrmtide#L1580): Renown: Wisdom
+- [L1581](Werewolf5edWyrmtide#L1581): Cost: Free/1 Rage Check
+- [L1596](Werewolf5edWyrmtide#L1596): Total Renown 3
+- [L1607](Werewolf5edWyrmtide#L1607): Renown: Glory
+- [L1608](Werewolf5edWyrmtide#L1608): Cost: 1 Rage Check
+- [L1631](Werewolf5edWyrmtide#L1631): Total Renown 2
+- [L1637](Werewolf5edWyrmtide#L1637): Renown: Glory
+- [L1638](Werewolf5edWyrmtide#L1638): Cost: 1 Rage Check
+- [L11710](Werewolf5edWyrmtide#L11710): Total Renown 3
+- [L11740](Werewolf5edWyrmtide#L11740): Total Renown 6
+- [L11765](Werewolf5edWyrmtide#L11765): Total Renown 9
+
+### NPCs e antagonistas (296)
+
+- [L2236](Werewolf5edWyrmtide#L2236): General Difficulty: 4 / 3
+- [L2237](Werewolf5edWyrmtide#L2237): Standard Dice Pools: Physical 6, Social 7, Mental 7
+- [L2239](Werewolf5edWyrmtide#L2239): Exceptional Dice Pools: Firearms 7, Leadership 8,
+- [L2241](Werewolf5edWyrmtide#L2241): Notes / Other Traits:
+- [L2273](Werewolf5edWyrmtide#L2273): General Difficulty: 4 / 2
+- [L2274](Werewolf5edWyrmtide#L2274): Standard Dice Pools: Physical 6, Social 6, Mental 7
+- [L2276](Werewolf5edWyrmtide#L2276): Exceptional Dice Pools: Firearms 7, Medicine 8,
+- [L2278](Werewolf5edWyrmtide#L2278): Notes / Other Traits:
+- [L2314](Werewolf5edWyrmtide#L2314): General Difficulty: 4 / 3
+- [L2315](Werewolf5edWyrmtide#L2315): Standard Dice Pools: Physical 6, Social 7, Mental 7
+- [L2317](Werewolf5edWyrmtide#L2317): Exceptional Dice Pools: Persuasion 8, Awareness
+- [L2319](Werewolf5edWyrmtide#L2319): Notes / Other Traits:
+- [L2370](Werewolf5edWyrmtide#L2370): General Difficulty: 4 / 2
+- [L2371](Werewolf5edWyrmtide#L2371): Standard Dice Pools: Physical 7, Social 4, Mental 6
+- [L2373](Werewolf5edWyrmtide#L2373): Exceptional Dice Pools: Firearms 10, Awareness
+- [L2375](Werewolf5edWyrmtide#L2375): Notes / Other Traits:
+- [L2424](Werewolf5edWyrmtide#L2424): General Difficulty: 4 / 2
+- [L2425](Werewolf5edWyrmtide#L2425): Standard Dice Pools: Physical 7, Social 3, Mental 4
+- [L2427](Werewolf5edWyrmtide#L2427): Exceptional Dice Pools: Firearms 8, Survival 8,
+- [L2429](Werewolf5edWyrmtide#L2429): Notes / Other Traits:
+- [L2623](Werewolf5edWyrmtide#L2623): General Difficulty: 4 / 2
+- [L2624](Werewolf5edWyrmtide#L2624): Standard Dice Pools: Physical 5, Social 6, Mental 5
+- [L2626](Werewolf5edWyrmtide#L2626): Exceptional Dice Pools: Intimidation 7, Politics 7,
+- [L2628](Werewolf5edWyrmtide#L2628): Notes / Other Traits:
+- [L2664](Werewolf5edWyrmtide#L2664): General Difficulty: 4 / 2
+- [L2665](Werewolf5edWyrmtide#L2665): Standard Dice Pools: Physical 7, Social 4, Mental 6
+- [L2667](Werewolf5edWyrmtide#L2667): Exceptional Dice Pools: Firearms 8, Leadership 6,
+- [L2669](Werewolf5edWyrmtide#L2669): Notes / Other Traits:
+- [L2700](Werewolf5edWyrmtide#L2700): General Difficulty: 5 / 3
+- [L2701](Werewolf5edWyrmtide#L2701): Standard Dice Pools: Physical 12, Social 4,
+- [L2704](Werewolf5edWyrmtide#L2704): Exceptional Dice Pools: Brawl 14, Persuasion 8,
+- [L2706](Werewolf5edWyrmtide#L2706): Notes / Other Traits:
+- [L2753](Werewolf5edWyrmtide#L2753): General Difficulty: 4 / 2
+- [L2754](Werewolf5edWyrmtide#L2754): Standard Dice Pools: Physical 7, Social 3, Mental 5
+- [L2756](Werewolf5edWyrmtide#L2756): Exceptional Dice Pools: Brawl 8, Technology 7,
+- [L2758](Werewolf5edWyrmtide#L2758): Notes / Other Traits:
+- [L2944](Werewolf5edWyrmtide#L2944): General Difficulty: 4 / 2
+- [L2945](Werewolf5edWyrmtide#L2945): Standard Dice Pools: Physical 5, Social 6, Mental 6
+- [L2947](Werewolf5edWyrmtide#L2947): Exceptional Dice Pools: Subterfuge 7, Leadership
+- [L2949](Werewolf5edWyrmtide#L2949): Notes / Other Traits:
+- [L2970](Werewolf5edWyrmtide#L2970): General Difficulty: 4 / 3
+- [L2971](Werewolf5edWyrmtide#L2971): Standard Dice Pools: Physical 6, Social 7, Mental 6
+- [L2973](Werewolf5edWyrmtide#L2973): Exceptional Dice Pools: Subterfuge 8, Larceny 7,
+- [L2975](Werewolf5edWyrmtide#L2975): Notes / Other Traits:
+- [L3117](Werewolf5edWyrmtide#L3117): General Difficulty: 4 / 2
+- [L3118](Werewolf5edWyrmtide#L3118): Standard Dice Pools: Physical 3, Social 5, Mental 7
+- [L3120](Werewolf5edWyrmtide#L3120): Exceptional Dice Pools: Subterfuge 7, Leadership
+- [L3122](Werewolf5edWyrmtide#L3122): Notes / Other Traits:
+- [L3143](Werewolf5edWyrmtide#L3143): General Difficulty: 4 / 2
+- [L3144](Werewolf5edWyrmtide#L3144): Standard Dice Pools: Physical 6, Social 4, Mental 6
+- [L3146](Werewolf5edWyrmtide#L3146): Exceptional Dice Pools: Melee 8, Leadership 5,
+- [L3148](Werewolf5edWyrmtide#L3148): Notes / Other Traits:
+- [L3203](Werewolf5edWyrmtide#L3203): Exceptional Dice Pools: Brawl +1, Persuasion +1,
+- [L3205](Werewolf5edWyrmtide#L3205): Notes / Other Traits:
+- [L3225](Werewolf5edWyrmtide#L3225): General Difficulty: 4 / 2
+- [L3226](Werewolf5edWyrmtide#L3226): Standard Dice Pools: Physical 8, Social 4, Mental 6
+- [L3228](Werewolf5edWyrmtide#L3228): Exceptional Dice Pools: Medicine 7, Persuasion 5,
+- [L3230](Werewolf5edWyrmtide#L3230): Notes / Other Traits:
+- [L3410](Werewolf5edWyrmtide#L3410): General Difficulty: 4 / 3
+- [L3411](Werewolf5edWyrmtide#L3411): Standard Dice Pools: Physical 6, Social 7, Mental 7
+- [L3413](Werewolf5edWyrmtide#L3413): Exceptional Dice Pools: Leadership 8, Politics 8,
+- [L3415](Werewolf5edWyrmtide#L3415): Notes / Other Traits:
+- [L3439](Werewolf5edWyrmtide#L3439): General Difficulty: 4 / 2
+- [L3440](Werewolf5edWyrmtide#L3440): Standard Dice Pools: Physical 7, Social 3, Mental 4
+- [L3442](Werewolf5edWyrmtide#L3442): Exceptional Dice Pools: Melee 8, Athletics 8,
+- [L3446](Werewolf5edWyrmtide#L3446): Notes / Other Traits:
+- [L3482](Werewolf5edWyrmtide#L3482): General Difficulty: 5 / 4
+- [L3483](Werewolf5edWyrmtide#L3483): Standard Dice Pools: Physical 8, Social 6, Mental 8
+- [L3488](Werewolf5edWyrmtide#L3488): Exceptional Dice Pools: Melee 16, Insight 8,
+- [L3490](Werewolf5edWyrmtide#L3490): Notes / Other Traits:
+- [L3688](Werewolf5edWyrmtide#L3688): General Difficulty: 4 / 3
+- [L3689](Werewolf5edWyrmtide#L3689): Standard Dice Pools: Physical 4, Social 4, Mental 7
+- [L3691](Werewolf5edWyrmtide#L3691): Exceptional Dice Pools: Medicine 9, Science 8,
+- [L3693](Werewolf5edWyrmtide#L3693): Notes / Other Traits:
+- [L3717](Werewolf5edWyrmtide#L3717): General Difficulty: 3 / 2
+- [L3718](Werewolf5edWyrmtide#L3718): Standard Dice Pools: Physical 3, Social 4, Mental 4
+- [L3720](Werewolf5edWyrmtide#L3720): Exceptional Dice Pools: Streetwise 5, Stealth 5,
+- [L3722](Werewolf5edWyrmtide#L3722): Notes / Other Traits:
+- [L3760](Werewolf5edWyrmtide#L3760): General Difficulty: 3 / 2
+- [L3761](Werewolf5edWyrmtide#L3761): Standard Dice Pools: Physical 7, Social 4, Mental 4
+- [L3763](Werewolf5edWyrmtide#L3763): Exceptional Dice Pools: Brawl 8, Stealth 5,
+- [L3765](Werewolf5edWyrmtide#L3765): Notes / Other Traits:
+- [L3943](Werewolf5edWyrmtide#L3943): General Difficulty: 4 / 2
+- [L3944](Werewolf5edWyrmtide#L3944): Standard Dice Pools: Physical 4, Social 5, Mental 7
+- [L3946](Werewolf5edWyrmtide#L3946): Exceptional Dice Pools: Leadership 7,
+- [L3948](Werewolf5edWyrmtide#L3948): Notes / Other Traits:
+- [L4103](Werewolf5edWyrmtide#L4103): General Difficulty: 4 / 3
+- [L4104](Werewolf5edWyrmtide#L4104): Standard Dice Pools: Physical 6, Social 7, Mental 7
+- [L4106](Werewolf5edWyrmtide#L4106): Exceptional Dice Pools: Leadership 8, Politics 8,
+- [L4108](Werewolf5edWyrmtide#L4108): Notes / Other Traits:
+- [L4281](Werewolf5edWyrmtide#L4281): General Difficulty: 4 / 2
+- [L4282](Werewolf5edWyrmtide#L4282): Standard Dice Pools: Physical 5, Social 7, Mental 6
+- [L4284](Werewolf5edWyrmtide#L4284): Exceptional Dice Pools: Firearms 7, Leadership 8,
+- [L4286](Werewolf5edWyrmtide#L4286): Notes / Other Traits:
+- [L4307](Werewolf5edWyrmtide#L4307): General Difficulty: 5 / 3
+- [L4308](Werewolf5edWyrmtide#L4308): Standard Dice Pools: Physical 9, Social 6, Mental
+- [L4311](Werewolf5edWyrmtide#L4311): Exceptional Dice Pools: Brawl 10, Streetwise 7,
+- [L4421](Werewolf5edWyrmtide#L4421): General Difficulty: 4 / 2
+- [L4422](Werewolf5edWyrmtide#L4422): Standard Dice Pools: Physical 3, Social 4, Mental 8
+- [L4424](Werewolf5edWyrmtide#L4424): Exceptional Dice Pools: Finance 9, Occult 9,
+- [L4426](Werewolf5edWyrmtide#L4426): Notes / Other Traits:
+- [L4458](Werewolf5edWyrmtide#L4458): General Difficulty: 4 / 3
+- [L4459](Werewolf5edWyrmtide#L4459): Standard Dice Pools: Physical 5, Social 6, Mental 7
+- [L4461](Werewolf5edWyrmtide#L4461): Exceptional Dice Pools: Technology 8, Science 8,
+- [L4463](Werewolf5edWyrmtide#L4463): Notes / Other Traits:
+- [L5124](Werewolf5edWyrmtide#L5124): Exceptional Dice Pools: +4 Stealth, +4 Brawl
+- [L5125](Werewolf5edWyrmtide#L5125): Notes / Other Traits:
+- [L5197](Werewolf5edWyrmtide#L5197): Exceptional Dice Pools: +2 Athletics, +3 Brawl
+- [L5198](Werewolf5edWyrmtide#L5198): Notes / Other Traits:
+- [L5312](Werewolf5edWyrmtide#L5312): Exceptional Dice Pools: +3 Brawl, +4 Melee
+- [L5313](Werewolf5edWyrmtide#L5313): Notes / Other Traits:
+- [L5390](Werewolf5edWyrmtide#L5390): Exceptional Dice Pools: + 4 Firearms (Kinetic
+- [L5392](Werewolf5edWyrmtide#L5392): Notes / Other Traits:
+- [L5476](Werewolf5edWyrmtide#L5476): Exceptional Dice Pools: The Phantasmus has a
+- [L5479](Werewolf5edWyrmtide#L5479): Notes / Other Traits:
+- [L5539](Werewolf5edWyrmtide#L5539): Exceptional Dice Pools: Insight +3, Persuasion
+- [L5613](Werewolf5edWyrmtide#L5613): Exceptional Dice Pools: Insight +4, Subterfuge +4
+- [L5614](Werewolf5edWyrmtide#L5614): Notes / Other Traits:
+- [L5687](Werewolf5edWyrmtide#L5687): Exceptional Dice Pools: Animal Ken +4,
+- [L5689](Werewolf5edWyrmtide#L5689): Notes / Other Traits:
+- [L5775](Werewolf5edWyrmtide#L5775): Exceptional Dice Pools: +3 Subterfuge, +3
+- [L5777](Werewolf5edWyrmtide#L5777): Notes / Other Traits:
+- [L5782](Werewolf5edWyrmtide#L5782): general Difficulty to resist the lullaby’s effects. On
+- [L5856](Werewolf5edWyrmtide#L5856): Exceptional Dice Pools: Leadership +3, Politics
+- [L5859](Werewolf5edWyrmtide#L5859): Notes / Other Traits:
+- [L5937](Werewolf5edWyrmtide#L5937): Exceptional Dice Pools: Insight +3, Persuasion +4
+- [L5938](Werewolf5edWyrmtide#L5938): Notes / Other Traits:
+- [L5961](Werewolf5edWyrmtide#L5961): General Difficulty: 3 / 2
+- [L5962](Werewolf5edWyrmtide#L5962): Standard Dice Pools: Physical 5, Social 3,
+- [L5965](Werewolf5edWyrmtide#L5965): Exceptional Dice Pools: Brawl 6, Stealth 7,
+- [L6034](Werewolf5edWyrmtide#L6034): Exceptional Dice Pools: Performance +4,
+- [L6036](Werewolf5edWyrmtide#L6036): Notes / Other Traits:
+- [L6125](Werewolf5edWyrmtide#L6125): Exceptional Dice Pools: Alertness +2, Occult
+- [L6230](Werewolf5edWyrmtide#L6230): Exceptional Dice Pools: Athletics +4, Brawl +3
+- [L6231](Werewolf5edWyrmtide#L6231): Notes / Other Traits:
+- [L6251](Werewolf5edWyrmtide#L6251): General Difficulty: 4 / 2
+- [L6252](Werewolf5edWyrmtide#L6252): Standard Dice Pools: Physical 6, Social 2, Mental 4
+- [L6254](Werewolf5edWyrmtide#L6254): Exceptional Dice Pools: Brawl (Biting) 9, Melee 8,
+- [L6256](Werewolf5edWyrmtide#L6256): Notes / Other Traits:
+- [L6338](Werewolf5edWyrmtide#L6338): Exceptional Dice Pools: Firearms (Balefire) +3,
+- [L6340](Werewolf5edWyrmtide#L6340): Notes / Other Traits:
+- [L6409](Werewolf5edWyrmtide#L6409): Exceptional Dice Pools: Brawl (Choking) +4,
+- [L6411](Werewolf5edWyrmtide#L6411): Notes / Other Traits:
+- [L6488](Werewolf5edWyrmtide#L6488): Exceptional Dice Pools: Survival +3, Stealth +3
+- [L6561](Werewolf5edWyrmtide#L6561): Exceptional Dice Pools: Persuasion (Seduction)
+- [L6563](Werewolf5edWyrmtide#L6563): Notes / Other Traits:
+- [L6706](Werewolf5edWyrmtide#L6706): Exceptional Dice Pools: Persuasion +3, Brawl +3
+- [L6771](Werewolf5edWyrmtide#L6771): Exceptional Dice Pools: Leadership +3, Politics +3
+- [L6889](Werewolf5edWyrmtide#L6889): Exceptional Dice Pools: Brawl (All-Out Attack)
+- [L6955](Werewolf5edWyrmtide#L6955): Exceptional Dice Pools: Firearms +2, Leadership
+- [L7083](Werewolf5edWyrmtide#L7083): General Difficulty: 4 / 2
+- [L7084](Werewolf5edWyrmtide#L7084): Standard Dice Pools: Physical 5, Social 2, Mental 3
+- [L7086](Werewolf5edWyrmtide#L7086): Exceptional Dice Pools: Athletics 6, Brawl 7,
+- [L7088](Werewolf5edWyrmtide#L7088): Notes / Other Traits:
+- [L7187](Werewolf5edWyrmtide#L7187): General Difficulty: 6 / 3
+- [L7188](Werewolf5edWyrmtide#L7188): Standard Dice Pools: Physical 5, Social 7, Mental 7
+- [L7190](Werewolf5edWyrmtide#L7190): Exceptional Dice Pools: Athletics 6, Brawl 6,
+- [L7192](Werewolf5edWyrmtide#L7192): Notes / Other Traits:
+- [L7280](Werewolf5edWyrmtide#L7280): General Difficulty: 4 / 2
+- [L7284](Werewolf5edWyrmtide#L7284): Exceptional Dice Pools: Awareness (Tracking
+- [L7338](Werewolf5edWyrmtide#L7338): General Difficulty: 5 / 2
+- [L7339](Werewolf5edWyrmtide#L7339): Standard Dice Pools: Physical 4, Social 6, Mental
+- [L7342](Werewolf5edWyrmtide#L7342): Exceptional Dice Pools: Brawl 6, Subterfuge 8,
+- [L7371](Werewolf5edWyrmtide#L7371): General Difficulty: 5 / 2
+- [L7372](Werewolf5edWyrmtide#L7372): Standard Dice Pools: Physical 6, Social 8,
+- [L7376](Werewolf5edWyrmtide#L7376): Exceptional Dice Pools: Brawl 8, Technology 7,
+- [L7553](Werewolf5edWyrmtide#L7553): General Difficulty: 5 / 2
+- [L7554](Werewolf5edWyrmtide#L7554): Standard Dice Pools: Physical 9, Social 3, Mental
+- [L7557](Werewolf5edWyrmtide#L7557): Exceptional Dice Pools: Brawl 10, Driving 10,
+- [L7588](Werewolf5edWyrmtide#L7588): General Difficulty: 6 / 4
+- [L7589](Werewolf5edWyrmtide#L7589): Standard Dice Pools: Physical 12, Social 8,
+- [L7592](Werewolf5edWyrmtide#L7592): Exceptional Dice Pools: Brawl 14, Melee 14,
+- [L7738](Werewolf5edWyrmtide#L7738): General Difficulty: 4 / 2
+- [L7739](Werewolf5edWyrmtide#L7739): Standard Dice Pools: Physical 8, Social 4, Mental
+- [L7742](Werewolf5edWyrmtide#L7742): Exceptional Dice Pools: Melee 9, Crafts 8, Occult 8
+- [L7768](Werewolf5edWyrmtide#L7768): General Difficulty: 4 / 3
+- [L7769](Werewolf5edWyrmtide#L7769): Standard Dice Pools: Physical 7, Social 8, Mental
+- [L7772](Werewolf5edWyrmtide#L7772): Exceptional Dice Pools: Brawl 8, Persuade 9,
+- [L7920](Werewolf5edWyrmtide#L7920): General Difficulty: 5 / 4
+- [L7921](Werewolf5edWyrmtide#L7921): Standard Dice Pools: Physical 6, Social 8, Mental
+- [L7924](Werewolf5edWyrmtide#L7924): Exceptional Dice Pools: Performance 9,
+- [L7930](Werewolf5edWyrmtide#L7930): General Difficulty: 5 / 4
+- [L7933](Werewolf5edWyrmtide#L7933): Standard Dice Pools: Physical 7, Social 7, Mental
+- [L7936](Werewolf5edWyrmtide#L7936): Exceptional Dice Pools: Subterfuge 8, Finance
+- [L7966](Werewolf5edWyrmtide#L7966): General Difficulty: 6 / 4
+- [L7967](Werewolf5edWyrmtide#L7967): Standard Dice Pools: Physical 12, Social 7,
+- [L7970](Werewolf5edWyrmtide#L7970): Exceptional Dice Pools: Brawl 12, Stealth 12,
+- [L8090](Werewolf5edWyrmtide#L8090): General Difficulty: 4 / 2
+- [L8091](Werewolf5edWyrmtide#L8091): Standard Dice Pools: Physical 6, Social 7, Mental 8
+- [L8093](Werewolf5edWyrmtide#L8093): Exceptional Dice Pools: Gifts 7
+- [L8116](Werewolf5edWyrmtide#L8116): General Difficulty: 6 / 3
+- [L8117](Werewolf5edWyrmtide#L8117): Standard Dice Pools: Physical 8, Social 4, Mental 5
+- [L8119](Werewolf5edWyrmtide#L8119): Exceptional Dice Pools: Athletics 7, Brawl 8,
+- [L8388](Werewolf5edWyrmtide#L8388): General Difficulty: 5 / 2
+- [L8389](Werewolf5edWyrmtide#L8389): Standard Dice Pools: Physical 4, Social 6, Mental 6
+- [L8391](Werewolf5edWyrmtide#L8391): Exceptional Dice Pools: Brawl 10, Weaponry 9,
+- [L8461](Werewolf5edWyrmtide#L8461): General Difficulty: 5 / 2
+- [L8462](Werewolf5edWyrmtide#L8462): Standard Dice Pools: Physical 4, Social 6, Mental 5
+- [L8464](Werewolf5edWyrmtide#L8464): Exceptional Dice Pools: Weaponry 6, Leadership
+- [L8472](Werewolf5edWyrmtide#L8472): General Difficulty: 5 / 2
+- [L8473](Werewolf5edWyrmtide#L8473): Standard Dice Pools: Physical 5, Social 3, Mental
+- [L8476](Werewolf5edWyrmtide#L8476): Exceptional Dice Pools: Brawl 6, Subterfuge 8,
+- [L8543](Werewolf5edWyrmtide#L8543): General Difficulty: 4 / 2
+- [L8544](Werewolf5edWyrmtide#L8544): Standard Dice Pools: Physical 5, Social 8, Mental
+- [L8547](Werewolf5edWyrmtide#L8547): Exceptional Dice Pools: Brawl 6, Subterfuge 9,
+- [L8558](Werewolf5edWyrmtide#L8558): Exceptional Dice Pools: Occult +3, Brawl +5
+- [L8559](Werewolf5edWyrmtide#L8559): Notes / Other Traits:
+- [L8726](Werewolf5edWyrmtide#L8726): Exceptional Dice Pools: Awareness +6,
+- [L8822](Werewolf5edWyrmtide#L8822): Exceptional Dice Pools: Awareness +4, Firearms
+- [L8990](Werewolf5edWyrmtide#L8990): Exceptional Dice Pools: Stealth +4, Persuasion
+- [L8992](Werewolf5edWyrmtide#L8992): Notes / Other Traits:
+- [L9042](Werewolf5edWyrmtide#L9042): General Difficulty: 5 / 3
+- [L9043](Werewolf5edWyrmtide#L9043): Standard Dice Pools: Physical 8, Social 4, Mental 6
+- [L9045](Werewolf5edWyrmtide#L9045): Exceptional Dice Pools: Brawl 12, Intimidation
+- [L9047](Werewolf5edWyrmtide#L9047): Notes / Other Traits:
+- [L9152](Werewolf5edWyrmtide#L9152): General Difficulty: 3 / 2
+- [L9153](Werewolf5edWyrmtide#L9153): Standard Dice Pools: Physical 6, Social 2, Mental
+- [L9156](Werewolf5edWyrmtide#L9156): Exceptional Dice Pools: Medicine 6
+- [L9157](Werewolf5edWyrmtide#L9157): Notes / Other Traits:
+- [L9218](Werewolf5edWyrmtide#L9218): General Difficulty: 3 / 2
+- [L9219](Werewolf5edWyrmtide#L9219): Standard Dice Pools: Physical 6, Social 3, Mental 3
+- [L9221](Werewolf5edWyrmtide#L9221): Exceptional Dice Pools: Brawl 7, Investigation 6,
+- [L9223](Werewolf5edWyrmtide#L9223): Notes / Other Traits:
+- [L9351](Werewolf5edWyrmtide#L9351): General Difficulty: 3 / 2
+- [L9352](Werewolf5edWyrmtide#L9352): Standard Dice Pools: Physical 5, Social 3, Mental 3
+- [L9354](Werewolf5edWyrmtide#L9354): Exceptional Dice Pools: Brawl 6, Firearms 6,
+- [L9356](Werewolf5edWyrmtide#L9356): Notes / Other Traits:
+- [L9374](Werewolf5edWyrmtide#L9374): General Difficulty: 4 / 2
+- [L9375](Werewolf5edWyrmtide#L9375): Standard Dice Pools: Physical 2, Social 4, Mental 5
+- [L9377](Werewolf5edWyrmtide#L9377): Exceptional Dice Pools: Insight 6, Persuasion 5
+- [L9378](Werewolf5edWyrmtide#L9378): Notes / Other Traits:
+- [L9591](Werewolf5edWyrmtide#L9591): General Difficulty: 3 / 2
+- [L9592](Werewolf5edWyrmtide#L9592): Standard Dice Pools: Physical 2, Social 3, Mental 4
+- [L9594](Werewolf5edWyrmtide#L9594): Exceptional Dice Pools: Subterfuge 5, Science 5
+- [L9595](Werewolf5edWyrmtide#L9595): Notes / Other Traits:
+- [L9756](Werewolf5edWyrmtide#L9756): General Difficulty: 3 / 2
+- [L9757](Werewolf5edWyrmtide#L9757): Standard Dice Pools: Physical 3, Social 4, Mental 3
+- [L9759](Werewolf5edWyrmtide#L9759): Exceptional Dice Pools: Intimidation 5, Technology
+- [L9761](Werewolf5edWyrmtide#L9761): Notes / Other Traits:
+- [L9932](Werewolf5edWyrmtide#L9932): General Difficulty: 3 / 2
+- [L9933](Werewolf5edWyrmtide#L9933): Standard Dice Pools: Physical 3, Social 4, Mental 4
+- [L9935](Werewolf5edWyrmtide#L9935): Exceptional Dice Pools: Subterfuge 5,
+- [L9937](Werewolf5edWyrmtide#L9937): Notes / Other Traits:
+- [L9961](Werewolf5edWyrmtide#L9961): General Difficulty: 4 / 2
+- [L9962](Werewolf5edWyrmtide#L9962): Standard Dice Pools: Physical 7, Social 5, Mental 6
+- [L9964](Werewolf5edWyrmtide#L9964): Exceptional Dice Pools: Awareness 8, Larceny 8,
+- [L9966](Werewolf5edWyrmtide#L9966): Notes / Other Traits:
+- [L10089](Werewolf5edWyrmtide#L10089): General Difficulty: 4 / 2
+- [L10090](Werewolf5edWyrmtide#L10090): Standard Dice Pools: Physical 5, Social 3, Mental 4
+- [L10092](Werewolf5edWyrmtide#L10092): Exceptional Dice Pools: Animal Ken 5, Firearms
+- [L10094](Werewolf5edWyrmtide#L10094): Notes / Other Traits:
+- [L10110](Werewolf5edWyrmtide#L10110): General Difficulty: 3 / 2
+- [L10111](Werewolf5edWyrmtide#L10111): Standard Dice Pools: Physical 2, Social 4, Mental 3
+- [L10113](Werewolf5edWyrmtide#L10113): Exceptional Dice Pools: Persuasion 5, Firearms 3,
+- [L10115](Werewolf5edWyrmtide#L10115): Notes / Other Traits:
+- [L10120](Werewolf5edWyrmtide#L10120): General Difficulties of 3 / 2 and an Exceptional
+- [L10265](Werewolf5edWyrmtide#L10265): General Difficulty: 3 / 2
+- [L10266](Werewolf5edWyrmtide#L10266): Standard Dice Pools: Physical 3, Social 2, Mental 3
+- [L10268](Werewolf5edWyrmtide#L10268): Exceptional Dice Pools: Intimidation 5,
+- [L10270](Werewolf5edWyrmtide#L10270): Notes / Other Traits:
+- [L10287](Werewolf5edWyrmtide#L10287): General Difficulty: 3 / 2
+- [L10288](Werewolf5edWyrmtide#L10288): Standard Dice Pools: Physical 3, Social 4, Mental 3
+- [L10290](Werewolf5edWyrmtide#L10290): Exceptional Dice Pools: Leadership 5, Subterfuge
+- [L10292](Werewolf5edWyrmtide#L10292): Notes / Other Traits:
+- [L10440](Werewolf5edWyrmtide#L10440): General Difficulty: 3 / 2
+- [L10441](Werewolf5edWyrmtide#L10441): Standard Dice Pools: Physical 4, Social 3, Mental 3
+- [L10443](Werewolf5edWyrmtide#L10443): Exceptional Dice Pools: Brawl 5, Firearms 5,
+- [L10445](Werewolf5edWyrmtide#L10445): Notes / Other Traits:
+- [L10462](Werewolf5edWyrmtide#L10462): General Difficulty: 3 / 2
+- [L10463](Werewolf5edWyrmtide#L10463): Standard Dice Pools: Physical 4, Social 4, Mental 5
+- [L10465](Werewolf5edWyrmtide#L10465): Exceptional Dice Pools: Awareness 7, Stealth 7,
+- [L10467](Werewolf5edWyrmtide#L10467): Notes / Other Traits:
+- [L10603](Werewolf5edWyrmtide#L10603): General Difficulty: 5 / 3
+- [L10604](Werewolf5edWyrmtide#L10604): Standard Dice Pools: Physical 6, Social 5, Mental 6
+- [L10606](Werewolf5edWyrmtide#L10606): Exceptional Dice Pools: Firearms 8, Stealth 8,
+- [L10608](Werewolf5edWyrmtide#L10608): Notes / Other Traits:
+- [L10622](Werewolf5edWyrmtide#L10622): General Difficulty: 4 / 3
+- [L10623](Werewolf5edWyrmtide#L10623): Standard Dice Pools: Physical 5, Social 4, Mental 6
+- [L10625](Werewolf5edWyrmtide#L10625): Exceptional Dice Pools: Firearms 8, Stealth 7,
+- [L10627](Werewolf5edWyrmtide#L10627): Notes / Other Traits:
+- [L11416](Werewolf5edWyrmtide#L11416): General Difficulty: 4 / 2
+- [L11417](Werewolf5edWyrmtide#L11417): Standard Dice Pools: Physical 5,
+- [L11421](Werewolf5edWyrmtide#L11421): Exceptional Dice Pools: Larceny 6, Academics
+- [L11423](Werewolf5edWyrmtide#L11423): Notes / Other Traits:
+- [L11464](Werewolf5edWyrmtide#L11464): General Difficulty: 4 / 2
+- [L11465](Werewolf5edWyrmtide#L11465): Standard Dice Pools: Physical 5, Social 7, Mental 6
+- [L11467](Werewolf5edWyrmtide#L11467): Exceptional Dice Pools: Leadership 8, Finance 7,
+- [L11469](Werewolf5edWyrmtide#L11469): Notes / Other Traits:
+- [L11607](Werewolf5edWyrmtide#L11607): General Difficulty: 5 / 3
+- [L11608](Werewolf5edWyrmtide#L11608): Standard Dice Pools: Physical 7, Social 6, Mental 7
+- [L11610](Werewolf5edWyrmtide#L11610): Exceptional Dice Pools: Firearms 9, Subterfuge 9,
+- [L11614](Werewolf5edWyrmtide#L11614): Notes / Other Traits:
+- [L11635](Werewolf5edWyrmtide#L11635): General Difficulty: 4 / 2
+- [L11636](Werewolf5edWyrmtide#L11636): Standard Dice Pools: Physical 7, Social 3, Mental 4
+- [L11638](Werewolf5edWyrmtide#L11638): Exceptional Dice Pools: Firearms 8, Occult 6,
+- [L11640](Werewolf5edWyrmtide#L11640): Notes / Other Traits:
+
+### vantagens, ritos e equipamento (3)
+
+- [L1360](Werewolf5edWyrmtide#L1360): Rites
+- [L1649](Werewolf5edWyrmtide#L1649): Talismans
+- [L1707](Werewolf5edWyrmtide#L1707): Talismans

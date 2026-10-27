@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -169,3 +172,11 @@ p, li, label, input, textarea, select, button { line-height: 1.55; }
 [class*="bg-emerald-"], [class*="bg-green-600"], [class*="bg-green-500"] { box-shadow: 0 0 9px rgba(16,185,129,0.30); }
 
 .custom-scrollbar::-webkit-scrollbar-thumb { background: linear-gradient(#7f1d1d, #1f2937); }
+
+/* Readability, keyboard focus, motion and clean table export. */
+:focus-visible { outline:2px solid #fbbf24; outline-offset:3px; }
+.text-gray-500 { color:#9ca3af; }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+@media print { body { background:white!important; color:black!important; } button,footer,nav {display:none!important;} .ww-card {break-inside:avoid;background:white!important;color:black!important;box-shadow:none!important;} body::before,body::after {display:none;} }
+
+@media print { * {color:#111!important;background:transparent!important;text-shadow:none!important;box-shadow:none!important;} html,body,#root {overflow:visible!important;} }

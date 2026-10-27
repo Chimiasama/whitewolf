@@ -8,14 +8,14 @@ export enum Tribe {
   BlackFuries = "blackfuries",
   BoneGnawers = "bonegnawers",
   ChildrenOfGaia = "childrenofgaia",
-  FiandeirosDeVidro = "fiandeirosdevidro",
+  GhostCouncil = "ghostcouncil",
   AndarilhosDoAsfalto = "andarilhosdoasfalto",
-  CriaDeFenris = "criadefenris",
+  HartWardens = "hartwardens",
   RedTalons = "redtalons",
   ShadowLords = "shadowlords",
   SilentStriders = "silentstriders",
   SilverFangs = "silverfangs",
-  Wendigo = "wendigo"
+  Galestalkers = "galestalkers"
 }
 
 export enum Auspice {
@@ -27,6 +27,7 @@ export enum Auspice {
 }
 
 export enum Clan {
+  Hecata = "hecata",
   Brujah = "brujah",
   Gangrel = "gangrel",
   Malkavian = "malkavian",
@@ -149,6 +150,10 @@ export interface Loresheet {
 }
 
 export interface Character {
+  schemaVersion?: number;
+  profile?: "player" | "npc";
+  narrative?: { role: string; motivation: string; secret: string; relationship: string; hook: string };
+  gifts?: { id: string; origin: "native" | "auspice" | "tribe" }[];
   gameType: GameType | null;
   name: string;
   concept: string;
