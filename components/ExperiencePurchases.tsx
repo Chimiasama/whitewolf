@@ -34,6 +34,7 @@ export function ExperiencePurchases({
     [message, setMessage] = useState(""),
     [error, setError] = useState("");
   const wolf = c.gameType === GameType.Werewolf;
+  if(c.npcTemplate)return <p>Este NPC usa paradas próprias. Edite suas capacidades na ficha.</p>;
   if (!c.creationCompletedAt)
     return (
       <section className="rounded border border-gray-600 p-4 space-y-3">

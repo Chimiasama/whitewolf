@@ -79,6 +79,7 @@ export function quotePurchase(
   r: PurchaseRequest,
   t: Translate = (k) => k,
 ): PurchaseQuote {
+  if(c.npcTemplate)reject("Este modelo de NPC usa paradas próprias editadas pelo Narrador.");
   if (!c.creationCompletedAt)
     reject("Conclua a criação ou habilite a evolução da ficha existente.");
   if (!Object.values(GameType).includes(c.gameType))
