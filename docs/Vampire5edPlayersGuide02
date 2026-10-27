@@ -1,0 +1,3473 @@
+A SOURCEBOOK FOR VAMPIRE: THE MASQUERADE
+VAMPIRE
+V5 Player's Guide
+LEGAL AND CREDITS
+WRITTEN BY: Bully
+EDITING AND READING: Bully
+ART AND ILLUSTRATION: White Wolf Entertainment, Pexels Open License
+Special thanks to Mandi Morose
+World of Darkness, Vampire: The Masquerade, Vampire: The Dark Ages, Victorian Age: Vampire, Werewolf: The Apocalypse,
+Werewolf: The Wild West, Mage: The Ascension, Mage: The Sorcerers Crusade, Wraith: The Oblivion, Wraith: The Great War,
+Changeling: The Dreaming, Hunter: The Reckoning, Demon: The Fallen, Mummy: The Resurrection, Orpheus, Exalted, Chronicles
+of Darkness, Vampire:The Requiem, Werewolf: The Forsaken, Mage: The Awakening, Changeling: The Lost, Hunter: The Vigil,
+Giest: The Sin Eaters, Demon: The Descent, Mummy: The Curse, Beast: The Primordial, Promethean: The Created, World of
+Darkness, Storyteller System™, Storytelling System™, and Storytellers Vault™ and their respective logos, icons and symbols are
+trademarks or registered trademarks of World of Darkness Entertainment AB. All rights reserved.
+This work contains material that is copyright of Paradox Interactive AB. Such material is used with permission under Community
+Content Agreement for the Storytellers Vault.
+PROPERTY Copyright©2021 Paradox Interactive AB (publ). All rights reserved.
+P L A Y E R ' S G U I D E 2
+3
+ADVANTAGES 10
+DISCIPLINES 24
+10
+13
+25
+22
+17
+15
+28
+34
+32
+30
+37
+36
+46
+35
+39
+41
+TABLE OF CONTENTS
+Animalism
+Auspex
+Celerity
+Dominate
+Fortitude
+Obfuscate
+Potence
+Presence
+Protean
+Blood Sorcery
+Oblivion
+P r e d a t o r Ty p e s
+These expanded predator types seek to make use
+of the additional Advantages and Flaws offered in
+this book. While vampires can feed in whichever
+way presents itself, most develop a regular method of
+acquiring blood. A kindred’s predator type informs a
+lot about the character ranging from how they
+interact with their Beast, how their past skills inform
+their new reality, and the relationship between their
+cursed existence and mortals.
+Predator Types
+Creating Predator Types
+Some vampires may hunt in ways that do not exactly align
+with the listed Predator Types. Players can work with their
+Storyteller to develop their own Predator Type. This should
+include a hunting roll determined by an Attribute and Skill, a
+dot in a related Discipline, 3 dots in advantages and 2 dots in
+flaws. Other adjustments can be made as necessary. Likewise, a
+player can use a Predator Type as a base and swap out one or two
+aspects to better fit their character. Like everything else, this
+should be created to tell a better story and not to create a
+character intended to exploit the mechanics.
+3
+P r e d a t o r Ty p e s
+4
+Business Owner
+You own a business or control it from behind the
+scenes. Either way, it provides staff and customers
+available to feed from at your convenience. You most
+likely had a business in real life or worked for one in a
+position giving you knowledge day to day operations.
+■ Add a specialty: Persuasion (Deals) or Finance
+(Money Laundering)
+■ Gain one dot of Dominate or Presence
+■ Gain three dots in the Business Owner
+Background
+■ Gain the Routine Flaw (••)
+■ Your Predator roll is Charisma + Persuasion
+Confidant
+People open up to you. Sometimes you open their
+veins in return. You are in a position where people
+seek you out for advice, therapy, or just someone to
+share their feelings with. Some seek comfort while
+others just want to unload their burdens on you. In
+life, you might have been a therapist, self-help guru,
+or simply that friend everyone could confide in.
+Corporate Leech
+You have access to corporate buildings full of
+inattentive workers to feed from. There are
+powerful people where you hunt, but you know how
+to manipulate things from the shadows without
+being noticed. Knowing how to blend in and stalk
+the halls and cubicles of capitalist labyrinths, you
+choose your victims carefully then put them back
+into the workflow. You know corporate jargon and
+enough details about a given company to get others
+to trust you belong there. Most companies have too
+many employees, departments, and divisions to
+know who is supposed to be in the building and
+who is a danger to them. Those who may suspect
+something is wrong rarely care enough to do
+anything about it. Perhaps you were a corporate
+drone in life, a manager in the rat race, security for
+a large company, or the one who cleaned the
+buildings.
+■ Add a specialty: Finance (Corporate) or Etiquette
+(Corporate)
+■ Gain one dot of Dominate or Obfuscate
+■ Gain the Power Behind the Throne Advantage
+(•••)
+■ Gain the Dull (•) and Dark Secret (•) Flaws
+■ Your Predator roll is Manipulation + Etiquette
+Eat the Rich
+Eating the rich is not just a motto, it is your diet. You
+either have access to high society by pretending to
+work for them and are used to being ignored until it is
+too late for them. Maybe you were a member of the
+elite and know they make for a deserving meal. You
+also might have been part of the media whose job was
+to follow and report on those with all the money and
+power.
+■ Add a specialty: Intimidation (Extortion) or
+Politics (Media)
+■ Gain one dot of Fortitude or Potence
+■ Gain the Clan Infiltrator Merit (•••)
+■ Gain the Angry Beast Flaw (••)
+■ Your Predator roll is Strength + Intimidation
+■ Add a specialty: Insight (Empathy) or
+Academics (Psychology)
+■ Gain one dot of Oblivion or Presence
+■ Gain the Merits: Supportive Presence (•),
+Remorseful (•), and Memoriam Dweller (•)
+■ Gain the Conflicting Loyalties Flaw (••)
+■ Your Predator roll is Composure + Insight
+P r e d a t o r Ty p e s
+5
+Hide and Eat
+You patiently wait for your prey to come to you.
+When the moment is right, you stealthily feed and
+disappear before most realize they were even hunted.
+Whether you wait in carefully chosen neighborhoods,
+parks, or in cars, eventually a fly will find its way into
+your web. You likely have experience being
+undercover, stalking, or hiding from others more
+dangerous.
+■ Add a specialty: Stealth (Stalking) or
+Awareness (Ambushes)
+■ Gain one dot of Celerity or Obfuscate
+■ Gain the Merits Efficient Eater (••) and
+Slippery (•)
+■ Gain the Obvious Predator Flaw (••)
+■ Your Predator roll is Wits + Stealth
+Kidnapper
+Highly risky and not for vampires struggling with
+their morality, some kindred prefer to capture their
+prey and keep them for feeding until they expire or
+can be released in a way that will not lead back to
+them. This is likely not your first time doing these
+acts, or maybe you were fascinated with true crime
+and now have the means to be like the criminals
+you learned so much about.
+■ Add a specialty: Craft (Security) or Investigation
+(Stalking)
+■ Gain one dot of Dominate or Potence
+■ Gain the Base Haven Advantage (••) with the
+Cell Merit (•)
+■ Lose one dot of Humanity
+■ Gain the Sadistic Flaw (••)
+■ Your Predator roll is Resolve + Investigation
+Lab Rat
+You run a medical clinic, experimental facility, or
+organize alternative medicine gatherings were blood
+flows freely. For whatever reason, people willingly
+give blood to you and trust it is part of some greater
+purpose or for quick cash. Often times your subjects
+receive blood themselves for various experiments you
+are concocting. This is also a way to inject your prey
+with your addiction of choice. You could have worked
+in or ran a similar facility in life or maybe frequently
+donated blood or took part in medical trials.
+■ Add a specialty: Medicine (Experiments) or
+Science (Experiments)
+■ Gain one dot of Blood Sorcery or Fortitude
+■ Gain the Improved Ghouls Merit (•••)
+■ Gain the Flaws Blunted Fangs (•) and
+Addiction (•)
+■ Your Predator roll is Intelligence + Science
+Hospital Hunter
+Hospitals provide a rotating selection of people in
+various conditions that often make for easy victims.
+You know enough about medicine to determine who
+can be fed from without issue and who would cause
+complications. Your blood may even be of use to
+keep certain patients alive longer. Whether you
+blend in with staff, visitors, or patients there are
+various opportunities for infiltration at all times of
+the night. You must be careful as biometrics are
+monitored and abnormalities may lead to
+investigations. You might have been a doctor, nurse,
+or someone who spent a lot of time in hospitals in
+life or had someone close who was hospitalized for
+an extended period. These nights, you are a cursed
+angel or a spectre of death flowing through the
+hospital halls.
+■ Add a specialty: Medicine (Diagnosis) or
+Persuasion (Condolence)
+■ Gain one dot of Fortitude or Oblivion
+■ Gain the Merit Blood Healer (•••)
+■ Gain the Frigid Aura Flaw (••)
+■ Your Predator roll is Intelligence + Medicine
+P r e d a t o r Ty p e s
+6
+Local Haunt
+You are the real danger behind a popular folktale.
+The monster in the woods. The spirit in the
+abandoned home. The creature in the sewers. A local
+scary story ensures that the curious, bored, or brave
+explore a location deemed to be haunted in some way
+and where you know you can usually visit to feed. Of
+course most of the time people explore this haunt
+they find nothing. Some nights they find the
+supernatural thing they were looking for. This may be
+your haven or a spot you set up specifically to hunt
+the morbidly curious. It may have already held
+rumors of danger before and you are capitalizing on
+it. In life you may have investigated the supernatural,
+or maybe just worked at haunted houses and know
+how to create an environment people will keep
+coming back to.
+■ Add a specialty: Intimidation (Frighten) or
+Athletics (Chasing)
+■ Gain one dot of Auspex or Protean
+■ Gain the Loremaster Merit (•••)
+■ Gain the Eerie Presence Flaw (••)
+■ Your Predator roll is Stamina + Athletics
+Lurker in the Crowd
+You know how to move quickly and quietly while
+stalking your prey. Getting lost among the masses,
+these hunters pick a target from a crowd and feed
+before anyone notices something is wrong. You are
+not the best at making an impact, but you prefer it
+that way. You could have been anything in life, but
+most people would not remember it. You never
+stood out and that is how you liked it.
+Manic Pixie Predator
+You feed and leave. Finding suitors is easy enough,
+but finding a new date each time you are hungry is
+not practical. Plus, you get something out of
+grooming your food with a short lived but
+passionate relationship. You are the manic pixie
+dream person who floats into your victim's lives and
+then leave them longing and lost. You may have
+been a heartbreaker in real life, or had commitment
+issues that never let you stay with one person for
+too long. Either way, finding partners was never a
+problem.
+■ Add a specialty: Persuasion (Risk Taking) or
+Insight (Insecurities)
+■ Gain one dot of Celerity or Presence
+■ Gain the Social Engineer Merit (•••)
+■ Gain the Cannot Embrace Flaw (••)
+■ Your Predator roll is Manipulation + Insight
+Online Predator
+The internet can be a dangerous place for a vampire,
+but you know how to hunt for curious individuals
+who are less cautious. You may be able to find
+identifying information to locate easy victims in their
+homes. You may also cultivate relationships with
+locals and convince them to meet at locations where
+you can feed from them. You could have had a variety
+of jobs in life, but you likely spent most of your time
+online. This could have been the space where you
+socialized and found groups to become entrenched or
+where you lurked in the dark corners and found
+other internet rogues.
+■ Add a specialty: Technology (Doxing) or
+Etiquette (Choose an internet subculture)
+■ Gain one dot of Obfuscate or Presence
+■ Gain the Mask Advantage (••) plus either
+Zeroed (•) or Cobbler (•)
+■ Gain the Paranoia Flaw (••)
+■ Your Predator roll is Resolve + Technology
+■ Add a speciality: Stealth (Blending In) or
+Athletics (Escaping)
+■ Gain one dot of Auspex or Obfuscate
+■ Gain three dots in the Obscure Merit
+■ Gain the Outsider Flaw (••)
+■ Your Predator roll is Wits + Stealth
+P r e d a t o r Ty p e s
+7
+Opportunist
+Get-rich-quick schemes, miracle drugs, and other
+goods and services are constantly being pushed by
+advertisers and influencers. Savvy kindred have
+learned from these schemes and set up fake businesses
+or social media accounts to lure in desperate or naive
+customers to meet about an exciting opportunity.
+The vampires often leave satisfied while the target
+typically ends up worse off. You were likely a
+salesperson, con-artist, or influencer and now use
+your powers of persuasion to entice people to give up
+more than money for the promise of delayed rewards.
+■ Add a specialty: Persuasion (Selling) or
+Insight (Desire)
+■ Gain one dot of Dominate or Presence
+■ Gain the Delay Destruction Merit (•••)
+■ Gain the Overconfident Flaw (••)
+■ Your Predator roll is Charisma + Insight
+Pack Hunter
+You hunt in the purest sense, surrounded by beasts
+while chasing down and ripping into your prey.
+There are other creatures who have come to accept
+you as one of their own, or even their leader, and
+hunt alongside you. Your active nights require deep
+rest during the day though. You were likely a hunter
+in real life, or someone who spent a great deal of
+time with carnivorous animals.
+Pay for Blood
+Hunting is nothing particularly special to you, just
+another transaction to be completed. You have the
+means and connections to have blood come to you
+and are accustomed to the convenience, though the
+more people involved in supplying you victims the
+more chances for exposure or betrayal. You likely
+come from a privileged past and are used to having
+people provide things for you.
+■ Add a specialty: Politics (Feeding Habits) or
+Finance (Follow the Money)
+■ Gain one dot of Dominate or Blood Sorcery
+■ Spend three dots between the Resources or
+Influence Advantages (•••)
+■ Gain the Despised Flaw (••)
+■ Your Predator roll is Charisma + Finance
+Street Feeder
+You know the city streets well and the best places to
+find victims. Places others consider dangerous you call
+home. Rather than overpowering your prey, you lull
+them into vulnerable situations. You know the best
+areas to feed off the local population or where you can
+lure passerby's before sending them on their way. You
+might have been a person without a home in life, a
+busker, or off the grid.
+■ Add a specialty: Streetwise (High Crime
+Areas) or Brawl (Ambush)
+■ Gain one dot of Obfuscate or Potence
+■ Gain the Danger Sense Merit (•••)
+■ Gain the Destitute Flaw (•)
+■ Your Predator roll is Stamina + Brawl
+■ Add a specialty: Animal Ken (Carnivores) or
+Brawl (Pack Tactics)
+■ Gain one dot of Animalism or Protean
+■ Gain the Apex Predator Merit (•••)
+■ Gain the Flaws Brash (•) and Deep Sleeper (•)
+■ Your Predator roll is Dexterity + Brawl
+P r e d a t o r Ty p e s
+8
+Watcher from the
+Water
+You hunt in a body of water for your prey. Accidents
+happen and it is easy for a vampire to wait
+underwater as long as they need for their
+opportunity. The depths are comforting to you. You
+feed on divers, fishermen, sailors, or anyone who
+finds themselves in or near your watery feeding
+grounds at night. In life you were likely at home in
+the water and revel in the fact that you can now stay
+submerged indefinitely.
+Wolf in Sheep's
+Clothing
+You are the prey and the predator. A wolf in
+sheep's clothing. You know how to find potential
+predators and flip the dynamic. By either
+pretending to be an easy target in key locations, or
+finding people in secret circles who seek out
+desperate people to take advantage of, you willingly
+walk into danger just to feed upon those who
+thought they had the power. Perhaps you have ran
+into some unsavory characters in your life, or were
+even one yourself, and now know how they operate
+and how to hunt the hunters.
+■ Add a specialty: Subterfuge (Feigning
+Weakness) or Melee (Hidden Weapon)
+■ Gain one dot of Auspex or Fortitude
+■ Gain the Merits Daredevil (•••) and
+Underestimated (•)
+■ Gain the Death's Kiss Flaw (••)
+■ Your Predator roll is Fortitude + Melee
+■ Add a specialty: Athletics (Swimming) or
+Survival (Water)
+■ Gain one dot of Oblivion or Protean
+■ Gain the Merits Sharp Senses (••) and
+Slippery (•)
+■ Gain the No Haven Flaw (•)
+■ Your Predator roll is Dexterity + Survival
+
+1 0
+A d v a n t a g e s
+Advantages
+Merits and Flaws
+Mental
+While many Advantages and Flaws can simply be
+played as character backstory, this section seeks to give
+unique aspects of your character weight within the game
+system. This is designed to add distinctive flair to your
+character rather than limit certain background details
+to mechanics. Ideally, these should ingrain your
+character concept within the game system. These
+options should enhance role play rather than force
+narratives. Make sure your choices are adding depth to
+your character and not intended to exploit certain
+mechanics.
+Alternate Character Creation Rules
+To make full use of the expanded Backgrounds,
+Merits, and Flaws, we suggest increasing the amount of
+points allocated at character creation. This optional rule
+allows up to 7 points of Flaws to be taken to acquire up
+to 7 points of Advantages. This is in addition to the
+standard 7 points of Advantage and 2 points of Flaws
+(or more if older) designated in character creation
+(VtM Corebook pp. 136-137).
+For example, 4 points of Flaws can be taken in order
+to spend 4 points on Advantages. This would allow a
+standard character at creation to have 11 points of
+Advantages and 6 points of Flaws (not including those
+gained by their Predator Type). Merits can only be
+purchased using Flaws during character creation.
+Advantages must be bought using experience points as
+usual after creation.
+Advantages and Flaws are organized into Social,
+Mental, Physical, and Supernatural categories. Some
+expand on options available in the VtM: Corebook (pp.
+179-194) while others are new. Many add unique
+circumstances for your character to navigate, while
+others reinforce mechanics important to your concept.
+•••• Calm Heart: Your Beast has either been tempered or your
+overly calm demeanor makes it rarer to enter a Frenzy.
+Characters with this trait add two dice to any rolls to resist a
+Frenzy.
+••• Daredevil: Boredom creeps into the mind of many
+kindred over the years, causing some vampires to seek
+ways to feel more alive during their years of undeath.
+By risking their immortality, kindred with this merit
+pursue dangerous situations for gratification.
+You have a two dice bonus for actions that
+the Storyteller deems unnecessarily dangerous. This
+does not give bonuses to just any dangerous situation a
+vampire finds themselves in or necessarily applies to
+every instance of combat, but adds to the chance for
+success when a vampire goes out of their way to take
+the most dangerous path in a given scenario. Danger
+being thrust upon them is not the same as chasing it.
+■ Flaw: (•••••) Amnesia. You remember nothing about your
+life before the embrace. Whether this is a side effect of the
+embrace, interference by mental Disciplines, or some other
+explanation, your life as a mortal is a blank slate.
+■ Flaw: (•••) Curiosity. You must spend one point of
+Willpower to ignore something intriguing or to resist
+exploring something new or unknown.
+•• Code of Honor: You have a personal code that you adhere
+to at all cost. Any attempts to get you to break this code, even
+supernaturally, receive a two dice penalty. This code must be
+specific and defined with your Storyteller. Anything too vague
+or able to be broadly applied to most situations is not viable
+for this merit.
+1 1
+■ Flaw: (••••) Impatient. You, or perhaps your Beast, is
+especially impatient. While many kindred bide their time
+for years while their schemes come to fruition, you
+struggle to sit around and wait for something to happen
+when action can be taken instead. You must spend a
+point of Willpower to wait patiently in a scenario where
+immediate action is also an option.
+••••• Fast Learner: You are a natural learner, picking up new
+skills and knowledge faster than most. All experience point
+costs are one less for Attributes, Skills, and Specialties only.
+For example, Attributes become new level x 4, Skills are new
+level x 2, and Specialties cost 2 experience points.
+• Focused: Typically actions taken in especially chaotic
+situations are made at a higher difficulty or result in
+dice penalties. You are able to stay focused and ignore
+distractions that would be obstacles for others. You
+do not suffer penalties when performing actions
+under stressful or distracting situations.
+•••• Headstrong: You possess impressive mental fortitude
+and are capable of pressing on where others would falter.
+You have one additional rank of Willpower (not to exceed
+ten) and do not take penalties for Impairment when your
+Willpower tracker is filled with Superficial damage.
+••• High Humanity: You were likely recently embraced and
+an especially righteous mortal. In rare cases, some vampires
+have even managed to lead a more moral life after the
+change. You gain one dot of Humanity.
+•••• Iron Will: You are especially resistant to mental
+intrusion. You receive a two dice bonus to resist any mind
+altering effects. If you successfully defend against a mind
+manipulating effect, you immediately become aware of the
+attempt. This does not combine with other mental blocking
+effects such as Fortitude.
+•••• Jack of All Trades: You have a knack for nearly all skills
+either through versatile training or natural talent. You may
+treat any Skill that you don't have any ranks in as having one
+dot for the purpose of your dice pool. You still need to spend
+the normal experience point cost for the actual first dot in a
+skill.
+• Expert Instructor: Some vampires understand that a strong
+coterie is vital to their survival and make sure they are
+surrounded by competent kindred. When you take the time to
+teach or train another character, they can spend one less
+experience point to learn a skill or Discipline that you possess.
+You can train others to gain ranks beyond what you currently
+have as well. The amount of time required training is
+determined by the Storyteller.
+A d v a n t a g e s
+1 2
+A d v a n t a g e s
+• Remorseful: You add one dice to any Remorse rolls.
+■ Flaw: (••) Paranoia. It helps to be cautious in kindred
+society, but you are especially paranoid. You question
+everyone's motives and struggle to feel comfortable or
+safe in situations that you do not completely control.
+You automatically fail Insight checks as you assume the
+worst no matter what a person's true intentions may be.
+■ Flaw: (••) Routine. You find comfort in your habits. With
+a potential eternity before you, routines keep you
+anchored and give you purpose. While you take solace in
+this, it also makes it easier for your enemies to know
+where you are or what you will be doing. Whenever you
+are forced to break your routine for a night, you take a
+two dice penalty on all Mental rolls. You must spend a
+point of Willpower to willingly break your routine for a
+night. Define this routine and work out the details with
+your Storyteller.
+•• Lore Master: You are well versed in various Occult
+interests. This may be due to academic versatility, a
+practical dabbling in various practices, or access to
+impressive occult references. Whatever the reason, you
+may add a specialty in Occult for each rank in the skill.
+■ Flaw: (•••) Morbid Fascination. You have an
+obsession with the macabre and need to physically be
+in the presence of grim reminders of death. You must
+spend 30 minutes awake and in the company of
+corpses or other grisly remains at least once per 24
+hours or take a two dice penalty to all dice rolls until
+you do so.
+■ Flaw: (•••••) Nightmares. You are plagued with
+horrific nightmares every time you slumber during
+the day. This could be the same reoccurring
+nightmare or something different each day. There is
+likely a sinister reason for this occurrence. An
+outside force may be warning or punishing you, or
+something from your past has infected your mind
+and reigns terror upon you. When you wake for the
+night, you must make a Willpower test against a
+Difficulty of 3. On a failure, you take a one dice
+penalty on all mental and social rolls for the night.
+■ Flaw: (••) Sadist. When others suffer, you feel a sense of
+joy. Once in combat, you will not stop until your
+opponent is defeated and you cause them as much pain
+as possible. Stopping requires a Willpower roll against a
+difficulty determined by the Storyteller. When given an
+opportunity to hurt someone or let them suffer
+needlessly, you must spend a point of Willpower to
+ignore the urge for a scene.
+1 3
+■ Flaw: (••••) Vengeful. Revenge
+can be a dangerous game, but
+you or your Beast cannot resist a
+chance to enact your own justice
+on those who have crossed you.
+If confronted with someone who
+has wronged you but has not
+been punished for it, you must
+make a Fury Frenzy test unless
+actively working to enact your
+vengeance.
+■ Flaw: (••) Weak-Willed. Your
+mind is more malleable than
+most. Perhaps you have always
+been easily swayed or maybe you
+have been mentally conditioned
+to receive instruction. You
+cannot use Willpower re-rolls
+when resisting mental powers or
+mundane manipulation.
+■ Flaw: (•••••) Soft-Hearted.
+Despite your Beast, you remain
+strongly compassionate to the
+plight of mortals. Whenever you
+witness a mortal suffering
+needlessly, you must make a
+Willpower check. The Difficulty
+is determined by the perceived
+innocence of the mortal and the
+severity of the suffering. On a
+win, nothing happens though you
+are extremely uneasy and
+saddened by the experience. On a
+failure, you take a Stain and have
+a two dice penalty to all rolls for
+the remainder of the night as you
+feel physically ill and emotionally
+distressed.
+• Total Recall: You are able to
+perfectly recall anything you have
+seen or heard. While many memories
+fade as a vampire ages, this
+potentially allows immediate recall
+of specific details with a Resolve +
+Intelligence check against a
+Difficulty determined by the
+Storyteller.
+■ Flaw: (••) Blunted Fangs. Your
+bite does not do Aggravated
+damage and is no more
+effective for feeding than a
+normal human bite, which is
+quite messy and painful for the
+victim.
+■ Flaw: (•••••) Childlike. You
+were embraced young. While
+the practice is heavily frowned
+upon in modern nights, your
+immortal form trapped in a
+young appearing body comes
+with many complications in
+both kindred society and
+navigating mortal society.
+Discuss with your Storyteller
+before taking this flaw.
+■ Flaw: (••••) Flesh of the Corpse.
+You retain physical traces of
+wounds you receive. While a
+kindred eventually returns to
+the state they were in at their
+embrace, your undead body
+retains cuts, wounds, and other
+marks from injuries sustained.
+You can heal as normally, but
+the wounds remain visible on
+the surface. The more damage
+you take over time, the less
+human you will appear.
+■ Flaw: (•••••) Fragile. Your form is
+more fragile than most kindred.
+Every time you take the first
+point of Aggravated Damage on
+your health tracker, you receive a
+crippling injury as rolled on the
+crippling injury chart (VtM
+Corebook p. 303). If you already
+have an Aggravated wound, you
+do not roll on the chart when you
+receive another. This only applies
+when you currently have no
+Aggravated wounds and then
+receive one.
+• Crack Driver: You are an
+especially skilled driver. You can
+perform minor actions without
+penalty while driving and receive a
+two dice bonus on all Dice Pools
+related to driving.
+••• Light Sleeper: A vampire is
+most vulnerable during the day.
+Luckily, you are able to shrug off
+your supernatural slumber and rise
+at the first sign of danger. Maybe
+you have trained your body to
+prepare for the worst or you sleep
+poorly for some reason. You
+automatically awaken when in
+danger during your day sleep. You
+still suffer the penalties for staying
+awake, but do not have to make the
+normal Humanity roll to wake
+before nightfall (VtM Corebook p.
+219).
+• Sharp Senses: One of your senses
+is especially honed. You receive
+one extra die to all appropriate
+dice pools that rely on this sense.
+• Slippery: You are especially
+slippery, either because of your
+nimbleness or even a literal slick
+coating that is found more
+commonly among the Nosferatu.
+You have a two dice bonus to
+dodge attacks or escape from
+grapples.
+Physical
+A d v a n t a g e s
+1 4
+■ Flaw: (•••) Stench of Death. The
+scent of decay lingers on you. It
+can be partially masked with
+other strong fragrances, but an
+odor reminiscent of death is
+always present. This smells
+different for each person, but
+evokes the same sense of dread.
+Any Charisma rolls made against
+mortals in your proximity are
+made at a two dice penalty.
+•••• Skill Aptitude: You are
+peerless in one specific skill,
+possessing incredible natural talent
+or the finest training in the world.
+You can go up to rank 6 in a single
+skill. You can only take this Merit
+once.
+•••• Tough: You are especially hardy.
+You may be an imposing physical
+specimen or you became tougher
+after the embrace. You have one
+additional health level.
+•••••• Unstakeable: One of
+kindred's greatest and most known
+weakness does not effect you for
+some reason. You may not even be
+aware of this unless you have been
+staked before. You do not succumb
+to Torpor when staked in the heart.
+While you take damage as usual
+from being staked, your body does
+not automatically enter torpor like
+most kindred.
+■ Flaw: (••) Weak Stomach.
+Vampires struggle to even fake
+eating and drinking as time
+goes. Most require Blush of Life
+to put on a believable
+performance even though
+everything tastes like ash. For
+you, this is unbearable and too
+repulsive to even pretend. You
+cannot even fake eating or
+drinking anything except blood.
+Anything you consume other
+than blood is immediately
+thrown up.
+A d v a n t a g e s
+1 5
+Social
+••• Clan Infiltrator: In many cities,
+especially those under Camarilla
+control, a kindred's clan is an
+important identifier. However, there
+are many ways to hide one's clan or
+even masquerade as a member of a
+different clan. Kindred with this
+merit have successfully infiltrated
+another clan or have convinced most
+vampires that they are a different
+clan. You receive a three dice bonus
+on any Dice Pools to deceive others
+about your true clan.
+• Inspiring Presence:
+Something about your aura is
+motivating to those around
+you. No words or actions are
+necessary, just your presence
+is enough to inspire others to
+do their best. Once a night, a
+single ally may make a free
+Willpower re-roll if you are
+within sight.
+■ Flaw: (•••) Mistaken Identity. You
+either look very similar to someone
+else or have been framed. You are
+commonly mistaken for another
+person who is notorious or disliked.
+Maybe you are widely believed to
+be responsible for this other
+person's actions. Either way, you
+are often blamed for something you
+did not do or believed to be
+someone you are not. You can of
+course explain or prove you are not
+this person, but most operate under
+the assumption that you are the
+mistaken identity until proven
+otherwise.
+■ Flaw: (•) Notorious Sire. Your sire is
+a notorious figure in kindred
+society. You carry the burden of
+their reputation and must prove
+yourself or fight to get out from the
+shadow of your sire in most
+situations. While possible to hide
+your lineage, it is not overly difficult
+for crafty kindred to make the
+connection and spread the word of
+your dubious connection.
+■ Flaw: (•) Oath Breaker. You have a
+reputation as a liar not to be
+trusted. Whether earned or not,
+others are unlikely to take you at
+your word or enter an agreement
+with you in good faith.
+■ Flaw: (••) Outsider. You are an
+outsider. There are few in this place
+that have anything in common with
+you. You are adjusting to the
+customs, etiquette, and rules of your
+new surroundings. You have a two
+dice penalty to relevant rolls that
+rely on local knowledge or customs.
+■ Flaw: (•) Brash. Double-speak,
+flattery, and veiled threats annoy
+you. If there is something to be
+said, you say it. You would prefer
+if others did the same, but that
+seems to be too much to ask;
+especially among vampires. You
+automatically fail any Etiquette
+checks that require you to
+practice restraint or subtlety.
+■ Flaw: (••) Conflicting Loyalties.
+You belong to separate factions
+with incompatible views or goals.
+Simply leaving one or the other is
+extremely difficult, but it is only a
+matter of time until you will have
+to choose a side or the groups will
+make the decision for you.
+■ Flaw: (••) Dull. Most find you
+unremarkable and rather boring.
+Any rolls made to inspire or
+emotionally sway someone are
+made at a two dice penalty.
+■ Flaw: (•••••) Hunted. You are
+known by the Second Inquisition
+or an organization that exists to
+hunt your kind. They have your
+description and enough leads to
+begin tracking you down. It is
+only a matter of time until they
+strike unless you take measures to
+avoid detection. Even then, you
+can only delay the inevitable for so
+long.
+■ Flaw: (••••) Intolerance. You
+hold a serious grudge against a
+certain clan or sect. You must
+spend a point of Willpower to
+cooperate with or aid any
+members of your hated group.
+This must be applicable to the
+story and not a group that
+there is little chance for
+cooperation with in the first
+place.
+■ Flaw: (•••••) Marked for
+Death. You have been marked
+for death by the Camarilla.
+Whether you broke a
+tradition, made an enemy out
+of a prince, or were framed,
+you are now at risk of death
+by the blood hunt whenever
+in the Camarilla's domain.
+A d v a n t a g e s
+1 6
+■ Flaw: (•••) Overconfident. You do
+not require help. In fact, you
+outright refuse it since you know
+you are at your best when handling a
+task yourself. You cannot receive a
+bonus to any rolls because of
+another character helping you nor
+can you provide assistance to
+another character on their roll.
+• Prestigious Sire: You are the
+known childer of a prestigious
+kindred. Most kindred show you
+respect based on your lineage or at
+least hesitate to cross you due to your
+sire. You do not necessarily have to
+be close with your sire to benefit
+from their reputation.
+••• Social Engineer: Bending another
+to your whim in the moment is
+useful, but you are especially skilled
+at carefully adjusting personalities
+and emotions to suit your needs.
+Manipulating mortal emotions is the
+equivalent of cooking for kindred.
+The right social ingredients tempered
+in proper environments can flavor
+blood to your preference or create
+Resonance for others. You gain a two
+dice bonus on any rolls designed to
+change a target's personality for
+purpose of shifting or cementing
+their Resonance.
+• Stalwart Loyalty: You are devoted
+to a group and firm in your
+allegiance. Others know of your
+commitment and fellow loyalists
+commend you for it. It would be
+difficult to convince others you were
+acting against your faction's interest
+or not aligned with them. Once per
+session, you may make a free
+Willpower re-roll when acting in
+direct service to your group or
+resisting temptation to betray them.
+This group should be defined with
+the Storyteller and be more specific
+than simply sect or clan.
+A d v a n t a g e s
+1 7
+■ Flaw: (••••) Twisted Upbringing.
+Your sire taught you everything
+wrong about being a kindred.
+Whether this was done as a cruel
+joke, or your sire is truly ignorant
+of the ways of the kindred, you
+believe their incorrect teachings
+and have difficulty accepting the
+truth of your condition and how
+kindred society works.
+• Underestimated: There is
+something about you that makes
+others underestimate you. Whether
+this is based on a curated reputation,
+physical characteristics, or other
+judgements, you are not taken as
+seriously as you should be. This
+increases the difficulty of attempts to
+Intimidate others, but also makes you
+more difficult to read on Insight
+checks against your true intentions or
+capabilities. You are often overlooked
+until it is too late. Clever kindred will
+use other's errors to their advantage.
+Supernatural
+• After Meal Glow: Feeding fills you
+with fresh blood that naturally
+vitalizes your human physiology.
+Immediately after feeding, you gain
+the benefits of Blush of Life without
+the need of a Rouse Check. This
+only works when feeding from a
+living victim.
+••••• Alchemy Expert: Whether
+through tutelage with the duskborn or
+perhaps stealing and studying their
+secrets, you have an understanding of
+their unique blood alchemy. You have
+access to the Thin-Blood Alchemy
+discipline (VtM Corebook p. 282). This
+is treated as an out of Clan discipline
+for determining experience point cost.
+■ Flaw: (••) Angry Beast. Your Beast
+is always waiting just under the
+surface to rear its head. You make
+rolls to resist Frenzy with a two dice
+penalty.
+••• Animal Affinity: Animals normally
+either avoid vampires or become
+aggressive towards them. Instead, they
+believe you are non-threatening and
+have a natural affinity towards you.
+You receive a two dice bonus on all
+Animal Ken rolls.
+A d v a n t a g e s
+1 8
+••• Apex Predator: Some struggle with adjusting to an
+existence of hunting for blood. You, however, are an
+especially efficient hunter. Maybe you honed these skills
+during your mortal life, or your Beast is the ultimate
+predator. When you are hunting your prey, no matter what
+your Predator Type is, you are at your best. You gain a two
+dice bonus on all Predator rolls to feed.
+■ Flaw: (••••) Appetizing Blood. Your blood smells
+appetizing to kindred. Vampires in your presence have a
+two dice penalty to Hunger Frenzy checks and any
+nearby kindred in a Hunger Frenzy target you first. This
+also makes it more difficult for a kindred to stop feeding
+from you once they begin.
+■ Flaw: (••) Beacon of Unholy. Your aura is permanently
+stained with an unholy aura, acting as a beacon to those
+with True Faith and giving a sense of general uneasiness
+or even danger to those with religious leanings.
+••• Berserker: You gain three additional dice on all Physical dice pools
+when in a Frenzy. Rolls to resist a Fury or Hunger Frenzy are made at a
+two dice penalty though.
+••• Blood Healer: Ghouls benefit from from an expedited healing
+process, but are not able to quickly Mend wounds like a true kindred
+can. A vampire with this ability is able to heal a mortal with their blood.
+This requires feeding the mortal a Rouse check's worth of Blood which
+allows the mortal to heal Superficial damage equal to the same amount
+the vampire can heal according to their Blood Potency.
+■ Flaw: (••) Cannot Embrace. For whatever reason, you are unable to
+embrace. Your Blood does not contain whatever property or curse
+that allows vampirism to be transmitted to another.
+■ Flaw: (••) Cursed. Cursed by a vengeful mystic, forbidden item, or
+perhaps even from birth, you have an unshakable curse upon you.
+Choose one Attribute to be cursed. Every time you roll a Bestial
+failure or Messy Critical using this Attribute, the curse takes effect in
+that moment. The Storyteller determines how this curse manifests.
+A d v a n t a g e s
+1 9
+••• Delay Destruction: You can
+ignore a Bestial failure or Messy
+Critical (still failing or succeeding as
+normal). The next roll you make is
+treated as a Bestial failure or Messy
+Critical if applicable (whichever was
+ignored) regardless of the roll.
+••• Danger Sense: Kindred with this
+ability have a supernatural sense for
+when they are in danger. When
+entering dangerous situations or
+about to be confronted with danger,
+the Storyteller makes a secret Wits +
+Awareness roll using the vampire's
+Dice Pool against a Difficulty
+determined by the Storyteller. On a
+win, the vampire will get a sense of
+foreboding or sudden instinctual
+warning about immediate danger.
+■ Flaw: (••) Eerie Presence. You are
+plagued by a supernatural effect
+such as an unnatural breeze,
+glowing eyes, forked tongue, insects
+follow you, or something unnerving
+and abnormal. The specific effect
+should be worked out with your
+Storyteller, but it should draw
+attention and complicate keeping
+the Masquerade.
+■ Flaw: (••) Death's Kiss. When you
+feed from a mortal, regardless of
+how careful you are, they take an
+Aggravated wound for each
+Hunger slaked. This is incredibly
+painful and makes it highly
+unlikely any victim would allow it
+to continue past the first bite.
+■ Flaw: (•) Deep Sleeper. During day
+sleep, any rolls to wake up when in
+danger are made a a two dice
+penalty.
+••••• Demonic Pact: You have
+entered a pact with a demonic
+entity. Your aura is permanently
+stained with fiendish influence.
+In exchange for your service and
+loyalty, you are given a dark gift
+by your patron. Work with your
+Storyteller to determine exactly
+what this is. These should
+roughly be equivalent to a rank
+three Discipline power but
+something outside of what
+kindred can normally do. Most
+kindred, and all uncorrupted
+werewolves, will seek your
+destruction if they discover you
+are in league with such an entity.
+•••• Diablerist: Considered a
+carnal sin by mosts sects and
+quick way to lose grasp on one's
+humanity, nevertheless some
+kindred seek to commit diablerie
+and in fact are especially good at
+it. You gain a three dice bonus to
+all rolls required to commit
+Diablerie. The black veins that
+become visible in a diablerist's
+aura never fade with time.
+•••••• Discipline Competence:
+You may treat one out of Clan
+Discipline as a Clan Discipline
+for the purpose of spending
+experience points.
+■ Flaw: (•••) Discipline Inept.
+You are not able to take ranks
+in one of your Clan
+Disciplines. Choose one of
+these Disciplines at character
+creation. You cannot spend
+experience points or use any
+other means to train in that
+Discipline. This is usually seen
+as a sign of weakness by
+certain members of your clan.
+••• Efficient Eater: You are able to
+digest Blood more efficiently than
+most. Treat all feeding restrictions as
+one less than your current Blood
+Potency, no lower than Blood Potency
+1 (VtM Companion p. 63).
+••• Fast Eater: Feeding without
+grievously wounding the victim takes
+time when done properly. While some
+vampires can rapidly feed while
+causing severe injury or death to their
+victims, you have perfected the art of
+drinking quickly without causing
+additional harm.
+•••• Fast Healer: You automatically
+mend one Superficial damage when
+you Rouse the Blood upon waking
+each evening. In addition, you can heal
+two Aggravated wounds when rising
+instead of one when making the
+required three Rouse Checks.
+••• Friend to Fae: Normally a kindred's
+presence is disturbing at best to the
+fae. You instead possess a calming aura
+towards the fae, perhaps intriguing
+them or at the very least not repelling
+them like most of your kind. You are
+also able to enter Arcadia if given the
+opportunity unlike most Kindred.
+■ Flaw: (••) Frigid Aura. All kindred
+have cold flesh, but this chill seems
+to radiant from you. In your
+presence plants die, water slowly
+freezes, and the living can see their
+breath around you.
+A d v a n t a g e s
+■ Flaw: (••••) Magic
+Susceptibility. You possess an
+inherent weakness to any
+arcane effects that target you,
+beneficial or harmful. Casters
+have a three dice bonus to any
+rolls to use magical abilities
+on you.
+■ Flaw: (•••) Grim Wounds. You
+carry your wounds unlike other
+kindred, your form
+remembering the damage
+caused to it for some purpose.
+Mending requires two Rouse
+checks instead of one.
+■ Flaw: (•••••) Haunted. A spirit
+haunts you and wishes you harm
+or to suffer. Who the ghost is
+and why they haunt you is up to
+you or your Storyteller, but they
+are determined to make your
+life more difficult. This is not
+constant, but occurs enough to
+be a problem. You may use the
+Spectre (Corebook p. 377)
+statistics or adjust to fit the
+non-player character. The spirit
+is so strongly connected to you
+that it is immune to Oblivion
+powers or ceremonies that
+would cause it to stop haunting
+you.
+••• Holy Aura: For some reason,
+your aura reads as a mortal to
+those with True Faith. Other
+kindred able to read auras can still
+identify you for what you are, but
+those with divine abilities will not
+be able to correctly determine
+your nature with True Faith alone.
+••• Improved Ghouls: Your blood
+is especially potent to mortals who
+consume it. Your ghouls can learn
+two level 1 Disciplines you possess,
+instead of the usual single power.
+•••• Magic Resistance: You possess
+an inherent resistance to any
+arcane effects that target you,
+beneficial or harmful. Casters have
+a three dice penalty to any rolls to
+use magical abilities on you.
+• Memoriam Dweller: When
+you undergo Memoriam, you gain a
+three dice bonus on all rolls
+exploring the memories.
+• to ••••• Obscure: You are
+mystically shrouded from notice.
+People have a hard time
+remembering you or even being
+aware of you in the first place. This
+is excellent for upholding the
+Masquerade, but makes it difficult
+to retain influence over a group
+when they often forget your name
+or deeds. This does not add dice to
+Stealth pools or effect people once
+they know you well or are
+consistently reminded of your
+presence. The higher the rating, the
+more potent and immediate this
+effect occurs.
+••••• Powerful Vitae: Your Blood is
+more Potent in a specific way.
+Choose one of the following
+categories of Blood Potency (Blood
+Surge, Damage Mended, Discipline
+Power Bonus, Discipline Rouse
+Check Re-Roll) and treat the
+benefit as one Blood Potency level
+higher. You can only take this
+merit once and choose one
+category of Blood Potency to
+benefit. Reference the updated
+Blood Potency chart in the VtM
+Companion p. 63.
+■ Flaw: (•••) Repulsive to
+Animals. Animals react
+especially violent towards
+you. They show clear distress
+and are vocal about their
+repulsion to your presence.
+Some bold or cornered
+creatures may even attack if
+given the opportunity.
+••• Rising Sun: While most
+vampires make sure they are secure
+in their havens before the sun rises,
+some are able to push the limits of
+the curse and perform at their best
+in the final moments of the night.
+You receive a four dice bonus to
+any rolls made during a scene that
+takes place within half an hour of
+the sun rising while you are not in
+or near your haven.
+••••• Spirit Mentor: A spirit
+companion guides you on occasion
+and seeks to help you on your
+journey. This may be the ghost of
+someone you knew, a friendly
+inhabitant of your haven, or
+another incorporeal being that
+took a liking to you for some
+reason. You may use the Spectre
+(Corebook p. 377) statistics or work
+with the Storyteller to determine
+the capabilities and background of
+this non-player character.
+■ Flaw: (•••) Taint of Corruption.
+Plants wither and die instantly
+around you. Small animals and
+insects even succumb to death if
+they come in contact with you.
+An unmistakable aura of death
+leaches life from everything
+immediately around you.
+Humans and larger creatures
+feel uneasy and ill around you,
+but do not take damage from
+this effect.
+A d v a n t a g e s
+20
+2 1
+■ Flaw: (•••••) Tainted Blood.
+Your blood is diseased, slowly
+killing any mortal who drinks
+it. This makes keeping ghouls
+or blood bonding mortals
+impossible. This does not
+effect other kindred or
+supernatural creatures.
+••••• Thaumaturgic Training: You
+have been trained in Blood Sorcery
+despite not belonging to a clan with
+inherent skills in the art. You know
+up to 3 ranks worth of Blood
+Sorcery Rituals (three rank one
+rituals, one rank one and one rank
+two, or one rank three ritual).You
+can only take this if you have no
+ranks in Blood Sorcery and cannot
+take ranks in it later. You are
+considered to have Blood Sorcery 1
+for the purpose of Ritual rolls only.
+■ Flaw: (••••) Thirst for
+Innocence. Your Beast seeks to
+feed on the Blood of the
+innocent. What qualifies as
+innocent is up to the
+Storyteller, but you must make
+Hunger Frenzy tests to resist
+feeding on an especially
+innocent individual when in
+their presence.
+•••• True Bond: You choose one of
+your mortal Touchstones and are
+considered bonded to them. You
+can sense when they are in danger
+no matter the distance from you
+and receive a two dice bonus on any
+actions taken to directly protect
+them. You do not know the nature
+of the danger or their location, you
+just know when they are in danger.
+You take an additional three Stains
+to any scenario that would cause
+Stains relating to this Touchstone.
+If this Touchstone dies, you
+automatically lose one point of
+Humanity.
+•••••• True Faith: This extremely
+rare condition is only possible for a
+vampire with Humanity 10. You are
+able to possess True Faith (VtM
+Corebook p. 222). This allows access
+to all five ranks of True Faith, but
+this ability disappears if your
+Humanity falls below 10. If this
+happens, the ability returns if your
+Humanity reaches 10 again.
+• to ••••• True Sight: While Auspex
+allows a vampire to see through
+illusions, some naturally have the
+ability to see more clearly.
+Characters may add their rating in
+this merit to rolls to see through
+illusions. This can be combined
+with Sense the Unseen (Corebook
+p. 249).
+■ Flaw: (•••••) Weak Blood. Your
+Blood is less Potent in a specific
+way. Choose one of the
+following categories of Blood
+Potency (Blood Surge, Damage
+Mended, Discipline Power
+Bonus, Discipline Rouse Check
+Re-Roll) and treat the benefit as
+one Blood Potency level lower,
+though no lower than Blood
+Potency 1 (VtM Companion p.
+63).
+A d v a n t a g e s
+2 2
+■ Flaw: (••) Cursed Item. The
+item has a negative effect in
+addition to any beneficial
+ones, or is tied to a powerful
+entity that wants it back. This
+can combine with a Mystical
+Item, or this could be an item
+you believe has a benefit that
+is instead only cursed, or
+simply an item you stumbled
+across and cannot get rid of.
+••
+Mystical Item
+Some items carry ancient curses,
+potent sorcerous influence, or
+other supernatural effects.
+Whether passed down carefully to
+chosen successors, stumbled upon
+in a forbidden cave, or stolen
+from an occult collector, you now
+possess such an item. The exact
+nature and benefits of this item
+may not be entirely clear, but for
+better or worse it is yours to
+wield. Decide on the specific item
+and how you attained it with the
+Storyteller.
+Backgrounds
+Business Owner
+You either own or control a
+business. This could be anything
+from a small shop to pulling the
+strings of a major corporation.
+This business can be a venue, club,
+school, or anything that has staff
+and is intended to make money.
+The business may be successful,
+but that does not always mean
+money in your pocket. The
+Resources background (VtM
+Corebook p. 193) still determines
+your capital assets.
+• Small shop that loses more
+money than it makes
+Small but successful business
+••• Regional stores or very
+popular local spot
+•••• Major chain, corporation, or
+famous individual business
+••••• Global corporation
+• Weak effect or useful only in
+very specific situations
+•• Moderate effect, akin to a plus
+one damage for a weapon of
+its type or similar
+••• Impressive effect, useful in
+many situations or able to
+mimic a level two Discipline
+equivalent
+•••• Remarkable effect, akin to
+plus two damage for a weapon
+of its type or especially deadly
+to a certain type of enemy
+••••• Artifact, a truly powerful item
+that is especially lethal or able
+to mimic abilities similar to
+level three Discipline powers.
+Others will want to take this
+from you if discovered.
+A d v a n t a g e s
+COREBOOK 2 3
+Power Behind the Throne
+You are the power behind the throne, or the one
+whispering advice to someone with great potential. This
+Trait gives you sway over a particular character who is
+either in a position of power or well on their way. This
+person trusts you unquestionably, though believes their
+decisions are their own. What you stand to gain is up to
+you, but this person is sure to bring you with them on
+their rise to power or give genuine weight to your
+opinions if already seated in an advantageous position.
+They are unlikely to act directly on your behalf and will
+not fight your battles, but their influence may be yours
+to wield if used correctly. While they believe you act in
+their best interest, your true intentions may be
+discovered if you are brazenly obvious or exposed by an
+enemy. Write this individual on your Relationship Map
+when you buy this background.
+• Neonate
+• Ancilla
+••• Elder
+•••• Primogen or Anarch Revolutionary
+Council member
+••••• Prince or Baron
+A d v a n t a g e s
+disciplines
+Additional Discipline options add more variety to the powers
+available to kindred. These are not intended to provide more
+powerful techniques, but different paths a vampire may take to
+distinguish themselves from another kindred with the same
+Disciple focus.
+2 4
+D I S C I P L I N E S
+2 5
+The user lets out a feral call,
+driving creatures able to hear it
+into a Frenzy.
+To smell the presence of
+supernatural Beasts in an area
+without specifying a specific
+target, the user rolls Resolve +
+Animalism against a difficulty
+determined by factors that would
+effect smell and time passed since
+a Beast was in the area. For
+example, smelling a Beast that
+was upwind within an hour in an
+area without strong smells could
+be Difficulty 2. Picking up the
+trail of a Beast that was near a
+landfill 4 hours ago could be
+Difficulty 6.
+WARN THE PACK
+The user issues a warning about
+another vampire, marking the
+target as dangerous to those
+around them and causing them to
+come across as threatening despite
+their intentions.
+Animalism
+Level 2
+FERAL FRENZY
+■ Cost: One Rouse Check
+■ Dice Pools: Manipulation +
+Animalism
+■ System: The user makes a
+Manipulation + Animalism roll
+and lets out a feral sound,
+whether it be a howl, roar, or
+other animalistic call. The
+difficulty is determined by the
+natural aggression in the
+creature and availability of
+targets. On a win, the call
+incites Frenzy within all
+animals that hear it. The
+creatures are not under the
+kindred’s control unless Feral
+Whispers or another discipline
+is used. The Frenzied animals
+will attack the nearest living
+creature of a different species
+(including the user), resorting
+to damaging property and
+possibly even their same species
+if no target is available. They
+remain violent for the scene or
+until destroyed, seeking out
+prey with little regard to their
+own safety for the duration.
+Even with Feral Whispers, it is
+impossible to direct the beasts
+to do anything non-violent and
+attempts to direct their fury is
+made at a three dice penalty.
+■ Duration: One Scene
+■ Prerequisite: Feral Whispers
+HUNT THE BEAST
+The vampire can smell the essence
+of a supernatural Beast and track a
+target by scent. While following a
+trail this way, the hunter senses
+shifts to their prey’s emotional
+state along their path as well. This
+allows the user to know locations
+where emotional changes took
+place. This ability can be used to
+track a specific Beast or smell the
+presence of any Beasts in the area.
+■ Prerequisite: Sense the Beast
+■ Cost: One Rouse Check
+■ Dice Pools: Resolve +
+Animalism vs Composure +
+Subterfuge or Resolve +
+Animalism vs Difficulty
+determined by the Storyteller
+■ System: The vampire rolls a
+contest of Resolve +
+Animalism vs Composure +
+Subterfuge to track a specific
+target. A win allows the user to
+smell and track the trail of a
+supernatural Beast. The user
+can also smell the hostility of
+the target along their path. If
+tracking a target previously
+identified using Sense the
+Beast, the user has a 3 dice
+bonus to the contest. On a
+critical win, the user can
+identify the exact type of
+creature, as well as their
+Hunger or Rage level along the
+trail. If tracking in an area
+with multiple Beasts, the user
+can make a Resolve + Survival
+role to differentiate the trails
+without making another Rouse
+Check.
+■ Duration: One hour per
+margin of success vs a
+Difficulty determined by the
+Storyteller
+■ Cost: One Rouse Check
+■ Dice Pools: Manipulation +
+Animalism vs Composure +
+Resolve
+■ System: The user calls out
+another vampire they can see
+as a threat and rolls a contest
+of Manipulation + Animalism
+vs the target’s Composure +
+Resolve. On a win, the target
+receives a dice penalty equal to
+the user’s Animalism level on
+any Charisma based checks
+(and receive a bonus for the
+same amount to Intimidation
+checks).
+■ Amalgam: Obfuscate 1
+2 6
+The target gives off a dangerous
+predatory aura and their words
+are perceived as threatening for
+the duration. The user must
+remain within sight of the target
+to maintain the effect.
+■ Cost: One Rouse Check
+■ Dice Pools: Charisma +
+Animalism vs Composure +
+Resolve
+■ System: The user verbally
+declares their target, who they
+must be able to see, and rolls a
+contest of Charisma +
+Animalism vs the Composure +
+Resolve of a target. On a win,
+all vampires receive a bonus to
+physical attack rolls against
+the marked target equal to half
+the Animalism rating of the
+user rounded up. All criticals
+on attacks against the target
+are also treated as Messy
+criticals. The target must
+remain within line of sight of
+the user or the effect is broken.
+■ Duration: One Scene or until
+broken
+Level 3
+HOWL OF RAGE
+■ Duration: One scene or until
+broken
+■ Duration: Frenzy duration
+(VtM Corebook p. 220)
+As with Spark of Rage (VtM
+Corebook p. 265) but requiring
+Animalism instead of Potence.
+MARK PREY
+The vampire can mark another
+kindred as prey, enticing those
+with a Beast to attack the target
+and receive advantages to do so.
+■ Amalgam: Presence 2
+The user may direct each ally in a
+manner appropriate with Riding
+the Wave of the Frenzy. Each
+kindred Riding the Wave under
+the direction of the user
+(including the user) adds 2 dice to
+all combat dice pools, plus an
+extra die for each additional
+kindred participating in the
+frenzy after the first.
+Level 4
+PACK FRENZY
+The vampire can turn a
+witnessed fury or terror Frenzy
+into a guided Frenzy by allowing
+a group of kindred to share the
+burden.
+■ Cost: One Rouse Check
+■ Dice Pools: Wits +
+Animalism
+■ System: When the vampire
+must make a fury or terror
+Frenzy check, or witnesses
+another vampire succumb to
+a fury or terror Frenzy, they
+may make a Wits +
+Animalism to spread the
+Frenzy among any willing
+kindred they can see. To
+share their own Frenzy, the
+user rolls against Difficulty 3
+plus 1 for each kindred
+accepting the Frenzy after
+the first. The amount of
+successes determines how
+many can share the Frenzy
+and the user need not choose
+how many allies are effected
+before rolling. The user
+automatically enters a
+Frenzy when using this
+ability and chooses not to
+resist. If they fail to share the
+Frenzy with others, they may
+not choose to Ride the Wave
+(VtM Corebook p. 219) and
+are instead at the mercy of
+their Beast and the
+Storyteller.
+An enemy kindred entering
+a Frenzy may resist having
+the burden shared with a
+Willpower contest versus the
+user’s Wits + Animalism. On
+a win, the user spreads the
+Frenzy with a number of
+willing targets equal to the
+margin of victory. The
+enemy entering a Frenzy still
+does so.
+Level 5
+SUBSUME THE SERVANT
+The vampire can enter a trance
+and transfer their mind into the
+body of a ghoul with the user’s
+blood in them. While mentally
+residing in the target, they
+completely control their form and
+can even operate during the day if
+they can stay awake. While
+controlling the ghoul, the
+vampire’s body is inert and
+unaware. Multiple ghouls can be
+controlled simultaneously this way.
+■ Amalgam: Dominate 4
+■ Cost: Two Rouse Checks
+■ Dice Pools: Manipulation +
+Animalism
+■ System: The user makes a
+Manipulation + Animalism test
+at Difficulty 4. On a win, the
+vampire’s mind inhabits a
+ghoul’s body (that currently has
+the user’s Blood in them) for
+one scene. The user can control
+an additional target who meets
+they criteria for every success
+above the Difficulty.
+D I S C I P L I N E S
+D I S C I P L I N E S
+2 7
+A critical win allows the
+vampire to possess the ghouls
+indefinitely though they must
+still make rolls to stay awake
+during the day as normal (VtM
+Corebook p. 219). Failure to
+stay awake ends the power. The
+user is not aware of their
+original body, but they are
+pulled back into it if any harms
+comes to their form. Death of
+any of the ghoul also ends the
+power and the vampire takes
+two points of Aggravated
+Willpower from the trauma for
+each ghoul killed.
+If multiple ghouls are
+controlled, they all must make
+take similar actions or speak
+the same words. For example, a
+group of controlled ghouls
+could all attack a target, but
+one could not operate a vehicle
+while another used a firearm
+or have separate conversations.
+A vampire can use Auspex,
+Presence, and Dominate
+through the ghoul as well as
+whatever Discipline the ghoul
+possesses. They cannot use any
+other skills possessed by the
+ghoul and must use their own
+rating.
+After the ghoul is free, they
+take a point of Aggravated
+Willpower damage per scene
+they were inhabited and are
+considered Impaired for the
+next 24 hours. A ghoul
+becomes comatose if they take
+full Aggravated Willpower
+damage from this.
+■ Duration: A scene or until
+ended early through
+destruction of ghoul or harm
+to vampire body, indefinitely
+on a critical success
+D I S C I P L I N E S
+2 8
+Level 1
+LIE DETECTOR
+While many vampires are masters
+of deception, this power gives the
+user the uncanny ability to know
+when they are being lied to. IMPLANT DREAM
+The user can implant a dream in
+a target, having a crafted scenario
+play out the next time the target
+sleeps.
+■ Cost: One Rouse Check, plus
+One Rouse Check for every
+additional target
+■ Dice Pools: Wits + Auspex or
+Resolve + Auspex
+■ System: The user makes a Wits
++ Auspex contest against their
+opponent’s Strength +
+Subterfuge. On a win, the user
+may add their Auspex rating
+to any defense rolls against
+physical attacks from the
+target. The vampire must make
+an additional Rouse Check for
+each additional opponent
+targeted by this power. Dice
+penalties for facing multiple
+combatants still apply.
+Duration: One scene
+Level 2
+DECIPHER
+By reading the aura and intent of
+messages, a vampire can
+understand any language or code.
+■ Cost: One Rouse Check
+■ Dice Pools: Intelligence +
+Auspex
+■ System: The user makes an
+Intelligence + Auspex test
+against a Difficulty determined
+by the Storyteller based on the
+familiarity and complexity of
+the language or code.
+Auspex
+■ Cost: Free
+■ Dice Pools: Intelligence +
+Auspex vs Composure +
+Subterfuge
+■ System: When activated,
+add the Auspex rating of
+the user to any Insight
+checks to determine if
+they are being lied to. If
+successful, the user is able
+to see shifts in the target's
+aura whenever they speak
+a lie.
+■ Duration: Passive
+While the user can understand
+these messages, they are not able
+to speak the language or write in
+the code. The vampire
+understands the intent of the
+message, not a perfect
+translation.
+■ Duration: One scene
+■ Cost: One Rouse Check
+■ Dice Pools: Resolve +
+Dominate vs Composure +
+Intelligence
+■ System: The vampire either
+mentions a certain subject or
+concept or shows an image to
+their target and makes a
+Resolve + Dominate roll vs
+the target’s Composure +
+Intelligence. On a win, the
+user implants a dream
+connected with the intended
+message or image that will be
+experienced the next time the
+target sleeps. This can be used
+to relay secret messages,
+frighten someone with
+horrific scenarios, or give
+them ideas that carry over
+when awake among other
+possibilities.
+■ Duration: Until the next time
+the target sleeps
+■ Amalgam: Dominate 1
+READ OPPONENT
+The vampire is able to read the
+intentions and subtle physical clues
+of their opponent, allowing them to
+more easily defend themselves in
+combat.
+SENSE STRENGTHS AND
+WEAKNESSES
+Sometimes referred to as an
+appraisal, vibe check, or ocular
+pat-down, this discipline allows a
+vampire to read the aura of
+another and determine the
+strengths and weaknesses of their
+physical form, psyche, and
+personality.
+■ Cost: One Rouse Check
+■ Dice Pools: Intelligence +
+Auspex vs Composure +
+Subterfuge
+D I S C I P L I N E S
+2 9
+Level 3
+PSYCHIC BACKLASH
+Some kindred are not only
+incredibly difficult to read, but
+they can cause a punishing mental
+backlash to those who attempt to
+control them.
+■ Cost: One Rouse Check
+■ Dice Pools: Dependent on
+Supernatural ability defended
+against
+■ System: Whenever the vampire
+successfully defends against any
+supernatural attempts to
+manipulate their mind such as
+through Dominate or Presence,
+they may make a Rouse Check
+to activate this ability. On a
+win, the user deals Superficial
+Willpower damage to the one
+who attempted to manipulate
+their mind equal to the margin
+of victory.
+■ Duration: One turn
+■ System: Make an Intelligence +
+Auspex vs Composure +
+Subterfuge roll. On a win, the
+vampire can choose to learn
+either the strongest attribute or
+weakest attribute of the target.
+In the case of multiple
+attributes being tied for
+strongest and weakness, the
+Storyteller decides which is
+revealed among the chosen
+cateorgy. A critical win allows
+the user to learn both the
+strongest and weakest attribute
+possessed by the target
+including any ties.
+■ Duration: One turn
+P L A Y E R ' S G U I D E 3 0
+■
+■
+■
+■
+Cost: One Rouse Check
+Dice Pools: Wits +
+Investigation
+System: The vampire can carry
+out a thorough investigation of
+a room in moments, perceiving
+auras and physically
+investigating clues with
+supernatural speed so they can
+quickly act on their findings or
+gather information before
+others are able to. The user
+may add their Auspex rating to
+their Investigation roll as well
+as accomplish the task quickly.
+Duration: One scene
+■ Amalgam: Potence 1
+■
+■
+■
+■
+Cost: One Rouse Check
+Dice Pools: Dexterity or
+Strength + Celerity
+System: During combat,
+after a successful
+Dexterity + Athletics
+contest to defend
+against a close range
+attack, the vampire may
+redirect the attack to a
+nearby opponent. The
+user makes a Dexterity
+or Strength + Celerity vs
+Dexterity + Athletics
+against the new
+opponent, dealing
+damage as normal on a
+win using any damage
+modifiers from the
+original attacker and
+weapon. On a critical
+success, the user can also
+turn an attack against
+the opponent who made
+the attack without
+requiring an additional
+roll.
+Duration: One turn
+Celerity
+Level 2
+CONTROL MOMENTUM
+After successfully defending
+themselves in combat, a vampire
+may use the assailant’s momentum
+to direct the attack at a different
+opponent, even the aggressor.
+■
+■
+■
+Cost: One Rouse Check
+System: The vampire does not
+receive a penalty for defending
+against multiple opponents
+(VtM Corebook p. 125),
+gaining their full dice pool for
+each contest. This includes
+pools that add the Celerity
+rating if other Disciplines are
+in effect such as Fleetness
+(VtM Corebook p. 253). In
+addition, when splitting thier
+dice pool to attack multiple
+opponents, the user may add a
+dice bonus to the total pool
+being split equal to half their
+Celerity rating rounded up.
+Duration: One action
+sCAN THE ROOM
+With dizzying speed, a kindred
+can comb through details in a
+space and gather clues that could
+take others hours of investigation.
+Level 3
+COMBAT TEMPEST
+Utilizing their supernatural speed
+to constantly move in combat, the
+user is able to more effectively face
+multiple opponents. This allows a
+vampire to avoid penalties to
+combat normally accrued when
+facing multiple foes.
+SPEED IS POWER
+By building up speed, a vampire can
+increase the strength behind a single
+action using their momentum.
+■
+■
+■
+Cost: One Rouse Check
+System: Provided the user has
+the space to build up
+appropriate speed for the action,
+the vampire may add half of
+their Celerity rating rounded up
+to a single action requiring
+Strength that does not require
+the user to be stationary. For
+example, this could not be used
+to stand and lift a car but could
+apply to a Strength check to
+break a car door. This can also
+be used to bolster an attack.
+Duration: One action
+■ Amalgam: Auspex 1
+Level 4
+FURIOUS FRENZY
+When a vampire succumbs to any
+type of Frenzy, they move with
+supernatural speed and have multiple
+actions for the duration at great cost
+to their physical form.
+■
+■
+Cost: Free
+System: Upon entering a Frenzy,
+the vampire may choose to enter
+a Furious Frenzy and is able to
+make two actions per turn for
+the duration of the Frenzy. Any
+Criticals rolled during this state
+are considered Messy Criticals.
+After the Frenzy has ended, the
+user is physically Impaired and
+fills their health tracker with
+Superficial Damage. If the
+vampire was already Impaired
+before the Frenzy ended, they
+instead take a point of
+Aggravated Damage equal to the
+number of turns spent in Frenzy
+after Impaired.
+D I S C I P L I N E S
+D I S C I P L I N E S
+3 1
+Advanced Combat: If using actions to attack a single opponent
+multiple times, the opponent would have to split their dice pool
+to contest each action as if facing multiple opponents. For
+example, they could attempt to fight back and split their combat
+pool between the two attacks they are facing from the user. If
+only defending, they would receive a one dice penalty per attack
+after the first. The user rolls their full combat pool as normal for
+each attack, or can defend with their full defense pool against
+two attacks before taking penalties.
+■ Duration: One Scene or duration of Frenzy
+LONG DISTANCE JOURNEY
+Vampires are able to maintain high speeds for longer periods of
+time, making longer distance travel on foot viable.
+■ Amalgam: Fortitude 1
+■ Prerequisite: Blink
+■ Cost: One Rouse Check
+■ Dice Pools: Stamina + Celerity
+■ System: The vampire makes a Stamina + Celerity check
+vs Difficulty 3. On a success, the user can run up to 30
+kph
+(roughly 20 mph) per dot in Celerity. They can maintain
+this for half an hour, plus an additional half an hour for
+every success above the margin. Additional Dexterity +
+Athletics checks may be required due to terrain or
+obstacles. A collision at these speeds may cause serious
+harm to both the user and whatever is impacted.
+■ Duration: Half an hour, plus additional half an hour for
+every success above margin
+3 2
+Level 2
+DECLARE WEAKNESS
+The vampire can convince a
+target they are weak in a specific
+matter, causing them to mentally
+hinder their own natural abilities.
+■ Cost: One Rouse Check
+■ Dice Pools: Manipulation +
+Dominate vs Composure +
+Intelligence
+■ System: No roll is required
+against an unprepared mortal.
+Effecting a resisting target or
+vampire requires a contest of
+Manipulation + Dominate vs
+Composure + Intelligence. On
+a win, the user chooses one of
+their target’s Attributes and
+reduces it by half of their rank
+in Dominate rounded up. The
+Attribute cannot be reduced
+below one dot and this power
+can only effect one Attribute
+at a time.
+■ Duration: One scene
+For example, a brick can be
+imprinted with a Compel
+command to be thrown at the
+window across the street. A cell
+phone can carry a Mesmerize
+affect to be delivered to an address
+across town. The instruction must
+follow the same rules for the
+Dominate discipline used for the
+imprint.
+■ Cost: One Rouse Check
+■ Dice Pools: Same as Compel or
+Mesmerize, depending on
+which is used.
+■ System: The kindred touches
+an object and imprints a
+command upon the aura of the
+item. The next person to touch
+the item triggers the effect,
+resulting in a contest of
+Manipulation + Dominate vs
+Intelligence + Resolve. If the
+commanding kindred wins, the
+victim must immediately carry
+out the command regarding
+the object. The effect
+immediately fades after this
+and can only attempt to affect
+one target.
+■ Duration: One night. On a
+critical, the effect is
+permanent. Level 3
+OBJECT COMMAND
+The user is able to leave an imprint
+of a mental command on an object.
+This compels the next person to
+touch the object to immediately
+carry out a task specifically tied to
+the item. Only Compel and
+Mesmerize can be applied, with
+further effects to those abilities
+also applying (such a Submerged
+Directive or Rationalize).
+■ System: Whenever the vampire
+uses a Dominate power on a
+victim, but before they roll for
+success, they may make an
+additional Rouse check to add a
+lingering weakening effect to
+their target. If the Dominate
+power is successful, the user
+gains a breach in their victim’s
+mind. Each time the user
+successful Dominates the target
+and Rouses the Blood to use
+this ability, they gain an
+additional breach. For each
+rank of breach a victim has, the
+user gains an additional dice to
+Dominate them or socially
+control them through
+Manipulation or Charisma. The
+user can have a number of
+breaches per victim equal to
+their ranks in Dominate. For
+example, a vampire with
+Dominate 4 who has
+successfully used Cloud
+Memory on the same target 4
+times without fail would
+receive a 4 dice bonus on
+Dominate abilities or social
+rolls on that target. If the
+victim successful resists a
+Dominate attempt or resists a
+social roll, they remove all
+breaches and the process must
+start over. A user can only earn
+one breach per victim a night.
+the command is carried out or
+the scene ends, whichever
+comes first.
+■ Duration: Until the target
+successfully resists a
+Domination attempt by the
+user
+Dominate
+■ Amalgam: Auspex 2
+■ Prerequisite: Compel or
+Mesmerize
+Level 4
+MENTAL CONDITIONING
+The powers of Dominate can
+have long term effects of its
+victims. Some vampires take
+advantage of this and break down
+mental barriers through repeated
+use until it is trivial to impose
+their will on frequent targets.
+■ Cost: One Rouse Check
+D I S C I P L I N E S
+D I S C I P L I N E S
+3 3
+■ Cost: One Rouse Check
+■ Dice Pools: Manipulation +
+Dominate vs Composure +
+Resolve
+■ System: After a conversation,
+even a one-sided talk from the
+user, the vampire may drain the
+Willpower of their target with a
+Manipulation + Dominate vs
+Composure + Intelligence
+contest. On a win, the user
+deals Superficial Willpower
+damage and is able to recover a
+number of Superficial
+Willpower damage equal to half
+the amount drained rounded
+down. This power can only be
+used on a victim once per night
+and they will be aware of the
+mental exhaustion caused by
+interacting with the user after.
+This ability can be used on
+multiple targets at a time,
+requiring an additional Rouse
+check per victim. A mortal who
+becomes Impaired by this
+ability becomes lethargic. A
+vampire Impaired by this gains
+two additional dice to resist a
+Frenzy for the night. This
+ability cannot inflict
+Aggravated Willpower damage
+and simply fails if the target's
+Willpower tracker is depleted.
+The user does not gain
+additional Willpower for
+damage that would have been
+inflicted beyond Superficial.
+■ Duration: One scene
+Level 5
+ENERGY VAMPIRE
+This power allows a vampire to
+leech the mental energy from their
+victim through casual conversation.
+■ Amalgam: Oblivion 3
+3 4
+Fortitude The memory must be specific and
+something the vampire would be
+able to reasonable memorize on
+their own based on their
+Intelligence. The kindred can
+replace one memory a night, but
+may take willpower damage if
+choosing not to protect a
+particularly special memory.
+Level 1
+ETERNAL VIGILANCE
+The vampire can muster
+additional strength to resist the
+effects of daytime slumber.
+■ Cost: Free
+■ System: The vampire can add
+their Fortitude rating to any
+checks made to stay awake
+during the day (Corebook p.
+219).
+■ Duration: Passive
+RETURN TO SENDER
+The vampire is able to violently
+eject any foreign objects impaled
+in them, including stakes, arrows,
+or bullets.
+■ Cost: Free
+■ System: The vampire may
+store a number of memories
+equal to their Fortitude rating.
+Memories stored this way can
+be perfectly recalled and
+receive a bonus equal to twice
+user’s Fortitude rating to be
+protected from mental
+disciplines or social coaxing.
+A kindred can use this to hold
+a memory with a special
+touchstone from ages past, or
+perfectly memorize the
+blueprint of a building.
+Level 2
+MENTAL VAULT
+While the passage of time erodes
+many memories from aging
+kindred, those with this ability
+can store and protect important
+information for perfect recall and
+even protect this information
+from prying mental Disciplines.
+■ Cost: One Rouse check
+■ Dice Pools: Stamina +
+Fortitude vs Dexterity +
+Athletics
+■ System: After taking damage
+from a projectile that is still
+embedded in them, the user
+can supernaturally force the
+objects from their body as a
+minor action and potentially
+harm any nearby targets by
+making a Stamina + Fortitude
+contest against the target’s
+Dexterity + Athletics. The
+projectiles travel one meter/
+yard per rank in Fortitude. The
+vampire has limited control
+over the projectiles, able to
+repel them the same direction
+impacted on their body but
+unable to aim if multiple
+people are within range. The
+projectiles do not receive a
+damage bonus (due to being
+damaged by the impact with
+the user) and instead do
+damage based on the margin of
+success. A vampire is unable to
+use this ability while in torpor.
+■ Duration: One scene
+■ Duration: Passive
+SLEEP LIKE STONE
+This ability fortifies a vampire in
+torpor, making their inert form
+incredibly durable as a last layer of
+protection.
+■ System: When the vampire enters
+torpor, they double their Fortitude
+rating added to their Health track
+through Resilience and treat all forms
+of damage as Superficial, even from
+fire and sunlight. They will still take
+Aggravated damage as usual after
+their Health tracker is filled with
+Superficial. This also allows the
+kindred to use other Fortitude
+Discipline powers while in torpor.
+■ Duration: Until revived from Torpor
+■ Prerequisite: Resilience
+D I S C I P L I N E S
+D I S C I P L I N E S
+3 5
+SHAPE AURA
+The user can obscure auras,
+masking their true essence and
+giving false readings to others
+who may perceive the psyche. The
+kindred manipulates details such
+as their emotional state,
+supernatural origin, whether they
+have committed diablerie, and
+other aspects.
+■ Cost: One Rouse Check
+■ Dice Pools: Manipulation +
+Obfuscate vs Composure +
+Awareness
+■ System: Make a Manipulation
++ Obfuscate vs Composure +
+Awareness roll. On a win, the
+user may make a number of
+changes to the target’s aura
+reading equal to the margin
+of the roll. This allows the
+various aspects able to be
+perceived with Scry the Soul
+(Corebook p. 250) and other
+supernatural senses to instead
+show false readings chosen by
+the user.
+The user may change
+their own aura by making a
+Manipulation + Obfuscate
+roll against Difficulty 3. This
+allows one change to be
+made, with each success
+beyond the difficulty
+allowing another change.
+■ Duration: One night
+Level 3
+DUPLICATE
+A vampire can create a duplicate
+of themselves that mirrors their
+movements. This effect causes
+observers to see a mirror image
+of the user in an adjacent
+location. The actual vampire is
+mentally hidden as with other
+Obfuscate powers.
+Obfuscate ■ Duration: Auspex 1
+■ Cost: One Rouse Check
+■ Dice Pools: Composure +
+Obfuscate
+■ System: No roll is required,
+although those able to Sense
+the Unseen (VtM Corebook
+p. 261) can discern the
+illusion with a proper test.
+Any sound the user makes
+seems to come from the
+illusion, allowing
+conversations and other nonphysical
+interactions. If
+someone were to physically
+interact with the mirror
+image, the effect would be
+broken. The first attack made
+against the illusion
+automatically fails, but also
+breaks the effect. The user
+may make a surprise attack
+using this power, but follows
+the same rules of surprise
+attack under Obfuscate (VtM
+Corebook p. 261).
+■ Duration: One scene or until
+detection
+■ Amalgam: Presence 1
+■ Prerequisite: Cloak of
+Shadows
+Level 4
+hIDDEN BLADE
+A vampire can focus their powers
+of Obfuscation on a single
+weapon, blurring or misaligning it
+so it is difficult for an opponent
+to track during combat.
+■ Cost: One Rouse Check
+■ Dice Pools: Wits + Obfuscate vs
+Wits + Awareness
+■ System: The user rolls a contest
+of Wits + Obfuscate vs their
+opponent's Wits + Awareness.
+On a win, the user adds half
+their Obfuscate rating rounded
+up to Melee attack rolls. This
+ability can only be used on a
+single creature at a time,
+requiring another Rouse check
+and contest to switch targets.
+■ Duration: One scene
+Level 5
+FADING MEMORY
+The vampire masks the very
+memory of them, obscuring any
+details about the user someone
+tries to recall after a scene. Some
+use this effectively enough to
+make others question their very
+existence.
+■ Cost: One Rouse Check
+■ Dice Pools: Resolve +
+Obfuscate
+■ System: After a scene has
+concluded, the vampire makes
+a Resolve + Obfuscate roll
+against a Difficulty
+determined by the Storyteller.
+This could range from
+Difficulty 3 to make patrons
+forget ever seeing you
+lingering at a bar to Difficulty
+6 for a group of rivals to forget
+how you embarrassed yourself
+at Elysium.
+The memory is not
+erased or replaced, but any
+details involving the user are
+heavily obscured and vague at
+best. This does not effect
+anything not directly related
+to the user.
+■ Duration: One scene
+3 6
+To throw an enemy, the user must first successfully grapple them. If there is a solid
+object within range to throw them into, they can then make a Strength + Potence
+contest vs the opponent's Stamina + Athletics. On a win, the vampire deal superficial
+damage equal to the margin as normal and the object also takes the damage
+(potentially breaking). This can be used to damage two opponents by throwing one
+into the other. The user can also use their Strength rating instead of Dexterity when
+using this ability to throw an object as a projectile weapon.
+■ Cost: One Rouse Check
+■ Dice Pools: Strength + Potence
+■ System: The user makes a
+Strength + Potence to throw a
+creature. If throwing an ally,
+the ally may make a close
+combat attack roll as normal
+and add half of the successes of
+the user rounded down as
+damage to their attack. This
+also negates any advantages an
+opponent may have to their
+combat roll due to superior
+reach. The vampire can throw
+an average person roughly a
+number of meters/yards equal
+to three times their Potence
+rating vertically and five times
+their Potence rating
+horizontally.
+■ Duration: One round
+Level 3
+FASTBALL SPECIAL
+Sometimes the best improvised
+weapons are one's own allies. The
+vampire is able to throw their
+accomplices into combat,
+transferring some of their raw
+power into their ally's attack. This
+can also be used against enemies,
+throwing them into a sturdy
+obstacle for maximum destruction.
+Potence
+D I S C I P L I N E S
+D I S C I P L I N E S
+3 7
+■ Cost: One Rouse Check
+■ Dice Pools: Manipulation + Presence vs Composure
++ Wits
+■ System: The user must have the attention of the
+target and win a contest of Manipulation +
+Presence vs Composure + Wits. On a win, the
+subject begins feeling an emotion designated by
+the user though they are unsure of why and do not
+realize it is due to the vampire. By using subtle
+gestures and subliminal messages, the vampire can
+change the emotions of the target in a specific
+direction though not directed at a specific target.
+The victim may feel increasingly agitated,
+incredibly bored, or suddenly lustful and act
+accordingly though not wildly out of their nature.
+They user can make a target feel increasingly
+paranoid, but not only paranoid about a specific
+person for example.
+■ Duration: One scene
+Level 2
+SUBTLE MESSAGES
+The vampire subtly changes the emotional state of
+their target. Rather than causing intense emotions
+towards the user, this ability allows a kindred to
+manipulate a victim’s emotions in a way that does
+not create an obvious target for their feelings.
+Presence
+THRONE ROOM
+By carefully arranging a space to send a message or
+convey an emotion, a vampire can turn the
+environment of a room into a conduit for their
+Presence. While in this space, the user can amplify
+and extend their otherworldly influence. Some
+create regal spaces to increase an authoritarian
+aura, pleasant parlors to put guests at ease and
+more easily swayed, or a macabre catacomb
+designed to unnerve and frighten.
+■ Amalgam: Auspex 1
+■ Cost: One Rouse Check
+■ Dice Pools: Craft + Presence
+■ System: The vampire chooses a space to arrange.
+This could be their haven, a dark alley they bring
+victims to, a board room, or any space that can
+be arranged in a particular way without major
+disturbance. It must also be a distinct space,
+typically a room and not an entire building or
+anything too open and undefined. When in this
+designated area, the vampire may Rouse the
+Blood and add their Presence rating as a bonus
+to any Social tests as can any of their allies who
+also benefit from the carefully created ambience.
+3 8
+■ Cost: One Rouse Check
+■ Dice Pools: Manipulation +
+Presence vs Intelligence +
+Composure
+■ System: The vampire tells their
+victim reasons why they should
+covet, admire, or desire a
+certain person or object. This
+subject must be within sight of
+both the user and their target.
+The user then rolls a contest of
+their Manipulation + Presence
+vs the target’s Intelligence +
+Composure.
+On a win, the target
+becomes obsessed with the
+subject and does everything
+in their power to be in its
+presence. They may seek to
+protect it from harm, or
+even harm them to keep
+them close depending on
+the target and the subject of
+their desire. If this power
+fails, it cannot be used on
+the target again that night.
+■ Duration: One night
+Level 3
+OBSESSION
+The vampire shows admiration or
+fascination with a certain person
+or object, creating a sense of
+obsession in their target towards
+the focus of the user’s praise.
+The vampire and their allies also
+deal additional Willpower damage
+in this space during Social Combat
+equal to half the creator’s Presence
+rating rounded up. To extend these
+bonuses to your allies, the user
+makes a Rouse check and a Craft +
+Presence roll vs a Difficulty
+determined by how many allies
+you wish to benefit. For example, 3
+successes would allow 3 allies to
+earn bonus dice to Social tests and
+Willpower damage. No roll is
+necessary for just the user to
+benefit.
+■ Duration: One scene
+TWIST WORDS
+By turning a target’s own words
+against them, a vampire can let
+someone dig their own grave and
+socially break them down in front
+of an audience. This method
+allows a vampire to weaponize an
+opponent’s words rather than
+come up with their own means of
+persuasion.
+■ Duration: One hour plus one
+per point of margin
+■ Amalgam: Auspex 2
+■ Cost: One Rouse Check
+■ Dice Pools: Insight + Presence
+■ System: When engaged in
+Social Combat in front of an
+audience, the user may make an
+Insight + Presence roll against
+the target’s appropriate Social
+roll. On a success, the user
+appears innocent and earnest to
+the audience while their
+opponent's words are
+misconstrued and used against
+them. Contests won this way
+add half of the user’s Presence
+rating rounded up to
+Willpower damage for the
+duration. This cannot be used
+without an audience and can
+only target one person at a
+time.
+Level 4
+HIDEOUS LAUGHTER
+The vampire tells a joke or
+performs some sort of comedic act
+while instilling the desire to flatter
+the user, resulting in uproarious
+crippling laughter.
+■ Cost: One Rouse Check
+■ Dice Pools: Charisma +
+Presence vs Composure + Wits
+■ System: The user needs the
+attention of their victim and to
+do or say anything that is
+intended to be funny and roll
+Charisma + Presence vs the
+target’s Composure + Wits. On
+a win, the target immediately
+doubles over in laughter and
+continues to do so for one
+minute plus one per point of
+margin of success. While
+laughing this way, they are
+unable to perform any other
+actions or perceive anything
+except the user or subject of the
+joke. This ability can be used on
+multiple targets at a time,
+requiring an additional Rouse
+check per victim. If a victim is
+harmed during this, they
+immediately are released from
+the effect.
+■ Duration: One minute plus an
+additional minute per point of
+margin
+Level 5
+MIND PRISON
+Powerful kindred are able to trap a
+person in a false dreamlike reality
+of the vampire’s creation,
+essentially trapping a victim in
+their own mind.
+■ Amalgam: Obfuscate 3
+D I S C I P L I N E S
+D I S C I P L I N E S
+3 9
+Protean
+Level 1
+SHED SKIN
+Whenever a vampire Rouses the
+Blood to Mend their wounds,
+they are able to shed their
+damaged form and appear
+physically untouched even if they
+still have wounds. This allows a
+damaged vampire to not appear
+as a weakened target or able to
+quickly hide wounds from a
+recent encounter.
+■ Cost: Two Rouse Checks
+■ Dice Pools: Resolve + Presence vs
+Intelligence + Resolve
+■ System: The user makes a
+contested roll of Resolve + Presence
+vs the target’s Intelligence +
+Resolve. On a win, the user
+describes a scenario or setting that
+the victim becomes mentally
+trapped in. The target is
+completely immobile and in a
+trance like state during this time,
+but fully accepts their new reality
+as it plays out in their mind. The
+user can choose to have their
+victim repeat a hellish scenario or
+go through what they believe is
+their usual routine. When they exit
+this state, they believe what they
+experienced was true though the
+truth can slowly come back to
+them as they put together the
+pieces.
+A user can repeat this each
+night to keep a target trapped,
+requiring the user to spend a point
+of Willpower and verbally
+reinforce their false reality in
+person with their victim.
+A victim may make a Wits +
+Awareness roll after their body
+takes damage to exit this trance,
+with a Difficulty determined by the
+Storyteller based on the severity of
+the damage (the more damage
+taken, the easier the Difficulty).
+The victim is considered asleep
+during this time, potentially
+withering away if they do not
+receive nourishment. A vampire
+still goes through the normal day
+sleep cycle, making rouse checks
+each night and potentially entering
+torpor through Hunger.
+■ Duration: Twenty Four Hours
+■ Cost: One Rouse Check
+■ System: When a vampire
+Rouses the Blood to Mend their
+wounds, they may choose to use
+this Discipline to spend a turn
+shedding their skin. This reveals
+a new layer of skin underneath
+that appears as the vampire
+does in perfect health. The shed
+skin instantly disintegrates.
+Even if the kindred did not heal
+all their wounds, including
+Aggravated wounds, all physical
+evidence of their wound
+disappear despite still existing
+internally. The vampire can
+make a Rouse check to use this
+power even if they only have
+Aggravated wounds that cannot
+be healed by normal Mending
+to cover the wound. This
+shedding can appear as a snake
+shedding their skin, a beast
+pulling damaged skin from their
+form, or any other animalistic
+way the user decides.
+■ Duration: One night
+Level 3
+TOOLS OF NATURE
+The vampire can mimic complex
+physiological features found in
+animals without fully changing
+physical form to become that
+animal.
+■ Prerequisite: Feral Weapons
+■ Cost: One Rouse Check
+■ Dice Mechanics: Resolve +
+Animalism
+■ System: The user makes an
+Animalism + Resolve roll against
+a Difficulty determined by the
+Storyteller based on the
+complexity of the alteration. A
+kindred could give themselves
+venomous glands to inject
+poison with their bite like a
+snake, adapt echolocation
+senses, gain natural camouflage
+abilities such as those possessed
+by chameleons or octopi, or
+anything else the Storyteller
+deems reasonable without fully
+changing their form to fit the
+animal.
+■ Duration: One scene
+Level 4
+SWARM FORM
+This power allows the user to
+instantly transform into a swarm
+of bats, birds, rodents, snakes, or
+insects.
+■ Amalgam: Animalism 2
+■ Prerequisite: Shapechange
+4 0
+■ Cost: One Rouse Check
+■ System: The vampire becomes a
+sentient swarm, able to use the
+senses of all creatures within it but
+unable to separate beyond a
+tightly clustered swarm.
+Otherwise, the vampire gains the
+Physical Attributes, senses, and
+native Skills associated with that
+animal (VtM Corebook p. 271) and
+may use certain Disciplines while
+in this form at the Storyteller’s
+discretion, such as those allowed
+with the Shapechange discipline.
+While not as physically dangerous
+as other animal forms, swarms are
+notoriously difficult to completely
+destroy and receive a bonus dice
+per dot of Protean to defense rolls.
+When the user takes damage
+beyond their health, they instantly
+revert back to their kindred form
+with the same health they had
+before becoming a swarm.
+■ Duration: One scene unless
+ended voluntarily before that
+TRAVERSE THE EARTH
+While using Earth Meld (VtM
+Corebook p. 270), the vampire is
+able to travel through natural
+earth.
+■ Prerequisite: Earth Meld
+■ Cost: One Rouse Check
+■ System: While inside the earth, the
+vampire can slowly travel through natural
+earth following the same restrictions as
+Earth Meld. The user can travel at a
+walking pace and perceives their
+surroundings through supernatural means.
+Movement is not possible while in day
+sleep and they must rise through natural
+earth. They can move through any space
+with at least a meter of natural earth
+available. The vampire cannot use any
+Disciplines while in this form.
+■ Duration: Same as Earth Meld
+D I S C I P L I N E S
+D I S C I P L I N E S
+4 1
+Level 2
+BLOOD OBJECT
+The ritual allows the caster to solidify expended blood,
+forming it into simple shapes.
+■ Cost: One or more Rouse Checks depending on size of
+object
+■ Dice Pools: Craft + Blood Sorcery
+■ System: The user Rouses the blood and opens a wound
+on themselves to create a small amount of malleable
+Blood roughly the size of a hand. This can be shaped
+into basic shapes, requiring a Craft + Blood Sorcery roll
+to shape their blood into more complicated objects.
+The item must be a simple tool and cannot be a
+complex machine requiring multiple parts. The
+consistency can be as hard as steel. The difficulty is
+determined by the Storyteller depending on the
+intricacy and hardness of the object.
+Blood Sorcery
+■ Duration: One scene
+Each additional Rouse Check can increase the size of the object or create a
+new object. The object appears the color of Blood despite its shape and is
+unlikely to be passed off as the real object. Melee weapons can be created this
+way and have the same damage bonuses as their real counterparts. Objects
+created this way last for one scene before reverting to liquid Blood unable to
+be shaped again.
+BLOOD TENDRILS
+The vampire is able to manipulate their blood into malleable tendrils, capable
+of delivering attacks that require contact with the user’s blood and even
+manipulating objects.
+■ Cost: One Rouse Checks
+■ Dice Pools: Wits + Blood Sorcery
+■ System: The user opens a wound and forces a Rouse check worth of blood
+to bleed. They can control a tendril up to their Blood Sorcery rating in
+yards/meters. The dice pool can also be split to create multiple tendrils
+from the same or different wounds. These tendrils can be used to deliver
+Blood Sorcery effects that require contact with the user’s blood, requiring
+a Wits + Blood Sorcery contests vs the defender’s appropriate dice pool.
+4 2
+The blood can also be used to
+manipulate objects weighing 10
+pounds or less. While manipulating
+the tendrils, the user cannot do
+anything else except other Blood
+Sorcery abilities. The blood must
+remain attached to the wound and
+is destroyed if severed or the
+wound is closed.
+The tendrils are
+destroyed if they take any damage
+as the liquid is easily disrupted
+thus the connection to the wound
+broken. They tendrils use the
+vampire’s Wits + Blood Sorcery to
+avoid attacks and do so separately
+from the vampire and do not
+require the user’s action. Another
+Rouse check replaces a destroyed
+tendril.
+Level 3
+DILUTE THE LINE
+The vampire can dilute the Blood
+of another, lowering their Blood
+Potency temporarily.
+■ Duration: One scene or until
+ended or destroyed
+■ Cost: One Rouse Check
+■ Dice Pools: Intelligence + Blood
+Sorcery vs Resolve + Stamina or
+Blood Sorcery.
+■ System: The user makes a
+Intelligence + Blood Sorcery vs
+Resolve + Stamina or Blood
+Sorcery on a vampire in line of
+sight while focusing for a turn
+and performing occult gestures.
+A win decreases the target’s
+Blood Potency by one for that
+scene while a critical win
+decreases it by two.
+This can go below the generation
+parameters on Blood Potency
+during its duration. The target
+becomes aware that something
+malevolent has happened to their
+Blood. The victim can identify
+who afflicted them if they can see
+the user and succeed on an
+Intelligence + Occult vs the user's
+Wits + Subterfuge roll. Blood
+Potency cannot be lowered below
+Blood Potency 1 this way.
+■ Duration: One scene
+HEALER'S BANE
+The vampire can temporarily
+corrupt the healing properties of
+the Blood in another vampire.
+■ Cost: One Rouse Check
+■ Dice Pools: Resolve + Blood
+Sorcery vs Stamina + Occult
+or Fortitude
+■ System: The user makes a
+Resolve + Blood Sorcery vs
+Stamina + Occult or Fortitude
+on a target vampire that they
+touch (potentially requiring a
+Dexterity + Brawl test). On a
+win, the target cannot mend
+their wounds for the scene. A
+critical win curses the target
+this way for the remainder of
+the night.
+■ Duration: One scene or one
+night on a critical win
+Level 4
+CRIMSON FURY
+This power allows the caster to
+transmute some of their Blood
+into a poison that potentially
+drives those who drink it into a
+Frenzy.
+■ Cost: One Rouse Check
+■ Dice Pools: Manipulation +
+Blood Sorcery vs Composure +
+Stamina
+■ System: The vampire
+concentrates for a turn and
+taints their Blood with the
+enraging effect. The Blood
+retains this property outside of
+the user’s body, but must be
+consumed to take effect. If
+someone consumes one Rouse
+check worth of Blood, the user
+makes a contested Manipulation
++ Blood Sorcery roll vs the
+target’s Composure + Stamina.
+On a win, the target must
+immediately make a Fury Frenzy
+test. A mortal immediately
+enters a violent rage following
+the same rules as a Fury Frenzy
+(VtM Corebook p. 220). The
+Blood is too viscous to inject
+with a syringe and does not mix
+with other liquids. It can be
+drank directly from the vein,
+force fed to a target, or other
+means the user can come up
+with.
+■ Duration: One scene
+CURSE OF THE SLOW BLOOD
+The caster can dampen the
+effectiveness of the Blood in another
+vampire, causing them to require
+additional Rouse checks to activate
+the gifts of the Blood.
+■ Cost: One Rouse Check
+■ Dice Pools: Resolve + Blood
+Sorcery vs Stamina + Composure
+D I S C I P L I N E S
+D I S C I P L I N E S
+4 3
+■ System: The user rolls a contest
+of Resolve + Blood Sorcery vs
+the Stamina + Composure roll
+of a target kindred. The target
+must be within line of sight
+while the user concentrates and
+speaks words of power. A win
+requires the target to make one
+additional Rouse check every
+time they Rouse the Blood.
+The victim can identify who
+afflicted them if they can see
+the user and succeed on an
+Intelligence + Occult vs the
+user's Wits + Subterfuge roll.
+■ Duration: One scene
+Level 5
+TELEKINESIS
+The caster can use their mind to
+manipulate physical objects and
+other people.
+The object can be moved rapidly
+enough to damage a structure or
+person upon impact. To
+determine this, the user rolls a
+contest of Resolve + Blood
+Sorcery vs the appropriate
+defense pool of the
+target.Damage is determined by
+the margin of success plus
+additional damage determined
+by the object at the Storyteller’s
+discretion. Small blunt objects
+are unlikely to do significant
+damage this way, but sharp
+objects or those weighing enough
+to crush someone would.
+The user may also
+target a person with a contest of
+Resolve + Blood Sorcery vs
+Strength + Athletics. On a win,
+the user can move the target 10
+meters per point of margin,
+doing an equal amount of
+Superficial damage if thrown
+into another structure or object.
+To keep a target floating in the
+air, the user must make a Resolve
++ Blood Sorcery (Difficulty 3)
+each turn. Fine manipulation of
+an object requires a Wits + Blood
+Sorcery roll at a Difficulty
+determined by the Storyteller.
+■ Cost: One Rouse Check
+■ Dice Pools: Resolve + Blood
+Sorcery vs Strength +
+Athletics
+■ System: This power allows a
+vampire to move an object
+that weighs up to 100 kg per
+dot of Blood Sorcery and
+within 10 meters per dot of
+Blood Sorcery. For example,
+a kindred with rank 4 in
+Blood Sorcery can
+telekinetically move an
+object up to 400 kg that is
+up to 40 meters away.
+■ Duration: One scene
+■ Amalgam: Auspex 4
+Blood Sorcery
+Rituals
+Level 2
+WARNING AGAINST TRESPASSERS
+Careful casters perform this ritual
+to know when their Haven or
+other important locations are
+intruded upon.
+■ Ingredients: A length of string.
+■ Process: The caster soaks the
+string in their Blood, lying it
+across any thresholds they wish
+to be alarmed while whispering
+the names of those allowed to
+cross. A section of the Bloodsoaked
+string must also remain
+tied to the caster to alert them.
+■ System: The caster places blood
+coated string across any threshold
+they wish to be alarmed. The
+space must be a doorway, window,
+or other entrance and does not
+work across longer areas of open
+ground. Whenever a creature
+passes this threshold, unless
+named by the caster not to trigger
+the effect, the caster is alerted of
+intrusion as the string on their
+person heats up. The string laid
+across the thresholds does not
+react when crossed. If the string is
+moved or tampered with in any
+way, the alarm is also triggered.
+The ritual remains active for
+twenty four hours.
+Level 3
+ADDICTIVE VITAE
+The caster can prepare a substance
+that, once in contact with the
+target’s skin, makes their blood
+more appealing to vampires.
+■
+■
+Ingredients: A small amount of
+narcotic substance
+Process: The substance is mixed
+with the caster’s Blood and
+kept in a vial. Once the
+incantation is said, the
+substance becomes potent until
+it is applied to the target, up
+until the end of the scene.
+4 4
+■ System: Upon a succesful
+Ritual roll, the caster gains a
+blood servant able to spy,
+follow, and obey other simple
+instructions at the sorcerer's
+command. If it strays farther
+than 100 yards/meters from the
+vampire, it falls inert until the
+vampire enters within that
+range. The create is active for a
+single night. On a critical, two
+such creatures can be created.
+Otherwise the creation of a
+new blood homunculus causes
+the previous one to smolder
+into dried blood.
+The creature appears as a pool
+of blood, and is able to squeeze
+through any spaces water could
+fit though it is slightly thicker. It
+can only grasp, move, or interact
+with objects that could be
+effected by a slow puddle of
+blood. The blood moves at a
+walking speed, but can travel
+across any solid surface
+(including vertically or upside
+down) without leaving a trail. It
+can telepathically communicate
+single images to its creator, but
+not make any noises or hear.
+BLOOD HOMUNCULUS
+This ritual allows the caster to
+animate their blood into a small
+amorphous servant.
+■ Ingredients: A mixture of milk,
+urine, and an eyeball from any
+creature.
+■ Process: The caster adds their
+blood to the mixture of
+ingredients, then reduces the
+concotion over a low flame
+while stirring constantly and
+chanting words of power.
+Level 4
+ALCHEMY
+Performing this ritual allows a
+caster to transmute the properties
+of an object’s form.
+■ Ingredients: Gold shavings,
+hydrochloric acid, sulfur,
+mercury, glass container, and the
+object to be transmuted.
+■ Process: The caster places the object in a
+glass container able to hold it and mixes the
+ingredients with one Rouse Check worth of
+their Blood, covering the item while
+applying low heat, making small
+adjustments to the mixture to produce the
+intended changes. The ritual takes five
+hours to complete.
+■ System: On a successful Ritual roll, the
+vampire is able to make simple changes to
+an object’s form such a hardness, color, and
+basic shape. More complex changes or
+major shifts require a Craft + Intelligence
+check against a Difficulty determined by
+the Storyteller. Once changed this way, the
+object permanently retains its new
+properties.
+POISON THE WELL
+The caster creates a concoction that turns a
+mortal’s blood poisonous to kindred. The potion
+has no effect on the mortal and is undetectable
+by the drinker until it is too late.
+■ Ingredients: Ash and honey.
+■ Process: The caster mixes their Blood with
+ash and honey, reducing the brew over a
+brazier and chanting the appropriate
+words.
+■ System: Make a Ritual roll when reducing
+the mixture. A critical win creates two
+doses of the poison. The vampire knows if
+the ritual was successful upon completion.
+It retains its potency for a night and
+evaporates completely during the day
+leaving a fine red powder. When imbibed
+by a mortal, it has no discernable effect.
+Once imbibed, it mixes with the mortal’s
+blood and creates a potent poison harmful
+only to vampires. If the mortal is never fed
+from, their blood returns to normal at
+sunrise. Every point of Hunger slaked this
+way causes 2 aggravated damage to the
+drinker as their veins blacken and smolder
+visibly beneath their skin. The damage
+does not take effect until a few moments
+after a vampire has stopped drinking. The
+poison is undetectable until then.
+D I S C I P L I N E S
+■ System: Make a Ritual roll
+when reducing the mixture. A
+critical win creates two doses of
+the poison. The vampire knows
+if the ritual was successful upon
+completion. It retains its
+potency for a night and
+evaporates completely during
+the day leaving a fine red
+powder.The mixture activates
+after making contact with the
+target’s skin. The target gives off
+an alluring aura to vampires,
+tempting other to feed on their
+blood. Any kindred within sight
+of the target makes Hunger
+Frenzy tests with a three dice
+negative and feels compelled to
+feed from the target if they fail.
+Any kindred at Hunger four or
+above must make a Hunger
+Frenzy test when within sight of
+the target.
+D I S C I P L I N E S
+4 5
+A thick fog may be Difficulty 3
+while strong winds able to damage
+some property may be Difficulty 6.
+The storm cannot reach levels of a
+hurricane or tornado though hail,
+high winds, and flooding can occur.
+Once the storm has been created, it
+remains in the determined state
+unless the caster makes another
+Craft + Blood Sorcery roll to altert.
+Small amounts of the caster's vitae
+can be found in any precipitation
+caused by a storm created this way,
+undetectable unless examined with
+scientific equipment. It is enough,
+however, to count as the caster's
+blood making contact with
+someone for the purpose of other
+Blood Sorcery abilities.
+Level 5
+CONTROL WEATHER
+This ritual enables a caster to
+create a concoction that can be
+evaporated into the atmosphere
+and change the weather in their
+area. This can be considered
+extremely vulgar if sudden
+unnatural weather patterns
+emerge.
+■ Ingredients: Rainwater, salts,
+belladonna leaves, iron
+shavings, a teapot
+■ Process: The ritual must be
+performed under the open sky.
+They caster adds their blood
+to the mixture and boils the
+ingredients in a teapot, saying
+words of power as the
+concoction steams and enters
+the air.
+■ System: Make the Ritual roll
+as the mixture begins steaming
+and evaporating into the air. If
+successful, an area centering
+on where the ritual took place
+begins to storm. This point
+does not change once the
+Ritual is cast. The area extends
+5 kilometers per rank in Blood
+Sorcery. The storm last one
+hour per rank in Blood
+Sorcery. The vampire can
+create other weather effects by
+making a Craft + Blood
+Sorcery roll against a
+Difficulty determined by the
+Storyteller.
+4 6
+Oblivion
+Level 2
+ABYSSAL PULSE
+By summoning the unnatural void of the Abyss, a
+vampire can temporarily disable electronic equipment
+in an area.
+■ Cost: One Rouse Check
+■ Dice Pools: Wits + Oblivion
+■ System: The user makes an Wits + Oblivion against a Difficulty determined by
+the Storyteller based on how much equipment is being targeted. On a success, the
+vampire disables all electronic machinery within an area of 1 meter/yard per rank
+in Oblivion centered on the user. Effected machines malfunction for a scene, but
+on a critical success the equipment is disabled for the night. A chilling shadowlike
+pulse erupts from the user, making this effect easily noticed.
+■ Duration: One scene, or one night on a critical win
+D I S C I P L I N E S
+D I S C I P L I N E S
+4 7
+Level 3
+SHADOW PUPPET
+While most who use the power of
+the abyss rely on their own shadow
+as a vehicle for Oblivion, some are
+able to control another's shadow
+and by extension control the target.
+■ Ingredients: A mostly intact
+eye and ear of a corpse
+■ Process: Plucking the eye from
+the body and removing an ear,
+the vampire fills their mouth
+with blood while eating the
+sensory organs.
+■ System: After swallowing the
+eye and ear (one or the other
+can be used to only see or hear
+what the victim did), the
+vampire makes the Ceremony
+roll. On a win, the user goes
+into a trance and can only
+perceive the final moments as
+perceived by the cadaver before
+they died. The vampire can see
+and hear as the victim did as
+their own senses fade and their
+body goes into a torpor-like
+trance. Any harm done to their
+body allows the user to end the
+ability. They can also choose to
+end the trance at will.
+The trance otherwise lasts for 10
+minutes per rank in Oblivion,
+allowing the user to observe this
+length of time before the victim
+died. This starts at the maximum
+time before death and ends at
+the creature’s final moment. For
+example, a vampire with
+Oblivion 3 would enter a trance
+and begin experienced what the
+corpse did while alive 30 minutes
+before they died. The user can
+choose to shorten this time. This
+can be used on mortals, animals,
+and supernatural creatures.
+■ Cost: One Rouse Check
+■ Dice Pools: Resolve + Oblivion
+vs Resolve + Composure
+■ System: When another
+creature's shadow is visible to
+you, the user may take control
+of it with a successful Resolve +
+Oblivion vs the opponent's
+Resolve + Composure. On a
+win, the user may use their
+actions to control the shadow
+as long as they can see it.
+Whatever the shadow is made
+to do, the target mimics. This
+can be used to physically
+control a target via their
+shadow, including having them
+attack. They cannot cause the
+target to activate new
+Disciplines or use the Blood. It
+is obvious when a victim is
+being controlled as the user
+makes gestures to control the
+shadow. The user must spend a
+point of Willpower after the
+first turn for each turn they
+spend controlling someone.
+This can only be used on one
+target at a time.
+■ Duration: One scene
+Oblivion
+Ceremonies
+Level 3
+WITNESS THE END
+By consuming the eyes and ears of
+a corpse, the vampire is able to
+witness the last moments
+experienced by the victim.
+
+Thank you for your support.
+We are TableGoth. Welcome to our feast of drama and darkness. Have a
+seat. Mind your manners. The table is set. The ritual begins soon...
+Find more Vampire of the Masquerade and other TTRPG content at
+Youtube.com/tablegoth and Twitch.tv/tablegoth.
