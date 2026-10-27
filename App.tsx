@@ -1,3 +1,8 @@
+import {StartScreen} from './components/StartScreen';
+import {CreationTabs} from './components/CreationTabs';
+import {CatalogPicker} from './components/CatalogPicker';
+import {ResourceChoices,SpecialtyEditor} from './components/ResourceChoices';
+import {CREATION_STEPS,REVIEW_STEP,creationIssues,issueDestination} from './lib/creationFlow';
 import { ThinBloodCreation } from './components/ThinBloodCreation';
 import { WerewolfCreation } from './components/WerewolfCreation';
 import { parseCharacter, finishingIssues, validAttributes, playerIssues, SCHEMA_VERSION } from './lib/characterValidation';
@@ -90,81 +95,6 @@ const SAVE_PREFIX = 'whitewolf_save_';
 const LEGACY_SAVE_PREFIX = 'vtm_save_';
 
 // --- HELPER COMPONENTS --- //
-const GameSelection: React.FC<{ onSelect: (game: GameType) => void }> = ({ onSelect }) => {
-    const { t: fnT } = useI18n();
-    return (
-        <div className="w-full max-w-4xl mx-auto text-center space-y-8 animate-fadeIn px-2 sm:px-4 overflow-hidden min-w-0">
-            <div className="space-y-4 min-w-0">
-                <h1 className="text-2xl sm:text-4xl md:text-5xl font-cinzel text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [text-wrap:balance] break-words whitespace-normal leading-tight">
-                    {fnT('gameSelection.title')}
-                </h1>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-12 min-w-0">
-                <div 
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => onSelect(GameType.Vampire)}
-                    onKeyDown={(e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            onSelect(GameType.Vampire);
-                        }
-                    }}
-                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-red-900/30 bg-black/40 p-3 sm:p-6 transition-all hover:border-red-600 hover:shadow-[0_0_30px_rgba(220,38,38,0.2)] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950"
-                    aria-label={`${fnT('app.vampire')}: ${fnT('gameSelection.vampireDesc')}`}
-                >
-                    <div className="absolute inset-0 bg-gradient-to-b from-red-900/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                    <div className="relative z-10 space-y-6">
-                        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-red-900/20 text-red-500 ring-4 ring-red-900/10 group-hover:scale-110 transition-transform">
-                            <BloodIcon />
-                        </div>
-                        <div className="space-y-2 min-w-0">
-                            <h2 className="text-xl sm:text-2xl md:text-3xl font-cinzel text-red-500 [text-wrap:balance] break-words whitespace-normal leading-tight">{fnT('app.vampire')}</h2>
-                            <p className="text-gray-400 text-sm leading-relaxed break-words whitespace-normal">
-                                {fnT('gameSelection.vampireDesc')}
-                            </p>
-                        </div>
-                        <Button tabIndex={-1} className="w-full bg-red-900/40 hover:bg-red-600 border border-red-500/50">
-                            {fnT('buttons.next')}
-                        </Button>
-                    </div>
-                </div>
-
-                <div 
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => onSelect(GameType.Werewolf)}
-                    onKeyDown={(e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            onSelect(GameType.Werewolf);
-                        }
-                    }}
-                    className="group relative cursor-pointer overflow-hidden rounded-xl border-2 border-emerald-900/30 bg-black/40 p-3 sm:p-6 transition-all hover:border-emerald-600 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950"
-                    aria-label={`${fnT('app.werewolf')}: ${fnT('gameSelection.werewolfDesc')}`}
-                >
-                    <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                    <div className="relative z-10 space-y-6">
-                        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-900/20 text-emerald-500 ring-4 ring-emerald-900/10 group-hover:scale-110 transition-transform">
-                            <ClawIcon />
-                        </div>
-                        <div className="space-y-2 min-w-0">
-                            <h2 className="text-xl sm:text-2xl md:text-3xl font-cinzel text-emerald-500 [text-wrap:balance] break-words whitespace-normal leading-tight">{fnT('app.werewolf')}</h2>
-                            <p className="text-gray-400 text-sm leading-relaxed break-words whitespace-normal">
-                                {fnT('gameSelection.werewolfDesc')}
-                            </p>
-                        </div>
-                        <Button variant="secondary" tabIndex={-1} className="w-full !bg-emerald-900 hover:!bg-emerald-600 border border-emerald-500/50">
-                            {fnT('buttons.next')}
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
 interface StorageModalProps {
     mode: 'save' | 'load';
     onClose: () => void;
@@ -354,12 +284,15 @@ const PointAllocator: React.FC<PointAllocatorProps> = ({
 
     const bIsPoolComplete = Object.values(oPoolUsage.available).every(val => val === 0);
 
+    const remainingSummary=Object.entries(oPoolUsage.available).filter(([,n])=>Number(n)>0).sort(([a],[b])=>Number(b)-Number(a)).map(([dots,count])=>`${count} de ${dots}`).join(' · ');
+
     const fnHandleItemInteraction = (sItem: string) => {
         fnSetActiveItem(sActiveItem === sItem ? null : sItem);
     };
 
     return (
         <div className="space-y-2">
+            <p className="mb-4 text-sm text-gray-300" role="status">{remainingSummary?`Falta distribuir: ${remainingSummary}`:'Distribuição preenchida'}</p>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {Object.entries(oGroups).map(([sGroupName, aGroupItems]) => (
                     <div key={sGroupName} className={Object.keys(oGroups).length === 1 ? "lg:col-span-3" : ""}>
@@ -461,17 +394,6 @@ interface DisciplinePowerSelectorProps {
 
 const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disciplineKey: sDisciplineKey, dots: nDots, selectedPowerIds: aSelectedPowerIds, onSelectPowers: fnOnSelectPowers, disciplineDetails: oDisciplineDetails, allDisciplines: oAllDisciplines }) => {
     const { t: fnT } = useI18n();
-    const [bIsOpen, fnSetIsOpen] = useState(false);
-
-    const oPowersByLevel = useMemo(() => {
-        const oGroups: Record<number, DisciplinePower[]> = {};
-        oDisciplineDetails.powers.forEach(p => {
-            if (!oGroups[p.level]) oGroups[p.level] = [];
-            oGroups[p.level].push(p);
-        });
-        return oGroups;
-    }, [oDisciplineDetails]);
-
     const fnCheckValidity = useCallback((sTestId: string) => {
         const oPower = oDisciplineDetails.powers.find(p => p.id === sTestId);
         if (!oPower) return false;
@@ -507,118 +429,7 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
         }
     };
 
-    const aSelectedPowersList = useMemo(() => {
-        return oDisciplineDetails.powers.filter(p => aSelectedPowerIds.includes(p.id));
-    }, [oDisciplineDetails, aSelectedPowerIds]);
-
-    const bIsComplete = aSelectedPowerIds.length === nDots;
-    const bIsOverLimit = aSelectedPowerIds.length > nDots;
-
-    return (
-        <div className="w-full mt-2">
-            {aSelectedPowersList.length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-3">
-                    {aSelectedPowersList.map(oPower => (
-                        <div key={oPower.id} className="flex items-center text-xs bg-gray-900 border border-red-900/50 text-red-100 px-2 py-1 rounded shadow-sm">
-                            <span className="font-bold mr-1 text-red-500">{oPower.level}</span>
-                            <span>{oPower.name}</span>
-                        </div>
-                    ))}
-                </div>
-            )}
-            <Button 
-                variant={bIsComplete ? "secondary" : "primary"} 
-                className={`
-                    w-full text-xs py-2 flex justify-center items-center gap-2 group 
-                    ${bIsOverLimit ? "bg-red-900 border-red-500 text-white animate-pulse" : bIsComplete ? "bg-gray-800 text-green-400 border border-green-900 hover:border-green-700" : "animate-pulse"}
-                `}
-                onClick={() => fnSetIsOpen(true)}
-            >
-                <span className="uppercase tracking-wider font-bold">{fnT('common.managePowers')}</span>
-                <span className={`px-2 py-0.5 rounded-full text-[10px] ${bIsOverLimit ? 'bg-red-500 text-white' : bIsComplete ? 'bg-green-900/30 text-green-400' : 'bg-red-900/30 text-white'}`}>
-                    {aSelectedPowerIds.length}/{nDots}
-                </span>
-            </Button>
-            {bIsOpen && (
-                <InfoModal title={`${oDisciplineDetails.name} - ${fnT('finishingTouches.disciplines.selectPowers')}`} onClose={() => fnSetIsOpen(false)}>
-                    <div className="text-left space-y-6">
-                        <div className="bg-gray-900 p-4 rounded-lg border border-gray-700 flex justify-between items-center sticky top-0 z-10 shadow-lg gap-4 flex-wrap">
-                            <div className="flex-grow">
-                                <h4 className="font-bold text-gray-200 break-words">{fnT('finishingTouches.disciplines.powersSelected', { count: aSelectedPowerIds.length, total: nDots })}</h4>
-                                <div className="flex gap-1 mt-1">
-                                    {[...Array(nDots)].map((_, i) => (
-                                        <div key={i} className={`h-1.5 flex-1 rounded-full transition-colors duration-300 ${i < aSelectedPowerIds.length ? 'bg-red-500 shadow-[0_0_5px_rgba(220,38,38,0.5)]' : 'bg-gray-700'}`}></div>
-                                    ))}
-                                </div>
-                            </div>
-                            <Button onClick={() => fnSetIsOpen(false)} variant="primary" className="text-xs px-4">{fnT('buttons.confirm')}</Button>
-                        </div>
-                        {[1, 2, 3, 4, 5].map(nLevel => {
-                            const aPowers = oPowersByLevel[nLevel];
-                            if (!aPowers) return null;
-                            const bIsLevelUnlock = nDots >= nLevel;
-                            return (
-                                <div key={nLevel} className={`relative pl-3 border-l-2 ${bIsLevelUnlock ? 'border-red-500' : 'border-gray-700'}`}>
-                                    <div className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 ${bIsLevelUnlock ? 'bg-red-500 border-red-500' : 'bg-gray-900 border-gray-700'}`}></div>
-                                    <h4 className={`text-lg font-bold mb-3 ${bIsLevelUnlock ? 'text-red-400' : 'text-gray-600'}`}>
-                                        {fnT('compendium.level')} {nLevel}
-                                    </h4>
-                                    <div className="grid grid-cols-1 gap-3">
-                                        {aPowers.map(oPower => {
-                                            const bIsSelected = aSelectedPowerIds.includes(oPower.id);
-                                            const bLimitReached = aSelectedPowerIds.length >= nDots;
-                                            const bCanSelect = bIsSelected || (bIsLevelUnlock && !bLimitReached && fnCheckValidity(oPower.id));
-                                            return (
-                                                <div 
-                                                    key={oPower.id} 
-                                                    onClick={() => bCanSelect && fnTogglePower(oPower.id)}
-                                                    className={`
-                                                        p-3 rounded-lg border-2 cursor-pointer transition-all duration-200 relative group overflow-hidden
-                                                        ${bIsSelected 
-                                                            ? 'bg-red-900/30 border-red-500 shadow-[0_0_15px_rgba(153,27,27,0.3)] ring-1 ring-red-500/50' 
-                                                            : bCanSelect 
-                                                                ? 'bg-gray-800 border-gray-700 hover:border-gray-500 hover:bg-gray-750' 
-                                                                : 'bg-gray-900/50 border-gray-800 opacity-60 grayscale cursor-not-allowed'}
-                                                    `}
-                                                >
-                                                    <div className={`absolute top-0 right-0 px-3 py-1 rounded-bl-lg text-[10px] uppercase font-bold tracking-wider flex items-center gap-1 border-l border-b ${bIsSelected ? 'bg-red-600 text-white border-red-500' : 'bg-gray-900 text-gray-400 border-gray-700'}`}>
-                                                        <BloodIcon />
-                                                        <span>{oPower.cost === "Passive" ? fnT('compendium.passive') : (oPower.cost === "No cost" ? fnT('compendium.noCost') : oPower.cost)}</span>
-                                                    </div>
-                                                    <div className="flex justify-between items-start mb-3 pr-24">
-                                                        <div className="flex flex-col">
-                                                            <span className={`font-bold text-lg ${bIsSelected ? 'text-white text-shadow-sm' : 'text-gray-300'}`}>
-                                                                {oPower.name}
-                                                            </span>
-                                                            {oPower.amalgam && (
-                                                                <div className="flex flex-wrap gap-2 mt-1">
-                                                                    {oPower.amalgam.map((oReq, idx) => (
-                                                                        <span key={idx} className="text-[10px] font-bold uppercase tracking-wider text-red-400/80 bg-red-900/20 px-1.5 py-0.5 rounded border border-red-900/30">
-                                                                            {fnT('compendium.requirements')}: {fnT('disciplines.' + oReq.discipline + '.name')} {oReq.level}
-                                                                        </span>
-                                                                    ))}
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                        {bIsSelected && <div className="text-red-500 bg-red-900/20 rounded-full p-1"><CheckCircle /></div>}
-                                                    </div>
-                                                    <p className={`text-sm mb-4 leading-relaxed ${bIsSelected ? 'text-gray-200' : 'text-gray-400'}`}>{oPower.description}</p>
-                                                    <div className={`p-2 rounded text-xs font-mono border-l-2 ${bIsSelected ? 'bg-black/40 border-red-500/50 text-gray-300' : 'bg-black/20 border-gray-700 text-gray-500'}`}>
-                                                        <strong className={`${bIsSelected ? 'text-red-400' : 'text-gray-500'} block mb-1 uppercase tracking-wider text-[10px]`}>{fnT('compendium.system')}:</strong>
-                                                        {oPower.system}
-                                                    </div>
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </InfoModal>
-            )}
-        </div>
-    );
+    return <div className="mt-4"><p className="mb-2 text-sm text-gray-300">{aSelectedPowerIds.length} / {nDots} {sDisciplineKey==='thinbloodalchemy'?'fórmulas escolhidas':'poderes escolhidos'}</p><CatalogPicker label={`${oDisciplineDetails.name} — ${sDisciplineKey==='thinbloodalchemy'?'fórmulas':'poderes'}`} multiple selected={aSelectedPowerIds} onToggle={fnTogglePower} options={oDisciplineDetails.powers.map(p=>({id:p.id,name:p.name,summary:`Nível ${p.level} · ${p.cost||'Consulte o sistema'}`,unavailable:aSelectedPowerIds.includes(p.id)?undefined:p.level>nDots?`Exige ${p.level} pontos nesta Disciplina.`:aSelectedPowerIds.length>=nDots?'Todos os espaços de poder foram preenchidos.':!fnCheckValidity(p.id)?'Exige pré-requisito, amálgama ou espaço de nível compatível.':undefined,details:<><p>{p.description}</p><p className="mt-2">{p.system}</p>{p.amalgam?.map((r,i)=><p key={i}>Amálgama: {r.discipline} {r.level}</p>)}{p.prerequisite&&<p>Pré-requisito: {oDisciplineDetails.powers.find(x=>x.id===p.prerequisite)?.name||p.prerequisite}</p>}</>}))}/></div>;
 };
 
 // --- NOTIFICATION COMPONENT --- //
@@ -663,9 +474,6 @@ const App: React.FC = () => {
     const aPredatorTypes = useMemo(() => fnGetPredatorTypes(fnT), [fnT]);
     const oTribeDetails = useMemo(() => fnGetTribeDetails(fnT), [fnT]);
     const oAuspiceDetails = useMemo(() => fnGetAuspiceDetails(fnT), [fnT]);
-    const aLoresheets = useMemo(() => fnGetLoresheets(fnT), [fnT]);
-    const aRituals = useMemo(() => fnGetRituals(fnT), [fnT]);
-    const aTalismans = useMemo(() => fnGetTalismans(fnT), [fnT]);
 
     const [view, setView] = useState<'home' | 'creator'>('home');
     const [nStep, fnSetStep] = useState(1);
@@ -673,159 +481,37 @@ const App: React.FC = () => {
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [nStep]);
-    const [bShowModeSelection, fnSetShowModeSelection] = useState(false);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
+    useEffect(()=>setCompleted(false),[oCharacter]);
 
     useEffect(()=>{
         if(view==='creator'&&oCharacter.gameType){
-            try {localStorage.setItem('whitewolf_draft_v2',JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}));} catch { /* Manual save reports quota errors; never destroy existing saves. */ }
+            try {localStorage.setItem('whitewolf_draft_v2',JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}));setDraftSummary({name:oCharacter.name,gameType:oCharacter.gameType});setSaveStatus('Rascunho salvo neste navegador');} catch {setSaveStatus('Não foi possível salvar o rascunho. Exporte JSON para preservar suas escolhas.');}
         }
     },[oCharacter,view]);
     const fnNormalizeCharacter = useCallback(parseCharacter, []);
     const aAdvantagesAndFlaws = useMemo(() => fnGetAdvantagesAndFlaws(fnT, oCharacter.gameType), [fnT, oCharacter.gameType]);
-    const [sSelectedSkill, setSelectedSkill] = useState<string>('');
-    const [sSpecialtyName, setSpecialtyName] = useState<string>('');
     const [bShowStorage, fnSetShowStorage] = useState(false);
     const [sStorageMode, fnSetStorageMode] = useState<'save' | 'load'>('save');
     const [oNotification, fnSetNotification] = useState<{message: string, type: 'success' | 'error'} | null>(null);
     const [oActiveDetail, fnSetActiveDetail] = useState<{title: string, content: React.ReactNode} | null>(null);
 
-    const aSteps = useMemo(() => {
-        const base = [
-            { id: 'game', label: fnT('steps.gameSelectionStep') },
-            { id: 'concept', label: fnT('steps.concept') }
-        ];
-        if (oCharacter.gameType === GameType.Werewolf) {
-            base.push(
-                { id: 'tribe', label: fnT('steps.tribe') },
-                { id: 'auspice', label: fnT('steps.auspice') }
-            );
-        } else {
-            // Vampire, or no game selected yet: fall back to the Vampire-shaped step
-            // (kept consistent with CharacterSheet's own gameType-null fallback).
-            base.push({ id: 'clan', label: fnT('steps.clan') });
-        }
-        base.push(
-            { id: 'attributes', label: fnT('steps.attributes') },
-            { id: 'skills', label: fnT('steps.skills') },
-            { id: 'finishing', label: fnT('steps.finishingTouches') },
-            { id: 'sheet', label: fnT('steps.sheet') }
-        );
-        return base;
-    }, [fnT, oCharacter.gameType]);
-
-    const fnIsVampireDisciplinesValid = useCallback((oChar: Character) => {
-        const oPredatorType = aPredatorTypes.find(pt => pt.id === oChar.predatorType);
-        const oDiscs = { ...oChar.disciplines };
-
-        // Subtract predator bonus
-        if (oPredatorType?.disciplineAdd) {
-            const d = oPredatorType.disciplineAdd.discipline;
-            if (oDiscs[d]) oDiscs[d] -= oPredatorType.disciplineAdd.dots;
-            if (oDiscs[d] === 0) delete oDiscs[d];
-        }
-
-        const aRemaining = Object.entries(oDiscs).filter(([_, v]) => (v as number) > 0);
-        if (aRemaining.length === 2) {
-            const sorted = aRemaining.map(([_, v]) => v as number).sort((a, b) => b - a);
-            if (sorted[0] !== 2 || sorted[1] !== 1) return false;
-
-            // The 2-dot one must be Clan
-            const oClan = oClanDetails[oChar.clan as Clan];
-            const sTwoDotDisc = aRemaining.find(([_, v]) => v === 2)?.[0];
-            if (oChar.clan !== Clan.Caitiff && aRemaining.some(([name])=>!oClan?.disciplines.includes(name))) return false;
-        } else {
-            return false;
-        }
-        return true;
-    }, [aPredatorTypes, oClanDetails]);
-
-    const fnIsWerewolfGiftsValid = useCallback((oChar: Character) => {
-        const aGiftEntries = Object.entries(oChar.disciplines).filter(([_, v]) => (v as number) > 0);
-        return aGiftEntries.length === 3 && aGiftEntries.every(([_, v]) => v === 1);
-    }, []);
-
-    const bIsStepValid = useMemo(() => {
-        const sStepId = aSteps[nStep - 1]?.id;
-        if (!sStepId) return true;
-
-        switch (sStepId) {
-            case 'game':
-                return !!oCharacter.gameType;
-            case 'concept':
-                return !!(oCharacter.name.trim() && oCharacter.concept.trim() && oCharacter.ambition.trim());
-            case 'clan':
-                return !!oCharacter.clan;
-            case 'tribe':
-                return !!oCharacter.tribe;
-            case 'auspice':
-                return !!oCharacter.auspice;
-            case 'attributes':
-                const nAttrSum = (Object.values(oCharacter.attributes) as number[]).reduce((acc, val) => acc + val, 0);
-                return validAttributes(oCharacter); // Values: 4, 3, 3, 3, 2, 2, 2, 2, 1
-            case 'skills':
-                const aCurrentSkills = (Object.values(oCharacter.skills) as number[]).filter(v => v > 0).sort((a, b) => b - a);
-                return Object.values(oSkillPaths).some(aPathDots => {
-                    if (aCurrentSkills.length !== aPathDots.length) return false;
-                    const aSortedPath = [...aPathDots].sort((a, b) => b - a);
-                    return aCurrentSkills.every((v, i) => v === aSortedPath[i]);
-                });
-            case 'finishing':
-                return finishingIssues(oCharacter).length === 0;
-            default:
-                return true;
-        }
-    }, [oCharacter, nStep, aSteps, aPredatorTypes, oClanDetails, fnIsVampireDisciplinesValid, fnIsWerewolfGiftsValid]);
-
-    const aValidationIssues = useMemo(() => {
-        const sStepId = aSteps[nStep - 1]?.id;
-        const aIssues: string[] = [];
-        if (!sStepId) return aIssues;
-
-        const fnMissing = (sLabel: string) => aIssues.push(fnT('validation.missingField', { field: sLabel }));
-
-        switch (sStepId) {
-            case 'game':
-                if (!oCharacter.gameType) aIssues.push(fnT('validation.selectGame'));
-                break;
-            case 'concept':
-                if (!oCharacter.name) fnMissing(fnT('concept.name'));
-                if (!oCharacter.concept) fnMissing(fnT('concept.concept'));
-                if (!oCharacter.ambition) fnMissing(fnT('concept.ambition'));
-
-                break;
-            case 'clan':
-                if (!oCharacter.clan) aIssues.push(fnT('validation.selectClan'));
-                break;
-            case 'tribe':
-                if (!oCharacter.tribe) aIssues.push(fnT('validation.selectTribe'));
-                break;
-            case 'auspice':
-                if (!oCharacter.auspice) aIssues.push(fnT('validation.selectAuspice'));
-                break;
-            case 'attributes': {
-                const nAttrSum = (Object.values(oCharacter.attributes) as number[]).reduce((acc, val) => acc + val, 0);
-                if (!validAttributes(oCharacter)) aIssues.push('Atributos: um 4, três 3, quatro 2 e um 1.');
-                break;
-            }
-            case 'skills': {
-                const aCurrentSkills = (Object.values(oCharacter.skills) as number[]).filter(v => v > 0).sort((a, b) => b - a);
-                const bValidPath = Object.values(oSkillPaths).some(aPathDots => {
-                    if (aCurrentSkills.length !== aPathDots.length) return false;
-                    const aSortedPath = [...aPathDots].sort((a, b) => b - a);
-                    return aCurrentSkills.every((v, i) => v === aSortedPath[i]);
-                });
-                if (!bValidPath) aIssues.push(fnT('validation.skillPath'));
-                break;
-            }
-            case 'finishing': {
-                aIssues.push(...finishingIssues(oCharacter));
-                break;
-            }
-        }
-
-        return Array.from(new Set(aIssues));
-    }, [aSteps, nStep, oCharacter, fnT, fnIsVampireDisciplinesValid, fnIsWerewolfGiftsValid]);
+    const aSteps = CREATION_STEPS;
+    const [panels,setPanels]=useState({nature:'tribe',capacities:'attributes',powers:'predator',resources:'advantages'});
+    const [draftSummary,setDraftSummary]=useState<{name:string;gameType:GameType}|null>(()=>{
+        try{const raw=localStorage.getItem('whitewolf_draft_v2');if(raw){const c=parseCharacter(JSON.parse(raw));return {name:c.name,gameType:c.gameType};}}catch{}return null;
+    });
+    const [completed,setCompleted]=useState(false);
+    const [completionRequested,setCompletionRequested]=useState(false);
+    const [saveStatus,setSaveStatus]=useState('');
+    const allIssues=creationIssues(oCharacter);
+    useEffect(()=>{
+        if(view==='creator')try{localStorage.setItem('whitewolf_flow_v1',JSON.stringify({step:nStep,panels}));}catch{}
+    },[view,nStep,panels]);
+    const goToIssue=(issue:string)=>{const destination=issueDestination(issue,oCharacter);fnSetStep(destination.step);if(destination.panel)setPanels(prev=>({...prev,[destination.step===3?'capacities':destination.step===4?'powers':'resources']:destination.panel}));};
+    const displayIssue=(issue:string)=>aSkillList.reduce((text,skill)=>text.replace(skill,fnT('skills.list.'+skill)),issue);
+    const aValidationIssues=allIssues.filter(issue=>issueDestination(issue,oCharacter).step===nStep);
+    const setPanel=(key:keyof typeof panels,value:string)=>setPanels(prev=>({...prev,[key]:value}));
 
     useEffect(() => {
         if (!oCharacter.name) {
@@ -913,19 +599,13 @@ const App: React.FC = () => {
         }));
     };
 
-    const fnCreateRandom = (level: 'fledgling' | 'neonate' | 'ancilla') => {
-        const char = asNarrativeNpc(fnCreateRandomCharacter(sLocale, level, fnT, oCharacter.gameType || GameType.Vampire), level);
-        fnSetCharacter(char);
-        setView('creator');
-        fnSetStep(aSteps.length);
-        fnShowNotification(fnT('common.generateSuccess'));
-    };
-
     const fnSaveCharacter = (sName: string) => {
         if (typeof window !== 'undefined') {
             try {
                 localStorage.setItem(`${SAVE_PREFIX}${sName}`, JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}));
                 fnShowNotification(fnT('storage.saveSuccess'));
+                if(completionRequested&&allIssues.length===0)setCompleted(true);
+                setCompletionRequested(false);
             } catch (e) {
                 fnShowNotification(fnT('storage.saveError'), "error");
             }
@@ -941,7 +621,7 @@ const App: React.FC = () => {
                     const normalized=fnNormalizeCharacter(oLoaded);
                     fnSetCharacter(normalized);
                     setView('creator');
-                    fnSetStep(normalized.gameType===GameType.Werewolf?8:7);
+                    fnSetStep(REVIEW_STEP);
                     fnShowNotification(fnT('storage.loadSuccess'));
                 } catch (e) {
                     console.error("Failed to parse save", e);
@@ -998,7 +678,7 @@ const App: React.FC = () => {
                 const normalized=fnNormalizeCharacter(oLoaded);
                 fnSetCharacter(normalized);
                 setView('creator');
-                fnSetStep(normalized.gameType===GameType.Werewolf?8:7);
+                fnSetStep(REVIEW_STEP);
                 fnShowNotification(fnT('storage.importSuccess'));
             } catch (err) {
                 console.error(err);
@@ -1124,40 +804,14 @@ const App: React.FC = () => {
         }
     };
 
-    const fnHandleGameSelect = (game: GameType) => {
-        // Already on this game type with creation progress underway (e.g. user navigated back to the
-        // game-selection step): re-picking the same game must not silently wipe the character.
-        const bHasProgress = view === 'creator' && !!oCharacter.name;
-        if (bHasProgress) {
-            if (game === oCharacter.gameType) {
-                fnSetStep(2);
-                return;
-            }
-            if (!window.confirm(fnT('common.resetWarning'))) return;
-        }
-
-        // Full reset when switching game types
-        const oIdentity = fnGenerateIdentity(sLocale, game);
-        fnSetCharacter({
-            ...oInitialCharacter,
-            gameType: game,
-            name: oIdentity.name,
-            sire: (oIdentity as any).sire,
-            mentor: (oIdentity as any).mentor,
-            concept: oIdentity.concept
-        });
-
-        if (view === 'home') {
-            fnSetShowModeSelection(true);
-        } else {
-            fnSetStep(2);
-        }
-    };
-    const renderStepContent = () => {
-        const sStepId = aSteps[nStep - 1]?.id;
+    const renderStepContent = (override?:string):React.ReactNode => {
+        const sStepId = override || aSteps[nStep - 1]?.id;
+        const bIsWerewolf=oCharacter.gameType===GameType.Werewolf;
+        const sThemeColor=bIsWerewolf?'text-emerald-300':'text-red-300';
+        const sThemeAccent=sThemeColor;
+        const sThemeBorder=bIsWerewolf?'border-emerald-800':'border-red-800';
+        const sThemeBg='bg-gray-900';
         switch (sStepId) {
-            case 'game':
-                return <GameSelection onSelect={fnHandleGameSelect} />;
             case 'concept':
                 return (
                     <GothicFrame>
@@ -1224,7 +878,7 @@ const App: React.FC = () => {
                                     {aClanKeys.map(sClan => (
                                         <button
                                             key={sClan}
-                                            onClick={() => fnUpdateCharacter('clan', sClan)}
+                                            onClick={() => {if(sClan===oCharacter.clan)return;fnHandlePredatorTypeChange('');fnSetCharacter(prev=>({...prev,clan:sClan,disciplines:{},disciplinePowers:{},...(sClan===Clan.ThinBlood?{generation:14,bloodPotency:0}:{generation:13,bloodPotency:1})}));}}
                                             className={`
                                                 px-4 py-2 rounded-lg border font-cinzel text-sm transition-all duration-300
                                                 ${oCharacter.clan === sClan
@@ -1417,20 +1071,24 @@ const App: React.FC = () => {
                         />
                     </div>
                 );
-            case 'finishing':
-                const bIsWerewolf = oCharacter.gameType === GameType.Werewolf;
-                const sThemeColor = bIsWerewolf ? 'text-green-500' : 'text-red-500';
-                const sThemeAccent = bIsWerewolf ? 'text-green-400' : 'text-red-400';
-                const sThemeBorder = bIsWerewolf ? 'border-green-900/40' : 'border-red-900/40';
-                const sThemeBg = bIsWerewolf ? 'bg-green-900/20' : 'bg-red-900/20';
-
+            case 'nature':
+                return bIsWerewolf?<CreationTabs items={[{id:'tribe',label:'Tribo'},{id:'auspice',label:'Augúrio'}]} active={panels.nature} onChange={id=>setPanel('nature',id)}>{id=>renderStepContent(id)}</CreationTabs>:renderStepContent('clan');
+            case 'capacities':
+                return <CreationTabs items={[{id:'attributes',label:'Atributos'},{id:'skills',label:'Perícias'},{id:'specialties',label:'Especialidades'}]} active={panels.capacities} onChange={id=>setPanel('capacities',id)}>{id=>id==='specialties'?<SpecialtyEditor character={oCharacter} onChange={fnUpdateCharacter}/>:renderStepContent(id)}</CreationTabs>;
+            case 'powers':
+                return bIsWerewolf?renderStepContent('wolf'):<CreationTabs items={oCharacter.clan===Clan.ThinBlood?[{id:'thinblood',label:'Méritos e Defeitos'},{id:'disciplines',label:'Disciplinas e fórmulas'}]:[{id:'predator',label:'Alimentação'},{id:'disciplines',label:'Disciplinas e poderes'}]} active={panels.powers} onChange={id=>setPanel('powers',id)}>{id=>renderStepContent(id)}</CreationTabs>;
+            case 'resources':
+                return <ResourceChoices character={oCharacter} onChange={fnUpdateCharacter} panel={panels.resources} onPanel={id=>setPanel('resources',id)}/>;
+            case 'predator':
+            case 'disciplines':
+            case 'thinblood':
+            case 'wolf':
                 return (
                     <div className="text-center space-y-4">
-                        <h2 className={`text-2xl font-cinzel ${sThemeColor} mb-2`}>{fnT('finishingTouches.title')}</h2>
+
                         
-                        {bIsWerewolf ? <WerewolfCreation character={oCharacter} onChange={fnUpdateCharacter}/> : (<>
-                        {oCharacter.clan===Clan.ThinBlood && <ThinBloodCreation character={oCharacter} onChange={fnUpdateCharacter}/>}
-                        {/* Disciplines / Gifts Section */}
+                        {sStepId==='wolf' ? <WerewolfCreation character={oCharacter} onChange={fnUpdateCharacter}/> : sStepId==='thinblood'?<ThinBloodCreation character={oCharacter} onChange={fnUpdateCharacter}/>:sStepId==='disciplines'?(<>
+                                                {/* Disciplines / Gifts Section */}
                         <GothicFrame className="text-left">
                             <h3 className={`text-xl font-bold ${sThemeAccent} mb-2 border-b border-gray-700 pb-2`}>
                                 {bIsWerewolf ? fnT('characterSheet.gifts') : fnT('finishingTouches.disciplines.title')}
@@ -1445,7 +1103,7 @@ const App: React.FC = () => {
                             <div className="mb-4 flex flex-col items-center p-3 bg-gray-900/50 rounded-lg border border-gray-700">
                                 {(() => {
                                     const oPredatorType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
-                                    const aCreationPool = oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
+                                    const aCreationPool = oCharacter.clan===Clan.ThinBlood?[...(oCharacter.thinMerits?.includes('alchemist')?[1]:[]),...(oCharacter.thinMerits?.includes('affinity')?[1]:[])]:oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
 
                                     const oDiscs = { ...oCharacter.disciplines };
                                     if (oPredatorType?.disciplineAdd) {
@@ -1511,7 +1169,7 @@ const App: React.FC = () => {
                                             ...(oCharacter.tribe ? oTribeDetails[oCharacter.tribe].gifts : []),
                                             ...(oCharacter.auspice ? oAuspiceDetails[oCharacter.auspice].gifts : [])
                                           ]))
-                                        : (oCharacter.clan ? oClanDetails[oCharacter.clan].disciplines : []);
+                                        : (oCharacter.clan===Clan.ThinBlood?(oCharacter.thinMerits?.includes('alchemist')?['thinbloodalchemy']:[]):oCharacter.clan ? oClanDetails[oCharacter.clan].disciplines : []);
                                     const aActiveDiscs = Object.keys(oCharacter.disciplines);
                                     const aAllDiscs = Array.from(new Set([...aBaseDiscs, ...aActiveDiscs]));
 
@@ -1555,7 +1213,7 @@ const App: React.FC = () => {
                                                                     const nNewVal = nDots === n ? nPredatorDots : n;
 
                                                                     // Validation: Can only assign values from the pool
-                                                                    const aCreationPool = oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
+                                                                    const aCreationPool = oCharacter.clan===Clan.ThinBlood?[...(oCharacter.thinMerits?.includes('alchemist')?[1]:[]),...(oCharacter.thinMerits?.includes('affinity')?[1]:[])]:oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
                                                                     const oCurrentDiscs = { ...oCharacter.disciplines, [sDisc]: nNewVal };
                                                                     const oPredatorType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
                                                                     if (oPredatorType?.disciplineAdd) {
@@ -1628,435 +1286,15 @@ const App: React.FC = () => {
                                 })()}
                             </div>
 
-                            <div className="mt-6 flex justify-center">
-                                <Button
-                                    variant="secondary"
-                                    onClick={() => {
-                                        fnSetActiveDetail({
-                                            title: bIsWerewolf ? fnT('characterSheet.gifts') : fnT('finishingTouches.disciplines.title'),
-                                            content: (
-                                                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                                                    {Object.keys(oDisciplineDetails)
-                                                        .filter(d => !oCharacter.disciplines[d])
-                                                        .filter(d => bIsWerewolf ? WEREWOLF_GIFTS.includes(d) : VAMPIRE_DISCIPLINES.includes(d))
-                                                        .map(d => {
-                                                            const bIsThinBloodAlchemy = d === 'thinbloodalchemy';
-                                                            const bIsThinBloodClan = oCharacter.clan === Clan.ThinBlood;
-                                                            const bDisabled = bIsThinBloodAlchemy && !bIsThinBloodClan;
-
-                                                            return (
-                                                                <Button
-                                                                    key={d}
-                                                                    variant="secondary"
-                                                                    className={`text-[10px] py-2 ${bDisabled ? 'opacity-30 grayscale cursor-not-allowed' : ''}`}
-                                                                    disabled={bDisabled}
-                                                                    onClick={() => {
-                                                                        fnUpdateCharacter('disciplines', { ...oCharacter.disciplines, [d]: 0 });
-                                                                        fnSetActiveDetail(null);
-                                                                    }}
-                                                                >
-                                                                    {oDisciplineDetails[d].name}
-                                                                </Button>
-                                                            );
-                                                        })}
-                                                </div>
-                                            )
-                                        });
-                                    }}
-                                >
-                                    + {bIsWerewolf ? fnT('characterSheet.gifts') : fnT('characterSheet.disciplines')}
-                                </Button>
-                            </div>
+                            <div className="mt-6"><CatalogPicker label="Disciplinas disponíveis" selected={[]} onToggle={id=>fnUpdateCharacter('disciplines',{...oCharacter.disciplines,[id]:0})} options={VAMPIRE_DISCIPLINES.filter(id=>!(id in oCharacter.disciplines)).map(id=>({id,name:oDisciplineDetails[id]?.name||id,summary:oDisciplineDetails[id]?.description,unavailable:id==='thinbloodalchemy'?(oCharacter.clan!==Clan.ThinBlood||!oCharacter.thinMerits?.includes('alchemist')?'Exige Alquimista de Sangue-Fraco.':undefined):oCharacter.clan===Clan.ThinBlood&&!oCharacter.thinMerits?.includes('affinity')?'Exige Afinidade com Disciplina.':undefined}))}/></div>
                         </GothicFrame>
 
-                        </>)}
-                        {/* Werewolf Specific Vitals (Renown, Harano, Hauglosk) */}
-                        {bIsWerewolf && (
-                            <GothicFrame className="text-left">
-                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-2 border-b border-gray-700 pb-1`}>
-                                    {fnT('characterSheet.vitals')}
-                                </h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest">{fnT('characterSheet.renown')}</h4>
-                                        <div className="grid grid-cols-3 gap-2">
-                                            {(['glory', 'honor', 'wisdom'] as const).map(sRenown => (
-                                                <div key={sRenown} className="bg-gray-800 p-3 rounded-lg border border-gray-700 text-center">
-                                                    <div className="text-[10px] uppercase text-gray-500 mb-1">{fnT(`characterSheet.${sRenown}`)}</div>
-                                                    <div className="flex justify-center space-x-1">
-                                                        {[1, 2, 3, 4, 5].map(n => (
-                                                            <button
-                                                                key={n}
-                                                                onClick={() => {
-                                                                    const nVal = oCharacter.renown[sRenown] === n ? 0 : n;
-                                                                    fnUpdateCharacter('renown', { ...oCharacter.renown, [sRenown]: nVal });
-                                                                }}
-                                                                className={`w-3 h-3 rounded-full border border-gray-600 ${oCharacter.renown[sRenown] >= n ? 'bg-green-500 shadow-[0_0_5px_rgba(34,197,94,0.5)]' : 'bg-gray-900'}`}
-                                                            />
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-4">
-                                        <div className="space-y-2">
-                                            <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest">{fnT('characterSheet.harano')}</h4>
-                                            <div className="flex space-x-1 bg-gray-800 p-3 rounded-lg border border-gray-700 justify-center">
-                                                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
-                                                    <button
-                                                        key={n}
-                                                        onClick={() => fnUpdateCharacter('harano', oCharacter.harano === n ? 0 : n)}
-                                                        className={`w-2.5 h-2.5 rounded-sm border border-gray-600 ${oCharacter.harano >= n ? 'bg-blue-500' : 'bg-gray-900'}`}
-                                                    />
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <div className="space-y-2">
-                                            <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest">{fnT('characterSheet.hauglosk')}</h4>
-                                            <div className="flex space-x-1 bg-gray-800 p-3 rounded-lg border border-gray-700 justify-center">
-                                                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
-                                                    <button
-                                                        key={n}
-                                                        onClick={() => fnUpdateCharacter('hauglosk', oCharacter.hauglosk === n ? 0 : n)}
-                                                        className={`w-2.5 h-2.5 rounded-sm border border-gray-600 ${oCharacter.hauglosk >= n ? 'bg-orange-500' : 'bg-gray-900'}`}
-                                                    />
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </GothicFrame>
-                        )}
-
-
-                        {/* Vampire Predator Type Section */}
-                        {!bIsWerewolf && (
-                            <GothicFrame className="text-left">
-                                <label htmlFor="predator-type-select" className={`block text-xl font-bold ${sThemeAccent} mb-2 border-b border-gray-700 pb-2 uppercase tracking-wide`}>
-                                    {fnT('finishingTouches.predatorType.title')}
-                                </label>
-                                <select 
-                                   id="predator-type-select"
-                                   className="w-full bg-gray-800 border border-gray-600 rounded p-2 text-white mb-2 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-                                   value={oCharacter.predatorType || ''}
-                                   onChange={(e) => fnHandlePredatorTypeChange(e.target.value)}
-                                >
-                                    <option value="">{fnT('common.selectPlaceholder')}</option>
-                                    {aPredatorTypes.map(pt => (
-                                        <option key={pt.id} value={pt.id}>{pt.name}</option>
-                                    ))}
-                                </select>
-                                {oCharacter.predatorType && (
-                                    <div className="mt-4 animate-fadeIn">
-                                        {(() => {
-                                            const oSelectedPredator = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
-                                            if (!oSelectedPredator) return null;
-                                            return (
-                                                <div className="p-4 bg-gray-900/80 rounded-lg border border-red-900/40 shadow-2xl">
-                                                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-2 border-b border-red-900/20 pb-2">
-                                                        <h4 className="text-2xl font-bold text-white flex items-center gap-3">
-                                                            <span className="p-2 bg-red-900/20 rounded-full text-red-500 shadow-[0_0_10px_rgba(153,27,27,0.4)]">
-                                                                <BloodIcon />
-                                                            </span>
-                                                            {oSelectedPredator.name}
-                                                        </h4>
-                                                        <div className="flex flex-wrap gap-2">
-                                                            {oSelectedPredator.humanityModifier !== 0 && (
-                                                                <div className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tighter ${oSelectedPredator.humanityModifier > 0 ? 'bg-green-900/30 text-green-400 border border-green-900/50' : 'bg-red-900/30 text-red-400 border border-red-900/50'}`}>
-                                                                    {oSelectedPredator.humanityModifier > 0 ? '+' : ''}{oSelectedPredator.humanityModifier} {fnT('characterSheet.humanity')}
-                                                                </div>
-                                                            )}
-                                                            {oSelectedPredator.disciplineAdd && (
-                                                                <div className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tighter bg-purple-900/30 text-purple-400 border border-purple-900/50">
-                                                                    +{oSelectedPredator.disciplineAdd.dots} {oDisciplineDetails[oSelectedPredator.disciplineAdd.discipline]?.name || oSelectedPredator.disciplineAdd.discipline}
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <p className="text-gray-400 italic mb-4 text-sm leading-relaxed border-l-4 border-red-900/30 pl-4 py-1">
-                                                       {oSelectedPredator.description}
-                                                    </p>
-
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                        <div className="space-y-2">
-                                                            <h5 className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold flex items-center gap-2">
-                                                                <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                                                                {fnT('compendium.grantedBenefits')}
-                                                            </h5>
-                                                            <div className="space-y-2">
-                                                                {oSelectedPredator.advantages.map((adv, idx) => {
-                                                                    const { name: sName } = fnTranslateAdvantageFlaw(adv, fnT, oCharacter.gameType);
-                                                                    return (
-                                                                        <div key={`${adv.id || adv.name}-${idx}`} className="flex items-start gap-3 bg-green-900/5 p-3 rounded-md border border-green-900/20 hover:bg-green-900/10 transition-colors">
-                                                                            <div className="mt-1 text-green-500"><CheckCircle /></div>
-                                                                            <div>
-                                                                                <div className="text-[9px] uppercase tracking-widest text-green-600 font-bold mb-0.5">{fnT('compendium.advantage')}</div>
-                                                                                <div className="text-sm font-bold text-green-400">{sName}</div>
-                                                                                <div className="text-[10px] text-gray-500">{adv.cost} {fnT('compendium.dotsIncluded')}</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    );
-                                                                })}
-                                                                {oSelectedPredator.advantages.length === 0 && (
-                                    <div className="text-xs text-gray-600 italic">{fnT('predatorTypes.noAdvantages')}</div>
-                                                                )}
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="space-y-2">
-                                                             <h5 className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold flex items-center gap-2">
-                                                                <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
-                                                                {fnT('compendium.potentialCosts')}
-                                                             </h5>
-                                                             <div className="space-y-2">
-                                                                 {oSelectedPredator.flaws.map((flaw, idx) => {
-                                                                     const { name: sName } = fnTranslateAdvantageFlaw(flaw, fnT, oCharacter.gameType);
-                                                                     return (
-                                                                         <div key={`${flaw.id || flaw.name}-${idx}`} className="flex items-start gap-3 bg-red-900/5 p-3 rounded-md border border-red-900/20 hover:bg-red-900/10 transition-colors">
-                                                                             <div className="mt-1 text-red-500"><ExclamationCircle /></div>
-                                                                             <div>
-                                                                                 <div className="text-[9px] uppercase tracking-widest text-red-600 font-bold mb-0.5">{fnT('compendium.flaw')}</div>
-                                                                                 <div className="text-sm font-bold text-red-400">{sName}</div>
-                                                                                 <div className="text-[10px] text-gray-500">{flaw.cost} {fnT('compendium.dotsPenalty')}</div>
-                                                                             </div>
-                                                                         </div>
-                                                                     );
-                                                                 })}
-                                                                 {oSelectedPredator.flaws.length === 0 && (
-                                     <div className="text-xs text-gray-600 italic">{fnT('predatorTypes.noFlaws')}</div>
-                                                                 )}
-                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            );
-                                        })()}
-                                    </div>
-                                )}
-                            </GothicFrame>
-                        )}
-
-                        {/* Common Advantages & Flaws Section */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <GothicFrame className="text-left">
-                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-2`}>{fnT('finishingTouches.advantages.title')}</h3>
-                                <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
-                                    {aAdvantagesAndFlaws.filter(a => a.type === 'advantage').map((adv, idx) => (
-                                        <div key={`${adv.name}-${idx}`} className="flex justify-between items-center p-2 bg-gray-800 rounded border border-gray-700 hover:border-gray-500 group transition-colors">
-                                            <span className="text-sm">{adv.name} ({adv.cost})</span>
-                                            <Button
-                                                variant="secondary"
-                                                className="px-3 py-1 text-xs font-bold"
-                                                disabled={oCharacter.advantages.some(a => a.id === adv.id)}
-                                                onClick={() => {
-                                                    if (!oCharacter.advantages.some(a => a.id === adv.id)) {
-                                                        fnUpdateCharacter('advantages', [...oCharacter.advantages, adv]);
-                                                    }
-                                                }}
-                                            >{fnT('buttons.add')}</Button>
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="mt-4 border-t border-gray-700 pt-2 space-y-1">
-                                    {oCharacter.advantages.map((adv, i) => {
-                                        const { name: sName } = fnTranslateAdvantageFlaw(adv, fnT, oCharacter.gameType);
-                                        return (
-                                            <div key={`${adv.id || adv.name}-${i}`} className="flex justify-between text-xs text-gray-300 bg-green-900/10 px-2 py-1.5 rounded border border-green-900/20">
-                                                <span><span className="text-green-400 font-bold mr-2">{adv.cost}</span> {sName}</span>
-                                                <button onClick={() => fnUpdateCharacter('advantages', oCharacter.advantages.filter((_, idx) => idx !== i))} className="text-red-500 hover:text-red-300 font-bold px-1">✕</button>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            </GothicFrame>
-                            <GothicFrame className="text-left">
-                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-2`}>{fnT('finishingTouches.flaws.title')}</h3>
-                                <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
-                                    {aAdvantagesAndFlaws.filter(a => a.type === 'flaw').map((flaw, idx) => (
-                                        <div key={`${flaw.name}-${idx}`} className="flex justify-between items-center p-2 bg-gray-800 rounded border border-gray-700 hover:border-gray-500 group transition-colors">
-                                            <span className="text-sm">{flaw.name} ({flaw.cost})</span>
-                                            <Button
-                                                variant="secondary"
-                                                className="px-3 py-1 text-xs font-bold"
-                                                disabled={oCharacter.flaws.some(f => f.id === flaw.id)}
-                                                onClick={() => {
-                                                    if (!oCharacter.flaws.some(f => f.id === flaw.id)) {
-                                                        fnUpdateCharacter('flaws', [...oCharacter.flaws, flaw]);
-                                                    }
-                                                }}
-                                            >{fnT('buttons.add')}</Button>
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="mt-4 border-t border-gray-700 pt-2 space-y-1">
-                                    {oCharacter.flaws.map((flaw, i) => {
-                                        const { name: sName } = fnTranslateAdvantageFlaw(flaw, fnT, oCharacter.gameType);
-                                        return (
-                                            <div key={`${flaw.id || flaw.name}-${i}`} className="flex justify-between text-xs text-gray-300 bg-red-900/10 px-2 py-1.5 rounded border border-red-900/20">
-                                                <span><span className="text-red-400 font-bold mr-2">{flaw.cost}</span> {sName}</span>
-                                                <button onClick={() => fnUpdateCharacter('flaws', oCharacter.flaws.filter((_, idx) => idx !== i))} className="text-red-500 hover:text-red-300 font-bold px-1">✕</button>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            </GothicFrame>
-                        </div>
-
-                        {/* Loresheets Section */}
-                        {bIsWerewolf && (
-                            <GothicFrame className="text-left">
-                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('loresheets.title')}</h3>
-                                <p className="text-gray-400 mb-4">{fnT('loresheets.subtitle')}</p>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {aLoresheets.map(ls => {
-                                        const oSelected = oCharacter.loresheets.find(l => l.id === ls.id);
-                                        const nLevel = oSelected ? oSelected.level : 0;
-                                        return (
-                                            <div key={ls.id} className={`p-3 rounded-lg border-2 transition-all duration-300 ${nLevel > 0 ? 'bg-green-900/30 border-green-500' : 'bg-gray-800 border-gray-700'}`}>
-                                                <div className="flex justify-between items-start mb-2">
-                                                    <h4 className="font-bold text-gray-100">{ls.name}</h4>
-                                                    <div className="flex flex-shrink-0 space-x-1">
-                                                        {[1, 2, 3, 4, 5].map(n => (
-                                                            <button
-                                                                key={n}
-                                                                onClick={() => {
-                                                                    const nNewLevel = nLevel === n ? 0 : n;
-                                                                    let aNewLoresheets = [...oCharacter.loresheets];
-                                                                    if (nNewLevel === 0) {
-                                                                        aNewLoresheets = aNewLoresheets.filter(l => l.id !== ls.id);
-                                                                    } else {
-                                                                        const idx = aNewLoresheets.findIndex(l => l.id === ls.id);
-                                                                        if (idx >= 0) {
-                                                                            aNewLoresheets[idx] = { ...aNewLoresheets[idx], level: nNewLevel };
-                                                                        } else {
-                                                                            aNewLoresheets.push({ id: ls.id, level: nNewLevel });
-                                                                        }
-                                                                    }
-                                                                    fnUpdateCharacter('loresheets', aNewLoresheets);
-                                                                }}
-                                                                className={`w-3.5 h-3.5 rounded-full border border-gray-600 ${nLevel >= n ? 'bg-green-500' : 'bg-gray-900'}`}
-                                                            />
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                                <p className="text-xs text-gray-400 mb-2">{ls.description}</p>
-                                                {nLevel > 0 && (
-                                                    <div className="mt-2 space-y-2">
-                                                        {ls.levels.filter(lvl => lvl.level === nLevel).map(lvl => (
-                                                            <div key={lvl.level} className="text-[10px] bg-black/40 p-2 rounded border-l border-green-500">
-                                                                <div className="font-bold text-green-400 mb-0.5">{lvl.name}</div>
-                                                                <div className="text-gray-500 italic">{lvl.system}</div>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            </GothicFrame>
-                        )}
-
-                        {!bIsWerewolf && (
-                            <GothicFrame className="text-left">
-                                <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('steps.finishingTouches')}</h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <Input
-                                        label={fnT('characterSheet.generation')}
-                                        type="number"
-                                        value={oCharacter.generation}
-                                        onChange={e => {
-                                            const nVal = parseInt(e.target.value, 10);
-                                            if (!isNaN(nVal)) fnUpdateCharacter('generation', nVal);
-                                        }}
-                                        min={4}
-                                        max={16}
-                                    />
-                                    <Input
-                                        label={fnT('characterSheet.bloodPotency')}
-                                        type="number"
-                                        value={oCharacter.bloodPotency}
-                                        onChange={e => {
-                                            const nVal = parseInt(e.target.value, 10);
-                                            if (!isNaN(nVal)) fnUpdateCharacter('bloodPotency', nVal);
-                                        }}
-                                        min={0}
-                                        max={10}
-                                    />
-                                </div>
-                            </GothicFrame>
-                        )}
-
-                        {/* Specialties Section */}
-                        <GothicFrame className="text-left">
-                            <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('characterSheet.specialties')}</h3>
-                            <div className="space-y-4">
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
-                                    <div className="md:col-span-1">
-                                        <label htmlFor="specialty-skill-select" className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">{fnT('common.skill')}</label>
-                                        <select
-                                            id="specialty-skill-select"
-                                            className="w-full bg-gray-800 border border-gray-600 rounded p-2 text-white outline-none focus:ring-2 focus:ring-red-500 focus-visible:ring-2 focus-visible:ring-red-500"
-                                            onChange={(e) => setSelectedSkill(e.target.value)}
-                                            value={sSelectedSkill}
-                                        >
-                                            <option value="">{fnT('common.selectPlaceholder')}</option>
-                                            {aSkillList.map(s => (
-                                                <option key={s} value={s}>{fnT(`skills.list.${s}`)}</option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                    <div className="md:col-span-1">
-                                        <Input
-                                            id="specialty-name-input"
-                                            label={fnT('common.specialty')}
-                                            placeholder={fnT('common.specialtyPlaceholder')}
-                                            value={sSpecialtyName}
-                                            onChange={(e) => setSpecialtyName(e.target.value)}
-                                        />
-                                    </div>
-                                    <Button
-                                        variant="secondary"
-                                        onClick={() => {
-                                            if (sSelectedSkill && sSpecialtyName) {
-                                                fnUpdateCharacter('specialties', [...oCharacter.specialties, { skill: sSelectedSkill as Skill, name: sSpecialtyName }]);
-                                                setSpecialtyName('');
-                                            }
-                                        }}
-                                    >
-                                        {fnT('buttons.add')}
-                                    </Button>
-                                </div>
-                                <div className="flex flex-wrap gap-2 mt-4">
-                                    {oCharacter.specialties.map((s, i) => (
-                                        <div key={i} className="flex items-center gap-2 bg-gray-800 border border-gray-700 px-3 py-1 rounded-full text-sm">
-                                            <span className="text-red-400 font-bold">{fnT(`skills.list.${s.skill}`)}:</span>
-                                            <span>{s.name}</span>
-                                            <button
-                                                onClick={() => fnUpdateCharacter('specialties', oCharacter.specialties.filter((_, idx) => idx !== i))}
-                                                className="text-gray-500 hover:text-red-500 font-bold ml-1"
-                                            >
-                                                ✕
-                                            </button>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </GothicFrame>
-
-                        {/* Touchstones Section */}
-                        <GothicFrame className="text-left">
-                            <h3 className={`text-xl font-bold ${sThemeAccent} mb-4 border-b border-gray-700 pb-2`}>{fnT('finishingTouches.touchstones')}</h3>
-                            <textarea 
-                                className={`w-full bg-gray-800 border border-gray-600 rounded p-3 text-white h-32 focus:ring-2 outline-none resize-none ${bIsWerewolf ? 'focus:ring-green-500 focus:border-green-500' : 'focus:ring-red-500 focus:border-red-500'}`}
-                                placeholder={fnT('finishingTouches.touchstonesPlaceholder')}
-                                value={oCharacter.touchstones}
-                                onChange={(e) => fnUpdateCharacter('touchstones', e.target.value)}
-                            />
-                        </GothicFrame>
-
+                        </>):null}
+                        {sStepId==='predator'&&<div className="space-y-5">
+                        <p className="text-sm text-gray-300">Como você se alimenta? O predador concede benefícios adicionais e pode alterar suas Disciplinas.</p>
+                        <CatalogPicker label="Tipo de predador" selected={oCharacter.predatorType?[oCharacter.predatorType]:[]} onToggle={id=>fnHandlePredatorTypeChange(id===oCharacter.predatorType?'':id)} options={aPredatorTypes.map(pt=>({id:pt.id,name:pt.name.replace('[Comunitário / opcional] ',''),community:pt.name.includes('Comunitário'),summary:pt.description.split('. ')[0],unavailable:oCharacter.clan===Clan.Ventrue&&['farmer','bagger'].includes(pt.id)?'Incompatível com Ventrue.':pt.id==='farmer'&&oCharacter.bloodPotency>=3?'Exige Potência de Sangue menor que 3.':undefined,details:<><p>{pt.description}</p><h4 className="mt-3">Concedido pelo predador</h4>{pt.disciplineAdd&&<p>{oDisciplineDetails[pt.disciplineAdd.discipline]?.name} +{pt.disciplineAdd.dots}</p>}<p>Humanidade: {pt.humanityModifier>0?'+':''}{pt.humanityModifier}</p>{[...pt.advantages,...pt.flaws].map(a=><p key={a.id}>{a.name} · {a.cost} pontos</p>)}</>}))}/>
+                        {(()=>{const p=aPredatorTypes.find(p=>p.id===oCharacter.predatorType);const choices=p?.specialtyOptions||[];return choices.length>0&&<CatalogPicker label="Especialidade do predador" selected={choices.filter(o=>oCharacter.specialties.some(s=>s.skill===o.skill&&s.name===o.name)).map(o=>o.skill+':'+o.name)} options={choices.map(o=>({id:o.skill+':'+o.name,name:`${fnT('skills.list.'+o.skill)}: ${o.name}`,summary:'Benefício adicional do predador.'}))} onToggle={id=>{const choice=choices.find(o=>o.skill+':'+o.name===id);const other=oCharacter.specialties.filter(s=>!choices.some(o=>o.name===s.name&&o.skill===s.skill));if(choice)fnUpdateCharacter('specialties',oCharacter.specialties.some(s=>s.skill===choice.skill&&s.name===choice.name)?other:[...other,choice]);}}/>;})()}
+                        </div>}
                     </div>
                 );
             case 'sheet':
@@ -2079,162 +1317,73 @@ const App: React.FC = () => {
         }
     };
 
-    if (view === 'home') {
-        const bIsWerewolf = oCharacter.gameType === GameType.Werewolf;
-        const sThemeColor = bIsWerewolf ? 'text-emerald-500' : 'text-red-600';
-        const sThemeAccent = bIsWerewolf ? 'text-emerald-400' : 'text-red-400';
-        const sThemeBorder = bIsWerewolf ? 'border-emerald-900' : 'border-red-900';
-        const sThemeButton = bIsWerewolf ? 'border-emerald-500 hover:bg-emerald-800' : 'border-red-500 hover:bg-red-800';
-
-        if (!bShowModeSelection) {
-            return (
-                <div className="min-h-screen w-full overflow-x-hidden text-white font-sans flex flex-col items-center justify-center p-4 relative" style={gothicBackgroundStyle}>
-                    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-10">
-                        <RoseIcon className="absolute -right-16 -top-16 h-72 w-72 text-red-900 opacity-70 sm:-right-40 sm:-top-40 sm:h-[800px] sm:w-[800px] animate-pulse" />
-                    </div>
-                    {oNotification && <Notification message={oNotification.message} type={oNotification.type} onClose={()=>fnSetNotification(null)}/>}
-                    <GameSelection onSelect={fnHandleGameSelect} />
-                    <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 z-20 w-full px-2">
-                         <Button variant="secondary" onClick={()=>{
-                            try {const saved=localStorage.getItem('whitewolf_draft_v2');if(!saved){fnShowNotification('Nenhum rascunho neste navegador.','error');return;}const c=parseCharacter(JSON.parse(saved));fnSetCharacter(c);setView('creator');fnSetStep(c.gameType===GameType.Werewolf?8:7);}catch(err){fnShowNotification(err instanceof Error?err.message:'Falha ao recuperar rascunho.','error');}
-                         }}>Recuperar rascunho</Button>
-                         <Button variant="secondary" onClick={() => { fnSetStorageMode('load'); fnSetShowStorage(true); }} title={fnT('buttons.load')}>
-                            <FolderOpenIcon /> {fnT('buttons.load')}
-                        </Button>
-                         <label className="cursor-pointer bg-gray-600 hover:bg-gray-500 px-3 sm:px-6 py-2 rounded-md text-white font-bold transition-all duration-200 shadow-md flex items-center justify-center gap-2 text-center max-w-full">
-                            <span>{fnT('buttons.import')}</span>
-                            <input type="file" className="hidden" accept=".json" onChange={fnImportJSON} />
-                        </label>
-                    </div>
-                    {bShowStorage && (
-                        <StorageModal mode={sStorageMode} onClose={() => fnSetShowStorage(false)} currentName={oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>
-                    )}
-                </div>
-            );
-        }
-
-        return (
-            <div className="min-h-screen w-full overflow-x-hidden text-white font-sans flex flex-col items-center justify-center p-4 relative" style={gothicBackgroundStyle}>
-                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-20">
-                    <RoseIcon className={`absolute -right-16 -top-16 h-72 w-72 opacity-70 sm:-right-40 sm:-top-40 sm:h-[800px] sm:w-[800px] ${bIsWerewolf ? 'text-emerald-900' : 'text-red-900'} animate-pulse`} />
-                </div>
-                <GothicFrame className={`max-w-2xl w-full text-center p-6 sm:p-12 bg-black/80 shadow-2xl z-10 border ${sThemeBorder} min-w-0`}>
-                    <h1 className={`text-xl sm:text-4xl md:text-5xl font-cinzel font-bold ${sThemeColor} tracking-widest mb-2 text-shadow-lg [text-wrap:balance] break-words whitespace-normal leading-tight`}>
-                        {bIsWerewolf ? fnT('app.werewolf') : fnT('app.vampire')}
-                    </h1>
-                    <p className={`text-lg sm:text-xl text-gray-400 mb-12 italic border-b ${sThemeBorder}/50 pb-6 mx-auto w-3/4 break-words whitespace-normal`}>
-                        {fnT('creationMethod.subtitle')}<span className="block text-sm mt-3">Criação manual: personagem de jogador. Geração rápida: NPC temático, sem orçamento de XP.</span>
-                    </p>
-                    
-                    <div className="space-y-4">
-                        <Button 
-                            variant="primary" 
-                            className={`w-full py-4 text-xl font-bold tracking-widest border ${sThemeButton} transition-all transform hover:scale-105`} 
-                            onClick={() => { setView('creator'); fnSetStep(2); }}
-                        >
-                            {fnT('creationMethod.manual')}
-                        </Button>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 pt-8 border-t border-gray-800">
-                            <Button variant="secondary" className="py-3 text-sm flex flex-col items-center gap-1 hover:border-gray-400 border border-gray-700 bg-gray-800" onClick={() => fnCreateRandom('fledgling')}>
-                                <span className="font-bold text-white">NPC em ascensão</span>
-                                <span className="text-xs text-gray-500">Inspiração narrativa</span>
-                            </Button>
-                            <Button variant="secondary" className="py-3 text-sm flex flex-col items-center gap-1 hover:border-gray-400 border border-gray-700 bg-gray-800" onClick={() => fnCreateRandom('neonate')}>
-                                <span className="font-bold text-white">NPC estabelecido</span>
-                                <span className="text-xs text-gray-500">Sem orçamento de XP</span>
-                            </Button>
-                            <Button variant="secondary" className="py-3 text-sm flex flex-col items-center gap-1 hover:border-gray-400 border border-gray-700 bg-gray-800" onClick={() => fnCreateRandom('ancilla')}>
-                                <span className="font-bold text-white">NPC influente</span>
-                                <span className="text-xs text-gray-500">Sem orçamento de XP</span>
-                            </Button>
-                        </div>
-                    </div>
-
-                    <div className="mt-12 flex flex-col items-center gap-4">
-                        <Button variant="secondary" className="text-xs uppercase tracking-widest opacity-60 hover:opacity-100" onClick={() => fnSetShowModeSelection(false)}>
-                            {fnT('buttons.backToGameSelection')}
-                        </Button>
-                    </div>
-                </GothicFrame>
-                {oNotification && (
-                    <Notification message={oNotification.message} type={oNotification.type} onClose={() => fnSetNotification(null)} />
-                )}
-            </div>
-        );
-    }
+    if(view==='home')return <div className="min-h-screen clean-creation" style={gothicBackgroundStyle}>
+        <StartScreen draft={draftSummary} onStart={(mode,game,role,scale)=>{
+            const identity=fnGenerateIdentity(sLocale,game);
+            if(mode==='npc'){
+                const c=asNarrativeNpc(fnCreateRandomCharacter(sLocale,scale as any,fnT,game),scale,role);
+                fnSetCharacter(c);fnSetStep(REVIEW_STEP);
+            }else{fnSetCharacter({...oInitialCharacter,gameType:game,profile:'player',name:identity.name,concept:identity.concept});fnSetStep(1);setPanels({nature:'tribe',capacities:'attributes',powers:'predator',resources:'advantages'});}
+            setView('creator');
+        }} onContinue={()=>{try{const raw=localStorage.getItem('whitewolf_draft_v2');if(!raw)return;const c=parseCharacter(JSON.parse(raw));fnSetCharacter(c);let step=1;try{const meta=JSON.parse(localStorage.getItem('whitewolf_flow_v1')||'{}');if(Number.isInteger(meta.step)&&meta.step>=1&&meta.step<=REVIEW_STEP)step=meta.step;if(meta.panels&&typeof meta.panels==='object')setPanels(prev=>Object.fromEntries(Object.entries(prev).map(([key,value])=>[key,typeof meta.panels[key]==='string'?meta.panels[key]:value])) as typeof prev);}catch{}fnSetStep(step);setView('creator');}catch(err){fnShowNotification(err instanceof Error?err.message:'Não foi possível abrir o rascunho.','error');}}} onLibrary={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}} onImport={fnImportJSON}/>
+        {bShowStorage&&<StorageModal mode={sStorageMode} onClose={()=>fnSetShowStorage(false)} currentName={oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>}
+        {oNotification&&<Notification message={oNotification.message} type={oNotification.type} onClose={()=>fnSetNotification(null)}/>}
+    </div>;
 
     return (
-        <div className="min-h-screen w-full overflow-x-hidden text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
-            <header className="bg-black border-b-2 border-red-900 p-3 sm:p-4 sticky top-0 z-50 shadow-2xl overflow-hidden">
+        <div className="min-h-screen clean-creation w-full overflow-x-hidden text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
+            <header className="bg-black border-b-2 border-red-900 p-3 sm:p-4 sticky top-0 z-50 shadow-sm">
                 <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3 min-w-0">
                     <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => setView('home')}>
                          <div className="text-red-600"><RoseIcon className="w-10 h-10" /></div>
                         <div>
-                            <h1 className="text-lg sm:text-2xl font-cinzel font-bold text-red-600 tracking-widest [text-wrap:balance] break-words whitespace-normal leading-tight">{fnT('app.title')}</h1>
+                            <h1 className="text-lg sm:text-2xl font-cinzel font-bold text-red-600 tracking-widest [text-wrap:balance] break-words whitespace-normal leading-tight"><span className="hidden sm:inline">{fnT('app.title')}</span><span className="sm:hidden">Whitewolf</span></h1>
                             <p className="text-xs text-gray-500 hidden md:block break-words whitespace-normal">{fnT('app.subtitle')}</p>
                         </div>
                     </div>
-                    <div className="flex flex-wrap items-center justify-end gap-2 max-w-full">
-                        <Button
-                            variant="secondary"
-                            onClick={() => fnSetLocale(sLocale === 'en' ? 'pt' : 'en')}
-                            title={sLocale === 'en' ? 'Switch to Portuguese' : 'Switch to English'}
-                            className="font-bold text-xs uppercase"
-                        >
-                            {sLocale === 'en' ? 'EN' : 'PT'}
-                        </Button>
-                        <Button variant="secondary" onClick={() => { fnSetStorageMode('save'); fnSetShowStorage(true); }} title={fnT('buttons.save')}><FloppyDiskIcon /></Button>
-                        <Button variant="secondary" onClick={() => { fnSetStorageMode('load'); fnSetShowStorage(true); }} title={fnT('buttons.load')}><FolderOpenIcon /></Button>
-                        <Button variant="secondary" onClick={fnResetCharacter} title={fnT('buttons.reset')}><ResetIcon /></Button>
-                         <div className="ml-2 border-l border-gray-700 pl-2 flex gap-2">
-                            <Button variant="secondary" onClick={fnExportJSON} className="text-xs">{fnT('buttons.export')}</Button>
-                            <label className="cursor-pointer bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-xs font-bold flex items-center hidden md:flex">
-                                {fnT('buttons.import')}
-                                <input type="file" className="hidden" accept=".json" onChange={fnImportJSON} />
-                            </label>
-                        </div>
+                    <div className="flex items-center gap-3 text-sm">
+                        <button type="button" aria-label="Salvar rascunho" className="border border-gray-600 rounded px-3 py-2" onClick={()=>{fnSetStorageMode('save');fnSetShowStorage(true);}}><span className="hidden sm:inline">Salvar rascunho</span><span className="sm:hidden">Salvar</span></button>
+                        <details className="relative"><summary className="cursor-pointer border border-gray-600 rounded px-3 py-2">Mais ações</summary><div className="absolute right-0 top-full mt-2 z-50 w-56 p-3 rounded border border-gray-600 bg-gray-950 grid gap-3">
+                            <button type="button" onClick={fnExportJSON}>Exportar JSON</button>
+                            <label className="cursor-pointer">Importar JSON<input type="file" accept=".json" className="sr-only" onChange={fnImportJSON}/></label>
+                            <button type="button" onClick={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}}>Meus personagens</button>
+                            <button type="button" onClick={fnResetCharacter}>Reiniciar personagem</button>
+                            <button type="button" onClick={()=>fnSetLocale(sLocale==='en'?'pt':'en')}>{sLocale==='en'?'EN':'PT'}</button>
+                        </div></details>
                     </div>
                 </div>
             </header>
-            <main className="flex-grow p-3 sm:p-4 md:p-8 max-w-6xl mx-auto w-full min-w-0 overflow-x-hidden">
+            <main className="flex-grow p-3 sm:p-4 md:p-8 pb-36 sm:pb-36 md:pb-36 max-w-6xl mx-auto w-full min-w-0 overflow-x-hidden">
                 <StepIndicator
+                    completedSteps={aSteps.map((_,i)=>i+1).filter(step=>step<REVIEW_STEP&&allIssues.every(issue=>issueDestination(issue,oCharacter).step!==step))}
                     currentStep={nStep}
                     totalSteps={aSteps.length}
                     steps={aSteps}
                     isWerewolf={oCharacter.gameType === GameType.Werewolf}
-                    onStepClick={(s) => {
-                        if (s <= nStep) fnSetStep(s);
-                        else if (s === nStep + 1 && bIsStepValid) fnSetStep(s);
-                    }}
+                    onStepClick={fnSetStep}
                 />
-                <div className="mt-1 animate-fadeIn min-w-0 overflow-hidden">
-                    {renderStepContent()}
-                </div>
-                {aValidationIssues.length > 0 && nStep < aSteps.length && (
-                    <div className={`mt-4 rounded-lg border p-4 text-sm ${oCharacter.gameType === GameType.Werewolf ? 'border-emerald-800/60 bg-emerald-950/20' : 'border-red-900/60 bg-red-950/20'}`}>
-                        <h3 className={`font-bold uppercase tracking-wider mb-2 ${oCharacter.gameType === GameType.Werewolf ? 'text-emerald-300' : 'text-red-300'}`}>
-                            {fnT('validation.title')}
-                        </h3>
-                        <ul className="list-disc list-inside space-y-1 text-gray-300">
-                            {aValidationIssues.map((sIssue) => (
-                                <li key={sIssue}>{sIssue}</li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
+                <div className="mb-5 mt-4 flex flex-wrap justify-between gap-2 text-sm text-gray-400"><p>Etapa {nStep} de {aSteps.length} · {aSteps[nStep-1]?.label}</p><p role="status">{saveStatus}</p></div>
+                {nStep===REVIEW_STEP&&<section aria-label="Revisão da criação" className="mb-6 rounded-xl border border-gray-600 p-5 bg-gray-900">
+                    <h2 className="text-xl">{allIssues.length?`Faltam ${allIssues.length} escolhas`:oCharacter.profile==='npc'?'NPC pronto para revisão do Narrador':'Escolhas de criação preenchidas'}</h2>
+                    <p className="mt-2 text-sm text-gray-300">{oCharacter.profile==='npc'?'Confira a coerência da ficha com a sua história.':'Confira os detalhes e as regras antes de concluir. Você pode salvar um rascunho a qualquer momento.'}</p>
+                    <ul className="mt-4 space-y-3">{allIssues.map(issue=><li key={issue} className="flex justify-between gap-3 text-sm"><span>{displayIssue(issue)}</span><button type="button" className="underline shrink-0" onClick={()=>goToIssue(issue)}>Resolver</button></li>)}</ul>
+                    <button type="button" disabled={allIssues.length>0} className="mt-4 rounded bg-emerald-800 px-4 py-3 disabled:opacity-40" onClick={()=>{setCompletionRequested(true);fnSetStorageMode('save');fnSetShowStorage(true);}}>{completed?'Criação concluída':'Concluir criação'}</button>
+                    {completed&&<p role="status" className="mt-2 text-emerald-200">Personagem salvo neste navegador. Exporte JSON para guardar uma cópia.</p>}
+                </section>}
+                <div className="mt-1 min-w-0">{renderStepContent()}</div>
+                {aValidationIssues.length>0&&nStep<REVIEW_STEP&&<details className="mt-6 border border-gray-700 rounded-lg p-4 text-sm"><summary>{aValidationIssues.length} pendências nesta etapa · você pode continuar</summary><ul className="mt-3 space-y-2">{aValidationIssues.map(issue=><li key={issue}>{displayIssue(issue)}</li>)}</ul></details>}
             </main>
-            <footer className="bg-black border-t border-gray-800 p-3 sm:p-6 sticky bottom-0 z-40 overflow-hidden">
+            <footer className="bg-black border-t border-gray-800 p-3 sm:p-6 fixed bottom-0 inset-x-0 z-40">
                 <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
                     <Button onClick={() => fnSetStep(prev => Math.max(1, prev - 1))} disabled={nStep === 1} variant="secondary">{fnT('buttons.back')}</Button>
                     {nStep < aSteps.length ? (
                         <div className="flex flex-wrap justify-end gap-2 sm:gap-4">
-                            <Button variant="secondary" disabled={!oCharacter.gameType} onClick={() => fnSetStep(aSteps.length)}>{fnT('buttons.jumpToSheet')}</Button>
+                            <Button variant="secondary" disabled={!oCharacter.gameType} onClick={() => fnSetStep(aSteps.length)}>Revisar pendências</Button>
                             <Button
                                 onClick={() => fnSetStep(prev => Math.min(aSteps.length, prev + 1))}
-                                disabled={!bIsStepValid}
+
                             >
-                                {fnT('buttons.next')}
+                                Continuar
                             </Button>
                         </div>
                     ) : (
@@ -2243,7 +1392,7 @@ const App: React.FC = () => {
                 </div>
             </footer>
             {bShowStorage && (
-                <StorageModal mode={sStorageMode} onClose={() => fnSetShowStorage(false)} currentName={oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>
+                <StorageModal mode={sStorageMode} onClose={() => {fnSetShowStorage(false);setCompletionRequested(false);}} currentName={oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>
             )}
             {oNotification && (
                 <Notification message={oNotification.message} type={oNotification.type} onClose={() => fnSetNotification(null)} />

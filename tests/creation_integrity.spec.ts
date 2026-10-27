@@ -7,7 +7,7 @@ test('rejeita dados inválidos sem derrubar a tela e permite nova importação',
  for(const data of [{gameType:'Vampire',name:{bad:1}},{gameType:'Werewolf',tribe:'wendigo'},{gameType:'Vampire',schemaVersion:999},{gameType:'Vampire',advantages:[null]}]){
   await page.locator('input[type=file]').first().setInputFiles({name:'invalid.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(data))});
   await expect(page.getByRole('status')).toContainText('inválido');
-  await expect(page.getByText('Vampiro: A Máscara',{exact:true})).toBeVisible();
+  await expect(page.getByRole('button',{name:'Criar personagem'})).toBeVisible();
  }
  expect(errors).toEqual([]);
 });
@@ -47,21 +47,23 @@ test('atributos com soma correta e distribuição errada não passam',async({pag
 });
 
 for(const game of ['Vampire','Werewolf'])test(`NPC ${game}: exporta, reimporta e salva sem perder narrativa`,async({page},testInfo)=>{
- await page.getByText(game==='Vampire'?'Vampiro: A Máscara':'Lobisomem: O Apocalipse',{exact:true}).click();
- await page.getByRole('button',{name:'NPC em ascensão'}).click();
+ await page.getByRole('button',{name:'Criar NPC',exact:false}).click();
+ await page.getByLabel(game==='Vampire'?'Vampiro: A Máscara':'Lobisomem: O Apocalipse',{exact:true}).check();
+ await page.getByRole('button',{name:'Gerar NPC',exact:true}).click();
  await expect(page.getByText('NPC temático — sem orçamento de XP',{exact:true})).toBeVisible();
  await expect(page.getByText('Segredo',{exact:true})).toBeVisible();
+ await page.getByText('Mais ações',{exact:true}).click();
  const downloadPromise=page.waitForEvent('download');await page.getByRole('button',{name:'Exportar JSON',exact:true}).click();
  const download=await downloadPromise;const path=testInfo.outputPath('character.json');await download.saveAs(path);
  await page.reload();await page.locator('input[type=file]').first().setInputFiles(path);
  await expect(page.getByText('NPC temático — sem orçamento de XP',{exact:true})).toBeVisible();
- await page.getByRole('button',{name:'Salvar',exact:true}).first().click();
+ await page.getByRole('button',{name:'Salvar rascunho',exact:true}).click();
  const dialog=page.getByRole('dialog');await dialog.locator('input').fill('Teste de preservação');await dialog.getByRole('button',{name:'Salvar',exact:true}).click();
  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('whitewolf_save_Teste de preservação')!));
  expect(saved.schemaVersion).toBe(2);expect(saved.profile).toBe('npc');expect(saved.narrative.secret).toBeTruthy();expect(saved.gameType).toBe(game);
- await page.reload();await page.getByRole('button',{name:'Carregar',exact:true}).click();await page.getByRole('dialog').getByText('Teste de preservação',{exact:true}).click();await expect(page.getByText('NPC temático — sem orçamento de XP',{exact:true})).toBeVisible();
- await page.reload();await page.getByRole('button',{name:'Recuperar rascunho'}).click();await expect(page.getByText('NPC temático — sem orçamento de XP',{exact:true})).toBeVisible();
- await page.setViewportSize({width:390,height:844});await expect(page.getByRole('button',{name:'Exportar JSON',exact:true})).toBeVisible();
+ await page.reload();await page.getByRole('button',{name:'Abrir personagens salvos',exact:true}).click();await page.getByRole('dialog').getByText('Teste de preservação',{exact:true}).click();await expect(page.getByText('NPC temático — sem orçamento de XP',{exact:true})).toBeVisible();
+ await page.reload();await page.getByRole('button',{name:'Continuar personagem'}).click();await expect(page.getByText('NPC temático — sem orçamento de XP',{exact:true})).toBeVisible();
+ await page.setViewportSize({width:390,height:844});await page.getByText('Mais ações',{exact:true}).click();await expect(page.getByRole('button',{name:'Exportar JSON',exact:true})).toBeVisible();
  await page.screenshot({path:testInfo.outputPath('mobile.png'),fullPage:true});
 });
 

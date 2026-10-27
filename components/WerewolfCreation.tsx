@@ -1,21 +1,153 @@
-import React from 'react';
-import { Character } from '../types';
-import { W5_GIFTS, W5_TRIBES, W5_RITES } from '../data/w5';
-export function WerewolfCreation({character:c,onChange}:{character:Character;onChange:(key:keyof Character,value:any)=>void}){
- const tribe=W5_TRIBES[c.tribe];
- return <section className="space-y-4 text-left" aria-label="Dons e Rito de W5">
- <p className="text-emerald-200">W5 · Um Dom nativo, um de augúrio e um de tribo. Renome total inicial: 3. As traduções de trabalho mantêm o nome inglês para conferência.</p>
- {(['native','auspice','tribe'] as const).map(origin=><label key={origin} className="block">Dom {origin==='native'?'nativo':origin==='tribe'?'da tribo':'do augúrio'}
- <select className="block w-full bg-gray-900 p-3 rounded border border-emerald-700" value={c.gifts?.find(g=>g.origin===origin)?.id||''} onChange={e=>onChange('gifts',[...(c.gifts||[]).filter(g=>g.origin!==origin),...(e.target.value?[{id:e.target.value,origin}]:[])])}>
- <option value="">Selecione</option>{W5_GIFTS.filter(g=>g.origin===origin&&g.totalRenown<=3&&(origin==='native'||g.owner===(origin==='tribe'?c.tribe:c.auspice))).map(g=><option key={g.id} value={g.id}>{g.name} — {g.english}</option>)}</select>
- {c.gifts?.filter(g=>g.origin===origin).map(g=>{const d=W5_GIFTS.find(x=>x.id===g.id);return d&&<small key={g.id} className="text-gray-300">{d.summary} Referência: {d.reference}.</small>})}
- </label>)}
- <p>Patrono: {tribe?.patron||'selecione a tribo'}. Renome favorecido: {tribe?{glory:'Glória',honor:'Honra',wisdom:'Sabedoria'}[tribe.renown]:'—'}.</p>
- <label className="block">Rito inicial (W5, pp. 180–187)
- <select className="w-full block bg-gray-900 border border-gray-600 rounded p-3" value={c.rituals[0]?.id||''} onChange={e=>onChange('rituals',W5_RITES.filter(r=>r.id===e.target.value))}>
- <option value="">Selecione um Rito</option>{W5_RITES.map(r=><option key={r.id} value={r.id}>{r.name}</option>)}
- </select></label>
- {c.rituals[0]&&<p className="text-sm text-gray-300">{c.rituals[0].description}</p>}
- <p className="text-sm text-gray-300">Catálogo inicial parcial e referenciado. Condições dos Ritos e mecânicas avançadas exigem conferência do Narrador; não são substituídos por Disciplinas vampíricas.</p>
- </section>
+import React, { useState } from "react";
+import { Character } from "../types";
+import { W5_GIFTS, W5_TRIBES, W5_RITES } from "../data/w5";
+import { CreationTabs } from "./CreationTabs";
+import { CatalogPicker } from "./CatalogPicker";
+export function WerewolfCreation({
+  character: c,
+  onChange,
+}: {
+  character: Character;
+  onChange: (key: keyof Character, value: any) => void;
+}) {
+  const [active, setActive] = useState("native");
+  const tribe = W5_TRIBES[c.tribe];
+  const names = { glory: "Glória", honor: "Honra", wisdom: "Sabedoria" };
+  return (
+    <section className="space-y-5">
+      <p className="text-sm text-gray-300">
+        Escolha um Dom de cada origem e um Rito. Você pode resolver as escolhas
+        depois.
+      </p>
+      <CreationTabs
+        active={active}
+        onChange={setActive}
+        items={[
+          { id: "native", label: "Dom nativo" },
+          { id: "auspice", label: "Dom do augúrio" },
+          { id: "tribe", label: "Dom da tribo" },
+          { id: "rite", label: "Rito" },
+          { id: "renown", label: "Renome" },
+        ]}
+      >
+        {(key) =>
+          key === "renown" ? (
+            <div className="space-y-4">
+              {tribe ? (
+                <>
+                  <p>
+                    Patrono: {tribe.patron}. Concede 2 pontos em{" "}
+                    {names[tribe.renown]}.
+                  </p>
+                  <label className="block">
+                    Onde colocar o ponto adicional?
+                    <select
+                      className="block w-full bg-gray-900 p-3 rounded mt-2"
+                      value={
+                        Object.entries(c.renown).find(
+                          ([k, v]) => k !== tribe.renown && v === 1,
+                        )?.[0] || ""
+                      }
+                      onChange={(e) =>
+                        onChange("renown", {
+                          glory: 0,
+                          honor: 0,
+                          wisdom: 0,
+                          [tribe.renown]: 2,
+                          ...(e.target.value ? { [e.target.value]: 1 } : {}),
+                        })
+                      }
+                    >
+                      <option value="">Decidir depois</option>
+                      {Object.entries(names)
+                        .filter(([id]) => id !== tribe.renown)
+                        .map(([id, name]) => (
+                          <option key={id} value={id}>
+                            {name}
+                          </option>
+                        ))}
+                    </select>
+                  </label>
+                </>
+              ) : (
+                <p>
+                  Escolha uma tribo na etapa Natureza para conhecer o patrono e
+                  seu Renome.
+                </p>
+              )}
+            </div>
+          ) : key === "rite" ? (
+            <CatalogPicker
+              label="Rito inicial"
+              selected={c.rituals.map((r) => r.id)}
+              options={W5_RITES.map((r) => ({
+                id: r.id,
+                name: r.name,
+                summary: "Rito de W5",
+                details: r.description,
+              }))}
+              onToggle={(id) =>
+                onChange(
+                  "rituals",
+                  c.rituals.some((r) => r.id === id)
+                    ? []
+                    : W5_RITES.filter((r) => r.id === id),
+                )
+              }
+            />
+          ) : (key === "tribe" && !c.tribe) ||
+            (key === "auspice" && !c.auspice) ? (
+            <p>
+              Escolha {key === "tribe" ? "a tribo" : "o augúrio"} na etapa
+              Natureza para ver os Dons disponíveis.
+            </p>
+          ) : (
+            <CatalogPicker
+              key={key}
+              label={`Dom ${key === "native" ? "nativo" : key === "tribe" ? "da tribo" : "do augúrio"}`}
+              selected={(c.gifts || [])
+                .filter((g) => g.origin === key)
+                .map((g) => g.id)}
+              options={W5_GIFTS.filter(
+                (g) =>
+                  g.origin === key &&
+                  (key === "native" ||
+                    g.owner === (key === "tribe" ? c.tribe : c.auspice)),
+              ).map((g) => ({
+                id: g.id,
+                name: g.name,
+                summary: g.summary,
+                unavailable:
+                  g.totalRenown > 3
+                    ? `Exige Renome total ${g.totalRenown}.`
+                    : undefined,
+                details: (
+                  <>
+                    <p>{g.english}</p>
+                    <p>Renome total mínimo: {g.totalRenown}</p>
+                    <p>Referência: {g.reference}</p>
+                  </>
+                ),
+              }))}
+              onToggle={(id) =>
+                onChange("gifts", [
+                  ...(c.gifts || []).filter((g) => g.origin !== key),
+                  ...((c.gifts || []).some((g) => g.id === id)
+                    ? []
+                    : [{ id, origin: key }]),
+                ])
+              }
+            />
+          )
+        }
+      </CreationTabs>
+      <details className="text-sm text-gray-400">
+        <summary>Sobre este catálogo</summary>
+        <p>
+          Catálogo inicial parcial de W5. Traduções de trabalho e nomes
+          originais nas referências. Confira as condições completas no livro.
+        </p>
+      </details>
+    </section>
+  );
 }

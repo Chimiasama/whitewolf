@@ -180,3 +180,12 @@ p, li, label, input, textarea, select, button { line-height: 1.55; }
 @media print { body { background:white!important; color:black!important; } button,footer,nav {display:none!important;} .ww-card {break-inside:avoid;background:white!important;color:black!important;box-shadow:none!important;} body::before,body::after {display:none;} }
 
 @media print { * {color:#111!important;background:transparent!important;text-shadow:none!important;box-shadow:none!important;} html,body,#root {overflow:visible!important;} }
+
+/* Focused creation workspace: decoration stays outside the reading surface. */
+.clean-creation { background-image:none!important;background:#080d14!important; }
+.clean-creation .ww-card,.clean-creation .ww-modal-panel {background:#111923;box-shadow:none;}
+.clean-creation .ww-button {box-shadow:none;letter-spacing:.03em;text-transform:none;}
+.clean-creation h2,.clean-creation h3,.clean-creation h4 {font-family:Inter,sans-serif;letter-spacing:normal;text-transform:none;}
+.clean-creation [class*="animate-"] {animation:none!important;}
+.clean-creation .catalog-picker h3 {font-size:1.125rem;}
+@media print {.clean-creation header,.clean-creation [aria-label="Revisão da criação"] {display:none;} }

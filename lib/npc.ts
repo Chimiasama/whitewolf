@@ -12,14 +12,14 @@ export const NPC_ROLES = {
   {role:'Mediador espiritual',motivation:'Reparar uma relação rompida entre pessoas, espíritos e território.',secret:'A solução anterior transferiu o sofrimento para outra comunidade.',relationship:'Reconhece na alcateia uma chance de reparação.',hook:'O espírito exige restituição, não um inimigo para matar.'},
   {role:'Veterano em crise',motivation:'Impedir que a nova geração repita uma vitória desastrosa.',secret:'Seu feito mais celebrado causou a perda de um Pilar.',relationship:'Pode orientar a alcateia, mas precisa recuperar confiança.',hook:'O patrono cobra uma resposta que ameaça levá-lo a Harano ou Hauglosk.'}]
 };
-export function asNarrativeNpc(c:Character,scale:string):Character {
+export function asNarrativeNpc(c:Character,scale:string,role?:string):Character {
  const powers=fnGetDisciplineDetails(k=>k);
  const disciplinePowers:Record<string,string[]>={};
  for(const [key,dots] of Object.entries(c.disciplines)){
   const chosen:string[]=[]; for(let slot=1;slot<=dots;slot++){const eligible=powers[key]?.powers.filter(p=>p.level<=slot&&!chosen.includes(p.id)&&(!p.prerequisite||chosen.includes(p.prerequisite))&&(!p.amalgam||p.amalgam.every(r=>(c.disciplines[r.discipline]||0)>=r.level)))||[];if(eligible.length)chosen.push(eligible[Math.floor(Math.random()*eligible.length)].id);}
   disciplinePowers[key]=chosen;
  }
- const entries=NPC_ROLES[c.gameType];const narrative={...entries[Math.floor(Math.random()*entries.length)]};
+ const entries=NPC_ROLES[c.gameType];const narrative={...(entries.find(e=>e.role===role)||entries[Math.floor(Math.random()*entries.length)])};
  if(c.gameType===GameType.Werewolf&&c.tribe)narrative.motivation = `${W5_TRIBES[c.tribe].theme} ${narrative.motivation}`;
  return {...c,disciplinePowers,profile:'npc',schemaVersion:2,narrative:{...narrative,role:`${narrative.role} · ${scale==='ancilla'?'influente':scale==='neonate'?'estabelecido':'em ascensão'}`},ambition:narrative.motivation,desire:narrative.hook};
 }

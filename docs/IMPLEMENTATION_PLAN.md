@@ -54,3 +54,7 @@ Para cada expansão: referência + resumo autoral + nome pt/en + elegibilidade +
 ## Publicação e verificação
 
 Executar `npm ci`, `npm run lint`, `npm run build` e `npm test`. Em máquina com Chromium do sistema, usar `PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm test`; em outra máquina instalar o Chromium gerenciado pelo Playwright. Não versionar relatórios e screenshots de testes. Registrar o resultado em [VALIDATION.md](VALIDATION.md), revisar o diff e publicar o commit no GitHub. Push não comprova deploy de site nem publicação do ambiente de nuvem.
+
+## Revisão de experiência de criação — implementada
+
+A proposta de simplificação foi aplicada: entrada por intenção, seis etapas, seções menores, navegação não bloqueante, revisão com resolução de pendências, seletores pesquisáveis compartilhados, opções condicionais, filtros de indisponíveis/comunitários, bônus separados, retomada da posição e menu de arquivos. Detalhes e limites em [CREATION_UX.md](CREATION_UX.md). Essa entrega reorganiza a experiência; não declara concluída a expansão editorial da fase 5.

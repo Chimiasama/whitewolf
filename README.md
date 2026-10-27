@@ -72,3 +72,7 @@ Consulte o [guia técnico V5/W5](docs/CHARACTER_CREATION_GUIDE.md), o [índice d
 Os estilos e as fontes são locais. Use `npm ci`, `npm run lint`, `npm run build` e `npm test`. Para testes com Chromium já instalado, defina `PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/chromium`; sem isso, execute `npx playwright install chromium` antes dos testes. O índice pode ser atualizado com `python scripts/index-references.py`.
 
 O app salva um rascunho local automaticamente durante a edição. Use **Recuperar rascunho** na página inicial. Isso não substitui exportar JSON: o navegador pode apagar dados locais. Saves W5 de modelos antigos exigem revisão; preserve o arquivo original antes de converter qualquer informação.
+
+## Fluxo de criação simplificado
+
+A criação agora tem seis etapas, permite avançar com pendências e oferece **Resolver** na revisão. Poderes, Ritos e recursos usam seletores com busca; o modo NPC pergunta papel e influência. **Continuar personagem** retoma a etapa e a seção salvas. Veja [como funciona a nova interface](docs/CREATION_UX.md).
