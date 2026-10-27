@@ -1,3 +1,4 @@
+import {characterPredator} from '../lib/predatorRules';
 import React, { useState } from "react";
 import { Character, GameType, Skill } from "../types";
 import {
@@ -107,7 +108,7 @@ export function ResourceChoices({
     loresheets = fnGetLoresheets(t),
     predator =
       c.gameType === GameType.Vampire
-        ? fnGetPredatorTypes(t).find((p) => p.id === c.predatorType)
+        ? characterPredator(c, fnGetPredatorTypes(t))
         : undefined;
   const advantagePoints =
     c.advantages.reduce((s, a) => s + a.cost, 0) +

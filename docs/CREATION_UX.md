@@ -23,7 +23,7 @@ A barra de progresso só marca como preenchidas as etapas sem pendências detect
 
 ## Seleção de conteúdo
 
-O componente `CatalogPicker` centraliza busca sem distinção de acentos, opções selecionadas, remoção, detalhes expansíveis e filtros. É utilizado para poderes, predadores, especialidades de predador, Vantagens, Defeitos, Loresheets, Dons, Ritos e escolhas de Sangue-Fraco. Conteúdo indisponível fica oculto por padrão e pode ser consultado com sua justificativa. Predadores comunitários exigem habilitar o filtro correspondente; opções já selecionadas permanecem visíveis para não esconder dados importados.
+O componente `CatalogPicker` centraliza busca sem distinção de acentos, opções selecionadas, remoção, detalhes expansíveis e filtros. É utilizado para poderes, predadores, especialidades de predador, Vantagens, Defeitos, Loresheets, Dons, Ritos e escolhas de Sangue-Fraco. Conteúdo indisponível fica oculto por padrão e pode ser consultado com sua justificativa. Predadores dos dois guias são incluídos por padrão, independentemente de origem comunitária; opções já selecionadas permanecem visíveis para não esconder dados importados.
 
 Os custos de Vantagens/Defeitos podem ser ajustados após a seleção. Os totais mostram o orçamento comum e excluem bônus do predador, exibidos separadamente. Os níveis de Loresheets continuam consumindo o orçamento de Vantagens.
 
@@ -49,3 +49,5 @@ O tema escuro e os acentos de jogo permanecem, com fundo uniforme nos formulári
 Build e TypeScript; 14 testes de navegador incluindo navegação livre, resolução de pendências, retomada na etapa, NPC por papel, conclusão/salvamento, predador antes de poderes, busca e filtros, incompatibilidades de Sangue-Fraco, seleção de Rito/Renome, custo de Vantagens e persistência dos dois jogos. Inspeção visual desktop e celular; verificação de largura mobile e ausência de erros JavaScript.
 
 Os testes de integridade anteriores foram mantidos e adaptados à nova navegação. O teste antigo de Ravnos, cujo nome prometia tradução de nível 5 sem verificá-la, foi substituído por asserções explícitas do fluxo V5 e dos requisitos do catálogo.
+
+A etapa Perícias agora começa pela escolha explícita de pacote. Veja [catálogo e regras de escolha](PREDATOR_CATALOG.md).

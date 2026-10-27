@@ -76,3 +76,5 @@ O app salva um rascunho local automaticamente durante a edição. Use **Recupera
 ## Fluxo de criação simplificado
 
 A criação agora tem seis etapas, permite avançar com pendências e oferece **Resolver** na revisão. Poderes, Ritos e recursos usam seletores com busca; o modo NPC pergunta papel e influência. **Continuar personagem** retoma a etapa e a seção salvas. Veja [como funciona a nova interface](docs/CREATION_UX.md).
+
+Os **34 tipos de predador** do básico e dos dois guias estão incluídos por padrão. As Perícias começam pela escolha Generalista, Equilibrado ou Especialista. Veja [catálogo e escolhas de criação](docs/PREDATOR_CATALOG.md).

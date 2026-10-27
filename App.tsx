@@ -1,3 +1,6 @@
+import {characterPredator,changePredator} from './lib/predatorRules';
+import {PredatorCustomization} from './components/PredatorCustomization';
+import {SkillDistribution} from './components/SkillDistribution';
 import {StartScreen} from './components/StartScreen';
 import {CreationTabs} from './components/CreationTabs';
 import {CatalogPicker} from './components/CatalogPicker';
@@ -526,52 +529,6 @@ const App: React.FC = () => {
         }
     }, [sLocale]);
 
-    const oDetectedSkillPath = useMemo(() => {
-        const aCurrentSkills = (Object.values(oCharacter.skills) as number[]).filter(v => v > 0);
-
-        const aPossiblePaths = Object.entries(oSkillPaths).filter(([_, aDots]) => {
-            const oPathCounts: Record<number, number> = {};
-            aDots.forEach(n => oPathCounts[n] = (oPathCounts[n] || 0) + 1);
-
-            const oCurrentCounts: Record<number, number> = {};
-            aCurrentSkills.forEach(n => oCurrentCounts[n] = (oCurrentCounts[n] || 0) + 1);
-
-            return [4, 3, 2, 1].every(n => (oCurrentCounts[n] || 0) <= (oPathCounts[n] || 0));
-        });
-
-        const aDotValues = [4, 3, 2, 1];
-        const oMaxRemaining: Record<number, number> = {};
-
-        aPossiblePaths.forEach(([_, aDots]) => {
-            const aRemaining = [...aDots];
-            aCurrentSkills.forEach(nVal => {
-                const nIdx = aRemaining.indexOf(nVal);
-                if (nIdx >= 0) aRemaining.splice(nIdx, 1);
-            });
-
-            const oCounts: Record<number, number> = {};
-            aRemaining.forEach(n => oCounts[n] = (oCounts[n] || 0) + 1);
-
-            aDotValues.forEach(nVal => {
-                oMaxRemaining[nVal] = Math.max(oMaxRemaining[nVal] || 0, oCounts[nVal] || 0);
-            });
-        });
-
-        const aUnionPool: number[] = [];
-        aDotValues.forEach(nVal => {
-            for (let i = 0; i < oMaxRemaining[nVal]; i++) {
-                aUnionPool.push(nVal);
-            }
-        });
-
-        const aTotalPool = [...aCurrentSkills, ...aUnionPool];
-
-        return {
-            validPaths: aPossiblePaths.map(([sKey]) => sKey),
-            pool: aTotalPool.length > 0 ? aTotalPool : [0]
-        };
-    }, [oCharacter.skills]);
-
     const fnUpdateCharacter = (field: keyof Character, value: any) => {
         fnSetCharacter(prev => ({ ...prev, [field]: value }));
     };
@@ -743,51 +700,7 @@ const App: React.FC = () => {
         }
     }, [oCharacter.disciplines, fnT]);
 
-    const fnHandlePredatorTypeChange = (sNewId: string) => {
-        const oOldType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
-        const oNewType = aPredatorTypes.find(pt => pt.id === sNewId);
-
-        let aNewAdvantages = [...oCharacter.advantages];
-        let aNewFlaws = [...oCharacter.flaws];
-        let nNewHumanity = oCharacter.humanity ?? 7;
-        let oNewDisciplines = { ...oCharacter.disciplines };
-
-        // Clean up old predator type bonuses
-        if (oOldType) {
-            nNewHumanity -= oOldType.humanityModifier;
-            aNewAdvantages = aNewAdvantages.filter(a => !oOldType.advantages.some(oa => oa.id === a.id));
-            aNewFlaws = aNewFlaws.filter(f => !oOldType.flaws.some(of => of.id === f.id));
-
-            if (oOldType.disciplineAdd) {
-                const dName = oOldType.disciplineAdd.discipline;
-                oNewDisciplines[dName] = Math.max(0, (oNewDisciplines[dName] || 0) - oOldType.disciplineAdd.dots);
-                if (oNewDisciplines[dName] === 0) delete oNewDisciplines[dName];
-            }
-        }
-
-        // Apply new predator type bonuses
-        if (oNewType) {
-            nNewHumanity += oNewType.humanityModifier;
-            aNewAdvantages = [...aNewAdvantages, ...oNewType.advantages];
-            aNewFlaws = [...aNewFlaws, ...oNewType.flaws];
-            
-            // Handle automatic discipline dot if applicable
-            if (oNewType.disciplineAdd) {
-                const dName = oNewType.disciplineAdd.discipline;
-                oNewDisciplines[dName] = (oNewDisciplines[dName] || 0) + oNewType.disciplineAdd.dots;
-            }
-        }
-
-        fnSetCharacter(prev => ({
-            ...prev,
-            predatorType: sNewId,
-            humanity: Math.max(0, Math.min(10, nNewHumanity)),
-            advantages: aNewAdvantages,
-            flaws: aNewFlaws,
-            disciplines: oNewDisciplines
-        }));
-    };
-
+    const fnHandlePredatorTypeChange = (id:string,patch:Partial<Character>={}) => fnSetCharacter(prev=>changePredator(prev,aPredatorTypes,id,patch));
     const fnHandlePortraitChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (!file) return;
@@ -1059,17 +972,17 @@ const App: React.FC = () => {
                 );
             case 'skills':
                 return (
-                    <div className="text-center">
+                    <SkillDistribution character={oCharacter} onChange={patch=>fnSetCharacter(prev=>({...prev,...patch}))}>
                         <PointAllocator 
                             items={aSkillList} 
                             values={oCharacter.skills} 
                             onChange={fnHandleSkillChange} 
-                            pool={oDetectedSkillPath.pool}
+                            pool={oCharacter.skillPath?oSkillPaths[oCharacter.skillPath]:[]}
                             translationPrefix="skills.list"
                             colorClass={oCharacter.gameType === GameType.Werewolf ? "bg-green-900/40" : "bg-red-900/40"}
                             accentColorClass={oCharacter.gameType === GameType.Werewolf ? "border-green-500 shadow-[0_0_15px_rgba(22,163,74,0.5)] ring-1 ring-green-400" : "border-red-500 shadow-[0_0_15px_rgba(220,38,38,0.5)] ring-1 ring-red-400"}
                         />
-                    </div>
+                    </SkillDistribution>
                 );
             case 'nature':
                 return bIsWerewolf?<CreationTabs items={[{id:'tribe',label:'Tribo'},{id:'auspice',label:'Augúrio'}]} active={panels.nature} onChange={id=>setPanel('nature',id)}>{id=>renderStepContent(id)}</CreationTabs>:renderStepContent('clan');
@@ -1102,7 +1015,7 @@ const App: React.FC = () => {
                             {/* Point Pool Indicator */}
                             <div className="mb-4 flex flex-col items-center p-3 bg-gray-900/50 rounded-lg border border-gray-700">
                                 {(() => {
-                                    const oPredatorType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
+                                    const oPredatorType = characterPredator(oCharacter,aPredatorTypes);
                                     const aCreationPool = oCharacter.clan===Clan.ThinBlood?[...(oCharacter.thinMerits?.includes('alchemist')?[1]:[]),...(oCharacter.thinMerits?.includes('affinity')?[1]:[])]:oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
 
                                     const oDiscs = { ...oCharacter.disciplines };
@@ -1184,7 +1097,7 @@ const App: React.FC = () => {
                                     return aAllDiscs.map(sDisc => {
                                         const nDots = oCharacter.disciplines[sDisc] || 0;
                                         const oDetails = oDisciplineDetails[sDisc.toLowerCase()];
-                                        const oPredatorType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
+                                        const oPredatorType = characterPredator(oCharacter,aPredatorTypes);
                                         const bIsPredatorDisc = oPredatorType?.disciplineAdd?.discipline === sDisc;
                                         const nPredatorDots = bIsPredatorDisc ? oPredatorType?.disciplineAdd?.dots || 0 : 0;
 
@@ -1215,7 +1128,7 @@ const App: React.FC = () => {
                                                                     // Validation: Can only assign values from the pool
                                                                     const aCreationPool = oCharacter.clan===Clan.ThinBlood?[...(oCharacter.thinMerits?.includes('alchemist')?[1]:[]),...(oCharacter.thinMerits?.includes('affinity')?[1]:[])]:oDisciplineCreationPools[oCharacter.gameType as GameType] || [];
                                                                     const oCurrentDiscs = { ...oCharacter.disciplines, [sDisc]: nNewVal };
-                                                                    const oPredatorType = aPredatorTypes.find(pt => pt.id === oCharacter.predatorType);
+                                                                    const oPredatorType = characterPredator(oCharacter,aPredatorTypes);
                                                                     if (oPredatorType?.disciplineAdd) {
                                                                         const d = oPredatorType.disciplineAdd.discipline;
                                                                         if (oCurrentDiscs[d]) oCurrentDiscs[d] -= oPredatorType.disciplineAdd.dots;
@@ -1292,8 +1205,9 @@ const App: React.FC = () => {
                         </>):null}
                         {sStepId==='predator'&&<div className="space-y-5">
                         <p className="text-sm text-gray-300">Como você se alimenta? O predador concede benefícios adicionais e pode alterar suas Disciplinas.</p>
-                        <CatalogPicker label="Tipo de predador" selected={oCharacter.predatorType?[oCharacter.predatorType]:[]} onToggle={id=>fnHandlePredatorTypeChange(id===oCharacter.predatorType?'':id)} options={aPredatorTypes.map(pt=>({id:pt.id,name:pt.name.replace('[Comunitário / opcional] ',''),community:pt.name.includes('Comunitário'),summary:pt.description.split('. ')[0],unavailable:oCharacter.clan===Clan.Ventrue&&['farmer','bagger'].includes(pt.id)?'Incompatível com Ventrue.':pt.id==='farmer'&&oCharacter.bloodPotency>=3?'Exige Potência de Sangue menor que 3.':undefined,details:<><p>{pt.description}</p><h4 className="mt-3">Concedido pelo predador</h4>{pt.disciplineAdd&&<p>{oDisciplineDetails[pt.disciplineAdd.discipline]?.name} +{pt.disciplineAdd.dots}</p>}<p>Humanidade: {pt.humanityModifier>0?'+':''}{pt.humanityModifier}</p>{[...pt.advantages,...pt.flaws].map(a=><p key={a.id}>{a.name} · {a.cost} pontos</p>)}</>}))}/>
-                        {(()=>{const p=aPredatorTypes.find(p=>p.id===oCharacter.predatorType);const choices=p?.specialtyOptions||[];return choices.length>0&&<CatalogPicker label="Especialidade do predador" selected={choices.filter(o=>oCharacter.specialties.some(s=>s.skill===o.skill&&s.name===o.name)).map(o=>o.skill+':'+o.name)} options={choices.map(o=>({id:o.skill+':'+o.name,name:`${fnT('skills.list.'+o.skill)}: ${o.name}`,summary:'Benefício adicional do predador.'}))} onToggle={id=>{const choice=choices.find(o=>o.skill+':'+o.name===id);const other=oCharacter.specialties.filter(s=>!choices.some(o=>o.name===s.name&&o.skill===s.skill));if(choice)fnUpdateCharacter('specialties',oCharacter.specialties.some(s=>s.skill===choice.skill&&s.name===choice.name)?other:[...other,choice]);}}/>;})()}
+                        <CatalogPicker label="Tipo de predador" selected={oCharacter.predatorType?[oCharacter.predatorType]:[]} onToggle={id=>fnHandlePredatorTypeChange(id===oCharacter.predatorType?'':id)} options={aPredatorTypes.map(pt=>({id:pt.id,name:pt.name.replace('[Comunitário / opcional] ',''),summary:pt.description.split('. ')[0],unavailable:oCharacter.clan===Clan.Ventrue&&['farmer','bagger'].includes(pt.id)?'Incompatível com Ventrue.':pt.id==='farmer'&&oCharacter.bloodPotency>=3?'Exige Potência de Sangue menor que 3.':undefined,details:<><p>{pt.description}</p><p>{pt.source}</p><h4 className="mt-3">Concedido pelo predador</h4>{pt.disciplineAdd&&<p>{oDisciplineDetails[pt.disciplineAdd.discipline]?.name} +{pt.disciplineAdd.dots}</p>}<p>Humanidade: {pt.humanityModifier>0?'+':''}{pt.humanityModifier}</p>{[...pt.advantages,...pt.flaws].map(a=><p key={a.id}>{a.name} · {a.cost} pontos</p>)}</>}))}/>
+                        {characterPredator(oCharacter,aPredatorTypes)&&<PredatorCustomization character={oCharacter} predator={characterPredator(oCharacter,aPredatorTypes)!} onChange={patch=>fnHandlePredatorTypeChange(oCharacter.predatorType,patch)} disciplineName={key=>oDisciplineDetails[key]?.name||key}/>}
+                        {(()=>{const p=characterPredator(oCharacter,aPredatorTypes);const choices=p?.specialtyOptions||[];return choices.length>0&&<CatalogPicker label="Especialidade do predador" selected={choices.filter(o=>oCharacter.specialties.some(s=>s.skill===o.skill&&s.name===o.name)).map(o=>o.skill+':'+o.name)} options={choices.map(o=>({id:o.skill+':'+o.name,name:`${fnT('skills.list.'+o.skill)}: ${o.name}`,summary:'Benefício adicional do predador.'}))} onToggle={id=>{const choice=choices.find(o=>o.skill+':'+o.name===id);const other=oCharacter.specialties.filter(s=>!choices.some(o=>o.name===s.name&&o.skill===s.skill));if(choice)fnUpdateCharacter('specialties',oCharacter.specialties.some(s=>s.skill===choice.skill&&s.name===choice.name)?other:[...other,choice]);}}/>;})()}
                         </div>}
                     </div>
                 );

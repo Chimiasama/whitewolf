@@ -1,3 +1,4 @@
+import {characterPredator,availablePredatorDisciplines} from './predatorRules';
 import {THIN_MERITS,THIN_FLAWS,thinBloodIssues} from '../data/thinBlood';
 import { Character, GameType, Clan, Tribe, Auspice, Attribute, Skill } from '../types';
 import { oInitialCharacter, oSkillPaths, aMandatorySpecialtySkills, fnGetClanDetails, fnGetDisciplineDetails, fnGetPredatorTypes } from '../constants';
@@ -9,6 +10,9 @@ const integer = (v:unknown,min:number,max:number) => typeof v==='number' && Numb
 /** Validate before React state changes. Unknown future schema versions must not be silently downgraded. */
 export function parseCharacter(input:unknown):Character {
  if(!object(input)) return fail('documento');
+ if(input.skillPath!==undefined&&!['jackOfAllTrades','balanced','specialist'].includes(input.skillPath))return fail('pacote de Perícias');
+ for(const key of ['predatorChoices','predatorAllocations'])if(input[key]!==undefined&&(!object(input[key])||Object.values(input[key]).some(v=>key==='predatorChoices'?typeof v!=='string':!integer(v,0,5))))return fail(key);
+ if(input.predatorDiscipline!==undefined&&typeof input.predatorDiscipline!=='string')return fail('Disciplina de predador');
  if(input.schemaVersion!==undefined && ![1,SCHEMA_VERSION].includes(input.schemaVersion)) return fail('versão não suportada');
  for(const [key,catalog] of [['thinMerits',THIN_MERITS],['thinFlaws',THIN_FLAWS]] as const)if(input[key]!==undefined&&(!Array.isArray(input[key])||input[key].length>3||new Set(input[key]).size!==input[key].length||input[key].some(id=>typeof id!=='string'||!(id in catalog))))return fail(key);
  if(input.thinCurse!==undefined&&!Object.values(Clan).includes(input.thinCurse))return fail('Maldição herdada');
@@ -57,7 +61,7 @@ export const validAttributes=(c:Character)=>Object.values(c.attributes).sort().j
 export function finishingIssues(c:Character):string[]{
  if(c.profile==='npc')return [];
  const issues:string[]=[];
- const predator=c.gameType===GameType.Vampire?fnGetPredatorTypes(k=>k).find(p=>p.id===c.predatorType):undefined;
+ const predator=c.gameType===GameType.Vampire?characterPredator(c,fnGetPredatorTypes(k=>k)):undefined;
  const adv=c.advantages.reduce((s,a)=>s+a.cost,0)+c.loresheets.reduce((s,l)=>s+l.level,0)-(predator?.advantages.reduce((s,a)=>s+a.cost,0)||0), flaws=c.flaws.reduce((s,a)=>s+a.cost,0)-(predator?.flaws.reduce((s,a)=>s+a.cost,0)||0);
  if(adv!==7)issues.push('Distribua exatamente 7 pontos de Vantagens (bônus de predador são adicionais).');
  if(flaws!==2)issues.push('Distribua exatamente 2 pontos de Defeitos (bônus de predador são adicionais).');
@@ -77,6 +81,10 @@ export function finishingIssues(c:Character):string[]{
    if(entries.map(([,v])=>v).sort().join()!=='1,2'||(c.clan!==Clan.Caitiff&&entries.some(([key])=>!clan?.disciplines.includes(key))))issues.push('Escolha duas Disciplinas do clã: 2 pontos em uma e 1 em outra (Caitiff escolhe duas).');
    if(c.clan===Clan.Ventrue&&['farmer','bagger'].includes(c.predatorType))issues.push('Ventrue não pode escolher Fazendeiro ou Bagger (V5, pp. 176–177).');
    if(c.predatorType==='farmer'&&c.bloodPotency>=3)issues.push('Fazendeiro exige Potência de Sangue menor que 3.');
+   if(predator&&c.predatorDiscipline&&!availablePredatorDisciplines(predator,c.clan).includes(c.predatorDiscipline))issues.push('Disciplina de predador incompatível com o pacote ou clã.');
+   if(predator)for(const group of predator.choices||[])if(c.predatorChoices?.[group.id]&&!group.options.some(o=>o.id===c.predatorChoices[group.id]))issues.push(`Predador: escolha válida exigida para ${group.label}.`);
+   if(predator)for(const group of predator.allocations||[]){const sum=group.options.reduce((s,o,i)=>s+(c.predatorAllocations?.[o.id]??(i===0?group.total:0)),0);if(sum!==group.total)issues.push(`Distribua ${group.total} pontos em ${group.label} do predador.`);}
+   if(c.predatorType&&!predator)issues.push('Tipo de predador desconhecido.');
    if(!c.predatorType)issues.push('Defina o predador ou revise com o Narrador a exceção de recém-criado.');
   }
   const details=fnGetDisciplineDetails(k=>k);
@@ -88,6 +96,8 @@ export function finishingIssues(c:Character):string[]{
 export function playerIssues(c:Character):string[]{
  if(c.profile==='npc')return [];
  const issues=finishingIssues(c);
+ if(!c.skillPath)issues.push('Escolha um pacote de Perícias: Generalista, Equilibrado ou Especialista.');
+ if(c.skillPath&&Object.values(c.skills).filter(n=>n>0).sort((a,b)=>a-b).join()!==[...oSkillPaths[c.skillPath]].sort((a,b)=>a-b).join())issues.push('Conclua a distribuição do pacote de Perícias escolhido.');
  if(!c.name.trim()||!c.concept.trim())issues.push('Preencha nome e conceito.');
  if(!validAttributes(c))issues.push('Atributos: um 4, três 3, quatro 2 e um 1.');
  const skills=Object.values(c.skills).filter(n=>n>0).sort((a,b)=>a-b).join();

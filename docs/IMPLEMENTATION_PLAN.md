@@ -58,3 +58,7 @@ Executar `npm ci`, `npm run lint`, `npm run build` e `npm test`. Em máquina com
 ## Revisão de experiência de criação — implementada
 
 A proposta de simplificação foi aplicada: entrada por intenção, seis etapas, seções menores, navegação não bloqueante, revisão com resolução de pendências, seletores pesquisáveis compartilhados, opções condicionais, filtros de indisponíveis/comunitários, bônus separados, retomada da posição e menu de arquivos. Detalhes e limites em [CREATION_UX.md](CREATION_UX.md). Essa entrega reorganiza a experiência; não declara concluída a expansão editorial da fase 5.
+
+## Predadores dos dois guias e pacote de Perícias — implementado
+
+Os 34 tipos estão disponíveis por padrão, com escolhas de Disciplinas, benefícios e Antecedentes. A escolha Generalista/Equilibrado/Especialista precede a alocação de Perícias. Isso resolve as pendências anteriores dos três predadores básicos e das alternativas de pacotes; detalhes em [PREDATOR_CATALOG.md](PREDATOR_CATALOG.md). As demais pendências de conteúdo permanecem separadas.

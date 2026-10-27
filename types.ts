@@ -123,6 +123,16 @@ export interface Specialty {
 }
 
 export interface PredatorTypeDetail {
+    source?: string;
+    englishName?: string;
+    disciplineOptions?: string[];
+    bloodPotencyModifier?: number;
+    choices?: {id:string;label:string;type:'advantage'|'flaw';options:AdvantageFlaw[]}[];
+    allocations?: {id:string;label:string;type?:'advantage'|'flaw';total:number;options:AdvantageFlaw[]}[];
+    fixedAdvantages?: AdvantageFlaw[];
+    fixedFlaws?: AdvantageFlaw[];
+    legacyBonusIds?: string[];
+
     id: string;
     name: string;
     description: string;
@@ -150,6 +160,11 @@ export interface Loresheet {
 }
 
 export interface Character {
+  skillPath?: 'jackOfAllTrades'|'balanced'|'specialist';
+  predatorDiscipline?: string;
+  predatorChoices?: Record<string,string>;
+  predatorAllocations?: Record<string,number>;
+
   thinMerits?: string[];
   thinFlaws?: string[];
   thinCurse?: string;

@@ -32,3 +32,7 @@ Nenhum arquivo original dos quinze livros foi alterado pela implementação. Pus
 A nova navegação está documentada em [CREATION_UX.md](CREATION_UX.md). A suíte foi ampliada para 14 testes e o teste V5 antigo foi substituído por verificações reais de ordenação predador/poderes e filtragem de requisitos. As evidências da execução anterior descrevem o estado daquele commit; esta revisão não deve ser interpretada como nova conferência de todas as regras dos livros.
 
 Resultado final desta revisão: `npm run lint` e `npm run build` aprovados; `PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm test -- --reporter=line` com **14 testes aprovados em 12,3 s**. `git diff --check` sem erros. Na inspeção mobile (390×844), não houve erro JavaScript, a largura da página permaneceu em 390 px e o título deixou de se sobrepor às ações do cabeçalho. A navegação fica fixa no rodapé, com espaço reservado no conteúdo. O aviso de chunk acima de 500 kB permanece.
+
+## Predadores e pacotes de Perícias
+
+`npm run lint` e `npm run build` aprovados; suíte Chromium com **19 testes aprovados em 19,9 s**. Inclui os 34 tipos, opções padrão dos dois guias, transições sem acumular benefícios, importação dos pacotes e confirmação/cancelamento de mudança de distribuição de Perícias. Veja [PREDATOR_CATALOG.md](PREDATOR_CATALOG.md). O aviso de chunk acima de 500 kB permanece.

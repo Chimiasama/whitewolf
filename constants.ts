@@ -1,3 +1,4 @@
+import {completePredators} from './data/predators';
 import { W5_TRIBES } from './data/w5';
 
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, GameType, Tribe, Auspice, Loresheet } from './types';
@@ -33,7 +34,7 @@ export const fnGetClanDetails = (fnT: TFunction): Record<Clan, { name: string; d
     [Clan.ThinBlood]: { name: fnT('clans.thinblood.name'), description: fnT('clans.thinblood.description'), disciplines: ["thinbloodalchemy"], bane: fnT('clans.thinblood.bane'), compulsion: fnT('clans.thinblood.compulsion') }
 });
 
-export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => ([
+export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => completePredators([
     {
         id: 'alleycat',
         name: fnT('predatorTypes.alleycat.name'),
@@ -412,7 +413,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => ([
             { skill: Skill.Melee, name: fnT('predatorTypes.specialties.hiddenWeapon') }
         ]
     }
-] as PredatorTypeDetail[]).map(p => ['alleycat','bagger','consensualist','farmer','osiris','sandman','siren'].includes(p.id) ? p : {...p,name:`[Comunitário / opcional] ${p.name}`,description:`Material comunitário: V5 Player's Guide de Bully (docs/Vampire5edPlayersGuide02), não o Players Guide oficial. Requer aprovação da crônica. ${p.description}`});
+] as PredatorTypeDetail[]);
 
 export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | null): AdvantageFlaw[] => {
     const common: AdvantageFlaw[] = [
