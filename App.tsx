@@ -1,3 +1,4 @@
+import {BookSources,BookReferenceScope} from './lib/bookReferences';
 import {RulesLibrary} from './components/RulesLibrary';
 import {HelpLabel} from './components/HelpLabel';
 import {DisciplineReference} from './components/DisciplineReference';
@@ -864,6 +865,7 @@ const App: React.FC = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    <BookSources sourceKey={'clan:'+oCharacter.clan}/>
                                 </GothicFrame>
                             ) : (
                                 <div className="py-20 flex flex-col items-center justify-center opacity-30">
@@ -930,6 +932,7 @@ const App: React.FC = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    <BookSources sourceKey={'tribe:'+oCharacter.tribe}/>
                                 </GothicFrame>
                             ) : (
                                 <div className="py-20 flex flex-col items-center justify-center opacity-30">
@@ -976,6 +979,7 @@ const App: React.FC = () => {
                                         </div>
                                         <p className="text-gray-300 leading-relaxed italic text-lg">{oAuspiceDetails[oCharacter.auspice as Auspice].description}</p>
                                     </div>
+                                    <BookSources sourceKey={'auspice:'+oCharacter.auspice}/>
                                 </GothicFrame>
                             ) : (
                                 <div className="py-20 flex flex-col items-center justify-center opacity-30">
@@ -1281,6 +1285,7 @@ const App: React.FC = () => {
     </div>;
 
     return (
+        <BookReferenceScope.Provider value={oCharacter.gameType}>
         <div ref={workspaceRef} className="app-workspace min-h-screen clean-creation w-full text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
             <header ref={headerRef} className="app-header bg-black border-b border-red-900 sticky top-0 z-50">
                 <div className="app-header-inner max-w-7xl mx-auto">
@@ -1354,6 +1359,7 @@ const App: React.FC = () => {
                 </InfoModal>
             )}
         </div>
+        </BookReferenceScope.Provider>
     );
 };
 

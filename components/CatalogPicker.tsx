@@ -1,3 +1,4 @@
+import {catalogReferenceKey} from '../lib/bookReferences';
 import {HelpLabel} from './HelpLabel';
 import React, { useState, useId } from "react";
 export interface CatalogOption {
@@ -64,7 +65,7 @@ export function CatalogPicker({
             return (
               <li key={key} className="rounded-lg bg-gray-900 p-3">
                 <div className="flex justify-between items-center gap-3">
-                  <strong><HelpLabel title={item?.name||key} content={item?.details||item?.summary}>{item?.name||key}</HelpLabel></strong>
+                  <strong><HelpLabel sourceKey={catalogReferenceKey(label,key)} title={item?.name||key} content={item?.details||item?.summary}>{item?.name||key}</HelpLabel></strong>
                   <button
                     type="button"
                     className="text-sm text-gray-300 underline"
@@ -124,7 +125,7 @@ export function CatalogPicker({
               <li key={o.id} className="border border-gray-700 rounded-lg p-3">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <strong><HelpLabel title={o.name} content={o.details||o.summary}>{o.name}</HelpLabel></strong>
+                    <strong><HelpLabel sourceKey={catalogReferenceKey(label,o.id)} title={o.name} content={o.details||o.summary}>{o.name}</HelpLabel></strong>
                     {o.community && (
                       <span className="block text-xs text-amber-200">
                         Comunitário · opcional
