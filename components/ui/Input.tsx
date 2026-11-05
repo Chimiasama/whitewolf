@@ -9,7 +9,7 @@ export const Input: React.FC<InputProps> = ({ label: sLabel, id: providedId, isW
   const generatedId = React.useId();
   const sId = providedId || generatedId;
   return (
-    <div className="w-full">
+    <div className="w-full min-w-0">
       <label htmlFor={sId} className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">
         {sLabel}
       </label>
@@ -35,7 +35,7 @@ export const TextArea: React.FC<TextAreaProps> = ({ label: sLabel, id: providedI
   const generatedId = React.useId();
   const sId = providedId || generatedId;
   return (
-    <div className="w-full">
+    <div className="w-full min-w-0">
       <label htmlFor={sId} className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">
         {sLabel}
       </label>

@@ -140,10 +140,10 @@ export function quotePurchase(
       !Object.values(Skill).includes(r.key as Skill) ||
       (c.skills[r.key] || 0) < 1
     )
-      reject("Especialidade exige uma Perícia com pontos.");
+      reject("Especialização exige uma Habilidade com pontos.");
     const name = r.choice?.trim();
     if (!name || name.length > 100)
-      reject("Informe uma especialidade de até 100 caracteres.");
+      reject("Informe uma especialização de até 100 caracteres.");
     if (
       c.specialties.some(
         (s) =>
@@ -152,7 +152,7 @@ export function quotePurchase(
             name.toLocaleLowerCase("pt-BR"),
       )
     )
-      reject("Esta especialidade já foi adquirida.");
+      reject("Esta especialização já foi adquirida.");
     label = `${t("skills.list." + r.key)}: ${name}`;
     cost = fast ? 2 : 3;
     formula = `Custo fixo: ${cost} XP`;
@@ -229,7 +229,7 @@ export function quotePurchase(
       !c.advantages.some((a) => a.id === "alchemyexpert" && a.cost === 5)
     )
       reject(
-        "Alquimia exige Sangue-Fraco ou o Mérito comunitário Alchemy Expert.",
+        "Alquimia exige Sangue-Ralo ou o Mérito comunitário Alchemy Expert.",
       );
     if (
       thin &&
@@ -240,7 +240,7 @@ export function quotePurchase(
         "Afinidade permite evoluir apenas a Disciplina permanente já escolhida.",
       );
     if (r.kind === "formula" && !alchemy)
-      reject("Fórmulas pertencem à Alquimia de Sangue-Fraco.");
+      reject("Fórmulas pertencem à Alquimia de Sangue-Ralo.");
     from = c.disciplines[r.key] || 0;
     to = r.kind === "formula" ? from : rank(from);
     const ids = c.disciplinePowers[r.key] || [];
@@ -347,7 +347,7 @@ export function quotePurchase(
     reference =
       r.kind === "bloodPotency" ? "V5, pp. 152, 214–216" : "V5, p. 242";
     if (c.clan === Clan.ThinBlood && r.kind === "bloodPotency")
-      reject("Sangue-Fraco não aumenta Potência de Sangue por XP.");
+      reject("Sangue-Ralo não aumenta Potência de Sangue por XP.");
   } else if (r.kind === "renown") {
     if (!["glory", "honor", "wisdom"].includes(r.key))
       reject("Tipo de Renome desconhecido.");

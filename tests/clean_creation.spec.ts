@@ -30,7 +30,7 @@ test("seis etapas, navegação livre e pendências levam à escolha certa", asyn
   await issue.getByRole("button", { name: "Resolver" }).click();
   await expect(page.locator("#char-name")).toHaveValue("Rascunho intuitivo");
   await page.getByRole("button", { name: "Capacidades", exact: false }).click();
-  await page.getByRole("tab", { name: "Perícias", exact: true }).click();
+  await page.getByRole("tab", { name: "Habilidades", exact: true }).click();
   await page.getByRole("button", { name: "Poderes", exact: false }).click();
   await expect(page.getByRole("tab", { name: "Alimentação" })).toBeVisible();
   await expect(
@@ -45,16 +45,16 @@ test("seis etapas, navegação livre e pendências levam à escolha certa", asyn
   await page.getByRole("button", { name: "Identidade", exact: false }).click();
   await expect(page.locator("#char-name")).toHaveValue("Rascunho intuitivo");
 });
-test("Sangue-Fraco exibe escolhas condicionais e não oferece alimentação", async ({
+test("Sangue-Ralo exibe escolhas condicionais e não oferece alimentação", async ({
   page,
 }) => {
   await start(page);
   await page.getByRole("button", { name: "Natureza", exact: false }).click();
-  await page.getByRole("button", { name: /Sangue.Fraco/, exact: true }).click();
+  await page.getByRole("button", { name: /Sangue.Ralo/, exact: true }).click();
   await page.getByRole("button", { name: "Poderes", exact: false }).click();
   await expect(page.getByRole("tab", { name: "Alimentação" })).toHaveCount(0);
   const merits = page.getByRole("region", {
-    name: "Méritos de Sangue-Fraco",
+    name: "Qualidades de Sangue-Ralo",
     exact: true,
   });
   await merits.getByRole("button", { name: "Escolher", exact: true }).click();
@@ -64,13 +64,13 @@ test("Sangue-Fraco exibe escolhas condicionais e não oferece alimentação", as
     .getByRole("button", { name: "Escolher", exact: true })
     .click();
   await expect(page.getByText(/Na seção Disciplinas e fórmulas/)).toBeVisible();
-  await merits.getByRole("searchbox").fill("semelhança");
+  await merits.getByRole("searchbox").fill("semblante");
   await merits
     .locator("li")
     .getByRole("button", { name: "Escolher", exact: true })
     .click();
   const flaws = page.getByRole("region", {
-    name: "Defeitos de Sangue-Fraco",
+    name: "Defeitos de Sangue-Ralo",
     exact: true,
   });
   await flaws.getByRole("button", { name: "Escolher", exact: true }).click();

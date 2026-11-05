@@ -60,7 +60,7 @@ test('segurar atributo abre consulta sem escolher pontos; movimento cancela o ge
  await expect(page.getByRole('dialog')).toHaveCount(1);expect((await draft(page)).attributes).toEqual(before);
 });
 test('todos os predadores têm consulta de caçada com fontes e distinção comunitária',async({page})=>{
- await page.goto('/');const result=await page.evaluate(async()=>{const {fnGetPredatorTypes}=await import('/constants.ts');const {HUNTING_POOLS}=await import('/data/huntingHelp.ts');const p=fnGetPredatorTypes(k=>k);return {missing:p.filter(p=>!(p.id in HUNTING_POOLS)).map(p=>p.id),farmer:HUNTING_POOLS.farmer,bloodleech:HUNTING_POOLS.bloodleech};});expect(result.missing).toEqual([]);expect(result.farmer).toEqual(['Autocontrole + Empatia com Animais']);expect(result.bloodleech).toEqual([]);
+ await page.goto('/');const result=await page.evaluate(async()=>{const {fnGetPredatorTypes}=await import('/constants.ts');const {HUNTING_POOLS}=await import('/data/huntingHelp.ts');const p=fnGetPredatorTypes(k=>k);return {missing:p.filter(p=>!(p.id in HUNTING_POOLS)).map(p=>p.id),farmer:HUNTING_POOLS.farmer,bloodleech:HUNTING_POOLS.bloodleech};});expect(result.missing).toEqual([]);expect(result.farmer).toEqual(['Autocontrole + Empatia com Animais']);expect(result.bloodleech).toEqual(['Manipulação + Subterfúgio']);
  await start(page);await page.getByRole('button',{name:'Consultar regras',exact:true}).click();await page.getByLabel('Categoria da consulta',{exact:true}).selectOption('predators');await page.getByLabel('Buscar na consulta',{exact:true}).fill('Fazendeiro');await page.getByRole('button',{name:'Informações: Fazendeiro',exact:true}).click();await expect(page.getByRole('dialog',{name:'Fazendeiro',exact:true})).toContainText('Autocontrole + Empatia com Animais');
 });
 test('Twice-Cursed é Defeito de dois pontos e conserva as duas Maldições',async({page})=>{
@@ -68,4 +68,69 @@ test('Twice-Cursed é Defeito de dois pontos e conserva as duas Maldições',asy
  const region=page.getByRole('region',{name:'Defeitos',exact:true});await region.getByRole('button',{name:'Escolher',exact:true}).click();await region.getByRole('searchbox').fill('Twice-Cursed');await region.locator('li').getByRole('button',{name:'Escolher',exact:true}).click();
  await expect(page.getByLabel('Maldição aplicada',{exact:true})).toHaveValue('both');await expect(page.getByLabel('Maldição aplicada',{exact:true})).toBeDisabled();const c=await draft(page);expect(c.flaws.find(f=>f.id==='twicecursed').cost).toBe(2);
  await region.getByRole('button',{name:'Remover Duas Vezes Amaldiçoado (Twice-Cursed)',exact:true}).click();await expect(page.getByLabel('Maldição aplicada',{exact:true})).toHaveValue('standard');await expect(page.getByLabel('Maldição aplicada',{exact:true})).toBeEnabled();
+});
+
+test('segurar a ajuda do predador mostra caçada, rolagem e alternativas sem modificar a ficha',async({page})=>{
+ await start(page);
+ await page.getByRole('button',{name:'Natureza',exact:false}).click();
+ await page.getByRole('button',{name:'Brujah',exact:true}).click();
+ await page.getByRole('button',{name:'Poderes',exact:false}).click();
+ const region=page.getByRole('region',{name:'Tipo de predador',exact:true});
+ await region.getByRole('button',{name:'Escolher',exact:true}).click();
+ await region.getByRole('searchbox').fill('Vira-lata');
+ await region.locator('li').getByRole('button',{name:'Escolher',exact:true}).click();
+ const before=await draft(page);
+ const label=page.locator('[data-help-label="Caçada: Vira-lata"]');
+ await label.scrollIntoViewIfNeeded();
+ const box=await label.boundingBox();
+ await page.mouse.move(box.x+5,box.y+5);await page.mouse.down();
+ await page.waitForTimeout(650);await page.mouse.up();
+ const dialog=page.getByRole('dialog',{name:'Caçada: Vira-lata',exact:true});
+ await expect(dialog.getByRole('heading',{name:'Testes de caçada e alimentação',exact:true})).toBeVisible();
+ await expect(dialog.getByText('Força + Briga',{exact:true})).toBeVisible();
+ await expect(dialog.getByText('Raciocínio + Manha',{exact:true})).toBeVisible();
+ await expect(dialog).toContainText('pp. 307–308');
+ await dialog.getByText('Passo a passo da rolagem',{exact:true}).click();
+ await expect(dialog).toContainText('3 dados comuns e 2 Dados de Fome');
+ await expect(dialog).toContainText('Três sucessos não significam automaticamente três pontos de Fome');
+ await page.keyboard.press('Escape');
+ expect(await draft(page)).toEqual(before);
+ await page.getByRole('button',{name:'Revisar pendências',exact:true}).click();
+ await page.getByRole('button',{name:'Informações: Caçada: Vira-lata',exact:true}).click();
+ await expect(page.getByRole('dialog',{name:'Caçada: Vira-lata',exact:true})).toContainText('Força + Briga');
+ await page.keyboard.press('Escape');
+ await page.getByRole('radio',{name:'Ficha compacta',exact:true}).check();
+ await page.getByRole('article',{name:'Ficha compacta'}).getByRole('button',{name:'Informações: Caçada: Vira-lata',exact:true}).click();
+ await expect(page.getByRole('dialog',{name:'Caçada: Vira-lata',exact:true})).toContainText('Raciocínio + Manha');
+ await page.keyboard.press('Escape');
+ expect(await draft(page)).toEqual(before);
+});
+
+test('consulta distingue teste situacional, divergência do básico e fonte comunitária',async({page})=>{
+ await start(page);const before=await draft(page);
+ await page.getByRole('button',{name:'Consultar regras',exact:true}).click();
+ await page.getByLabel('Categoria da consulta',{exact:true}).selectOption('predators');
+ const search=page.getByLabel('Buscar na consulta',{exact:true});
+ await search.fill('Trapdoor');
+ await page.getByRole('button',{name:'Informações: Armadilheiro',exact:true}).click();
+ let dialog=page.getByRole('dialog',{name:'Armadilheiro',exact:true});
+ await expect(dialog).toContainText('Carisma + Furtividade');
+ await expect(dialog).toContainText('Destreza + Furtividade');
+ await expect(dialog).toContainText('Raciocínio + Percepção');
+ await expect(dialog).toContainText('não uma terceira parada de alimentação obrigatória');
+ await page.keyboard.press('Escape');
+ await search.fill('Blood Leech');
+ await page.getByRole('button',{name:'Informações: Sanguessuga',exact:true}).click();
+ dialog=page.getByRole('dialog',{name:'Sanguessuga',exact:true});
+ await expect(dialog).toContainText('Manipulação + Subterfúgio');
+ await expect(dialog).toContainText('desenvolvida em cena');
+ await page.keyboard.press('Escape');
+ await search.fill('Wolf in Sheep');
+ await page.getByRole('button',{name:'Informações: Lobo em Pele de Cordeiro',exact:true}).click();
+ dialog=page.getByRole('dialog',{name:'Lobo em Pele de Cordeiro',exact:true});
+ await expect(dialog).toContainText('Fortitude + Armas Brancas');
+ await expect(dialog).toContainText('Fortitude é uma Disciplina');
+ await expect(dialog).toContainText('Fonte comunitária de Bully');
+ await page.keyboard.press('Escape');
+ expect(await draft(page)).toEqual(before);
 });

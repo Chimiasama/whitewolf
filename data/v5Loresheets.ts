@@ -141,7 +141,7 @@ export const V5_LORESHEETS: Loresheet[] = [
       [
         "Talento Verdadeiro",
         "Real Talent",
-        "Escolha Ofícios, Etiqueta ou Performance. Aumentar essa Perícia custa metade do XP normal, arredondado para baixo.",
+        "Escolha Ofícios, Etiqueta ou Performance. Aumentar essa Habilidade custa metade do XP normal, arredondado para baixo.",
       ],
       [
         "Abraçar o Estereótipo",
@@ -542,7 +542,7 @@ V5_LORESHEETS.push(...([
       {
         "level": 1,
         "name": "Newfound Rights",
-        "description": "Pode repetir um teste de Perícia contra o establishment por história.",
+        "description": "Pode repetir um teste de Habilidade contra o establishment por história.",
         "system": "Newfound Rights — V5 básico, p. 396. Benefícios situacionais, pontos concedidos e escolhas são resolvidos com o Narrador; não alteram outras características automaticamente."
       },
       {
@@ -674,7 +674,7 @@ V5_LORESHEETS.push(...([
       {
         "level": 3,
         "name": "Scent the Bond",
-        "description": "Detecta Laços com Determinação + Prontidão, dificuldade quatro, uma vez por história.",
+        "description": "Detecta Laços com Determinação + Percepção, dificuldade quatro, uma vez por história.",
         "system": "Scent the Bond — V5 básico, p. 399. Benefícios situacionais, pontos concedidos e escolhas são resolvidos com o Narrador; não alteram outras características automaticamente."
       },
       {
@@ -933,7 +933,7 @@ V5_LORESHEETS.push(...([
       {
         "level": 2,
         "name": "Where the Bodies Are Buried",
-        "description": "Detecta vampiros fundidos à terra com Determinação + Prontidão.",
+        "description": "Detecta vampiros fundidos à terra com Determinação + Percepção.",
         "system": "Where the Bodies Are Buried — V5 básico, p. 406. Benefícios situacionais, pontos concedidos e escolhas são resolvidos com o Narrador; não alteram outras características automaticamente."
       },
       {

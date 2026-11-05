@@ -2714,7 +2714,7 @@ const oPt = {
     "tribe": "Tribo",
     "auspice": "Augúrio",
     "attributes": "Atributos",
-    "skills": "Perícias",
+    "skills": "Habilidades",
     "finishingTouches": "Toques Finais",
     "sheet": "Ficha Final",
     "creationMethod": "Método de Criação"
@@ -2901,7 +2901,7 @@ const oPt = {
     "missing_concept": "Nome, Conceito, Ambição ou Desejo faltando.",
     "missing_clan": "Clã não selecionado.",
     "error_attributes": "Atributos devem somar 22.",
-    "error_skills": "A distribuição de perícias deve seguir uma das três trilhas.",
+    "error_skills": "A distribuição de habilidades deve seguir uma das três trilhas.",
     "missing_predator": "Tipo de Predador não selecionado.",
     "error_disciplines": "Selecione pelo menos 2 pontos em Disciplinas.",
     "error_advantages": "Gaste 7 pontos em Vantagens.",
@@ -2915,10 +2915,10 @@ const oPt = {
     "selectTribe": "Selecione uma tribo.",
     "selectAuspice": "Selecione um augúrio.",
     "attributeTotal": "Os atributos somam {{current}}; eles devem somar {{expected}}.",
-    "skillPath": "As perícias devem seguir uma das trilhas de criação suportadas.",
+    "skillPath": "As habilidades devem seguir uma das trilhas de criação suportadas.",
     "advantages": "As vantagens somam {{current}}; gaste pelo menos {{expected}} pontos.",
     "flaws": "Os defeitos somam {{current}}; escolha pelo menos {{expected}} pontos.",
-    "specialty": "Adicione pelo menos uma especialidade.",
+    "specialty": "Adicione pelo menos uma especialização.",
     "predator": "Selecione um Tipo de Predador.",
     "disciplines": "Ajuste as Disciplinas para respeitar as regras de criação e bônus do Predador.",
     "gifts": "Os Dons somam {{current}}; eles devem somar {{expected}} pontos.",
@@ -2927,21 +2927,21 @@ const oPt = {
   "common": {
     "selectPlaceholder": "Selecione...",
     "selectAttrPlaceholder": "Selecione Atributo",
-    "selectSkillPlaceholder": "Selecione Perícia",
+    "selectSkillPlaceholder": "Selecione Habilidade",
     "selectDiscPlaceholder": "Selecione Disciplina...",
     "unnamed": "Sem nome",
     "unknown": "Desconhecido",
     "none": "Nenhum",
     "notDefined": "Não definido",
     "keyAttributes": "Atributos Chave",
-    "keySkills": "Perícias Chave",
+    "keySkills": "Habilidades Chave",
     "moreInfo": "Mais informações",
     "noClanSelected": "Nenhum clã selecionado.",
     "selectClanToSeeDetails": "Selecione um Clã para ver detalhes",
     "selectTribeToSeeDetails": "Selecione uma Tribo para ver detalhes",
     "selectAuspiceToSeeDetails": "Selecione um Augúrio para ver detalhes",
     "noneListed": "Nenhum listado.",
-    "skill": "Perícia",
+    "skill": "Habilidade",
     "available": "Disponível",
     "assigned": "Atribuído",
     "clear": "Limpar",
@@ -2950,10 +2950,10 @@ const oPt = {
     "poolLegend": "Esferas brilhantes disponíveis. Escuras já atribuídas.",
     "managePowers": "Gerenciar Poderes",
     "paintMode": "Pintando {{value}}",
-    "paintInstruction": "Clique nos atributos ou perícias para atribuir o valor ativo.",
+    "paintInstruction": "Clique nos atributos ou habilidades para atribuir o valor ativo.",
     "confirm": "Confirmar",
     "randomIdentity": "Identidade Aleatória",
-    "specialty": "Especialidade",
+    "specialty": "Especialização",
     "specialtyPlaceholder": "ex: Parkour",
     "resetWarning": "Tem certeza que deseja reiniciar todos os dados do personagem? Isso não pode ser desfeito.",
     "resetSuccess": "Personagem reiniciado para o padrão.",
@@ -3065,7 +3065,7 @@ const oPt = {
       "compulsion": "Falta de Raízes."
     },
     "thinblood": {
-      "name": "Sangue-Fraco",
+      "name": "Sangue-Ralo",
       "description": "Quase humanos.",
       "bane": "Diversas debilidades.",
       "compulsion": "Isolamento."
@@ -3094,14 +3094,14 @@ const oPt = {
     }
   },
   "skills": {
-    "title": "Distribua Perícias",
-    "subtitle": "Clique nas Perícias para atribuir valores da reserva de pontos.",
+    "title": "Distribua Habilidades",
+    "subtitle": "Clique nas Habilidades para atribuir valores da reserva de pontos.",
     "paths": {
-      "title": "Trilha de Perícias",
+      "title": "Trilha de Habilidades",
       "detected": "Trilha Detectada: {{path}}",
       "none": "Nenhuma trilha válida detectada",
       "multiple": "Trilhas Válidas: {{paths}}",
-      "jackOfAllTrades": "Faz tudo",
+      "jackOfAllTrades": "Pau pra Toda Obra",
       "balanced": "Equilibrado",
       "specialist": "Especialista"
     },
@@ -3111,27 +3111,27 @@ const oPt = {
       "Craft": "Ofícios",
       "Drive": "Condução",
       "Firearms": "Armas de Fogo",
-      "Larceny": "Ladinagem",
+      "Larceny": "Ladroagem",
       "Melee": "Armas Brancas",
       "Stealth": "Furtividade",
       "Survival": "Sobrevivência",
-      "Animal Ken": "Trato com Animais",
+      "Animal Ken": "Empatia com Animais",
       "Etiquette": "Etiqueta",
-      "Insight": "Intuição",
+      "Insight": "Sagacidade",
       "Intimidation": "Intimidação",
       "Leadership": "Liderança",
       "Performance": "Performance",
       "Persuasion": "Persuasão",
       "Streetwise": "Manha",
-      "Subterfuge": "Lábia",
-      "Academics": "Academicismo",
-      "Awareness": "Prontidão",
+      "Subterfuge": "Subterfúgio",
+      "Academics": "Erudição",
+      "Awareness": "Percepção",
       "Finance": "Finanças",
       "Investigation": "Investigação",
       "Medicine": "Medicina",
       "Occult": "Ocultismo",
       "Politics": "Política",
-      "Science": "Ciências",
+      "Science": "Ciência",
       "Technology": "Tecnologia"
     }
   },
@@ -3155,8 +3155,8 @@ const oPt = {
     "flaws": {
       "title": "Defeitos"
     },
-    "touchstones": "Pedras de Toque e Convicções",
-    "touchstonesPlaceholder": "Descreva as pedras de toque e convicções do seu personagem..."
+    "touchstones": "Pilares e Convicções",
+    "touchstonesPlaceholder": "Descreva as pilares e convicções do seu personagem..."
   },
   "characterSheet": {
     "name": "Nome",
@@ -3172,7 +3172,7 @@ const oPt = {
     "clanCompulsion": "Compulsão",
     "predatorType": "Predador",
     "generation": "Geração",
-    "bloodPotency": "Potência do Sangue",
+    "bloodPotency": "Potência de Sangue",
     "attributes": {
       "physical": "Físicos",
       "social": "Sociais",
@@ -3214,8 +3214,8 @@ const oPt = {
     "specialAbilities": "Habilidades Especiais",
     "advantages": "Vantagens",
     "flaws": "Defeitos",
-    "specialties": "Especialidades",
-    "touchstones": "Pedras de Toque"
+    "specialties": "Especializações",
+    "touchstones": "Pilares"
   },
   "compendium": {
     "level": "Nível",
@@ -3236,20 +3236,20 @@ const oPt = {
     "potentialCosts": "Custos Potenciais",
     "favor": "Favor",
     "bane": "Perdição",
-    "rouseCheck": "Teste de Sangue",
-    "oneRouseCheck": "1 Teste de Sangue"
+    "rouseCheck": "Checagem de Sangue",
+    "oneRouseCheck": "1 Checagem de Sangue"
   },
   "predatorTypes": {
     "alleycat": {
-      "name": "Gato de Beco",
+      "name": "Vira-lata",
       "description": "Você caça por emboscadas e violência física nas ruas."
     },
     "bagger": {
-      "name": "Bolsista",
+      "name": "Sacoleiro",
       "description": "Você obtém sangue de armazenamento a frio ou cenas de crime."
     },
     "consensualist": {
-      "name": "Consensual",
+      "name": "Consensualista",
       "description": "Você só se alimenta daqueles que permitem explicitamente."
     },
     "farmer": {
@@ -3395,29 +3395,29 @@ const oPt = {
       "description": "A habilidade de se comunicar e controlar animais.",
       "powers": {
         "bondFamulus": {
-          "name": "Vínculo Famulus",
+          "name": "Famulus Enlaçado",
           "description": "Forme um vínculo místico com um animal companheiro.",
           "system": "Sem custo. O vínculo leva uma cena."
         },
         "senseTheBeast": {
           "name": "Sentir a Besta",
           "description": "Detecta a presença da Besta em outros.",
-          "system": "Determinação + Animalismo vs Autocontrole + Lábia."
+          "system": "Determinação + Animalismo vs Autocontrole + Subterfúgio."
         },
         "feralWhispers": {
           "name": "Sussurros Selvagens",
           "description": "Comunica-se e emite comandos simples para animais.",
-          "system": "Carisma + Trato com Animais. Custo: Um Teste de Sangue."
+          "system": "Carisma + Empatia com Animais. Custo: Uma Checagem de Sangue."
         },
         "feralFrenzy": {
           "name": "Frenesi Feral",
           "description": "Incita frenesi em animais próximos.",
-          "system": "Manipulação + Animalismo vs Dificuldade. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Animalismo vs Dificuldade. Custo: Uma Checagem de Sangue."
         },
         "huntTheBeast": {
           "name": "Caçar a Besta",
           "description": "Rastreia um alvo pelo cheiro de sua Besta.",
-          "system": "Determinação + Animalismo vs Autocontrole + Lábia. Custo: Um Teste de Sangue."
+          "system": "Determinação + Animalismo vs Autocontrole + Subterfúgio. Custo: Uma Checagem de Sangue."
         },
         "animalSucculence": {
           "name": "Suficiência Animal",
@@ -3425,39 +3425,39 @@ const oPt = {
           "system": "Passivo. Sangue animal sacia 1 de Fome adicional."
         },
         "quellTheBeast": {
-          "name": "Acalmar a Besta",
+          "name": "Subjugar a Besta",
           "description": "Intimida e acalma a Besta em outros.",
           "system": "Carisma + Animalismo vs Determinação + Autocontrole."
         },
         "unlivingHive": {
-          "name": "Colmeia Viva",
+          "name": "Enxame Não Vivo",
           "description": "Estende poderes de Animalismo a enxames de insetos.",
           "system": "Passivo. Permite insetos como famuli."
         },
         "howlOfRage": {
           "name": "Uivo de Fúria",
           "description": "Como Centelha de Fúria, mas usando Animalismo.",
-          "system": "Manipulação + Animalismo. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Animalismo. Custo: Uma Checagem de Sangue."
         },
         "markPrey": {
           "name": "Marcar Presa",
           "description": "Marca um alvo como prey para outros vampiros.",
-          "system": "Carisma + Animalismo vs Autocontrole + Determinação. Custo: Um Teste de Sangue."
+          "system": "Carisma + Animalismo vs Autocontrole + Determinação. Custo: Uma Checagem de Sangue."
         },
         "subsumeTheSpirit": {
           "name": "Subjugar o Espírito",
           "description": "Possui o corpo de um animal companheiro.",
-          "system": "Manipulação + Animalismo. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Animalismo. Custo: Uma Checagem de Sangue."
         },
         "packFrenzy": {
           "name": "Frenesi de Alcatéia",
           "description": "Espalha um frenesi entre membros dispostos.",
-          "system": "Raciocínio + Animalismo. Custo: Um Teste de Sangue."
+          "system": "Raciocínio + Animalismo. Custo: Uma Checagem de Sangue."
         },
         "animalDominion": {
           "name": "Domínio Animal",
           "description": "Controla um enxame ou bando inteiro de animais.",
-          "system": "Carisma + Animalismo. Custo: Um Teste de Sangue."
+          "system": "Carisma + Animalismo. Custo: Uma Checagem de Sangue."
         },
         "drawingOutTheBeast": {
           "name": "Expulsar a Besta",
@@ -3467,7 +3467,7 @@ const oPt = {
         "subsumeTheServant": {
           "name": "Subjugar o Servo",
           "description": "Transfere a mente para um ghoul com seu sangue.",
-          "system": "Manipulação + Animalismo. Custo: Dois Testes de Sangue."
+          "system": "Manipulação + Animalismo. Custo: Duas Checagens de Sangue."
         }
       }
     },
@@ -3481,64 +3481,64 @@ const oPt = {
           "system": "Sem custo. Adiciona nível aos testes de percepção."
         },
         "senseTheUnseen": {
-          "name": "Sentir o Oculto",
+          "name": "Sentir o Invisível",
           "description": "Detecta entidades ou poderes sobrenaturais ocultos.",
           "system": "Raciocínio + Auspícios vs Ofuscação ou dificuldade."
         },
         "lieDetector": {
           "name": "Detector de Mentiras",
           "description": "Sabe quando estão mentindo para você.",
-          "system": "Passivo. Soma nível em testes de Intuição."
+          "system": "Passivo. Soma nível em testes de Sagacidade."
         },
         "readOpponent": {
           "name": "Ler Oponente",
           "description": "Lê intenções e pistas físicas sutis de oponentes.",
-          "system": "Raciocínio + Auspícios vs Força + Lábia. Custo: Um Teste de Sangue."
+          "system": "Raciocínio + Auspícios vs Força + Subterfúgio. Custo: Uma Checagem de Sangue."
         },
         "premonition": {
           "name": "Premonição",
           "description": "Recebe visões breves e crípticas do futuro próximo.",
-          "system": "Determinação + Auspícios. Custo: Um Teste de Sangue (opcional)."
+          "system": "Determinação + Auspícios. Custo: Uma Checagem de Sangue (opcional)."
         },
         "obeah": {
           "name": "Obeah",
           "description": "O vampiro acalma um alvo emocionalmente agitado, restaurando-lhe um mínimo de equilíbrio.",
-          "system": "Autocontrole + Auspícios contra Dificuldade 2 e restaura uma quantidade de níveis de dano Superficial à Força de Vontade igual à margem de sucesso. Custo: Um Teste de Sangue."
+          "system": "Autocontrole + Auspícios contra Dificuldade 2 e restaura uma quantidade de níveis de dano Superficial à Força de Vontade igual à margem de sucesso. Custo: Uma Checagem de Sangue."
         },
         "implantDream": {
           "name": "Implantar Sonho",
           "description": "Implanta um sonho a ser vivido quando o alvo dormir.",
-          "system": "Determinação + Dominação vs Autocontrole + Inteligência. Custo: Um Teste de Sangue."
+          "system": "Determinação + Dominação vs Autocontrole + Inteligência. Custo: Uma Checagem de Sangue."
         },
         "decipher": {
           "name": "Decifrar",
           "description": "Entende qualquer língua ou código lendo a intenção.",
-          "system": "Inteligência + Auspícios. Custo: Um Teste de Sangue."
+          "system": "Inteligência + Auspícios. Custo: Uma Checagem de Sangue."
         },
         "senseStrengthsAndWeaknesses": {
           "name": "Sentir Forças e Fraquezas",
           "description": "Avalia a aura para traços físicos e mentais.",
-          "system": "Inteligência + Auspícios vs Autocontrole + Lábia. Custo: Um Teste de Sangue."
+          "system": "Inteligência + Auspícios vs Autocontrole + Subterfúgio. Custo: Uma Checagem de Sangue."
         },
         "scryTheSoul": {
-          "name": "Vistoriar a Alma",
+          "name": "Perscrutar a Alma",
           "description": "Lê a aura e as emoções de um alvo.",
-          "system": "Inteligência + Auspícios vs Autocontrole + Lábia."
+          "system": "Inteligência + Auspícios vs Autocontrole + Subterfúgio."
         },
         "shareTheSenses": {
           "name": "Compartilhar Sentidos",
           "description": "Vê e ouve através dos sentidos de outro.",
-          "system": "Determinação + Auspícios. Custo: Um Teste de Sangue."
+          "system": "Determinação + Auspícios. Custo: Uma Checagem de Sangue."
         },
         "psychicBacklash": {
           "name": "Recuo Psíquico",
           "description": "Causa recuo mental em quem tenta controlar você.",
-          "system": "Sempre que defender de manipulação mental. Custo: Um Teste de Sangue."
+          "system": "Sempre que defender de manipulação mental. Custo: Uma Checagem de Sangue."
         },
         "scanTheRoom": {
           "name": "Vistoriar o Recinto",
           "description": "Investigação minuciosa de um local em momentos.",
-          "system": "Raciocínio + Investigação + nível. Custo: Um Teste de Sangue."
+          "system": "Raciocínio + Investigação + nível. Custo: Uma Checagem de Sangue."
         },
         "spiritsTouch": {
           "name": "Toque do Espírito",
@@ -3548,32 +3548,32 @@ const oPt = {
         "clairvoyance": {
           "name": "Clarividência",
           "description": "Projeta seus sentidos para um local distante.",
-          "system": "Inteligência + Auspícios. Custo: Um Teste de Sangue."
+          "system": "Inteligência + Auspícios. Custo: Uma Checagem de Sangue."
         },
         "possession": {
           "name": "Possessão",
           "description": "Assume o controle do corpo de um mortal.",
-          "system": "Determinação + Auspícios vs Determinação + Inteligência. Custo: Dois Testes de Sangue."
+          "system": "Determinação + Auspícios vs Determinação + Inteligência. Custo: Duas Checagens de Sangue."
         },
         "telepathy": {
           "name": "Telepatia",
           "description": "Lê pensamentos profundos ou projeta sua voz em mentes.",
-          "system": "Determinação + Auspícios vs Autocontrole + Lábia. Custo: Um Teste de Sangue."
+          "system": "Determinação + Auspícios vs Autocontrole + Subterfúgio. Custo: Uma Checagem de Sangue."
         },
         "relievingTheBestialSoul": {
           "name": "Aliviando a Alma Bestial",
           "description": "Este poder compartilha uma porção da serenidade moral do vampiro com um Membro arrependido.",
-          "system": "O vampiro passa uma cena isolado com o alvo e rola Autocontrole + Auspícios vs. A Humanidade do alvo. Para cada sucesso na margem, o vampiro pode remover uma Mácula do alvo, ou erguer um “escudo” psicológico. Custo: Dois Testes de Sangue, ganha uma Mácula."
+          "system": "O vampiro passa uma cena isolado com o alvo e rola Autocontrole + Auspícios vs. A Humanidade do alvo. Para cada sucesso na margem, o vampiro pode remover uma Mácula do alvo, ou erguer um “escudo” psicológico. Custo: Duas Checagens de Sangue, ganha uma Mácula."
         },
         "telekinesis": {
           "name": "Telecinese",
           "description": "Move objetos ou pessoas com a mente.",
-          "system": "Determinação + Feitiçaria de Sangue vs Força + Atletismo. Custo: Um Teste de Sangue."
+          "system": "Determinação + Feitiçaria de Sangue vs Força + Atletismo. Custo: Uma Checagem de Sangue."
         }
       }
     },
     "celerity": {
-      "name": "Rapidez",
+      "name": "Celeridade",
       "description": "Velocidade, graça e reflexos sobrenaturais.",
       "powers": {
         "catsGrace": {
@@ -3587,44 +3587,44 @@ const oPt = {
           "system": "Passivo. Sem penalidade para realizar uma ação menor."
         },
         "fleetness": {
-          "name": "Agilidade",
+          "name": "Rapidez",
           "description": "Move-se com velocidade ofuscante.",
-          "system": "Adiciona nível a testes de Destreza fora de combate. Custo: Um Teste de Sangue."
+          "system": "Adiciona nível a testes de Destreza fora de combate. Custo: Uma Checagem de Sangue."
         },
         "controlMomentum": {
           "name": "Controlar Impulso",
           "description": "Redireciona o ataque de um agressor para outro alvo.",
-          "system": "Destreza ou Força + Rapidez vs Destreza + Atletismo. Custo: Um Teste de Sangue."
+          "system": "Destreza ou Força + Celeridade vs Destreza + Atletismo. Custo: Uma Checagem de Sangue."
         },
         "blink": {
-          "name": "Piscar",
+          "name": "Piscadela",
           "description": "Move-se tão rápido que parece desaparecer.",
-          "system": "Move-se para um alvo instantaneamente. Custo: Um Teste de Sangue."
+          "system": "Move-se para um alvo instantaneamente. Custo: Uma Checagem de Sangue."
         },
         "traversal": {
           "name": "Travessia",
           "description": "Corre por paredes ou líquidos em rajadas curtas.",
-          "system": "Destreza + Atletismo. Custo: Um Teste de Sangue."
+          "system": "Destreza + Atletismo. Custo: Uma Checagem de Sangue."
         },
         "combatTempest": {
           "name": "Tempestade de Combate",
           "description": "Enfrenta múltiplos oponentes sem penalidades.",
-          "system": "Passivo enquanto ativo. Custo: Um Teste de Sangue."
+          "system": "Passivo enquanto ativo. Custo: Uma Checagem de Sangue."
         },
         "speedIsPower": {
           "name": "Velocidade é Poder",
           "description": "Soma impulso a uma única ação de força.",
-          "system": "Soma metade da Rapidez em ação de Força. Custo: Um Teste de Sangue."
+          "system": "Soma metade da Celeridade em ação de Força. Custo: Uma Checagem de Sangue."
         },
         "draughtOfElegance": {
-          "name": "Dose de Elegância",
+          "name": "Elegância Direto da Fonte",
           "description": "Compartilha sua velocidade através do seu sangue.",
-          "system": "O consumidor ganha Rapidez nível 1. Custo: Um Teste de Sangue."
+          "system": "O consumidor ganha Celeridade nível 1. Custo: Uma Checagem de Sangue."
         },
         "unerringAim": {
           "name": "Mira Infalível",
           "description": "Precisão estranha com armas à distância.",
-          "system": "A ação de Mirar torna-se instantânea. Custo: Um Teste de Sangue."
+          "system": "A ação de Mirar torna-se instantânea. Custo: Uma Checagem de Sangue."
         },
         "furiousFrenzy": {
           "name": "Frenesi Furioso",
@@ -3634,17 +3634,17 @@ const oPt = {
         "longDistanceJourney": {
           "name": "Jornada de Longa Distância",
           "description": "Mantém altas velocidades para viagens longas.",
-          "system": "Vigor + Rapidez vs Dificuldade 3. Custo: Um Teste de Sangue."
+          "system": "Vigor + Celeridade vs Dificuldade 3. Custo: Uma Checagem de Sangue."
         },
         "lightningStrike": {
           "name": "Golpe Relâmpago",
           "description": "Ataca mais rápido do que um alvo pode reagir.",
-          "system": "O alvo não pode se defender a menos que seja sobrenatural. Custo: Um Teste de Sangue."
+          "system": "O alvo não pode se defender a menos que seja sobrenatural. Custo: Uma Checagem de Sangue."
         },
         "splitSecond": {
           "name": "Fração de Segundo",
           "description": "Reage a eventos que acabaram de acontecer.",
-          "system": "Refaz os últimos segundos de ação. Custo: Um Teste de Sangue."
+          "system": "Refaz os últimos segundos de ação. Custo: Uma Checagem de Sangue."
         }
       }
     },
@@ -3675,17 +3675,17 @@ const oPt = {
         "favorDoDomitor": {
           "name": "Favor do Domitor",
           "description": "Enquanto condicionado por Favor do Domitor, um servo ligado a um vampiro por um Laço de Sangue descobre ser muito mais difícil agir contra seu mestre.",
-          "system": "Rolagens de Desafio para servos teimosos são feitas com uma penalidade de três dados. Custo: Um Teste de Sangue."
+          "system": "Rolagens de Desafio para servos teimosos são feitas com uma penalidade de três dados. Custo: Uma Checagem de Sangue."
         },
         "declareWeakness": {
           "name": "Declarar Fraqueza",
           "description": "Convence um alvo de que ele é fraco em um atributo.",
-          "system": "Manipulação + Dominação vs Autocontrole + Inteligência. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Dominação vs Autocontrole + Inteligência. Custo: Uma Checagem de Sangue."
         },
         "implantDream": {
           "name": "Implantar Sonho",
           "description": "Implanta um sonho a ser vivido quando o alvo dormir.",
-          "system": "Determinação + Dominação vs Autocontrole + Inteligência. Custo: Um Teste de Sangue."
+          "system": "Determinação + Dominação vs Autocontrole + Inteligência. Custo: Uma Checagem de Sangue."
         },
         "theForgetfulMind": {
           "name": "A Mente Esquecida",
@@ -3700,7 +3700,7 @@ const oPt = {
         "objectCommand": {
           "name": "Comando de Objeto",
           "description": "Imprime um comando mental em um objeto.",
-          "system": "Manipulação + Dominação vs Inteligência + Determinação. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Dominação vs Inteligência + Determinação. Custo: Uma Checagem de Sangue."
         },
         "rationalize": {
           "name": "Racionalizar",
@@ -3710,12 +3710,12 @@ const oPt = {
         "mentalConditioning": {
           "name": "Condicionamento Mental",
           "description": "Quebra barreiras mentais pelo uso repetido.",
-          "system": "Ganha brechas na mente da vítima. Custo: Um Teste de Sangue."
+          "system": "Ganha brechas na mente da vítima. Custo: Uma Checagem de Sangue."
         },
         "massManipulation": {
           "name": "Manipulação em Massa",
           "description": "Domina múltiplos alvos simultaneamente.",
-          "system": "Usa poderes em grupos. Custo: Um Teste de Sangue."
+          "system": "Usa poderes em grupos. Custo: Uma Checagem de Sangue."
         },
         "terminalDecree": {
           "name": "Decreto Terminal",
@@ -3725,7 +3725,7 @@ const oPt = {
         "energyVampire": {
           "name": "Vampiro de Energia",
           "description": "Drena energia mental através da conversa.",
-          "system": "Manipulação + Dominação vs Autocontrole + Determinação. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Dominação vs Autocontrole + Determinação. Custo: Uma Checagem de Sangue."
         }
       }
     },
@@ -3749,19 +3749,19 @@ const oPt = {
           "system": "Passivo. Soma nível em testes para ficar acordado."
         },
         "toughness": {
-          "name": "Dureza",
+          "name": "Tenacidade",
           "description": "Subtrai dano de golpes físicos recebidos.",
-          "system": "Subtrai nível do dano superficial recebido. Custo: Um Teste de Sangue."
+          "system": "Subtrai nível do dano superficial recebido. Custo: Uma Checagem de Sangue."
         },
         "enduringBeasts": {
           "name": "Bestas Resistentes",
           "description": "Compartilha resistência com animais influenciados.",
-          "system": "Vigor + Animalismo vs Dificuldade 3. Custo: Um Teste de Sangue."
+          "system": "Vigor + Animalismo vs Dificuldade 3. Custo: Uma Checagem de Sangue."
         },
         "valeren": {
           "name": "Valeren",
           "description": "O vampiro projeta sua Fortitude para fora, ordenando que o poder do seu Sangue repare o corpo ferido de outro vampiro.",
-          "system": "O vampiro testa Inteligência + Fortitude contra Dificuldade 2 e cura uma quantidade de níveis de dano Superficial à Vitalidade igual à margem do teste. Custo: Um Teste de Sangue."
+          "system": "O vampiro testa Inteligência + Fortitude contra Dificuldade 2 e cura uma quantidade de níveis de dano Superficial à Vitalidade igual à margem do teste. Custo: Uma Checagem de Sangue."
         },
         "mentalVault": {
           "name": "Cofre Mental",
@@ -3771,7 +3771,7 @@ const oPt = {
         "defyBane": {
           "name": "Desafiar Perdição",
           "description": "Resiste ao fogo e à luz solar por um curto período.",
-          "system": "Rebaixa Agravado para Superficial. Custo: Um Teste de Sangue."
+          "system": "Rebaixa Agravado para Superficial. Custo: Uma Checagem de Sangue."
         },
         "fortifyTheInnerFacade": {
           "name": "Fortificar a Fachada Interior",
@@ -3781,7 +3781,7 @@ const oPt = {
         "returnToSender": {
           "name": "Devolver ao Remetente",
           "description": "Expulsa violentamente objetos estranhos como estacas ou balas.",
-          "system": "Vigor + Fortitude vs Destreza + Atletismo. Custo: Um Teste de Sangue."
+          "system": "Vigor + Fortitude vs Destreza + Atletismo. Custo: Uma Checagem de Sangue."
         },
         "sleepLikeStone": {
           "name": "Sono de Pedra",
@@ -3791,15 +3791,15 @@ const oPt = {
         "draughtOfEndurance": {
           "name": "Dose de Resistência",
           "description": "Compartilha sua resistência através do seu sangue.",
-          "system": "O consumidor ganha Fortitude nível 1. Custo: Um Teste de Sangue."
+          "system": "O consumidor ganha Fortitude nível 1. Custo: Uma Checagem de Sangue."
         },
         "fleshOfMarble": {
           "name": "Carne de Mármore",
           "description": "Torna-se essencialmente invulnerável por um momento.",
-          "system": "Ignora a primeira fonte de dano por turno. Custo: Um Teste de Sangue."
+          "system": "Ignora a primeira fonte de dano por turno. Custo: Uma Checagem de Sangue."
         },
         "prowessFromPain": {
-          "name": "Proeza da Dor",
+          "name": "Poder Vindo da Dor",
           "description": "Ganha poder enquanto seu corpo é quebrado.",
           "system": "Passivo. Ignora penalidades de ferimento e ganha bônus físicos."
         }
@@ -3827,7 +3827,7 @@ const oPt = {
         "chimerstry": {
           "name": "Quimerismo",
           "description": "O vampiro é capaz de criar breves, porém vívidas alucinações, distraindo e atraindo a atenção daqueles afetados.",
-          "system": "O vampiro testa Manipulação + Ofuscação vs. Autocontrole + Raciocínio. Custo: Um Teste de Sangue."
+          "system": "O vampiro testa Manipulação + Ofuscação vs. Autocontrole + Raciocínio. Custo: Uma Checagem de Sangue."
         },
         "ghostInTheMachine": {
           "name": "Fantasma na Máquina",
@@ -3837,52 +3837,52 @@ const oPt = {
         "maskOfAThousandFaces": {
           "name": "Máscara de Mil Faces",
           "description": "Assume uma aparência mundana diferente.",
-          "system": "Manipulação + Performance. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Performance. Custo: Uma Checagem de Sangue."
         },
         "fataMorgana": {
           "name": "Fata Morgana",
           "description": "O vampiro pode criar alucinações elaboradas, fazendo com que quaisquer alvos na sua vizinhança vejam, ouçam e sintam o que ele quiser.",
-          "system": "O usuário realiza um teste de Manipulação + Ofuscação contra uma Dificuldade igual a 1 mais o número de sentidos afetados pela alucinação. Custo: Um Teste de Sangue."
+          "system": "O usuário realiza um teste de Manipulação + Ofuscação contra uma Dificuldade igual a 1 mais o número de sentidos afetados pela alucinação. Custo: Uma Checagem de Sangue."
         },
         "shapeAura": {
           "name": "Moldar Aura",
           "description": "Mascara sua verdadeira essência e dá leituras falsas.",
-          "system": "Manipulação + Ofuscação vs Autocontrole + Prontidão. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Ofuscação vs Autocontrole + Percepção. Custo: Uma Checagem de Sangue."
         },
         "duplicate": {
           "name": "Duplicata",
           "description": "Cria uma duplicata que espelha movimentos.",
-          "system": "Autocontrole + Ofuscação. Custo: Um Teste de Sangue."
+          "system": "Autocontrole + Ofuscação. Custo: Uma Checagem de Sangue."
         },
         "conceal": {
           "name": "Ocultar",
           "description": "Encobre um objeto inanimado.",
-          "system": "Inteligência + Ofuscação vs Dificuldade. Custo: Um Teste de Sangue."
+          "system": "Inteligência + Ofuscação vs Dificuldade. Custo: Uma Checagem de Sangue."
         },
         "vanish": {
-          "name": "Desvanecer",
+          "name": "Desaparecer",
           "description": "Desaparece instantaneamente, mesmo sendo observado.",
-          "system": "Raciocínio + Ofuscação vs Raciocínio + Prontidão. Custo: Um Teste de Sangue."
+          "system": "Raciocínio + Ofuscação vs Raciocínio + Percepção. Custo: Uma Checagem de Sangue."
         },
         "hiddenBlade": {
           "name": "Lâmina Oculta",
           "description": "Foca a ofuscação em uma única arma.",
-          "system": "Raciocínio + Ofuscação vs Raciocínio + Prontidão. Custo: Um Teste de Sangue."
+          "system": "Raciocínio + Ofuscação vs Raciocínio + Percepção. Custo: Uma Checagem de Sangue."
         },
         "cloakTheGathering": {
           "name": "Ocultar o Grupo",
           "description": "Estende sua invisibilidade para um grupo.",
-          "system": "Esconde outros com você. Custo: Um Teste de Sangue."
+          "system": "Esconde outros com você. Custo: Uma Checagem de Sangue."
         },
         "impostorsGuise": {
           "name": "Disfarce do Impostor",
           "description": "Imita perfeitamente uma pessoa específica.",
-          "system": "Manipulação + Performance. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Performance. Custo: Uma Checagem de Sangue."
         },
         "fadingMemory": {
           "name": "Memória Desvanecente",
           "description": "Mascara a própria memória de sua presença.",
-          "system": "Determinação + Ofuscação vs Dificuldade. Custo: Um Teste de Sangue."
+          "system": "Determinação + Ofuscação vs Dificuldade. Custo: Uma Checagem de Sangue."
         }
       }
     },
@@ -3896,12 +3896,12 @@ const oPt = {
           "system": "Passivo. Causa dano Agravado a mortais."
         },
         "soaringLeap": {
-          "name": "Salto Planado",
+          "name": "Salto Vertiginoso",
           "description": "Salta distâncias incríveis.",
           "system": "Sem custo. Aumenta a distância de salto significativamente."
         },
         "prowess": {
-          "name": "Proeza",
+          "name": "Poderio",
           "description": "Adiciona mais força a cada golpe.",
           "system": "Passivo. Adiciona nível ao dano de Força."
         },
@@ -3913,32 +3913,32 @@ const oPt = {
         "sparkOfRage": {
           "name": "Centelha de Fúria",
           "description": "Acende o frenesi naqueles ao seu redor.",
-          "system": "Manipulação + Presença. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Presença. Custo: Uma Checagem de Sangue."
         },
         "uncannyGrip": {
-          "name": "Aperto Incomum",
+          "name": "Pegada Sobrenatural",
           "description": "Grip and burrow extremities into almost any surface.",
-          "system": "Sucedo automático para escalar. Custo: Um Teste de Sangue."
+          "system": "Sucedo automático para escalar. Custo: Uma Checagem de Sangue."
         },
         "fastballSpecial": {
           "name": "Especial Fastball",
           "description": "Arremessa aliados ou inimigos no combate.",
-          "system": "Força + Potência. Custo: Um Teste de Sangue."
+          "system": "Força + Potência. Custo: Uma Checagem de Sangue."
         },
         "draughtOfMight": {
           "name": "Dose de Poder",
           "description": "Compartilha sua força através do seu sangue.",
-          "system": "O consumidor ganha Potência nível 1. Custo: Um Teste de Sangue."
+          "system": "O consumidor ganha Potência nível 1. Custo: Uma Checagem de Sangue."
         },
         "earthshock": {
           "name": "Terremoto",
           "description": "Golpeia o chão para criar uma onda de choque.",
-          "system": "Força + Briga. Derruba alvos próximos. Custo: Um Teste de Sangue."
+          "system": "Força + Briga. Derruba alvos próximos. Custo: Uma Checagem de Sangue."
         },
         "fistOfCaine": {
           "name": "Punho de Caim",
           "description": "Projeta sua força em um golpe físico distante.",
-          "system": "Ataca à distância com parada de combate corpo a corpo. Custo: Um Teste de Sangue."
+          "system": "Ataca à distância com parada de combate corpo a corpo. Custo: Uma Checagem de Sangue."
         }
       }
     },
@@ -3957,34 +3957,34 @@ const oPt = {
           "system": "Passivo. Adiciona nível a Intimidação."
         },
         "lingeringKiss": {
-          "name": "Beijo Persistente",
+          "name": "Beijo Indelével",
           "description": "Torna sua mordida viciante para a vítima.",
           "system": "Passivo. A vítima fica obcecada pelo seu Beijo."
         },
         "subtleMessages": {
           "name": "Mensagens Subtis",
           "description": "Muda sutilmente o estado emocional de um alvo.",
-          "system": "Manipulação + Presença vs Autocontrole + Raciocínio. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Presença vs Autocontrole + Raciocínio. Custo: Uma Checagem de Sangue."
         },
         "dreadGaze": {
-          "name": "Olhar Aterrador",
+          "name": "Olhar Aterrorizante",
           "description": "Instila terror esmagador com um olhar.",
           "system": "Carisma + Presença vs Autocontrole + Determinação."
         },
         "entrancement": {
           "name": "Transe",
           "description": "Torna um alvo completamente apaixonado por você.",
-          "system": "Carisma + Presença vs Autocontrole + Determinação. Custo: Um Teste de Sangue."
+          "system": "Carisma + Presença vs Autocontrole + Determinação. Custo: Uma Checagem de Sangue."
         },
         "throneRoom": {
           "name": "Sala do Trono",
           "description": "Arranja um espaço para amplificar a influência.",
-          "system": "Ofícios + Presença. Custo: Um Teste de Sangue."
+          "system": "Ofícios + Presença. Custo: Uma Checagem de Sangue."
         },
         "obsession": {
           "name": "Obsessão",
           "description": "Cria um senso de obsessão em um alvo em direção a um foco.",
-          "system": "Manipulação + Presença vs Inteligência + Autocontrole. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Presença vs Inteligência + Autocontrole. Custo: Uma Checagem de Sangue."
         },
         "irresistibleVoice": {
           "name": "Voz Irresistível",
@@ -3994,22 +3994,22 @@ const oPt = {
         "summon": {
           "name": "Convocar",
           "description": "Compele alguém que você conheceu a vir até você.",
-          "system": "Manipulação + Presença. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Presença. Custo: Uma Checagem de Sangue."
         },
         "twistWords": {
           "name": "Distorcer Palavras",
           "description": "Usa as palavras de um oponente contra ele diante de uma audiência.",
-          "system": "Intuição + Presença vs Social. Custo: Um Teste de Sangue."
+          "system": "Sagacidade + Presença vs Social. Custo: Uma Checagem de Sangue."
         },
         "hideousLaughter": {
           "name": "Gargalhada Atroz",
           "description": "Instila uma gargalhada paralisante e histérica.",
-          "system": "Carisma + Presença vs Autocontrole + Raciocínio. Custo: Um Teste de Sangue."
+          "system": "Carisma + Presença vs Autocontrole + Raciocínio. Custo: Uma Checagem de Sangue."
         },
         "majesty": {
           "name": "Majestade",
           "description": "Irradia uma aura de autoridade divina absoluta.",
-          "system": "Alvos não podem agir contra você. Custo: Um Teste de Sangue."
+          "system": "Alvos não podem agir contra você. Custo: Uma Checagem de Sangue."
         },
         "starMagnetism": {
           "name": "Magnetismo Estelar",
@@ -4019,12 +4019,12 @@ const oPt = {
         "mindPrison": {
           "name": "Prisão Mental",
           "description": "Prende uma pessoa em uma realidade falsa de sonho.",
-          "system": "Determinação + Presença vs Inteligência + Determinação. Custo: Dois Testes de Sangue."
+          "system": "Determinação + Presença vs Inteligência + Determinação. Custo: Duas Checagens de Sangue."
         }
       }
     },
     "protean": {
-      "name": "Metamorfose",
+      "name": "Proteanismo",
       "description": "A Disciplina da mudança de forma.",
       "powers": {
         "eyesOfTheBeast": {
@@ -4033,44 +4033,44 @@ const oPt = {
           "system": "Sem custo. Olhos brilham em vermelho."
         },
         "weightOfTheFeather": {
-          "name": "Peso da Pena",
+          "name": "Peso Pena",
           "description": "Torna-se quase sem peso.",
           "system": "Sem custo. Cai com segurança de qualquer altura."
         },
         "shedSkin": {
           "name": "Troca de Pele",
           "description": "Desprende a pele danificada para parecer intocado fisicamente.",
-          "system": "Realizado durante o descanso. Custo: Um Teste de Sangue."
+          "system": "Realizado durante o descanso. Custo: Uma Checagem de Sangue."
         },
         "feralWeapons": {
           "name": "Armas Selvagens",
           "description": "Cresce garras e presas cruéis.",
-          "system": "Ataques desarmados causam dano Agravado. Custo: Um Teste de Sangue."
+          "system": "Ataques desarmados causam dano Agravado. Custo: Uma Checagem de Sangue."
         },
         "vicissitude": {
           "name": "Vicissitude",
           "description": "Este poder permite que o vampiro exija que sua própria carne o obedeça.",
-          "system": "Teste Determinação + Metamorfose. Cada sucesso permite uma alteração. Custo: Um Teste de Sangue."
+          "system": "Teste Determinação + Proteanismo. Cada sucesso permite uma alteração. Custo: Uma Checagem de Sangue."
         },
         "earthMeld": {
           "name": "Fusão com a Terra",
           "description": "Mergulha na terra para segurança.",
-          "system": "Deve ser solo natural. Custo: Um Teste de Sangue."
+          "system": "Deve ser solo natural. Custo: Uma Checagem de Sangue."
         },
         "shapechange": {
           "name": "Mudança de Forma",
           "description": "Transforma-se em um animal predador.",
-          "system": "Vigor + Metamorfose. Custo: Um Teste de Sangue."
+          "system": "Vigor + Proteanismo. Custo: Uma Checagem de Sangue."
         },
         "fleshCrafting": {
           "name": "Modelagem de Carne",
           "description": "Estendendo sua maestria sobre a carne para corpos de terceiros.",
-          "system": "Determinação + Metamorfose vs Vigor + Determinação. Custo: Um Teste de Sangue."
+          "system": "Determinação + Proteanismo vs Vigor + Determinação. Custo: Uma Checagem de Sangue."
         },
         "toolsOfNature": {
           "name": "Ferramentas da Natureza",
           "description": "Mimetiza características fisiológicas complexas de animais.",
-          "system": "Raciocínio + Metamorfose vs Dificuldade. Custo: Um Teste de Sangue."
+          "system": "Raciocínio + Proteanismo vs Dificuldade. Custo: Uma Checagem de Sangue."
         },
         "metamorphosis": {
           "name": "Metamorfose",
@@ -4080,32 +4080,32 @@ const oPt = {
         "horrificForm": {
           "name": "Forma Hedionda",
           "description": "Assume uma forma monstruosa completa, visão da Besta encarnada.",
-          "system": "Concede alterações livres de Vicissitude. Custo: Um Teste de Sangue."
+          "system": "Concede alterações livres de Vicissitude. Custo: Uma Checagem de Sangue."
         },
         "swarmForm": {
           "name": "Forma de Enxame",
           "description": "Transforma-se instantaneamente em um enxame de pequenas criaturas.",
-          "system": "Vigor + Metamorfose. Custo: Um Teste de Sangue."
+          "system": "Vigor + Proteanismo. Custo: Uma Checagem de Sangue."
         },
         "traverseTheEarth": {
           "name": "Atravessar a Terra",
           "description": "Viaja através da terra natural enquanto fundido.",
-          "system": "Velocidade de caminhada através da terra. Custo: Um Teste de Sangue."
+          "system": "Velocidade de caminhada através da terra. Custo: Uma Checagem de Sangue."
         },
         "mistForm": {
           "name": "Forma de Névoa",
           "description": "Transforma-se em uma nuvem viva de vapor.",
-          "system": "Vigor + Metamorfose. Custo: Um Teste de Sangue."
+          "system": "Vigor + Proteanismo. Custo: Uma Checagem de Sangue."
         },
         "theUnfetteredHeart": {
-          "name": "O Coração Livre",
+          "name": "Coração Vagante",
           "description": "Seus órgãos internos se movem para evitar estacas.",
           "system": "Passivo. Mais difícil de estacar o usuário."
         },
         "oneWithTheEarth": {
           "name": "Um com a Terra",
           "description": "Experimenta estímulos da área próxima enquanto fundido.",
-          "system": "Como Fusão com a Terra, mais estímulos sensoriais. Custo: Dois Testes de Sangue."
+          "system": "Como Fusão com a Terra, mais estímulos sensoriais. Custo: Duas Checagens de Sangue."
         }
       }
     },
@@ -4116,7 +4116,7 @@ const oPt = {
         "corrosiveVitae": {
           "name": "Vitae Corrosiva",
           "description": "Transforma seu sangue em um ácido poderoso.",
-          "system": "Um Teste de Sangue. Derrete material não-vivo."
+          "system": "Uma Checagem de Sangue. Derrete material não-vivo."
         },
         "aTasteForBlood": {
           "name": "Um Gosto por Sangue",
@@ -4126,57 +4126,57 @@ const oPt = {
         "extinguishVitae": {
           "name": "Extinguir Vitae",
           "description": "Faz o sangue de outro vampiro tornar-se inerte.",
-          "system": "Inteligência + Feitiçaria de Sangue. Custo: Um Teste de Sangue."
+          "system": "Inteligência + Feitiçaria de Sangue. Custo: Uma Checagem de Sangue."
         },
         "bloodObject": {
           "name": "Objeto de Sangue",
           "description": "Solidifica sangue em formas simples.",
-          "system": "Ofícios + Feitiçaria de Sangue. Custo: Um ou mais Testes de Sangue."
+          "system": "Ofícios + Feitiçaria de Sangue. Custo: Uma ou mais Checagens de Sangue."
         },
         "bloodTendrils": {
           "name": "Tentáculos de Sangue",
           "description": "Manipula sangue em tentáculos maleáveis.",
-          "system": "Raciocínio + Feitiçaria de Sangue. Custo: Um Teste de Sangue."
+          "system": "Raciocínio + Feitiçaria de Sangue. Custo: Uma Checagem de Sangue."
         },
         "bloodOfPotency": {
-          "name": "Sangue de Potência",
-          "description": "Aumenta temporariamente sua Potência do Sangue.",
-          "system": "Um Teste de Sangue. Ganha +1 de Potência do Sangue."
+          "name": "Sangue Potente",
+          "description": "Aumenta temporariamente sua Potência de Sangue.",
+          "system": "Uma Checagem de Sangue. Ganha +1 de Potência de Sangue."
         },
         "scorpionsTouch": {
-          "name": "Toque do Escorpião",
+          "name": "Picada de Escorpião",
           "description": "Transforma seu sangue em uma toxina paralisante.",
-          "system": "Um Teste de Sangue. Aplicado via toque/ferida."
+          "system": "Uma Checagem de Sangue. Aplicado via toque/ferida."
         },
         "diluteTheLine": {
           "name": "Diluir a Linhagem",
-          "description": "Diminui a Potência do Sangue de outro vampiro.",
-          "system": "Inteligência + Feitiçaria de Sangue vs Determinação + Vigor. Custo: Um Teste de Sangue."
+          "description": "Diminui a Potência de Sangue de outro vampiro.",
+          "system": "Inteligência + Feitiçaria de Sangue vs Determinação + Vigor. Custo: Uma Checagem de Sangue."
         },
         "healersBane": {
           "name": "Perdição do Curandeiro",
           "description": "Corrompe as propriedades de cura do sangue de outro.",
-          "system": "Determinação + Feitiçaria de Sangue vs Vigor + Ocultismo. Custo: Um Teste de Sangue."
+          "system": "Determinação + Feitiçaria de Sangue vs Vigor + Ocultismo. Custo: Uma Checagem de Sangue."
         },
         "theftOfVitae": {
           "name": "Roubo de Vitae",
           "description": "Extrai sangue diretamente de um alvo para você.",
-          "system": "Raciocínio + Feitiçaria de Sangue. Custo: Um Teste de Sangue."
+          "system": "Raciocínio + Feitiçaria de Sangue. Custo: Uma Checagem de Sangue."
         },
         "crimsonFury": {
           "name": "Fúria Carmesim",
           "description": "Leva quem bebe seu sangue ao Frenesi.",
-          "system": "Manipulação + Feitiçaria de Sangue vs Autocontrole + Vigor. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Feitiçaria de Sangue vs Autocontrole + Vigor. Custo: Uma Checagem de Sangue."
         },
         "curseOfTheSlowBlood": {
           "name": "Maldição do Sangue Lento",
-          "description": "Exige testes de sangue adicionais para dons.",
-          "system": "Determinação + Feitiçaria de Sangue vs Vigor + Autocontrole. Custo: Um Teste de Sangue."
+          "description": "Exige Checagens de Sangue adicionais para dons.",
+          "system": "Determinação + Feitiçaria de Sangue vs Vigor + Autocontrole. Custo: Uma Checagem de Sangue."
         },
         "baalsCaress": {
           "name": "Carícia de Baal",
           "description": "Cobre sua arma com sangue fervente e mortal.",
-          "system": "A arma causa dano Agravado. Custo: Um Teste de Sangue."
+          "system": "A arma causa dano Agravado. Custo: Uma Checagem de Sangue."
         },
         "cauldronOfBlood": {
           "name": "Caldeirão de Sangue",
@@ -4186,7 +4186,7 @@ const oPt = {
         "telekinesis": {
           "name": "Telecinese",
           "description": "Move objetos ou pessoas com a mente.",
-          "system": "Determinação + Feitiçaria de Sangue vs Força + Atletismo. Custo: Um Teste de Sangue."
+          "system": "Determinação + Feitiçaria de Sangue vs Força + Atletismo. Custo: Uma Checagem de Sangue."
         }
       }
     },
@@ -4202,12 +4202,12 @@ const oPt = {
         "oblivionsSight": {
           "name": "Visão do Olvido",
           "description": "Vê na escuridão absoluta e detecta fantasmas.",
-          "system": "Um Teste de Sangue por cena."
+          "system": "Uma Checagem de Sangue por cena."
         },
         "armsOfAhriman": {
           "name": "Braços de Ahriman",
           "description": "Convoca tentáculos de sombra para atacar ou agarrar.",
-          "system": "Destreza + Olvido. Custo: Um Teste de Sangue."
+          "system": "Destreza + Olvido. Custo: Uma Checagem de Sangue."
         },
         "shadowCast": {
           "name": "Projeção Sombria",
@@ -4217,48 +4217,48 @@ const oPt = {
         "abyssalPulse": {
           "name": "Pulso Abissal",
           "description": "Desativa equipamentos eletrônicos em uma área.",
-          "system": "Raciocínio + Olvido vs Dificuldade. Custo: Um Teste de Sangue."
+          "system": "Raciocínio + Olvido vs Dificuldade. Custo: Uma Checagem de Sangue."
         },
         "witnessTheEnd": {
           "name": "Testemunhar o Fim",
           "description": "Projeta uma visão do fim eventual do alvo.",
-          "system": "Manipulação + Olvido vs Autocontrole + Determinação. Custo: Um Teste de Sangue."
+          "system": "Manipulação + Olvido vs Autocontrole + Determinação. Custo: Uma Checagem de Sangue."
         },
         "touchOfOblivion": {
           "name": "Toque do Olvido",
           "description": "Murcha carne e osso com um toque frio.",
-          "system": "Força + Olvido vs Vigor + Fortitude. Um Teste de Sangue."
+          "system": "Força + Olvido vs Vigor + Fortitude. Uma Checagem de Sangue."
         },
         "shadowPuppet": {
           "name": "Fantoche de Sombra",
           "description": "Controla a sombra de outro e mimetiza ações.",
-          "system": "Determinação + Olvido vs Determinação + Autocontrole. Custo: Um Teste de Sangue."
+          "system": "Determinação + Olvido vs Determinação + Autocontrole. Custo: Uma Checagem de Sangue."
         },
         "stygianShroud": {
           "name": "Mortalha Estígia",
           "description": "Cria uma nuvem de privação sensorial absoluta.",
-          "system": "Determinação + Olvido. Custo: Um Teste de Sangue."
+          "system": "Determinação + Olvido. Custo: Uma Checagem de Sangue."
         },
         "tenebrousAvatar": {
           "name": "Avatar Tenebroso",
           "description": "Transforma-se em uma sombra viva.",
-          "system": "Vigor + Olvido. Custo: Dois Testes de Sangue."
+          "system": "Vigor + Olvido. Custo: Duas Checagens de Sangue."
         }
       }
     },
     "thinbloodalchemy": {
-      "name": "Alquimia de Sangue-Fraco",
-      "description": "A química improvisada dos sangue-fraco.",
+      "name": "Alquimia Sangue-Ralo",
+      "description": "A química improvisada dos sangue-ralo.",
       "powers": {
         "farReach": {
           "name": "Longo Alcance",
           "description": "Telecinese simples via vapores alquímicos.",
-          "system": "Inteligência + Alquimia. Um Teste de Sangue."
+          "system": "Inteligência + Alquimia. Uma Checagem de Sangue."
         },
         "haze": {
           "name": "Neblina",
           "description": "Cria campo de névoa para obscurecer silhueta.",
-          "system": "Penalidade para ataques à distância. Custo: Um Teste de Sangue."
+          "system": "Penalidade para ataques à distância. Custo: Uma Checagem de Sangue."
         },
         "profaneHierosGamos": {
           "name": "Hieros Gamos Profano",
@@ -4268,7 +4268,7 @@ const oPt = {
         "envelop": {
           "name": "Envolver",
           "description": "Névoa que se agarra à vítima e a cega.",
-          "system": "Raciocínio + Alquimia vs Vigor + Sobrevivência. Custo: Um Teste de Sangue."
+          "system": "Raciocínio + Alquimia vs Vigor + Sobrevivência. Custo: Uma Checagem de Sangue."
         },
         "defractionate": {
           "name": "Defracionar",
@@ -4278,12 +4278,12 @@ const oPt = {
         "airborneMomentum": {
           "name": "Momento Aéreo",
           "description": "Poção que permite voo limitado ou flutuação.",
-          "system": "Força + Alquimia vs Destreza + Atletismo. Custo: Um Teste de Sangue."
+          "system": "Força + Alquimia vs Destreza + Atletismo. Custo: Uma Checagem de Sangue."
         },
         "awakenTheSleeper": {
           "name": "Despertar o Adormecido",
           "description": "Elixir que pode despertar um vampiro do Torpor.",
-          "system": "Sucessos determinam limite de Potência do Sangue. Custo: Processo de cozimento."
+          "system": "Sucessos determinam limite de Potência de Sangue. Custo: Processo de cozimento."
         }
       }
     },
@@ -4754,7 +4754,7 @@ const oPt = {
     "lightsleeper": { "name": "Sono Leve", "description": "Você acorda instantaneamente e alerta ao menor distúrbio durante seu sono diurno." },
     "sharpsenses": { "name": "Sentidos Aguçados", "description": "Um dos seus sentidos é sobrenaturalmente aguçado, permitindo notar o que os outros deixam passar." },
     "slippery": { "name": "Escorregadio", "description": "Você tem talento para escapar de situações difíceis e evitar ser capturado." },
-    "skillaptitude": { "name": "Aptidão em Perícia", "description": "Você tem talento natural para uma perícia específica, superando o que seu treino sugeriria." },
+    "skillaptitude": { "name": "Aptidão em Habilidade", "description": "Você tem talento natural para uma habilidade específica, superando o que seu treino sugeriria." },
     "tough": { "name": "Resistente", "description": "Seu corpo aguenta mais castigo do que a maioria antes de começar a falhar." },
     "unstakeable": { "name": "Inestacável", "description": "Sua fisiologia única te torna resistente à paralisia causada por uma estaca no coração." },
     "claninfiltrator": { "name": "Infiltrado de Clã", "description": "Você se infiltra de forma convincente em um clã rival ou seita hostil." },

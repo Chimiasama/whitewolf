@@ -17,17 +17,17 @@ export function ThinBloodCreation({
   return (
     <section className="space-y-6">
       <p className="text-sm text-gray-300">
-        Escolha 1–3 Méritos e o mesmo número de Defeitos. Essas escolhas não
+        Escolha 1–3 Qualidades e o mesmo número de Defeitos. Essas escolhas não
         gastam os pontos comuns.
       </p>
       <p className="rounded bg-gray-900 p-3">
-        {c.thinMerits?.length || 0} Méritos / {c.thinFlaws?.length || 0}{" "}
+        {c.thinMerits?.length || 0} Qualidades / {c.thinFlaws?.length || 0}{" "}
         Defeitos
       </p>
       {(
         [
-          ["thinMerits", THIN_MERITS, "Méritos de Sangue-Fraco"],
-          ["thinFlaws", THIN_FLAWS, "Defeitos de Sangue-Fraco"],
+          ["thinMerits", THIN_MERITS, "Qualidades de Sangue-Ralo"],
+          ["thinFlaws", THIN_FLAWS, "Defeitos de Sangue-Ralo"],
         ] as const
       ).map(([key, catalog, label]) => (
         <CatalogPicker
@@ -39,7 +39,7 @@ export function ThinBloodCreation({
             id,
             name,
             summary:
-              "Escolha específica de Sangue-Fraco; não custa pontos comuns.",
+              "Escolha específica de Sangue-Ralo; não custa pontos comuns.",
             details: (
               <p>
                 V5, pp. 182–184. Nome em português de trabalho; consulte o

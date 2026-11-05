@@ -366,7 +366,7 @@ test("V5: clã ×5, fora do clã ×7, Caitiff ×6, poder incluído e requisitos 
   expect(r.parsed).toBe(1);
   expect(r.invalid).toBe(true);
 });
-test("V5: fórmulas, rituais, Vantagens, especialidades, Humanidade e teto de Potência por geração", async ({
+test("V5: fórmulas, rituais, Vantagens, especializações, Humanidade e teto de Potência por geração", async ({
   page,
 }) => {
   const r = await page.evaluate(async () => {

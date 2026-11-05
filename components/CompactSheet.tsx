@@ -1,10 +1,12 @@
 import {LegacyLoresheets} from './LegacyLoresheets';
+import {HelpLabel} from './HelpLabel';
+import {HuntingReference} from './HuntingReference';
 import {V5_LORESHEETS} from '../data/v5Loresheets';
 import React from "react";
 import { Character, GameType, Attribute } from "../types";
 import { useI18n } from "../lib/i18n";
 import { W5_GIFTS } from "../data/w5";
-import { fnGetDisciplineDetails } from "../constants";
+import { fnGetDisciplineDetails, fnGetPredatorTypes } from "../constants";
 import { StorySummary } from "./CharacterStory";
 export function CompactSheet({
   character: c,
@@ -20,6 +22,7 @@ export function CompactSheet({
   const { t } = useI18n();
   const wolf = c.gameType === GameType.Werewolf;
   const disciplines = fnGetDisciplineDetails(t);
+  const predator = !wolf && c.predatorType ? fnGetPredatorTypes(t).find(p => p.id === c.predatorType) : undefined;
   const health = c.attributes[Attribute.Stamina] + 3,
     willpower =
       c.attributes[Attribute.Composure] + c.attributes[Attribute.Resolve];
@@ -53,6 +56,10 @@ export function CompactSheet({
           </button>
         </div>
       </div>
+      {predator && <section aria-label="Predador e caçada">
+        <h3>Tipo de predador</h3>
+        <HelpLabel title={'Caçada: '+predator.name} content={<HuntingReference predator={predator}/>}>{predator.name}</HelpLabel>
+      </section>}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {tracks.map(([label, key, value, max]) => (
           <section key={key} className="rounded border border-gray-600 p-3">
@@ -99,7 +106,7 @@ export function CompactSheet({
           </dl>
         </section>
         <section>
-          <h3>Perícias com pontos</h3>
+          <h3>Habilidades com pontos</h3>
           <dl>
             {Object.entries(c.skills)
               .filter(([, v]) => v > 0)
@@ -164,7 +171,7 @@ export function CompactSheet({
         </details>
       )}
       <details>
-        <summary>Recursos e especialidades</summary>
+        <summary>Recursos e especializações</summary>
         <ul>
           {[...c.advantages, ...c.flaws].map((v, i) => (
             <li key={i}>

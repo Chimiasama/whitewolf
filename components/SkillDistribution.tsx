@@ -5,17 +5,17 @@ export const SKILL_PACKAGES = [
   {
     id: "jackOfAllTrades",
     name: "Generalista",
-    summary: "Uma Perícia em 3, oito em 2 e dez em 1.",
+    summary: "Uma Habilidade em 3, oito em 2 e dez em 1.",
   },
   {
     id: "balanced",
     name: "Equilibrado",
-    summary: "Três Perícias em 3, cinco em 2 e sete em 1.",
+    summary: "Três Habilidades em 3, cinco em 2 e sete em 1.",
   },
   {
     id: "specialist",
     name: "Especialista",
-    summary: "Uma Perícia em 4, três em 3, três em 2 e três em 1.",
+    summary: "Uma Habilidade em 4, três em 3, três em 2 e três em 1.",
   },
 ] as const;
 export function skillsFitPath(c: Character, path: keyof typeof oSkillPaths) {
@@ -40,13 +40,13 @@ export function SkillDistribution({
 }) {
   return (
     <section className="space-y-5">
-      <h2 className="text-xl">Como você quer distribuir suas Perícias?</h2>
+      <h2 className="text-xl">Como você quer distribuir suas Habilidades?</h2>
       <p className="text-sm text-gray-300">
         Escolha um pacote antes de distribuir os valores. Os três pacotes são
         válidos para Vampiro e Lobisomem.
       </p>
       <fieldset className="grid gap-3 sm:grid-cols-3">
-        <legend className="sr-only">Pacote de Perícias</legend>
+        <legend className="sr-only">Pacote de Habilidades</legend>
         {SKILL_PACKAGES.map((p) => (
           <label
             key={p.id}
@@ -60,7 +60,7 @@ export function SkillDistribution({
                 if (!skillsFitPath(c, p.id)) {
                   if (
                     !window.confirm(
-                      "A distribuição atual não cabe neste pacote. Limpar os pontos de Perícias para redistribuir? As especialidades serão preservadas para revisão.",
+                      "A distribuição atual não cabe neste pacote. Limpar os pontos de Habilidades para redistribuir? As especializações serão preservadas para revisão.",
                     )
                   )
                     return;

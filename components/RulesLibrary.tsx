@@ -15,7 +15,7 @@ import {RitualReference} from './RitualReference';
 export function RulesLibrary({character:c}:{character:Character}){
  const {t}=useI18n();const [open,setOpen]=useState(false),[category,setCategory]=useState('attributes'),[query,setQuery]=useState('');
  const wolf=c.gameType===GameType.Werewolf;
- const categories=[['attributes','Atributos'],['skills','Perícias'],...(wolf?[['gifts','Dons'],['rites','Ritos']]:[['disciplines','Disciplinas e fórmulas'],['rituals','Rituais de Sangue'],['ceremonies','Cerimônias'],['predators','Caçada e predadores'],['banes','Maldições de clã']]),['benefits','Méritos e Defeitos']];
+ const categories=[['attributes','Atributos'],['skills','Habilidades'],...(wolf?[['gifts','Dons'],['rites','Ritos']]:[['disciplines','Disciplinas e fórmulas'],['rituals','Rituais de Sangue'],['ceremonies','Cerimônias'],['predators','Caçada e predadores'],['banes','Maldições de clã']]),['benefits','Méritos e Defeitos']];
  let entries:{id:string;name:string;search?:string;content:React.ReactNode}[]=[];
  if(open){
  if(category==='attributes'||category==='skills')entries=Object.values(category==='attributes'?Attribute:Skill).map(id=>({id,name:t(category+'.list.'+id),content:<p>{TRAIT_HELP[id]}</p>}));

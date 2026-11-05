@@ -87,7 +87,7 @@ test('pacotes de predador conferidos e orçamento adicional de Loresheets',async
  expect(r.osiris).toEqual({humanity:0,adv:3,flaws:2});expect(r.farmer).toBe(1);expect(r.bagger).toContain('iron_gullet_bagger');expect(r.budgetIssues).toEqual([]);expect(r.community).toContain("Player's Guide 02");
 });
 
- test('Sangue-Fraco: equilíbrio, incompatibilidades e requisito Tremere',async({page})=>{
+ test('Sangue-Ralo: equilíbrio, incompatibilidades e requisito Tremere',async({page})=>{
  const result=await page.evaluate(async()=>{
  const {thinBloodIssues}=await import('/data/thinBlood.ts');
  const base={thinMerits:['lifelike'],thinFlaws:['dead'],generation:14,bloodPotency:0,predatorType:null};

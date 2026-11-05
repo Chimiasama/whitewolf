@@ -85,7 +85,7 @@ export function completePredators(
   const additions = [
     entry(
       "bloodleech",
-      "Sanguessuga de Vampiros",
+      "Sanguessuga",
       "Blood Leech",
       "Alimenta-se de outros vampiros; aumenta a Potência de Sangue em 1.",
       core,
@@ -96,12 +96,12 @@ export function completePredators(
     ),
     entry(
       "cleaver",
-      "Domesticado",
+      "Trinchador",
       "Cleaver",
       "Alimenta-se de familiares ou amigos mantendo sua condição em segredo.",
       core,
       [a("cleaver_herd", "Rebanho", 2)],
-      [f("cleaver_secret", "Segredo Sombrio: Domesticado", 1)],
+      [f("cleaver_secret", "Segredo Sombrio: Trinchador", 1)],
       [
         spec(Skill.Persuasion, "Manipulação psicológica"),
         spec(Skill.Subterfuge, "Encobrimentos"),
@@ -109,7 +109,7 @@ export function completePredators(
     ),
     entry(
       "scenequeen",
-      "Rainha da Cena",
+      "Scene Queen",
       "Scene Queen",
       "Caça dentro de uma subcultura da qual participa.",
       core,

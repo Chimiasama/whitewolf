@@ -143,12 +143,12 @@ test("todos os pacotes suportam aplicação, remoção e importação sem perder
   });
   expect(result).toEqual([]);
 });
-test("Perícias começam pela escolha explícita do pacote e preservam a decisão no rascunho", async ({
+test("Habilidades começam pela escolha explícita do pacote e preservam a decisão no rascunho", async ({
   page,
 }) => {
   await start(page);
   await page.getByRole("button", { name: "Capacidades", exact: false }).click();
-  await page.getByRole("tab", { name: "Perícias", exact: true }).click();
+  await page.getByRole("tab", { name: "Habilidades", exact: true }).click();
   await expect(
     page.getByText(
       "Selecione Generalista, Equilibrado ou Especialista para abrir a distribuição. Seus pontos existentes serão preservados se forem compatíveis.",
@@ -170,7 +170,7 @@ test("troca de pacote incompatível pede confirmação, sem apagar pontos ao can
 }) => {
   await start(page);
   await page.getByRole("button", { name: "Capacidades", exact: false }).click();
-  await page.getByRole("tab", { name: "Perícias", exact: true }).click();
+  await page.getByRole("tab", { name: "Habilidades", exact: true }).click();
   await page.getByLabel("Especialista", { exact: false }).check();
   await page
     .locator('[data-help-label="Atletismo"] button')

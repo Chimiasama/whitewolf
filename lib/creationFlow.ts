@@ -15,10 +15,10 @@ export function issueDestination(
 ): { step: number; panel?: string } {
   if (/nome|conceito|Ambição|Desejo/i.test(issue)) return { step: 1 };
   if (/Selecione.*(clã|tribo|augúrio)/i.test(issue)) return { step: 2 };
-  if (/Atributos|Perícias|especialidade/i.test(issue))
+  if (/Atributos|Habilidades|especialização/i.test(issue))
     return {
       step: 3,
-      panel: /especialidade/i.test(issue)
+      panel: /especialização/i.test(issue)
         ? "specialties"
         : /Atributos/.test(issue)
           ? "attributes"
@@ -30,7 +30,7 @@ export function issueDestination(
   if (/Vantagens|Defeitos.*(pontos|adicionais)/i.test(issue))
     return { step: 5, panel: "advantages" };
   if (
-    /Renome|Dom |Rito|poder|Disciplina|Sangue-Fraco|Maldição|Afinidade|Alquimista|predador|Fazendeiro|Ventrue|Potência/i.test(
+    /Renome|Dom |Rito|poder|Disciplina|Sangue-Ralo|Maldição|Afinidade|Alquimista|predador|Fazendeiro|Ventrue|Potência/i.test(
       issue,
     )
   )
@@ -39,7 +39,7 @@ export function issueDestination(
       panel:
         c.gameType === GameType.Werewolf
           ? "wolf"
-          : /Sangue-Fraco|Maldição|Afinidade|Alquimista/.test(issue)
+          : /Sangue-Ralo|Maldição|Afinidade|Alquimista/.test(issue)
             ? "thinblood"
             : /predador|Fazendeiro|Ventrue/.test(issue)
               ? "predator"

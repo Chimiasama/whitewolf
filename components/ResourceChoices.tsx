@@ -33,14 +33,14 @@ export function SpecialtyEditor({
     [name, setName] = useState("");
   return (
     <section className="space-y-4">
-      <h3>Especialidades</h3>
+      <h3>Especializações</h3>
       <p className="text-sm text-gray-300">
-        Escolha a especialidade gratuita e as exigidas pelas suas Perícias.
+        Escolha a especialização gratuita e as exigidas pelas suas Habilidades.
         Benefícios de predador são adicionais.
       </p>
       <div className="grid gap-3 sm:grid-cols-2">
         <label>
-          Perícia
+          Habilidade
           <select
             value={skill}
             onChange={(e) => setSkill(e.target.value)}
@@ -57,7 +57,7 @@ export function SpecialtyEditor({
           </select>
         </label>
         <label>
-          Especialidade
+          Especialização
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -78,7 +78,7 @@ export function SpecialtyEditor({
           setName("");
         }}
       >
-        Adicionar especialidade
+        Adicionar especialização
       </button>
       <ul>
         {c.specialties.map((s, i) => (
@@ -87,7 +87,7 @@ export function SpecialtyEditor({
             <button
               type="button"
               className="underline"
-              aria-label={`Remover especialidade ${s.name}`}
+              aria-label={`Remover especialização ${s.name}`}
               onClick={() =>
                 onChange(
                   "specialties",
@@ -152,7 +152,7 @@ export function ResourceChoices({
       {panel === "loresheets" &&
         c.loresheets.some((l) => l.id === "v5-helena" && l.level === 2) && (
           <label className="block">
-            Perícia de Talento Verdadeiro
+            Habilidade de Talento Verdadeiro
             <select
               className="mt-2 block rounded p-3"
               value={c.loreChoices?.helenaTalent || ""}

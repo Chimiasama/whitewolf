@@ -59,8 +59,8 @@ export function ExperiencePurchases({
     );
   const categories: { id: PurchaseKind; label: string }[] = [
     { id: "attribute", label: "Atributo" },
-    { id: "skill", label: "Perícia" },
-    { id: "specialty", label: "Especialidade" },
+    { id: "skill", label: "Habilidade" },
+    { id: "specialty", label: "Especialização" },
     { id: "advantage", label: "Vantagem" },
     ...((wolf
       ? [
@@ -220,7 +220,7 @@ export function ExperiencePurchases({
       {c.loresheets.some((l) => l.id === "v5-helena" && l.level === 2) &&
         !c.loreChoices?.helenaTalent && (
           <label className="block">
-            Perícia de Talento Verdadeiro
+            Habilidade de Talento Verdadeiro
             <select
               className="mt-2 block w-full rounded border border-gray-600 p-3"
               value=""
@@ -235,7 +235,7 @@ export function ExperiencePurchases({
                   }));
               }}
             >
-              <option value="">Escolha a Perícia do benefício</option>
+              <option value="">Escolha a Habilidade do benefício</option>
               {["Craft", "Etiquette", "Performance"].map((id) => (
                 <option key={id} value={id}>
                   {t("skills.list." + id)}
@@ -335,7 +335,7 @@ export function ExperiencePurchases({
         )}
         {kind === "loresheet" && selected === "v5-helena:2" && (
           <label className="block">
-            Perícia de Talento Verdadeiro
+            Habilidade de Talento Verdadeiro
             <select
               className="mt-2 block w-full rounded border border-gray-600 p-3"
               value={choice}
@@ -352,7 +352,7 @@ export function ExperiencePurchases({
         )}
         {kind === "specialty" && (
           <label className="block">
-            Nova especialidade
+            Nova especialização
             <input
               className="mt-2 block w-full rounded border border-gray-600 p-3"
               value={choice}

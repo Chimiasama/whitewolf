@@ -156,14 +156,14 @@ const StorageModal: React.FC<StorageModalProps> = ({ mode: sMode, onClose: fnOnC
         <InfoModal title={sMode === 'save' ? fnT('storage.saveMode') : fnT('storage.loadMode')} onClose={fnOnClose}>
             <div className="space-y-6">
                 {sMode === 'save' && (
-                    <div className="flex gap-2 items-end">
+                    <div className="storage-save-form grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] items-end">
                         <Input 
                             label={fnT('storage.enterName')} 
                             value={sNameInput} 
                             onChange={e => fnSetNameInput(e.target.value)}
                             placeholder={fnT('storage.namePlaceholder')}
                         />
-                        <Button onClick={fnHandleSave} disabled={!sNameInput.trim()} className="mb-[2px] h-[42px]">
+                        <Button onClick={fnHandleSave} disabled={!sNameInput.trim()} className="min-h-11">
                             {fnT('buttons.save')}
                         </Button>
                     </div>
@@ -195,7 +195,7 @@ const StorageModal: React.FC<StorageModalProps> = ({ mode: sMode, onClose: fnOnC
                                                 fnSetNameInput(sName);
                                             }
                                         }}
-                                        className="flex-grow text-left font-bold p-3 focus:outline-none focus-visible:bg-gray-750 focus-visible:text-red-400 h-full w-full"
+                                        className="flex-1 min-w-0 break-words text-left font-bold p-3 focus:outline-none focus-visible:bg-gray-750 focus-visible:text-red-400"
                                         aria-label={sMode === 'load' ? `${fnT('buttons.load')}: ${sName}` : `${fnT('buttons.activate')}: ${sName}`}
                                     >
                                         {sName}
@@ -203,7 +203,7 @@ const StorageModal: React.FC<StorageModalProps> = ({ mode: sMode, onClose: fnOnC
                                     <button 
                                         type="button"
                                         onClick={(e) => fnHandleDelete(sName, e)}
-                                        className="p-3 mr-1 hover:bg-red-900 rounded text-gray-500 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                                        className="shrink-0 p-3 mr-1 hover:bg-red-900 rounded text-gray-500 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                                         title={fnT('buttons.delete')}
                                         aria-label={`${fnT('buttons.delete')}: ${sName}`}
                                     >
@@ -485,6 +485,21 @@ const App: React.FC = () => {
 
     const [view, setView] = useState<'home' | 'creator'>('home');
     const [nStep, fnSetStep] = useState(1);
+    const workspaceRef = useRef<HTMLDivElement>(null);
+    const headerRef = useRef<HTMLElement>(null);
+    const footerRef = useRef<HTMLElement>(null);
+    useEffect(() => {
+        if (view !== 'creator') return;
+        const updateInsets = () => {
+            workspaceRef.current?.style.setProperty('--app-header-height', `${headerRef.current?.offsetHeight || 0}px`);
+            workspaceRef.current?.style.setProperty('--app-footer-height', `${footerRef.current?.offsetHeight || 0}px`);
+        };
+        const observer = new ResizeObserver(updateInsets);
+        if (headerRef.current) observer.observe(headerRef.current);
+        if (footerRef.current) observer.observe(footerRef.current);
+        updateInsets();
+        return () => observer.disconnect();
+    }, [view]);
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -802,7 +817,7 @@ const App: React.FC = () => {
                                 <h2 className="text-2xl font-cinzel text-red-500">{fnT('clan.title')}</h2>
                             </div>
 
-                            <div className="bg-black/40 p-4 rounded-xl border border-red-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
+                            <div className="app-sticky-tools bg-black/40 p-4 rounded-xl border border-red-900/30 sticky z-30 backdrop-blur-md shadow-2xl">
                                 <div className="flex flex-wrap justify-center gap-2">
                                     {aClanKeys.map(sClan => (
                                         <button
@@ -868,7 +883,7 @@ const App: React.FC = () => {
                                 <h2 className="text-2xl font-cinzel text-emerald-500">{fnT('steps.tribe')}</h2>
                             </div>
 
-                            <div className="bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
+                            <div className="app-sticky-tools bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky z-30 backdrop-blur-md shadow-2xl">
                                 <div className="flex flex-wrap justify-center gap-2">
                                     {aTribeKeys.map(sTribe => (
                                         <button
@@ -934,7 +949,7 @@ const App: React.FC = () => {
                                 <h2 className="text-2xl font-cinzel text-emerald-500">{fnT('steps.auspice')}</h2>
                             </div>
 
-                            <div className="bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
+                            <div className="app-sticky-tools bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky z-30 backdrop-blur-md shadow-2xl">
                                 <div className="flex flex-wrap justify-center gap-2">
                                     {aAuspiceKeys.map(sAuspice => (
                                         <button
@@ -1003,7 +1018,7 @@ const App: React.FC = () => {
             case 'nature':
                 return bIsWerewolf?<CreationTabs items={[{id:'tribe',label:'Tribo'},{id:'auspice',label:'Augúrio'}]} active={panels.nature} onChange={id=>setPanel('nature',id)}>{id=>renderStepContent(id)}</CreationTabs>:renderStepContent('clan');
             case 'capacities':
-                return <CreationTabs items={[{id:'attributes',label:'Atributos'},{id:'skills',label:'Perícias'},{id:'specialties',label:'Especialidades'}]} active={panels.capacities} onChange={id=>setPanel('capacities',id)}>{id=>id==='specialties'?<SpecialtyEditor character={oCharacter} onChange={fnUpdateCharacter}/>:renderStepContent(id)}</CreationTabs>;
+                return <CreationTabs items={[{id:'attributes',label:'Atributos'},{id:'skills',label:'Habilidades'},{id:'specialties',label:'Especializações'}]} active={panels.capacities} onChange={id=>setPanel('capacities',id)}>{id=>id==='specialties'?<SpecialtyEditor character={oCharacter} onChange={fnUpdateCharacter}/>:renderStepContent(id)}</CreationTabs>;
             case 'powers':
                 return bIsWerewolf?renderStepContent('wolf'):<CreationTabs items={oCharacter.clan===Clan.ThinBlood?[{id:'thinblood',label:'Méritos e Defeitos'},{id:'disciplines',label:'Disciplinas e fórmulas'}]:[{id:'predator',label:'Alimentação'},{id:'disciplines',label:'Disciplinas e poderes'},...(((oCharacter.disciplines.bloodsorcery||0)>0||(oCharacter.disciplines.oblivion||0)>0)?[{id:'bloodrituals',label:'Rituais e cerimônias'}]:[])]} active={panels.powers} onChange={id=>setPanel('powers',id)}>{id=>renderStepContent(id)}</CreationTabs>;
             case 'bloodrituals':
@@ -1217,7 +1232,7 @@ const App: React.FC = () => {
                                 })()}
                             </div>
 
-                            <div className="mt-6"><CatalogPicker label="Disciplinas disponíveis" selected={[]} onToggle={id=>fnUpdateCharacter('disciplines',{...oCharacter.disciplines,[id]:0})} options={VAMPIRE_DISCIPLINES.filter(id=>!(id in oCharacter.disciplines)).map(id=>({id,name:oDisciplineDetails[id]?.name||id,summary:oDisciplineDetails[id]?.description,details:oDisciplineDetails[id]?<DisciplineReference discipline={oDisciplineDetails[id]}/>:undefined,unavailable:id==='thinbloodalchemy'?(oCharacter.clan!==Clan.ThinBlood||!oCharacter.thinMerits?.includes('alchemist')?'Exige Alquimista de Sangue-Fraco.':undefined):oCharacter.clan===Clan.ThinBlood&&!oCharacter.thinMerits?.includes('affinity')?'Exige Afinidade com Disciplina.':undefined}))}/></div>
+                            <div className="mt-6"><CatalogPicker label="Disciplinas disponíveis" selected={[]} onToggle={id=>fnUpdateCharacter('disciplines',{...oCharacter.disciplines,[id]:0})} options={VAMPIRE_DISCIPLINES.filter(id=>!(id in oCharacter.disciplines)).map(id=>({id,name:oDisciplineDetails[id]?.name||id,summary:oDisciplineDetails[id]?.description,details:oDisciplineDetails[id]?<DisciplineReference discipline={oDisciplineDetails[id]}/>:undefined,unavailable:id==='thinbloodalchemy'?(oCharacter.clan!==Clan.ThinBlood||!oCharacter.thinMerits?.includes('alchemist')?'Exige Alquimista Sangue-Ralo.':undefined):oCharacter.clan===Clan.ThinBlood&&!oCharacter.thinMerits?.includes('affinity')?'Exige Afinidade com Disciplina.':undefined}))}/></div>
                         </GothicFrame>
 
                         </>):null}
@@ -1225,7 +1240,7 @@ const App: React.FC = () => {
                         <p className="text-sm text-gray-300">Como você se alimenta? O predador concede benefícios adicionais e pode alterar suas Disciplinas.</p>
                         <CatalogPicker label="Tipo de predador" selected={oCharacter.predatorType?[oCharacter.predatorType]:[]} onToggle={id=>fnHandlePredatorTypeChange(id===oCharacter.predatorType?'':id)} options={aPredatorTypes.map(pt=>({id:pt.id,name:pt.name.replace('[Comunitário / opcional] ',''),summary:pt.description.split('. ')[0],unavailable:oCharacter.clan===Clan.Ventrue&&['farmer','bagger'].includes(pt.id)?'Incompatível com Ventrue.':pt.id==='farmer'&&oCharacter.bloodPotency>=3?'Exige Potência de Sangue menor que 3.':undefined,details:<><p>{pt.description}</p><HuntingReference predator={pt}/><p>{pt.source}</p><h4 className="mt-3">Concedido pelo predador</h4>{pt.disciplineAdd&&<p>{oDisciplineDetails[pt.disciplineAdd.discipline]?.name} +{pt.disciplineAdd.dots}</p>}<p>Humanidade: {pt.humanityModifier>0?'+':''}{pt.humanityModifier}</p>{[...pt.advantages,...pt.flaws].map(a=><p key={a.id}>{a.name} · {a.cost} pontos</p>)}</>}))}/>
                         {characterPredator(oCharacter,aPredatorTypes)&&<PredatorCustomization character={oCharacter} predator={characterPredator(oCharacter,aPredatorTypes)!} onChange={patch=>fnHandlePredatorTypeChange(oCharacter.predatorType,patch)} disciplineName={key=>oDisciplineDetails[key]?.name||key}/>}
-                        {(()=>{const p=characterPredator(oCharacter,aPredatorTypes);const choices=p?.specialtyOptions||[];return choices.length>0&&<CatalogPicker label="Especialidade do predador" selected={choices.filter(o=>oCharacter.specialties.some(s=>s.skill===o.skill&&s.name===o.name)).map(o=>o.skill+':'+o.name)} options={choices.map(o=>({id:o.skill+':'+o.name,name:`${fnT('skills.list.'+o.skill)}: ${o.name}`,summary:'Benefício adicional do predador.'}))} onToggle={id=>{const choice=choices.find(o=>o.skill+':'+o.name===id);const other=oCharacter.specialties.filter(s=>!choices.some(o=>o.name===s.name&&o.skill===s.skill));if(choice)fnUpdateCharacter('specialties',oCharacter.specialties.some(s=>s.skill===choice.skill&&s.name===choice.name)?other:[...other,choice]);}}/>;})()}
+                        {(()=>{const p=characterPredator(oCharacter,aPredatorTypes);const choices=p?.specialtyOptions||[];return choices.length>0&&<CatalogPicker label="Especialização do predador" selected={choices.filter(o=>oCharacter.specialties.some(s=>s.skill===o.skill&&s.name===o.name)).map(o=>o.skill+':'+o.name)} options={choices.map(o=>({id:o.skill+':'+o.name,name:`${fnT('skills.list.'+o.skill)}: ${o.name}`,summary:'Benefício adicional do predador.'}))} onToggle={id=>{const choice=choices.find(o=>o.skill+':'+o.name===id);const other=oCharacter.specialties.filter(s=>!choices.some(o=>o.name===s.name&&o.skill===s.skill));if(choice)fnUpdateCharacter('specialties',oCharacter.specialties.some(s=>s.skill===choice.skill&&s.name===choice.name)?other:[...other,choice]);}}/>;})()}
                         </div>}
                     </div>
                 );
@@ -1266,20 +1281,20 @@ const App: React.FC = () => {
     </div>;
 
     return (
-        <div className="min-h-screen clean-creation w-full overflow-x-hidden text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
-            <header className="bg-black border-b-2 border-red-900 p-3 sm:p-4 sticky top-0 z-50 shadow-sm">
-                <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3 min-w-0">
-                    <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => setView('home')}>
-                         <div className="text-red-600">{oCharacter.gameType===GameType.Werewolf?<MoonGlyph className="w-10 h-10"/>:<RoseIcon className="w-10 h-10"/>}</div>
-                        <div>
+        <div ref={workspaceRef} className="app-workspace min-h-screen clean-creation w-full text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
+            <header ref={headerRef} className="app-header bg-black border-b border-red-900 sticky top-0 z-50">
+                <div className="app-header-inner max-w-7xl mx-auto">
+                    <button type="button" aria-label="Voltar ao início" className="app-brand" onClick={() => setView('home')}>
+                         <span className="app-brand-symbol text-red-600">{oCharacter.gameType===GameType.Werewolf?<MoonGlyph className="w-10 h-10"/>:<RoseIcon className="w-10 h-10"/>}</span>
+                        <div className="min-w-0">
                             <h1 className="text-lg sm:text-2xl font-cinzel font-bold text-red-600 tracking-widest [text-wrap:balance] break-words whitespace-normal leading-tight"><span className="hidden sm:inline">{fnT('app.title')}</span><span className="sm:hidden">Whitewolf</span></h1>
                             <p className="text-xs text-gray-500 hidden md:block break-words whitespace-normal">{fnT('app.subtitle')}</p>
                         </div>
-                    </div>
-                    <div className="flex flex-wrap items-center gap-3 text-sm">
+                    </button>
+                    <div className="app-header-actions text-sm">
                         <RulesLibrary character={oCharacter}/>
                         <button type="button" aria-label="Salvar rascunho" className="border border-gray-600 rounded px-3 py-2" onClick={()=>{fnSetStorageMode('save');fnSetShowStorage(true);}}><span className="hidden sm:inline">Salvar rascunho</span><span className="sm:hidden">Salvar</span></button>
-                        <details className="relative"><summary className="cursor-pointer border border-gray-600 rounded px-3 py-2">Mais ações</summary><div className="absolute right-0 top-full mt-2 z-50 w-56 p-3 rounded border border-gray-600 bg-gray-950 grid gap-3">
+                        <details className="app-actions-menu"><summary className="border border-gray-600 rounded px-3 py-2">Mais ações</summary><div className="app-actions-popover border border-gray-600 bg-gray-950">
                             <ThemeControl/><button type="button" onClick={fnExportJSON}>Exportar JSON</button>
                             <label className="cursor-pointer">Importar JSON<input type="file" accept=".json" className="sr-only" onChange={fnImportJSON}/></label>
                             <button type="button" onClick={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}}>Meus personagens</button>
@@ -1289,7 +1304,7 @@ const App: React.FC = () => {
                     </div>
                 </div>
             </header>
-            <main className="flex-grow p-3 sm:p-4 md:p-8 pb-36 sm:pb-36 md:pb-36 max-w-6xl mx-auto w-full min-w-0 overflow-x-hidden">
+            <main className="app-main flex-grow p-4 md:p-8 max-w-6xl mx-auto w-full min-w-0">
                 <StepIndicator
                     completedSteps={aSteps.map((_,i)=>i+1).filter(step=>step<REVIEW_STEP&&allIssues.every(issue=>issueDestination(issue,oCharacter).step!==step))}
                     currentStep={nStep}
@@ -1309,11 +1324,11 @@ const App: React.FC = () => {
                 <div className="mt-1 min-w-0">{renderStepContent()}</div>
                 {aValidationIssues.length>0&&nStep<REVIEW_STEP&&<details className="mt-6 border border-gray-700 rounded-lg p-4 text-sm"><summary>{aValidationIssues.length} pendências nesta etapa · você pode continuar</summary><ul className="mt-3 space-y-2">{aValidationIssues.map(issue=><li key={issue}>{displayIssue(issue)}</li>)}</ul></details>}
             </main>
-            <footer className="bg-black border-t border-gray-800 p-3 sm:p-6 fixed bottom-0 inset-x-0 z-40">
-                <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
+            <footer ref={footerRef} className="app-footer bg-black border-t border-gray-800 fixed bottom-0 inset-x-0 z-40">
+                <div className="app-footer-inner max-w-6xl mx-auto">
                     <Button onClick={() => fnSetStep(prev => Math.max(1, prev - 1))} disabled={nStep === 1} variant="secondary">{fnT('buttons.back')}</Button>
                     {nStep < aSteps.length ? (
-                        <div className="flex flex-wrap justify-end gap-2 sm:gap-4">
+                        <div className="app-footer-actions">
                             <Button variant="secondary" disabled={!oCharacter.gameType} onClick={() => fnSetStep(aSteps.length)}>Revisar pendências</Button>
                             <Button
                                 onClick={() => fnSetStep(prev => Math.min(aSteps.length, prev + 1))}
