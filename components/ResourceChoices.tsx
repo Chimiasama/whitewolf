@@ -1,3 +1,4 @@
+import {AdvantageReference} from './AdvantageReference';
 import {alternativeBane} from '../data/alternativeBanes';
 import {BenefitChoices} from './BenefitChoices';
 import {AdvancedCreation} from './AdvancedCreation';
@@ -264,44 +265,27 @@ export function ResourceChoices({
                         id: a.id,
                         name: a.name,
                         summary: `${a.levels?.join(", ") || a.cost} pontos`,
-                        details: a.description,
+                        details: <AdvantageReference item={a} game={c.gameType}/>,
                         control: selected.some((s) => s.id === a.id) ? (
                           <label className="block mt-2 text-sm">
                             Pontos
                             <select
                               aria-label={`Pontos de ${a.name}`}
-                              className="ml-2 bg-gray-800 p-2"
+                              className="mt-1 block w-full min-w-0 bg-gray-800 p-2"
                               value={selected.find((s) => s.id === a.id)?.cost}
-                              onChange={(e) =>
-                                onChange(
-                                  field,
-                                  selected.map((s) =>
-                                    s.id === a.id
-                                      ? { ...s, cost: Number(e.target.value) }
-                                      : s,
-                                  ),
-                                )
-                              }
+                              onChange={e=>{const cost=Number(e.target.value);onTransaction(current=>({...current,[field]:current[field].map(item=>item.id===a.id?{...item,cost}:item)}));}}
                             >
-                              {(a.levels || [a.cost]).map((n) => (
-                                <option key={n}>{n}</option>
+                              {[...new Set([...(a.levels||[a.cost]),selected.find(item=>item.id===a.id)?.cost||a.cost])].sort((x,y)=>x-y).map((n) => (
+                                <option key={n} value={n}>{n}{!(a.levels||[a.cost]).includes(n)?' (valor salvo; revisar)':''}</option>
                               ))}
                             </select>
                           </label>
                         ) : undefined,
                       }))}
-                    onToggle={(id) => {
-                      const item = catalogue.find((a) => a.id === id);
-                      if (selected.some((a) => a.id === id))
-                        onChange(
-                          field,
-                          selected.filter((a) => a.id !== id),
-                        );
-                      else if (item)
-                        onChange(field, [
-                          ...selected,
-                          { ...item, cost: item.levels?.[0] || item.cost },
-                        ]);
+                    onRemove={id=>onTransaction(current=>({...current,[field]:current[field].filter(item=>item.id!==id)}))}
+                    onToggle={id=>{
+                      const item=catalogue.find(entry=>entry.id===id);
+                      if(item)onTransaction(current=>current[field].some(entry=>entry.id===id)?current:{...current,[field]:[...current[field],{...item,cost:item.levels?.[0]||item.cost}]});
                     }}
                   />
                   {granted.length > 0 && (

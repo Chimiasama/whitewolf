@@ -1,3 +1,4 @@
+import {advantageReferenceText} from '../data/advantageReferences';
 import {THIN_MERITS,THIN_FLAWS} from '../data/thinBlood';
 import {alternativeBane,hasAlternativeBane} from '../data/alternativeBanes';
 import {jsPDF} from 'jspdf';
@@ -76,7 +77,7 @@ export async function buildCharacterPdf(c:Character,t:Translate){
  }
  for(const [title,items] of [['Ritos / rituais',c.rituals],['Talismãs',c.talismans]] as const)if(items.length){heading(title);for(const item of items){heading(item.name);line(item.description);sources(item.name);}}
  if(c.predatorType){const predator=fnGetPredatorTypes(t).find(p=>p.id===c.predatorType);if(predator){heading(`Tipo de predador - ${predator.name}`);line(predator.description);sources(predator.name,`predator:${predator.id}`);}}
- for(const title of ['Vantagens','Defeitos'] as const){const items=title==='Vantagens'?c.advantages:c.flaws;if(items.length){heading(`${title} - descrição`);for(const item of items){heading(`${item.name} - ${item.cost} pontos`);line(item.description);sources(item.name);}}}
+ for(const title of ['Vantagens','Defeitos'] as const){const items=title==='Vantagens'?c.advantages:c.flaws;if(items.length){heading(`${title} - descrição`);for(const item of items){heading(`${item.name} - ${item.cost} pontos`);line(advantageReferenceText(item,c.gameType));sources(item.name);}}}
  const loresheets=fnGetLoresheets(t);
  for(const selected of c.loresheets){const sheet=loresheets.find(s=>s.id===selected.id);const level=sheet?.levels.find(l=>l.level===selected.level);heading(`${sheet?.name||selected.id} - nível ${selected.level}`);if(level){line(level.name);line(level.description);field('Sistema',level.system);}if(sheet)sources(sheet.name);}
  if(c.npcTemplate){heading('Capacidades do NPC');field('Paradas excepcionais',c.npcTemplate.exceptional);field('Poderes e capacidades',c.npcTemplate.abilities);}

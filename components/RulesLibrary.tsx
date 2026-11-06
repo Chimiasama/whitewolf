@@ -1,3 +1,4 @@
+import {AdvantageReference} from './AdvantageReference';
 import {cleanBookText} from '../lib/bookReferences';
 import React,{useState} from 'react';
 import {Character,GameType,Attribute,Skill} from '../types';
@@ -27,7 +28,7 @@ export function RulesLibrary({character:c}:{character:Character}){
  else if(category==='gifts'){const ids=new Set<string>();entries=W5_GIFTS.filter(g=>{const key=w5GiftIdentity(g.id);if(ids.has(key))return false;ids.add(key);return true;}).map(g=>({id:g.id,name:g.name,search:g.english,content:<><p>{g.summary}</p><p>{cleanBookText(g.reference)}</p><h3 className="font-bold">Acessos</h3><ul>{W5_GIFTS.filter(x=>w5GiftIdentity(x.id)===w5GiftIdentity(g.id)).map(x=><li key={x.id}>{x.origin==='native'?'Nativo':x.owner} · Renome total {x.totalRenown}</li>)}</ul></>}));}
  else if(category==='rites')entries=W5_RITES.map(r=>({id:r.id,name:r.name,content:<p>{cleanBookText(r.description)}</p>}));
  else if(category==='banes')entries=ALTERNATIVE_BANES.map(b=>({id:b.clan,name:b.name+' · '+(fnGetClanName(b.clan)),search:b.english,content:<><p>{b.summary}</p><p>{cleanBookText(b.reference)}</p><p>A variante substitui a padrão quando adotada pela crônica. O Defeito Twice-Cursed (2 pontos, Players Guide p. 121) conserva a padrão e acrescenta a variante do mesmo clã.</p></>}));
- else entries=fnGetAdvantagesAndFlaws(t,c.gameType).map(a=>({id:a.id,name:a.name,content:<><p>{a.description}</p><p>{a.type==='flaw'?'Defeito':'Vantagem'} · {(a.levels||[a.cost]).join(' / ')} pontos.</p></>}));
+ else entries=fnGetAdvantagesAndFlaws(t,c.gameType).map(a=>({id:a.id,name:a.name,content:<><AdvantageReference item={a} game={c.gameType}/><p>{a.type==='flaw'?'Defeito':'Vantagem'} · {(a.levels||[a.cost]).join(' / ')} pontos.</p></>}));
  }
  function fnGetClanName(id:string){const label=t('clans.'+id+'.name');return label.startsWith('clans.')?id:label;}
  const normalize=(s:string)=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();

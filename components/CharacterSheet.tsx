@@ -1,3 +1,4 @@
+import {AdvantageReference} from './AdvantageReference';
 import {PdfButton} from './PdfButton';
 import {useQuickRoll} from '../lib/rollContext';
 import {trackRemaining} from '../lib/damage';
@@ -214,7 +215,7 @@ const AdvantageFlawList: React.FC<{ title: string, items: AdvantageFlaw[], color
                                 <div className="flex justify-between items-center">
                                     <p className="font-bold text-gray-200">{sName}</p>
                                     <div className="flex items-center">
-                                         {[...Array(5)].map((_, nI) => (
+                                         {[...Array(Math.max(5,oItem.cost))].map((_, nI) => (
                                             isWerewolf ? (
                                                 <ClawIcon key={nI} className={`w-2.5 h-2.5 ml-1 ${oItem.cost > nI ? 'text-green-500' : 'text-gray-800'}`} filled={oItem.cost > nI} />
                                             ) : (
@@ -226,7 +227,7 @@ const AdvantageFlawList: React.FC<{ title: string, items: AdvantageFlaw[], color
                                          ))}
                                     </div>
                                 </div>
-                                <p className="text-sm text-gray-400">{sDesc}</p>
+                                <p className="text-sm text-gray-400">{sDesc}</p><details className="mt-2 text-sm"><summary>Ver descrição e regras</summary><div className="mt-3"><AdvantageReference withSources item={{...oItem,name:sName,description:sDesc}} game={isWerewolf?GameType.Werewolf:GameType.Vampire}/></div></details>
                             </li>
                         );
                     })}

@@ -1,3 +1,4 @@
+import {InfoModal} from './InfoModal';
 import {catalogReferenceKey} from '../lib/bookReferences';
 import {HelpLabel} from './HelpLabel';
 import React, { useState, useId } from "react";
@@ -15,6 +16,7 @@ export function CatalogPicker({
   options,
   selected,
   onToggle,
+  onRemove,
   multiple = false,
 }: {
   key?: string;
@@ -22,6 +24,7 @@ export function CatalogPicker({
   options: CatalogOption[];
   selected: string[];
   onToggle: (id: string) => void;
+  onRemove?: (id:string)=>void;
   multiple?: boolean;
 }) {
   const [open, setOpen] = useState(false),
@@ -29,6 +32,8 @@ export function CatalogPicker({
     [locked, setLocked] = useState(false),
     [community, setCommunity] = useState(false);
   const id = useId();
+  const [detailId,setDetailId]=useState<string|null>(null);
+  const detail=options.find(option=>option.id===detailId);
   const normalize = (s: string) =>
     s
       .normalize("NFD")
@@ -60,7 +65,7 @@ export function CatalogPicker({
       </div>
       {selected.length > 0 ? (
         <ul className="space-y-2">
-          {selected.map((key) => {
+          {[...new Set(selected)].map((key) => {
             const item = options.find((o) => o.id === key);
             return (
               <li key={key} className="rounded-lg bg-gray-900 p-3">
@@ -70,12 +75,13 @@ export function CatalogPicker({
                     type="button"
                     className="text-sm text-gray-300 underline"
                     aria-label={`Remover ${item?.name || key}`}
-                    onClick={() => onToggle(key)}
+                    onClick={() => (onRemove||onToggle)(key)}
                   >
                     Remover
                   </button>
                 </div>
                 {item?.control}
+                {(item?.details||item?.summary)&&<button type="button" className="mt-2 min-h-11 rounded border border-gray-600 px-3 py-2 text-sm" aria-label={`Ver descrição: ${item?.name||key}`} onClick={()=>setDetailId(key)}>Ver descrição</button>}
               </li>
             );
           })}
@@ -136,15 +142,18 @@ export function CatalogPicker({
                   <button
                     type="button"
                     className="shrink-0 rounded border border-gray-500 px-3 py-2 text-sm disabled:opacity-50"
-                    disabled={!!o.unavailable && !selected.includes(o.id)}
+                    disabled={multiple&&selected.includes(o.id)||!!o.unavailable && !selected.includes(o.id)}
                     onClick={() => {
+                      if(multiple&&selected.includes(o.id))return;
                       onToggle(o.id);
                       if (!multiple) setOpen(false);
                     }}
                   >
-                    {selected.includes(o.id) ? "Remover" : "Escolher"}
+                    {selected.includes(o.id) ? multiple?"Selecionado":"Remover" : "Escolher"}
                   </button>
                 </div>
+                {multiple&&selected.includes(o.id)&&<p className="mt-2 text-sm text-gray-400">Já selecionado. Ajuste os pontos ou use Remover no cartão acima.</p>}
+                {(o.details||o.summary)&&<button type="button" className="mt-2 min-h-11 rounded border border-gray-600 px-3 py-2 text-sm" aria-label={`Ver descrição: ${o.name}`} onClick={()=>setDetailId(o.id)}>Ver descrição</button>}
                 {o.unavailable && (
                   <p className="mt-2 text-sm text-amber-200">{o.unavailable}</p>
                 )}
@@ -158,6 +167,7 @@ export function CatalogPicker({
           )}
         </div>
       )}
+      {detail&&<InfoModal title={detail.name} sourceKey={catalogReferenceKey(label,detail.id)} onClose={()=>setDetailId(null)}><div className="space-y-3 text-sm">{detail.details||detail.summary}</div></InfoModal>}
     </section>
   );
 }

@@ -419,14 +419,14 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => comp
 
 export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | null): AdvantageFlaw[] => {
     const common: AdvantageFlaw[] = [
-        { id: 'allies', name: fnT('advantages.allies.name'), description: fnT('advantages.allies.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
-        { id: 'contacts', name: fnT('advantages.contacts.name'), description: fnT('advantages.contacts.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
+        { id: 'allies', name: fnT('advantages.allies.name'), description: fnT('advantages.allies.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5, 6]},
+        { id: 'contacts', name: fnT('advantages.contacts.name'), description: fnT('advantages.contacts.description'), cost: 1, type: 'advantage', levels: [1, 2, 3]},
         { id: 'fame', name: fnT('advantages.fame.name'), description: fnT('advantages.fame.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'influence', name: fnT('advantages.influence.name'), description: fnT('advantages.influence.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'resources', name: fnT('advantages.resources.name'), description: fnT('advantages.resources.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'beautiful', name: fnT('advantages.beautiful.name'), description: fnT('advantages.beautiful.description'), cost: 2, type: 'advantage', levels: [2, 4]},
-        { id: 'darksecret', name: fnT('flaws.darksecret.name'), description: fnT('flaws.darksecret.description'), cost: 1, type: 'flaw', levels: [1, 2]},
-        { id: 'enemy', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 1, type: 'flaw', levels: [1, 2, 3, 4, 5]},
+        { id: 'darksecret', name: fnT('flaws.darksecret.name'), description: fnT('flaws.darksecret.description'), cost: 1, type: 'flaw', levels: [1]},
+        { id: 'enemy', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 1, type: 'flaw', levels: [1, 2]},
     ];
 
     if (gameType === GameType.Werewolf) {
@@ -484,7 +484,7 @@ export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | nul
     return [
         { id: 'twicecursed', name: 'Duas Vezes Amaldiçoado (Twice-Cursed)', description: 'Defeito de 2 pontos: conserva a Maldição padrão e acrescenta a variante do próprio clã. A adequação à crônica fica com o Narrador. Players Guide oficial, p. 121; variantes pp. 56–59.', cost: 2, type: 'flaw', levels: [2] },
         ...common,
-        { id: 'haven', name: fnT('advantages.haven.name'), description: fnT('advantages.haven.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
+        { id: 'haven', name: fnT('advantages.haven.name'), description: fnT('advantages.haven.description'), cost: 1, type: 'advantage', levels: [1, 2, 3]},
         { id: 'herd', name: fnT('advantages.herd.name'), description: fnT('advantages.herd.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'bloodhound', name: fnT('advantages.bloodhound.name'), description: fnT('advantages.bloodhound.description'), cost: 1, type: 'advantage', levels: [1]},
 
