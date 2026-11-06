@@ -536,6 +536,33 @@ const App: React.FC = () => {
     const [completed,setCompleted]=useState(false);
     const [completionRequested,setCompletionRequested]=useState(false);
     const [saveStatus,setSaveStatus]=useState('');
+    const [showExit,setShowExit]=useState(false);
+    const [exitName,setExitName]=useState('');
+    const [exitError,setExitError]=useState('');
+    const requestHome=()=>{
+        setExitName(oCharacter.name || 'Personagem sem nome');
+        setExitError('');
+        setShowExit(true);
+    };
+    const returnHome=(save:boolean)=>{
+        const name=exitName.trim();
+        if(save){
+            if(!name)return;
+            try {
+                if((localStorage.getItem(`${SAVE_PREFIX}${name}`)||localStorage.getItem(`${LEGACY_SAVE_PREFIX}${name}`))&&!window.confirm(fnT('storage.overwriteWarning')))return;
+            } catch {setExitError('Não foi possível acessar os arquivos salvos. Exporte JSON antes de sair.');return;}
+            if(!fnSaveCharacter(name)){setExitError('Não foi possível salvar. Tente novamente ou exporte JSON antes de sair.');return;}
+        }
+        try {
+            if(!save){localStorage.removeItem('whitewolf_draft_v2');localStorage.removeItem('whitewolf_flow_v1');setDraftSummary(null);}
+        } catch {setExitError('Não foi possível remover o rascunho. Tente novamente.');return;}
+        setShowExit(false);
+        fnSetShowStorage(false);
+        fnSetActiveDetail(null);
+        setCompletionRequested(false);
+        setView('home');
+        window.scrollTo({top:0});
+    };
     const allIssues=creationIssues(oCharacter);
     useEffect(()=>{
         if(view==='creator')try{localStorage.setItem('whitewolf_flow_v1',JSON.stringify({step:nStep,panels}));}catch{}
@@ -594,10 +621,12 @@ const App: React.FC = () => {
                 fnShowNotification(fnT('storage.saveSuccess'));
                 if(completionRequested&&allIssues.length===0)setCompleted(true);
                 setCompletionRequested(false);
+                return true;
             } catch (e) {
                 fnShowNotification(fnT('storage.saveError'), "error");
             }
         }
+        return false;
     };
 
     const fnLoadCharacter = (sName: string) => {
@@ -1261,7 +1290,7 @@ const App: React.FC = () => {
                         onUpdateRage={(r) => fnUpdateCharacter('rage', r)}
                         onUpdateHarano={(h) => fnUpdateCharacter('harano', h)}
                         onUpdateHauglosk={(h) => fnUpdateCharacter('hauglosk', h)}
-                        onBack={() => { setView('home'); fnSetStep(1); }}
+                        onBack={requestHome}
                         onSave={() => { fnSetStorageMode('save'); fnSetShowStorage(true); }}
                     />
                 );
@@ -1289,17 +1318,18 @@ const App: React.FC = () => {
         <div ref={workspaceRef} className="app-workspace min-h-screen clean-creation w-full text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
             <header ref={headerRef} className="app-header bg-black border-b border-red-900 sticky top-0 z-50">
                 <div className="app-header-inner max-w-7xl mx-auto">
-                    <button type="button" aria-label="Voltar ao início" className="app-brand" onClick={() => setView('home')}>
+                    <button type="button" aria-label="Voltar à tela inicial" className="app-brand" onClick={requestHome}>
                          <span className="app-brand-symbol text-red-600">{oCharacter.gameType===GameType.Werewolf?<MoonGlyph className="w-10 h-10"/>:<RoseIcon className="w-10 h-10"/>}</span>
                         <div className="min-w-0">
                             <h1 className="text-lg sm:text-2xl font-cinzel font-bold text-red-600 tracking-widest [text-wrap:balance] break-words whitespace-normal leading-tight"><span className="hidden sm:inline">{fnT('app.title')}</span><span className="sm:hidden">Whitewolf</span></h1>
-                            <p className="text-xs text-gray-500 hidden md:block break-words whitespace-normal">{fnT('app.subtitle')}</p>
+                            <p className="text-xs text-gray-300 break-words whitespace-normal">← Tela inicial</p>
                         </div>
                     </button>
                     <div className="app-header-actions text-sm">
                         <RulesLibrary character={oCharacter}/>
                         <button type="button" aria-label="Salvar rascunho" className="border border-gray-600 rounded px-3 py-2" onClick={()=>{fnSetStorageMode('save');fnSetShowStorage(true);}}><span className="hidden sm:inline">Salvar rascunho</span><span className="sm:hidden">Salvar</span></button>
                         <details className="app-actions-menu"><summary className="border border-gray-600 rounded px-3 py-2">Mais ações</summary><div className="app-actions-popover border border-gray-600 bg-gray-950">
+                            <button type="button" onClick={requestHome}>Voltar à tela inicial</button>
                             <ThemeControl/><button type="button" onClick={fnExportJSON}>Exportar JSON</button>
                             <label className="cursor-pointer">Importar JSON<input type="file" accept=".json" className="sr-only" onChange={fnImportJSON}/></label>
                             <button type="button" onClick={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}}>Meus personagens</button>
@@ -1331,7 +1361,7 @@ const App: React.FC = () => {
             </main>
             <footer ref={footerRef} className="app-footer bg-black border-t border-gray-800 fixed bottom-0 inset-x-0 z-40">
                 <div className="app-footer-inner max-w-6xl mx-auto">
-                    <Button onClick={() => fnSetStep(prev => Math.max(1, prev - 1))} disabled={nStep === 1} variant="secondary">{fnT('buttons.back')}</Button>
+                    <Button onClick={() => nStep === 1 ? requestHome() : fnSetStep(prev => Math.max(1, prev - 1))} variant="secondary">{nStep === 1 ? 'Tela inicial' : fnT('buttons.back')}</Button>
                     {nStep < aSteps.length ? (
                         <div className="app-footer-actions">
                             <Button variant="secondary" disabled={!oCharacter.gameType} onClick={() => fnSetStep(aSteps.length)}>Revisar pendências</Button>
@@ -1347,6 +1377,20 @@ const App: React.FC = () => {
                     )}
                 </div>
             </footer>
+            {showExit && <InfoModal title="Voltar à tela inicial?" onClose={()=>setShowExit(false)}>
+                <div className="space-y-4">
+                    <p>Deseja salvar o personagem no estado atual antes de sair? Você pode salvar mesmo com escolhas pendentes.</p>
+                    <label className="block" htmlFor="exit-character-name">Nome do arquivo</label>
+                    <input id="exit-character-name" className="w-full min-w-0 rounded border border-gray-600 bg-gray-900 px-3 py-3" value={exitName} onChange={e=>setExitName(e.target.value)}/>
+                    <p className="text-sm text-gray-300">Sair sem salvar descarta o rascunho atual. Arquivos salvos anteriormente permanecem em Meus personagens.</p>
+                    {exitError&&<p role="alert" className="text-red-300">{exitError}</p>}
+                    <div className="grid gap-3 sm:grid-cols-2">
+                        <Button disabled={!exitName.trim()} onClick={()=>returnHome(true)}>Salvar e voltar ao início</Button>
+                        <Button variant="secondary" onClick={()=>returnHome(false)}>Sair sem salvar</Button>
+                        <Button variant="secondary" className="sm:col-span-2" onClick={()=>setShowExit(false)}>Continuar editando</Button>
+                    </div>
+                </div>
+            </InfoModal>}
             {bShowStorage && (
                 <StorageModal mode={sStorageMode} onClose={() => {fnSetShowStorage(false);setCompletionRequested(false);}} currentName={oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>
             )}
