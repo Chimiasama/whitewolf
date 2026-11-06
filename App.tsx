@@ -3,7 +3,7 @@ import {RulesLibrary} from './components/RulesLibrary';
 import {HelpLabel} from './components/HelpLabel';
 import {DisciplineReference} from './components/DisciplineReference';
 import {HuntingReference} from './components/HuntingReference';
-import {GoalIdeas} from './components/GoalIdeas';
+import {generateStoryIdea} from './data/storyIdeas';
 import {TRAIT_HELP} from './data/traitHelp';
 import {withNpcTemplate} from './lib/npcTemplates';
 import {BloodRitualPicker} from './components/BloodRitualPicker';
@@ -20,7 +20,7 @@ import { ThinBloodCreation } from './components/ThinBloodCreation';
 import { WerewolfCreation } from './components/WerewolfCreation';
 import { parseCharacter, finishingIssues, validAttributes, playerIssues, SCHEMA_VERSION } from './lib/characterValidation';
 import { W5_TRIBES } from './data/w5';
-import { asNarrativeNpc } from './lib/npc';
+import { createNarrativeNpc } from './lib/npc';
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, Specialty, DisciplinePower, GameType, Tribe, Auspice, Disciplines } from './types';
@@ -34,8 +34,7 @@ import { InfoModal } from './components/InfoModal';
 import { InfoIcon } from './components/InfoIcon';
 import { GothicFrame, RoseIcon } from './components/ui/GothicFrame';
 import { StepIndicator } from './components/StepIndicator';
-import { fnGenerateIdentity } from './lib/generators';
-import { fnCreateRandomCharacter } from './lib/randomizer';
+import { fnGenerateIdentity, fnGenerateName, fnGenerateConcept } from './lib/generators';
 import { fnProcessImage } from './lib/imageUtils';
 
 // --- ICONS --- //
@@ -803,13 +802,13 @@ const App: React.FC = () => {
                         </div>
                         <p className="text-gray-400 mb-6 italic">{fnT('concept.subtitle')}</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                            <Input id="char-name" label={fnT('concept.name')} value={oCharacter.name} onChange={e => fnUpdateCharacter('name', e.target.value)} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
-                            <Input id="char-mentor" label={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sire')} value={oCharacter.gameType === GameType.Werewolf ? (oCharacter.mentor || '') : oCharacter.sire} onChange={e => fnUpdateCharacter(oCharacter.gameType === GameType.Werewolf ? 'mentor' : 'sire', e.target.value)} placeholder={oCharacter.gameType === GameType.Werewolf ? fnT('concept.mentorPlaceholder') : fnT('concept.sirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                            <Input id="char-name" onGenerate={()=>fnUpdateCharacter('name',fnGenerateName(sLocale,undefined,oCharacter.gameType,oCharacter.name))} label={fnT('concept.name')} value={oCharacter.name} onChange={e => fnUpdateCharacter('name', e.target.value)} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                            <Input id="char-mentor" onGenerate={()=>{const key=oCharacter.gameType===GameType.Werewolf?'mentor':'sire';fnUpdateCharacter(key,fnGenerateName(sLocale,undefined,oCharacter.gameType,oCharacter[key]||''));}} label={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sire')} value={oCharacter.gameType === GameType.Werewolf ? (oCharacter.mentor || '') : oCharacter.sire} onChange={e => fnUpdateCharacter(oCharacter.gameType === GameType.Werewolf ? 'mentor' : 'sire', e.target.value)} placeholder={oCharacter.gameType === GameType.Werewolf ? fnT('concept.mentorPlaceholder') : fnT('concept.sirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             <div className="md:col-span-2">
-                                <Input id="char-concept" label={fnT('concept.concept')} value={oCharacter.concept} onChange={e => fnUpdateCharacter('concept', e.target.value)} placeholder={fnT('concept.conceptPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                                <TextArea autoGrow id="char-concept" onGenerate={()=>fnUpdateCharacter('concept',fnGenerateConcept(sLocale,undefined,oCharacter.gameType,oCharacter.concept).concept)} label={fnT('concept.concept')} value={oCharacter.concept} onChange={e => fnUpdateCharacter('concept', e.target.value)} placeholder={fnT('concept.conceptPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             </div>
-                            <div><Input id="char-ambition" label={fnT('concept.ambition')} value={oCharacter.ambition} onChange={e => fnUpdateCharacter('ambition', e.target.value)} placeholder={fnT('concept.ambitionPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} /><GoalIdeas character={oCharacter} kind="ambition" onChange={fnUpdateCharacter}/></div>
-                            <div><Input id="char-desire" label={fnT('concept.desire')} value={oCharacter.desire} onChange={e => fnUpdateCharacter('desire', e.target.value)} placeholder={fnT('concept.desirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} /><GoalIdeas character={oCharacter} kind="desire" onChange={fnUpdateCharacter}/></div>
+                            <div><TextArea autoGrow id="char-ambition" onGenerate={()=>fnUpdateCharacter('ambition',generateStoryIdea(oCharacter.gameType,'ambition',oCharacter.ambition))} label={fnT('concept.ambition')} value={oCharacter.ambition} onChange={e => fnUpdateCharacter('ambition', e.target.value)} placeholder={fnT('concept.ambitionPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} /></div>
+                            <div><TextArea autoGrow id="char-desire" onGenerate={()=>fnUpdateCharacter('desire',generateStoryIdea(oCharacter.gameType,'desire',oCharacter.desire))} label={fnT('concept.desire')} value={oCharacter.desire} onChange={e => fnUpdateCharacter('desire', e.target.value)} placeholder={fnT('concept.desirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} /></div>
                              <div className="md:col-span-2">
                                 <label className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">
                                     {fnT('concept.portrait')}
@@ -1300,10 +1299,10 @@ const App: React.FC = () => {
     };
 
     if(view==='home')return <div className="min-h-screen clean-creation" style={gothicBackgroundStyle}>
-        <StartScreen draft={draftSummary} onStart={(mode,game,role,scale,template)=>{
+        <StartScreen draft={draftSummary} onStart={(mode,game,role,scale,template,options)=>{
             const identity=fnGenerateIdentity(sLocale,game);
             if(mode==='npc'){
-                const base=asNarrativeNpc(fnCreateRandomCharacter(sLocale,scale as any,fnT,game),scale,role);
+                const base=createNarrativeNpc(sLocale,scale as any,fnT,game,role,options);
                 const c=template?withNpcTemplate(base,template as any):base;
                 fnSetCharacter(c);fnSetStep(REVIEW_STEP);
             }else{fnSetCharacter({...oInitialCharacter,gameType:game,profile:'player',name:identity.name,concept:identity.concept});fnSetStep(1);setPanels({nature:'tribe',capacities:'attributes',powers:'predator',resources:'advantages'});}

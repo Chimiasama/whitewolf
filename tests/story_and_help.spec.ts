@@ -18,14 +18,14 @@ test('relacionamentos e caern validam e preservam JSON sem exigir preenchimento 
  });
  expect(result.relationships[0].feeling).toBe('Respeito e medo');expect(result.caern.guardian).toBe('Garça');expect(result.invalid&&result.duplicate).toBe(true);expect(result.issues).toEqual([]);expect(result.legacy).toBeUndefined();
 });
-test('sugestões só alteram o campo quando uma ideia é escolhida',async({page})=>{
+test('gerar ambição e desejo substitui somente o campo escolhido',async({page})=>{
  await start(page);await page.locator('#char-ambition').fill('Minha ambição original');await page.locator('#char-desire').fill('Meu desejo original');
- await page.getByRole('button',{name:'Ideias de ambição',exact:true}).click();await expect(page.locator('#char-ambition')).toHaveValue('Minha ambição original');
- const first=await page.getByRole('button',{name:/^Usar ideia:/}).first().getAttribute('aria-label');
- await page.getByRole('button',{name:'Outras ideias',exact:true}).click();expect(await page.getByRole('button',{name:/^Usar ideia:/}).first().getAttribute('aria-label')).not.toBe(first);
- const selected=(await page.getByRole('button',{name:/^Usar ideia:/}).first().getAttribute('aria-label')).replace('Usar ideia: ','');
- await page.getByRole('button',{name:/^Usar ideia:/}).first().click();await expect(page.locator('#char-ambition')).toHaveValue(selected);await expect(page.locator('#char-desire')).toHaveValue('Meu desejo original');
- await page.getByRole('button',{name:'Ideias de objetivo para a sessão',exact:true}).click();await expect(page.locator('#char-desire')).toHaveValue('Meu desejo original');
+ await page.getByRole('button',{name:'Gerar ambição',exact:true}).click();
+ const first=await page.locator('#char-ambition').inputValue();expect(first).not.toBe('Minha ambição original');
+ await expect(page.locator('#char-desire')).toHaveValue('Meu desejo original');
+ await page.getByRole('button',{name:'Gerar ambição',exact:true}).click();expect(await page.locator('#char-ambition').inputValue()).not.toBe(first);
+ await page.getByRole('button',{name:'Gerar desejo',exact:true}).click();expect(await page.locator('#char-desire').inputValue()).not.toBe('Meu desejo original');
+ await expect(page.getByRole('button',{name:/^Usar ideia:/})).toHaveCount(0);
 });
 test('registro de relações e caern é editável e sobrevive a exportar e reimportar',async({page},info)=>{
  await start(page,'Lobisomem: O Apocalipse');await ties(page);

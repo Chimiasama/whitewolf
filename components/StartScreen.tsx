@@ -1,6 +1,10 @@
 import {ThemeControl} from '../lib/theme';
 import React, { useState } from "react";
-import { GameType } from "../types";
+import {NPC_ROLE_PROFILES} from '../data/npcRoles';
+import {RandomCharacterOptions} from '../lib/randomizer';
+import {fnGetClanDetails,fnGetTribeDetails,fnGetAuspiceDetails} from '../constants';
+import {useI18n} from '../lib/i18n';
+import { Clan, Tribe, Auspice, GameType } from "../types";
 export function StartScreen({
   onStart,
   onContinue,
@@ -14,12 +18,16 @@ export function StartScreen({
     role: string,
     scale: string,
     template?: string,
+    options?: RandomCharacterOptions,
   ) => void;
   onContinue: () => void;
   onLibrary: () => void;
   onImport: (e: React.ChangeEvent<HTMLInputElement>) => void;
   draft: { name: string; gameType: GameType } | null;
 }) {
+  const {t}=useI18n();
+  const [options,setOptions]=useState<RandomCharacterOptions>({});
+  const clans=fnGetClanDetails(t),tribes=fnGetTribeDetails(t),auspices=fnGetAuspiceDetails(t);
   const [template,setTemplate]=useState("");
   const [mode, setMode] = useState<"player" | "npc" | null>(null),
     [game, setGame] = useState(GameType.Vampire),
@@ -93,6 +101,7 @@ export function StartScreen({
                     setGame(g.id);
                     setRole("");
                     setTemplate("");
+                    setOptions({});
                   }}
                 />{" "}
                 {g.name}
@@ -106,30 +115,29 @@ export function StartScreen({
                 Papel narrativo
                 <select
                   className="block mt-2 w-full bg-gray-950 p-3 rounded"
+                  aria-label="Papel narrativo"
                   value={role}
                   onChange={(e) => setRole(e.target.value)}
                 >
                   <option value="">Surpreenda-me</option>
-                  {(game === GameType.Vampire
-                    ? [
-                        "Intermediário da corte",
-                        "Guardião de um culto",
-                        "Organizador Anarquista",
-                      ]
-                    : [
-                        "Defensor do território",
-                        "Mediador espiritual",
-                        "Veterano em crise",
-                      ]
-                  ).map((r) => (
-                    <option key={r}>{r}</option>
-                  ))}
+                  {NPC_ROLE_PROFILES[game].map(r=><option key={r.role}>{r.role}</option>)}
                 </select>
               </label>
+              {role&&<p className="rounded-lg border border-gray-700 bg-gray-950 p-3 text-sm text-gray-300" aria-live="polite">Prioriza {NPC_ROLE_PROFILES[game].find(r=>r.role===role)?.attributes.map(a=>t(`attributes.list.${a}`)).join(', ')} e {NPC_ROLE_PROFILES[game].find(r=>r.role===role)?.skills.slice(0,3).map(skill=>t(`skills.list.${skill}`)).join(', ')}. O clã ou a tribo não altera essas prioridades.</p>}
+              {!template && <div className="grid gap-4 sm:grid-cols-2">
+                {game===GameType.Vampire ? <label className="block">Clã do NPC
+                  <select aria-label="Clã do NPC" className="block mt-2 w-full min-w-0 bg-gray-950 p-3 rounded" value={options.clan||''} onChange={e=>setOptions({clan:e.target.value as Clan||undefined})}>
+                    <option value="">Aleatório</option>{Object.values(Clan).filter(clan=>clan!==Clan.ThinBlood).map(clan=><option key={clan} value={clan}>{clans[clan].name}</option>)}
+                  </select></label> : <>
+                  <label className="block">Tribo do NPC<select aria-label="Tribo do NPC" className="block mt-2 w-full min-w-0 bg-gray-950 p-3 rounded" value={options.tribe||''} onChange={e=>setOptions(prev=>({...prev,tribe:e.target.value as Tribe||undefined}))}><option value="">Aleatória</option>{Object.values(Tribe).map(tribe=><option key={tribe} value={tribe}>{tribes[tribe].name}</option>)}</select></label>
+                  <label className="block">Augúrio do NPC<select aria-label="Augúrio do NPC" className="block mt-2 w-full min-w-0 bg-gray-950 p-3 rounded" value={options.auspice||''} onChange={e=>setOptions(prev=>({...prev,auspice:e.target.value as Auspice||undefined}))}><option value="">Aleatório</option>{Object.values(Auspice).map(auspice=><option key={auspice} value={auspice}>{auspices[auspice].name}</option>)}</select></label>
+                </>}
+              </div>}
               <label className="block">
                 Influência na história
                 <select
                   className="block mt-2 w-full bg-gray-950 p-3 rounded"
+                  aria-label="Influência na história"
                   value={scale}
                   onChange={(e) => setScale(e.target.value)}
                 >
@@ -139,13 +147,13 @@ export function StartScreen({
                 </select>
               </label>
               <p className="text-sm text-gray-300">
-                Geração temática para o Narrador, sem orçamento de XP.
+                O papel orienta atributos, habilidades e história. Deixe as outras escolhas no aleatório ou defina a origem. Geração para o Narrador, sem orçamento de XP.
               </p>
             </>
           )}
           <button
             className="rounded-lg bg-red-800 hover:bg-red-700 px-5 py-3"
-            onClick={() => onStart(mode, game, role, scale, template)}
+            onClick={() => onStart(mode, game, role, scale, template, template ? {} : options)}
           >
             {mode === "player" ? "Começar criação" : "Gerar NPC"}
           </button>

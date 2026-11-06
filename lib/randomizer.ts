@@ -4,6 +4,8 @@ import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail
 import { oInitialCharacter, fnGetClanDetails, fnGetPredatorTypes, fnGetDisciplineDetails, aAttributeList, aSkillList, fnGetTribeDetails, fnGetAuspiceDetails, fnGetAdvantagesAndFlaws, fnGetLoresheets } from '../constants';
 import { fnGenerateIdentity } from './generators';
 
+export interface RandomCharacterOptions {clan?:Clan;tribe?:Tribe;auspice?:Auspice;attributes?:Attribute[];skills?:Skill[];predators?:string[];disciplines?:string[];}
+
 type XPLevel = 'fledgling' | 'neonate' | 'ancilla';
 
 // Archetypes define priorities for attributes and skills
@@ -91,7 +93,7 @@ const fnGrantAncillaBonus = (aAdvantages: AdvantageFlaw[], aFlaws: AdvantageFlaw
     }
 };
 
-export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (k: string) => string, gameType: GameType): Character => {
+export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (k: string) => string, gameType: GameType, options:RandomCharacterOptions={}): Character => {
     const identity = fnGenerateIdentity(sLocale, gameType);
     const sRoleKey = identity.roleKey;
     const intel = ROLE_INTEL[sRoleKey] || { 
@@ -99,29 +101,31 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         predators: ["Alleycat", "Siren", "Sandman", "Bagger", "Farmer", "Osiris", "Consensualist"]
     };
     const archetype = ARCHETYPES[intel.archetype];
+    const preferredAttributes=options.attributes||archetype.attributes;
+    const preferredSkills=options.skills||archetype.skills;
 
     // 1. Attributes
     const attributes = { ...oInitialCharacter.attributes };
     const attrPool = [4, 3, 3, 3, 2, 2, 2, 2, 1];
-    const priorityAttrs = shuffle(archetype.attributes);
-    const otherAttrs = shuffle(aAttributeList.filter(a => !archetype.attributes.includes(a)));
+    const priorityAttrs = options.attributes ? [preferredAttributes[0],...shuffle(preferredAttributes.slice(1))] : shuffle(preferredAttributes);
+    const otherAttrs = shuffle(aAttributeList.filter(a => !preferredAttributes.includes(a)));
     const allAttrsOrdered = [...priorityAttrs, ...otherAttrs];
     allAttrsOrdered.forEach((attr, idx) => { attributes[attr] = attrPool[idx]; });
 
     // 2. Skills
     const skills = { ...oInitialCharacter.skills };
     const skillPool = [4, 3, 3, 3, 2, 2, 2, 1, 1, 1];
-    const prioritySkills = shuffle(archetype.skills);
-    const otherSkills = shuffle(aSkillList.filter(s => !archetype.skills.includes(s)));
+    const prioritySkills = options.skills ? [...shuffle(preferredSkills.slice(0,3)),...shuffle(preferredSkills.slice(3))] : shuffle(preferredSkills);
+    const otherSkills = shuffle(aSkillList.filter(s => !preferredSkills.includes(s)));
     const allSkillsOrdered = [...prioritySkills, ...otherSkills];
     for (let i = 0; i < skillPool.length; i++) { skills[allSkillsOrdered[i]] = skillPool[i]; }
 
     if (gameType === GameType.Werewolf) {
         // 3. Tribe & Auspice
         const tribeList = Object.values(Tribe);
-        const selectedTribe = tribeList[Math.floor(Math.random() * tribeList.length)];
+        const selectedTribe = options.tribe || tribeList[Math.floor(Math.random() * tribeList.length)];
         const auspiceList = Object.values(Auspice);
-        const selectedAuspice = auspiceList[Math.floor(Math.random() * auspiceList.length)];
+        const selectedAuspice = options.auspice || auspiceList[Math.floor(Math.random() * auspiceList.length)];
         
         const tribeDetails = fnGetTribeDetails(fnT)[selectedTribe];
         const auspiceDetails = fnGetAuspiceDetails(fnT)[selectedAuspice];
@@ -194,13 +198,14 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
 
     // 3. Clan (Vampire)
     const clanList = Object.values(Clan).filter(c=>c!==Clan.ThinBlood);
-    const selectedClan = clanList[Math.floor(Math.random() * clanList.length)];
+    const selectedClan = options.clan || clanList[Math.floor(Math.random() * clanList.length)];
     const clanDetails = fnGetClanDetails(fnT)[selectedClan];
 
     // 4. Disciplines
     const disciplines: Record<string, number> = {};
     const disciplinePowers: Record<string, string[]> = {};
-    const clanDiscNames = shuffle([...clanDetails.disciplines]);
+    const rankDiscipline=(key:string)=>{const rank=options.disciplines?.indexOf(key)??-1;return rank<0?100:rank;};
+    const clanDiscNames = shuffle([...clanDetails.disciplines]).sort((a,b)=>rankDiscipline(a)-rankDiscipline(b));
     
     if (clanDiscNames.length > 0) {
         disciplines[clanDiscNames[0]] = 2;
@@ -209,7 +214,7 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
         }
     } else if (selectedClan === Clan.Caitiff) {
         const allDiscs = Object.keys(fnGetDisciplineDetails(fnT));
-        const shuffled = shuffle(allDiscs);
+        const shuffled = shuffle(allDiscs).sort((a,b)=>rankDiscipline(a)-rankDiscipline(b));
         disciplines[shuffled[0]] = 2;
         disciplines[shuffled[1]] = 1;
     }
@@ -231,11 +236,11 @@ export const fnCreateRandomCharacter = (sLocale: string, sLevel: XPLevel, fnT: (
     });
 
     // 5. Predator Type (localized and intelligent)
-    const allPredatorTypes = fnGetPredatorTypes(fnT);
-    const targetPredatorKeys = intel.predators.map(p => p.toLowerCase().replace(/[^a-z0-9]/g, ''));
+    const allPredatorTypes = fnGetPredatorTypes(fnT).filter(p=>selectedClan!==Clan.Ventrue||!['farmer','bagger'].includes(p.id));
+    const targetPredatorKeys = (options.predators||intel.predators).map(p => p.toLowerCase().replace(/[^a-z0-9]/g, ''));
     const possiblePredators = allPredatorTypes.filter(p => {
         const sCleanId = p.id.toLowerCase().replace(/[^a-z0-9]/g, '');
-        return targetPredatorKeys.includes(sCleanId) || intel.predators.includes(p.name);
+        return targetPredatorKeys.includes(sCleanId) || (options.predators||intel.predators).includes(p.name);
     });
     const selectedPredator = possiblePredators.length > 0 
         ? possiblePredators[Math.floor(Math.random() * possiblePredators.length)] 

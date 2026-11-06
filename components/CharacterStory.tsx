@@ -1,3 +1,5 @@
+import {TextArea} from './ui/Input';
+import {generateNpcNarrative, NPC_ROLES} from '../lib/npc';
 import {RelationshipRecord,RelationshipsSummary} from './RelationshipRecord';
 import {CaernRecord,CaernSummary} from './CaernRecord';
 import React from "react";
@@ -45,6 +47,7 @@ export function CharacterStory({
 }) {
   const [tab, setTab] = React.useState("links");
   const wolf = c.gameType === GameType.Werewolf;
+  const npcProfile=NPC_ROLES[c.gameType].find(r=>r.role===c.narrative?.role.split(' · ')[0]||r.role===c.concept);
   const fields = wolf ? WEREWOLF_STORY : VAMPIRE_STORY;
   return (
     <section className="space-y-4">
@@ -86,26 +89,11 @@ export function CharacterStory({
           ) : id === "npc" ? (
             <div className="space-y-4">
               {Object.entries(NPC_FIELDS).map(([key, label]) => (
-                <label key={key} className="block">
-                  {label}
-                  <textarea
-                    aria-label={label}
-                    className="block mt-2 w-full rounded border border-gray-600 p-3"
-                    rows={3}
-                    value={c.narrative?.[key] || ""}
-                    onChange={(e) =>
-                      onChange("narrative", {
-                        role: "",
-                        motivation: "",
-                        secret: "",
-                        relationship: "",
-                        hook: "",
-                        ...c.narrative,
-                        [key]: e.target.value,
-                      })
-                    }
-                  />
-                </label>
+                <TextArea key={key} label={label} aria-label={label} autoGrow rows={key==='role'?2:3}
+                  value={c.narrative?.[key]||''}
+                  onChange={e=>onChange('narrative',{role:'',motivation:'',secret:'',relationship:'',hook:'',...c.narrative,[key]:e.target.value})}
+                  onGenerate={key!=='role'&&npcProfile?()=>onChange('narrative',{...c.narrative,[key]:generateNpcNarrative(c.gameType,npcProfile.role,key as 'motivation'|'secret'|'relationship'|'hook',c.narrative?.[key]||'')}):undefined}
+                />
               ))}
             </div>
           ) : id === "zero" ? (
