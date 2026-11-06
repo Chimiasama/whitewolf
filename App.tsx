@@ -1,3 +1,5 @@
+import {DiceRoller} from './components/DiceRoller';
+import {setRemaining,synchronizeDamage} from './lib/damage';
 import {BookSources,BookReferenceScope} from './lib/bookReferences';
 import {RulesLibrary} from './components/RulesLibrary';
 import {HelpLabel} from './components/HelpLabel';
@@ -585,7 +587,7 @@ const App: React.FC = () => {
     }, [sLocale]);
 
     const fnUpdateCharacter = (field: keyof Character, value: any) => {
-        fnSetCharacter(prev => ({ ...prev, [field]: value }));
+        fnApplyTransaction(prev=>field==='damage'?synchronizeDamage(prev,value):field==='health'||field==='willpower'?setRemaining(prev,field,value):({...prev,[field]:value}));
     };
 
     const fnHandleAttributeChange = (attr: string, val: number) => {
@@ -1278,6 +1280,7 @@ const App: React.FC = () => {
                 );
             case 'sheet':
                 return (
+                    <><DiceRoller character={oCharacter} onUpdate={fnApplyTransaction}/>
                     <CharacterSheet 
                         character={oCharacter} 
                         onChange={fnUpdateCharacter}
@@ -1291,7 +1294,7 @@ const App: React.FC = () => {
                         onUpdateHauglosk={(h) => fnUpdateCharacter('hauglosk', h)}
                         onBack={requestHome}
                         onSave={() => { fnSetStorageMode('save'); fnSetShowStorage(true); }}
-                    />
+                    /></>
                 );
             default:
                 return null;

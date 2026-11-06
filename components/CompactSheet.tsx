@@ -1,3 +1,4 @@
+import {trackRemaining} from '../lib/damage';
 import {LegacyLoresheets} from './LegacyLoresheets';
 import {HelpLabel} from './HelpLabel';
 import {HuntingReference} from './HuntingReference';
@@ -27,8 +28,8 @@ export function CompactSheet({
     willpower =
       c.attributes[Attribute.Composure] + c.attributes[Attribute.Resolve];
   const tracks: [string, keyof Character, number, number][] = [
-    ["Vitalidade", "health", c.health ?? health, health],
-    ["Força de Vontade", "willpower", c.willpower ?? willpower, willpower],
+    ["Vitalidade", "health", trackRemaining(c,'health'), health],
+    ["Força de Vontade", "willpower", trackRemaining(c,'willpower'), willpower],
     ...(wolf
       ? [
           ["Fúria", "rage", c.rage, 5],

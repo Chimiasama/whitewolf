@@ -355,3 +355,5 @@ p, li, label, input, textarea, select, button { line-height: 1.55; }
 /* Capacitor injects native cutout insets; browsers use the standard env fallback. */
 .app-header {padding-top:calc(.75rem + var(--safe-area-inset-top, env(safe-area-inset-top, 0px)));}
 @media (min-width:1024px) {.app-header {padding-top:calc(1rem + var(--safe-area-inset-top, env(safe-area-inset-top, 0px)));}}
+
+@media print {.dice-tools {display:none!important;}}

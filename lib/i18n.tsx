@@ -1017,7 +1017,7 @@ const oEn = {
         "prowessFromPain": {
           "name": "Prowess from Pain",
           "description": "Gain power as your body is broken.",
-          "system": "Passive. Ignore wound penalties and gain physical bonuses."
+          "system": "When activated, ignore Health damage penalties, including physical Impairment. Each level of superficial or aggravated Health damage grants a dot to a Physical Attribute, up to Blood Surge + 6 per Attribute; derived traits are unchanged. Cost: One Rouse Check. Duration: One scene."
         }
       }
     },
@@ -3801,7 +3801,7 @@ const oPt = {
         "prowessFromPain": {
           "name": "Poder Vindo da Dor",
           "description": "Ganha poder enquanto seu corpo é quebrado.",
-          "system": "Passivo. Ignora penalidades de ferimento e ganha bônus físicos."
+          "system": "Quando ativado, ignora penalidades de dano à Vitalidade, incluindo Debilitação física. Cada nível de dano superficial ou agravado na Vitalidade permite aumentar um Atributo Físico em um ponto, até Surto de Sangue + 6 por Atributo; características derivadas não mudam. Custo: Uma Checagem de Sangue. Duração: Uma cena."
         }
       }
     },

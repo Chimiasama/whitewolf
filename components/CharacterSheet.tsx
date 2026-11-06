@@ -1,3 +1,4 @@
+import {trackRemaining} from '../lib/damage';
 import {HelpLabel} from './HelpLabel';
 import {HuntingReference} from './HuntingReference';
 import {DisciplineReference} from './DisciplineReference';
@@ -549,7 +550,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                 )}
                 <VitalsPool
                     label={fnT('characterSheet.willpower')}
-                    value={Math.min(oCharacter.willpower ?? nWillpower, nWillpower)}
+                    value={trackRemaining(oCharacter,'willpower')}
                     max={nWillpower}
                     colorClass="bg-blue-600"
                     onUpdate={fnOnUpdateWillpower}
@@ -557,7 +558,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                 />
                 <VitalsPool
                     label={fnT('characterSheet.health')}
-                    value={Math.min(oCharacter.health ?? nHealth, nHealth)}
+                    value={trackRemaining(oCharacter,'health')}
                     max={nHealth}
                     colorClass="bg-red-800"
                     onUpdate={fnOnUpdateHealth}
