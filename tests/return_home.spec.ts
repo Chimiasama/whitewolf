@@ -37,7 +37,7 @@ test('ficha concluída: sair descarta somente rascunho e permite criar outro jog
   await page.reload();
   await page.getByRole('button', { name: 'Abrir personagens salvos', exact: true }).click();
   await page.getByRole('button', { name: /Carregar: Ficha pronta/ }).click();
-  await expect(page.getByRole('button', { name: 'Criação concluída', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Personagem em jogo', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Voltar à tela inicial', exact: true }).click();
   await page.getByRole('button', { name: 'Sair sem salvar', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Continuar personagem' })).toHaveCount(0);

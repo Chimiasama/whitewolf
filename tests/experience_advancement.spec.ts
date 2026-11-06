@@ -102,13 +102,10 @@ test("40 XP: Força 3 → 4 custa 20, grava recibo e sobrevive a salvar/exportar
   await download.saveAs(file);
   await page.reload();
   await page.locator("input[type=file]").first().setInputFiles(file);
-  await expect(
-    page.getByRole("heading", { name: "Ficha em jogo", exact: true }),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "Capacidades", exact: false }).click();
-  await expect(
-    page.getByText("A distribuição inicial foi encerrada.", { exact: false }),
-  ).toBeVisible();
+  await expect(page.getByRole('region',{name:'Personagem em jogo'})).toBeVisible();
+  await expect(page.locator('.creation-progress')).toHaveCount(0);
+  await page.getByRole('button',{name:'Editar personagem',exact:true}).click();
+  await expect(page.getByRole('button',{name:'Voltar à ficha',exact:true})).toBeVisible();
   expect(errors).toEqual([]);
 });
 test("ficha antiga habilita evolução sem sessão zero, justificativa ou aprovação", async ({
@@ -727,6 +724,7 @@ test("criação mantém dois níveis da mesma Loresheet e gerador evita Dons dup
   const c = await fixture(page);
   delete c.creationCompletedAt;
   await load(page, c);
+  await page.getByRole('button',{name:'Editar personagem',exact:true}).click();
   await page
     .getByRole("button", { name: "Vínculos e recursos", exact: false })
     .click();

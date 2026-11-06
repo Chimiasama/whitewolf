@@ -1,5 +1,6 @@
+import {PdfButton} from './components/PdfButton';
 import {DiceRoller} from './components/DiceRoller';
-import {setRemaining,synchronizeDamage} from './lib/damage';
+import {setRemaining,synchronizeDamage,characterDamage,trackCapacity} from './lib/damage';
 import {BookSources,BookReferenceScope} from './lib/bookReferences';
 import {RulesLibrary} from './components/RulesLibrary';
 import {HelpLabel} from './components/HelpLabel';
@@ -485,13 +486,13 @@ const App: React.FC = () => {
     const oTribeDetails = useMemo(() => fnGetTribeDetails(fnT), [fnT]);
     const oAuspiceDetails = useMemo(() => fnGetAuspiceDetails(fnT), [fnT]);
 
-    const [view, setView] = useState<'home' | 'creator'>('home');
+    const [view, setView] = useState<'home' | 'creator' | 'sheet'>('home');
     const [nStep, fnSetStep] = useState(1);
     const workspaceRef = useRef<HTMLDivElement>(null);
     const headerRef = useRef<HTMLElement>(null);
     const footerRef = useRef<HTMLElement>(null);
     useEffect(() => {
-        if (view !== 'creator') return;
+        if (view === 'home') return;
         const updateInsets = () => {
             workspaceRef.current?.style.setProperty('--app-header-height', `${headerRef.current?.offsetHeight || 0}px`);
             workspaceRef.current?.style.setProperty('--app-footer-height', `${footerRef.current?.offsetHeight || 0}px`);
@@ -505,8 +506,9 @@ const App: React.FC = () => {
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, [nStep]);
+    }, [nStep,view]);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
+    const [activeSaveName,setActiveSaveName]=useState<string|null>(null);
     useEffect(()=>theme.setGame(oCharacter.gameType),[oCharacter.gameType]);
     const characterRef=useRef(oCharacter);
     characterRef.current=oCharacter;
@@ -518,10 +520,10 @@ const App: React.FC = () => {
     useEffect(()=>setCompleted(Boolean(oCharacter.creationCompletedAt)),[oCharacter.creationCompletedAt]);
 
     useEffect(()=>{
-        if(view==='creator'&&oCharacter.gameType){
-            try {localStorage.setItem('whitewolf_draft_v2',JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}));setDraftSummary({name:oCharacter.name,gameType:oCharacter.gameType});setSaveStatus('Rascunho salvo neste navegador');} catch {setSaveStatus('Não foi possível salvar o rascunho. Exporte JSON para preservar suas escolhas.');}
+        if(view!=='home'&&oCharacter.gameType){
+            try {localStorage.setItem('whitewolf_draft_v2',JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}));localStorage.setItem('whitewolf_draft_save_v1',activeSaveName||'');setDraftSummary({name:oCharacter.name,gameType:oCharacter.gameType});setSaveStatus('Rascunho salvo neste navegador');} catch {setSaveStatus('Não foi possível salvar o rascunho. Exporte JSON para preservar suas escolhas.');}
         }
-    },[oCharacter,view]);
+    },[oCharacter,view,activeSaveName]);
     const fnNormalizeCharacter = useCallback(parseCharacter, []);
     const aAdvantagesAndFlaws = useMemo(() => fnGetAdvantagesAndFlaws(fnT, oCharacter.gameType), [fnT, oCharacter.gameType]);
     const [bShowStorage, fnSetShowStorage] = useState(false);
@@ -541,7 +543,7 @@ const App: React.FC = () => {
     const [exitName,setExitName]=useState('');
     const [exitError,setExitError]=useState('');
     const requestHome=()=>{
-        setExitName(oCharacter.name || 'Personagem sem nome');
+        setExitName(activeSaveName||oCharacter.name || 'Personagem sem nome');
         setExitError('');
         setShowExit(true);
     };
@@ -550,12 +552,12 @@ const App: React.FC = () => {
         if(save){
             if(!name)return;
             try {
-                if((localStorage.getItem(`${SAVE_PREFIX}${name}`)||localStorage.getItem(`${LEGACY_SAVE_PREFIX}${name}`))&&!window.confirm(fnT('storage.overwriteWarning')))return;
+                if(name!==activeSaveName&&(localStorage.getItem(`${SAVE_PREFIX}${name}`)||localStorage.getItem(`${LEGACY_SAVE_PREFIX}${name}`))&&!window.confirm(fnT('storage.overwriteWarning')))return;
             } catch {setExitError('Não foi possível acessar os arquivos salvos. Exporte JSON antes de sair.');return;}
             if(!fnSaveCharacter(name)){setExitError('Não foi possível salvar. Tente novamente ou exporte JSON antes de sair.');return;}
         }
         try {
-            if(!save){localStorage.removeItem('whitewolf_draft_v2');localStorage.removeItem('whitewolf_flow_v1');setDraftSummary(null);}
+            if(!save){localStorage.removeItem('whitewolf_draft_v2');localStorage.removeItem('whitewolf_flow_v1');localStorage.removeItem('whitewolf_draft_save_v1');setDraftSummary(null);}
         } catch {setExitError('Não foi possível remover o rascunho. Tente novamente.');return;}
         setShowExit(false);
         fnSetShowStorage(false);
@@ -587,6 +589,14 @@ const App: React.FC = () => {
     }, [sLocale]);
 
     const fnUpdateCharacter = (field: keyof Character, value: any) => {
+        if(field==='attributes'){
+            const current=characterRef.current,next={...current,attributes:value};
+            const damage={health:characterDamage(current,'health'),willpower:characterDamage(current,'willpower')};
+            if((['health','willpower'] as const).some(key=>damage[key].superficial+damage[key].aggravated>trackCapacity(next,key))){
+                fnShowNotification('A trilha possui mais dano do que a nova capacidade. Revise os ferimentos antes de reduzir esse Atributo.','error');return;
+            }
+            fnApplyTransaction(prev=>synchronizeDamage({...prev,attributes:value},damage));return;
+        }
         fnApplyTransaction(prev=>field==='damage'?synchronizeDamage(prev,value):field==='health'||field==='willpower'?setRemaining(prev,field,value):({...prev,[field]:value}));
     };
 
@@ -613,14 +623,16 @@ const App: React.FC = () => {
         }));
     };
 
-    const fnSaveCharacter = (sName: string) => {
+    const fnSaveCharacter = (sName: string,finish=false) => {
         if (typeof window !== 'undefined') {
             try {
-                const next={...oCharacter,schemaVersion:SCHEMA_VERSION,...(completionRequested&&allIssues.length===0?{creationCompletedAt:oCharacter.creationCompletedAt||new Date().toISOString()}:{})};
+                const next=fnNormalizeCharacter({...oCharacter,schemaVersion:SCHEMA_VERSION,...((finish||completionRequested)&&allIssues.length===0?{creationCompletedAt:oCharacter.creationCompletedAt||new Date().toISOString()}:{})});
                 localStorage.setItem(`${SAVE_PREFIX}${sName}`, JSON.stringify(next));
                 fnSetCharacter(next);
+                setActiveSaveName(sName);
                 fnShowNotification(fnT('storage.saveSuccess'));
-                if(completionRequested&&allIssues.length===0)setCompleted(true);
+                if((finish||completionRequested)&&allIssues.length===0){setCompleted(true);setView('sheet');fnSetStep(REVIEW_STEP);}
+                else if(oCharacter.creationCompletedAt){setView('sheet');fnSetStep(REVIEW_STEP);}
                 setCompletionRequested(false);
                 return true;
             } catch (e) {
@@ -628,6 +640,11 @@ const App: React.FC = () => {
             }
         }
         return false;
+    };
+
+    const fnRequestSave=()=>{
+        if(activeSaveName){fnSaveCharacter(activeSaveName);return;}
+        fnSetStorageMode('save');fnSetShowStorage(true);
     };
 
     const fnLoadCharacter = (sName: string) => {
@@ -638,7 +655,8 @@ const App: React.FC = () => {
                     const oLoaded = JSON.parse(sData) as Partial<Character>;
                     const normalized=fnNormalizeCharacter(oLoaded);
                     fnSetCharacter(normalized);
-                    setView('creator');
+                    setActiveSaveName(sName);
+                    setView('sheet');
                     fnSetStep(REVIEW_STEP);
                     fnShowNotification(fnT('storage.loadSuccess'));
                 } catch (e) {
@@ -659,6 +677,7 @@ const App: React.FC = () => {
 
     const fnResetCharacter = () => {
         if (window.confirm(fnT('common.resetWarning'))) {
+            setActiveSaveName(null);
             const oIdentity = fnGenerateIdentity(sLocale, oCharacter.gameType); 
             fnSetCharacter({
                 ...oInitialCharacter,
@@ -695,7 +714,8 @@ const App: React.FC = () => {
                 const oLoaded = JSON.parse(event.target?.result as string) as Partial<Character>;
                 const normalized=fnNormalizeCharacter(oLoaded);
                 fnSetCharacter(normalized);
-                setView('creator');
+                setActiveSaveName(null);
+                setView('sheet');
                 fnSetStep(REVIEW_STEP);
                 fnShowNotification(fnT('storage.importSuccess'));
             } catch (err) {
@@ -785,7 +805,7 @@ const App: React.FC = () => {
         const sThemeAccent=sThemeColor;
         const sThemeBorder=bIsWerewolf?'border-emerald-800':'border-red-800';
         const sThemeBg='bg-gray-900';
-        if(oCharacter.creationCompletedAt&&['nature','capacities','powers'].includes(sStepId))return <section className="rounded-lg border border-gray-600 bg-gray-900 p-6 space-y-4"><h2 className="text-xl">Ficha em jogo</h2><p>A distribuição inicial foi encerrada. Use a evolução com XP para aumentar características e adquirir novos benefícios.</p><button className="rounded border p-3" onClick={()=>{setPanel('resources','experience');fnSetStep(5);}}>Evoluir com XP</button></section>;
+        if(view==='sheet'&&oCharacter.creationCompletedAt&&['nature','capacities','powers'].includes(sStepId))return <section className="rounded-lg border border-gray-600 bg-gray-900 p-6 space-y-4"><h2 className="text-xl">Ficha em jogo</h2><p>A distribuição inicial foi encerrada. Use a evolução com XP para aumentar características e adquirir novos benefícios.</p><button className="rounded border p-3" onClick={()=>{setPanel('resources','experience');fnSetStep(5);}}>Evoluir com XP</button></section>;
         switch (sStepId) {
             case 'concept':
                 return (
@@ -1280,11 +1300,11 @@ const App: React.FC = () => {
                 );
             case 'sheet':
                 return (
-                    <><DiceRoller character={oCharacter} onUpdate={fnApplyTransaction}/>
+                    <DiceRoller character={oCharacter} onUpdate={fnApplyTransaction}>
                     <CharacterSheet 
-                        character={oCharacter} 
+                        character={oCharacter} editable={view==='creator'}
                         onChange={fnUpdateCharacter}
-                        onAdvance={()=>{setPanel('resources','experience');fnSetStep(5);}}
+                        onAdvance={()=>{setPanel('resources','experience');fnSetStep(5);setView('creator');}}
                         onUpdateHunger={(h) => fnUpdateCharacter('hunger', h)} 
                         onUpdateHumanity={(h) => fnUpdateCharacter('humanity', h)}
                         onUpdateWillpower={(w) => fnUpdateCharacter('willpower', w)}
@@ -1293,8 +1313,8 @@ const App: React.FC = () => {
                         onUpdateHarano={(h) => fnUpdateCharacter('harano', h)}
                         onUpdateHauglosk={(h) => fnUpdateCharacter('hauglosk', h)}
                         onBack={requestHome}
-                        onSave={() => { fnSetStorageMode('save'); fnSetShowStorage(true); }}
-                    /></>
+                        onSave={fnRequestSave}
+                    /></DiceRoller>
                 );
             default:
                 return null;
@@ -1303,6 +1323,7 @@ const App: React.FC = () => {
 
     if(view==='home')return <div className="min-h-screen clean-creation" style={gothicBackgroundStyle}>
         <StartScreen draft={draftSummary} onStart={(mode,game,role,scale,template,options)=>{
+            setActiveSaveName(null);
             const identity=fnGenerateIdentity(sLocale,game);
             if(mode==='npc'){
                 const base=createNarrativeNpc(sLocale,scale as any,fnT,game,role,options);
@@ -1310,8 +1331,8 @@ const App: React.FC = () => {
                 fnSetCharacter(c);fnSetStep(REVIEW_STEP);
             }else{fnSetCharacter({...oInitialCharacter,gameType:game,profile:'player',name:identity.name,concept:identity.concept});fnSetStep(1);setPanels({nature:'tribe',capacities:'attributes',powers:'predator',resources:'advantages'});}
             setView('creator');
-        }} onContinue={()=>{try{const raw=localStorage.getItem('whitewolf_draft_v2');if(!raw)return;const c=parseCharacter(JSON.parse(raw));fnSetCharacter(c);let step=1;try{const meta=JSON.parse(localStorage.getItem('whitewolf_flow_v1')||'{}');if(Number.isInteger(meta.step)&&meta.step>=1&&meta.step<=REVIEW_STEP)step=meta.step;if(meta.panels&&typeof meta.panels==='object')setPanels(prev=>Object.fromEntries(Object.entries(prev).map(([key,value])=>[key,typeof meta.panels[key]==='string'?meta.panels[key]:value])) as typeof prev);}catch{}fnSetStep(step);setView('creator');}catch(err){fnShowNotification(err instanceof Error?err.message:'Não foi possível abrir o rascunho.','error');}}} onLibrary={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}} onImport={fnImportJSON}/>
-        {bShowStorage&&<StorageModal mode={sStorageMode} onClose={()=>fnSetShowStorage(false)} currentName={oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>}
+        }} onContinue={()=>{try{const raw=localStorage.getItem('whitewolf_draft_v2');if(!raw)return;const c=parseCharacter(JSON.parse(raw));fnSetCharacter(c);setActiveSaveName(localStorage.getItem('whitewolf_draft_save_v1')||null);let step=1;try{const meta=JSON.parse(localStorage.getItem('whitewolf_flow_v1')||'{}');if(Number.isInteger(meta.step)&&meta.step>=1&&meta.step<=REVIEW_STEP)step=meta.step;if(meta.panels&&typeof meta.panels==='object')setPanels(prev=>Object.fromEntries(Object.entries(prev).map(([key,value])=>[key,typeof meta.panels[key]==='string'?meta.panels[key]:value])) as typeof prev);}catch{}fnSetStep(c.creationCompletedAt?REVIEW_STEP:step);setView(c.creationCompletedAt?'sheet':'creator');}catch(err){fnShowNotification(err instanceof Error?err.message:'Não foi possível abrir o rascunho.','error');}}} onLibrary={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}} onImport={fnImportJSON}/>
+        {bShowStorage&&<StorageModal mode={sStorageMode} onClose={()=>fnSetShowStorage(false)} currentName={activeSaveName||oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>}
         {oNotification&&<Notification message={oNotification.message} type={oNotification.type} onClose={()=>fnSetNotification(null)}/>}
     </div>;
 
@@ -1329,9 +1350,10 @@ const App: React.FC = () => {
                     </button>
                     <div className="app-header-actions text-sm">
                         <RulesLibrary character={oCharacter}/>
-                        <button type="button" aria-label="Salvar rascunho" className="border border-gray-600 rounded px-3 py-2" onClick={()=>{fnSetStorageMode('save');fnSetShowStorage(true);}}><span className="hidden sm:inline">Salvar rascunho</span><span className="sm:hidden">Salvar</span></button>
+                        <button type="button" aria-label={view==='sheet'?'Salvar personagem':'Salvar rascunho'} className="border border-gray-600 rounded px-3 py-2" onClick={fnRequestSave}><span className="hidden sm:inline">{view==='sheet'?'Salvar personagem':'Salvar rascunho'}</span><span className="sm:hidden">Salvar</span></button>
                         <details className="app-actions-menu"><summary className="border border-gray-600 rounded px-3 py-2">Mais ações</summary><div className="app-actions-popover border border-gray-600 bg-gray-950">
                             <button type="button" onClick={requestHome}>Voltar à tela inicial</button>
+                            <button type="button" onClick={()=>{fnSetStorageMode('save');fnSetShowStorage(true);}}>Salvar uma cópia</button>
                             <ThemeControl/><button type="button" onClick={fnExportJSON}>Exportar JSON</button>
                             <label className="cursor-pointer">Importar JSON<input type="file" accept=".json" className="sr-only" onChange={fnImportJSON}/></label>
                             <button type="button" onClick={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}}>Meus personagens</button>
@@ -1342,26 +1364,32 @@ const App: React.FC = () => {
                 </div>
             </header>
             <main className="app-main flex-grow p-4 md:p-8 max-w-6xl mx-auto w-full min-w-0">
-                <StepIndicator
+                {view==='creator'&&<StepIndicator
                     completedSteps={aSteps.map((_,i)=>i+1).filter(step=>step<REVIEW_STEP&&allIssues.every(issue=>issueDestination(issue,oCharacter).step!==step))}
                     currentStep={nStep}
                     totalSteps={aSteps.length}
                     steps={aSteps}
                     isWerewolf={oCharacter.gameType === GameType.Werewolf}
                     onStepClick={fnSetStep}
-                />
-                <div className="mb-5 mt-4 flex flex-wrap justify-between gap-2 text-sm text-gray-400"><p>Etapa {nStep} de {aSteps.length} · {aSteps[nStep-1]?.label}</p><p role="status">{saveStatus}</p></div>
-                {nStep===REVIEW_STEP&&<section aria-label="Revisão da criação" className="mb-6 rounded-xl border border-gray-600 p-5 bg-gray-900">
+                />}
+                {view==='sheet'?<section aria-label="Personagem em jogo" className="mb-6 rounded-xl border border-gray-600 bg-gray-950 p-5">
+                  <p className="mb-2 text-sm text-gray-400">{oCharacter.creationCompletedAt?'Ficha pronta para jogar':'Personagem salvo · criação ainda pode ser revisada'}</p>
+                  <h2 className="text-2xl font-cinzel break-words">{oCharacter.name||'Personagem sem nome'}</h2>
+                  <p className="mt-2">{oCharacter.concept}</p>
+                  <p className="mt-2 text-sm">Toque em uma habilidade para testar. Os dados de Fome ou Fúria vêm da ficha.</p>
+                  <div className="mt-4 flex flex-wrap gap-3"><button type="button" className="min-h-11 rounded border border-gray-600 px-4 py-2" onClick={()=>{setView('creator');fnSetStep(1);}}>Editar personagem</button><PdfButton character={oCharacter}/></div>
+                </section>:<div className="mb-5 mt-4 flex flex-wrap justify-between gap-2 text-sm text-gray-400"><p>Etapa {nStep} de {aSteps.length} · {aSteps[nStep-1]?.label}</p><p role="status">{saveStatus}</p>{oCharacter.creationCompletedAt&&<button type="button" className="min-h-11 rounded border px-3" onClick={()=>{setView('sheet');fnSetStep(REVIEW_STEP);}}>Voltar à ficha</button>}</div>}
+                {view==='creator'&&nStep===REVIEW_STEP&&<section aria-label="Revisão da criação" className="mb-6 rounded-xl border border-gray-600 p-5 bg-gray-900">
                     <h2 className="text-xl">{allIssues.length?`Faltam ${allIssues.length} escolhas`:oCharacter.creationCompletedAt?'Ficha em jogo':oCharacter.profile==='npc'?'NPC pronto para revisão do Narrador':'Escolhas de criação preenchidas'}</h2>
                     <p className="mt-2 text-sm text-gray-300">{oCharacter.profile==='npc'?'Confira a coerência da ficha com a sua história.':'Confira os detalhes e as regras antes de concluir. Você pode salvar um rascunho a qualquer momento.'}</p>
                     <ul className="mt-4 space-y-3">{allIssues.map(issue=><li key={issue} className="flex justify-between gap-3 text-sm"><span>{displayIssue(issue)}</span><button type="button" className="underline shrink-0" onClick={()=>goToIssue(issue)}>Resolver</button></li>)}</ul>
-                    <button type="button" disabled={allIssues.length>0} className="mt-4 rounded bg-emerald-800 px-4 py-3 disabled:opacity-40" onClick={()=>{setCompletionRequested(true);fnSetStorageMode('save');fnSetShowStorage(true);}}>{completed?'Criação concluída':'Concluir criação'}</button>
+                    <button type="button" disabled={allIssues.length>0} className="mt-4 rounded bg-emerald-800 px-4 py-3 disabled:opacity-40" onClick={()=>{if(activeSaveName){fnSaveCharacter(activeSaveName,true);return;}setCompletionRequested(true);fnSetStorageMode('save');fnSetShowStorage(true);}}>{completed?'Criação concluída':'Concluir criação'}</button>
                     {completed&&<p role="status" className="mt-2 text-emerald-200">Personagem salvo neste navegador. Exporte JSON para guardar uma cópia.</p>}
                 </section>}
                 <div className="mt-1 min-w-0">{renderStepContent()}</div>
                 {aValidationIssues.length>0&&nStep<REVIEW_STEP&&<details className="mt-6 border border-gray-700 rounded-lg p-4 text-sm"><summary>{aValidationIssues.length} pendências nesta etapa · você pode continuar</summary><ul className="mt-3 space-y-2">{aValidationIssues.map(issue=><li key={issue}>{displayIssue(issue)}</li>)}</ul></details>}
             </main>
-            <footer ref={footerRef} className="app-footer bg-black border-t border-gray-800 fixed bottom-0 inset-x-0 z-40">
+            {view==='creator'&&<footer ref={footerRef} className="app-footer bg-black border-t border-gray-800 fixed bottom-0 inset-x-0 z-40">
                 <div className="app-footer-inner max-w-6xl mx-auto">
                     <Button onClick={() => nStep === 1 ? requestHome() : fnSetStep(prev => Math.max(1, prev - 1))} variant="secondary">{nStep === 1 ? 'Tela inicial' : fnT('buttons.back')}</Button>
                     {nStep < aSteps.length ? (
@@ -1375,10 +1403,10 @@ const App: React.FC = () => {
                             </Button>
                         </div>
                     ) : (
-                        <Button variant="secondary" onClick={() => window.print()}>{fnT('buttons.print')}</Button>
+                        <PdfButton character={oCharacter}/>
                     )}
                 </div>
-            </footer>
+            </footer>}
             {showExit && <InfoModal title="Voltar à tela inicial?" onClose={()=>setShowExit(false)}>
                 <div className="space-y-4">
                     <p>Deseja salvar o personagem no estado atual antes de sair? Você pode salvar mesmo com escolhas pendentes.</p>
@@ -1394,7 +1422,7 @@ const App: React.FC = () => {
                 </div>
             </InfoModal>}
             {bShowStorage && (
-                <StorageModal mode={sStorageMode} onClose={() => {fnSetShowStorage(false);setCompletionRequested(false);}} currentName={oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>
+                <StorageModal mode={sStorageMode} onClose={() => {fnSetShowStorage(false);setCompletionRequested(false);}} currentName={activeSaveName||oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>
             )}
             {oNotification && (
                 <Notification message={oNotification.message} type={oNotification.type} onClose={() => fnSetNotification(null)} />

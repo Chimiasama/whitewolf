@@ -57,7 +57,7 @@ for(const game of ['Vampire','Werewolf'])test(`NPC ${game}: exporta, reimporta e
  const download=await downloadPromise;const path=testInfo.outputPath('character.json');await download.saveAs(path);
  await page.reload();await page.locator('input[type=file]').first().setInputFiles(path);
  await expect(page.getByText('NPC temático — sem orçamento de XP',{exact:true})).toBeVisible();
- await page.getByRole('button',{name:'Salvar rascunho',exact:true}).click();
+ await page.getByRole('button',{name:'Salvar personagem',exact:true}).click();
  const dialog=page.getByRole('dialog');await dialog.locator('input').fill('Teste de preservação');await dialog.getByRole('button',{name:'Salvar',exact:true}).click();
  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('whitewolf_save_Teste de preservação')!));
  expect(saved.schemaVersion).toBe(2);expect(saved.profile).toBe('npc');expect(saved.narrative.secret).toBeTruthy();expect(saved.gameType).toBe(game);

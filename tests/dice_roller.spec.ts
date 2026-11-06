@@ -81,7 +81,7 @@ test('V5: selecionar um 10 normal desfaz crítico bestial e gasta 1 FV sem alter
  await last(page).getByRole('button',{name:'Gastar 1 Força de Vontade e rerrolar selecionados'}).click();
  await expect(last(page).getByLabel('Resultado da rolagem')).toContainText('3 sucessos');await expect(last(page).getByLabel('Resultado da rolagem')).not.toContainText('Crítico bestial');
  const c=await page.evaluate(()=>JSON.parse(localStorage.getItem('whitewolf_draft_v2')!));expect(c.damage.willpower.superficial).toBe(1);expect(c.willpower).toBe(5);expect(c.hunger).toBe(3);
- await last(page).getByLabel('Dificuldade deste resultado').fill('4');await expect(last(page).getByLabel('Resultado da rolagem')).toContainText('Falha');
+ await modal(page).getByRole('button',{name:'Mais opções',exact:true}).click();await last(page).getByLabel('Dificuldade deste resultado').fill('4');await expect(last(page).getByLabel('Resultado da rolagem')).toContainText('Falha');
 });
 
 test('W5: resultado brutal mostra falha ou 7; protege 1/2 e permite rerrolar Fúria 3',async({page})=>{
@@ -95,12 +95,12 @@ test('W5: resultado brutal mostra falha ou 7; protege 1/2 e permite rerrolar Fú
 
 test('Força de Vontade não usa dados especiais e não permite rerrolagem',async({page})=>{
  await openSheet(page,'Werewolf',{damage:{health:{superficial:0,aggravated:0},willpower:{superficial:2,aggravated:0}}});
- await modal(page).getByLabel('Tipo de teste',{exact:true}).selectOption('willpower');await expect(modal(page).getByLabel('Parada calculada')).toContainText('4 dados · 4 normais · 0 de Fúria');
+ await modal(page).getByRole('button',{name:'Mais opções',exact:true}).click();await modal(page).getByLabel('Tipo de teste',{exact:true}).selectOption('willpower');await expect(modal(page).getByLabel('Parada calculada')).toContainText('4 dados · 4 normais · 0 de Fúria');
  await modal(page).getByRole('button',{name:'Rolar teste',exact:true}).click();await expect(last(page).getByRole('checkbox').first()).toBeDisabled();await expect(last(page).getByRole('button',{name:'Gastar 1 Força de Vontade e rerrolar selecionados'})).toHaveCount(0);
 });
 
 test('checagens atualizam recurso, sem críticos ou rerrolagem',async({page})=>{
- await openSheet(page,'Werewolf',{rage:1});await modal(page).getByLabel('Tipo de teste',{exact:true}).selectOption('rageCheck');await modal(page).getByLabel('Número de checagens').selectOption('2');await fixedDice(page,[1,2]);await modal(page).getByRole('button',{name:'Rolar teste',exact:true}).click();
+ await openSheet(page,'Werewolf',{rage:1});await modal(page).getByRole('button',{name:'Mais opções',exact:true}).click();await modal(page).getByLabel('Tipo de teste',{exact:true}).selectOption('rageCheck');await modal(page).getByLabel('Número de checagens').selectOption('2');await fixedDice(page,[1,2]);await modal(page).getByRole('button',{name:'Rolar teste',exact:true}).click();
  await expect(last(page)).toContainText('Fúria 1 → 0');await expect(modal(page).getByRole('button',{name:'Rolar teste',exact:true})).toBeDisabled();
  await expect.poll(()=>page.evaluate(()=>JSON.parse(localStorage.getItem('whitewolf_draft_v2')!).rage)).toBe(0);
 });
@@ -108,7 +108,7 @@ test('checagens atualizam recurso, sem críticos ou rerrolagem',async({page})=>{
 test('mobile: trilha cheia aplica -2, efeito ignora 1, no máximo 3 dados selecionados',async({page},info)=>{
  await page.setViewportSize({width:360,height:800});
  await openSheet(page,'Vampire',{hunger:1,damage:{health:{superficial:6,aggravated:0},willpower:{superficial:0,aggravated:0}}});
- await expect(modal(page).getByLabel('Parada calculada')).toContainText('5 dados');await modal(page).getByText('Opções avançadas',{exact:true}).click();await modal(page).getByLabel('Redução da penalidade',{exact:true}).selectOption('1');await expect(modal(page).getByLabel('Parada calculada')).toContainText('6 dados');
+ await expect(modal(page).getByLabel('Parada calculada')).toContainText('5 dados');await modal(page).getByRole('button',{name:'Mais opções',exact:true}).click();await modal(page).getByLabel('Redução da penalidade',{exact:true}).selectOption('1');await expect(modal(page).getByLabel('Parada calculada')).toContainText('6 dados');
  await fixedDice(page,[4]);await modal(page).getByRole('button',{name:'Rolar teste',exact:true}).click();
  for(const n of [2,3,4])await last(page).getByLabel(`Rerrolar dado ${n} (normal 4)`,{exact:true}).check();
  await expect(last(page).getByLabel('Rerrolar dado 5 (normal 4)',{exact:true})).toBeDisabled();
@@ -118,7 +118,7 @@ test('mobile: trilha cheia aplica -2, efeito ignora 1, no máximo 3 dados seleci
 
 test('V5: ignorar Vitalidade paga uma vez por turno; checagem em Fome 5 pede frenesi',async({page})=>{
  await openSheet(page,'Vampire',{hunger:5,damage:{health:{superficial:6,aggravated:0},willpower:{superficial:0,aggravated:0}}});
- await modal(page).getByText('Opções avançadas',{exact:true}).click();
+ await modal(page).getByRole('button',{name:'Mais opções',exact:true}).click();
  await modal(page).getByRole('button',{name:'Gastar 1 Força de Vontade e ignorar penalidade de Vitalidade por um turno',exact:true}).click();
  await expect(modal(page).getByLabel('Parada calculada')).toContainText('7 dados');
  await modal(page).getByRole('button',{name:'Rolar teste',exact:true}).click();await modal(page).getByRole('button',{name:'Rolar teste',exact:true}).click();

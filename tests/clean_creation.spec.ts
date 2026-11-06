@@ -155,7 +155,7 @@ test("NPC: papel solicitado, conclusão e arquivos acessíveis no celular", asyn
     .getByRole("button", { name: "Salvar", exact: true })
     .click();
   await expect(
-    page.getByRole("button", { name: "Criação concluída" }),
+    page.getByRole("region", { name: "Personagem em jogo" }),
   ).toBeVisible();
   await page.getByText("Mais ações", { exact: true }).click();
   await expect(

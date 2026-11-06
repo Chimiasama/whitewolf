@@ -177,6 +177,7 @@ test("ritual inicial selecionável e novos dados inválidos rejeitados", async (
       mimeType: "application/json",
       buffer: Buffer.from(JSON.stringify(c)),
     });
+  await page.getByRole('button',{name:'Editar personagem',exact:true}).click();
   await page.getByRole("button", { name: "Poderes", exact: false }).click();
   await page
     .getByRole("tab", { name: "Rituais e cerimônias", exact: true })

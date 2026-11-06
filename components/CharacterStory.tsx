@@ -68,6 +68,7 @@ export function CharacterStory({
         {(id) =>
           id === "relationships" ? <RelationshipRecord character={c} onChange={onChange}/> : id === "caern" ? <CaernRecord character={c} onChange={onChange}/> : id === "chronicle" ? (
             <div className="grid gap-4 sm:grid-cols-2">
+              <div className="sm:col-span-2"><TextArea label="História do personagem" autoGrow value={c.backstory||''} onChange={e=>onChange('backstory',e.target.value)}/></div>
               {Object.entries(fields).map(([key, label]) => (
                 <label key={key}>
                   {label}
@@ -320,6 +321,7 @@ export function StorySummary({ character: c }: { character: Character }) {
     c.gameType === GameType.Werewolf ? WEREWOLF_STORY : VAMPIRE_STORY;
   return (
     <section aria-label="Vínculos estruturados" className="space-y-4 text-left">
+      {c.backstory&&<details><summary>História do personagem</summary><p className="mt-3 whitespace-pre-wrap break-words">{c.backstory}</p></details>}
       <RelationshipsSummary character={c}/>
       {c.gameType===GameType.Werewolf&&<CaernSummary character={c}/>}
       {c.convictions?.length > 0 && (

@@ -1,3 +1,5 @@
+import {useQuickRoll} from '../lib/rollContext';
+import {PdfButton} from './PdfButton';
 import {trackRemaining} from '../lib/damage';
 import {LegacyLoresheets} from './LegacyLoresheets';
 import {HelpLabel} from './HelpLabel';
@@ -21,6 +23,7 @@ export function CompactSheet({
   onBack?: () => void;
 }) {
   const { t } = useI18n();
+  const quickRoll=useQuickRoll();
   const wolf = c.gameType === GameType.Werewolf;
   const disciplines = fnGetDisciplineDetails(t);
   const predator = !wolf && c.predatorType ? fnGetPredatorTypes(t).find(p => p.id === c.predatorType) : undefined;
@@ -48,15 +51,17 @@ export function CompactSheet({
           <h2 className="text-2xl">{c.name || "Sem nome"}</h2>
           <p>{c.concept}</p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <button type="button" className="border rounded p-2" onClick={onBack}>
             Início
           </button>
+          <PdfButton character={c}/>
           <button type="button" className="border rounded p-2" onClick={onSave}>
             Salvar ficha
           </button>
         </div>
       </div>
+      {quickRoll&&<button type="button" className="min-h-11 rounded border p-3" onClick={()=>quickRoll({kind:'willpower'})}>Testar Força de Vontade</button>}
       {predator && <section aria-label="Predador e caçada">
         <h3>Tipo de predador</h3>
         <HelpLabel title={'Caçada: '+predator.name} content={<HuntingReference predator={predator}/>}>{predator.name}</HelpLabel>
@@ -116,7 +121,7 @@ export function CompactSheet({
                   key={k}
                   className="flex justify-between py-1 border-b border-gray-700"
                 >
-                  <dt>{t("skills.list." + k)}</dt>
+                  <dt><button type="button" className="min-h-11 text-left" aria-label={'Rolar '+t("skills.list."+k)} onClick={()=>quickRoll?.({kind:'skill',skill:k as any})}>{t("skills.list." + k)}</button></dt>
                   <dd>{v}</dd>
                 </div>
               ))}

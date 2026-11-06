@@ -39,7 +39,7 @@ export function parseCharacter(input:unknown):Character {
  if(raw.creationCompletedAt!==undefined&&(typeof raw.creationCompletedAt!=='string'||!/^\d{4}-\d{2}-\d{2}T/.test(raw.creationCompletedAt)||Number.isNaN(Date.parse(raw.creationCompletedAt))))return fail('data de conclusão');
  if(raw.profile!==undefined && !['player','npc'].includes(raw.profile)) return fail('perfil');
  const result={...oInitialCharacter,...raw,schemaVersion:SCHEMA_VERSION} as Character;
- for(const key of ['name','concept','ambition','desire','sire','mentor','touchstones','portraitUrl']) {
+ for(const key of ['name','concept','ambition','desire','sire','mentor','touchstones','portraitUrl','backstory']) {
   const v=result[key]; if(v!==undefined && (typeof v!=='string'||v.length>2_000_000)) return fail(key);
  }
  if(result.portraitUrl && !/^data:image\/(jpeg|png|webp);base64,[a-z0-9+/=]+$/i.test(result.portraitUrl)) return fail('retrato: utilize upload local');

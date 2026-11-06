@@ -205,6 +205,7 @@ export interface Character {
   gameType: GameType | null;
   name: string;
   concept: string;
+  backstory?: string;
   ambition: string;
   desire: string;
   // Vampire specific
