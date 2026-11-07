@@ -13,7 +13,7 @@ O relato foi de fechamento ao selecionar Fama novamente. No navegador, o teste c
 
 ## Consulta e cobertura
 
-O botão **Ver descrição** está disponível antes e depois da seleção. O gesto de segurar e o ícone de informação continuam disponíveis.
+As descrições são abertas pelo ícone **ⓘ** ou segurando o nome, antes e depois da seleção. Não há um botão adicional de descrição nos cartões.
 
 As referências revisadas mostram funcionamento, níveis, limitações e observações. Incluem Fama, Aliados, Contatos, Recursos, Aparência, Linguística e Defeitos associados em V5/W5; Influência, Refúgio e Rebanho em V5; Refúgio Seguro e Emprego em W5. Regras diferentes entre os jogos ficam separadas. O conteúdo revisado também aparece na consulta geral, na ficha e no PDF.
 

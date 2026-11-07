@@ -1,4 +1,3 @@
-import {InfoModal} from './InfoModal';
 import {catalogReferenceKey} from '../lib/bookReferences';
 import {HelpLabel} from './HelpLabel';
 import React, { useState, useId } from "react";
@@ -32,8 +31,6 @@ export function CatalogPicker({
     [locked, setLocked] = useState(false),
     [community, setCommunity] = useState(false);
   const id = useId();
-  const [detailId,setDetailId]=useState<string|null>(null);
-  const detail=options.find(option=>option.id===detailId);
   const normalize = (s: string) =>
     s
       .normalize("NFD")
@@ -81,7 +78,6 @@ export function CatalogPicker({
                   </button>
                 </div>
                 {item?.control}
-                {(item?.details||item?.summary)&&<button type="button" className="mt-2 min-h-11 rounded border border-gray-600 px-3 py-2 text-sm" aria-label={`Ver descrição: ${item?.name||key}`} onClick={()=>setDetailId(key)}>Ver descrição</button>}
               </li>
             );
           })}
@@ -153,7 +149,6 @@ export function CatalogPicker({
                   </button>
                 </div>
                 {multiple&&selected.includes(o.id)&&<p className="mt-2 text-sm text-gray-400">Já selecionado. Ajuste os pontos ou use Remover no cartão acima.</p>}
-                {(o.details||o.summary)&&<button type="button" className="mt-2 min-h-11 rounded border border-gray-600 px-3 py-2 text-sm" aria-label={`Ver descrição: ${o.name}`} onClick={()=>setDetailId(o.id)}>Ver descrição</button>}
                 {o.unavailable && (
                   <p className="mt-2 text-sm text-amber-200">{o.unavailable}</p>
                 )}
@@ -167,7 +162,6 @@ export function CatalogPicker({
           )}
         </div>
       )}
-      {detail&&<InfoModal title={detail.name} sourceKey={catalogReferenceKey(label,detail.id)} onClose={()=>setDetailId(null)}><div className="space-y-3 text-sm">{detail.details||detail.summary}</div></InfoModal>}
     </section>
   );
 }
