@@ -1,3 +1,5 @@
+import {HelpLabel} from "./HelpLabel";
+import { LoresheetPicker } from "./LoresheetPicker";
 import {AdvantageReference} from './AdvantageReference';
 import {alternativeBane} from '../data/alternativeBanes';
 import {BenefitChoices} from './BenefitChoices';
@@ -139,7 +141,7 @@ export function ResourceChoices({
       {!c.creationCompletedAt && (
         <div className="grid grid-cols-2 gap-3 rounded-lg bg-gray-900 p-4 text-sm">
           <div>
-            Vantagens e Loresheets
+            Vantagens e Fichas de Conhecimento
             <strong className="block text-xl">
               {advantagePoints} / {AGE_PROFILES[c.creationAge||'childer'].advantages} pontos
             </strong>
@@ -153,7 +155,7 @@ export function ResourceChoices({
       {panel === "loresheets" &&
         c.loresheets.some((l) => l.id === "v5-helena" && l.level === 2) && (
           <label className="block">
-            Habilidade de Talento Verdadeiro
+            Habilidade de Talento Inato
             <select
               className="mt-2 block rounded p-3"
               value={c.loreChoices?.helenaTalent || ""}
@@ -182,7 +184,7 @@ export function ResourceChoices({
                 { id: "advantages", label: "Vantagens" },
                 { id: "flaws", label: "Defeitos" },
                 ...(c.gameType === GameType.Vampire
-                  ? [{ id: "loresheets", label: "Loresheets" }]
+                  ? [{ id: "loresheets", label: "Fichas de Conhecimento" }]
                   : []),
               ]
             : []),
@@ -206,42 +208,7 @@ export function ResourceChoices({
           ) : key === "ties" ? (
             <CharacterStory character={c} onChange={onChange} />
           ) : key === "loresheets" ? (
-            <CatalogPicker
-              label="Loresheets"
-              multiple
-              selected={c.loresheets.map((l) => l.id + ":" + l.level)}
-              options={loresheets.flatMap((l) =>
-                l.levels.map((level) => ({
-                  id: l.id + ":" + level.level,
-                  name: `${l.name} · ${level.level} pontos`,
-                  summary: level.name,
-                  unavailable:
-                    l.allowedClans && !l.allowedClans.includes(c.clan)
-                      ? "Exige o clã indicado na referência."
-                      : undefined,
-                  details: (
-                    <>
-                      <p>{l.description}</p>
-                      <p>{level.description}</p>
-                      <p>{level.system}</p>
-                    </>
-                  ),
-                })),
-              )}
-              onToggle={(id) => {
-                const [key, n] = id.split(":");
-                onChange(
-                  "loresheets",
-                  c.loresheets.some(
-                    (l) => l.id === key && l.level === Number(n),
-                  )
-                    ? c.loresheets.filter(
-                        (l) => !(l.id === key && l.level === Number(n)),
-                      )
-                    : [...c.loresheets, { id: key, level: Number(n) }],
-                );
-              }}
-            />
+            <LoresheetPicker sheets={loresheets} character={c} onTransaction={onTransaction} />
           ) : (
             (() => {
               const field = key === "flaws" ? "flaws" : "advantages";
@@ -293,7 +260,7 @@ export function ResourceChoices({
                       <h4>Concedido pelo predador · adicional ao orçamento</h4>
                       {granted.map((g) => (
                         <p key={g.id}>
-                          {g.name} · {g.cost} pontos
+                          <HelpLabel title={g.name} sourceKey={`advantage:${g.id}`} content={<AdvantageReference item={g} game={c.gameType}/>}>{g.name}</HelpLabel> · {g.cost} pontos
                         </p>
                       ))}
                     </aside>

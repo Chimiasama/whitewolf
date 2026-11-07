@@ -132,7 +132,7 @@ export function quotePurchase(
     ) {
       const normal = cost;
       cost = Math.floor(cost / 2);
-      formula = `${normal} ÷ 2, arredondado para baixo = ${cost} XP · Talento Verdadeiro`;
+      formula = `${normal} ÷ 2, arredondado para baixo = ${cost} XP · Talento Inato`;
       reference += "; V5, p. 391";
     }
   } else if (r.kind === "specialty") {
@@ -191,25 +191,25 @@ export function quotePurchase(
   } else if (r.kind === "loresheet") {
     const sheet = fnGetLoresheets(t).find((x) => x.id === r.key),
       level = sheet?.levels.find((x) => x.level === r.level);
-    if (!level) reject("Escolha um nível válido de Loresheet.");
+    if (!level) reject("Escolha um nível válido de Ficha de Conhecimento.");
     if (sheet.allowedClans && !sheet.allowedClans.includes(c.clan))
-      reject("Esta Loresheet exige o clã indicado no livro.");
+      reject("Esta Ficha de Conhecimento exige o clã indicado no livro.");
     if (
       r.key === "v5-helena" &&
       r.level === 2 &&
       !["Craft", "Etiquette", "Performance"].includes(r.choice)
     )
       reject(
-        "Escolha Ofícios, Etiqueta ou Performance para Talento Verdadeiro.",
+        "Escolha Ofícios, Etiqueta ou Performance para Talento Inato.",
       );
     if (c.loresheets.some((x) => x.id === r.key && x.level === r.level))
-      reject("Este nível de Loresheet já foi adquirido.");
+      reject("Este nível de Ficha de Conhecimento já foi adquirido.");
     to = level.level;
     cost = to * 3;
     formula = `${to} pontos × 3 = ${cost} XP (nível independente)`;
     label = `${sheet.name}: ${level.name}`;
     reference =
-      "V5, pp. 152, 190 — níveis de Loresheet são comprados separadamente";
+      "V5, pp. 152, 190 — níveis de Ficha de Conhecimento são comprados separadamente";
     patch = {
       loresheets: [...c.loresheets, { id: r.key, level: to }],
       ...(r.key === "v5-helena" && r.level === 2

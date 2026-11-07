@@ -132,9 +132,9 @@ test("recursos com busca, custo editável e Loresheets em seção própria", asy
     .click();
   await picker.getByLabel("Pontos de Aliados").selectOption("3");
   await expect(page.getByText("3 / 7 pontos", { exact: true })).toBeVisible();
-  await page.getByRole("tab", { name: "Loresheets", exact: true }).click();
+  await page.getByRole("tab", { name: "Fichas de Conhecimento", exact: true }).click();
   await expect(
-    page.getByRole("region", { name: "Loresheets", exact: true }),
+    page.getByRole("region", { name: "Fichas de Conhecimento", exact: true }),
   ).toBeVisible();
 });
 test("NPC: papel solicitado, conclusão e arquivos acessíveis no celular", async ({

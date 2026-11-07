@@ -4795,7 +4795,7 @@ const oPt = {
     "powerbehindthrone": { "name": "Poder Atrás do Trono" },
     "supportivepresence": { "name": "Presença de Apoio" },
     "bloodhound": {
-      "name": "Faro de Sangue",
+      "name": "Sabujo de Sangue",
       "description": "Seus sentidos permitem detectar doenças, drogas e contaminação sobrenatural no sangue ou na presa antes de se alimentar."
     },
     "safehouse": {

@@ -1,0 +1,1831 @@
+{
+  "Vampire": {
+    "calmheart": {
+      "text": "Sua Besta foi domada, ou sua natureza extremamente calma torna mais raro entrar em frenesi. Personagens com esta característica acrescentam dois dados a todas as rolagens para resistir a um frenesi.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "10",
+      "community": true
+    },
+    "daredevil": {
+      "text": "O tédio invade a mente de muitos Membros ao longo dos anos, levando alguns a buscar maneiras de se sentirem vivos durante a não vida. Arriscando a imortalidade, vampiros com esta Qualidade procuram situações perigosas por satisfação.\n\nVocê recebe dois dados adicionais em ações que o Narrador considere desnecessariamente perigosas. Isso não beneficia qualquer situação arriscada nem todo combate: aumenta a chance de sucesso quando o vampiro deliberadamente escolhe o caminho mais perigoso. Ser colocado em perigo não é o mesmo que procurá-lo.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "10",
+      "community": true
+    },
+    "codeofhonor": {
+      "text": "Você tem um código pessoal ao qual adere a qualquer custo. Tentativas de fazê-lo quebrá-lo, mesmo sobrenaturalmente, sofrem uma penalidade de dois dados. O código deve ser específico e definido com o Narrador. Um código vago demais ou aplicável de forma ampla à maioria das situações não serve para esta Qualidade.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "10",
+      "community": true
+    },
+    "amnesia": {
+      "text": "Você não lembra nada da vida anterior ao Abraço. Seja por um efeito colateral do Abraço, interferência de Disciplinas mentais ou outra explicação, sua vida mortal é uma página em branco.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "10",
+      "community": true
+    },
+    "curiosity": {
+      "text": "Você precisa gastar um ponto de Força de Vontade para ignorar algo intrigante ou resistir à vontade de explorar algo novo ou desconhecido.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "10",
+      "community": true
+    },
+    "impatient": {
+      "text": "Você, ou talvez sua Besta, é especialmente impaciente. Enquanto outros Membros aguardam anos até seus planos frutificarem, você não consegue ficar esperando quando poderia agir. Precisa gastar um ponto de Força de Vontade para aguardar pacientemente em uma situação na qual agir imediatamente também seja uma opção.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "11",
+      "community": true
+    },
+    "fastlearner": {
+      "text": "Você aprende habilidades e conhecimentos mais depressa que a maioria. Os multiplicadores de experiência de Atributos e Habilidades diminuem em um, e Especializações custam um ponto a menos. Assim, Atributos custam novo nível × 4, Habilidades custam novo nível × 2 e Especializações custam 2 XP. O benefício vale somente para essas três categorias.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "11",
+      "community": true
+    },
+    "focused": {
+      "text": "Ações em situações especialmente caóticas normalmente têm Dificuldade maior ou penalidades de dados. Você mantém a concentração e ignora distrações que seriam obstáculos para outras pessoas. Não sofre penalidades ao realizar ações em situações estressantes ou com distrações.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "11",
+      "community": true
+    },
+    "headstrong": {
+      "text": "Você possui grande fortaleza mental e continua onde outros desistiriam. Recebe um nível adicional de Força de Vontade, até o máximo de dez. Não sofre penalidades de Debilitação quando a trilha de Força de Vontade está preenchida com dano Superficial.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "11",
+      "community": true
+    },
+    "highhumanity": {
+      "text": "Você provavelmente foi Abraçado recentemente e era um mortal especialmente virtuoso. Em casos raros, um vampiro consegue levar uma vida mais moral depois da transformação. Receba um ponto de Humanidade.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "11",
+      "community": true
+    },
+    "ironwill": {
+      "text": "Você é especialmente resistente à intrusão mental. Recebe dois dados adicionais para resistir a efeitos que alteram a mente. Se resistir com sucesso a uma manipulação mental, percebe imediatamente a tentativa. O benefício não se acumula com outros efeitos de bloqueio mental, como os de Fortitude.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "11",
+      "community": true
+    },
+    "jackofalltrades": {
+      "text": "Por treinamento versátil ou talento natural, você tem jeito para quase toda habilidade. Para calcular sua parada de dados, pode tratar qualquer Habilidade sem pontos como se tivesse um ponto. Ainda precisa pagar o custo normal de experiência para adquirir o primeiro ponto real nela.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "11",
+      "community": true
+    },
+    "expertinstructor": {
+      "text": "Alguns vampiros sabem que uma coterie forte é essencial à sobrevivência e procuram cercar-se de Membros competentes. Quando dedica tempo a ensinar ou treinar outro personagem, ele pode gastar um ponto de experiência a menos para aprender uma Habilidade ou Disciplina que você possua. Você também pode treinar alguém para alcançar níveis superiores aos seus. O Narrador determina o tempo necessário.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "11",
+      "community": true
+    },
+    "remorseful_merit": {
+      "text": "Você acrescenta um dado a todas as rolagens de Remorso.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "12",
+      "community": true
+    },
+    "paranoia": {
+      "text": "Ser cauteloso ajuda na sociedade dos Membros, mas você é especialmente paranoico. Questiona as motivações de todos e não se sente confortável ou seguro em situações que não controla completamente. Falha automaticamente em testes de Sagacidade, pois presume o pior independentemente das verdadeiras intenções de alguém.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "12",
+      "community": true
+    },
+    "routine": {
+      "text": "Os hábitos lhe dão conforto. Com uma possível eternidade pela frente, rotinas o ancoram e lhe dão propósito, mas também permitem aos inimigos prever onde estará e o que fará. Quando forçado a quebrar a rotina por uma noite, sofre uma penalidade de dois dados em todas as rolagens Mentais. Precisa gastar um ponto de Força de Vontade para quebrá-la voluntariamente por uma noite. Defina a rotina e seus detalhes com o Narrador.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "12",
+      "community": true
+    },
+    "loremaster_merit_v": {
+      "text": "Você conhece diversos assuntos de Ocultismo, por versatilidade acadêmica, experiência em diferentes práticas ou acesso a referências impressionantes. Pode acrescentar uma Especialização em Ocultismo para cada ponto que possuir nessa Habilidade.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "12",
+      "community": true
+    },
+    "morbidfascination": {
+      "text": "Você tem uma obsessão pelo macabro e precisa estar fisicamente na presença de lembranças sinistras da morte. Precisa passar trinta minutos acordado na companhia de cadáveres ou outros restos horrendos a cada 24 horas. Se não o fizer, sofre uma penalidade de dois dados em todas as rolagens até cumprir essa necessidade.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "12",
+      "community": true
+    },
+    "nightmares": {
+      "text": "Pesadelos terríveis o atormentam sempre que dorme de dia, sejam recorrentes ou diferentes a cada descanso. Pode haver uma razão sinistra: uma força externa o avisa ou pune, ou algo do passado infectou sua mente. Ao despertar para a noite, teste Força de Vontade com Dificuldade 3. Se falhar, sofre uma penalidade de um dado em todas as rolagens Mentais e Sociais daquela noite.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "12",
+      "community": true
+    },
+    "sadist": {
+      "text": "O sofrimento alheio lhe dá alegria. Depois de entrar em combate, não para até derrotar o oponente e causar a maior dor possível. Parar exige um teste de Força de Vontade com Dificuldade determinada pelo Narrador. Ao ter oportunidade de ferir alguém ou deixá-lo sofrer desnecessariamente, precisa gastar um ponto de Força de Vontade para ignorar o impulso por uma cena.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "12",
+      "community": true
+    },
+    "vengeful": {
+      "text": "A vingança é perigosa, mas você ou sua Besta não resiste a fazer justiça contra quem o prejudicou. Ao se deparar com alguém que lhe fez mal e ainda não foi punido, precisa realizar um teste de frenesi de Fúria, a menos que já esteja agindo ativamente para executar sua vingança.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "softhearted": {
+      "text": "Apesar da Besta, você sente forte compaixão pelos mortais. Sempre que presenciar um mortal sofrendo desnecessariamente, faça um teste de Força de Vontade. A Dificuldade depende da inocência percebida da vítima e da gravidade do sofrimento. Se vencer, nada acontece, embora fique inquieto e triste. Se falhar, recebe uma Mácula e sofre penalidade de dois dados em todas as rolagens pelo resto da noite, sentindo-se fisicamente mal e emocionalmente abalado.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "totalrecall": {
+      "text": "Você pode recordar perfeitamente o que viu ou ouviu. Enquanto as lembranças de outros vampiros desaparecem com a idade, você pode recuperar detalhes específicos imediatamente com Determinação + Inteligência contra uma Dificuldade definida pelo Narrador.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "bluntedfangs": {
+      "text": "Sua mordida não causa dano Agravado e não é mais eficaz para alimentação que uma mordida humana comum, tornando-a bastante dolorosa e suja para a vítima.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "childlike": {
+      "text": "Você foi Abraçado muito jovem. A prática é fortemente condenada nas noites modernas, e ficar preso eternamente a um corpo de aparência infantil causa muitas complicações tanto entre os Membros quanto ao lidar com a sociedade mortal. Converse com o Narrador antes de escolher este Defeito.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "fleshofthecorpse": {
+      "text": "Você conserva os traços físicos dos ferimentos. Outros Membros retornam ao estado do Abraço, mas seu corpo mantém cortes, feridas e outras marcas das lesões sofridas. Pode curar normalmente, porém as feridas continuam visíveis na superfície. Quanto mais dano acumular ao longo do tempo, menos humano parecerá.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "fragile": {
+      "text": "Sua forma é mais frágil que a dos demais Membros. Sempre que sofrer o primeiro ponto de dano Agravado na trilha de Vitalidade, recebe uma lesão incapacitante, rolada na tabela de ferimentos incapacitantes do básico, p. 303. Se já tiver algum dano Agravado, não role novamente ao receber outro ponto. A regra se aplica apenas quando não há dano Agravado e você passa a ter um.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "crackdriver": {
+      "text": "Você é um motorista especialmente habilidoso. Pode executar ações menores sem penalidade enquanto dirige e recebe dois dados adicionais em todas as paradas relacionadas à condução.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "lightsleeper": {
+      "text": "Um vampiro está mais vulnerável durante o dia. Felizmente, você consegue afastar o sono sobrenatural e se levantar ao primeiro sinal de perigo, por treinamento ou por dormir mal. Desperta automaticamente quando está em perigo durante o sono diurno. Ainda sofre as penalidades por ficar acordado de dia, mas não precisa do teste normal de Humanidade para despertar antes do anoitecer (básico, p. 219).",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "sharpsenses": {
+      "text": "Um de seus sentidos é especialmente apurado. Receba um dado adicional em todas as paradas apropriadas que dependam desse sentido.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "slippery_merit_v": {
+      "text": "Você é especialmente escorregadio, seja pela agilidade ou por uma cobertura literalmente lisa, mais comum entre os Nosferatu. Receba dois dados adicionais para esquivar-se de ataques ou escapar de agarrões.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "13",
+      "community": true
+    },
+    "stenchofdeath": {
+      "text": "O cheiro da decomposição o acompanha. Fragrâncias fortes podem disfarçá-lo parcialmente, mas sempre há um odor que lembra a morte. Ele varia de pessoa para pessoa, porém provoca o mesmo temor. Testes de Carisma contra mortais próximos sofrem uma penalidade de dois dados.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "14",
+      "community": true
+    },
+    "skillaptitude": {
+      "text": "Você é incomparável em uma Habilidade específica, por talento extraordinário ou pelo melhor treinamento possível. Pode alcançar nível 6 em uma única Habilidade. Esta Qualidade só pode ser escolhida uma vez.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "14",
+      "community": true
+    },
+    "tough_merit": {
+      "text": "Você é especialmente resistente, por físico imponente ou por ter se fortalecido depois do Abraço. Receba um nível adicional de Vitalidade.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "14",
+      "community": true
+    },
+    "unstakeable": {
+      "text": "Uma das fraquezas mais conhecidas dos Membros não funciona em você, embora talvez só descubra ao ser estacado. Uma estaca no coração ainda causa o dano normal, mas não o coloca automaticamente em Torpor.",
+      "costs": [
+        6
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "14",
+      "community": true
+    },
+    "weakstomach": {
+      "text": "Com o tempo, vampiros têm dificuldade até para fingir comer e beber. A maioria precisa do Rubor da Vida para convencer, mesmo quando tudo tem gosto de cinzas. Para você, isso é insuportável: não consegue nem fingir comer ou beber algo além de sangue. Qualquer outra coisa ingerida é vomitada imediatamente.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "14",
+      "community": true
+    },
+    "claninfiltrator_merit": {
+      "text": "Em muitas cidades, sobretudo da Camarilla, o clã é uma identificação importante. Você conseguiu infiltrar-se em outro clã ou convencer a maioria dos vampiros de que pertence a uma linhagem diferente. Receba três dados adicionais em qualquer parada destinada a enganar os outros sobre seu verdadeiro clã.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "inspiringpresence": {
+      "text": "Há algo motivador em sua aura. Não são necessárias palavras ou ações: sua presença basta para inspirar o melhor nos outros. Uma vez por noite, um único aliado pode fazer uma rerrolagem de Força de Vontade gratuita se você estiver à vista.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "mistakenidentity": {
+      "text": "Você se parece muito com outra pessoa ou foi incriminado. É confundido com alguém notório ou odiado, ou considerado responsável pelas ações dessa pessoa. Frequentemente o culpam por algo que não fez ou acreditam que seja outra pessoa. Você pode explicar ou provar o engano, mas a maioria parte da identidade equivocada até prova em contrário.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "notorioussire": {
+      "text": "Seu Senhor é uma figura notória entre os Membros. Você carrega o peso da reputação dele e precisa provar seu valor ou lutar para sair de sua sombra em muitas situações. É possível esconder a linhagem, mas vampiros astutos conseguem descobrir e divulgar sua ligação duvidosa.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "oathbreaker": {
+      "text": "Você tem fama de mentiroso indigno de confiança. Merecida ou não, a reputação torna os outros pouco dispostos a aceitar sua palavra ou celebrar um acordo de boa-fé com você.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "outsider_flaw_v": {
+      "text": "Você é um forasteiro e poucas pessoas do lugar têm algo em comum com você. Ainda está se adaptando aos costumes, à etiqueta e às regras locais. Sofra uma penalidade de dois dados em rolagens relevantes que dependam de conhecimento ou costumes locais.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "brash_flaw_v": {
+      "text": "Duplo sentido, bajulação e ameaças veladas o irritam. Se há algo a dizer, você diz, e gostaria que os outros fizessem o mesmo. Falha automaticamente em testes de Etiqueta que exijam contenção ou sutileza.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "conflictingloyalties_flaw": {
+      "text": "Você pertence a facções distintas com visões ou objetivos incompatíveis. Sair de qualquer delas é extremamente difícil. É só questão de tempo até precisar escolher um lado ou até os próprios grupos decidirem por você.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "dull_flaw_v": {
+      "text": "A maioria o considera sem graça e desinteressante. Rolagens para inspirar alguém ou influenciá-lo emocionalmente sofrem uma penalidade de dois dados.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "hunted": {
+      "text": "A Segunda Inquisição ou outra organização dedicada a caçar sua espécie sabe de você. Possui sua descrição e pistas suficientes para começar a rastreá-lo. É questão de tempo até atacar, a menos que você evite a detecção. Mesmo assim, só conseguirá adiar o inevitável por algum tempo.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "intolerance": {
+      "text": "Você guarda um rancor profundo contra determinado clã ou seita. Precisa gastar um ponto de Força de Vontade para cooperar com membros desse grupo ou ajudá-los. O grupo deve ser relevante à história, e não um conjunto de pessoas com quem quase nunca seria necessário cooperar.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "markedfordeath": {
+      "text": "A Camarilla marcou você para morrer. Talvez tenha quebrado uma Tradição, feito de um Príncipe seu inimigo ou sido incriminado. Agora corre o risco de morrer em uma Caçada de Sangue sempre que estiver em território da Camarilla.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "15",
+      "community": true
+    },
+    "overconfident_flaw_v": {
+      "text": "Você não precisa de ajuda e a recusa expressamente, pois acredita render melhor sozinho. Não recebe bônus em rolagens pela assistência de outro personagem e tampouco pode ajudar alguém em sua rolagem.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "16",
+      "community": true
+    },
+    "prestigioussire": {
+      "text": "Você é conhecido como criança de um Membro prestigiado. A maioria o respeita pela linhagem ou pelo menos hesita em enfrentá-lo por causa de seu Senhor. Não precisa necessariamente ser próximo dele para se beneficiar dessa reputação.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "16",
+      "community": true
+    },
+    "socialengineer_merit": {
+      "text": "Você sabe ajustar com cuidado personalidades e emoções para atender suas necessidades. Manipular emoções mortais é como cozinhar para Membros: ingredientes sociais e ambientes adequados podem dar ao sangue o sabor desejado ou produzir Ressonância para outros. Receba dois dados adicionais em rolagens destinadas a mudar a personalidade de um alvo para alterar ou consolidar sua Ressonância.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "16",
+      "community": true
+    },
+    "stalwartloyalty": {
+      "text": "Você é devotado a um grupo e firme em sua lealdade. Os outros conhecem o compromisso e seus aliados o valorizam, tornando difícil convencer alguém de que você age contra os interesses da facção. Uma vez por sessão, pode fazer uma rerrolagem de Força de Vontade gratuita ao servir diretamente o grupo ou resistir à tentação de traí-lo. Defina com o Narrador um grupo mais específico que simplesmente clã ou seita.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "16",
+      "community": true
+    },
+    "twistedupbringing": {
+      "text": "Seu Senhor ensinou tudo errado sobre ser um Membro. Talvez fosse uma brincadeira cruel ou ele próprio fosse ignorante. Você acredita nesses ensinamentos incorretos e tem dificuldade para aceitar a verdade sobre sua condição e o funcionamento da sociedade vampírica.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "17",
+      "community": true
+    },
+    "underestimated_merit_v": {
+      "text": "Algo faz com que o subestimem: uma reputação cuidadosamente cultivada, características físicas ou outros julgamentos. Isso aumenta a Dificuldade de suas tentativas de Intimidação, mas também dificulta testes de Sagacidade para descobrir suas reais intenções ou capacidades. Costumam ignorá-lo até ser tarde demais. Membros astutos usam os erros de avaliação alheios a seu favor.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "17",
+      "community": true
+    },
+    "aftermealglow": {
+      "text": "A alimentação o preenche com sangue fresco, que revitaliza naturalmente sua fisiologia humana. Imediatamente após alimentar-se de uma vítima viva, recebe os benefícios do Rubor da Vida sem precisar fazer uma Checagem de Sangue. Não funciona com fontes sem vida.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "17",
+      "community": true
+    },
+    "alchemyexpert": {
+      "text": "Por instrução dos sangue-ralo ou por roubar e estudar seus segredos, você compreende sua alquimia peculiar. Tem acesso à Disciplina Alquimia Sangue-Ralo (básico, p. 282). Para custos de experiência, ela é tratada como uma Disciplina de fora do clã.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "17",
+      "community": true
+    },
+    "angrybeast_flaw": {
+      "text": "Sua Besta está sempre logo abaixo da superfície, pronta para aparecer. Rolagens para resistir ao frenesi sofrem uma penalidade de dois dados.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "17",
+      "community": true
+    },
+    "animalaffinity": {
+      "text": "Animais normalmente evitam vampiros ou ficam agressivos com eles. Em vez disso, consideram você inofensivo e demonstram afinidade natural. Receba dois dados adicionais em todos os testes de Empatia com Animais.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "17",
+      "community": true
+    },
+    "apexpredator_merit": {
+      "text": "Alguns têm dificuldade para se adaptar à caça por sangue, mas você é especialmente eficiente. Talvez tenha desenvolvido a capacidade na vida mortal ou sua Besta seja o predador definitivo. Ao caçar, está no seu melhor, independentemente do Tipo de Predador. Receba dois dados adicionais em todas as rolagens de Predador para se alimentar.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "18",
+      "community": true
+    },
+    "appetizingblood": {
+      "text": "Seu sangue tem um cheiro apetitoso para os Membros. Vampiros em sua presença sofrem penalidade de dois dados em testes de frenesi de Fome. Os que já estiverem nesse frenesi o escolhem primeiro como alvo. Também é mais difícil para um Membro parar de beber de você depois de começar.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "18",
+      "community": true
+    },
+    "beaconofunholy": {
+      "text": "Sua aura está permanentemente marcada por uma influência profana, funcionando como um farol para quem tem Fé Verdadeira. Pessoas religiosas sentem inquietação ou até perigo em sua presença.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "18",
+      "community": true
+    },
+    "berserker": {
+      "text": "Durante um frenesi, acrescente três dados a todas as paradas Físicas. Entretanto, rolagens para resistir a frenesi de Fúria ou de Fome sofrem uma penalidade de dois dados.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "18",
+      "community": true
+    },
+    "bloodhealer_merit": {
+      "text": "Carniçais se recuperam mais rápido, mas não regeneram prontamente como um Membro. Você pode curar um mortal com seu sangue. Precisa dar a ele uma quantidade equivalente a uma Checagem de Sangue; isso permite ao mortal curar dano Superficial na mesma quantidade que você curaria conforme sua Potência de Sangue.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "18",
+      "community": true
+    },
+    "cannotembrace_flaw": {
+      "text": "Por alguma razão, você não consegue Abraçar. Seu Sangue não possui a propriedade ou maldição que transmite o vampirismo a outra pessoa.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "18",
+      "community": true
+    },
+    "cursed": {
+      "text": "Um místico vingativo, objeto proibido ou condição de nascimento lhe impôs uma maldição inabalável. Escolha um Atributo amaldiçoado. Sempre que obtiver uma falha bestial ou crítico bestial ao usá-lo, a maldição se manifesta naquele momento. O Narrador determina como isso acontece.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "18",
+      "community": true
+    },
+    "delaydestruction_merit": {
+      "text": "Você pode ignorar as consequências de uma falha bestial ou de um crítico bestial, mantendo a falha ou o sucesso normal do teste. Na próxima rolagem, porém, aplica-se a consequência que adiou — falha bestial ou crítico bestial, conforme couber — independentemente dos dados obtidos.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "dangersense_merit": {
+      "text": "Você sente sobrenaturalmente o perigo. Ao entrar em uma situação perigosa ou pouco antes de enfrentá-la, o Narrador faz em segredo um teste de Raciocínio + Percepção usando sua parada, contra uma Dificuldade determinada por ele. Se vencer, você recebe uma sensação de mau presságio ou um aviso instintivo do perigo imediato.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "eeriepresence_flaw": {
+      "text": "Um efeito sobrenatural inquietante o acompanha: brisa antinatural, olhos brilhantes, língua bifurcada, insetos que o seguem ou algo semelhante. Defina o efeito com o Narrador. Ele deve chamar atenção e complicar a preservação da Máscara.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "deathskiss_flaw": {
+      "text": "Sempre que se alimentar de um mortal, por mais cuidadoso que seja, ele sofre um ferimento Agravado por ponto de Fome saciado. Isso é extremamente doloroso e torna muito improvável que a vítima permita continuar depois da primeira mordida.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "deepsleeper_flaw": {
+      "text": "Durante o sono diurno, rolagens para despertar diante de perigo sofrem uma penalidade de dois dados.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "demonicpact": {
+      "text": "Você fez um pacto com uma entidade demoníaca, marcando permanentemente sua aura. Em troca de serviço e lealdade, recebe um dom sombrio do patrono. Defina-o com o Narrador: deve equivaler aproximadamente a um poder de Disciplina de nível três, mas fazer algo fora das possibilidades normais dos Membros. Se descobrirem a aliança, a maioria dos Membros e todos os lobisomens não corrompidos buscarão destruí-lo.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "diablerist": {
+      "text": "Apesar de a Diablerie ser um pecado terrível para a maioria das seitas e um caminho rápido à perda de Humanidade, você é especialmente bom nela. Receba três dados adicionais em todas as rolagens necessárias para cometer Diablerie. As veias negras visíveis na aura de um diablerista nunca desaparecem com o tempo em seu caso.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "disciplinecompetence": {
+      "text": "Você pode tratar uma Disciplina de fora do clã como uma Disciplina do próprio clã para calcular os custos de experiência.",
+      "costs": [
+        6
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "disciplineinept": {
+      "text": "Você não consegue adquirir níveis em uma das Disciplinas do clã. Escolha-a na criação: não poderá gastar experiência nem usar qualquer outro meio para aprendê-la. Certos membros do clã consideram isso sinal de fraqueza.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "efficienteater_merit": {
+      "text": "Você digere Sangue de maneira mais eficiente. Para todas as restrições de alimentação, trate sua Potência de Sangue como um nível menor, até o mínimo de um (tabela atualizada no Companion, p. 63).",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "fasteater": {
+      "text": "Alimentar-se sem ferir gravemente a vítima normalmente leva tempo. Outros vampiros conseguem beber depressa causando lesões graves ou morte; você aperfeiçoou a arte de beber rapidamente sem causar dano adicional.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "fasthealer": {
+      "text": "Ao despertar a cada noite e despertar o Sangue, você regenera automaticamente um ponto de dano Superficial. Além disso, ao levantar-se e fazer as três Checagens de Sangue exigidas, pode curar dois ferimentos Agravados em vez de um.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "friendtofae": {
+      "text": "A presença de um Membro costuma perturbar os feéricos. A sua aura, porém, os acalma ou intriga e pelo menos não os repele. Você também pode entrar em Arcádia se surgir a oportunidade, ao contrário da maioria dos Membros.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "frigidaura_flaw": {
+      "text": "Todos os Membros têm a carne fria, mas esse frio irradia de você. Plantas morrem em sua presença, a água congela aos poucos e os vivos conseguem ver o vapor da própria respiração perto de você.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "19",
+      "community": true
+    },
+    "magicsusceptibility": {
+      "text": "Você tem uma fraqueza inerente a efeitos arcanos que o tenham como alvo, sejam benéficos ou prejudiciais. Conjuradores recebem três dados adicionais em todas as rolagens para usar habilidades mágicas em você.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "grimwounds": {
+      "text": "Sua forma conserva a lembrança das lesões de um modo incomum entre os Membros. Regenerar exige duas Checagens de Sangue em vez de uma.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "haunted": {
+      "text": "Um espírito o assombra e quer feri-lo ou fazê-lo sofrer. Você ou o Narrador decide quem ele é e por que o persegue, mas está determinado a dificultar sua existência. Não age constantemente, porém aparece com frequência suficiente para ser um problema. Use as estatísticas de Espectro do básico, p. 377, ou adapte-as ao personagem do Narrador. A ligação é tão forte que o espírito é imune a poderes e cerimônias de Oblívio que o fariam parar de assombrá-lo.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "holyaura": {
+      "text": "Por alguma razão, sua aura parece mortal para quem tem Fé Verdadeira. Outros Membros que leem auras ainda identificam sua natureza, mas poderes divinos de Fé Verdadeira, sozinhos, não a revelam corretamente.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "improvedghouls_merit": {
+      "text": "Seu sangue é especialmente potente para os mortais que o consomem. Seus carniçais podem aprender dois poderes de Disciplinas de nível um que você possua, em vez do único poder habitual.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "magicresistance": {
+      "text": "Você tem uma resistência inerente a efeitos arcanos que o tenham como alvo, sejam benéficos ou prejudiciais. Conjuradores sofrem uma penalidade de três dados em todas as rolagens para usar habilidades mágicas em você.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "memoriamdweller_merit": {
+      "text": "Ao realizar um Memoriam, receba três dados adicionais em todas as rolagens feitas para explorar as lembranças.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "obscure_merit_v": {
+      "text": "Uma proteção mística o oculta da atenção. As pessoas têm dificuldade para lembrá-lo ou até percebê-lo. É ótimo para manter a Máscara, mas dificulta conservar influência quando esquecem seu nome e seus feitos. Não acrescenta dados à Furtividade nem afeta pessoas que o conhecem bem ou são constantemente lembradas de sua presença. Quanto maior o valor, mais potente e imediato é o efeito.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "powerfulvitae": {
+      "text": "Seu Sangue é mais potente em um aspecto específico. Escolha uma categoria da Potência de Sangue — Surto de Sangue, dano regenerado, bônus de poderes de Disciplina ou rerrolagem de Checagem de Sangue de Disciplina — e trate o benefício como um nível de Potência de Sangue acima. Só pode escolher esta Qualidade uma vez e beneficiar uma categoria. Consulte a tabela atualizada do Companion, p. 63.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "repulsivetoanimals": {
+      "text": "Animais reagem de maneira especialmente violenta a você. Demonstram claro sofrimento e vocalizam a repulsa à sua presença. Criaturas mais ousadas ou acuadas podem até atacar se tiverem oportunidade.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "risingsun": {
+      "text": "Enquanto a maioria se protege no refúgio antes do amanhecer, você consegue ultrapassar os limites da maldição nos últimos momentos da noite. Receba quatro dados adicionais em quaisquer rolagens durante uma cena que ocorra até meia hora antes do nascer do sol, desde que esteja fora e longe de seu refúgio.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "spiritmentor": {
+      "text": "Um espírito o guia ocasionalmente e deseja ajudá-lo na jornada. Pode ser o fantasma de um conhecido, um habitante amigável do refúgio ou outra entidade incorpórea que simpatizou com você. Use as estatísticas de Espectro do básico, p. 377, ou defina com o Narrador as capacidades e a história desse personagem.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "taintofcorruption": {
+      "text": "Plantas murcham e morrem instantaneamente perto de você. Animais pequenos e insetos também morrem ao tocá-lo. Uma aura inconfundível de morte drena a vida ao redor. Humanos e criaturas maiores sentem mal-estar e inquietação, mas não sofrem dano pelo efeito.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "20",
+      "community": true
+    },
+    "taintedblood": {
+      "text": "Seu sangue é doente e mata lentamente qualquer mortal que o beba. Isso torna impossível manter carniçais ou Enlaçar mortais. Outros Membros e criaturas sobrenaturais não são afetados.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "21",
+      "community": true
+    },
+    "thaumaturgictraining": {
+      "text": "Você foi treinado em Feitiçaria de Sangue apesar de não pertencer a um clã com aptidão para ela. Conhece até três níveis somados de Rituais: três de nível um, um de nível um e um de nível dois, ou um de nível três. Só pode escolher esta Qualidade se não tiver pontos de Feitiçaria de Sangue e não poderá adquiri-los depois. É considerado como tendo Feitiçaria de Sangue 1 apenas para rolagens de Ritual.",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "21",
+      "community": true
+    },
+    "thirstforinnocence": {
+      "text": "Sua Besta procura o sangue dos inocentes. O Narrador decide o que constitui inocência. Você precisa fazer testes de frenesi de Fome para resistir a alimentar-se quando estiver diante de alguém especialmente inocente.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "21",
+      "community": true
+    },
+    "truebond": {
+      "text": "Escolha um de seus Pilares mortais; você é considerado Enlaçado a ele. Sente quando está em perigo, a qualquer distância, e recebe dois dados adicionais em ações para protegê-lo diretamente. Não descobre a localização nem a natureza do perigo, apenas que ele existe. Recebe três Máculas adicionais em qualquer situação que cause Máculas relacionadas a esse Pilar. Se ele morrer, perde automaticamente um ponto de Humanidade.",
+      "costs": [
+        4
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "21",
+      "community": true
+    },
+    "truefaith": {
+      "text": "Esta condição extremamente rara só é possível para um vampiro com Humanidade 10. Você pode possuir Fé Verdadeira (básico, p. 222), tendo acesso aos seus cinco níveis. A capacidade desaparece se a Humanidade cair abaixo de dez e retorna se alcançar dez novamente.",
+      "costs": [
+        6
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "21",
+      "community": true
+    },
+    "truesight": {
+      "text": "Embora Auspícios permita enxergar através de ilusões, alguns já têm uma percepção naturalmente mais clara. Some o valor desta Qualidade às rolagens para perceber ilusões. O benefício pode se combinar com Sentir o Invisível (básico, p. 249).",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "21",
+      "community": true
+    },
+    "weakblood": {
+      "text": "Seu Sangue é menos potente em um aspecto. Escolha uma categoria da Potência de Sangue — Surto de Sangue, dano regenerado, bônus de poderes de Disciplina ou rerrolagem de Checagem de Sangue de Disciplina — e trate seu benefício como um nível inferior, nunca abaixo de Potência de Sangue 1 (Companion, p. 63).",
+      "costs": [
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "21",
+      "community": true
+    },
+    "curseditem": {
+      "text": "O objeto tem um efeito negativo além de eventuais benefícios, ou está ligado a uma entidade poderosa que o quer de volta. Pode combinar-se com Item Místico. Também pode ser um item que você acredita ser útil, mas só é amaldiçoado, ou algo que encontrou e do qual não consegue se livrar.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "22",
+      "community": true
+    },
+    "mysticalitem": {
+      "text": "Alguns objetos carregam maldições antigas, influência de feitiçaria ou outros efeitos sobrenaturais. Pode ter sido passado a um sucessor escolhido, encontrado numa caverna proibida ou roubado de um colecionador ocultista; agora é seu. Seus benefícios e natureza podem não estar claros, mas cabe a você empunhá-lo. Defina com o Narrador o objeto e como o obteve.\n\n1 ponto: efeito fraco ou útil apenas em situações muito específicas. 2 pontos: efeito moderado, como +1 de dano para uma arma do tipo. 3 pontos: efeito impressionante, útil em muitas situações ou capaz de imitar um poder de Disciplina de nível dois. 4 pontos: efeito notável, como +2 de dano ou eficácia especial contra certo inimigo. 5 pontos: artefato muito poderoso, especialmente letal ou capaz de imitar poderes de nível três; outros tentarão tomá-lo se o descobrirem.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "22",
+      "community": true
+    },
+    "allies": {
+      "text": "Aliados são mortais que o apoiam e ajudam: familiares, amigos ou uma organização que lhe deve lealdade. Normalmente auxiliam de boa vontade, sem coerção, mas nem sempre estão disponíveis, têm preocupações próprias e há limites ao que fazem por você. Em geral aparecem cerca de uma vez por história. Podem ser quase qualquer pessoa com uma ligação razoável com você, como um funcionário do necrotério, alguém de um jornal, um nômade ferroviário ou um trabalhador de centro de distribuição. Costumam ser confiáveis, embora provavelmente não saibam que você é vampiro, mas nada é gratuito: favores podem ser cobrados no futuro.\n\nUse os modelos de mortais para criar Aliados ou Inimigos ao comprá-los ou chamá-los pela primeira vez e registre-os no Mapa de Relacionamentos. Construa-os com pontos de Eficácia e Confiabilidade, até seis pontos por Aliado. Grupos de Aliados ou Inimigos têm tantos integrantes quanto personagens dos jogadores. Inimigos são o inverso de Aliados, adquiridos como Defeitos; sua pontuação é dois pontos abaixo da Eficácia. O Narrador determina quando aparecem, provavelmente ao menos uma vez por história, mesmo indiretamente.\n\nEficácia 1: indivíduo Fraco, provavelmente inútil numa situação violenta. Eficácia 2: indivíduo Mediano ou grupo unido de Fracos. Eficácia 3: indivíduo Talentoso ou grupo perigoso de Medianos. Eficácia 4: indivíduo Mortal Máximo, Talentoso com poderes sobrenaturais ou grupo bem armado de Talentosos.\n\nConfiabilidade 0: não pode ser convocado à vontade, mas ajuda se estiver por perto. Confiabilidade 1: atende à metade dos chamados. Confiabilidade 2: aparece em uma a dez horas, rolando um dado. Confiabilidade 3: aparece assim que possível.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "184–185",
+      "community": false
+    },
+    "enemy": {
+      "text": "Inimigos são o inverso de Aliados: pessoas ou grupos que trabalham contra você. Use os modelos de mortais e registre-os no Mapa de Relacionamentos. A pontuação do Defeito é dois pontos menor que a Eficácia do Inimigo.\n\n1 ponto: indivíduo Talentoso ou grupo perigoso de indivíduos Medianos, equivalente a Eficácia 3. 2 pontos: indivíduo Mortal Máximo, Talentoso com poderes sobrenaturais ou grupo bem armado de Talentosos, equivalente a Eficácia 4. Grupos têm tantos integrantes quanto personagens dos jogadores.\n\nTodos têm a mesma Confiabilidade narrativa: aparecem quando o Narrador considerar apropriado, provavelmente ao menos uma vez por história, mesmo que indiretamente. A pontuação do Defeito não é a parada de dados do inimigo.",
+      "costs": [
+        1,
+        2
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "184–185",
+      "community": false
+    },
+    "contacts": {
+      "text": "Você conhece pessoas prestativas de diferentes esferas da vida. Contatos fornecem principalmente informação em suas áreas de especialidade e podem querer favores em troca. Para outros tipos de ajuda, procure Aliados ou Mawla. Um Contato ocupa uma posição excelente para obter informação: um atendente da polícia em vez de um tenente de homicídios, um assessor parlamentar em vez de um senador. Corretores de informação, repórteres, intermediários do submundo e motoristas de transporte são bons exemplos.\n\nPode definir os Contatos ao comprar o Antecedente ou quando precisar introduzi-los em jogo. Acrescente-os ao Mapa de Relacionamentos.\n\n1 ponto: um Contato capaz de conseguir algo comum ou barato, equivalente a Recursos 1, como um vendedor de maconha ou de carros. 2 pontos: um Contato capaz de conseguir algo útil, equivalente a Recursos 2, como um pequeno traficante de armas ou um veterinário que aceite perguntas discretas. 3 pontos: um Contato capaz de conseguir algo caro ou difícil, equivalente a Recursos 4, como um especialista em sistemas de segurança, agente de narcóticos ou lobista de elite.",
+      "costs": [
+        1,
+        2,
+        3
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "185",
+      "community": false
+    },
+    "fame": {
+      "text": "Mortais conhecem seu nome e procuram notícias de suas atividades. Você pode ser estrela de cinema, de rock ou outra celebridade. A Fama dá poder sobre a mídia tradicional e as redes sociais e mais formas de manipular a opinião pública. Você provavelmente tem meios de ocultar que nunca aparece de dia, como um sósia.\n\nEm certas circunstâncias, o Narrador pode permitir usar Fama numa parada Social no lugar de outra Característica, especialmente para entrar em locais ou eventos exclusivos. Cada ponto reduz em um a Dificuldade de testes Sociais contra admiradores e de muitos testes de caçada, conforme sua estratégia de predação: é mais fácil atrair presas.\n\nHá desvantagens: seguir alguém discretamente é mais difícil, e admiradores podem rondar a porta do Refúgio e marcar o lugar no Instagram. Considere uma Especialização em Disfarce. Por padrão, a Fama vale entre mortais; você também pode comprar Fama entre Membros pelo mesmo custo. Alguns, como Drácula ou Elizabeth Bathory, podem ter ambas. Vampiros também podem admirar ou interessar-se por Membros famosos ou infames em vida.\n\n1 ponto: conhecido e admirado numa subcultura. 2 pontos: celebridade local, reconhecida por uma parcela significativa da cidade. 3 pontos: a maioria das pessoas do país ao menos sabe seu nome. 4 pontos: qualquer pessoa minimamente interessada em tendências ou em sua área sabe algo sobre você. 5 pontos: audiência nacional de massa ou mundial, como grande estrela, artista que lota estádios ou ex-presidente.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "186",
+      "community": false
+    },
+    "darksecret": {
+      "text": "Segredo Sombrio é uma versão mais branda de Infâmia: seus atos permanecem desconhecidos, salvo por você e talvez um ou dois inimigos motivados. Normalmente vale um ponto a menos que a Infâmia equivalente. Uma Infâmia de um ponto também rende um ponto como Segredo Sombrio, por ser mais fácil de descobrir que um segredo realmente mortal.\n\n1 ponto: você deve muito a pessoas perigosas ou se tornou amplamente odioso; também pode ocultar uma condição cuja revelação corresponda à Infâmia de dois pontos, como ser um Tincheiro, violar repetidamente a Máscara, ter sido alvo de Caçada de Sangue em outra cidade ou ter ofendido gravemente o governante. Registre o segredo, quem pode conhecê-lo e o risco de revelação.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "186",
+      "community": false
+    },
+    "influence": {
+      "text": "Você tem poder sobre a comunidade mortal por riqueza, prestígio, cargo político, chantagem ou manipulação sobrenatural. Uma Influência alta pode mudar e, raramente, controlar a política e a sociedade da cidade, sobretudo a polícia e a burocracia.\n\nPor padrão, vale principalmente em um grupo ou região: crime organizado, mídia, religião, polícia, prefeitura ou uma grande área da cidade. Na cidade inteira vale um ponto a menos; em outra cidade da mesma região pode valer um ponto a menos adicional, e assim sucessivamente. Por exemplo, alguém Poderoso em Hollywood pode ser Estabelecido no restante de Los Angeles, Influente em San Diego ou San Francisco e Bem Relacionado em Chicago ou Nova York.\n\nO Narrador pode exigir Influência no lugar de uma Característica em certas paradas, sobretudo testes Sociais com funcionários menores de sua área. Ajuda a demolir ou preservar um prédio abandonado, não a começar guerras globais. Em crônicas de grandes manipuladores mundiais, o Narrador pode recalibrá-la para alcance nacional com quatro pontos ou global com cinco.\n\n1 ponto, Bem Relacionado: será ouvido com respeito. 2 pontos, Influente: querem lhe fazer favores. 3 pontos, Estabelecido: agentes de poder e facções mortais hesitam em enfrentá-lo. 4 pontos, Poderoso: funcionários e subordinados obedecem sem uma boa razão para recusar. 5 pontos, Dominante: figuras menores tentam antecipar seus desejos e atendê-los.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "187",
+      "community": false
+    },
+    "resources": {
+      "text": "Este Antecedente representa seus Recursos. Os benefícios não são necessariamente financeiros e raramente são líquidos, embora possam ser vendidos para obter dinheiro. Converter bens pode levar semanas ou meses, dependendo da quantidade. Com a Segunda Inquisição bloqueando contas bancárias, vampiros voltam a guardar riqueza em dinheiro, ouro, arte, drogas, armas e outras mercadorias.\n\nOs pontos proporcionam renda para manter seu padrão de não vida, mas você deve detalhar a origem e a forma dessa renda. Ela pode desaparecer, secar ou ser roubada durante a crônica.\n\n1 ponto: vive de um pagamento ao seguinte, com apartamento, carro e equipamento de acampamento. 2 pontos: classe média, com bom apartamento ou casa pequena, vários carros e equipamento de qualidade. 3 pontos: rico, com ótimo apartamento ou casa, artigos de luxo e equipamento avançado para várias pessoas. 4 pontos: muito rico, com mansão, helicóptero ou jato particular e equipamento altamente especializado. 5 pontos: extremamente rico, com várias mansões e quase tudo que dinheiro pode comprar.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "193",
+      "community": false
+    },
+    "beautiful": {
+      "text": "Nem todos os vampiros parecem atores; alguns são ainda mais bonitos e outros muito mais feios. Modificadores de aparência só se aplicam quando você pode ser visto. O Narrador determina sua aplicação em combates Sociais caso a caso, podendo variar até entre paradas do mesmo conflito.\n\n2 pontos, Belo: acrescente um dado a todas as paradas Sociais apropriadas. 4 pontos, Deslumbrante: acrescente dois dados a essas paradas.",
+      "costs": [
+        2,
+        4
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "179",
+      "community": false
+    },
+    "bloodhound": {
+      "text": "Você consegue sentir o cheiro da Ressonância do sangue humano sem prová-lo. Ainda precisa estar perto o suficiente para sentir o odor da pessoa. Faça Determinação + Percepção com Dificuldade 3. Perfume ou distância aumentam a Dificuldade; contato mais íntimo a diminui.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "182",
+      "community": false
+    },
+    "addiction": {
+      "text": "Você tem dependência de uma substância além do sangue e procura beber de usuários dela. Dependência de um tipo específico de sangue, ou recusar sangue que contenha certa substância, é Exclusão de Presa, não este Defeito. Especifique a substância. Seus efeitos quando consumida no sangue continuam valendo, independentemente da Qualidade ou Defeito escolhido; veja o capítulo de substâncias, p. 310.\n\n1 ponto, Dependência: perca um dado em todas as paradas se a última pessoa de quem se alimentou não estava sob efeito da droga, exceto em ações para obtê-la imediatamente. 2 pontos, Vício Incurável: a penalidade nas mesmas condições é de dois dados.",
+      "costs": [
+        1,
+        2
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "179–180",
+      "community": false
+    },
+    "haven": {
+      "text": "Refúgio é inteiramente opcional. Sem pontos, você ainda pode ter uma sepultura isolada, quarto num motel abandonado, escritório alugado ou apartamento com janelas cobertas. Pode permanecer seguro e escondido de dia nesse abrigo relativamente pequeno e inseguro. O Narrador pode permitir um lugar melhor por Recursos, Status ou Influência; perder esses Antecedentes também pode significar perder o bom Refúgio. Por outro lado, é possível ter Refúgio sem eles, como uma mansão herdada e já paga que se deteriora aos poucos.\n\nO valor base abstrai tamanho, segurança e privacidade. Cada ponto acrescenta um à Dificuldade de localizar, invadir ou vigiar seu lugar de descanso, ou um dado à parada usada para resistir a essas tentativas. Como conhece o lugar intimamente, você também acrescenta um dado por ponto para perceber perigo ali, incluindo rolagens para despertar.\n\n1 ponto: pequeno, mas mais seguro e reservado que o padrão, como apartamento de porão, cripta ou depósito trancado. 2 pontos: bom tamanho, segurança ou privacidade, como casa, recinto de lobos num zoológico ou ramal de esgoto. 3 pontos: muito grande, seguro ou privado, como complexo fora da cidade, prédio de banco ou estação de metrô desativada.\n\nQualidades e Defeitos de Refúgio são adquiridos separadamente e somam-se ao valor base para Projetos e outros usos. O Refúgio pode ser compartilhado pela coterie, uma boa forma de custear mais características.",
+      "costs": [
+        1,
+        2,
+        3
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "187–189",
+      "community": false
+    },
+    "herd": {
+      "text": "Você cultivou um grupo de bolsas do qual pode se alimentar sem preocupação. Elas podem prestar serviços básicos, mas não são tão leais nem tão controladas quanto Lacaios. Se necessário, use mortais Fracos e Medianos para representá-las. Pode saciar semanalmente Fome igual ao Rebanho sem teste. Esse benefício pode ser dividido entre vários vampiros. Alimentação excessiva põe o Rebanho em risco, podendo reduzir o valor quando membros morrem ou fogem.\n\n1 ponto: uma a três bolsas, com Ressonância aleatória e sem Discrasias. Uma vez por mês, pode mudar a Ressonância de uma vítima com Manipulação + Sagacidade, Dificuldade 4. Exemplos: estudantes de pós-graduação, alunos de música, família de Tincheiro.\n\n2 pontos: quatro a sete bolsas, metade com uma Ressonância escolhida na compra. Exemplos: antigos devotos de uma cena gótica ou bhangra em declínio, companheiros de clube ou grande família de Tincheiro.\n\n3 pontos: sete a quinze bolsas, com duas Ressonâncias escolhidas a cada semana ao alimentar-se de membros diferentes. Exemplos: time de rúgbi, grupo de swing, turma de dança ou escola noturna, funcionários do turno da noite.\n\n4 pontos: dezesseis a trinta bolsas; escolha duas Ressonâncias por semana. Manutenção, encobrimento e recrutamento ocasionalmente entram na crônica. Exemplos: culto, grande bordel ou oficina exploradora.\n\n5 pontos: trinta e uma a sessenta bolsas; escolha três Ressonâncias por semana. Manutenção e recrutamento começam a ameaçar a Máscara. Exemplos: grande culto ou grande oficina exploradora.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "189–190",
+      "community": false
+    },
+    "shunned": {
+      "text": "Você é completamente odiado por esta seita. Talvez a tenha traído, enfrentado um líder local ou combatido seus integrantes no passado. Membros desse grupo trabalharão ativamente contra você sempre que puderem.",
+      "costs": [
+        2
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "194",
+      "community": false
+    },
+    "twicecursed": {
+      "text": "Você carrega uma Perdição adicional, sofrendo mais um peso da natureza falha do fundador do clã. Adote a Perdição alternativa do próprio clã, descrita a partir da p. 56, além da Perdição padrão. O Narrador pode proibir este Defeito se a segunda Perdição causar problemas à crônica ou não tiver impacto nela.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide01",
+      "pages": "121",
+      "community": false
+    },
+    "weakwilled": {
+      "text": "Você tem dificuldade de afirmar a própria personalidade diante da vontade de outra pessoa. Não precisa ser submisso: talvez se sinta mais seguro seguindo alguém. Pode integrar um séquito ou Rebanho sem necessariamente ser leal.\n\nSofra uma penalidade de um dado nas paradas Sociais contra seu líder ou superior. Mesmo percebendo uma tentativa de influenciá-lo mental ou emocionalmente, como Dominação ou Presença, não pode usar os sistemas de resistência ativa para evitá-la.",
+      "costs": [
+        2
+      ],
+      "file": "Vampire5edPlayersGuide01",
+      "pages": "121",
+      "community": false
+    },
+    "prey_exclusion": {
+      "text": "Você se recusa a caçar uma classe de presa: usuários de drogas, mulheres, crianças, policiais, inocentes, uma minoria ou outro grupo. Se se alimentar dela, recebe Máculas como se tivesse violado um Princípio da crônica. A critério do Narrador, presenciar outro Membro se alimentando dessa presa sem interferir também pode gerar Máculas. Para Ventrue, o Defeito é uma restrição adicional e estreita ainda mais as bolsas permitidas.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "181–182",
+      "community": false
+    },
+    "iron_gullet": {
+      "text": "Você pode alimentar-se de sangue frio, estragado ou plasma fracionado. Essas fontes não fornecem Ressonância. Ventrue não podem escolher esta Qualidade.",
+      "costs": [
+        3
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "182",
+      "community": false
+    },
+    "obvious_predator": {
+      "text": "Você transmite uma natureza predatória e os humanos o temem e desconfiam instintivamente. Perca dois dados em paradas de caçada, exceto nas expressões puramente Físicas de espreitar, perseguir e matar. Perca um dado em testes Sociais destinados a deixar humanos à vontade. Você não pode manter um Rebanho.",
+      "costs": [
+        2
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "189–190",
+      "community": false
+    },
+    "disliked": {
+      "text": "Perca um dado em testes Sociais com qualquer grupo da cidade, exceto seus Contatos, Aliados e outros apoiadores explicitamente leais.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "187",
+      "community": false
+    },
+    "creepy_haven": {
+      "text": "Seu Refúgio parece o covil de um assassino em série, talvez porque realmente seja. Vizinhos desavisados podem chamar a polícia ou comentar o lugar assustador. Paradas Sociais para seduzir ou deixar hóspedes humanos à vontade sofrem uma penalidade de dois dados.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "188",
+      "community": false
+    },
+    "haunted_haven": {
+      "text": "Seu Refúgio contém uma manifestação sobrenatural que você não controla nem compreende. Pode ser um fantasma, portal dimensional, meteorito amaldiçoado ou algo de que não consegue se livrar. Quem compreender a manifestação pode usá-la para violar a segurança do Refúgio. O Narrador define os demais efeitos, impondo pelo menos um dado de penalidade por ponto de Assombrado às paradas afetadas realizadas no Refúgio.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "188",
+      "community": false
+    },
+    "retainers": {
+      "text": "Você possui servos ou assistentes leais, que podem ser carniçais Enlaçados, pessoas tão Dominadas que perderam a independência ou tão impressionadas por sua Presença que fariam qualquer coisa. É necessário mantê-los sob controle por salário, Vitae ou mesmerismo. Mesmo leais, podem trair se a recompensa superar o risco ou forem maltratados. O Narrador pode pedir uma cena entre vocês.\n\n1 ponto: um lacaio Fraco. 2 pontos: um lacaio Mediano. 3 pontos: um lacaio Talentoso. Use os modelos de mortais do básico. É possível comprar vários Lacaios separadamente.\n\nLacaios devem agir como personagens, não marionetes. Carniçais não são super-homens e os mais habilidosos nem sempre são os mais leais. O Narrador pode usá-los para dar cor à crônica, sem deixar que abuso desses personagens prejudique a história. O Lacaio de um ponto pode ser uma criança, pequeno criminoso ou fã de horror que o segue sem Laço de Sangue. O de dois pode ser carniçal, empregado de família, amante humano ou escravo Dominado: crie sua história e use mortal Mediano ou carniçal sem Vantagens. O de três é competente para agir sozinho e resolver problemas menores, provavelmente carniçal com características de mortal Talentoso além das capacidades sobrenaturais.",
+      "costs": [
+        1,
+        2,
+        3
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "193–194",
+      "community": false
+    },
+    "mask": {
+      "text": "Identidades falsas protegem predadores que precisam simular humanidade. Sem pontos, você não precisa de uma Máscara ou tem documento que passa apenas por abordagem superficial; não resiste a verificação de antecedentes.\n\n1 ponto: boa identidade, com cartão, conta bancária, histórico de crédito e certidão, capaz de passar por checagem estadual. 2 pontos: passa por checagem da polícia nacional, como FBI ou equivalente, e classifica eventual histórico militar ou de inteligência. Com Máscara 2, pode comprar Zerado e Sapateiro por um ponto cada.",
+      "costs": [
+        1,
+        2
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "190",
+      "community": false
+    },
+    "mask_zeroed": {
+      "text": "Alguém bem colocado apagou seus registros verdadeiros. Oficialmente, você não existe. A Qualidade custa um ponto adicional e exige uma Máscara de dois pontos.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "190–191",
+      "community": false
+    },
+    "mask_cobbler": {
+      "text": "Você pode produzir ou obter Máscaras. Produzir leva três dias por ponto e pode expô-lo online; conseguir leva um dia por ponto, mas custa algo em troca, definido por influência, margem em teste Social ou pelo Narrador. A Qualidade custa um ponto adicional e exige Máscara 2.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "190–191",
+      "community": false
+    },
+    "mythic_flaw": {
+      "text": "O pacote exige escolher Defeitos Míticos que somem o valor indicado; não representa um poder genérico. Defina quais com o Narrador. Isca de Estaca (2 pontos): uma estaca no coração causa Morte Final em vez de Torpor. Fraqueza Folclórica (1 ponto): dano Agravado por luz ultravioleta como luz solar, água benta como fogo, ou prata; armas de prata causam o dano da arma como Agravado e um simples toque em moeda ou talher de prata causa um ponto Agravado. Bloqueio Folclórico (1 ponto por bloqueio): recue ou gaste um ponto de Força de Vontade para atravessar símbolos sagrados apresentados por um crente, água corrente visível, limiar de casa sem convite do dono, animal branco, alho, rosas silvestres ou sementes derramadas que não contou. Estigmas (1 ponto): ao chegar a Fome 4, sangra por mãos, pés e testa, chamando atenção, deixando rastros e podendo causar penalidades a critério do Narrador.",
+      "costs": [
+        1,
+        2
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "182",
+      "community": false
+    },
+    "feeding_farmer": {
+      "text": "Vegano: você se alimenta apenas de sangue animal. Precisa gastar dois pontos de Força de Vontade para beber sangue humano. Ventrue não podem escolher este Defeito.",
+      "costs": [
+        2
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "181–182",
+      "community": false
+    },
+    "feeding_consensualist": {
+      "text": "Exclusão de Presa — vítimas não consensuais: você se recusa a alimentar-se sem consentimento. Recebe as Máculas previstas para violar um Princípio da crônica se beber de uma vítima sem consentimento. Testemunhar outro Membro fazê-lo e não interferir também pode causar Máculas a critério do Narrador. Obter consentimento exige revelar informações que podem ameaçar a Máscara. O pacote de Consensualista também concede Segredo Sombrio como Defeito separado.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "175–176",
+      "community": false
+    },
+    "bloodleech_diablerist": {
+      "text": "Segredo Sombrio — Diablerista: você cometeu o pecado da Diablerie e esconde esse fato. A verdade é conhecida por você e talvez um ou dois inimigos motivados. Se descoberta, a transgressão pode provocar punição severa da seita ou do governante. Este é um Defeito de dois pontos do pacote de Sanguessuga; não é a Qualidade comunitária Diablerista, que concede bônus para cometer Diablerie.",
+      "costs": [
+        2
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "176–177",
+      "community": false
+    },
+    "destitute": {
+      "text": "Você não tem dinheiro nem casa.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "193",
+      "community": false
+    },
+    "despised": {
+      "text": "Um grupo ou região da cidade vive para frustrar você e sua facção. Perca dois dados em paradas para convencer uma pessoa neutra a apoiá-lo politicamente ou fazer-lhe um favor. O Narrador deve aproveitar oportunidades para envolver seus detratores na história.",
+      "costs": [
+        2
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "187",
+      "community": false
+    },
+    "no_haven": {
+      "text": "Você precisa fazer algum esforço, no mínimo um teste básico, para encontrar um novo lugar de repouso a cada manhã.",
+      "costs": [
+        1
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "188",
+      "community": false
+    },
+    "base_haven_cell": {
+      "text": "Refúgio é inteiramente opcional. Sem pontos, você ainda pode ter uma sepultura isolada, quarto num motel abandonado, escritório alugado ou apartamento com janelas cobertas. Pode permanecer seguro e escondido de dia nesse abrigo relativamente pequeno e inseguro. O Narrador pode permitir um lugar melhor por Recursos, Status ou Influência; perder esses Antecedentes também pode significar perder o bom Refúgio. Por outro lado, é possível ter Refúgio sem eles, como uma mansão herdada e já paga que se deteriora aos poucos.\n\nO valor base abstrai tamanho, segurança e privacidade. Cada ponto acrescenta um à Dificuldade de localizar, invadir ou vigiar seu lugar de descanso, ou um dado à parada usada para resistir a essas tentativas. Como conhece o lugar intimamente, você também acrescenta um dado por ponto para perceber perigo ali, incluindo rolagens para despertar.\n\n1 ponto: pequeno, mas mais seguro e reservado que o padrão, como apartamento de porão, cripta ou depósito trancado. 2 pontos: bom tamanho, segurança ou privacidade, como casa, recinto de lobos num zoológico ou ramal de esgoto. 3 pontos: muito grande, seguro ou privado, como complexo fora da cidade, prédio de banco ou estação de metrô desativada.\n\nQualidades e Defeitos de Refúgio são adquiridos separadamente e somam-se ao valor base para Projetos e outros usos. O Refúgio pode ser compartilhado pela coterie, uma boa forma de custear mais características.\n\nO pacote de Sequestrador concede Refúgio base 2 e Cela 1, totalizando três pontos. Cela: lugar dedicado e trancado para manter dois prisioneiros, com Dificuldade base 5 para escapar. Cada ponto adicional duplica o número de prisioneiros, até 32 apenas em refúgios muito grandes, ou aumenta a Dificuldade de fuga em um. A Qualidade não está disponível em refúgios pequenos.",
+      "costs": [
+        3
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "187–189",
+      "community": false
+    },
+    "business_owner_background": {
+      "text": "Você possui ou controla um negócio: loja pequena, grande corporação, clube, escola ou outro empreendimento com funcionários e objetivo de lucro. O sucesso da empresa não significa necessariamente dinheiro no seu bolso; Recursos ainda determina seus bens e capital.\n\n1 ponto: pequena loja que perde mais do que ganha. 2 pontos: negócio pequeno, mas bem-sucedido. 3 pontos: lojas regionais ou estabelecimento local muito popular. 4 pontos: grande rede, corporação ou negócio individual famoso. 5 pontos: corporação global. O pacote de Dono de Negócio concede três pontos.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "22",
+      "community": true
+    },
+    "power_behind_throne": {
+      "text": "Você é o poder por trás do trono ou o conselheiro de alguém promissor. Esta característica representa influência sobre uma pessoa já poderosa ou em ascensão. Ela confia em você sem questionar, mas acredita tomar as próprias decisões. Seus ganhos dependem de seus objetivos: ela provavelmente o levará junto na ascensão ou dará peso real a suas opiniões se já ocupar um cargo. Não costuma agir diretamente por você nem lutar suas batalhas, mas a influência dela pode ser sua se usada corretamente. Suas intenções podem ser descobertas se agir de modo óbvio ou um inimigo o expuser. Inclua a pessoa no Mapa de Relacionamentos.\n\nA escala do guia é: um ponto para Neófito, dois para Ancilla, três para Ancião, quatro para Primogênito ou integrante de conselho revolucionário Anarch, cinco para Príncipe ou Barão. O pacote concede três pontos. O OCR do segundo nível repete um marcador; a sequência da escala foi normalizada.",
+      "costs": [
+        3
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "23",
+      "community": true
+    },
+    "supportive_presence": {
+      "text": "O pacote de Confidente concede Presença de Apoio (1 ponto), Arrependido (1 ponto) e Habitante do Memoriam (1 ponto), além de Lealdades Conflitantes (2 pontos). A lista usa o nome inglês Supportive Presence. Porém, não foi localizada uma definição com esse nome na seção de Qualidades do guia fornecido. Há uma Qualidade diferente chamada Inspiring Presence, na p. 15; os nomes não foram tratados automaticamente como equivalentes.",
+      "costs": [
+        1
+      ],
+      "file": "Vampire5edPlayersGuide02",
+      "pages": "4",
+      "community": true,
+      "incomplete": true,
+      "notes": [
+        "O arquivo fornecido não contém o efeito integral desta entrada com esse nome. O efeito depende de esclarecimento da fonte; não foi inventada uma regra para preencher a lacuna."
+      ]
+    },
+    "mask_cobbler_online": {
+      "text": "Identidades falsas protegem predadores que precisam simular humanidade. Sem pontos, você não precisa de uma Máscara ou tem documento que passa apenas por abordagem superficial; não resiste a verificação de antecedentes.\n\n1 ponto: boa identidade, com cartão, conta bancária, histórico de crédito e certidão, capaz de passar por checagem estadual. 2 pontos: passa por checagem da polícia nacional, como FBI ou equivalente, e classifica eventual histórico militar ou de inteligência. Com Máscara 2, pode comprar Zerado e Sapateiro por um ponto cada.\n\nEste pacote combina Máscara 2 com Zerado ou Sapateiro 1. Zerado: alguém apagou seus registros reais e oficialmente você não existe. Sapateiro: pode produzir Máscaras em três dias por ponto, com risco de exposição online, ou obter uma em um dia por ponto, pagando um preço definido pelo Narrador. O custo total do pacote é três pontos.",
+      "costs": [
+        3
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "190–191",
+      "community": false
+    }
+  },
+  "Werewolf": {
+    "allies": {
+      "text": "Aliados são pessoas que o apoiam e ajudam: família, amigos ou uma organização que lhe deve lealdade. Normalmente agem de boa vontade, sem coerção, mas nem sempre estão disponíveis. Têm preocupações próprias e limites ao que fazem por você. Em geral aparecem cerca de uma vez por história. Não fazem parte da alcateia e não são Garou nem espíritos.\n\nPodem ter quase qualquer ligação razoável com você, conforme permitido pelo Narrador, como trabalhar no necrotério, num jornal ou blog de fofocas, viajar de trem ou atuar num centro de distribuição rural. Costumam ser confiáveis, embora provavelmente não saibam de sua natureza ou da existência do sobrenatural. Nada é de graça: um favor provavelmente será cobrado no futuro. Inimigos são o inverso e constituem Defeitos.\n\nUse os modelos de personagens de apoio ao comprar ou convocar esses personagens e registre-os no Mapa de Relacionamentos; muitos grupos deixam a criação a cargo do Narrador. O custo soma Eficácia e Confiabilidade, até seis pontos por Aliado. Grupos têm tantos membros quanto personagens dos jogadores.\n\nEficácia 1: indivíduo Fraco, provavelmente inútil diante de violência. Eficácia 2: indivíduo Mediano ou grupo unido de Fracos, como estivadores volúveis, sindicato desorganizado ou filial de ONG. Eficácia 3: indivíduo Talentoso ou grupo perigoso de Medianos, como gangue, séquito de celebridade ou sindicato organizado. Eficácia 4: indivíduo Excepcional, Talentoso com poderes sobrenaturais ou grupo bem armado de Talentosos, como segurança particular, equipe de advogados ou atletas treinados.\n\nConfiabilidade 0: não pode ser chamado à vontade, mas ajuda quando está por perto. Confiabilidade 1: atende à metade dos chamados. Confiabilidade 2: chega entre uma e dez horas, rolando um dado. Confiabilidade 3: aparece assim que possível.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "file": "Werewolf5ed",
+      "pages": "101",
+      "community": false
+    },
+    "enemy": {
+      "text": "Inimigos são o inverso de Aliados e são adquiridos como Defeitos. Não são Garou nem espíritos. Use os modelos de personagens de apoio e o Mapa de Relacionamentos para defini-los. O valor é dois pontos menor que sua Eficácia.\n\n1 ponto: indivíduo Talentoso ou grupo perigoso de Medianos, Eficácia 3. 2 pontos: indivíduo Excepcional, Talentoso com poderes sobrenaturais ou grupo bem armado de Talentosos, Eficácia 4. Grupos têm tantos integrantes quanto personagens dos jogadores.\n\nTodos aparecem quando o Narrador considerar apropriado, provavelmente ao menos uma vez por história, mesmo indiretamente. Sua pontuação de Defeito não é a parada de dados do inimigo.",
+      "costs": [
+        1,
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "101",
+      "community": false
+    },
+    "contacts": {
+      "text": "Você conhece pessoas prestativas de diferentes áreas. Contatos fornecem principalmente informação em suas especialidades e podem exigir favores em troca. Outros tipos de ajuda pertencem a Aliados ou Mentor. Um Contato está numa boa posição para obter informação: um atendente de polícia em vez de um tenente de homicídios, um assessor em vez de um senador. Corretores de informação, repórteres, intermediários do submundo e motoristas são bons exemplos.\n\nDefina-os na compra ou quando precisar introduzi-los em jogo e acrescente-os ao Mapa de Relacionamentos.\n\n1 ponto: um Contato com informação comum, mas especializada, como um vendedor de maconha ou de carros. 2 pontos: um Contato com informação incomum e privilegiada, como um pequeno traficante de armas ou um psiquiatra. 3 pontos: um Contato com informação crítica ou até governamental sigilosa, como especialista em segurança, agente de narcóticos ou lobista de elite.",
+      "costs": [
+        1,
+        2,
+        3
+      ],
+      "file": "Werewolf5ed",
+      "pages": "102",
+      "community": false
+    },
+    "fame": {
+      "text": "As pessoas conhecem seu nome e procuram notícias suas. Você pode ser estrela de cinema, rock ou outra celebridade. A Fama dá poder sobre mídia e redes sociais e mais formas de influenciar o que grupos humanos pensam. Você provavelmente tem meios, como um sósia, para ocultar atividades que prefere manter em segredo.\n\nO Narrador pode permitir usar Fama no lugar de outra Característica numa parada Social, sobretudo para entrar em eventos ou locais exclusivos. Cada nível reduz em um a Dificuldade de testes Sociais com seu público ou apoiadores, desde que o pedido não seja absurdo; nesse caso haverá consequências.\n\nA fama dificulta seguir alguém discretamente, e admiradores rondando o caern podem comprometê-lo com algo tão mundano quanto o Instagram. Considere Disfarce como Especialização. Por padrão vale entre humanos, mas você pode propor alguma fama específica entre lobos. Criaturas sobrenaturais atentas às notícias também podem conhecê-lo, incluindo Garou; o Narrador decide quando o benefício vale.\n\n1 ponto: conhecido e admirado em uma subcultura. 2 pontos: celebridade local reconhecida pela maioria da cidade. 3 pontos: a maioria das pessoas do país ao menos sabe seu nome. 4 pontos: qualquer interessado em tendências sociais ou em sua área sabe algo sobre você. 5 pontos: audiência nacional de massa ou mundial, como grande estrela de cinema, banda que lota estádios ou personalidade da internet.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Werewolf5ed",
+      "pages": "102–103",
+      "community": false
+    },
+    "resources": {
+      "text": "Recursos representa riqueza abstrata e outros bens úteis. Não precisam ser financeiros e raramente são totalmente líquidos. Como o sistema bancário é digital, rivais bem relacionados e inimigos sobrenaturais podem bloquear contas; Garou às vezes acumulam dinheiro, ouro, arte, equipamento ou contrabando.\n\nUma vez por sessão, some Recursos a uma parada apropriada para adquirir algo com urgência, negociar ou subornar. Não serve para comprar uma corporação ou financiar sozinho uma organização de caçadores. Exemplos: Manipulação + Subterfúgio + Recursos para suborno discreto; Carisma + Política + Recursos para influenciar uma eleição local; Inteligência + Manha + Recursos para comprar grande quantidade de drogas.\n\nSer Garou pode atrapalhar empregos e horários comerciais. Os pontos garantem renda para manter o padrão de vida, mas detalhe sua origem e forma: pode secar, ser roubada ou desaparecer. Valores elevados podem vir da exploração e do lucro que conduziram ao Apocalipse, gerando hipocrisia e hostilidade de outros Garou.\n\n1 ponto: vive de pagamento em pagamento. 2 pontos: classe média. 3 pontos: classe alta. 4 pontos: rico. 5 pontos: extremamente rico.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Werewolf5ed",
+      "pages": "104–105",
+      "community": false
+    },
+    "beautiful": {
+      "text": "Nem todo lobisomem tem o glamour de um modelo ou ator famoso: alguns são mais belos, outros muito piores. Modificadores de aparência só valem quando você pode ser visto. O Narrador decide se se aplicam a cada conflito Social ou até a cada parada.\n\n2 pontos, Belo: some um dado a todas as paradas Sociais apropriadas. 4 pontos, Deslumbrante: some dois dados a essas paradas.",
+      "costs": [
+        2,
+        4
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "darksecret": {
+      "text": "Semelhante à Infâmia, mas seus atos permanecem desconhecidos salvo por você e talvez um ou dois inimigos motivados. É mais fácil descobrir o segredo que um segredo realmente mortal. Exemplos: uma dívida importante com um criminoso ou possuir um arquivo numa agência governamental de caça a lobisomens.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "103",
+      "community": false
+    },
+    "caern_access": {
+      "text": "Caerns são nós de energia espiritual centrais à sociedade Garou, que dedica grande esforço a encontrá-los, mantê-los e defendê-los. Esta característica dá uma vantagem inicial nessa busca. Você pode usar um caern específico de outra seita, desde que não atrapalhe suas atividades nem ponha a segurança em risco. Defina com o Narrador a natureza do caern e a seita que o protege. Para o sistema completo de caerns, veja pp. 190–195.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "caern_awakened": {
+      "text": "Você pertence a uma seita que protege um caern já parcialmente desperto, ou está prestes a descobrir um caern importante nessa condição. Acrescente um ao valor do primeiro caern de que participar ou que descobrir. O benefício não se acumula. A critério do Narrador, vários membros podem contribuir para completar os cinco pontos necessários. Para caerns, veja pp. 190–195.",
+      "costs": [
+        5
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "caernPariah": {
+      "text": "Você não é bem-vindo em nenhum caern de sua área, como a cidade natal ou outra região central à crônica. Precisa pagar caro pelo acesso, normalmente com serviços perigosos, ou entrar escondido. Se for pego, a situação provavelmente acaba em violência. Isso não vale para um caern de sua própria seita, embora possa servir de desculpa a quem queira expulsá-lo.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "job_basic": {
+      "text": "Apesar de ser um lobisomem, você mantém um emprego estável ou ao menos essa aparência. Ele fornece de álibis à proteção de seu segredo. Não garante renda relevante: isso é Recursos. Ao usar o trabalho para ocultar sua natureza Garou, acrescente um dado às paradas relevantes, como Subterfúgio ao alegar que estava trabalhando ou Persuasão ao questionar quantos lobisomens fazem instalações para a companhia de TV a cabo.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "job_confirmed": {
+      "text": "Além da cobertura de um Emprego, seus colegas reais ou supostos confirmam suas alegações e fornecem comprovação além dos documentos de contratação. Acrescente dois dados às paradas relevantes para usar o trabalho como álibi ou para esconder a natureza Garou. A renda continua sendo representada por Recursos.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "linguistics": {
+      "text": "Todo personagem é fluente no idioma de nascimento e, salvo motivo definido com o Narrador, no idioma predominante do cenário. Um lobisomem mexicano em uma crônica no deserto de Utah, por exemplo, fala e lê espanhol e inglês. O Narrador pode conceder um segundo idioma mesmo quando o natal e o local coincidem.\n\nCada ponto de Linguística permite falar, escrever e ler fluentemente um idioma adicional. Ler documentos antigos ou entoar um dialeto estranho ainda pode aumentar a Dificuldade de testes de Erudição ou Ocultismo.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "illiterate": {
+      "text": "Você não sabe ler nem escrever. Erudição e Ciência ficam limitadas a um ponto, sem Especializações que envolvam conhecimento moderno.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "visual_goodwolfy": {
+      "text": "Sua forma lupus parece mais um cão que um lobo. A menos que já tenham razão para acreditar no contrário, humanos que o vejam nessa forma não pensarão que é um lobo.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "visualFlaw_repulsive": {
+      "text": "Você perde dois dados de todas as paradas Sociais relevantes. Modificadores de aparência só valem se puder ser visto; o Narrador determina a aplicação a cada conflito ou parada.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "visualFlaw_ugly": {
+      "text": "Você perde um dado de todas as paradas Sociais relevantes. Modificadores de aparência só valem se puder ser visto; o Narrador determina a aplicação a cada conflito ou parada.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98",
+      "community": false
+    },
+    "safehouse_hidden": {
+      "text": "Refúgio Seguro representa segurança ou distinção do domicílio além de um lugar para dormir e preparar comida: apartamento, casa, loft, cabana, caverna ou toca, desde que você o considere seguro. Pode adquirir tanto Oculto quanto Seguro para o mesmo lugar.\n\nOculto: tentativas de encontrar o Garou e quem estiver com ele dentro do refúgio sofrem uma penalidade de dois dados.\n\nÉ quase sempre um lugar mundano e não deve representar um caern: esse tem um sistema próprio, p. 190, e uma ligação com a Umbra ausente do refúgio comum.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98–99",
+      "community": false
+    },
+    "safehouse_secure": {
+      "text": "Refúgio Seguro representa segurança ou distinção do domicílio além de um lugar para dormir e preparar comida. Pode ser apartamento, casa, loft, cabana, caverna ou toca. É possível adquirir os aspectos Oculto e Seguro para o mesmo lugar.\n\nSeguro: acrescente dois dados a paradas relevantes para perceber ou resistir à entrada não autorizada no refúgio.\n\nO lugar é quase sempre mundano. Não use esta característica para um caern, que possui sistema próprio na p. 190 e conexão com a Umbra.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "98–99",
+      "community": false
+    },
+    "substanceAbuse_incurable": {
+      "text": "Alguns Garou recorrem a substâncias para suportar o Apocalipse e suas obrigações. Defina a substância, que pode até ser sobrenatural. Jogador e Narrador decidem os efeitos; poucas drogas concedem mais que penalidades temporárias, por melhor que façam o usuário se sentir. O Defeito representa consequências sistêmicas e narrativas de uma questão real de saúde, não um julgamento moral.\n\nVício Incurável: perca dois dados em todas as paradas se não usou a substância na última cena, exceto em ações que a obtenham imediatamente.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "99",
+      "community": false
+    },
+    "substanceAbuse_dependency": {
+      "text": "Você depende de uma substância, talvez sobrenatural. Especifique qual. Defina seus efeitos com o Narrador; normalmente drogas produzem penalidades temporárias, não vantagens, apesar da sensação que causam. A característica representa problemas narrativos e mecânicos da dependência como questão de saúde, não um juízo moral.\n\nDependência: perca um dado em todas as paradas se não usou a substância na última cena, exceto em ações que a obtenham imediatamente.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "99",
+      "community": false
+    },
+    "moon_refreshed": {
+      "text": "A lua o inspira mais que a outros lobisomens. Na primeira vez que uivar para ela em cada noite, pode recuperar um ponto de dano Superficial de Força de Vontade.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "100",
+      "community": false
+    },
+    "moon_stoked": {
+      "text": "A lua estimula sua Fúria ainda mais que a da maioria dos lobisomens. Receba um ponto adicional de Fúria na primeira vez que uivar para a lua em cada noite.",
+      "costs": [
+        3
+      ],
+      "file": "Werewolf5ed",
+      "pages": "100",
+      "community": false
+    },
+    "folkloric_bane": {
+      "text": "Você sofre dano Agravado de uma fraqueza folclórica. Escolha uma com o Narrador. Exemplos: água benta, causando dano como fogo; arma empunhada por alguém devoto à própria fé; arma adornada com pedra-da-lua ou a própria pedra, causando o dano da arma, enquanto apenas tocar a pedra ou uma joia com ela causa um ponto Agravado; outra fraqueza acordada com o Narrador.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "100",
+      "community": false
+    },
+    "folkloric_taboo": {
+      "text": "Diante de um bloqueio folclórico, precisa recuar ou gastar um ponto de Força de Vontade para ultrapassá-lo. Cada bloqueio escolhido conta como um Defeito separado de um ponto.\n\nExemplos: acônito ou ervas consideradas místicas; símbolos sagrados apresentados por um crente; presença de uma pessoa virgem adulta; ver prata sendo brandida, além da aversão normal dos Garou à prata, p. 134; ser chamado três vezes seguidas pelo nome anterior à Primeira Mudança, mesmo que ainda seja seu nome; outro bloqueio definido com o Narrador.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "100",
+      "community": false
+    },
+    "folkloric_sign": {
+      "text": "Você possui um sinal que faz as pessoas perceberem algo inquietante em você, mesmo sem associá-lo a lobisomens. Quem nota o sinal desconfia de você: sofra uma penalidade de um dado em todos os testes Sociais, exceto os baseados em Intimidação. Importa a reação provocada, não o sinal específico. Cada sinal escolhido constitui um Defeito separado de um ponto.\n\nExemplos: pessoas ouvem uivos perto de você, existindo ou não algo uivando; sua sombra é de lobo na forma humana e humana na forma de lobo; leite azeda e plantas murcham à sua chegada; outro sinal combinado com o Narrador.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "100",
+      "community": false
+    },
+    "croneCurse": {
+      "text": "Uma maldição espiritual o envelheceu depressa, como o desfavor de um Maldito ou uma circunstância profética, ou sua Primeira Mudança ocorreu muito depois do auge físico. A saúde sofreu: sua trilha de Vitalidade tem uma caixa a menos que o normal.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "100",
+      "community": false
+    },
+    "moonSlave": {
+      "text": "A lua exerce influência excessiva sobre você. Na primeira vez que a vir em cada noite, precisa mudar para glabro ou hispo e fazer as Checagens de Fúria correspondentes.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "100",
+      "community": false
+    },
+    "infamy": {
+      "text": "Você é famoso por algo horrível. No mínimo, a Dificuldade da maioria dos testes de reação aumenta pelo valor do Defeito, dois. No pior caso, autoridades tentam matá-lo ou capturá-lo assim que o veem. Pode estar numa lista governamental de procurados ou ter sua descrição divulgada como indivíduo perigoso entre as empresas de fachada da Pentex.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "103",
+      "community": false
+    },
+    "infamousPartner": {
+      "text": "Seu cônjuge, amante ou outra pessoa significativa possui Infâmia, o que ocasionalmente mancha sua reputação por associação. Infâmia significa ser conhecido por algo horrível e pode aumentar a Dificuldade de reações ou atrair autoridades hostis.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "103",
+      "community": false
+    },
+    "mask": {
+      "text": "Garou que precisam agir em segredo ou com negação plausível valorizam identidades falsas. Sem pontos, você não precisa de uma Máscara ou possui documento suficiente apenas para uma abordagem de trânsito; não resiste a verificação de antecedentes.\n\n1 ponto: boa identidade falsa, com cartão de crédito, conta bancária, histórico de crédito e certidão de nascimento no nome da Máscara; passa por checagem estadual ou provincial. 2 pontos: passa pela polícia nacional, como FBI, Scotland Yard ou equivalente; eventual registro militar ou de inteligência foi classificado. Com Máscara 2, pode comprar Zerado e Sapateiro por um ponto cada.",
+      "costs": [
+        1,
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "103–104",
+      "community": false
+    },
+    "mask_zeroed": {
+      "text": "Alguém bem colocado apagou seus registros verdadeiros. Oficialmente você não existe. Esta Qualidade adicional exige uma Máscara de dois pontos; seu custo de um ponto é separado da identidade de cobertura.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "103–104",
+      "community": false
+    },
+    "mask_cobbler": {
+      "text": "Você pode produzir ou obter Máscaras. Produzir leva três dias por ponto e pode expô-lo online; conseguir uma leva um dia por ponto, mas exige algo em troca. O preço depende de sua influência, da margem num teste Social ou da decisão do Narrador. Esta Qualidade adicional custa um ponto e exige Máscara 2.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "104",
+      "community": false
+    },
+    "suspect": {
+      "text": "Seus dados biométricos, nome, histórico, associados e pseudônimos aparecem em bancos de dados de várias agências de inteligência, provavelmente como possível terrorista. Um agente governamental ou analista equivalente pode juntar as informações e descobrir o que você anda fazendo.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "104",
+      "community": false
+    },
+    "recurringError": {
+      "text": "Alguém cometeu um erro que o prejudica. Uma verificação de antecedentes mostra que você morreu recentemente, está numa lista de pessoas perigosas ou merece injustamente ser detido ou denunciado à polícia. Você pode até merecer detenção, mas não por esse motivo. Vale também para consultas a bancos de dados de sua identidade.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "104",
+      "community": false
+    },
+    "adversary": {
+      "text": "Um Garou rival deseja o mal a você ou à alcateia. É o inverso do Antecedente Mentor. O Adversário equivale a dois pontos acima do valor do Defeito, variando de um ponto para rivais mais jovens a três para Anciões ou alcateias. O Narrador usa o Status ou outra Característica adequada dele para montar paradas de oposição, não os pontos do Defeito.",
+      "costs": [
+        1,
+        2,
+        3
+      ],
+      "file": "Werewolf5ed",
+      "pages": "104",
+      "community": false
+    },
+    "destitute": {
+      "text": "Você não tem dinheiro nem casa.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "105",
+      "community": false
+    },
+    "spiritpact": {
+      "text": "Você fez um pacto mútuo com um espírito menor e conquistou sua lealdade. Ele atua como aliado e ajuda dentro de suas capacidades quando convocado, normalmente pelo Rito de Invocação de Espírito, p. 183. Defina o tipo de espírito com o Narrador. A maioria prefere espíritos de Gaia ou Wyld; alguns negociam com Weaver e poucos selam pactos secretos e cautelosos com Malditos ou outros espíritos da Wyrm.\n\nA ajuda depende da natureza do espírito. Gafflings e jagglings menores têm perspectivas limitadas: um espírito animal responde sobre o que é comestível ou assustador; um de máquina entende funcionamento e eficiência. Ainda assim, suas Habilidades podem ser úteis e ele está disponível para ensinar os Dons que conceder.\n\n1 ponto: Poder 1, gaffling menor. 2 pontos: Poder 2, gaffling moderado. 3 pontos: Poder 3, gaffling maior ou jaggling menor. 4 pontos: Poder 4, jaggling menor. 5 pontos: Poder 5, jaggling moderado. Companheiro e Hospedeiro são características adicionais, compradas à parte.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Werewolf5ed",
+      "pages": "105",
+      "community": false
+    },
+    "spiritpact_companion": {
+      "text": "O espírito de seu Pacto Espiritual pode acompanhá-lo por onde for, enquanto não encontrar proteções espirituais ou contramedidas aplicáveis. Sem um hospedeiro físico, só pode comunicar-se na Umbra ou acessando o mundo espiritual com Sentidos Penumbrais, p. 147. Uma Película forte pode interromper a comunicação mesmo com ele presente do outro lado. Esta característica custa dois pontos além do Pacto que define o espírito.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5ed",
+      "pages": "105",
+      "community": false
+    },
+    "spiritpact_host": {
+      "text": "O espírito de seu Pacto Espiritual possui um corpo hospedeiro persistente, como um animal, ou consegue possuir algo recorrente, como árvores ou monitores. Assim, pode interagir com você e outras pessoas no mundo físico. Um espírito sem a característica Companheiro ainda precisa ser convocado. O custo de um ponto é adicional ao Pacto que define o espírito.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "105",
+      "community": false
+    },
+    "conditionalPact": {
+      "text": "Seu pacto depende de realizar ou evitar certos atos em troca do serviço: um espírito de fogo pode exigir uma vela acesa em cada prédio onde entrar, e um espírito de besouro pode proibir ferir insetos intencionalmente. Descumprir a condição irrita o espírito, que deixa de contar como aliado até uma penitência adequada, definida pelo Narrador.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5ed",
+      "pages": "105",
+      "community": false
+    },
+    "talisman": {
+      "text": "Você possui algo considerado significativo por outros Garou, seja espiritual, marcial ou especial de outra maneira. Exemplos: klaive, armadilha de espíritos ou foco meditativo. Pode ser tanto fardo quanto benefício: rivais invejosos ou inimigos violentos talvez queiram tomá-lo. Consulte os Talismãs específicos na p. 188 ou crie um com o Narrador. O custo deve corresponder ao Talismã escolhido.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Werewolf5ed",
+      "pages": "105",
+      "community": false
+    },
+    "influence": {
+      "text": "Você tem poder sobre a comunidade mortal por riqueza, prestígio, cargo político, chantagem ou manipulação sobrenatural. Uma Influência alta pode mudar e, raramente, controlar a política e a sociedade da cidade, sobretudo a polícia e a burocracia.\n\nPor padrão, vale principalmente em um grupo ou região: crime organizado, mídia, religião, polícia, prefeitura ou uma grande área da cidade. Na cidade inteira vale um ponto a menos; em outra cidade da mesma região pode valer um ponto a menos adicional, e assim sucessivamente. Por exemplo, alguém Poderoso em Hollywood pode ser Estabelecido no restante de Los Angeles, Influente em San Diego ou San Francisco e Bem Relacionado em Chicago ou Nova York.\n\nO Narrador pode exigir Influência no lugar de uma Característica em certas paradas, sobretudo testes Sociais com funcionários menores de sua área. Ajuda a demolir ou preservar um prédio abandonado, não a começar guerras globais. Em crônicas de grandes manipuladores mundiais, o Narrador pode recalibrá-la para alcance nacional com quatro pontos ou global com cinco.\n\n1 ponto, Bem Relacionado: será ouvido com respeito. 2 pontos, Influente: querem lhe fazer favores. 3 pontos, Estabelecido: agentes de poder e facções mortais hesitam em enfrentá-lo. 4 pontos, Poderoso: funcionários e subordinados obedecem sem uma boa razão para recusar. 5 pontos, Dominante: figuras menores tentam antecipar seus desejos e atendê-los.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Vampiro5edptbr",
+      "pages": "187",
+      "community": false,
+      "adaptation": true,
+      "notes": [
+        "Adaptação do Antecedente de Vampiro para uso em W5. Não é uma entrada do livro básico de Lobisomem."
+      ]
+    },
+    "heritage_thickSkin": {
+      "text": "Pele Espessa: sua Vitalidade é 4 + Vigor, em vez de 3 + Vigor. A característica custa três pontos.",
+      "costs": [
+        3
+      ],
+      "file": "",
+      "pages": "",
+      "community": false,
+      "adaptation": true,
+      "notes": [
+        "Regra já presente no aplicativo; não localizada nos livros W5 fornecidos. Não há página bibliográfica verificada para esta opção."
+      ]
+    },
+    "visual_imposingGlabro": {
+      "text": "Sua forma glabro é mais esguia e musculosa que volumosa. À distância, não parece particularmente incomum. Mesmo de perto, pode parecer peludo ou feral, mas dentro da aparência humana normal. Por isso, não sofre a penalidade habitual de dois dados em testes Sociais na forma glabro (básico, p. 136).",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5edWyrmtide",
+      "pages": "28–29",
+      "community": false
+    },
+    "wyrmMarked": {
+      "text": "Suas formas sobrenaturais não são inteiramente lupinas, talvez pelo toque de Morcego, Mosca ou um servo da Wyrm. Ao assumi-las, traços como feridas que não cicatrizam, gengivas sangrando ou pele descolorida sem pelos sugerem influência da Wyrm. Perca dois dados em situações sociais com Garou que conheçam sua forma sobrenatural, exceto companheiros de alcateia, Mentores e vínculos próximos no Mapa de Relacionamentos. Interações próximas com humanos nessas formas ameaçam o Véu mais que o habitual.\n\nCom dois pontos, os traços também aparecem na forma hominídea ou lupus, escolhida na compra, exigindo afastar-se do mundo humano na maioria das formas.",
+      "costs": [
+        1,
+        2
+      ],
+      "file": "Werewolf5edWyrmtide",
+      "pages": "28–29",
+      "community": false
+    },
+    "metamorphosis_lunaResilience": {
+      "text": "Nas formas glabro e hispo, você recebe duas caixas adicionais de Vitalidade, idênticas às duas primeiras caixas adicionais de crinos. O dano nelas é conservado entre as três formas sobrenaturais. Se sofrer um dano Superficial numa dessas caixas em glabro e mudar para crinos, ele permanece. Se sofrer três danos Superficiais nas caixas extras de crinos e mudar para hispo, apenas um nível produz efeitos deletérios, pois duas caixas continuam disponíveis.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5edWyrmtide",
+      "pages": "28–29",
+      "community": false
+    },
+    "moonBane": {
+      "text": "Talvez tenha nascido sob uma lua de sangue ou Luna não o favoreça. Pedir a ela para restaurar sua Fúria é pouco confiável. Sempre que uivar para a lua para ganhar Fúria, faça uma Checagem de Fúria. Com sucesso, ela se restaura normalmente; com falha, não aumenta.",
+      "costs": [
+        1
+      ],
+      "file": "Werewolf5edWyrmtide",
+      "pages": "28–29",
+      "community": false
+    },
+    "hellHound": {
+      "text": "A maldição do Delírio é anormalmente forte em você, e suas formas hispo e lupus são pesadelos vivos. Ao assumir qualquer uma delas, você provoca Delírio como se estivesse em crinos.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5edWyrmtide",
+      "pages": "28–29",
+      "community": false
+    },
+    "supernatural_formMastery": {
+      "text": "Para cada ponto nesta Qualidade, selecione um Dom cujo uso possa ser estendido à forma hominídea ou lupus. A critério do Narrador, cada ponto pode exigir a bênção de um espírito ancestral ou, se Dom e Qualidade forem escolhidos juntos, uma negociação adicional com o espírito que ensina. Um Dom que dependa de um aspecto físico específico de uma forma, como garras, não pode ser ampliado desta maneira.",
+      "costs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "file": "Werewolf5edWyrmtide",
+      "pages": "28–29",
+      "community": false
+    },
+    "wolfMan": {
+      "text": "Sua forma crinos é aterrorizante, mas muito mais humana que lupina, com feições hominídeas. Sem focinho, não pode morder em crinos. Testemunhas humanas tratam Autocontrole + Determinação como dois níveis maior para determinar a reação ao Delírio. Seu rosto também continua reconhecível, embora retorcido e feral, criando uma ligação possível com sua outra vida.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5edWyrmtide",
+      "pages": "28–29",
+      "community": false
+    },
+    "wyrmTouched_calamity": {
+      "text": "Apesar da dedicação a Gaia, a Wyrm penetrou sua alma e sua mácula discreta o comprometeu — ou você acredita nisso e atribui suas fraquezas ao espírito maligno. A maldição pode destruí-lo ou motivá-lo a desafiar a corrupção. Ao escolher o Defeito, selecione uma manifestação. Wyrm da Calamidade: a Besta da Guerra corre em suas veias e alimenta a raiva constante. Acrescente um à Dificuldade de resistir ao frenesi.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5edWyrmtide",
+      "pages": "28–29",
+      "community": false
+    },
+    "wyrmTouched_soulEater": {
+      "text": "Apesar da dedicação a Gaia, a Wyrm penetrou sua alma e sua mácula discreta o comprometeu — ou você acredita nisso e atribui suas fraquezas ao espírito maligno. A maldição pode destruí-lo ou motivá-lo a desafiar a corrupção. Ao escolher o Defeito, selecione uma manifestação. Wyrm do Consumo: o Devorador de Almas corrói sua autoestima. Se ainda não fez um teste de Harano naquela sessão, precisa fazê-lo ao final dela.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5edWyrmtide",
+      "pages": "28–29",
+      "community": false
+    },
+    "wyrmTouched_corruption": {
+      "text": "Apesar da dedicação a Gaia, a Wyrm penetrou sua alma e sua mácula discreta o comprometeu — ou você acredita nisso e atribui suas fraquezas ao espírito maligno. A maldição pode destruí-lo ou motivá-lo a desafiar a corrupção. Ao escolher o Defeito, selecione uma manifestação. Wyrm da Corrupção: a Wyrm Profanadora cravou suas garras em sua mente. Se ainda não fez um teste de Hauglosk naquela sessão, precisa fazê-lo ao final dela.",
+      "costs": [
+        2
+      ],
+      "file": "Werewolf5edWyrmtide",
+      "pages": "28–29",
+      "community": false
+    }
+  }
+}

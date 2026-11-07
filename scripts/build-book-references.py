@@ -227,6 +227,8 @@ for key,name in missing[:]:
 for key,name in missing:
  refs[key]=[{'book':'Referência bibliográfica não confirmada','language':'unverified','pages':'','section':'Não foi localizada uma página para este resumo nas transcrições disponíveis.'}]
  aliases.setdefault(norm(name),[]).append(key)
-(root/'data/bookReferences.json').write_text(json.dumps({'entries':refs,'aliases':aliases},ensure_ascii=False,indent=2)+'\n')
+import runpy
+verified=runpy.run_path(str(root/'scripts/update-advantage-references.py'))['apply_verified_references']({'entries':refs,'aliases':aliases})
+(root/'data/bookReferences.json').write_text(json.dumps(verified,ensure_ascii=False,indent=2)+'\n')
 (root/'docs/BOOK_REFERENCE_AUDIT.md').write_text('# Referências bibliográficas da interface\n\nGerado por scripts/build-book-references.py. Os intervalos delimitam páginas impressas identificadas no texto; não são posições do leitor PDF. Referências por seção são identificadas como tal.\n\n## Itens sem página confirmada\n\n'+'\n'.join('- '+k+' — '+n for k,n in missing)+'\n')
 print(len(refs),'entradas;',len(missing),'pendentes:',missing)

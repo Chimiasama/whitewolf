@@ -728,18 +728,15 @@ test("criação mantém dois níveis da mesma Loresheet e gerador evita Dons dup
   await page
     .getByRole("button", { name: "Vínculos e recursos", exact: false })
     .click();
-  await page.getByRole("tab", { name: "Loresheets", exact: true }).click();
-  const region = page.getByRole("region", { name: "Loresheets", exact: true });
-  await region.getByRole("button", { name: "Escolher", exact: true }).click();
-  await region.getByRole("searchbox").fill("Bahari");
+  await page.getByRole("tab", { name: "Fichas de Conhecimento", exact: true }).click();
+  const region = page.getByRole("region", { name: "Fichas de Conhecimento", exact: true });
+  await region.locator("summary").filter({hasText:"Os Bahari"}).click();
   await region
-    .locator("li")
-    .filter({ hasText: "Bahari · 1 pontos" })
+    .getByRole("listitem", {name:"Os Bahari · 1 ponto",exact:true})
     .getByRole("button", { name: "Escolher", exact: true })
     .click();
   await region
-    .locator("li")
-    .filter({ hasText: "Bahari · 2 pontos" })
+    .getByRole("listitem", {name:"Os Bahari · 2 pontos",exact:true})
     .getByRole("button", { name: "Escolher", exact: true })
     .click();
   const r = await page.evaluate(async () => {

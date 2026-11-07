@@ -24,13 +24,13 @@ test('descrição de Fama mostra regras, cinco níveis e livro sem alterar a esc
  const picker=await start(page);await picker.getByRole('searchbox').fill('fama');await picker.getByRole('button',{name:'Escolher',exact:true}).click();
  await picker.getByRole('button',{name:'Informações: Fama',exact:true}).first().click();
  const dialog=page.getByRole('dialog',{name:'Fama',exact:true});await expect(dialog.getByText('Funcionamento e limites',{exact:true})).toBeVisible();await expect(dialog.getByRole('region',{name:'Níveis e efeitos'}).locator('dt')).toHaveCount(5);
- await expect(dialog).toContainText('reduz em 1');await expect(dialog.getByRole('complementary',{name:'Referências bibliográficas'})).toContainText('Vampiro: A Máscara');
+ await expect(dialog).toContainText('reduz em um');await expect(dialog.getByRole('complementary',{name:'Referências bibliográficas'})).toContainText('Vampiro: A Máscara');
  await dialog.getByRole('button',{name:'Fechar',exact:true}).click();await expect(picker.getByLabel('Pontos de Fama',{exact:true})).toHaveValue('1');
- await picker.getByRole('searchbox').fill('Focado');await picker.getByRole('button',{name:'Informações: Focado',exact:true}).click();await expect(page.getByRole('dialog',{name:'Focado',exact:true})).toContainText('apenas um resumo');
+ await picker.getByRole('searchbox').fill('Focado');await picker.getByRole('button',{name:'Informações: Focado',exact:true}).click();await expect(page.getByRole('dialog',{name:'Focado',exact:true})).toContainText('Não sofre penalidades');await expect(page.getByRole('dialog',{name:'Focado',exact:true})).toContainText('conteúdo comunitário');
 });
 test('consulta W5 e limites de pontos distinguem os dois livros e preservam valor antigo',async({page})=>{
  const picker=await start(page,'Lobisomem: O Apocalipse');await picker.getByRole('searchbox').fill('fama');await picker.getByRole('button',{name:'Informações: Fama',exact:true}).click();
- const dialog=page.getByRole('dialog',{name:'Fama',exact:true});await expect(dialog).toContainText('audiência ou apoiadores');await expect(dialog.getByRole('complementary',{name:'Referências bibliográficas'})).toContainText('Werewolf');
+ const dialog=page.getByRole('dialog',{name:'Fama',exact:true});await expect(dialog).toContainText('público ou apoiadores');await expect(dialog.getByRole('complementary',{name:'Referências bibliográficas'})).toContainText('Werewolf');
  const result=await page.evaluate(async()=>{const {fnGetAdvantagesAndFlaws}=await import('/constants.ts');return ['Vampire','Werewolf'].map(game=>{const catalogue=fnGetAdvantagesAndFlaws(k=>k,game);return {allies:catalogue.find(a=>a.id==='allies').levels,contacts:catalogue.find(a=>a.id==='contacts').levels};});});
  for(const row of result){expect(row.allies).toEqual([1,2,3,4,5,6]);expect(row.contacts).toEqual([1,2,3]);}
  await dialog.getByRole('button',{name:'Fechar',exact:true}).click();await picker.getByRole('searchbox').fill('Contatos');await picker.getByRole('button',{name:'Escolher',exact:true}).click();

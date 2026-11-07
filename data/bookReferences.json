@@ -8569,1187 +8569,1056 @@
       {
         "book": "Vampire: The Masquerade — Players Guide",
         "language": "en",
-        "pages": "121",
-        "file": "Vampire5edPlayersGuide01"
+        "file": "Vampire5edPlayersGuide01",
+        "pages": "121"
       }
     ],
     "advantage:allies": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "184–185"
       }
     ],
     "advantage:contacts": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "185"
       }
     ],
     "advantage:fame": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "186"
       }
     ],
     "advantage:influence": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "187"
       }
     ],
     "advantage:resources": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "193"
       }
     ],
     "advantage:beautiful": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "179"
       }
     ],
     "advantage:darksecret": [
       {
-        "book": "Vampire: The Masquerade — Anarch",
-        "language": "en",
-        "pages": "61–63",
-        "file": "Vampire5edAnarch",
-        "anchor": 3510
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "186"
       }
     ],
     "advantage:enemy": [
       {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "pages": "23–24",
-        "file": "Vampire5edPlayersGuide02",
-        "anchor": 1435
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "184–185"
       }
     ],
     "advantage:haven": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "187–189"
       }
     ],
     "advantage:herd": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "189–190"
       }
     ],
     "advantage:bloodhound": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "182"
       }
     ],
     "advantage:calmheart": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "10–11",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 445
+        "pages": "10"
       }
     ],
     "advantage:daredevil": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "10–11",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 449
+        "pages": "10"
       }
     ],
     "advantage:codeofhonor": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "10–11",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 469
+        "pages": "10"
       }
     ],
     "advantage:fastlearner": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "11–12",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 483
+        "pages": "11"
       }
     ],
     "advantage:focused": [
       {
-        "book": "Vampire: The Masquerade — Players Guide",
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "179–180",
-        "file": "Vampire5edPlayersGuide01",
-        "anchor": 10874
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "11"
       }
     ],
     "advantage:headstrong": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "11–12",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 494
+        "pages": "11"
       }
     ],
     "advantage:highhumanity": [
       {
-        "book": "Vampire: The Masquerade — Players Guide",
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "151–152",
-        "file": "Vampire5edPlayersGuide01",
-        "anchor": 8922
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "11"
       }
     ],
     "advantage:ironwill": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "11–12",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 503
+        "pages": "11"
       }
     ],
     "advantage:jackofalltrades": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "179–194",
-        "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "11"
       }
     ],
     "advantage:expertinstructor": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "11–12",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 515
+        "pages": "11"
       }
     ],
     "advantage:remorseful_merit": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "12–13",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 526
+        "pages": "12"
       }
     ],
     "advantage:loremaster_merit_v": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "12–13",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 543
+        "pages": "12"
       }
     ],
     "advantage:totalrecall": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "13–14",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 613
+        "pages": "13"
       }
     ],
     "advantage:crackdriver": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "13–14",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 667
+        "pages": "13"
       }
     ],
     "advantage:lightsleeper": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "13–14",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 673
+        "pages": "13"
       }
     ],
     "advantage:sharpsenses": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "13–14",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 688
+        "pages": "13"
       }
     ],
     "advantage:slippery_merit_v": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "8–10",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 402
+        "pages": "13"
       }
     ],
     "advantage:skillaptitude": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "14–15",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 714
+        "pages": "14"
       }
     ],
     "advantage:tough_merit": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "14–15",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 721
+        "pages": "14"
       }
     ],
     "advantage:unstakeable": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "14–15",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 726
+        "pages": "14"
       }
     ],
     "advantage:claninfiltrator_merit": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 754
+        "pages": "15"
       }
     ],
     "advantage:inspiringpresence": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 767
+        "pages": "15"
       }
     ],
     "advantage:prestigioussire": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "16–17",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 883
+        "pages": "16"
       }
     ],
     "advantage:socialengineer_merit": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "16–17",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 891
+        "pages": "16"
       }
     ],
     "advantage:stalwartloyalty": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "16–17",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 906
+        "pages": "16"
       }
     ],
     "advantage:underestimated_merit_v": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "8–10",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 395
+        "pages": "17"
       }
     ],
     "advantage:aftermealglow": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "17–18",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 948
+        "pages": "17"
       }
     ],
     "advantage:alchemyexpert": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "17–18",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 956
+        "pages": "17"
       }
     ],
     "advantage:animalaffinity": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "17–18",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 970
+        "pages": "17"
       }
     ],
     "advantage:apexpredator_merit": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "179–194",
-        "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
       }
     ],
     "advantage:berserker": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "18–19",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 996
+        "pages": "18"
       }
     ],
     "advantage:bloodhealer_merit": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "18–19",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 999
+        "pages": "18"
       }
     ],
     "advantage:delaydestruction_merit": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1015
+        "pages": "19"
       }
     ],
     "advantage:dangersense_merit": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1022
+        "pages": "19"
       }
     ],
     "advantage:demonicpact": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1056
+        "pages": "19"
       }
     ],
     "advantage:diablerist": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1073
+        "pages": "19"
       }
     ],
     "advantage:disciplinecompetence": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1084
+        "pages": "19"
       }
     ],
     "advantage:efficienteater_merit": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1100
+        "pages": "19"
       }
     ],
     "advantage:fasteater": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1106
+        "pages": "19"
       }
     ],
     "advantage:fasthealer": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1114
+        "pages": "19"
       }
     ],
     "advantage:friendtofae": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1121
+        "pages": "19"
       }
     ],
     "advantage:holyaura": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1168
+        "pages": "20"
       }
     ],
     "advantage:improvedghouls_merit": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1176
+        "pages": "20"
       }
     ],
     "advantage:magicresistance": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1181
+        "pages": "20"
       }
     ],
     "advantage:memoriamdweller_merit": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1187
+        "pages": "20"
       }
     ],
     "advantage:obscure_merit_v": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1191
+        "pages": "20"
       }
     ],
     "advantage:powerfulvitae": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1207
+        "pages": "20"
       }
     ],
     "advantage:risingsun": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1230
+        "pages": "20"
       }
     ],
     "advantage:spiritmentor": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1241
+        "pages": "20"
       }
     ],
     "advantage:thaumaturgictraining": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "21–22",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1277
+        "pages": "21"
       }
     ],
     "advantage:truebond": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "21–22",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1300
+        "pages": "21"
       }
     ],
     "advantage:truefaith": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "179–194",
-        "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "21"
       }
     ],
     "advantage:truesight": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "21–22",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1326
+        "pages": "21"
       }
     ],
     "advantage:mysticalitem": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "22–23",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1360
+        "pages": "22"
       }
     ],
     "advantage:addiction": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "179–180"
       }
     ],
     "advantage:haunted": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "179–194",
-        "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "20"
       }
     ],
     "advantage:shunned": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "179–194",
         "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "pages": "194"
       }
     ],
     "advantage:amnesia": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "10–11",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 462
+        "pages": "10"
       }
     ],
     "advantage:curiosity": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "10–11",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 466
+        "pages": "10"
       }
     ],
     "advantage:impatient": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "11–12",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 476
+        "pages": "11"
       }
     ],
     "advantage:paranoia": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "179–194",
-        "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "12"
       }
     ],
     "advantage:routine": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "12–13",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 533
+        "pages": "12"
       }
     ],
     "advantage:morbidfascination": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "12–13",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 548
+        "pages": "12"
       }
     ],
     "advantage:nightmares": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "12–13",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 555
+        "pages": "12"
       }
     ],
     "advantage:vengeful": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "179–194",
-        "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "13"
       }
     ],
     "advantage:weakwilled": [
       {
         "book": "Vampire: The Masquerade — Players Guide",
         "language": "en",
-        "pages": "121–122",
         "file": "Vampire5edPlayersGuide01",
-        "anchor": 6940
+        "pages": "121"
       }
     ],
     "advantage:softhearted": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "13–14",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 595
+        "pages": "13"
       }
     ],
     "advantage:bluntedfangs": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "13–14",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 622
+        "pages": "13"
       }
     ],
     "advantage:childlike": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "13–14",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 629
+        "pages": "13"
       }
     ],
     "advantage:fleshofthecorpse": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "13–14",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 640
+        "pages": "13"
       }
     ],
     "advantage:fragile": [
       {
-        "book": "Vampire: The Masquerade — Players Guide",
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "124–125",
-        "file": "Vampire5edPlayersGuide01",
-        "anchor": 6989
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "13"
       }
     ],
     "advantage:stenchofdeath": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "14–15",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 703
+        "pages": "14"
       }
     ],
     "advantage:weakstomach": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "14–15",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 737
+        "pages": "14"
       }
     ],
     "advantage:mistakenidentity": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 777
+        "pages": "15"
       }
     ],
     "advantage:notorioussire": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 793
+        "pages": "15"
       }
     ],
     "advantage:oathbreaker": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 804
+        "pages": "15"
       }
     ],
     "advantage:outsider_flaw_v": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 810
+        "pages": "15"
       }
     ],
     "advantage:brash_flaw_v": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 818
+        "pages": "15"
       }
     ],
     "advantage:conflictingloyalties_flaw": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 828
+        "pages": "15"
       }
     ],
     "advantage:dull_flaw_v": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 836
+        "pages": "15"
       }
     ],
     "advantage:hunted": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 841
+        "pages": "15"
       }
     ],
     "advantage:intolerance": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "15–16",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 852
+        "pages": "15"
       }
     ],
     "advantage:markedfordeath": [
       {
-        "book": "Vampire: The Masquerade — Chicago by Night",
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "97–98",
-        "file": "Vampire5edChicagobyNight",
-        "anchor": 7772
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "15"
       }
     ],
     "advantage:overconfident_flaw_v": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "16–17",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 874
+        "pages": "16"
       }
     ],
     "advantage:twistedupbringing": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "17–18",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 923
+        "pages": "17"
       }
     ],
     "advantage:angrybeast_flaw": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "17–18",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 965
+        "pages": "17"
       }
     ],
     "advantage:appetizingblood": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "18–19",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 986
+        "pages": "18"
       }
     ],
     "advantage:beaconofunholy": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "18–19",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 992
+        "pages": "18"
       }
     ],
     "advantage:cannotembrace_flaw": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "18–19",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1005
+        "pages": "18"
       }
     ],
     "advantage:cursed": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "179–194",
-        "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
       }
     ],
     "advantage:eeriepresence_flaw": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1034
+        "pages": "19"
       }
     ],
     "advantage:deathskiss_flaw": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1044
+        "pages": "19"
       }
     ],
     "advantage:deepsleeper_flaw": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1052
+        "pages": "19"
       }
     ],
     "advantage:disciplineinept": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1089
+        "pages": "19"
       }
     ],
     "advantage:frigidaura_flaw": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1129
+        "pages": "19"
       }
     ],
     "advantage:grimwounds": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1144
+        "pages": "20"
       }
     ],
     "advantage:taintofcorruption": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1254
+        "pages": "20"
       }
     ],
     "advantage:taintedblood": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "179–194",
-        "file": "Vampiro5edptbr",
-        "section": "Vantagens, Qualidades, Defeitos e Antecedentes"
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "21"
       }
     ],
     "advantage:weakblood": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "21–22",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1335
+        "pages": "21"
       }
     ],
     "advantage:curseditem": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "22–23",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1349
+        "pages": "22"
       }
     ],
     "wolfadvantage:allies": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "101–103",
         "file": "Werewolf5ed",
-        "anchor": 6504
+        "pages": "101"
       }
     ],
     "wolfadvantage:contacts": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "101–103",
         "file": "Werewolf5ed",
-        "anchor": 6602
+        "pages": "102"
       }
     ],
     "wolfadvantage:fame": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "101–103",
         "file": "Werewolf5ed",
-        "anchor": 6628
+        "pages": "102–103"
       }
     ],
     "wolfadvantage:influence": [
       {
-        "book": "Werewolf: The Apocalypse — Wyrmtide",
-        "language": "en",
-        "pages": "50–51",
-        "file": "Werewolf5edWyrmtide",
-        "anchor": 2915
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187"
       }
     ],
     "wolfadvantage:resources": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "103–105",
         "file": "Werewolf5ed",
-        "anchor": 6808
+        "pages": "104–105"
       }
     ],
     "wolfadvantage:beautiful": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "97–99",
         "file": "Werewolf5ed",
-        "anchor": 6344
+        "pages": "98"
       }
     ],
     "wolfadvantage:darksecret": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "103–105",
         "file": "Werewolf5ed",
-        "anchor": 6679
+        "pages": "103"
       }
     ],
     "wolfadvantage:safehouse_hidden": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "97–99",
         "file": "Werewolf5ed",
-        "anchor": 6352
+        "pages": "98–99"
       }
     ],
     "wolfadvantage:safehouse_secure": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "97–99",
         "file": "Werewolf5ed",
-        "anchor": 6352
+        "pages": "98–99"
       }
     ],
     "wolfadvantage:caern_access": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "97–99",
         "file": "Werewolf5ed",
-        "anchor": 6259
+        "pages": "98"
       }
     ],
     "wolfadvantage:caern_awakened": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "97–99",
         "file": "Werewolf5ed",
-        "anchor": 6259
+        "pages": "98"
       }
     ],
     "wolfadvantage:linguistics": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "97–99",
         "file": "Werewolf5ed",
-        "anchor": 6313
+        "pages": "98"
       }
     ],
     "wolfadvantage:talisman": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "15–17",
         "file": "Werewolf5ed",
-        "anchor": 864
+        "pages": "105"
       }
     ],
     "wolfadvantage:caernPariah": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "97–99",
         "file": "Werewolf5ed",
-        "anchor": 6284
+        "pages": "98"
       }
     ],
     "wolfadvantage:illiterate": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "97–99",
         "file": "Werewolf5ed",
-        "anchor": 6328
+        "pages": "98"
       }
     ],
     "wolfadvantage:croneCurse": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "99–101",
         "file": "Werewolf5ed",
-        "anchor": 6461
+        "pages": "100"
       }
     ],
     "wolfadvantage:infamy": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "103–105",
         "file": "Werewolf5ed",
-        "anchor": 6672
+        "pages": "103"
       }
     ],
     "wolfadvantage:infamousPartner": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "103–105",
         "file": "Werewolf5ed",
-        "anchor": 6685
+        "pages": "103"
       }
     ],
     "wolfadvantage:adversary": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "103–105",
         "file": "Werewolf5ed",
-        "anchor": 6799
+        "pages": "104"
       }
     ],
     "wolfadvantage:destitute": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "105–107",
         "file": "Werewolf5ed",
-        "anchor": 6849
+        "pages": "105"
       }
     ],
     "tribe:blackfuries": [
@@ -9884,144 +9753,128 @@
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinmerit:contact": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinmerit:catenating": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinmerit:day": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinmerit:affinity": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinmerit:lifelike": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinmerit:alchemist": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinmerit:resilience": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinflaw:teeth": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinflaw:bestial": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinflaw:branded": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinflaw:curse": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinflaw:dead": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinflaw:frailty": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinflaw:shunned": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "thinflaw:dependency": [
       {
         "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
         "language": "pt-BR",
-        "pages": "182–184",
         "file": "Vampiro5edptbr",
-        "section": "Qualidades e Defeitos de Sangues-Ralos"
+        "pages": "182–184"
       }
     ],
     "wolfattribute:Strength": [
@@ -10379,297 +10232,264 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "13",
         "file": "Vampire5edPlayersGuide02",
-        "section": "Sadist — conteúdo comunitário de Bully"
+        "pages": "12"
       }
     ],
     "advantage:magicsusceptibility": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1136
+        "pages": "20"
       }
     ],
     "advantage:repulsivetoanimals": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "19–20",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1221
+        "pages": "20"
       }
     ],
     "advantage:thirstforinnocence": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "21–22",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1290
+        "pages": "21"
       }
     ],
     "wolfadvantage:job_basic": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "98",
         "file": "Werewolf5ed",
-        "section": "Day Job"
+        "pages": "98"
       }
     ],
     "wolfadvantage:job_confirmed": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "98",
         "file": "Werewolf5ed",
-        "section": "Corroborated Day Job"
+        "pages": "98"
       }
     ],
     "wolfadvantage:moon_refreshed": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "100",
         "file": "Werewolf5ed",
-        "section": "Moon-Quickened"
+        "pages": "100"
       }
     ],
     "wolfadvantage:moon_stoked": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "100",
         "file": "Werewolf5ed",
-        "section": "Moon-Riled"
+        "pages": "100"
       }
     ],
     "wolfadvantage:visual_goodwolfy": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "98–99",
         "file": "Werewolf5ed",
-        "section": "Clement Lupus"
+        "pages": "98"
       }
     ],
     "wolfadvantage:mask_zeroed": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "103–104",
         "file": "Werewolf5ed",
-        "section": "Zeroed"
+        "pages": "103–104"
       }
     ],
     "wolfadvantage:mask_cobbler": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "104",
         "file": "Werewolf5ed",
-        "section": "Cobbler"
+        "pages": "104"
       }
     ],
     "wolfadvantage:spiritpact_companion": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "105–106",
         "file": "Werewolf5ed",
-        "section": "Spirit Pact: Companion"
+        "pages": "105"
       }
     ],
     "wolfadvantage:spiritpact_host": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "105–106",
         "file": "Werewolf5ed",
-        "section": "Spirit Pact: Host"
+        "pages": "105"
       }
     ],
     "wolfadvantage:substanceAbuse_incurable": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "99–100",
         "file": "Werewolf5ed",
-        "section": "Hopeless Addiction"
+        "pages": "99"
       }
     ],
     "wolfadvantage:substanceAbuse_dependency": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "99–100",
         "file": "Werewolf5ed",
-        "section": "Addiction"
+        "pages": "99"
       }
     ],
     "wolfadvantage:folkloric_bane": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "100–101",
         "file": "Werewolf5ed",
-        "section": "Folkloric Bane"
+        "pages": "100"
       }
     ],
     "wolfadvantage:folkloric_taboo": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "100–101",
         "file": "Werewolf5ed",
-        "section": "Folkloric Block"
+        "pages": "100"
       }
     ],
     "wolfadvantage:folkloric_sign": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "100–101",
         "file": "Werewolf5ed",
-        "section": "Folkloric Tell"
+        "pages": "100"
       }
     ],
     "wolfadvantage:visualFlaw_repulsive": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "98–99",
         "file": "Werewolf5ed",
-        "section": "Repulsive"
+        "pages": "98"
       }
     ],
     "wolfadvantage:visualFlaw_ugly": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "98–99",
         "file": "Werewolf5ed",
-        "section": "Ugly"
+        "pages": "98"
       }
     ],
     "wolfadvantage:suspect": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "104",
         "file": "Werewolf5ed",
-        "section": "Person of Interest"
+        "pages": "104"
       }
     ],
     "wolfadvantage:recurringError": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "104",
         "file": "Werewolf5ed",
-        "section": "Serial Error"
+        "pages": "104"
       }
     ],
     "wolfadvantage:conditionalPact": [
       {
         "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
         "language": "en",
-        "pages": "105–106",
         "file": "Werewolf5ed",
-        "section": "Pact Condition"
+        "pages": "105"
       }
     ],
     "wolfadvantage:wyrmMarked": [
       {
         "book": "Werewolf: The Apocalypse — Wyrmtide",
         "language": "en",
-        "pages": "28",
         "file": "Werewolf5edWyrmtide",
-        "section": "Wyrm-Marked Flesh"
+        "pages": "28–29"
       }
     ],
     "wolfadvantage:moonBane": [
       {
         "book": "Werewolf: The Apocalypse — Wyrmtide",
         "language": "en",
-        "pages": "28–29",
         "file": "Werewolf5edWyrmtide",
-        "section": "Bad Moon Rising"
+        "pages": "28–29"
       }
     ],
     "wolfadvantage:hellHound": [
       {
         "book": "Werewolf: The Apocalypse — Wyrmtide",
         "language": "en",
-        "pages": "28–29",
         "file": "Werewolf5edWyrmtide",
-        "section": "Hellhound"
+        "pages": "28–29"
       }
     ],
     "wolfadvantage:wolfMan": [
       {
         "book": "Werewolf: The Apocalypse — Wyrmtide",
         "language": "en",
-        "pages": "29",
         "file": "Werewolf5edWyrmtide",
-        "section": "Wolf-Man"
+        "pages": "28–29"
       }
     ],
     "wolfadvantage:wyrmTouched_calamity": [
       {
         "book": "Werewolf: The Apocalypse — Wyrmtide",
         "language": "en",
-        "pages": "29",
         "file": "Werewolf5edWyrmtide",
-        "section": "Wyrm-Touched: Wyrm of Calamity"
+        "pages": "28–29"
       }
     ],
     "wolfadvantage:wyrmTouched_soulEater": [
       {
         "book": "Werewolf: The Apocalypse — Wyrmtide",
         "language": "en",
-        "pages": "29",
         "file": "Werewolf5edWyrmtide",
-        "section": "Wyrm-Touched: Wyrm of Consumption"
+        "pages": "28–29"
       }
     ],
     "wolfadvantage:wyrmTouched_corruption": [
       {
         "book": "Werewolf: The Apocalypse — Wyrmtide",
         "language": "en",
-        "pages": "29",
         "file": "Werewolf5edWyrmtide",
-        "section": "Wyrm-Touched: Wyrm of Corruption"
+        "pages": "28–29"
       }
     ],
     "wolfadvantage:visual_imposingGlabro": [
       {
         "book": "Werewolf: The Apocalypse — Wyrmtide",
         "language": "en",
-        "pages": "28",
         "file": "Werewolf5edWyrmtide",
-        "section": "Fair Glabro"
+        "pages": "28–29"
       }
     ],
     "wolfadvantage:metamorphosis_lunaResilience": [
       {
         "book": "Werewolf: The Apocalypse — Wyrmtide",
         "language": "en",
-        "pages": "28",
         "file": "Werewolf5edWyrmtide",
-        "section": "Luna’s Resilience"
+        "pages": "28–29"
       }
     ],
     "wolfadvantage:supernatural_formMastery": [
       {
         "book": "Werewolf: The Apocalypse — Wyrmtide",
         "language": "en",
-        "pages": "28–29",
         "file": "Werewolf5edWyrmtide",
-        "section": "Gift Form Mastery"
+        "pages": "28–29"
       }
     ],
     "talisman:heatStone": [
@@ -10698,26 +10518,825 @@
     ],
     "wolfadvantage:enemy": [
       {
-        "book": "Referência bibliográfica não confirmada",
-        "language": "unverified",
-        "pages": "",
-        "section": "Não foi localizada uma página para este resumo nas transcrições disponíveis."
+        "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
+        "language": "en",
+        "file": "Werewolf5ed",
+        "pages": "101"
       }
     ],
     "wolfadvantage:moonSlave": [
       {
-        "book": "Referência bibliográfica não confirmada",
-        "language": "unverified",
-        "pages": "",
-        "section": "Não foi localizada uma página para este resumo nas transcrições disponíveis."
+        "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
+        "language": "en",
+        "file": "Werewolf5ed",
+        "pages": "100"
       }
     ],
     "wolfadvantage:heritage_thickSkin": [
       {
-        "book": "Referência bibliográfica não confirmada",
+        "book": "Regra da casa já existente no aplicativo — fonte não localizada",
         "language": "unverified",
-        "pages": "",
-        "section": "Não foi localizada uma página para este resumo nas transcrições disponíveis."
+        "pages": ""
+      }
+    ],
+    "advantage:prey_exclusion": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "181–182"
+      }
+    ],
+    "advantage:iron_gullet": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:obvious_predator": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:disliked": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187"
+      }
+    ],
+    "advantage:creepy_haven": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "188"
+      }
+    ],
+    "advantage:haunted_haven": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "188"
+      }
+    ],
+    "advantage:retainers": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:mask": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190"
+      }
+    ],
+    "advantage:mask_zeroed": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190–191"
+      }
+    ],
+    "advantage:mask_cobbler": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190–191"
+      }
+    ],
+    "advantage:mythic_flaw": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "wolfadvantage:mask": [
+      {
+        "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
+        "language": "en",
+        "file": "Werewolf5ed",
+        "pages": "103–104"
+      }
+    ],
+    "wolfadvantage:spiritpact": [
+      {
+        "book": "Werewolf: The Apocalypse — Core Rulebook, 5th Edition",
+        "language": "en",
+        "file": "Werewolf5ed",
+        "pages": "105"
+      }
+    ],
+    "advantage:bloodleech_mortals": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "181–182"
+      }
+    ],
+    "advantage:cleaver_herd": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:cleaver_secret": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "186"
+      }
+    ],
+    "advantage:scenequeen_fame": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "186"
+      }
+    ],
+    "advantage:scenequeen_contacts": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "185"
+      }
+    ],
+    "advantage:extortionist_enemy": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "184–185"
+      }
+    ],
+    "advantage:graverobber_gullet": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:graverobber_haven": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187–189"
+      }
+    ],
+    "advantage:graverobber_obvious": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:grimreaper_exclusion": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "181–182"
+      }
+    ],
+    "advantage:montero_retainers": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:pursuer_bloodhound": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:pursuer_contacts": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "185"
+      }
+    ],
+    "advantage:trapdoor_haven": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187–189"
+      }
+    ],
+    "advantage:bloodleech_diablerist": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "176–177"
+      }
+    ],
+    "advantage:bloodleech_shunned": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "194"
+      }
+    ],
+    "advantage:scenequeen_disliked": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187"
+      }
+    ],
+    "advantage:scenequeen_exclusion": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "181–182"
+      }
+    ],
+    "advantage:grimreaper_allies": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "184–185"
+      }
+    ],
+    "advantage:grimreaper_influence": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187"
+      }
+    ],
+    "advantage:trapdoor_retainers": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:trapdoor_herd": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:trapdoor_second_haven": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187–189"
+      }
+    ],
+    "advantage:trapdoor_creepy": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "188"
+      }
+    ],
+    "advantage:trapdoor_haunted": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "188"
+      }
+    ],
+    "advantage:online_mask": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190"
+      }
+    ],
+    "advantage:online_zeroed": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190–191"
+      }
+    ],
+    "advantage:online_cobbler": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190–191"
+      }
+    ],
+    "advantage:fame_osiris": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "186"
+      }
+    ],
+    "advantage:herd_osiris": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:enemy_osiris": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "184–185"
+      }
+    ],
+    "advantage:osiris_mythic": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:extortionist_contacts": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "185"
+      }
+    ],
+    "advantage:extortionist_resources": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193"
+      }
+    ],
+    "advantage:pay_resources": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193"
+      }
+    ],
+    "advantage:pay_influence": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187"
+      }
+    ],
+    "advantage:feeding_farmer": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "181–182"
+      }
+    ],
+    "advantage:feeding_consensualist": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "175–176"
+      }
+    ],
+    "advantage:destitute": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193"
+      }
+    ],
+    "advantage:despised": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187"
+      }
+    ],
+    "advantage:no_haven": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "188"
+      }
+    ],
+    "advantage:base_haven_cell": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187–189"
+      }
+    ],
+    "advantage:business_owner_background": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "22"
+      }
+    ],
+    "advantage:power_behind_throne": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "23"
+      }
+    ],
+    "advantage:supportive_presence": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "4"
+      }
+    ],
+    "advantage:mask_cobbler_online": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190–191"
+      }
+    ],
+    "advantage:iron_gullet_bagger": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:darksecret_consensualist": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "186"
+      }
+    ],
+    "advantage:beautiful_siren": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "179"
+      }
+    ],
+    "advantage:routine_flaw": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "12"
+      }
+    ],
+    "advantage:remorseful_confidant": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "12"
+      }
+    ],
+    "advantage:memoriam_dweller_confidant": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "20"
+      }
+    ],
+    "advantage:conflicting_loyalties": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "15"
+      }
+    ],
+    "advantage:dull_flaw": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "15"
+      }
+    ],
+    "advantage:dark_secret_corporate": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "186"
+      }
+    ],
+    "advantage:clan_infiltrator_eattherich": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "15"
+      }
+    ],
+    "advantage:angry_beast_eattherich": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "17"
+      }
+    ],
+    "advantage:efficient_eater_hideandeat": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "19"
+      }
+    ],
+    "advantage:slippery_hideandeat": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "13"
+      }
+    ],
+    "advantage:obvious_predator_hideandeat": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:sadistic_flaw": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "12"
+      }
+    ],
+    "advantage:improved_ghouls_labrat": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "20"
+      }
+    ],
+    "advantage:blunted_fangs_labrat": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "13"
+      }
+    ],
+    "advantage:addiction_labrat": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "179–180"
+      }
+    ],
+    "advantage:blood_healer_hospitalhunter": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:frigid_aura_hospitalhunter": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "19"
+      }
+    ],
+    "advantage:loremaster_localhaunt": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "12"
+      }
+    ],
+    "advantage:eerie_presence_localhaunt": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "19"
+      }
+    ],
+    "advantage:obscure_lurkerincrowd": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "20"
+      }
+    ],
+    "advantage:outsider_lurkerincrowd": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "15"
+      }
+    ],
+    "advantage:social_engineer_manicpixie": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "16"
+      }
+    ],
+    "advantage:cannot_embrace_manicpixie": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:paranoia_onlinepredator": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "12"
+      }
+    ],
+    "advantage:delay_destruction_opportunist": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "19"
+      }
+    ],
+    "advantage:overconfident_opportunist": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "16"
+      }
+    ],
+    "advantage:apex_predator_packhunter": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:brash_packhunter": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "15"
+      }
+    ],
+    "advantage:deep_sleeper_packhunter": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "19"
+      }
+    ],
+    "advantage:despised_payforblood": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187"
+      }
+    ],
+    "advantage:danger_sense_streetfeeder": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "19"
+      }
+    ],
+    "advantage:destitute_streetfeeder": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193"
+      }
+    ],
+    "advantage:sharp_senses_watcher": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "13"
+      }
+    ],
+    "advantage:slippery_watcher": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "13"
+      }
+    ],
+    "advantage:no_haven_watcher": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "188"
+      }
+    ],
+    "advantage:daredevil_wolf": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "10"
+      }
+    ],
+    "advantage:underestimated_wolf": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "17"
+      }
+    ],
+    "advantage:deaths_kiss_wolf": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "19"
       }
     ]
   },

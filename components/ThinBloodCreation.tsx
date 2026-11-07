@@ -1,3 +1,4 @@
+import {ThinBloodReference} from "./ThinBloodReference";
 import React from "react";
 import { Character, Clan } from "../types";
 import { THIN_MERITS, THIN_FLAWS } from "../data/thinBlood";
@@ -41,10 +42,7 @@ export function ThinBloodCreation({
             summary:
               "Escolha específica de Sangue-Ralo; não custa pontos comuns.",
             details: (
-              <p>
-                V5, pp. 182–184. Nome em português de trabalho; consulte o
-                efeito completo no livro.
-              </p>
+              <ThinBloodReference category={key} id={id}/>
             ),
             unavailable:
               (c[key] || []).length >= 3 && !(c[key] || []).includes(id)

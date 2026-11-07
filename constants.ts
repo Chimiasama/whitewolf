@@ -1,3 +1,4 @@
+import {withVerifiedAdvantageCost} from "./data/advantageFullTexts";
 import {expandPowers} from './data/expandedPowers';
 import {V5_LORESHEETS} from './data/v5Loresheets';
 import {completePredators} from './data/predators';
@@ -56,7 +57,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => comp
         name: fnT('predatorTypes.bagger.name'),
         description: fnT('predatorTypes.bagger.description'),
         humanityModifier: 0,
-        advantages: [{id:'iron_gullet_bagger',name:'Garganta de Ferro',description:'Iron Gullet — V5, p. 176. Alimentação com sangue armazenado; conferir restrições.',cost:3,type:'advantage',levels:[3]}],
+        advantages: [{id:'iron_gullet_bagger',name:'Esôfago de Ferro',description:'Iron Gullet — V5, p. 176. Alimentação com sangue armazenado; conferir restrições.',cost:3,type:'advantage',levels:[3]}],
         flaws: [{ id: 'enemy_bagger', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 2, type: 'flaw', levels: [2]}],
         specialties: [],
         specialtyOptions: [
@@ -430,7 +431,9 @@ export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | nul
     ];
 
     if (gameType === GameType.Werewolf) {
-        return [
+        return ([
+            {id:'mask',name:'Máscara',description:'Identidade de cobertura e registros que sustentam sua vida pública.',cost:1,type:'advantage',levels:[1,2]},
+            {id:'spiritpact',name:'Pacto Espiritual',description:'Pacto com um espírito aliado; defina sua natureza e seu Poder.',cost:1,type:'advantage',levels:[1,2,3,4,5]},
             ...common,
             { id: 'safehouse_hidden', name: fnT('advantages.safehouse.name'), description: fnT('advantages.safehouse.hidden'), cost: 2, type: 'advantage', levels: [2]},
             { id: 'safehouse_secure', name: fnT('advantages.safehouse.name'), description: fnT('advantages.safehouse.secure'), cost: 2, type: 'advantage', levels: [2]},
@@ -478,10 +481,10 @@ export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | nul
             { id: 'metamorphosis_lunaResilience', name: fnT('advantages.metamorphosis.lunaResilience'), description: fnT('advantages.metamorphosis.lunaResilience'), cost: 2, type: 'advantage', levels: [2] },
             { id: 'supernatural_formMastery', name: fnT('advantages.supernatural.formMastery'), description: fnT('advantages.supernatural.formMastery'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5] },
             { id: 'heritage_thickSkin', name: fnT('advantages.heritage.thickSkin'), description: fnT('advantages.heritage.thickSkin'), cost: 3, type: 'advantage', levels: [3] },
-        ];
+        ] as AdvantageFlaw[]).map(item=>withVerifiedAdvantageCost(item,gameType));
     }
 
-    return [
+    return ([
         { id: 'twicecursed', name: 'Duas Vezes Amaldiçoado (Twice-Cursed)', description: 'Defeito de 2 pontos: conserva a Maldição padrão e acrescenta a variante do próprio clã. A adequação à crônica fica com o Narrador. Players Guide oficial, p. 121; variantes pp. 56–59.', cost: 2, type: 'flaw', levels: [2] },
         ...common,
         { id: 'haven', name: fnT('advantages.haven.name'), description: fnT('advantages.haven.description'), cost: 1, type: 'advantage', levels: [1, 2, 3]},
@@ -593,7 +596,7 @@ export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | nul
         { id: 'thirstforinnocence', name: fnT('flaws.thirstforinnocence.name'), description: fnT('flaws.thirstforinnocence.description'), cost: 4, type: 'flaw', levels: [4] },
         { id: 'weakblood', name: fnT('flaws.weakblood.name'), description: fnT('flaws.weakblood.description'), cost: 5, type: 'flaw', levels: [5] },
         { id: 'curseditem', name: fnT('flaws.curseditem.name'), description: fnT('flaws.curseditem.description'), cost: 2, type: 'flaw', levels: [2] },
-    ];
+    ] as AdvantageFlaw[]).map(item=>withVerifiedAdvantageCost(item,gameType));
 };
 
 export const fnTranslateAdvantageFlaw = (

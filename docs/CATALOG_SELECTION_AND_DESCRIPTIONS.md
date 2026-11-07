@@ -17,7 +17,7 @@ As descrições são abertas pelo ícone **ⓘ** ou segurando o nome, antes e de
 
 As referências revisadas mostram funcionamento, níveis, limitações e observações. Incluem Fama, Aliados, Contatos, Recursos, Aparência, Linguística e Defeitos associados em V5/W5; Influência, Refúgio e Rebanho em V5; Refúgio Seguro e Emprego em W5. Regras diferentes entre os jogos ficam separadas. O conteúdo revisado também aparece na consulta geral, na ficha e no PDF.
 
-Itens ainda não revisados mostram explicitamente que possuem **apenas um resumo**, sem apresentar esse texto como a descrição completa do livro. A cobertura não é uma revisão integral de todos os Méritos, Defeitos ou suplementos do catálogo.
+A revisão posterior cobre todas as entradas atualmente selecionáveis, escolhas de Sangue-Ralo e benefícios de predador. Veja `ADVANTAGE_TEXT_AUDIT.md` para fontes, limites e exceções reais dos arquivos fornecidos. O aviso de resumo permanece apenas para entradas externas ou legadas desconhecidas.
 
 Ao conferir as escalas, foram alinhadas as opções de pontos aos básicos: Aliados até 6 pontos totais, Contatos até 3, Refúgio base até 3, Inimigos mortais de 1–2 e Segredo Sombrio de 1. Valores salvos fora dessas escalas não são alterados automaticamente; continuam selecionáveis e identificados como valor salvo a revisar.
 
@@ -30,4 +30,4 @@ A interface mantém as referências bibliográficas do catálogo ao final da con
 
 ## Testes
 
-Cobrem seleção com toque duplo em tela móvel para os dois jogos, repetição em um botão desativado, remoção explícita, ajuste de pontos, abertura da descrição sem alterar a ficha, os cinco níveis de Fama, a indicação de resumo em um item sem revisão e a preservação de um valor antigo fora da escala atual.
+Cobrem seleção com toque duplo em tela móvel para os dois jogos, repetição em um botão desativado, remoção explícita, ajuste de pontos, abertura da descrição sem alterar a ficha, os cinco níveis de Fama, a descrição traduzida e a origem comunitária de Focado e a preservação de um valor antigo fora da escala atual.

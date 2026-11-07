@@ -1,5 +1,6 @@
+import {fullAdvantageText} from "./advantageFullTexts";
 import {AdvantageFlaw,GameType} from '../types';
-export interface AdvantageReferenceData {rules:string[];levels?:[string,string][];notes?:string[];}
+export interface AdvantageReferenceData {rules:string[];levels?:[string,string][];notes?:string[];fullText?:boolean;community?:boolean;adaptation?:boolean;costs?:number[];}
 const fame:AdvantageReferenceData={
  rules:['Fama representa reconhecimento público e capacidade de mobilizar a atenção da mídia, de admiradores e de uma área de atuação. Defina por que o personagem é conhecido e por qual público.','O Narrador pode permitir substituir uma Característica por Fama em certas paradas sociais, especialmente para obter acesso a locais ou eventos exclusivos. Isso depende da situação: reconhecimento não é obediência automática.','Cada ponto reduz em 1 a dificuldade de testes sociais contra admiradores. Em V5, também pode reduzir a dificuldade de testes de caçada, conforme o método de predação e a adequação da notoriedade à abordagem.'],
  levels:[['1','Conhecido e admirado por uma subcultura específica.'],['2','Celebridade local, reconhecida por uma parcela expressiva da cidade.'],['3','A maioria das pessoas do país conhece pelo menos seu nome.'],['4','Quem acompanha sua área ou tendências sociais conhece algo sobre você.'],['5','Alcance nacional de massa ou internacional: grande estrela, artista de estádios ou figura pública equivalente.']],
@@ -30,11 +31,16 @@ const werewolf:Record<string,AdvantageReferenceData>={
  darksecret:{rules:['Um feito comprometedor é conhecido por poucas pessoas e pode ser descoberto. Defina o segredo e as consequências da revelação.','No básico de W5, Segredo Sombrio vale 1 ponto; Infâmia pública é um Defeito distinto de 2 pontos.']}
 };
 export function advantageReference(item:Pick<AdvantageFlaw,'id'>,game:GameType|null):AdvantageReferenceData|undefined{
+ const complete=fullAdvantageText(item.id,game);
+ if(complete){
+   const existing=(game===GameType.Werewolf?werewolf:vampire)[item.id];
+   return {rules:complete.text.split('\n\n'),levels:existing?.levels,notes:complete.notes,fullText:true,community:complete.community,adaptation:complete.adaptation,costs:complete.costs};
+ }
  const catalogue=game===GameType.Werewolf?werewolf:vampire;
  const id=catalogue[item.id]?item.id:['fame','resources','allies','contacts','haven','herd'].find(key=>item.id.startsWith(key+'_'))||item.id;
  return catalogue[id];
 }
 export function advantageReferenceText(item:AdvantageFlaw,game:GameType|null):string{
  const data=advantageReference(item,game);if(!data)return item.description;
- return [item.description,...data.rules,...(data.levels||[]).map(([dots,text])=>`${dots}: ${text}`),...(data.notes||[])].join('\n\n');
+ return [...(data.fullText?[]:[item.description]),...(data.community?["Conteúdo comunitário — tradução para revisão."]:[]),...(data.adaptation?["Adaptação / regra da casa."]:[]),...data.rules,...(data.levels||[]).map(([dots,text])=>`${dots}: ${text}`),...(data.notes||[])].join('\n\n');
 }

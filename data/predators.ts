@@ -141,7 +141,7 @@ export function completePredators(
       "Caça entre cadáveres recentes, enlutados e ambientes funerários.",
       guide,
       [
-        a("graverobber_gullet", "Garganta de Ferro", 3),
+        a("graverobber_gullet", "Esôfago de Ferro", 3),
         a("graverobber_haven", "Refúgio", 1),
       ],
       [f("graverobber_obvious", "Predador Óbvio", 2)],
@@ -179,7 +179,7 @@ export function completePredators(
       "Estuda a rotina das vítimas antes de persegui-las.",
       guide,
       [
-        a("pursuer_bloodhound", "Sabueso de Sangue", 1),
+        a("pursuer_bloodhound", "Sabujo de Sangue", 1),
         a("pursuer_contacts", "Contatos", 1),
       ],
       [],

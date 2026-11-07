@@ -23,7 +23,7 @@ export function parseCharacter(input:unknown):Character {
  if(input.predatorDiscipline!==undefined&&typeof input.predatorDiscipline!=='string')return fail('Disciplina de predador');
  if(input.schemaVersion!==undefined && ![1,SCHEMA_VERSION].includes(input.schemaVersion)) return fail('versão não suportada');
  for(const [key,catalog] of [['thinMerits',THIN_MERITS],['thinFlaws',THIN_FLAWS]] as const)if(input[key]!==undefined&&(!Array.isArray(input[key])||input[key].length>3||new Set(input[key]).size!==input[key].length||input[key].some(id=>typeof id!=='string'||!(id in catalog))))return fail(key);
- if(input.loreChoices!==undefined&&(!object(input.loreChoices)||Object.entries(input.loreChoices).some(([k,v])=>k!=='helenaTalent'||!['','Craft','Etiquette','Performance'].includes(v as string))))return fail('escolha de Loresheet');
+ if(input.loreChoices!==undefined&&(!object(input.loreChoices)||Object.entries(input.loreChoices).some(([k,v])=>k!=='helenaTalent'||!['','Craft','Etiquette','Performance'].includes(v as string))))return fail('escolha de Ficha de Conhecimento');
  if(input.thinCurse!==undefined&&!Object.values(Clan).includes(input.thinCurse))return fail('Maldição herdada');
  if(input.creationAge!==undefined&&!['childer','neonate','ancilla'].includes(input.creationAge))return fail('idade de criação');
  if(input.initialExperienceGranted!==undefined&&typeof input.initialExperienceGranted!=='boolean')return fail('XP inicial');
@@ -102,7 +102,7 @@ export function finishingIssues(c:Character):string[]{
  const budget=AGE_PROFILES[c.creationAge||'childer'];
  if(adv!==budget.advantages)issues.push(`Distribua exatamente ${budget.advantages} pontos de Vantagens (bônus de predador são adicionais).`);
  if(flaws!==budget.flaws)issues.push(`Distribua exatamente ${budget.flaws} pontos de Defeitos (bônus de predador são adicionais).`);
- if(c.loresheets.some(l=>l.id==='v5-helena'&&l.level===2)&&!c.loreChoices?.helenaTalent)issues.push('Escolha a Habilidade de Talento Verdadeiro na Loresheet de Helena.');
+ if(c.loresheets.some(l=>l.id==='v5-helena'&&l.level===2)&&!c.loreChoices?.helenaTalent)issues.push('Escolha a Habilidade de Talento Inato na Ficha de Conhecimento de Helena.');
  for(const skill of aMandatorySpecialtySkills)if(c.skills[skill]>0&&!c.specialties.some(s=>s.skill===skill&&s.name.trim()))issues.push(`Escolha a especialização gratuita de ${skill}.`);
  if(c.specialties.length < aMandatorySpecialtySkills.filter(k=>c.skills[k]>0).length+1 || !c.specialties.some(s=>c.skills[s.skill]>0&&s.name.trim()))issues.push('Escolha uma especialização em uma Habilidade com pontos.');
  if(c.gameType===GameType.Werewolf){

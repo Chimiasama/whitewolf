@@ -1,0 +1,973 @@
+[
+  {
+    "id": "v5-bahari",
+    "name": "Os Bahari",
+    "description": "Os seguidores da Trilha de Lilith, também chamados Lilin, Lilitu ou Bahari, veneram a primeira vampira como expressão da feminilidade primordial. Acreditam que Lilith foi usurpada e que todos os Membros são seus filhos, enquanto a sociedade patriarcal perpetua a mentira de Caim como progenitor. Buscam iluminação pela dor e pelo conflito, superando fraquezas como Lilith se rebelou contra Deus. Alguns conduzem outros Membros à iluminação; outros tornam-se predadores aperfeiçoados. Preferem prazer carnal, amor transitório e paternidade rigorosa à compaixão. Você pode ser torturador, aluno, tutor ou amante, ou até seguir secretamente a Igreja de Caim e minar os Bahari por dentro.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Reputação Perigosa",
+        "description": "Os Bahari intimidam os vampiros que não pertencem à ordem. Os que creem no mito Cainita ficam desconfortáveis em sua presença. Uma vez por história, você pode somar dois dados a paradas de Intimidação contra adoradores de Caim, desde que eles conheçam sua filiação.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Escarificação Ritual",
+        "description": "Você sabe que o sofrimento leva à iluminação. Os Lilitu ensinam que levar a própria casca física aos extremos dos sentidos concede maior compreensão. Uma vez por sessão, você pode causar em si uma escarificação equivalente a um ponto de dano Agravado para recuperar um nível de dano à Força de Vontade, Superficial ou Agravado.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Sacrifício dos Filhos",
+        "description": "Os Bahari acreditam na geração e no sacrifício de crianças. Para os fiéis, o sacrifício supremo é assassinar a própria criança. Ao diablerizar sua criança, você recebe três dados extras na parada de Humanidade + Potência de Sangue para absorver Disciplinas (Diablerie, p. 234).",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "O Sangue do Útero",
+        "description": "Os Bahari consideram a fertilidade e o sexo fontes de força; algumas facções dão especial importância ao sangue ou Vitae do útero. Uma vez por história, após beber sangue do útero, você ganha dois pontos adicionais em Vigor ou Determinação, aumentando também Vitalidade ou Força de Vontade em dois, até o amanhecer.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "A Amaldiçoada Original",
+        "description": "Os adoradores de Lilith sustentam que ela foi o primeiro ser vivo amaldiçoado por Deus, antes de Adão, Eva ou Caim. Imitar sua maldição menor reduz suas fraquezas Cainitas. Você mantém a Perdição de Clã, mas pode caminhar na primeira hora de luz do sol e na hora final do entardecer, além de manter relações sexuais sem despertar o Sangue. Contudo, você irradia perigo, equivalente ao Defeito Predador Manifesto de dois pontos. Testes Sociais para bani-lo ou difamá-lo têm a Dificuldade reduzida em um. Qualquer vampiro que o analise com Auspícios sofre imediatamente uma enxaqueca: subtraia metade da sua Determinação, arredondada para cima, da Determinação e da Força de Vontade dele por uma cena.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 382
+  },
+  {
+    "id": "v5-theo-bell",
+    "name": "Theo Bell",
+    "description": "Antes o cão de guarda da Camarilla, Theo desertou para os Anarchs depois de servir Hardestadt e Jan Pieterzoon por anos. Seu primeiro tiro na Convenção de Praga levou à morte dos dois e inspirou centenas de Brujah a abandonar a seita e depor Príncipes. Embora visto como messias relutante, não deseja liderar: cansou-se de se curvar aos sangues-azuis. Ainda serve de ponte entre Camarilla e Anarchs, frustrando emboscadas do Sabá, levantes e coerções, sem tolerar abusos nas negociações.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Célula Rebelde",
+        "description": "Você comanda um bando de mortais rebeldes e mantém aceso seu fogo revolucionário, talvez com Vitae ou encarnando seus ideais. Equivalentes a um grupo de Aliados de três pontos, eles executam uma única tarefa ou missão perigosa sem sua participação, antes de se dispersarem até a próxima história.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Anarch Verdadeiro",
+        "description": "Você já era Anarch antes de Bell trazer um exército de Brujah da Camarilla ao Movimento e se ressente dos recém-chegados que aderiram quando ficou popular. Você tem nomes, lugares, datas e registros dos rebeldes antigos e atuais, obtidos com Theo ou por conta própria. Recebe dois sucessos automáticos em qualquer teste de Investigação sobre vampiros que desertaram para o Movimento Anarch.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Informação de Contato",
+        "description": "Seja por esconderijo, mensageiro ou meios arcanos, você consegue enviar uma mensagem a Theo. Se ele responderá ou escutará depende da mensagem e das interações anteriores. Caso goste do que você diz, pode mover montanhas. O Narrador determina os efeitos precisos dessa mensagem.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Círculo de Bell",
+        "description": "Theo confia em você, por suas ações revolucionárias ou porque você conquistou suas boas graças. Bell equivale a um Mawla de cinco pontos, mas estar associado a ele também traz problemas.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Neutralidade de Seita",
+        "description": "Seguindo Theo Bell, você tem um pequeno contingente de Brujah leais à sua visão. Pode influenciá-los em direção à Camarilla, aos Anarchs ou à formação de uma subseita neutra na Jyhad. Você pode se orgulhar deles ou ressentir-se de sua existência. Eles não são discípulos cegos e anotam os favores concedidos. Até se rebelarem, você tem cinco pontos para distribuir entre Contatos, Refúgio (casas seguras), Mawla e Lacaios.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 383
+  },
+  {
+    "id": "v5-cainite-heresy",
+    "name": "Heresia Cainita",
+    "description": "No início do Cristianismo, hereges gnósticos e Membros trocaram informação e Sangue. Dessa união nasceu a crença de que Caim era o verdadeiro messias, Cristo o Segundo Caim e os Cainitas seus anjos na Terra, em oposição ao Demiurgo do Antigo Testamento. A Inquisição quase destruiu a Heresia no século XV, mas a Revolta Anarch e as expectativas da Gehenna favoreceram seu retorno. Alguns vampiros a usam para subverter religiões humanas; outros acreditam em sua missão divina e a difundem entre Anarchs.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Que Ele Tenha Compreensão",
+        "description": "O Narrador lhe dá gratuitamente uma pista para compreender, investigar ou detectar ações ou planos da Heresia, no presente ou em séculos anteriores. Você pode usar esse conhecimento uma vez por história.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Mão da Heresia",
+        "description": "Distribua um total de três pontos entre Aliados, Rebanho, Mawla e Lacaios para representar seu papel no diaconato herético da cidade. Por exemplo, Rebanho 1 e Mawla 2 podem representar um pequeno culto de adoradores humanos e um estudioso da Heresia como tutor. Em alguns domínios, você também tem o Defeito Segredo Sombrio (Heresia).",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Contra-Inquisição",
+        "description": "Você consegue detectar Fé Verdadeira em humanos. Se for necessário um teste, use Determinação + seu maior valor em Heresia Cainita. Você também pode se opor à Heresia e usar esse dom para saber em quem confiar.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Celebrante Vermelho",
+        "description": "Você conhece os rituais e as dosagens necessárias para induzir o Pentecostes Vermelho em uma congregação humana, uma espécie de frenesi religioso extático no qual os humanos agem de acordo com sua pior natureza. Consegue ervas e fungos suficientes para uma cerimônia por história. A Cerimônia Vermelha exige uma Checagem de Sangue e pode despertar frenesi nos Membros participantes.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "O Nomeado na Profecia",
+        "description": "Você é uma peça-chave nos planos da Heresia: talvez seja considerado um avatar de Caim, possua a única cópia do Testemunho de São Pantaleão ou seu Vitae seja o único sacrifício capaz de aplacar ou distrair Ialdabaoth. Todo integrante informado da Heresia, e muitos que desejam os favores dos Anarchs, conhecem seu papel. Uma vez por história, você pode usar isso para determinar o vencedor de um conflito Social, desde que apresente uma explicação plausível para o resultado.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 384
+  },
+  {
+    "id": "v5-carna",
+    "name": "Carna",
+    "description": "Antiga Príncipe de Marselha e Primogênita de Milwaukee, Carna criou sua própria célula dissidente dos Tremere. A Casa Carna defende libertação do Laço de Sangue e combate a tirania e a misoginia da Pirâmide. A visita da Segunda Inquisição à Grande Capela de Viena interrompeu os planos de puni-la. Livre da sombra da Pirâmide, sua Casa atrai Anarchs e rejeitados da Camarilla. Carna reconhece o valor dos seguidores, desconfia do retorno de Tremere e promove a modernização e a feminização do clã.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Abraçar a Visão",
+        "description": "Você está comprometido com a visão de Carna para um novo Clã Tremere. Na presença de outros membros da Casa Carna, sente maior autoconfiança e recebe um dado adicional em todos os testes de Força de Vontade.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "O Rastro Rebelde",
+        "description": "Você seguiu Carna depois de sua ruptura inicial com os Tremere e absorveu o espírito de rebelião e liberdade, decidindo nunca mais ser escravo de Sangue. Sempre que correr o risco de ficar Enlaçado, pode fazer um teste de Força de Vontade com Dificuldade igual à Potência de Sangue do Vitae ingerido para ignorar esse efeito.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Rituais Heterodoxos",
+        "description": "Carna alimenta sua magia com a própria sanidade ou alma, em vez de gastar Vitae segundo a ortodoxia Hermética. Você compreende esse método. Uma vez por história, pode realizar um ritual conhecido sem gastar Sangue. Entretanto, um crítico bestial também o transforma de algum modo, normalmente deixando-o intensamente paranoico ou temeroso de sangue até o final da história.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Laço Reimaginado",
+        "description": "Você estudou a magia de Carna e pode estender a terceiros seu método de reimaginar o vinculum. Uma relação sexual com um alvo mortal ou não vivo cria um Laço de Sangue entre o parceiro, você e Carna, apesar da ausência dela. Encontros repetidos reforçam o Laço pelas regras normais. Isso contorna a Perdição Tremere, mas o Laço dura somente até a conclusão da história.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Livro da Guerra dos Túmulos",
+        "description": "Dizem que esse tomo permitiu a Carna romper seu Laço com os Tremere. Você possui uma cópia, que concede um sucesso automático em todos os testes de Ocultismo sobre Gehenna, sua prevenção e o rompimento dos vínculos que prendem vampiros aos Anciões. Enquanto mantiver o livro e seguir seus ensinamentos arcanos, você é imune ao Laço. Os Tremere buscam destruir você e o livro. O Narrador também pode aplicar uma penalidade de um dado em testes Sociais ou Mentais afetados por sua paranoia constante.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 385
+  },
+  {
+    "id": "v5-circulatory-system",
+    "name": "O Sistema Circulatório",
+    "description": "A exploração do sangue e de suas Ressonâncias criou redes de Membros em busca de conhecimento, poder e lucro. O Sistema Circulatório trafica seres humanos entre domínios e registra os poderes de suas safras de sangue. Preocupa-se pouco com o bem-estar das bolsas além do prejuízo por mortes prematuras. Seus estudos revelam propriedades valiosas do Sangue. Você pode ser traficante, cliente ou uma antiga bolsa transformada em vampiro, deplorando a exploração ou desejando participar dela.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Acessar o Sistema",
+        "description": "Uma vez por história, você pode solicitar bolsas específicas ao Sistema Circulatório para transmitir certas habilidades, ou para suprir um Ventrue cuja preferência alimentar não é atendida no domínio.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Livrinho Preto",
+        "description": "Você possui um dos livrinhos do Sistema com registros de experimentos e teorias sobre o poder do sangue de bolsas selecionadas. O Narrador determina a precisão de cada informação. Em geral, o livro soma um dado a testes de Investigação, Alquimia, Medicina ou Ciência para encontrar ou testar uma safra específica. Também reduz pela metade o tempo de pesquisa de uma nova fórmula de Alquimia Sangue-Ralo de dois ou três pontos.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Fazenda Remota",
+        "description": "Você sabe onde o Sistema mantém uma fazenda de bolsas valiosas, mortais cujo sangue concede benefícios aos Membros que o bebem. Pode assaltá-la, arrendar bolsas pelo preço devido ou tentar tomar o lugar à força. As bolsas equivalem a Rebanho 4, mas você só pode se alimentar delas uma vez por semana, a menos que assuma abertamente o controle da fazenda.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Trânsito Seguro",
+        "description": "O Sistema transporta bolsas em furgões blindados, com motoristas carniçais armados. Esses veículos são mais que carros-fortes: estão carregados de armas e às vezes levam bolsas muito valiosas para compradores importantes. Você tem acesso a um deles, como motorista legítimo ou por tê-lo sequestrado, e consegue transportar um ou mais Membros com segurança e pouco esforço.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Sommelier de Sangue",
+        "description": "Você conhece e replica os métodos secretos do Sistema para provar, analisar e refinar sangue. Pode ter um laboratório, acesso a um alquimista ou feiticeiro de sangue, ou acompanhar os rumores dos entendidos. Some dois dados a qualquer teste para descobrir a Ressonância do sangue e distribua três pontos entre Contatos, Aliados ou Qualidades de Refúgio para explicar seu conhecimento. Uma vez por história, pode perguntar ao Narrador as propriedades do sangue da bolsa mais valiosa.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 386
+  },
+  {
+    "id": "v5-convention-of-thorns",
+    "name": "Convenção de Thorns",
+    "description": "Você estuda a convenção na qual vampiros de diferentes clãs organizaram a formação da Camarilla. Talvez descenda de um participante importante ou pesquise o período para compreender as leis atuais. Conhece participantes, versões propostas das Tradições e negociações secretas de clãs que não aderiram. Esse conhecimento ainda pode pressionar Camarilla e Anarchs.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Historiador de Thorns",
+        "description": "A Convenção foi uma rede complexa de diplomacia, com centenas de pequenas reuniões que firmaram pactos duradouros. Você conhece essas reuniões em detalhe e pode aplicar pressão legal sobre participantes ou descendentes quando pactos ainda estiverem vigentes, mas não forem praticados ou não puderem ser revogados sem consentimento de todos. Uma vez por história, pode pedir ao Narrador uma informação conhecida sobre a convenção.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Mestre da Tradição",
+        "description": "As seis Tradições foram codificadas e aceitas na Convenção, mas você conhece também propostas apócrifas ou quase aprovadas. Uma vez por crônica, pode aplicar leis marginais em domínios cujos clãs governantes ainda simpatizem com as Tradições rejeitadas. Exemplos de pseudotradições: permitir somente um Abraço por Membro; proibir policiais como alimento; punir combate no Elísio com Morte Final; permitir Diablerie de Caitiff encontrados no domínio.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Segredos da Convenção",
+        "description": "O Ministério recusou ser o oitavo clã basilar; os Lasombra rejeitaram a Camarilla quando ela não reconheceu os Antediluvianos. Você conhece propostas ainda mais obscuras, como a petição dos Capadócios e o rascunho do símbolo Malkaviano. Pode insinuar o bastante para receber sempre um dado adicional em testes Sociais com Membros presentes na convenção. Conhece também grandes segredos, cada um valendo um Favor Maior para um Cainita poderoso. Uma vez por história, pode perguntar ao Narrador o nome de um Membro que precise de seus conhecimentos.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Candidato a Justicar",
+        "description": "Os primeiros Justicares foram nomeados na Convenção. Independentemente de sua filiação política, você, ou seu Senhor caso você seja jovem demais, possui apoio poderoso para tornar-se o próximo Justicar de seu clã. Se o clã não tiver ampla representação na Camarilla, a nomeação pode anunciar uma mudança importante entre as linhagens da seita.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Novas Tradições",
+        "description": "Seu conhecimento permite reunir provas e apoio suficientes para propor ao Círculo Interno uma nova Tradição ou uma emenda. Ela pode ser aceita se parecer sensata e útil à Camarilla cada vez mais rígida, ou fazer de você um agitador perigoso aos olhos da seita. Sua voz, porém, será ouvida sem julgamento prévio.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 387
+  },
+  {
+    "id": "v5-first-inquisition",
+    "name": "A Primeira Inquisição",
+    "description": "Você conhece a origem das fogueiras que devastaram os Membros da Idade Média à Renascença, por relatos de ancestrais, textos históricos ou planos para voltar a Igreja contra seus inimigos. Embora os métodos e algumas crenças tenham mudado, seu conhecimento pode ajudar a evitar ou manipular a Segunda Inquisição. Como seus ancestrais descobriram, fazer isso envolve grandes riscos.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Erros do Passado",
+        "description": "Você conhece a história dos Membros e pode citar em detalhe domínios e Príncipes destruídos pela Inquisição original, ensinando a outros vampiros seus perigos históricos. Uma vez por história, pode pedir ao Narrador uma informação sobre a Primeira Inquisição.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Os Nomes dos Culpados",
+        "description": "Seu conhecimento das relações entre vampiros e Inquisição inclui os Membros que a manipularam. A maioria morreu, mas muitos descendentes vivem e podem ser chantageados pelas traições dos Senhores. Uma vez por história, pode pedir ao Narrador o nome de um descendente desses traidores em seu domínio, se houver algum.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "A Seita de Santiago",
+        "description": "Você tem contatos entre os que se consideram velhos Inquisidores. O Sectus Sancti Iacomi ressente-se dos equivalentes modernos e age com maior fanatismo e zelo suicida que a Segunda Inquisição. Seu abade é um Contato de quatro pontos, que você pode procurar uma vez por história.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "O Segundo Ato",
+        "description": "Você tem um Contato dentro da Segunda Inquisição ou da arquidiocese católica local: arquivista, caçador de reconhecimento, exorcista, armeiro ou semelhante. Não possui poder sobre essa pessoa, mas sabe obter informações dela ou alimentá-la com desinformação, se necessário.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Ponto Obscuro",
+        "description": "Você identificou um local no domínio que a Segunda Inquisição teme visitar. Uma vez por história, se você ou outro alvo da organização se esconder ali, os caçadores suspendem a busca. A aparente bênção levanta a pergunta: o que há de tão sagrado ou profano nesse lugar que detém a maior ameaça aos Membros atuais?",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 388
+  },
+  {
+    "id": "v5-golconda",
+    "name": "Golconda",
+    "description": "A maioria considera Golconda uma iluminação mítica; alguns afirmam tê-la alcançado ou conhecer quem conseguiu. Associada a Saulot, seria o equilíbrio perfeito entre Humanidade e Besta, capaz de conter a Fome e permitir suportar o sol. Poucos peregrinos chegam ao destino. Seus caminhos variam conforme os pecados de cada vampiro e seus resultados são disputados: serenidade ou um predador frio que continua sedento. Você pode seguir Saulot ou servir ao Mestre dos Corvos, que pretende desmascarar esse mito.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Sementes da Golconda",
+        "description": "Você ouviu falar da Golconda e sabe ensinar sua natureza sem parecer um completo amador. Uma vez por história, antes de uma ação, pode pedir orientação ao Narrador; ele dirá se ela compromete a possibilidade de buscar Golconda.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "O Único Caminho Verdadeiro",
+        "description": "Você possui uma cópia de O Caminho Verdadeiro, tratado do Mestre dos Corvos que apresenta Golconda como um método de tornar-se um predador supremo, em vez de um monstro espiritualmente redimido. Uma vez por história, o panfleto concede três dados adicionais em qualquer teste Social sobre a natureza da Golconda.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Discípulo de Saulot",
+        "description": "Você segue o vampiro que viajou à Ásia e retornou com um terceiro olho e a iluminação da Golconda, acreditando que seus ensinamentos permitem superar a maldição. Pratica uma existência dupla: às vezes solta as rédeas da Besta e da Fome para obter serenidade em outros momentos. Sempre que sucumbir voluntariamente ao frenesi, anote: você obtém sucesso automático no próximo teste de frenesi.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Satisfazer a Fome",
+        "description": "Você não precisa se alimentar com a mesma frequência dos demais. Sua busca pela Golconda suprime a Fome constante, talvez à custa de outras Características, e inspira outros vampiros. Uma vez por sessão, pode reduzir a Fome em um, sem baixá-la de um, sem se alimentar.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Saudar o Sol",
+        "description": "Você conhece os segredos da Golconda. Talvez não consiga manter esse caminho para sempre, mas enquanto o trilha pode enfrentar luz solar plena sem sofrer dano. Na noite seguinte a caminhar ao sol, desperta em frenesi de Fome. Esse benefício pode ser usado uma vez por história.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 389
+  },
+  {
+    "id": "v5-hardestadt",
+    "name": "Descendente de Hardestadt",
+    "description": "Muitos Ventrue consideram Hardestadt o mais importante de seu clã durante oito séculos, até sua destruição pelos rebeldes de Theo Bell na Convenção de Praga em 2012. Fundou a Camarilla ao lado de seis outros clãs e é creditado pela sobrevivência da seita. Abraçou poucos mortais e nunca confirmou sua linhagem até um Matusalém de Quarta Geração: considerava-se o princípio e o fim dos Ventrue.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "A Voz de Hardestadt",
+        "description": "Hardestadt gritava e pontuava falas com socos em mesas, paredes e carniçais desafortunados. Seu Sangue permite falar acima de qualquer ruído e chamar atenção, de reuniões barulhentas a raves. Algo em sua voz faz com que os outros escutem. Se continuarão prestando atenção depende do que você disser.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Líder Supremo",
+        "description": "A autoconfiança de Hardestadt foi sua ruína, mas antes da Morte Final o levou à grandeza. Você pode convencer outros a segui-lo em situações mortais, comandar da retaguarda e enviar subordinados à perdição para melhorar sua posição. Uma vez por história, não sofre penalidade na parada de dados por enviar pessoas ao perigo.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Esteio Ventrue",
+        "description": "Sua linhagem prestigiosa faz outros Ventrue procurarem sua orientação. Independentemente de seu Status com outros grupos, você sempre tem Status 3 com os Ventrue.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Linha Direta com os Fundadores",
+        "description": "Hardestadt mantinha um meio para sua linhagem alcançá-lo em perigo. Raramente respondia sem uma situação extrema e punia abusos, mas o método persiste. Uma vez por crônica, pode ligar, escrever ou marcar um encontro com um dos fundadores da Camarilla no lugar de Hardestadt. Uma resposta depende da importância do pedido.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Herdeiro de Hardestadt",
+        "description": "Você possui um documento assinado no qual Hardestadt o nomeia sucessor. Não sabe se isso significa riqueza e poder, o reinado Ventrue ou o Círculo Interno. Ao assumir o nome Hardestadt, o documento afirma que a Camarilla deve seguir seu comando, ao mesmo tempo que garante que os Anarchs se unirão para derrubá-lo.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 390,
+    "allowedClans": [
+      "ventrue"
+    ]
+  },
+  {
+    "id": "v5-helena",
+    "name": "Descendente de Helena",
+    "description": "Alguns situam Helena nas Américas, em guerra com uma rival; outros dizem que administra o clube vampírico mais popular do mundo ou que desperta o Antediluviano Toreador, seu amante. Bela e talentosa, inspira obras pelas quais mortais morreriam. Seus descendentes demonstram talento extraordinário e personificam o ideal Toreador. O clã quer conhecer você para se aproximar dela.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "À Flor da Pele",
+        "description": "Independentemente de sua posição, citar Helena em uma conversa com um Toreador ou vampiro que a conheça aumenta efetivamente seu Status em um ponto. Você pode usar o efeito uma vez por história, ou mencioná-la mais vezes apenas para encher o saco dos outros.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Talento Inato",
+        "description": "Diferente dos Toreador que dependem apenas do rosto e do corpo, você foi Abraçado por seu talento. Escolha uma Habilidade entre Ofícios, Etiqueta e Performance. Aumentá-la custa metade dos pontos de experiência normais, arredondada para baixo.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Abrace o Estereótipo",
+        "description": "Na hora certa, pode desempenhar o Toreador superficial, cercar-se de bajuladores e dar uma festa lendária. Uma vez por história, pode organizar uma festa para aumentar seu Status e/ou Influência em dois pontos com um grupo convidado. O aumento dura enquanto a festa durar.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Pureza Divina",
+        "description": "Sua perfeição parece mais angelical que demoníaca. Você pode cometer qualquer pecado e ainda parecer inocente. Some dois dados às paradas de testes para evitar a culpa por suas ações.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Franquia do Succubus Club",
+        "description": "Helena sucumbiu ao Chamado e deixou o Succubus Club de Chicago nas mãos de um gerente. Você recebeu licença para estabelecer uma franquia no próprio domínio. A honra garante que os Membros respondam à convocação, pois os Abraçados nos últimos dois séculos conhecem o clube. Enquanto permanecer aberto, o Chasse do Domínio de sua coterie aumenta em dois pontos. Você também recebe quatro pontos para distribuir entre Recursos, Fama e Status entre todos os Membros.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 391,
+    "allowedClans": [
+      "toreador"
+    ]
+  },
+  {
+    "id": "v5-sect-war-veteran",
+    "name": "Veterano da Guerra das Seitas",
+    "description": "A guerra norte-americana dos anos 1990 e início dos anos 2000 consolidou o ódio entre Sabá e Camarilla. O Sabá invadiu domínios da Camarilla e dos Anarchs, matando Membros e expondo poderes a mortais. A defesa militante, liderada por figuras como Theo Bell, recuperou domínios do sul dos Estados Unidos, embora grandes cidades ainda guardem bolsões do Sabá. Cada participante tem relatos de envolvimento e horrores sobrevividos.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Sobrevivente",
+        "description": "Seu domínio, ou o de um vampiro próximo, foi devastado durante a guerra. Você conhece as estratégias das duas seitas, como lutaram sem alertar mortais e os nomes dos Membros mortos no meio do conflito. Uma vez por história, pode pedir ao Narrador uma informação sobre a guerra das seitas no domínio.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Participante Ativo",
+        "description": "A guerra arrastou vampiros de todas as seitas e até independentes que serviram como mercenários ou fornecedores. Você tem cicatrizes que comprovam sua participação. Sua seita pode vê-lo como herói de guerra; a outra, como criminoso. Receba três pontos de Status ou Mawla para representar sua posição ou a de um companheiro.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Troféu",
+        "description": "Arcontes e Templários competiam pelo prestígio de matar vampiros importantes durante a guerra. Por sorte ou intenção, você causou uma dessas mortes. Pode exibir o feito ou abafar rumores, mas o Vitae está em suas mãos. Uma vez por história, pode usar a lenda para dispensar uma disputa em que ela ajude. O Narrador também pode usá-la a qualquer momento para enviar inimigos atrás de você.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Terra de Nenhum Vampiro",
+        "description": "Equipes de extermínio avançavam e recuavam entre domínios, levando alguns vampiros a mapear santuários, arsenais, túneis e ruas laterais. Você conhece os melhores lugares no próprio domínio e em dois vizinhos para emboscar, esconder-se, reabastecer milícias e contatar mercenários. Some dois pontos ao Portillon de seu Domínio e dois dados às paradas relevantes de Manha, Ladroagem e Furtividade nos dois domínios vizinhos.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Agitador de Seita",
+        "description": "Como Lucinda da Camarilla e Francisco Domingo de Polonia do Sabá, você vive para o derramamento de sangue e sentiu um vazio com o fim da guerra. Conhece os gatilhos para iniciar outra: primeiro em um domínio, depois espalhando as chamas. Some dois dados a todas as paradas de testes Sociais feitos para inflamar tensões entre seitas.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 392
+  },
+  {
+    "id": "v5-trinity",
+    "name": "A Trindade",
+    "description": "Michael, o Dracon e Antonius — Toreador, Tzimisce e Ventrue — construíram a utopia vampírica de Constantinopla. Cruzadas, a obsessão de um Matusalém e a corrupção Setita destruíram a coterie e seu Sonho de convivência entre crenças distintas. Alguns ainda esperam restaurá-lo com o Dracon ou novas trindades de Constantinopla e Istambul. Você pode compartilhar essa esperança ou investigar seus discípulos como ameaça às Tradições.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Constantinopla",
+        "description": "Fora da Ashirra, a tradição vampírica chama Istambul de Constantinopla. Você sabe por quê: a cidade mostrou o que era possível quando vampiros compartilhavam ideias e filosofia sem cair na carnificina. Uma vez por história, pode perguntar ao Narrador sobre seu passado e receber uma resposta precisa.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "A Arquitetura de Antonius",
+        "description": "O Ventrue Antonius criou a estrutura política e física que manteve Constantinopla unida, talvez originando a ideia de Primigênie. Você estuda seus métodos: some dois dados a paradas de Política em testes sobre o governo de um domínio. Uma vez por história, pode mediar e acalmar qualquer debate na corte, contendo a violência por ação ou profundidade de pensamento.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "O Sonho",
+        "description": "Por mil anos, a Trindade praticou o Sonho de Michael: incentivar aprendizado e iluminação, afastar-se da Besta e superar a existência de predador. Você é reconhecido como Porta-Voz do Sonho na cidade. Some um dado a paradas de Sagacidade para avaliar a Besta de outro. Uma vez por história, pode gastar um ponto de Força de Vontade para permitir que outro vampiro rerrole até três dados ao resistir ao frenesi.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "O Dracon",
+        "description": "O Tzimisce Dracon foi o único da Trindade a sobreviver à queda da cidade. Sábio, apaixonado, amante de Antonius e Michael e guia espiritual do grupo, silenciou por séculos após o assassinato de Antonius. Dizem que agora retorna com intenções desconhecidas. Você é um discípulo e provavelmente sabe encontrá-lo. Ele equivale a um Mawla de cinco pontos, auxiliando em assuntos espirituais e Disciplinas.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "A Nova Trindade",
+        "description": "Uma profecia certa diz que você e outras duas pessoas, com capacidades complementares sem serem iguais, reconstruirão Constantinopla em uma nova cidade, não importa o necessário. Uma vez por história, antes de um teste de Remorso, você pode remover até cinco Máculas adquiridas no caminho para estabelecer a Nova Trindade (p. 239).",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 393
+  },
+  {
+    "id": "v5-voerman",
+    "name": "Jeanette/Therese Voerman",
+    "description": "O Asylum de Los Angeles rivaliza com o Succubus Club e tornou-se franquia na América, Ásia e Europa. As irmãs Voerman são empreendedoras e inimigas declaradas, administrando Asylums separados em Santa Monica e Hollywood sem aparecer juntas. Só os Malkavianos mais próximos sabem que são duas personalidades no mesmo corpo. Rumores discutem sua origem e uma possível terceira irmã aprisionada. Elas mostram que Malkavianos podem prosperar como Toreador e Ventrue, embora muitos Anarchs esperem sua guerra interna.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Membro do Asylum",
+        "description": "Você não precisa enfrentar a fila do Asylum, tem sempre um dos melhores lugares da casa e, enquanto não causar problemas, pode caçar ali uma ou duas vezes por sessão com Dificuldade 2, sem ofender ninguém.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Pau Mandado",
+        "description": "Jeanette e Therese o consideram um recurso confiável e frequentemente lhe atribuem missões que vão de investigações sérias a fantasias insanas. Embora perigosas, são generosas e pagam os favores que contraem.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "O Queridinho da Jeanette",
+        "description": "A irmã mais impulsiva adora, mima e flerta com você. Também é a mais generosa. Você pode ficar no aposento diurno de qualquer Asylum quando precisar; se Jeanette estiver presente, ela insiste nisso. Pode usar o clube para festas próprias e pedir favores pequenos ou grandes à Baronesa Anarch. Jeanette conta como Mawla 4 apenas para assuntos Malkavianos e Anarchs.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "O Queridinho da Therese",
+        "description": "A irmã rígida e correta o respeita. Sua mentalidade de negócios não permite gastar os recursos do Asylum com seu luxo, mas ela o defende em qualquer regnum com um clube e pode ensinar negócios e finanças. Therese conta como Mawla 3.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Gerente do Asylum",
+        "description": "Jeanette ou Therese permitem que você abra uma franquia do Asylum no domínio. Enquanto o clube estiver aberto, você tem quatro pontos para distribuir entre Refúgio, Rebanho, Recursos ou Chasse do Domínio, conforme o foco do clube, que pode mudar com o tempo. Você decide se o local será um Elísio.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 394
+  },
+  {
+    "id": "v5-week-of-nightmares",
+    "name": "A Semana dos Pesadelos",
+    "description": "Os Membros divergem sobre a data da Semana dos Pesadelos, confundindo-a com a virada do milênio ou o início da Gehenna. Na verdade, seus efeitos se estenderam por anos e atingiram milhares. Um vampiro antiquíssimo despertou e devastou os Ravnos enquanto sangue-ralo traziam presságios e a Estrela Vermelha, Anthelios, brilhava. Você sobreviveu, tirou proveito do caos ou estudou seus participantes, e agora procura sinais de novas catástrofes.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "História Oral",
+        "description": "Você ouviu e contou a história da Semana dos Pesadelos incontáveis vezes e sabe o que enfeitar e esconder. Sua narrativa é popular nos Elísios, onde atua como historiador e animador para Membros importantes de muitos lugares. Some três dados a paradas de Performance para contar essa história.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Ravnos Remanescentes",
+        "description": "Antes da Semana, os Ravnos eram um clã; agora pouco resta além de uma linhagem. Você conhece sobreviventes e talvez compartilhe seu rancor dos Gangrel que os abandonaram. Receba Mawla 3 para representar o grupo. Eles trazem notícias e avisos e talvez aceitem criar ilusões poderosas uma vez por crônica. Se descoberta, a associação é malvista.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Eu Estive Lá",
+        "description": "Você estava na linha de frente. A reputação de sobrevivente e testemunha concede Status entre historiadores dos Membros, ocultistas, Ravnos e cultistas da Gehenna. Uma vez por história, use esse Status para obter um favor menor de um desses grupos ou de um cortesão importante que demonstre interesse repentino pelo assunto.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "A Estrela Vermelha",
+        "description": "Anthelios, designação da NASA 28978 IXION, também chamado Absinto e prenúncio da Gehenna, ainda brilha no céu para seus olhos. Você acredita que a estrela o observa e transforma. Uma vez por história, encare-a por dez minutos para reduzir sua Fome a dois ou ganhar um dado nas paradas de uma Disciplina por uma noite.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Sangue de Zapathasura",
+        "description": "O Antediluviano Ravnos encontrou a Morte Final em julho de 1999 pelas mãos de agentes desconhecidos, armados com tecnologia e o poder solar. Antes de morrer, drenou Vitae do clã, provocando frenesi e canibalismo. Cordões espessos e sencientes de seu Vitae mancharam o solo de Bangladesh e nem o sol do meio-dia destruiu tudo. Você possui um pequeno frasco desse Sangue. O que fará com ele depende de você; os efeitos em quem o beber cabem ao Narrador.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 395
+  },
+  {
+    "id": "v5-rudi",
+    "name": "Rudi",
+    "description": "Rudi é um representante Anarch de minorias oprimidas entre Membros e mortais. Continua em Copenhague com os amigos e clubes anteriores ao Abraço, mas ampliou sua luta: defende Gangrel excluídos de refúgios, mulheres em cidades de Anciões misóginos e normas progressistas. Muçulmano e queer, o Urso Gangrel reúne descontentes contra o elitismo e o conservadorismo da Camarilla. Alguns Príncipes europeus temem que lidere uma cruzada contra a ordem estabelecida.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Novos Direitos",
+        "description": "Como Rudi, você se sente fortalecido pela independência dos Gangrel da Camarilla. Uma vez por história, ao agir contra a elite ou denunciá-la, pode rerrolar a parada de dados de qualquer teste de Habilidade.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Eles e Deles",
+        "description": "Você é um defensor resoluto dos marginalizados e perseguidos, talvez por acreditar que vampiros só sobrevivem unidos ou que um bando é tão forte quanto seu membro mais fraco. Protege os outros com grande sacrifício. Quando um Pilar de qualquer integrante de sua coterie está ameaçado, seus ouvidos se aguçam e seus pelos se arrepiam.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Advogado Gangrel",
+        "description": "Como Rudi no norte europeu, você é visto como defensor dos direitos Gangrel nos domínios locais. Some um dado a testes Sociais que os envolvam. A reputação permite falar por muitos, mas também o torna responsável por suas ações aos olhos de alguns. Um teste bem-sucedido de Carisma + Política, com Dificuldade do Narrador, permite organizar convocações e reuniões discretas de trégua entre Gangrel e Camarilla.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "O Bando do Urso",
+        "description": "Você é ou foi membro do Bando do Urso, Rudistas fanáticos que combinam oratória e combate feroz. Considere os companheiros um Mawla grupal de três pontos que gosta de brigar. Uma vez por história, esses revolucionários, incluindo você, recebem um sucesso automático ao tentar mobilizar Anarchs e mortais marginalizados contra a elite. Sua fama temida nos domínios da Camarilla pode ajudar ou atrapalhar, conforme o interlocutor e se ele o reconhecer.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "O Exército de Rudi",
+        "description": "O exército reúne forasteiros de todos os clãs, origens e credos. Você influencia um braço dessa força e pode convocá-lo a agir contra governos mortais ou imortais, de protestos pacíficos na casa de um governador a atos contra líderes de grupos opressores. Sua brigada é grande, difícil de manejar e potencialmente perigosa. Receba seis pontos para dividir entre Aliados, Influência e Contatos: você pode direcioná-los, mas nunca controlá-los.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 396
+  },
+  {
+    "id": "v5-tyler",
+    "name": "Descendente de Tyler",
+    "description": "Tyler, antes Patricia de Bollingbroke, inspira rebeldes Brujah com sua violência revolucionária contra Anciões tiranos e Matusaléns. Mudou a sociedade vampírica e inspirou o Movimento Anarch. Seus descendentes a comparam a grandes revolucionários, enquanto ela, ainda existente e estudiosa, questiona se suas ações produziram os resultados desejados. Sua linhagem continua a luta para levá-la à grandeza que acredita ser seu destino.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Instigador",
+        "description": "Uma vez por história, ao tentar persuadir uma multidão de mortais a agir com violência, sua natureza explosiva soma dois dados à parada usada.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Campeão da Causa",
+        "description": "Vampiros que precisam de liderança para uma rebelião procuram seus conselhos ou comando. Se suas sugestões não forem absurdas, podem ouvi-las e acatar sua autoridade. Você recebe dois dados ao seu Status com eles durante uma rebelião. Os contatos obtidos antes dela podem ser mais valiosos e menos perigosos.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Misericórdia de Tyler",
+        "description": "Como Tyler percebeu quando o Sabá foi longe demais, você reconhece os limites da revolução violenta. Uma vez por história, em qualquer momento de um frenesi, pode aceitar uma Compulsão Brujah (p. 210) para encerrá-lo imediatamente. Não sofre confusão ou exaustão: retorna de imediato à Humanidade.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Os Furores",
+        "description": "As ideias de Tyler surgiram entre os Furores, grupo histórico dedicado a destruir tiranos vampíricos, ainda ativo em segredo. Você é integrante. Uma vez por crônica, quando chegar a hora, eles o armam, oferecem santuário onde influenciam e ativam Aliados surpresa no domínio-alvo, disponíveis dentro de uma cena. Os Aliados somam cinco pontos de Efetividade; o restante depende de sua colaboração com o Narrador. Esses recursos só podem ser usados para derrubar um Príncipe, Barão ou vampiro de posto elevado. Abusá-los torna você alvo dos Furores e seus agentes.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Revolução Permanente",
+        "description": "Você já derrubou o líder de uma seita e agora conduz um exército revolucionário por regnae vizinhos. Enquanto continuar lutando e não for visto se entregando aos luxos do cargo, Anarchs param para escutar e Brujah Anarchs obedecem exatamente, inclusive em missões suicidas. Não é necessária rolagem se o discurso for forte e os argumentos convincentes.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 397,
+    "allowedClans": [
+      "brujah"
+    ]
+  },
+  {
+    "id": "v5-zelios",
+    "name": "Descendente de Zelios",
+    "description": "Zelios é conhecido entre os Nosferatu como arquiteto, pedreiro e estudioso da geomancia. Desapareceu sob Nova York nos anos 1990, deixando livros, plantas e tratados sobre lugares e geometria sagrada. Seus descendentes orientam outros vampiros na construção de refúgios, prisões e labirintos, identificam linhas ley e aconselham Príncipes, por um preço, sobre pontos de proteção e poder vindos da terra e dos astros.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Santuário",
+        "description": "Seu refúgio combina estilo e conforto com maravilhas de segurança moderna, como passagens secretas, sistemas eletrônicos e até autodestruição. Distribua dois pontos entre as Qualidades de Refúgio Poterna e Sistema de Segurança, em uma ou ambas. Alguém, em algum lugar, provavelmente conhece todos os detalhes da instalação.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Sabotador",
+        "description": "Você reconhece instintivamente as fraquezas de um edifício e não precisa de explosivos para destruí-lo. Com marreta, pé de cabra, cabo e talhadeira, e tantas noites no local quanto a Dificuldade definida pelo Narrador, pode fazê-lo desabar como um castelo de cartas. Exemplos: quatro noites para uma casa, seis para um banco, oito para uma prisão e nove para um arranha-céu.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Em Comissão",
+        "description": "Outros vampiros sabem que você descende de Zelios e pedem conselhos para construir refúgios. Isso rende favores a cobrar, aproximadamente um favor menor por história, e o conhecimento de onde dormem vários Membros poderosos. Este último pode acabar causando mais problemas que benefícios.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "O Labirinto",
+        "description": "A partir da obra de Zelios, você criou sob o domínio um labirinto de esgotos, drenos abandonados, adegas, porões e túneis de manutenção. Acrescentou câmaras, becos sem saída e conexões próprias. Só as pessoas a quem contou conhecem o lugar. Não pode usá-lo como Refúgio, pois ele o aterroriza, mas, se alcançá-lo durante uma perseguição, ninguém consegue segui-lo.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Sentir as Linhas Ley",
+        "description": "Às vezes você vislumbra tendões vermelhos pulsantes serpenteando pela terra: linhas ley. Quem faz refúgio onde elas convergem sente a Fome crescer mais devagar se dormir ali de dia: na Checagem de Sangue para despertar, role dois dados e escolha o maior. Elas têm outros efeitos mágicos poderosos, pesquisáveis conforme a orientação do Narrador. Os Ratos de Esgoto punem severamente a divulgação desses segredos.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 398,
+    "allowedClans": [
+      "nosferatu"
+    ]
+  },
+  {
+    "id": "v5-vasantasena",
+    "name": "Descendente de Vasantasena",
+    "description": "Vasantasena e seu Senhor Malkaviano Unmada viajaram pelo mundo medieval contra o Laço de Sangue, a hierarquia e a perda de livre-arbítrio. Condenaram a tirania dos Antediluvianos e aderiram ao Sabá, mas a seita também instituiu hierarquia e escravidão ritual pelo Vitae. Ela a rejeitou e reuniu Malkavianos para libertar-se. Seus descendentes saíram antes da recente degeneração bestial do Sabá, juntaram-se à Camarilla ou aos Anarchs e conservam seu ardor e encanto cortante.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Agente do Caos",
+        "description": "Você prospera quando tudo arde ou se aproxima da catástrofe. Uma vez por sessão, em situações turbulentas como combate especialmente caótico, perseguição de carros em cidade cheia ou fuga de prédio em explosão, pode rerrolar um único dado sem gastar Força de Vontade.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Ouça Minhas Palavras",
+        "description": "Você herdou a persuasão de sua ancestral: sua voz toca o Sangue dos outros antes de alcançar suas mentes. Uma vez por história, se aconselhar outras pessoas em ambiente caótico e elas pararem para ouvir, poderão rerrolar uma parada de dados em um teste futuro durante a mesma situação.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Odor do Laço",
+        "description": "O ódio de Vasantasena aos Laços a levou contra os Antediluvianos. Ela podia sentir o Laço em vampiros e reconhecer o mesmo odor em quem os enlaçava ou era enlaçado por eles. Uma vez por história, você pode fazer o mesmo com um teste bem-sucedido de Determinação + Percepção, Dificuldade 4.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Destruir o Laço",
+        "description": "A maior façanha de Vasantasena é destruir Laços de Sangue, algo que talvez tenha feito repetidamente no Sabá e contribuído para sua degeneração. Uma vez por história, você pode remover o Laço imposto a uma vítima bebendo um gole do Vitae dela e atravessando um frenesi.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "O Sabá se Torna a Camarilla",
+        "description": "Vasantasena mostrou como libertar vampiros das filosofias desumanas que os prendem ao Sabá. Uma vez por história, você pode desprogramar as crenças de seita de um vampiro. Isole-o completamente e faça um teste estendido de Inteligência ou Carisma + Sagacidade em uma atmosfera de perfumes específicos. Role uma vez a cada três noites de debate. Você vence ao acumular sucessos iguais ao dobro da Força de Vontade do alvo (testes estendidos, p. 293).",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 399,
+    "allowedClans": [
+      "malkavian"
+    ]
+  },
+  {
+    "id": "v5-high-clan",
+    "name": "Alto-Clã",
+    "description": "Embora a divisão tenha sido formalmente abandonada com a Camarilla, alguns clãs ainda se dizem Altos e consideram ter direito de comandar os Baixos. Historicamente, Lasombra, Toreador, Tzimisce e Ventrue, além de Brujah e parte do Clã da Morte, usaram o título. Em certas regiões, incluem-se Banu Haqim, Ministério e raramente Tremere. Você vê sua Perdição mais como dádiva que maldição, mas os privilégios de sua posição têm limites.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Pavão",
+        "description": "Você se orgulha da posição de seu clã e age com a pompa de um nobre. Uma vez por sessão, pode rerrolar um único dado ao tentar exigir deferência de um vampiro sem título em seu domínio.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Controle de Massas",
+        "description": "Os Altos-Clãs já ordenaram que Baixos-Clãs morressem por eles e se submetessem na corte. Você ainda os persuade mais facilmente. Intimidou um séquito leal e abusado de vampiros Baixo-Clã, equivalente a Mawla 3. Receba três dados adicionais em paradas de Intimidação ou Liderança contra esses Membros. Se obtiver uma falha total em um desses testes ou disputas, precisará compensá-los ou eles se voltarão contra você.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Erguer o Baixo",
+        "description": "Uma peculiaridade de sua linhagem ou antigo decreto de Príncipe permite elevar um Baixo-Clã da cidade ao status de Alto-Clã uma vez por crônica. Você pode prometer fazê-lo eventualmente por muito tempo antes disso. Enquanto não cumprir, some um dado a testes Sociais com Membros Baixo-Clã ao aludir à possibilidade.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Abraçar para Governar",
+        "description": "Altos-Clãs costumavam Abraçar mortais nobres ou de famílias poderosas. Seus ancestrais podem não ser reis, mas você foi Abraçado para governar. Some um dado a testes de Liderança com vampiros Alto-Clã que conheçam sua linhagem. Uma vez por história, esses vampiros concedem precedência a você numa votação ou permitem que assuma grandes responsabilidades e poder, salvo se houver um agravo pessoal entre vocês.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Abençoado, Não Amaldiçoado",
+        "description": "Você está convencido de que não carrega a Maldição de Caim. Sua fraqueza de clã seria uma dádiva que revela sua natureza, posição no mundo e aspectos a fortalecer. Uma vez por sessão, pode gastar um ponto de Força de Vontade para ignorar os fardos da Perdição de Clã.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 400
+  },
+  {
+    "id": "v5-low-clan",
+    "name": "Baixo-Clã",
+    "description": "Você pertence a um clã historicamente considerado Baixo, condição ainda atual em seu domínio. Carrega uma maldição que julga mais pesada que a dos Altos-Clãs. A divisão varia conforme a região, mas Gangrel, Malkavianos e Nosferatu aparecem quase sempre; Brujah e Tremere também podem integrar o grupo. A posição inferior dá acesso às camadas mais baixas da sociedade e favorece rebelião e contracultura, com todos os benefícios e problemas envolvidos.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Casca-Grossa",
+        "description": "O desprezo dos que se dizem Altos não enfraquece sua ambição nem independência. Não é fácil provocá-lo. Uma vez por história, pode ignorar farpas verbais por uma cena sem precisar fazer teste.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Amaldiçoado com Orgulho",
+        "description": "Alguns Baixos-Clãs se orgulham de suas Perdições, como Nosferatu que veem a aparência monstruosa como glória em vez de vergonha. Você aprendeu a usar sua Perdição como arma. Uma vez por história, ganha um sucesso automático em uma rolagem ao incorporar a Perdição à ação.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Parentesco Misterioso",
+        "description": "A perseguição dos Altos-Clãs incentiva a união entre os Baixos. Você costuma mediar suas disputas e vê valor na resistência conjunta à hegemonia da elite. Selecione três pontos entre Mawla ou Status ligados a outros Baixos-Clãs do domínio.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Comércio entre Iguais",
+        "description": "A adversidade trouxe um benefício: os Baixos-Clãs ensinaram seus poderes uns aos outros. Isso pode não ocorrer em todo domínio, mas ocorre no seu. Escolha uma Disciplina de um Baixo-Clã e compre pontos nela com experiência pelo custo de uma Disciplina de seu próprio clã.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Incidente Crítico",
+        "description": "Sua influência pode virar a balança do poder. Some um dado a todas as suas paradas para Projetos destinados a minar Altos-Clãs do domínio. Uma vez por crônica, pode sacrificar até dez pontos dos próprios Antecedentes para derrubar igual número de Membros Alto-Clã em um golpe.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 401
+  },
+  {
+    "id": "v5-ambrus-maropis",
+    "name": "Ambrus Maropis",
+    "description": "Ambrus raramente deixa seu apartamento luxuoso no Chipre, mas sua fama de influenciador e defensor da Máscara se espalha. Toreador que sabem que é Nosferatu detestam sua popularidade. Seus fãs intermedeiam relações com Príncipes e Barões. Abraçado no fim da adolescência, segue fã introvertido de anime, jogos e RPG online. Por sua persona virtual, vende software e informação hackeada, recomenda segurança roubada de governos e corporações e apresenta tendências culturais aos Elísios, ajudando Camarilla e Anarchs a parecer humanos.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Crente Sincero",
+        "description": "Você aprendeu com Ambrus que a Camarilla está certa e a Máscara é essencial. Seguir seus preceitos de segurança e subterfúgio revela os melhores esconderijos compartilhados por Membros na cidade: receba um dado adicional em testes para encontrar um. O bônus pode não estar disponível em domínios contrários à sua posição política ou filosófica.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Informação Clandestina",
+        "description": "Você pode deixar um pedido digital à comunidade de fãs de Ambrus para que realizem uma invasão. Uma vez por história, obtém uma informação armazenada online sobre a maioria dos mortais dentro de duas a vinte horas.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Ensinado pelos Melhores",
+        "description": "Como discípulo de Ambrus, recebe informações sobre assuntos das operações da Segunda Inquisição às tendências de moda de Harajuku. Ele também pode reter informações na Dark Web ou conseguir um hacker ucraniano a preço de amigo. Considere Ambrus um Mawla de três pontos.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Backdoor Panóptico",
+        "description": "Você tem acesso a uma porta dos fundos de um software de vigilância que rastreia e classifica comunicações online, inclusive chamadas de celular, por palavras-chave e nomes. Pode ter recebido de Ambrus, roubado ou encontrado numa máquina abandonada por um fã. Por segurança, só pode acessar uma vez por história. Isso concede dois sucessos automáticos em qualquer teste de Investigação sobre atividade de celular ou presença online de alguém.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Totalmente em Outra Rede",
+        "description": "Ambrus caprichou em sua identidade falsa. Você possui duas identidades de cobertura de Máscara 2 e foi Zerado (p. 190). Receba três dados adicionais para resistir a tentativas de pesquisá-lo online ou descobrir suas atividades no mundo mortal.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 402
+  },
+  {
+    "id": "v5-carmelita-neillson",
+    "name": "Carmelita Neillson",
+    "description": "A arqueóloga Toreador de origem brasileira e irlandesa é procurada por Anciões que querem evitar a Gehenna e o Chamado. Desenterra o passado e entrevista Membros com até dois milênios de idade. Proibida pela Camarilla de guardar descobertas eletronicamente, estabeleceu bibliotecas discretas. Amigável, curiosa e poliglota, interroga Matusaléns recém-despertos, explora templos e interpreta escrituras do Sabá. Considera a narrativa dos próprios Membros uma arte esquecida e inspira Toreador que rejeitam o estereótipo de beleza sem talento.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "A Arte da Narrativa",
+        "description": "Você compartilha com Carmelita a crença de que contar histórias é uma arte perdida. Ao entreter vampiros com conhecimento histórico, mitos e lendas, atrai naturalmente Toreador para escutar suas palavras, independentemente da relação entre vocês.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "A Arte da Vontade",
+        "description": "Uma obra de arte ou relíquia confiada a seus cuidados pela Dra. Neillson o inspira e encanta. Se meditar nela por uma hora antes do descanso diurno e passar em Determinação + Erudição, Dificuldade 5, desperta com um ponto extra de Força de Vontade. Pode meditar assim uma vez por sessão.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Biblioteca Neillson",
+        "description": "As bibliotecas de Carmelita em domínios da Camarilla ajudam a preservar e estimular memórias de Anciões. Você é curador ou guardião de uma delas, equivalente a Refúgio 2 com Biblioteca 2. Outros vampiros e historiadores dos Membros também se reúnem ali, com vantagens e desvantagens.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Entrevista com o Matusalém",
+        "description": "Você obteve uma gravação em que Carmelita entrevista um vampiro antiquíssimo que revela segredos de um clã de seu domínio. Uma vez por história, pode pedir ao Narrador um desses segredos. A gravação, cedida por ela ou feita em segredo, dá vantagem sobre o entrevistado e o clã discutido. Curiosamente, uma voz após a de Carmelita no fim da fita menciona outras gravações.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "A Tumba do Ancestral",
+        "description": "Carmelita confiou a você a guarda do suposto local de descanso de um de seus ancestrais. Enquanto o mantiver seguro, pode cobrar dela um favor maior uma vez por história. Falhar na proteção provavelmente trará outras consequências.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 403
+  },
+  {
+    "id": "v5-fiorenza-savona",
+    "name": "Fiorenza Savona",
+    "description": "Quando Lasombra retomaram centros religiosos, os Ventrue expandiram influência sobre governos e multinacionais. Fiorenza mantém o clã relevante no poder global. Trabalhou duro como mortal e continua como Membro, conhecendo a elite de Davos por sua trajetória em ONGs e na ONU. Seu Senhor descobriu tanto contatos quanto talento político e empresarial. Muitos Anciões a veem como nova rica; os mais sábios sabem que ela move conselhos, empresas e mortais poderosos, apostando na manipulação dos vivos para a longevidade dos Membros.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Na Lista de Fiorenza",
+        "description": "Ela sabe quem você é e o considera útil ou problemático. Designou um Lacaio mortal Talentoso (p. 185), como guarda-costas, motorista ou mordomo, que continua empregado por ela. Ele não esconde que o espiona e relata tudo a Fiorenza, nem se afasta mesmo dispensado. Se for ferido ou morto, ela passa a desconfiar de você. Boa conduta aumenta sua estima.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Café da Manhã com Fiorenza",
+        "description": "Apesar da posição de destaque e agenda cheia, uma vez por história ela encontra tempo para recebê-lo. Você pode ter algo comprometedor sobre ela ou ser um amigo próximo. A reunião pode render lucro e informação se fizer as perguntas certas.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Os Benefícios da Amizade",
+        "description": "Você era próximo de Fiorenza antes de sua ascensão Ventrue. A amizade rende ajuda para acalmar outros Ventrue, dicas de negócios, empréstimo de jato com janelas polarizadas e planos de voo aprovados, entre outras coisas. A conexão equivale a Mawla 3. Se abusar dela, Fiorenza o corta sem hesitar.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "A Diretoria",
+        "description": "A Diretoria Ventrue o procurou, preocupada com a ascensão de Fiorenza, para aproximar-se, suborná-la e submetê-la. Se aceitar, será Enlaçado e terá apagadas as memórias das identidades da Diretoria, mas receberá seis pontos para distribuir entre Contatos, Mawla e Recursos. Você também pode oferecer-se a Fiorenza como agente duplo.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Influência no Governo",
+        "description": "Fiorenza lhe deve um favor. Uma vez por crônica, aceita influenciar um líder político mortal conforme seu pedido. Suas sugestões equivalem a cinco dados para distribuir como desejar entre rolagens de ação governamental. Se causar uma grande perturbação política ou reforçar as sugestões de outro modo, o Narrador pode acrescentar dados conforme seu plano e o sucesso dele.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 404
+  },
+  {
+    "id": "v5-karl-schrekt",
+    "name": "Descendente de Karl Schrekt",
+    "description": "Com a Pirâmide decapitada, tradicionalistas Tremere procuram a autoridade do ex-Justicar Karl Schrekt. Caçador de vampiros antes do Abraço em 1235, serviu à Camarilla contra Sabá, Anarchs e ameaças ocultas, suprimindo conhecimentos dos Antediluvianos e eliminando riscos à Máscara sem misericórdia. Conquistou discípulos e matou quase todos os inimigos. Um dos Tremere mais antigos restantes, inspira descendentes a impor Tradições, fortalecer o clã e ocultar sua magia.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Não Esqueça a Casa",
+        "description": "Uma vez por história, pode pedir ao Narrador uma informação sobre as atividades da Casa Tremere ou do clã antes do ataque que tanto os prejudicou.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Linha Dura",
+        "description": "Você segue fanaticamente as leis de Schrekt, convencido de que são o único futuro do clã. Com aprovação do Narrador, some dois dados a qualquer parada para resistir a tentativas de desviá-lo dos objetivos dele.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Rituais Preparados",
+        "description": "Dizem que Schrekt prepara todos os rituais com antecedência e carrega vários prontos. Uma vez por história, pode realizar um de seus rituais em cinco minutos, sem preparação no momento, pois já deixou tudo pronto.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Perdição dos Arcontes",
+        "description": "Você deplora a perseguição de Schrekt a entidades sobrenaturais e formou um vínculo com uma delas. Receba um Aliado de quatro pontos: mago, lobisomem, aparição, changeling ou algo mais estranho. Deve protegê-lo, pois é caçado. Uma vez por história, ele vem ajudá-lo entre uma e dez horas depois de ser chamado.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Conheça o Mundo",
+        "description": "Você concorda que conhecimento é poder e estudar somente Membros é tolice, seja aliado ou inimigo de Schrekt. Mantém arquivos sobre lobisomens, magos, aparições, feéricos e outras entidades. A coleção equivale a Biblioteca de Refúgio 3: escolha três especializações adequadas de Ocultismo. Não é necessário guardá-la no refúgio. Uma vez por história, também pode pedir ao Narrador resposta a qualquer pergunta simples sobre essas criaturas.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 405,
+    "allowedClans": [
+      "tremere"
+    ]
+  },
+  {
+    "id": "v5-xaviar",
+    "name": "Descendente de Xaviar",
+    "description": "Xaviar acusou a Camarilla de perfídia após ver sua coterie devorada por um Antediluviano e abandonou o cargo de Justicar Gangrel. A notícia circulou devagar pelo clã, pouco hierárquico. Muitos seguiram seu exemplo, tornando-se Autarcas ou Anarchs. Morto pouco depois, deixou os Gangrel com culpa por não acreditarem logo nele. Não se sabe quem o matou, mas seus descendentes querem fazer justiça e conduzir o clã à verdade.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Ancestral Martirizado",
+        "description": "Outros Gangrel lhe dão o respeito que demoraram a oferecer a Xaviar. Apesar de desavenças pessoais, você encontra santuário com Gangrel presentes no domínio, ao menos até insultá-los gravemente. Entre eles, possui Status 2.",
+        "system": "Custo: 1 ponto de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 2,
+        "name": "Onde os Corpos São Enterrados",
+        "description": "A experiência de Xaviar de fundir-se com terra, sangue e Vitae marcou sua linhagem. Você pode testar Determinação + Percepção para detectar um vampiro fundido à terra ou em Torpor sob o solo. A Dificuldade depende da área a examinar.",
+        "system": "Custo: 2 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 3,
+        "name": "Sabujo Leal",
+        "description": "Você permaneceu na Camarilla apesar da saída de seu clã. Em recompensa, o Príncipe local concedeu status, direitos de caça e territórios, totalizando quatro pontos para distribuir entre Domínio, Rebanho e Status. Gangrel de fora da seita o desprezam e outros vampiros lamentam sua solidão, mas você tem voz na Primigênie caso algum Gangrel rebelde atravesse o domínio.",
+        "system": "Custo: 3 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 4,
+        "name": "Morcego Monstruoso",
+        "description": "Depois de encontrar o Antediluviano, Xaviar passou de morcego a um híbrido de morcego e humano. Uma vez por história, quando a lua está alinhada, você pode assumir essa forma do tamanho de uma pessoa. Ela concede um ponto adicional em todos os Atributos Físicos e permite planar de qualquer altura. A mordida acrescenta um ponto de dano Agravado contra mortais e vampiros.",
+        "system": "Custo: 4 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      },
+      {
+        "level": 5,
+        "name": "Experiência com o Antediluviano",
+        "description": "Como Xaviar, você afundou no solo e encontrou-se dentro da forma vasta e inumana do fundador do clã. A experiência o deixou um pouco louco, provavelmente paranoico ou claustrofóbico. Ao recordá-la, sente as veias enraizarem-se na terra e conectarem-se aos Gangrel do mundo. Uma vez por história, pode sentir a localização de qualquer Gangrel e drenar dele uma pequena quantidade de Vitae para redefinir sua Fome para dois. Precisa tocar o solo descoberto, não concreto.",
+        "system": "Custo: 5 pontos de Vantagens / Antecedentes. Compra independente; não exige nem concede os outros benefícios desta ficha."
+      }
+    ],
+    "sourcePage": 406,
+    "allowedClans": [
+      "gangrel"
+    ]
+  }
+]

@@ -93,5 +93,5 @@ test('pacotes de predador conferidos e orçamento adicional de Loresheets',async
  const base={thinMerits:['lifelike'],thinFlaws:['dead'],generation:14,bloodPotency:0,predatorType:null};
  return {conflict:thinBloodIssues(base),tremere:thinBloodIssues({...base,thinMerits:['day'],thinFlaws:['curse'],thinCurse:'tremere'}),valid:thinBloodIssues({...base,thinMerits:['catenating'],thinFlaws:['curse'],thinCurse:'tremere'})};
  });
- expect(result.conflict.some(x=>x.includes('incompatíveis'))).toBe(true);expect(result.tremere.some(x=>x.includes('Sangue Vinculante'))).toBe(true);expect(result.valid).toEqual([]);
+ expect(result.conflict.some(x=>x.includes('incompatíveis'))).toBe(true);expect(result.tremere.some(x=>x.includes('Sangue Agregador'))).toBe(true);expect(result.valid).toEqual([]);
  });

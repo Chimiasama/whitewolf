@@ -72,7 +72,7 @@ export function ExperiencePurchases({
           { id: "discipline", label: "Disciplina" },
           { id: "ritual", label: "Ritual de Sangue" },
           { id: "ceremony", label: "Cerimônia de Oblívio" },
-          { id: "loresheet", label: "Loresheet" },
+          { id: "loresheet", label: "Ficha de Conhecimento" },
           { id: "bloodPotency", label: "Potência de Sangue" },
           { id: "humanity", label: "Humanidade" },
           ...(c.clan === Clan.ThinBlood ||
@@ -124,7 +124,7 @@ export function ExperiencePurchases({
     options = fnGetLoresheets(t).flatMap((s) =>
       s.levels.map((l) => ({
         id: s.id + ":" + l.level,
-        name: `${s.name} · ${l.level}: ${l.name}`,
+        name: `${s.name} · ${l.level} ${l.level === 1 ? "ponto" : "pontos"}: ${l.name}`,
       })),
     );
   else if (kind === "renown")
@@ -220,7 +220,7 @@ export function ExperiencePurchases({
       {c.loresheets.some((l) => l.id === "v5-helena" && l.level === 2) &&
         !c.loreChoices?.helenaTalent && (
           <label className="block">
-            Habilidade de Talento Verdadeiro
+            Habilidade de Talento Inato
             <select
               className="mt-2 block w-full rounded border border-gray-600 p-3"
               value=""
@@ -335,7 +335,7 @@ export function ExperiencePurchases({
         )}
         {kind === "loresheet" && selected === "v5-helena:2" && (
           <label className="block">
-            Habilidade de Talento Verdadeiro
+            Habilidade de Talento Inato
             <select
               className="mt-2 block w-full rounded border border-gray-600 p-3"
               value={choice}

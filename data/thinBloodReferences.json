@@ -1,0 +1,22 @@
+{
+  "thinMerits": {
+    "anarch": "Você fez amizade com integrantes de uma coterie Anarch, que toleram sua presença ou o tratam carinhosamente como mascote. Juntos, eles equivalem a um Mawla Anarch de um ponto, enquanto você seguir a linha política do grupo. Inclua-os no Mapa de Relacionamentos.",
+    "contact": "Um recrutador da Camarilla percebeu você e prometeu admissão e a chance de tornar-se um vampiro de verdade. Em troca, mantenha olhos e ouvidos abertos, relate suas atividades e as de sua coterie e esteja pronto para executar qualquer tarefa exigida. Você tem o equivalente a um Mawla da Camarilla de um ponto, que o trata mal. Inclua-o no Mapa de Relacionamentos.",
+    "catenating": "Você pode criar Laços de Sangue e realizar o Abraço como um vampiro pleno. Todo vampiro criado dessa maneira será um sangue-ralo.",
+    "day": "A luz solar reduz sua trilha de Vitalidade pela metade, arredondada para cima. Fora isso, apenas remove as capacidades vampíricas, incluindo todas as Disciplinas e os benefícios de Vitalidade, sem causar outro dano. Você ainda sofre de Fome e precisará dormir mais cedo ou mais tarde. Se a redução deixar a Vitalidade abaixo do dano já sofrido, aplique Debilitação ou Torpor, conforme o tipo de dano, até sair da luz solar.",
+    "affinity": "Você tem afinidade com uma Disciplina escolhida na criação. Recebe um ponto nela e pode aprender e conservar pontos adicionais por experiência como um vampiro normal, pagando o custo de Disciplina de fora do clã. Beber sangue com Ressonância correspondente não concede pontos extras nessa Disciplina, temporários ou permanentes.",
+    "lifelike": "Você tem batimento cardíaco, pode comer e desfrutar de atividades sexuais como um mortal. Exceto pelos exames mais avançados, inspeções médicas não revelam anormalidades, desde que ocorram à noite. Esta Qualidade é incompatível com Carne Morta.",
+    "alchemist": "Os sangue-ralo mudam ao se alimentar; a Alquimia Sangue-Ralo domina esse processo. Por talento espontâneo ou por trocar conhecimentos com outros alquimistas, você adquiriu um ponto e uma fórmula de Alquimia Sangue-Ralo. Pode comprar pontos e fórmulas adicionais com experiência normalmente. Veja o sistema de Alquimia a partir da p. 282.",
+    "resilience": "Você sofre dano como um vampiro normal, tratando ferimentos comuns de perfuração e corte como dano Superficial. Não pode combinar esta Qualidade com Fragilidade Mortal."
+  },
+  "thinFlaws": {
+    "teeth": "Você nunca desenvolveu presas, ou as suas são inúteis para se alimentar. Precisa cortar as vítimas ou extrair o sangue com uma seringa.",
+    "bestial": "Você é atormentado pela Besta como um vampiro pleno. Precisa fazer testes para resistir ao frenesi pelas regras normais dos vampiros.",
+    "branded": "Em algumas cidades, governantes caçam e destroem sangue-ralo; em outras, o Xerife misericordioso os marca à força e dolorosamente para lembrar seu lugar. Muitos ainda são mortos depois, por desrespeito percebido ou mero capricho. Você tem uma dessas marcas que não cicatrizam, e a Camarilla vigia qualquer desvio. Pode combinar este Defeito com Contato na Camarilla: a seita prospera com esse tipo de duplicidade.",
+    "curse": "Restos do Sangue de seu Senhor correm em suas veias e carregam a maldição antiga. Escolha uma Perdição de Clã, com Gravidade da Perdição igual a um. Só pode escolher a Perdição Brujah ou Gangrel se possuir Temperamento Bestial; a Tremere exige Sangue Agregador.",
+    "dead": "Seu Sangue não consegue sustentá-lo completamente. A carne permanece em putrefação, com tom esverdeado e leve cheiro de podridão. Qualquer exame médico o identifica imediatamente como morto. Sofra penalidade de um dado em testes Sociais face a face com mortais. Não pode escolher Semblante de Vida.",
+    "frailty": "Você não pode despertar o Sangue para regenerar e se cura como um mortal, conforme p. 126. Não pode escolher Resiliência Vampírica.",
+    "shunned": "Você violou uma regra não escrita ou se julgou igual aos demais num grupo em que alguns eram mais iguais que outros. Os Anarchs do regnum sabem quem você é e o rejeitam: preferem entregá-lo à Camarilla a ouvir seus pedidos. Não pode escolher Camaradas Anarchs.",
+    "dependency": "Seu Sangue não sustenta poderes vampíricos sozinho. Se não beber Sangue de vampiro suficiente para saciar um ponto de Fome por semana, perde a capacidade de obter e usar qualquer Disciplina, inclusive Alquimia Sangue-Ralo. Recupera os poderes assim que saciar ao menos um ponto de Fome com Sangue de vampiro."
+  }
+}

@@ -1,3 +1,4 @@
+import thinTexts from "../data/thinBloodReferences.json";
 import {advantageReferenceText} from '../data/advantageReferences';
 import {THIN_MERITS,THIN_FLAWS} from '../data/thinBlood';
 import {alternativeBane,hasAlternativeBane} from '../data/alternativeBanes';
@@ -47,7 +48,7 @@ export async function buildCharacterPdf(c:Character,t:Translate){
  else{heading('Atributos');grid(aAttributeList.map(key=>({name:t('attributes.list.'+key),value:c.attributes[key]})));heading('Habilidades');grid(aSkillList.map(key=>({name:t('skills.list.'+key),value:c.skills[key]})));}
  if(c.specialties.length)field('Especializações',c.specialties.map(s=>`${t('skills.list.'+s.skill)} (${s.name})`).join('; '));
  heading('Vantagens e Defeitos');field('Vantagens',c.advantages.map(a=>`${a.name} ${a.cost}`).join('; ')||'Nenhuma');field('Defeitos / complicações',c.flaws.map(a=>`${a.name} ${a.cost}`).join('; ')||'Nenhum');
- if(c.loresheets.length)field('Loresheets',c.loresheets.map(selected=>`${fnGetLoresheets(t).find(sheet=>sheet.id===selected.id)?.name||selected.id} (${selected.level})`).join('; '));
+ if(c.loresheets.length)field('Fichas de Conhecimento',c.loresheets.map(selected=>`${fnGetLoresheets(t).find(sheet=>sheet.id===selected.id)?.name||selected.id} (${selected.level})`).join('; '));
  if(c.clan==='thinblood'){field('Qualidades de Sangue-Ralo',c.thinMerits?.map(key=>THIN_MERITS[key]||key).join('; '));field('Defeitos de Sangue-Ralo',c.thinFlaws?.map(key=>THIN_FLAWS[key]||key).join('; '));field('Maldição herdada',c.thinCurse?clans[c.thinCurse]?.name||c.thinCurse:undefined);}
  heading(wolf?'Renome e Dons':'Disciplinas');
  if(wolf){field('Renome',`Glória ${c.renown.glory}, Honra ${c.renown.honor}, Sabedoria ${c.renown.wisdom}`);field('Dons',(c.gifts||[]).map(g=>W5_GIFTS.find(x=>x.id===g.id)?.name||g.id).join('; ')||'Nenhum');}
@@ -77,9 +78,10 @@ export async function buildCharacterPdf(c:Character,t:Translate){
  }
  for(const [title,items] of [['Ritos / rituais',c.rituals],['Talismãs',c.talismans]] as const)if(items.length){heading(title);for(const item of items){heading(item.name);line(item.description);sources(item.name);}}
  if(c.predatorType){const predator=fnGetPredatorTypes(t).find(p=>p.id===c.predatorType);if(predator){heading(`Tipo de predador - ${predator.name}`);line(predator.description);sources(predator.name,`predator:${predator.id}`);}}
- for(const title of ['Vantagens','Defeitos'] as const){const items=title==='Vantagens'?c.advantages:c.flaws;if(items.length){heading(`${title} - descrição`);for(const item of items){heading(`${item.name} - ${item.cost} pontos`);line(advantageReferenceText(item,c.gameType));sources(item.name);}}}
+ for(const title of ['Vantagens','Defeitos'] as const){const items=title==='Vantagens'?c.advantages:c.flaws;if(items.length){heading(`${title} - descrição`);for(const item of items){heading(`${item.name} - ${item.cost} pontos`);line(advantageReferenceText(item,c.gameType));sources(item.name,`${wolf?"wolfadvantage":"advantage"}:${item.id}`);}}}
+ if(c.clan==='thinblood')for(const [key,names,prefix] of [['thinMerits',THIN_MERITS,'thinmerit'],['thinFlaws',THIN_FLAWS,'thinflaw']] as const)for(const id of c[key]||[]){heading(names[id]||id);line(thinTexts[key][id]||'');line('Sem custo no orçamento comum; cada Defeito compensa uma Qualidade.');sources(names[id]||id,`${prefix}:${id}`);}
  const loresheets=fnGetLoresheets(t);
- for(const selected of c.loresheets){const sheet=loresheets.find(s=>s.id===selected.id);const level=sheet?.levels.find(l=>l.level===selected.level);heading(`${sheet?.name||selected.id} - nível ${selected.level}`);if(level){line(level.name);line(level.description);field('Sistema',level.system);}if(sheet)sources(sheet.name);}
+ for(const selected of c.loresheets){const sheet=loresheets.find(s=>s.id===selected.id);const level=sheet?.levels.find(l=>l.level===selected.level);heading(`${sheet?.name||selected.id} - ${selected.level} ${selected.level===1?"ponto":"pontos"}`);if(level){line(level.name);if(sheet)line(sheet.description);line(level.description);field('Sistema',level.system);}if(sheet)sources(sheet.name,`loresheet:${sheet.id}`);}
  if(c.npcTemplate){heading('Capacidades do NPC');field('Paradas excepcionais',c.npcTemplate.exceptional);field('Poderes e capacidades',c.npcTemplate.abilities);}
  if(c.clan){heading(`Clã - ${clans[c.clan]?.name||c.clan}`);const alternate=hasAlternativeBane(c)?alternativeBane(c):null;field('Maldição',c.baneVariant==='alternative'&&alternate?`${alternate.name}: ${alternate.summary}`:clans[c.clan]?.bane);if(alternate&&c.flaws.some(f=>['twicecursed','twice-cursed'].includes(f.id)))field('Maldição adicional',`${alternate.name}: ${alternate.summary}`);field('Compulsão',clans[c.clan]?.compulsion);}
  if(c.resourceChoices&&Object.keys(c.resourceChoices).length){heading('Detalhes dos recursos');for(const [key,value] of Object.entries(c.resourceChoices))field([...c.advantages,...c.flaws].find(a=>a.id===key)?.name||key,value);}
