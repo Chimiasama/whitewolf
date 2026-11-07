@@ -1,3 +1,4 @@
+import {PredatorBenefits} from './PredatorBenefits';
 import {HelpLabel} from './HelpLabel';
 import {HuntingReference} from './HuntingReference';
 import React from "react";
@@ -24,6 +25,7 @@ export function PredatorCustomization({
         Fonte: {p.source}. Os benefícios abaixo são adicionais ao orçamento
         comum.
       </p>
+      <PredatorBenefits predator={p}/>
       <label className="block">
         Disciplina concedida
         <select

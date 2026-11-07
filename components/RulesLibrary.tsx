@@ -1,3 +1,4 @@
+import {PredatorBenefits} from './PredatorBenefits';
 import {AdvantageReference} from './AdvantageReference';
 import {cleanBookText} from '../lib/bookReferences';
 import React,{useState} from 'react';
@@ -24,7 +25,7 @@ export function RulesLibrary({character:c}:{character:Character}){
  else if(category==='disciplines')entries=Object.entries(fnGetDisciplineDetails(t)).map(([id,d])=>({id,name:d.name,search:d.description,content:<DisciplineReference discipline={d}/>}));
  else if(category==='rituals')entries=BLOOD_RITUALS.map(r=>({id:r.id,name:r.name+' · nível '+r.level,search:r.english,content:<RitualReference ritual={r}/>}));
  else if(category==='ceremonies')entries=OBLIVION_CEREMONIES.map(r=>({id:r.id,name:r.name+' · nível '+r.level,search:r.english,content:<RitualReference ritual={r} ceremony/>}));
- else if(category==='predators')entries=fnGetPredatorTypes(t).map(p=>({id:p.id,name:p.name.replace('[Comunitário / opcional] ',''),search:p.englishName,content:<><p>{p.description}</p><HuntingReference predator={p}/></>}));
+ else if(category==='predators')entries=fnGetPredatorTypes(t).map(p=>({id:p.id,name:p.name.replace('[Comunitário / opcional] ',''),search:p.englishName,content:<><p>{p.description}</p><PredatorBenefits predator={p} preview/><HuntingReference predator={p}/></>}));
  else if(category==='gifts'){const ids=new Set<string>();entries=W5_GIFTS.filter(g=>{const key=w5GiftIdentity(g.id);if(ids.has(key))return false;ids.add(key);return true;}).map(g=>({id:g.id,name:g.name,search:g.english,content:<><p>{g.summary}</p><p>{cleanBookText(g.reference)}</p><h3 className="font-bold">Acessos</h3><ul>{W5_GIFTS.filter(x=>w5GiftIdentity(x.id)===w5GiftIdentity(g.id)).map(x=><li key={x.id}>{x.origin==='native'?'Nativo':x.owner} · Renome total {x.totalRenown}</li>)}</ul></>}));}
  else if(category==='rites')entries=W5_RITES.map(r=>({id:r.id,name:r.name,content:<p>{cleanBookText(r.description)}</p>}));
  else if(category==='banes')entries=ALTERNATIVE_BANES.map(b=>({id:b.clan,name:b.name+' · '+(fnGetClanName(b.clan)),search:b.english,content:<><p>{b.summary}</p><p>{cleanBookText(b.reference)}</p><p>A variante substitui a padrão quando adotada pela crônica. O Defeito Twice-Cursed (2 pontos, Players Guide p. 121) conserva a padrão e acrescenta a variante do mesmo clã.</p></>}));
