@@ -25,6 +25,7 @@ books={
 'Vapire5edenglish':('Vampire: The Masquerade — Corebook, 5th Edition','en'),
 'Vampire5edPlayersGuide01':('Vampire: The Masquerade — Players Guide','en'),
 'Vampire5edPlayersGuide02':('V5 Player’s Guide — Bully (conteúdo comunitário)','en'),
+'V5NewPredatorTypes':('V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)','en'),
 'Vampire5edCultsoftheBloddGods':('Vampire: The Masquerade — Cults of the Blood Gods','en'),
 'Vampire5edChicagobyNight':('Vampire: The Masquerade — Chicago by Night','en'),
 'Vampire5edAnarch':('Vampire: The Masquerade — Anarch','en'),

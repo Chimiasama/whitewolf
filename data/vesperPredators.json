@@ -1,0 +1,1812 @@
+[
+  {
+    "id": "vesper-ambulance-chaser",
+    "name": "[Comunitário / opcional] Caçador de Ambulâncias",
+    "englishName": "Ambulance Chaser",
+    "pages": "3",
+    "disciplineOptions": [
+      "potence",
+      "protean"
+    ],
+    "disciplineAdd": {
+      "discipline": "potence",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Drive",
+        "name": "Veículos de emergência"
+      },
+      {
+        "skill": "Medicine",
+        "name": "Primeiros socorros"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [],
+    "flaws": [
+      {
+        "id": "vesper-ambulance-predator",
+        "name": "Predador Manifesto",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Predador Manifesto"
+      }
+    ],
+    "allocations": [
+      {
+        "id": "vesper-ambulance-connections",
+        "label": "Influência, Contatos e Aliados",
+        "total": 3,
+        "options": [
+          {
+            "id": "vesper-ambulance-influence",
+            "name": "Influência",
+            "cost": 0,
+            "type": "advantage",
+            "levels": [
+              0
+            ],
+            "description": "Influência"
+          },
+          {
+            "id": "vesper-ambulance-contacts",
+            "name": "Contatos",
+            "cost": 0,
+            "type": "advantage",
+            "levels": [
+              0
+            ],
+            "description": "Contatos"
+          },
+          {
+            "id": "vesper-ambulance-allies",
+            "name": "Aliados",
+            "cost": 0,
+            "type": "advantage",
+            "levels": [
+              0
+            ],
+            "description": "Aliados"
+          }
+        ]
+      }
+    ],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Manipulação + Medicina",
+        "use": "Disfarçar a coleta de sangue de vítimas feridas como procedimento médico."
+      },
+      {
+        "pool": "Raciocínio + Ladroagem",
+        "use": "Consumir o sangue derramado sem ser visto."
+      }
+    ],
+    "description": "Você aproveita acidentes, tiroteios e outras situações com feridos para beber o sangue antes dos socorristas. Pode assumir forma animal para passar despercebido e até prestar primeiros socorros depois. Não é obrigado a provocar as lesões."
+  },
+  {
+    "id": "vesper-blood-baby",
+    "name": "[Comunitário / opcional] Apadrinhado de Sangue",
+    "englishName": "Blood Baby",
+    "pages": "3",
+    "disciplineOptions": [
+      "presence",
+      "dominate"
+    ],
+    "disciplineAdd": {
+      "discipline": "presence",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Persuasion",
+        "name": "Implorar"
+      },
+      {
+        "skill": "Technology",
+        "name": "Catfishing"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-bloodbaby-mawla",
+        "name": "Mawla",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Mawla"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-bloodbaby-disliked",
+        "name": "Malvisto",
+        "cost": 1,
+        "type": "flaw",
+        "levels": [
+          1
+        ],
+        "description": "Malvisto"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Manipulação + Persuasão",
+        "use": "Convencer seu Mawla a providenciar uma refeição."
+      },
+      {
+        "pool": "Carisma + Tecnologia",
+        "use": "Atrair alguém pela internet para um encontro."
+      }
+    ],
+    "description": "Um vampiro mais velho cuida da sua alimentação, oferecendo Rebanho, vítimas ou bolsas. Registre o Mawla no Mapa de Relacionamentos; o Narrador garante recursos adequados para fornecer sangue regularmente."
+  },
+  {
+    "id": "vesper-codependent",
+    "name": "[Comunitário / opcional] Codependente",
+    "englishName": "Codependent",
+    "pages": "3–4",
+    "disciplineOptions": [
+      "dominate",
+      "fortitude"
+    ],
+    "disciplineAdd": {
+      "discipline": "dominate",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Etiquette",
+        "name": "Bonecas de sangue"
+      },
+      {
+        "skill": "Medicine",
+        "name": "Anemia"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-codependent-retainer",
+        "name": "Lacaio: fonte exclusiva",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Lacaio: fonte exclusiva"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-dependent",
+        "name": "Dependente",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Dependente"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Carisma + Etiqueta",
+        "use": "Manter sua fonte exclusiva satisfeita e tratá-la com respeito."
+      },
+      {
+        "pool": "Inteligência + Medicina",
+        "use": "Cuidar da anemia e da saúde da fonte após se alimentar."
+      }
+    ],
+    "description": "Você se alimenta exclusivamente de um mortal próximo, que o acompanha e corre risco constante pela Besta. Cuidados, atenção e reposição de nutrientes ajudam a mantê-lo vivo. Se morrer, pode formar um vínculo com outra fonte, mas as consequências para Humanidade e o Defeito Dependente se aplicam."
+  },
+  {
+    "id": "vesper-condiment-king",
+    "name": "[Comunitário / opcional] Rei dos Condimentos",
+    "englishName": "Condiment King",
+    "pages": "4",
+    "disciplineOptions": [
+      "auspex",
+      "protean"
+    ],
+    "disciplineAdd": {
+      "discipline": "auspex",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Craft",
+        "name": "Culinária"
+      },
+      {
+        "skill": "Etiquette",
+        "name": "Modos à mesa"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-eat-food",
+        "name": "Ingerir Comida",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Ingerir Comida"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-garlic-block",
+        "name": "Bloqueio Folclórico: alho",
+        "cost": 1,
+        "type": "flaw",
+        "levels": [
+          1
+        ],
+        "description": "Bloqueio Folclórico: alho"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Raciocínio + Ofícios",
+        "use": "Conseguir sangue fresco ao preparar uma refeição."
+      },
+      {
+        "pool": "Manipulação + Etiqueta",
+        "use": "Encantar uma vítima durante um jantar e usar seu sangue na refeição."
+      }
+    ],
+    "description": "Você mistura sangue a comida mortal, de simples acompanhamentos a pratos elaborados conforme Ressonância e características do sangue. O sangue precisa estar fresco ao ser acrescentado, salvo se adquirir Esôfago de Ferro separadamente."
+  },
+  {
+    "id": "vesper-contractor",
+    "name": "[Comunitário / opcional] Contratante",
+    "englishName": "Contractor",
+    "pages": "4",
+    "disciplineOptions": [
+      "auspex",
+      "presence"
+    ],
+    "disciplineAdd": {
+      "discipline": "auspex",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Academics",
+        "name": "Direito"
+      },
+      {
+        "skill": "Streetwise",
+        "name": "Subornos"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-contractor-herd",
+        "name": "Rebanho",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Rebanho"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-contractor-adversary",
+        "name": "Adversário: opositor dos contratos",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Adversário: opositor dos contratos"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Inteligência + Erudição",
+        "use": "Envolver a vítima em termos jurídicos para obter um contrato de sangue."
+      },
+      {
+        "pool": "Determinação + Manha",
+        "use": "Fechar um acordo informal com alguém vulnerável nas ruas."
+      }
+    ],
+    "description": "Você obtém sangue por contratos, oferecendo renda, cuidados ou alívio de responsabilidades a pessoas vulneráveis. Os acordos não tornam automaticamente a alimentação ética ou verdadeiramente consensual, e a vítima dificilmente consegue responsabilizá-lo. Pode Enlaçar o Rebanho se isso fizer parte dos contratos."
+  },
+  {
+    "id": "vesper-delivery-diner",
+    "name": "[Comunitário / opcional] Comensal de Entrega",
+    "englishName": "Delivery Diner",
+    "pages": "4",
+    "disciplineOptions": [
+      "dominate",
+      "obfuscate"
+    ],
+    "disciplineAdd": {
+      "discipline": "dominate",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Technology",
+        "name": "Aplicativos"
+      },
+      {
+        "skill": "Drive",
+        "name": "Caminhões"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [],
+    "flaws": [],
+    "allocations": [],
+    "choices": [
+      {
+        "id": "vesper-delivery-benefit",
+        "label": "Refúgio ou Recursos",
+        "type": "advantage",
+        "options": [
+          {
+            "id": "vesper-delivery-haven",
+            "name": "Refúgio",
+            "cost": 1,
+            "type": "advantage",
+            "levels": [
+              1
+            ],
+            "description": "Refúgio"
+          },
+          {
+            "id": "vesper-delivery-resources",
+            "name": "Recursos",
+            "cost": 1,
+            "type": "advantage",
+            "levels": [
+              1
+            ],
+            "description": "Recursos"
+          }
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "pool": "Inteligência + Tecnologia",
+        "use": "Pedir uma entrega para atrair o entregador à sua casa."
+      },
+      {
+        "pool": "Raciocínio + Condução",
+        "use": "Estacionar seu veículo de trabalho para ocultar a alimentação em clientes."
+      }
+    ],
+    "description": "Você caça sob a cobertura de entregas: pede comida para beber do entregador ou é o motorista que se alimenta dos clientes. O pacote não impõe Defeito adicional."
+  },
+  {
+    "id": "vesper-incarcerator",
+    "name": "[Comunitário / opcional] Carcereiro Particular",
+    "englishName": "Incarcerator",
+    "pages": "4–5",
+    "disciplineOptions": [
+      "potence",
+      "oblivion"
+    ],
+    "disciplineAdd": {
+      "discipline": "potence",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Brawl",
+        "name": "Sequestro"
+      },
+      {
+        "skill": "Larceny",
+        "name": "Falsificar cenas de crime"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-incarcerator-haven",
+        "name": "Refúgio",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Refúgio"
+      },
+      {
+        "id": "vesper-incarcerator-cell",
+        "name": "Cela de Refúgio",
+        "cost": 1,
+        "type": "advantage",
+        "levels": [
+          1
+        ],
+        "description": "Cela de Refúgio"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-incarcerator-enemies",
+        "name": "Inimigos: fugitivos ou polícia",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Inimigos: fugitivos ou polícia"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Destreza + Briga",
+        "use": "Capturar alguém e levá-lo à cela do Refúgio."
+      },
+      {
+        "pool": "Inteligência + Ladroagem",
+        "use": "Falsificar uma morte sem corpo para encobrir a captura."
+      }
+    ],
+    "description": "Você sequestra e aprisiona vítimas no Refúgio por meses ou anos. Pode mirar pessoas que considera merecedoras da punição e tentar simular suas mortes para desviar investigações."
+  },
+  {
+    "id": "vesper-intermittent-faster",
+    "name": "[Comunitário / opcional] Jejuador Intermitente",
+    "englishName": "Intermittent Faster",
+    "pages": "5",
+    "disciplineOptions": [
+      "animalism",
+      "fortitude"
+    ],
+    "disciplineAdd": {
+      "discipline": "animalism",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Athletics",
+        "name": "Resistência"
+      },
+      {
+        "skill": "Occult",
+        "name": "Golconda"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 1,
+    "advantages": [],
+    "flaws": [
+      {
+        "id": "vesper-intermittent-fasting",
+        "name": "Jejum Intermitente",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Jejum Intermitente"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Parada justificada ao Narrador",
+        "use": "Quando precisar caçar, use o método mais acessível e justifique a combinação de dados; o livro não fixa Atributo + Habilidade."
+      }
+    ],
+    "description": "Você busca consumir o mínimo possível, ficando longos períodos sem alimentação por Golconda, fé ou desejo de reduzir o peso sobre mortais. Adquire um ponto de Humanidade e o Defeito de Jejum Intermitente."
+  },
+  {
+    "id": "vesper-maskless",
+    "name": "[Comunitário / opcional] Sem Máscara",
+    "englishName": "Maskless",
+    "pages": "5",
+    "disciplineOptions": [
+      "animalism",
+      "presence"
+    ],
+    "disciplineAdd": {
+      "discipline": "animalism",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Performance",
+        "name": "Beber sangue"
+      },
+      {
+        "skill": "Politics",
+        "name": "Máscara"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [],
+    "flaws": [],
+    "allocations": [
+      {
+        "id": "vesper-maskless-backgrounds",
+        "label": "Fama e Máscara",
+        "total": 3,
+        "options": [
+          {
+            "id": "vesper-maskless-fame",
+            "name": "Fama",
+            "cost": 0,
+            "type": "advantage",
+            "levels": [
+              0
+            ],
+            "description": "Fama"
+          },
+          {
+            "id": "vesper-maskless-mask",
+            "name": "Máscara",
+            "cost": 0,
+            "type": "advantage",
+            "levels": [
+              1,
+              2
+            ],
+            "description": "Máscara"
+          }
+        ]
+      },
+      {
+        "id": "vesper-maskless-flaws",
+        "label": "Infâmia e Suspeito/Rejeitado",
+        "total": 2,
+        "options": [
+          {
+            "id": "vesper-maskless-infamy",
+            "name": "Infâmia",
+            "cost": 0,
+            "type": "flaw",
+            "levels": [
+              1,
+              2
+            ],
+            "description": "Infâmia"
+          },
+          {
+            "id": "vesper-maskless-suspect",
+            "name": "Suspeito",
+            "cost": 0,
+            "type": "flaw",
+            "levels": [
+              1
+            ],
+            "description": "Suspeito"
+          },
+          {
+            "id": "vesper-maskless-shunned",
+            "name": "Rejeitado",
+            "cost": 0,
+            "type": "flaw",
+            "levels": [
+              2
+            ],
+            "description": "Rejeitado"
+          }
+        ],
+        "type": "flaw"
+      }
+    ],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Manipulação + Performance",
+        "use": "Encenar um espetáculo no qual bebe sangue de verdade ou finge fazê-lo."
+      }
+    ],
+    "description": "Você se alimenta diante de grandes audiências, confiando na incredulidade dos mortais para racionalizar a cena como atuação, espetáculo ou fetiche. A Camarilla e outros Membros podem considerar isso uma violação da Máscara."
+  },
+  {
+    "id": "vesper-opportunist",
+    "name": "[Comunitário / opcional] Oportunista — Vesper Burjoski",
+    "englishName": "Opportunist",
+    "pages": "5",
+    "disciplineOptions": [
+      "presence",
+      "obfuscate"
+    ],
+    "disciplineAdd": {
+      "discipline": "presence",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Streetwise",
+        "name": "Marginalizados"
+      },
+      {
+        "skill": "Investigation",
+        "name": "Imigrantes"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-opportunist-linguistics",
+        "name": "Linguística",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Linguística"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-opportunist-nohaven",
+        "name": "Sem Refúgio",
+        "cost": 1,
+        "type": "flaw",
+        "levels": [
+          1
+        ],
+        "description": "Sem Refúgio"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Carisma + Manha",
+        "use": "Ganhar a confiança de alguém isolado nas ruas e conduzi-lo a local reservado."
+      },
+      {
+        "pool": "Raciocínio + Investigação",
+        "use": "Localizar uma vítima socialmente isolada."
+      }
+    ],
+    "description": "Você caça pessoas marginalizadas, usando idiomas e uma postura acolhedora para misturar-se a comunidades diversas. É um tipo diferente do Oportunista do guia de Bully, com pacote e testes próprios."
+  },
+  {
+    "id": "vesper-parasite",
+    "name": "[Comunitário / opcional] Parasita",
+    "englishName": "Parasite",
+    "pages": "6",
+    "disciplineOptions": [
+      "animalism",
+      "celerity"
+    ],
+    "disciplineAdd": {
+      "discipline": "animalism",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "AnimalKen",
+        "name": "Enxames"
+      },
+      {
+        "skill": "Awareness",
+        "name": "Sugadores de sangue"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-parasite-mawla",
+        "name": "Mawla",
+        "cost": 1,
+        "type": "advantage",
+        "levels": [
+          1
+        ],
+        "description": "Mawla"
+      },
+      {
+        "id": "vesper-parasite-retainers",
+        "name": "Lacaios: animais carniçais",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Lacaios: animais carniçais"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-parasite-obvious",
+        "name": "Predador Manifesto",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Predador Manifesto"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Manipulação + Empatia com Animais",
+        "use": "Com Sussurros Selvagens, mandar criaturas hematófagas coletar e devolver sangue."
+      },
+      {
+        "pool": "Destreza + Percepção",
+        "use": "Recolher carrapatos, piolhos ou mosquitos para consumir o sangue neles."
+      }
+    ],
+    "description": "Você bebe sangue de segunda ou terceira mão, coletando parasitas ou controlando enxames. Sem Sussurros Selvagens, a alimentação pode exigir horas para obter quantidades minúsculas."
+  },
+  {
+    "id": "vesper-quiverfull",
+    "name": "[Comunitário / opcional] Prole Numerosa",
+    "englishName": "Quiverfull",
+    "pages": "6",
+    "disciplineOptions": [
+      "presence",
+      "oblivion"
+    ],
+    "disciplineAdd": {
+      "discipline": "presence",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Leadership",
+        "name": "Crias"
+      },
+      {
+        "skill": "Academics",
+        "name": "Religião escolhida"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": -1,
+    "advantages": [
+      {
+        "id": "vesper-quiver-bond",
+        "name": "Resistência ao Laço",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Resistência ao Laço"
+      },
+      {
+        "id": "vesper-quiver-mawla-a",
+        "name": "Mawla: primeiro grupo de crias",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Mawla: primeiro grupo de crias"
+      },
+      {
+        "id": "vesper-quiver-mawla-b",
+        "name": "Mawla: segundo grupo de crias",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Mawla: segundo grupo de crias"
+      },
+      {
+        "id": "vesper-quiver-mawla-c",
+        "name": "Mawla: terceiro grupo de crias",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Mawla: terceiro grupo de crias"
+      }
+    ],
+    "flaws": [],
+    "allocations": [],
+    "choices": [
+      {
+        "id": "vesper-quiver-flaw",
+        "label": "Preso ao Passado ou Infâmia",
+        "type": "flaw",
+        "options": [
+          {
+            "id": "vesper-quiver-past",
+            "name": "Preso ao Passado",
+            "cost": 1,
+            "type": "flaw",
+            "levels": [
+              1
+            ],
+            "description": "Preso ao Passado"
+          },
+          {
+            "id": "vesper-quiver-infamy",
+            "name": "Infâmia",
+            "cost": 1,
+            "type": "flaw",
+            "levels": [
+              1
+            ],
+            "description": "Infâmia"
+          }
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "pool": "Manipulação + Liderança",
+        "use": "Pedir que suas crias lhe doem Vitae."
+      },
+      {
+        "pool": "Carisma + Erudição",
+        "use": "Apelar à fé que ensinou à prole; Hecata aumentam a Dificuldade pela Gravidade da Perdição."
+      }
+    ],
+    "description": "Você Abraçou uma grande prole e se alimenta dela em vez de mortais. Nosferatu ou Hecata de 13ª geração podem usar crias sangue-ralo como intermediárias. Se o Abraço for regulado, escolha Infâmia pelos Abraços ilegais ou explique por que foram permitidos. Perde um ponto de Humanidade."
+  },
+  {
+    "id": "vesper-recycler",
+    "name": "[Comunitário / opcional] Reciclador",
+    "englishName": "Recycler",
+    "pages": "6",
+    "disciplineOptions": [
+      "protean",
+      "oblivion"
+    ],
+    "disciplineAdd": {
+      "discipline": "protean",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Science",
+        "name": "Anatomia"
+      },
+      {
+        "skill": "Subterfuge",
+        "name": "Personificação"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [],
+    "flaws": [
+      {
+        "id": "vesper-organovore",
+        "name": "Organívoro",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Organívoro"
+      }
+    ],
+    "allocations": [
+      {
+        "id": "vesper-recycler-backgrounds",
+        "label": "Contatos e Máscara",
+        "total": 3,
+        "options": [
+          {
+            "id": "vesper-recycler-contacts",
+            "name": "Contatos",
+            "cost": 0,
+            "type": "advantage",
+            "levels": [
+              0
+            ],
+            "description": "Contatos"
+          },
+          {
+            "id": "vesper-recycler-mask",
+            "name": "Máscara",
+            "cost": 0,
+            "type": "advantage",
+            "levels": [
+              1,
+              2
+            ],
+            "description": "Máscara"
+          }
+        ]
+      }
+    ],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Determinação + Ciência",
+        "use": "Concluir uma análise forense e consumir os órgãos quando ficar a sós."
+      },
+      {
+        "pool": "Manipulação + Subterfúgio",
+        "use": "Passar-se por funcionário autorizado a descartar resíduos médicos."
+      }
+    ],
+    "description": "Você é organívoro e consome órgãos de resíduos hospitalares ou cadáveres sob cobertura de trabalho mortuário. Considera dar um novo propósito ao que seria descartado."
+  },
+  {
+    "id": "vesper-regulator",
+    "name": "[Comunitário / opcional] Regulador",
+    "englishName": "Regulator",
+    "pages": "6–7",
+    "disciplineOptions": [
+      "auspex",
+      "bloodsorcery"
+    ],
+    "disciplineAdd": {
+      "discipline": "auspex",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Insight",
+        "name": "Emoções"
+      },
+      {
+        "skill": "Performance",
+        "name": "Expressar emoções"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-regulator-bloodhound",
+        "name": "Sabujo de Sangue",
+        "cost": 1,
+        "type": "advantage",
+        "levels": [
+          1
+        ],
+        "description": "Sabujo de Sangue"
+      },
+      {
+        "id": "vesper-reanimated-emotions",
+        "name": "Emoções Reanimadas",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Emoções Reanimadas"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-resonance-addiction",
+        "name": "Vício Incurável: Ressonância",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Vício Incurável: Ressonância"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Raciocínio + Sagacidade",
+        "use": "Encontrar alguém dominado por emoções em meio à multidão."
+      },
+      {
+        "pool": "Manipulação + Performance",
+        "use": "Provocar emoções no público e selecionar os mais afetados."
+      }
+    ],
+    "description": "Você regula as próprias emoções pela Ressonância ingerida e usa a distração de sentimentos intensos para alimentar-se. A dependência causa uma queda quando fica sem Ressonância."
+  },
+  {
+    "id": "vesper-remote-feeder",
+    "name": "[Comunitário / opcional] Alimentador Remoto",
+    "englishName": "Remote Feeder",
+    "pages": "7",
+    "disciplineOptions": [
+      "presence",
+      "celerity"
+    ],
+    "disciplineAdd": {
+      "discipline": "presence",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Finance",
+        "name": "Monetização"
+      },
+      {
+        "skill": "Technology",
+        "name": "Invasão de sistemas"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-remote-herd",
+        "name": "Rebanho",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Rebanho"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-remote-adversary",
+        "name": "Adversário contra a caça tecnológica",
+        "cost": 4,
+        "type": "flaw",
+        "levels": [
+          4
+        ],
+        "description": "Adversário contra a caça tecnológica"
+      }
+    ],
+    "allocations": [],
+    "choices": [
+      {
+        "id": "vesper-remote-benefit",
+        "label": "Esôfago de Ferro ou Refúgio",
+        "type": "advantage",
+        "options": [
+          {
+            "id": "vesper-remote-gullet",
+            "name": "Esôfago de Ferro",
+            "cost": 3,
+            "type": "advantage",
+            "levels": [
+              3
+            ],
+            "description": "Esôfago de Ferro"
+          },
+          {
+            "id": "vesper-remote-haven",
+            "name": "Refúgio",
+            "cost": 3,
+            "type": "advantage",
+            "levels": [
+              3
+            ],
+            "description": "Refúgio"
+          }
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "pool": "Manipulação + Finanças",
+        "use": "Cumprir encontros prometidos a patrocinadores para alimentar-se deles."
+      },
+      {
+        "pool": "Inteligência + Tecnologia",
+        "use": "Desviar remessas de plasma para um ponto refrigerado de coleta."
+      }
+    ],
+    "description": "Você usa a internet para atrair seguidores ou desviar sangue de bancos e transportes, recebendo alimento de longe. Um Xerife ou outro Membro decidiu impedir seu método tecnológico."
+  },
+  {
+    "id": "vesper-sipper",
+    "name": "[Comunitário / opcional] Bebericador",
+    "englishName": "Sipper",
+    "pages": "7",
+    "disciplineOptions": [
+      "celerity",
+      "dominate"
+    ],
+    "disciplineAdd": {
+      "discipline": "celerity",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Stealth",
+        "name": "Alimentação"
+      },
+      {
+        "skill": "Athletics",
+        "name": "Esquiva"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-sipper-contacts",
+        "name": "Contatos",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Contatos"
+      },
+      {
+        "id": "vesper-sipper-allies",
+        "name": "Aliados",
+        "cost": 1,
+        "type": "advantage",
+        "levels": [
+          1
+        ],
+        "description": "Aliados"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-light-stomach",
+        "name": "Estômago Leve",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Estômago Leve"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Raciocínio + Furtividade",
+        "use": "Ocultar muitas mordidas pequenas entre contatos casuais ou amorosos da multidão."
+      },
+      {
+        "pool": "Destreza + Atletismo",
+        "use": "Esquivar-se das reações das vítimas e voltar a misturar-se ao público."
+      }
+    ],
+    "description": "Você passa uma cena ou mais tomando goles mínimos de várias pessoas para reduzir dano e atenção. A Besta se acostumou a pastar, e beber em grandes volumes provoca expulsão do sangue."
+  },
+  {
+    "id": "vesper-skimmer",
+    "name": "[Comunitário / opcional] Desviador de Sangue",
+    "englishName": "Skimmer",
+    "pages": "7",
+    "disciplineOptions": [
+      "celerity",
+      "dominate"
+    ],
+    "disciplineAdd": {
+      "discipline": "celerity",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Stealth",
+        "name": "Alimentação"
+      },
+      {
+        "skill": "Athletics",
+        "name": "Esquiva"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-skimmer-contacts",
+        "name": "Contatos",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Contatos"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-light-stomach",
+        "name": "Estômago Leve",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Estômago Leve"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Manipulação + Ladroagem",
+        "use": "Falsificar assinaturas e documentos para encobrir o sangue desviado."
+      },
+      {
+        "pool": "Determinação + Finanças",
+        "use": "Manter um negócio que dê acesso legal ao sangue de pacientes."
+      }
+    ],
+    "description": "Você retira sangue de um negócio de doação ou de medicina alternativa que possui ou no qual trabalha. O serviço pode ser legítimo, mas registros são alterados para ocultar seu consumo. A fonte concede as mesmas Especializações de Bebericador, mantidas conforme impressas."
+  },
+  {
+    "id": "vesper-specimen",
+    "name": "[Comunitário / opcional] Espécime",
+    "englishName": "Specimen",
+    "pages": "8",
+    "disciplineOptions": [
+      "bloodsorcery",
+      "protean"
+    ],
+    "disciplineAdd": {
+      "discipline": "bloodsorcery",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Science",
+        "name": "Biologia"
+      },
+      {
+        "skill": "Subterfuge",
+        "name": "Máscara"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-specimen-herd",
+        "name": "Rebanho",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Rebanho"
+      },
+      {
+        "id": "vesper-specimen-resources",
+        "name": "Recursos",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Recursos"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-specimen-secret",
+        "name": "Segredo Sombrio: violador da Máscara",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Segredo Sombrio: violador da Máscara"
+      },
+      {
+        "id": "vesper-known-blankbody",
+        "name": "Corpo Frio Identificado",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Corpo Frio Identificado"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Inteligência + Ciência",
+        "use": "Participar ou ajudar na pesquisa da instituição que fornece sangue."
+      },
+      {
+        "pool": "Raciocínio + Subterfúgio",
+        "use": "Alimentar a instituição com informações falsas para manter o suprimento."
+      }
+    ],
+    "description": "Você é objeto de pesquisa da Segunda Inquisição, Pentex ou outra instituição mortal. Recebe sangue e dinheiro por participar de experiências, por vontade ou chantagem, mantendo um equilíbrio perigoso com uma violação continuada da Máscara."
+  },
+  {
+    "id": "vesper-spider",
+    "name": "[Comunitário / opcional] Aranha",
+    "englishName": "Spider",
+    "pages": "8",
+    "disciplineOptions": [
+      "dominate",
+      "protean"
+    ],
+    "disciplineAdd": {
+      "discipline": "dominate",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Etiquette",
+        "name": "Hospitalidade"
+      },
+      {
+        "skill": "Intimidation",
+        "name": "Autoridade"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [],
+    "flaws": [
+      {
+        "id": "vesper-spider-enemy",
+        "name": "Inimigos",
+        "cost": 1,
+        "type": "flaw",
+        "levels": [
+          1
+        ],
+        "description": "Inimigos"
+      }
+    ],
+    "allocations": [],
+    "choices": [
+      {
+        "id": "vesper-spider-benefit",
+        "label": "Refúgio ou Recursos",
+        "type": "advantage",
+        "options": [
+          {
+            "id": "vesper-spider-haven",
+            "name": "Refúgio",
+            "cost": 2,
+            "type": "advantage",
+            "levels": [
+              2
+            ],
+            "description": "Refúgio"
+          },
+          {
+            "id": "vesper-spider-resources",
+            "name": "Recursos",
+            "cost": 2,
+            "type": "advantage",
+            "levels": [
+              2
+            ],
+            "description": "Recursos"
+          }
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "pool": "Carisma + Etiqueta",
+        "use": "Atrair vítimas para seu estabelecimento com boas maneiras e charme."
+      },
+      {
+        "pool": "Determinação + Intimidação",
+        "use": "Paralisar de medo os convidados de seu território."
+      }
+    ],
+    "description": "Seu hotel, teatro, clube, bordel, bar ou estabelecimento atrai visitantes para sua teia. Pode cultivar experiências elaboradas para as vítimas ou impor autoridade intimidadora."
+  },
+  {
+    "id": "vesper-stalker",
+    "name": "[Comunitário / opcional] Perseguidor — Vesper Burjoski",
+    "englishName": "Stalker",
+    "pages": "8",
+    "disciplineOptions": [
+      "animalism",
+      "obfuscate"
+    ],
+    "disciplineAdd": {
+      "discipline": "animalism",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Craft",
+        "name": "Armadilhas"
+      },
+      {
+        "skill": "Survival",
+        "name": "Rastreamento"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-stalker-contacts",
+        "name": "Contatos",
+        "cost": 1,
+        "type": "advantage",
+        "levels": [
+          1
+        ],
+        "description": "Contatos"
+      }
+    ],
+    "flaws": [],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Inteligência + Ofícios",
+        "use": "Montar uma armadilha para capturar a presa."
+      },
+      {
+        "pool": "Raciocínio + Sobrevivência",
+        "use": "Seguir rastros, pegadas e cheiro."
+      }
+    ],
+    "description": "Você prefere ser predador a parasita. Segue vítimas por ruas ou clareiras, prolongando a perseguição até a Besta exigir o ataque. O pacote concede Contatos 1 e não acrescenta Defeito."
+  },
+  {
+    "id": "vesper-tampon-sucker",
+    "name": "[Comunitário / opcional] Sugador de Absorventes",
+    "englishName": "Tampon Sucker",
+    "pages": "8",
+    "disciplineOptions": [
+      "obfuscate",
+      "protean"
+    ],
+    "disciplineAdd": {
+      "discipline": "obfuscate",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Awareness",
+        "name": "Sangue"
+      },
+      {
+        "skill": "Survival",
+        "name": "Urbana"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [],
+    "flaws": [
+      {
+        "id": "vesper-tampon-shunned",
+        "name": "Rejeitado",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Rejeitado"
+      }
+    ],
+    "allocations": [],
+    "choices": [
+      {
+        "id": "vesper-tampon-benefit",
+        "label": "Esôfago de Ferro ou Rebanho",
+        "type": "advantage",
+        "options": [
+          {
+            "id": "vesper-tampon-gullet",
+            "name": "Esôfago de Ferro",
+            "cost": 3,
+            "type": "advantage",
+            "levels": [
+              3
+            ],
+            "description": "Esôfago de Ferro"
+          },
+          {
+            "id": "vesper-tampon-herd",
+            "name": "Rebanho",
+            "cost": 3,
+            "type": "advantage",
+            "levels": [
+              3
+            ],
+            "description": "Rebanho"
+          }
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "pool": "Raciocínio + Percepção",
+        "use": "Localizar sangue menstrual ou recipientes de descarte pelo cheiro."
+      },
+      {
+        "pool": "Destreza + Sobrevivência",
+        "use": "Encontrar e acessar banheiros conforme o conhecimento do ambiente urbano."
+      }
+    ],
+    "description": "Você obtém sangue de produtos menstruais descartados. Banheiros noturnos pouco vigiados oferecem alimento, mas alguns Membros reagem com forte repulsa à prática."
+  },
+  {
+    "id": "vesper-therapist",
+    "name": "[Comunitário / opcional] Terapeuta",
+    "englishName": "Therapist",
+    "pages": "9",
+    "disciplineOptions": [
+      "auspex",
+      "dominate"
+    ],
+    "disciplineAdd": {
+      "discipline": "auspex",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Insight",
+        "name": "Ideação suicida"
+      },
+      {
+        "skill": "Academics",
+        "name": "Psicologia"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [],
+    "flaws": [
+      {
+        "id": "vesper-uninvited-block",
+        "name": "Bloqueio Folclórico: entrada sem convite",
+        "cost": 1,
+        "type": "flaw",
+        "levels": [
+          1
+        ],
+        "description": "Bloqueio Folclórico: entrada sem convite"
+      }
+    ],
+    "allocations": [
+      {
+        "id": "vesper-therapist-backgrounds",
+        "label": "Contatos, Rebanho e Recursos",
+        "total": 2,
+        "options": [
+          {
+            "id": "vesper-therapist-contacts",
+            "name": "Contatos",
+            "cost": 0,
+            "type": "advantage",
+            "levels": [
+              0
+            ],
+            "description": "Contatos"
+          },
+          {
+            "id": "vesper-therapist-herd",
+            "name": "Rebanho",
+            "cost": 0,
+            "type": "advantage",
+            "levels": [
+              0
+            ],
+            "description": "Rebanho"
+          },
+          {
+            "id": "vesper-therapist-resources",
+            "name": "Recursos",
+            "cost": 0,
+            "type": "advantage",
+            "levels": [
+              0
+            ],
+            "description": "Recursos"
+          }
+        ]
+      }
+    ],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Manipulação + Sagacidade",
+        "use": "Oferecer uma escuta aparentemente acolhedora e alimentar-se ao fim da conversa."
+      },
+      {
+        "pool": "Carisma + Erudição",
+        "use": "Organizar um encontro com um cliente vulnerável."
+      }
+    ],
+    "description": "Você explora pessoas em sofrimento mental, especialmente com ideação suicida. Pode racionalizar o abuso como alívio pelo Beijo ou levá-lo à morte e encobri-la. A adaptação de seu Sangue aos desejos das vítimas gera um bloqueio à entrada sem convite."
+  },
+  {
+    "id": "vesper-warden",
+    "name": "[Comunitário / opcional] Carcereiro Institucional",
+    "englishName": "Warden",
+    "pages": "9",
+    "disciplineOptions": [
+      "potence",
+      "obfuscate"
+    ],
+    "disciplineAdd": {
+      "discipline": "potence",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Melee",
+        "name": "Mortais"
+      },
+      {
+        "skill": "Politics",
+        "name": "Regulamentos"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [],
+    "flaws": [
+      {
+        "id": "vesper-warden-enemies",
+        "name": "Inimigos: antigos internos ou familiares",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Inimigos: antigos internos ou familiares"
+      }
+    ],
+    "allocations": [],
+    "choices": [
+      {
+        "id": "vesper-warden-benefit",
+        "label": "Contatos ou Influência",
+        "type": "advantage",
+        "options": [
+          {
+            "id": "vesper-warden-contacts",
+            "name": "Contatos",
+            "cost": 1,
+            "type": "advantage",
+            "levels": [
+              1
+            ],
+            "description": "Contatos"
+          },
+          {
+            "id": "vesper-warden-influence",
+            "name": "Influência",
+            "cost": 1,
+            "type": "advantage",
+            "levels": [
+              1
+            ],
+            "description": "Influência"
+          }
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "pool": "Força + Armas Brancas",
+        "use": "Alimentar-se sob a cobertura de subjugar um prisioneiro."
+      },
+      {
+        "pool": "Manipulação + Política",
+        "use": "Fazer a instituição ignorar sua entrada e saída do local da vítima."
+      }
+    ],
+    "description": "Você mantém cobertura como policial, carcereiro ou profissional de enfermagem para caçar pessoas privadas de liberdade ou incapazes de resistir."
+  },
+  {
+    "id": "vesper-xenophile",
+    "name": "[Comunitário / opcional] Xenófilo",
+    "englishName": "Xenophile",
+    "pages": "9",
+    "disciplineOptions": [
+      "fortitude",
+      "protean"
+    ],
+    "disciplineAdd": {
+      "discipline": "fortitude",
+      "dots": 1
+    },
+    "specialtyOptions": [
+      {
+        "skill": "Occult",
+        "name": "Lupinos"
+      },
+      {
+        "skill": "Occult",
+        "name": "Changelings"
+      },
+      {
+        "skill": "Occult",
+        "name": "Magos"
+      },
+      {
+        "skill": "Insight",
+        "name": "Natureza verdadeira"
+      }
+    ],
+    "specialties": [],
+    "humanityModifier": 0,
+    "advantages": [
+      {
+        "id": "vesper-xeno-ally",
+        "name": "Aliado sobrenatural",
+        "cost": 4,
+        "type": "advantage",
+        "levels": [
+          4
+        ],
+        "description": "Aliado sobrenatural"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "vesper-xeno-adversary",
+        "name": "Adversário sobrenatural",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Adversário sobrenatural"
+      },
+      {
+        "id": "vesper-methuselah-thirst",
+        "name": "Sede de Matusalém",
+        "cost": 1,
+        "type": "flaw",
+        "levels": [
+          1
+        ],
+        "description": "Sede de Matusalém"
+      }
+    ],
+    "allocations": [],
+    "choices": [],
+    "tests": [
+      {
+        "pool": "Inteligência + Ocultismo",
+        "use": "Investigar comunidades ocultistas para encontrar seres sobrenaturais."
+      },
+      {
+        "pool": "Raciocínio + Sagacidade",
+        "use": "Reconhecer sinais de uma natureza sobrenatural em pessoas próximas."
+      }
+    ],
+    "description": "Você prefere sangue de outras criaturas sobrenaturais, como lobisomens, magos e changelings. Elas são presas perigosas e evasivas, e muitas caçadas não têm sucesso. Um ser que você ajuda tolera que cace seus inimigos; outro escapou e se tornou adversário."
+  }
+]

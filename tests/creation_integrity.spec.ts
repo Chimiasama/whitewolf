@@ -84,7 +84,7 @@ test('pacotes de predador conferidos e orçamento adicional de Loresheets',async
   const budgetIssues=finishingIssues(c).filter(s=>s.includes('7 pontos'));
   return {osiris:{humanity:osiris.humanityModifier,adv:osiris.advantages.reduce((s,a)=>s+a.cost,0),flaws:osiris.flaws.reduce((s,a)=>s+a.cost,0)},farmer:types.find(p=>p.id==='farmer').humanityModifier,bagger:bagger.advantages.map(a=>a.id),budgetIssues,community:types.find(p=>p.id==='business_owner').source};
  });
- expect(r.osiris).toEqual({humanity:0,adv:3,flaws:2});expect(r.farmer).toBe(1);expect(r.bagger).toContain('iron_gullet_bagger');expect(r.budgetIssues).toEqual([]);expect(r.community).toContain("Player's Guide 02");
+ expect(r.osiris).toEqual({humanity:0,adv:3,flaws:2});expect(r.farmer).toBe(1);expect(r.bagger).toContain('iron_gullet_bagger');expect(r.budgetIssues).toEqual([]);expect(r.community).toContain("Bully");
 });
 
  test('Sangue-Ralo: equilíbrio, incompatibilidades e requisito Tremere',async({page})=>{

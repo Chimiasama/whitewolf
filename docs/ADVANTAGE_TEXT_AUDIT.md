@@ -1,6 +1,6 @@
 # Auditoria dos textos de Vantagens e Defeitos — V5 e W5
 
-Cobertura do catálogo selecionável: 116 entradas de Vampiro e 54 de Lobisomem
+Cobertura do catálogo selecionável: 121 entradas de Vampiro e 54 de Lobisomem
 (incluindo os novos Antecedentes base de Máscara e Pacto Espiritual necessários
 para contextualizar suas Qualidades). Há ainda 16 escolhas específicas de
 Sangue-Ralo e definições compartilhadas pelos benefícios de todos os pacotes de
@@ -12,11 +12,11 @@ incluindo escolhas opcionais desses pacotes, e exige texto e referência.
 - `docs/Vampiro5edptbr`, especialmente pp. 175–194: fonte prioritária brasileira.
   O OCR foi revisado com `docs/Vapire5edenglish`. Nomes confirmados incluem
   Sabujo de Sangue, Esôfago de Ferro e Sangue Agregador.
-- `docs/Vampire5edPlayersGuide01`, p. 121: Duas Vezes Amaldiçoado e Fraco de
-  Vontade. Este último não é a mesma regra publicada no guia comunitário.
-- `docs/Vampire5edPlayersGuide02`, pp. 10–23: **V5 Player’s Guide — Bully,
+- `docs/Vampire5edPlayersGuide01`, p. 121: Duas Vezes Amaldiçoado. Fraco de Vontade agora segue o guia comunitário atual, p. 16, conforme a precedência indicada pelo usuário.
+- `docs/Vampire5edPlayersGuide02`, pp. 13–24: **V5 Player’s Guide — Bully,
   conteúdo comunitário**, não o Players Guide oficial. A interface identifica
   essa origem. A tradução conserva valores, exceções e limitações da fonte.
+- `docs/V5NewPredatorTypes`, pp. 3–10 do PDF: Vesper Burjoski, 24 tipos e quatro novas características comunitárias.
 - `docs/Werewolf5ed`, pp. 98–105: traduções de trabalho das opções de W5.
 - `docs/Werewolf5edWyrmtide`, pp. 28–29: traduções de trabalho das opções de
   personagem do suplemento.
@@ -52,21 +52,19 @@ como valor salvo a revisar; novas compras usam a escala verificada.
 - Bibliografia corrigida é aplicada por `scripts/update-advantage-references.py`
   após a geração automática, evitando perder a auditoria ao reconstruir o índice.
 
-## Lacunas reais — não foram inventadas páginas ou regras
+## Fontes sem correspondência oficial W5
 
-1. **Presença de Apoio / Supportive Presence**: o pacote de Confidente, p. 4
-   do guia comunitário, cita a Qualidade de um ponto, mas não apresenta uma
-   definição com esse nome. A consulta explica a lacuna. Não foi substituída
-   silenciosamente por Inspiring Presence, p. 15, uma entrada de nome diferente.
-2. **Herança Selvagem — Pele Espessa**, opção antiga do app: sua regra existente
+O PDF atual de Bully substitui Presença de Apoio por Domador da Besta no pacote de Confidente. A antiga lacuna foi resolvida pela atualização da fonte. Detalhes: `COMMUNITY_BOOK_UPDATE.md`.
+
+1. **Herança Selvagem — Pele Espessa**, opção antiga do app: sua regra existente
    é Vitalidade 4 + Vigor por três pontos. Não foi localizada nos livros W5
    fornecidos. Continua preservada e identificada como regra da casa, sem página
    fictícia. Isso não constitui validação como regra oficial.
-3. **Influência em W5**: o app já oferecia o Antecedente de V5. Ele continua
+2. **Influência em W5**: o app já oferecia o Antecedente de V5. Ele continua
    disponível como adaptação explícita com a fonte brasileira de V5, não como
    texto do básico de W5.
 
-Essas exceções impedem afirmar que absolutamente todas as opções antigas têm um
+Essas duas exceções de W5 impedem afirmar que absolutamente todas as opções antigas têm um
 texto oficial completo correspondente nos livros. Todos os demais itens do
-catálogo e pacotes têm suas definições consultáveis; as exceções acima exibem
+catálogo e pacotes têm suas definições consultáveis; divergências internas do guia atual de Bully estão em `COMMUNITY_BOOK_UPDATE.md`. As exceções acima exibem
 exatamente a informação verificável e sua situação.

@@ -21,7 +21,7 @@ async function choosePredator(page, name) {
     .getByRole("button", { name: "Escolher", exact: true })
     .click();
 }
-test("34 predadores dos três livros, todos disponíveis sem filtro comunitário", async ({
+test("58 predadores das quatro fontes, todos disponíveis sem filtro comunitário", async ({
   page,
 }) => {
   await start(page);
@@ -33,7 +33,7 @@ test("34 predadores dos três livros, todos disponíveis sem filtro comunitário
   await expect(region.getByLabel("Incluir material comunitário")).toHaveCount(
     0,
   );
-  await expect(region.locator("li")).toHaveCount(34);
+  await expect(region.locator("li")).toHaveCount(58);
   const data = await page.evaluate(async () => {
     const { fnGetPredatorTypes } = await import("/constants.ts");
     return fnGetPredatorTypes((k) => k).map((p) => ({
@@ -42,10 +42,10 @@ test("34 predadores dos três livros, todos disponíveis sem filtro comunitário
       options: p.disciplineOptions,
     }));
   });
-  expect(new Set(data.map((p) => p.id)).size).toBe(34);
+  expect(new Set(data.map((p) => p.id)).size).toBe(58);
   expect(
     data.filter(
-      (p) => p.source.includes("Guia 02") || p.source.includes("Guide 02"),
+      (p) => p.source.includes("Bully"),
     ),
   ).toHaveLength(18);
   expect(data.filter((p) => p.source.includes("Guide 01"))).toHaveLength(6);

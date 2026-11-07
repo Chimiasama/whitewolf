@@ -1,3 +1,4 @@
+import {powerPrerequisitesMet} from "./lib/powerRequirements";
 import {PdfButton} from './components/PdfButton';
 import {DiceRoller} from './components/DiceRoller';
 import {setRemaining,synchronizeDamage,characterDamage,trackCapacity} from './lib/damage';
@@ -414,7 +415,7 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
         if (!oPower) return false;
 
         // Check prerequisites
-        if (oPower.prerequisite && !aSelectedPowerIds.includes(oPower.prerequisite)) return false;
+        if (!powerPrerequisitesMet(oPower,aSelectedPowerIds)) return false;
 
         // Check amalgams
         if (oPower.amalgam) {
@@ -444,7 +445,7 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
         }
     };
 
-    return <div className="mt-4"><p className="mb-2 text-sm text-gray-300">{aSelectedPowerIds.length} / {nDots} {sDisciplineKey==='thinbloodalchemy'?'fórmulas escolhidas':'poderes escolhidos'}</p><CatalogPicker label={`${oDisciplineDetails.name} — ${sDisciplineKey==='thinbloodalchemy'?'fórmulas':'poderes'}`} multiple selected={aSelectedPowerIds} onToggle={fnTogglePower} options={oDisciplineDetails.powers.map(p=>({id:p.id,name:p.name,summary:`Nível ${p.level} · ${p.cost||'Consulte o sistema'}`,unavailable:aSelectedPowerIds.includes(p.id)?undefined:p.level>nDots?`Exige ${p.level} pontos nesta Disciplina.`:aSelectedPowerIds.length>=nDots?'Todos os espaços de poder foram preenchidos.':!fnCheckValidity(p.id)?'Exige pré-requisito, amálgama ou espaço de nível compatível.':undefined,details:<><p>{p.description}</p><p className="mt-2">{p.system}</p>{p.amalgam?.map((r,i)=><p key={i}>Amálgama: {r.discipline} {r.level}</p>)}{p.prerequisite&&<p>Pré-requisito: {oDisciplineDetails.powers.find(x=>x.id===p.prerequisite)?.name||p.prerequisite}</p>}</>}))}/></div>;
+    return <div className="mt-4"><p className="mb-2 text-sm text-gray-300">{aSelectedPowerIds.length} / {nDots} {sDisciplineKey==='thinbloodalchemy'?'fórmulas escolhidas':'poderes escolhidos'}</p><CatalogPicker label={`${oDisciplineDetails.name} — ${sDisciplineKey==='thinbloodalchemy'?'fórmulas':'poderes'}`} multiple selected={aSelectedPowerIds} onToggle={fnTogglePower} options={oDisciplineDetails.powers.map(p=>({id:p.id,name:p.name,summary:`Nível ${p.level} · ${p.cost||'Consulte o sistema'}`,unavailable:aSelectedPowerIds.includes(p.id)?undefined:p.level>nDots?`Exige ${p.level} pontos nesta Disciplina.`:aSelectedPowerIds.length>=nDots?'Todos os espaços de poder foram preenchidos.':!fnCheckValidity(p.id)?'Exige pré-requisito, amálgama ou espaço de nível compatível.':undefined,details:<><p>{p.description}</p><p className="mt-2">{p.system}</p>{p.amalgam?.map((r,i)=><p key={i}>Amálgama: {r.discipline} {r.level}</p>)}{p.prerequisite&&<p>Pré-requisito: {oDisciplineDetails.powers.find(x=>x.id===p.prerequisite)?.name||p.prerequisite}</p>}{p.prerequisiteAny?.length&&<p>Pré-requisito (um deles): {p.prerequisiteAny.map(id=>oDisciplineDetails.powers.find(item=>item.id===id)?.name||id).join(" ou ")}</p>}</>}))}/></div>;
 };
 
 // --- NOTIFICATION COMPONENT --- //
@@ -751,12 +752,11 @@ const App: React.FC = () => {
                 const aNext = aToFilter.filter(sId => {
                     const oPower = oDiscDetails.powers.find(p => p.id === sId);
                     if (!oPower) return false;
-
                     // Level check
                     if (oPower.level > (oCharacter.disciplines[sDisc] || 0)) return false;
 
                     // Prerequisite check
-                    if (oPower.prerequisite && !aToFilter.includes(oPower.prerequisite)) return false;
+                    if (!powerPrerequisitesMet(oPower,aToFilter)) return false;
 
                     // Amalgam check
                     if (oPower.amalgam) {

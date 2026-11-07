@@ -1,12 +1,8 @@
 # Auditoria dos testes de caçada — Vampiro V5
 
-A consulta do aplicativo foi conferida nas transcrições locais do básico brasileiro e inglês, Players Guide 01, Player’s Guide de Bully (arquivo 02), Cults of the Blood Gods e Let the Streets Run Red. Pesquisas adicionais nos demais suplementos V5 disponíveis localizaram também modificadores de cenário; eles não foram convertidos em paradas universais.
+Catálogo atual: 58 tipos — 10 do básico, 6 do Players Guide oficial, 18 do PDF atual de Bully e 24 de Vesper Burjoski. As fontes comunitárias estão identificadas e não são tratadas como o guia oficial. Veja `COMMUNITY_BOOK_UPDATE.md` para a comparação de versões.
 
-O catálogo atual tem 34 tipos: 10 do básico, 6 do Players Guide oficial e 18 do guia comunitário de Bully. O arquivo denominado 02 não é uma segunda parte do guia oficial. Seus créditos identificam Bully e a licença de conteúdo comunitário.
-
-## Matriz de conferência
-
-| ID persistido | Testes de caçada | Referência |
+| ID | Testes e aplicação | Referência |
 |---|---|---|
 | alleycat | Força + Briga — Perseguir, subjugar e tomar sangue pela força ou ameaça.; Raciocínio + Manha — Encontrar criminosos como vítimas, quando essa for sua forma de caçar. | V5 básico pt-BR, Paradas de Predador, pp. 307–308 (docs/Vampiro5edptbr) |
 | bagger | Inteligência + Manha — Localizar sangue armazenado ou obter acesso a sangue de mortos e moribundos, negociando com quem o possui. | V5 básico pt-BR, Paradas de Predador, pp. 307–308 (docs/Vampiro5edptbr) |
@@ -24,41 +20,47 @@ O catálogo atual tem 34 tipos: 10 do básico, 6 do Players Guide oficial e 18 d
 | montero | Inteligência + Furtividade — Planejar a caçada com uma equipe experiente de servidores.; Determinação + Furtividade — Esperar a vítima chegar quando já existe um plano bem ensaiado. | Vampire: The Masquerade Players Guide, p. 108 (docs/Vampire5edPlayersGuide01) |
 | pursuer | Inteligência + Investigação — Encontrar uma vítima cujo desaparecimento passe despercebido.; Vigor + Furtividade — Seguir a vítima por longos períodos sem ser percebido. | Vampire: The Masquerade Players Guide, pp. 108–109 (docs/Vampire5edPlayersGuide01) |
 | trapdoor | Carisma + Furtividade — Atrair convidados que entram esperando uma experiência divertida.; Destreza + Furtividade — Caçar invasores, exploradores urbanos ou pessoas de passagem. | Vampire: The Masquerade Players Guide, p. 109 (docs/Vampire5edPlayersGuide01) |
-| business_owner | Carisma + Persuasão — Conseguir acesso discreto a funcionários ou clientes do negócio. | Player’s Guide — Bully (material comunitário), p. 4 (docs/Vampire5edPlayersGuide02) |
-| confidant | Autocontrole + Sagacidade — Aproveitar a confiança de quem procura conselhos ou apoio. | Player’s Guide — Bully (material comunitário), p. 4 (docs/Vampire5edPlayersGuide02) |
-| corporate_leech | Manipulação + Etiqueta — Misturar-se ao ambiente corporativo para ter acesso aos trabalhadores. | Player’s Guide — Bully (material comunitário), p. 4 (docs/Vampire5edPlayersGuide02) |
-| eat_the_rich | Força + Intimidação — Pressionar alvos da elite e transformar a ameaça em acesso ao sangue. | Player’s Guide — Bully (material comunitário), p. 4 (docs/Vampire5edPlayersGuide02) |
-| hide_and_eat | Raciocínio + Furtividade — Esperar escondido pela oportunidade e desaparecer após a alimentação. | Player’s Guide — Bully (material comunitário), p. 5 (docs/Vampire5edPlayersGuide02) |
-| kidnapper | Determinação + Investigação — Selecionar e acompanhar uma vítima para capturá-la e mantê-la acessível. | Player’s Guide — Bully (material comunitário), p. 5 (docs/Vampire5edPlayersGuide02) |
-| lab_rat | Inteligência + Ciência — Obter sangue por meio de clínica, pesquisa ou experimentos. | Player’s Guide — Bully (material comunitário), p. 5 (docs/Vampire5edPlayersGuide02) |
-| hospital_hunter | Inteligência + Medicina — Escolher pacientes e oportunidades de alimentação em ambiente hospitalar. | Player’s Guide — Bully (material comunitário), p. 5 (docs/Vampire5edPlayersGuide02) |
-| local_haunt | Vigor + Atletismo — Caçar pessoas atraídas à área associada à sua lenda ou assombração. | Player’s Guide — Bully (material comunitário), p. 6 (docs/Vampire5edPlayersGuide02) |
-| lurker_in_crowd | Raciocínio + Furtividade — Aproximar-se e alimentar-se sem se destacar na multidão. | Player’s Guide — Bully (material comunitário), p. 6 (docs/Vampire5edPlayersGuide02) |
-| manic_pixie | Manipulação + Sagacidade — Explorar relações breves e intensas para manter uma fonte de sangue. | Player’s Guide — Bully (material comunitário), p. 6 (docs/Vampire5edPlayersGuide02) |
-| online_predator | Determinação + Tecnologia — Localizar ou cultivar vítimas pela internet. | Player’s Guide — Bully (material comunitário), p. 6 (docs/Vampire5edPlayersGuide02) |
-| opportunist | Carisma + Sagacidade — Atrair vítimas com promessas de oportunidades, produtos ou serviços. | Player’s Guide — Bully (material comunitário), p. 7 (docs/Vampire5edPlayersGuide02) |
-| pack_hunter | Destreza + Briga — Caçar junto a animais predadores que o aceitam no grupo. | Player’s Guide — Bully (material comunitário), p. 7 (docs/Vampire5edPlayersGuide02) |
-| pay_for_blood | Carisma + Finanças — Usar recursos e contatos financeiros para obter sangue. | Player’s Guide — Bully (material comunitário), p. 7 (docs/Vampire5edPlayersGuide02) |
-| street_feeder | Vigor + Briga — Criar e aproveitar situações vulneráveis nas ruas. | Player’s Guide — Bully (material comunitário), p. 7 (docs/Vampire5edPlayersGuide02) |
-| watcher_from_water | Destreza + Sobrevivência — Aguardar e capturar presas em ambientes aquáticos. | Player’s Guide — Bully (material comunitário), p. 8 (docs/Vampire5edPlayersGuide02) |
-| wolfinsheepsclothing | Fortitude + Armas Brancas — Fingir vulnerabilidade e voltar-se contra quem tenta predá-lo. | Player’s Guide — Bully (material comunitário), p. 8 (docs/Vampire5edPlayersGuide02) |
+| business_owner | Carisma + Liderança — Parada indicada no PDF atual. | Bully, PDF atual, p. 7. |
+| confidant | Autocontrole + Sagacidade — Parada indicada no PDF atual. | Bully, PDF atual, p. 7. |
+| corporate_leech | Manipulação + Etiqueta — Parada indicada no PDF atual. | Bully, PDF atual, p. 8. |
+| eat_the_rich | Força + Intimidação — Parada indicada no PDF atual. | Bully, PDF atual, p. 8. |
+| hide_and_eat | Autocontrole + Furtividade — Parada indicada no PDF atual. | Bully, PDF atual, p. 8. |
+| kidnapper | Determinação + Investigação — Parada indicada no PDF atual. | Bully, PDF atual, p. 9. |
+| lab_rat | Inteligência + Ciência — Parada indicada no PDF atual. | Bully, PDF atual, p. 9. |
+| hospital_hunter | Inteligência + Medicina — Parada indicada no PDF atual. | Bully, PDF atual, p. 8. |
+| local_haunt | Autocontrole + Ocultismo — Parada indicada no PDF atual. | Bully, PDF atual, p. 9. |
+| lurker_in_crowd | Raciocínio + Furtividade — Parada indicada no PDF atual. | Bully, PDF atual, p. 9. |
+| manic_pixie | Manipulação + Persuasão — Parada indicada no PDF atual. | Bully, PDF atual, p. 9. |
+| online_predator | A fonte não informa uma parada de caçada. | Bully, PDF atual, p. 10. |
+| opportunist | Manipulação + Finanças — Parada indicada no PDF atual. | Bully, PDF atual, p. 10. |
+| pack_hunter | Destreza + Sobrevivência — Parada indicada no PDF atual. | Bully, PDF atual, p. 10. |
+| pay_for_blood | Manipulação + Finanças — Parada indicada no PDF atual. | Bully, PDF atual, p. 10. |
+| street_feeder | Força + Manha — Parada indicada no PDF atual. | Bully, PDF atual, p. 11. |
+| watcher_from_water | Raciocínio + Furtividade — Parada indicada no PDF atual. | Bully, PDF atual, p. 11. |
+| wolfinsheepsclothing | Manipulação + Armas Brancas — Parada indicada no PDF atual. | Bully, PDF atual, p. 11. |
+| vesper-ambulance-chaser | Manipulação + Medicina — Disfarçar a coleta de sangue de vítimas feridas como procedimento médico.; Raciocínio + Ladroagem — Consumir o sangue derramado sem ser visto. | V5 New Predator Types — Vesper Burjoski, p. 3 do PDF (sem numeração impressa). |
+| vesper-blood-baby | Manipulação + Persuasão — Convencer seu Mawla a providenciar uma refeição.; Carisma + Tecnologia — Atrair alguém pela internet para um encontro. | V5 New Predator Types — Vesper Burjoski, p. 3 do PDF (sem numeração impressa). |
+| vesper-codependent | Carisma + Etiqueta — Manter sua fonte exclusiva satisfeita e tratá-la com respeito.; Inteligência + Medicina — Cuidar da anemia e da saúde da fonte após se alimentar. | V5 New Predator Types — Vesper Burjoski, p. 3–4 do PDF (sem numeração impressa). |
+| vesper-condiment-king | Raciocínio + Ofícios — Conseguir sangue fresco ao preparar uma refeição.; Manipulação + Etiqueta — Encantar uma vítima durante um jantar e usar seu sangue na refeição. | V5 New Predator Types — Vesper Burjoski, p. 4 do PDF (sem numeração impressa). |
+| vesper-contractor | Inteligência + Erudição — Envolver a vítima em termos jurídicos para obter um contrato de sangue.; Determinação + Manha — Fechar um acordo informal com alguém vulnerável nas ruas. | V5 New Predator Types — Vesper Burjoski, p. 4 do PDF (sem numeração impressa). |
+| vesper-delivery-diner | Inteligência + Tecnologia — Pedir uma entrega para atrair o entregador à sua casa.; Raciocínio + Condução — Estacionar seu veículo de trabalho para ocultar a alimentação em clientes. | V5 New Predator Types — Vesper Burjoski, p. 4 do PDF (sem numeração impressa). |
+| vesper-incarcerator | Destreza + Briga — Capturar alguém e levá-lo à cela do Refúgio.; Inteligência + Ladroagem — Falsificar uma morte sem corpo para encobrir a captura. | V5 New Predator Types — Vesper Burjoski, p. 4–5 do PDF (sem numeração impressa). |
+| vesper-intermittent-faster | Parada justificada ao Narrador — Quando precisar caçar, use o método mais acessível e justifique a combinação de dados; o livro não fixa Atributo + Habilidade. | V5 New Predator Types — Vesper Burjoski, p. 5 do PDF (sem numeração impressa). |
+| vesper-maskless | Manipulação + Performance — Encenar um espetáculo no qual bebe sangue de verdade ou finge fazê-lo. | V5 New Predator Types — Vesper Burjoski, p. 5 do PDF (sem numeração impressa). |
+| vesper-opportunist | Carisma + Manha — Ganhar a confiança de alguém isolado nas ruas e conduzi-lo a local reservado.; Raciocínio + Investigação — Localizar uma vítima socialmente isolada. | V5 New Predator Types — Vesper Burjoski, p. 5 do PDF (sem numeração impressa). |
+| vesper-parasite | Manipulação + Empatia com Animais — Com Sussurros Selvagens, mandar criaturas hematófagas coletar e devolver sangue.; Destreza + Percepção — Recolher carrapatos, piolhos ou mosquitos para consumir o sangue neles. | V5 New Predator Types — Vesper Burjoski, p. 6 do PDF (sem numeração impressa). |
+| vesper-quiverfull | Manipulação + Liderança — Pedir que suas crias lhe doem Vitae.; Carisma + Erudição — Apelar à fé que ensinou à prole; Hecata aumentam a Dificuldade pela Gravidade da Perdição. | V5 New Predator Types — Vesper Burjoski, p. 6 do PDF (sem numeração impressa). |
+| vesper-recycler | Determinação + Ciência — Concluir uma análise forense e consumir os órgãos quando ficar a sós.; Manipulação + Subterfúgio — Passar-se por funcionário autorizado a descartar resíduos médicos. | V5 New Predator Types — Vesper Burjoski, p. 6 do PDF (sem numeração impressa). |
+| vesper-regulator | Raciocínio + Sagacidade — Encontrar alguém dominado por emoções em meio à multidão.; Manipulação + Performance — Provocar emoções no público e selecionar os mais afetados. | V5 New Predator Types — Vesper Burjoski, p. 6–7 do PDF (sem numeração impressa). |
+| vesper-remote-feeder | Manipulação + Finanças — Cumprir encontros prometidos a patrocinadores para alimentar-se deles.; Inteligência + Tecnologia — Desviar remessas de plasma para um ponto refrigerado de coleta. | V5 New Predator Types — Vesper Burjoski, p. 7 do PDF (sem numeração impressa). |
+| vesper-sipper | Raciocínio + Furtividade — Ocultar muitas mordidas pequenas entre contatos casuais ou amorosos da multidão.; Destreza + Atletismo — Esquivar-se das reações das vítimas e voltar a misturar-se ao público. | V5 New Predator Types — Vesper Burjoski, p. 7 do PDF (sem numeração impressa). |
+| vesper-skimmer | Manipulação + Ladroagem — Falsificar assinaturas e documentos para encobrir o sangue desviado.; Determinação + Finanças — Manter um negócio que dê acesso legal ao sangue de pacientes. | V5 New Predator Types — Vesper Burjoski, p. 7 do PDF (sem numeração impressa). |
+| vesper-specimen | Inteligência + Ciência — Participar ou ajudar na pesquisa da instituição que fornece sangue.; Raciocínio + Subterfúgio — Alimentar a instituição com informações falsas para manter o suprimento. | V5 New Predator Types — Vesper Burjoski, p. 8 do PDF (sem numeração impressa). |
+| vesper-spider | Carisma + Etiqueta — Atrair vítimas para seu estabelecimento com boas maneiras e charme.; Determinação + Intimidação — Paralisar de medo os convidados de seu território. | V5 New Predator Types — Vesper Burjoski, p. 8 do PDF (sem numeração impressa). |
+| vesper-stalker | Inteligência + Ofícios — Montar uma armadilha para capturar a presa.; Raciocínio + Sobrevivência — Seguir rastros, pegadas e cheiro. | V5 New Predator Types — Vesper Burjoski, p. 8 do PDF (sem numeração impressa). |
+| vesper-tampon-sucker | Raciocínio + Percepção — Localizar sangue menstrual ou recipientes de descarte pelo cheiro.; Destreza + Sobrevivência — Encontrar e acessar banheiros conforme o conhecimento do ambiente urbano. | V5 New Predator Types — Vesper Burjoski, p. 8 do PDF (sem numeração impressa). |
+| vesper-therapist | Manipulação + Sagacidade — Oferecer uma escuta aparentemente acolhedora e alimentar-se ao fim da conversa.; Carisma + Erudição — Organizar um encontro com um cliente vulnerável. | V5 New Predator Types — Vesper Burjoski, p. 9 do PDF (sem numeração impressa). |
+| vesper-warden | Força + Armas Brancas — Alimentar-se sob a cobertura de subjugar um prisioneiro.; Manipulação + Política — Fazer a instituição ignorar sua entrada e saída do local da vítima. | V5 New Predator Types — Vesper Burjoski, p. 9 do PDF (sem numeração impressa). |
+| vesper-xenophile | Inteligência + Ocultismo — Investigar comunidades ocultistas para encontrar seres sobrenaturais.; Raciocínio + Sagacidade — Reconhecer sinais de uma natureza sobrenatural em pessoas próximas. | V5 New Predator Types — Vesper Burjoski, p. 9 do PDF (sem numeração impressa). |
 
-## Diferenças e complementos relevantes
-
-- Vira-lata usa Força + Briga; Raciocínio + Manha é a alternativa para localizar criminosos. Força + Intimidação é uma opção de Extorsionário, não a parada padrão de Vira-lata.
-- Sanguessuga: a transcrição brasileira do básico indica Manipulação + Subterfúgio na p. 307; a inglesa usa Headhunter e não dá uma combinação. Ambas recomendam não reduzir a caça de vampiros a rolagens abstratas. A ajuda registra a divergência e segue o básico brasileiro.
-- Armadilheiro (Trapdoor): Raciocínio + Percepção, com dados extras iguais aos pontos de Refúgio, é navegação dentro do labirinto. Fica separado dos testes de caçada Carisma/Destreza + Furtividade.
-- Osíris: o texto traz Intimidação + Fama como alternativa excepcional, não Atributo + Habilidade. A área em que o personagem é famoso não constitui um terceiro termo obrigatório da parada.
-- Fortitude + Armas Brancas, do Wolf in Sheep’s Clothing de Bully, foi preservado literalmente e identificado como exceção comunitária: Fortitude é Disciplina.
-- Extorsionário e Ladrão de Túmulos também aparecem em Cults of the Blood Gods, pp. 150–151, com as mesmas paradas do Players Guide 01.
-- Let the Streets Run Red, pp. 75–76, traz Roadside Killer: Destreza + Condução ou Carisma + Condução. O app inclui a referência complementar, sem criar um novo pacote de personagem fora do catálogo atual.
-- Let the Streets Run Red, pp. 136–137, traz exemplos de caçada em Gary: Raciocínio + Investigação e Raciocínio + Empatia com Animais, Dificuldade 4. Identificados como exemplos daquele cenário.
-- As Qualidades de Domínio do Players Guide, pp. 176–177, concedem modificadores condicionais a tipos específicos. A ajuda distingue esses bônus das paradas e esclarece que a simples existência de um lugar no cenário não equivale a possuir a Qualidade.
-
-## Uso no aplicativo
-
-A mesma referência aparece no catálogo de seleção, na ajuda do predador selecionado (pressionar e segurar ou botão de informações), na biblioteca de regras e nas fichas completa e compacta. Não altera pontos, não rola dados e não migra fichas.
-
-A orientação explica tamanho da parada, alternativas, Especializações, Dados de Fome, sucessos e Dificuldade. Na resolução rápida, a vitória já cobre a alimentação; não se inventa um segundo teste universal. A Fome saciada segue a Tabela de Alimentação e as restrições de sangue/Potência de Sangue, sem equivalência automática com a quantidade de sucessos.
-
-As condições dos testes foram resumidas em português; os nomes de tipos exclusivos de suplementos continuam traduções de trabalho quando não há edição brasileira conferida. As fontes são OCR, portanto não representam verificação visual de cada página original.
+Um tipo de predador não obriga a usar sempre o mesmo método, salvo restrição explícita. Outras abordagens dependem da cena e do Narrador. O Jejuador Intermitente de Vesper não tem Atributo + Habilidade fixos: a fonte permite justificar a parada apropriada.

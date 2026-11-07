@@ -46,10 +46,9 @@ test('bibliografia não confunde as edições nem números de linhas com página
   expect(refs.length,key).toBeGreaterThan(0);
   for(const ref of refs){
    if(ref.language==='unverified'){expect(ref.pages,key).toBe('');continue;}
-   expect(ref.pages,key).toMatch(/^\d+(?:[–-]\d+)?$/);
+   expect(ref.pages,key).toMatch(/^\d+(?:[–-]\d+)?(?:,\s*\d+(?:[–-]\d+)?)*$/);
    expect(existsSync(path.resolve('docs',ref.file)),key).toBe(true);
-   const [first,last]=ref.pages.split(/[–-]/).map(Number);
-   expect(first,key).toBeGreaterThan(0);expect(last||first,key).toBeGreaterThanOrEqual(first);
+   for(const range of ref.pages.split(',')){const [first,last]=range.trim().split(/[–-]/).map(Number);expect(first,key).toBeGreaterThan(0);expect(last||first,key).toBeGreaterThanOrEqual(first);}
   }
  }
  await page.goto('/');

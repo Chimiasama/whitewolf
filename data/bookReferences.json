@@ -489,18 +489,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "25–26",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1480
+        "pages": "26"
       }
     ],
     "power:animalism:huntTheBeast": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "25–26",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1516
+        "pages": "26"
       }
     ],
     "power:animalism:animalSucculence": [
@@ -534,18 +532,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "26–27",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1609
+        "pages": "27"
       }
     ],
     "power:animalism:markPrey": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "26–27",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1617
+        "pages": "27"
       }
     ],
     "power:animalism:subsumeTheSpirit": [
@@ -561,9 +557,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "26–27",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1634
+        "pages": "27"
       }
     ],
     "power:animalism:animalDominion": [
@@ -588,9 +583,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "26–27",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1684
+        "pages": "28"
       }
     ],
     "discipline:auspex": [
@@ -623,9 +617,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "28–29",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1764
+        "pages": "29"
       }
     ],
     "power:auspex:premonition": [
@@ -641,27 +634,24 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "28–29",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1793
+        "pages": "29"
       }
     ],
     "power:auspex:readOpponent": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "28–29",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1854
+        "pages": "29"
       }
     ],
     "power:auspex:senseStrengthsAndWeaknesses": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "28–29",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1860
+        "pages": "29"
       }
     ],
     "power:auspex:obeah": [
@@ -694,18 +684,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "29–31",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1877
-      }
-    ],
-    "power:auspex:scanTheRoom": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "pages": "29–31",
-        "file": "Vampire5edPlayersGuide02",
-        "anchor": 2000
+        "pages": "29–30"
       }
     ],
     "power:auspex:spiritsTouch": [
@@ -791,9 +771,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "29–31",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1973
+        "pages": "30"
       }
     ],
     "power:celerity:blink": [
@@ -818,18 +797,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "29–31",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2006
+        "pages": "31"
       }
     ],
     "power:celerity:speedIsPower": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "29–31",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2014
+        "pages": "31"
       }
     ],
     "power:celerity:draughtOfElegance": [
@@ -854,18 +831,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "29–31",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2038
+        "pages": "31"
       }
     ],
     "power:celerity:longDistanceJourney": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "31–32",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2077
+        "pages": "31–32"
       }
     ],
     "power:celerity:lightningStrike": [
@@ -934,18 +909,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "32–33",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2097
+        "pages": "32"
       }
     ],
     "power:dominate:objectCommand": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "32–33",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2153
+        "pages": "32"
       }
     ],
     "power:dominate:favorDoDomitor": [
@@ -987,9 +960,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "32–33",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2212
+        "pages": "32"
       }
     ],
     "power:dominate:massManipulation": [
@@ -1014,9 +986,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "33–34",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2264
+        "pages": "33"
       }
     ],
     "discipline:fortitude": [
@@ -1049,9 +1020,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "34–35",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2280
+        "pages": "33"
       }
     ],
     "power:fortitude:toughness": [
@@ -1076,27 +1046,24 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "34–35",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2291
+        "pages": "33"
       }
     ],
     "power:fortitude:mentalVault": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "34–35",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2312
+        "pages": "33"
       }
     ],
     "power:fortitude:sleepLikeStone": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "34–35",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2351
+        "pages": "34"
       }
     ],
     "power:fortitude:valeren": [
@@ -1191,9 +1158,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "35–36",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2372
+        "pages": "34"
       }
     ],
     "power:obfuscate:chimerstry": [
@@ -1226,9 +1192,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "35–36",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2409
+        "pages": "34"
       }
     ],
     "power:obfuscate:fataMorgana": [
@@ -1261,9 +1226,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "35–36",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2450
+        "pages": "35"
       }
     ],
     "power:obfuscate:cloakTheGathering": [
@@ -1288,9 +1252,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "35–36",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2471
+        "pages": "35"
       }
     ],
     "discipline:potence": [
@@ -1359,9 +1322,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "36–37",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2532
+        "pages": "36"
       }
     ],
     "power:potence:draughtOfMight": [
@@ -1430,9 +1392,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "37–38",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2566
+        "pages": "36"
       }
     ],
     "power:presence:dreadGaze": [
@@ -1457,18 +1418,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "37–38",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2573
+        "pages": "37"
       }
     ],
     "power:presence:obsession": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "38–39",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2626
+        "pages": "37"
       }
     ],
     "power:presence:irresistibleVoice": [
@@ -1493,18 +1452,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "38–39",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2648
+        "pages": "37"
       }
     ],
     "power:presence:hideousLaughter": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "38–39",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2682
+        "pages": "37"
       }
     ],
     "power:presence:majesty": [
@@ -1529,9 +1486,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "38–39",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2717
+        "pages": "38"
       }
     ],
     "discipline:protean": [
@@ -1564,9 +1520,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "39–40",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2729
+        "pages": "38"
       }
     ],
     "power:protean:feralWeapons": [
@@ -1608,9 +1563,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "39–40",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2813
+        "pages": "38"
       }
     ],
     "power:protean:fleshCrafting": [
@@ -1634,18 +1588,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "39–40",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2841
+        "pages": "39"
       }
     ],
     "power:protean:traverseTheEarth": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "40–41",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2875
+        "pages": "39"
       }
     ],
     "power:protean:horrificForm": [
@@ -1721,18 +1673,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "41–42",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2899
+        "pages": "39"
       }
     ],
     "power:bloodsorcery:bloodTendrils": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "41–42",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2923
+        "pages": "40"
       }
     ],
     "power:bloodsorcery:bloodOfPotency": [
@@ -1757,18 +1707,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "42–43",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2957
+        "pages": "40"
       }
     ],
     "power:bloodsorcery:healersBane": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "42–43",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2990
+        "pages": "41"
       }
     ],
     "power:bloodsorcery:theftOfVitae": [
@@ -1784,18 +1732,16 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "42–43",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 3012
+        "pages": "41"
       }
     ],
     "power:bloodsorcery:curseOfTheSlowBlood": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "42–43",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 3048
+        "pages": "41"
       }
     ],
     "power:bloodsorcery:baalsCaress": [
@@ -1820,9 +1766,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "43–44",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 3077
+        "pages": "41"
       }
     ],
     "discipline:oblivion": [
@@ -1874,9 +1819,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "46–47",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 3368
+        "pages": "44"
       }
     ],
     "power:oblivion:touchOfOblivion": [
@@ -1892,18 +1836,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "47",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 3385
-      }
-    ],
-    "power:oblivion:witnessTheEnd": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "pages": "47",
-        "file": "Vampire5edPlayersGuide02",
-        "anchor": 3463
+        "pages": "45"
       }
     ],
     "power:oblivion:stygianShroud": [
@@ -2207,34 +2141,18 @@
     ],
     "power:thinbloodalchemy:imitate-animalism-feralFrenzy": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "25–26",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1480
+        "pages": "26"
       }
     ],
     "power:thinbloodalchemy:imitate-animalism-huntTheBeast": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "25–26",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1516
+        "pages": "26"
       }
     ],
     "power:thinbloodalchemy:imitate-animalism-animalSucculence": [
@@ -2287,34 +2205,18 @@
     ],
     "power:thinbloodalchemy:imitate-animalism-howlOfRage": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "26–27",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1609
+        "pages": "27"
       }
     ],
     "power:thinbloodalchemy:imitate-animalism-markPrey": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "26–27",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1617
+        "pages": "27"
       }
     ],
     "power:thinbloodalchemy:imitate-animalism-subsumeTheSpirit": [
@@ -2335,18 +2237,10 @@
     ],
     "power:thinbloodalchemy:imitate-animalism-packFrenzy": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "26–27",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1634
+        "pages": "27"
       }
     ],
     "power:thinbloodalchemy:imitate-auspex-heightenedSenses": [
@@ -2383,18 +2277,10 @@
     ],
     "power:thinbloodalchemy:imitate-auspex-lieDetector": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "28–29",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1764
+        "pages": "29"
       }
     ],
     "power:thinbloodalchemy:imitate-auspex-premonition": [
@@ -2415,59 +2301,34 @@
     ],
     "power:thinbloodalchemy:imitate-auspex-decipher": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "28–29",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1793
+        "pages": "29"
       }
     ],
     "power:thinbloodalchemy:imitate-auspex-implantDream": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "29"
       }
     ],
     "power:thinbloodalchemy:imitate-auspex-readOpponent": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "28–29",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1854
+        "pages": "29"
       }
     ],
     "power:thinbloodalchemy:imitate-auspex-senseStrengthsAndWeaknesses": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "28–29",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1860
+        "pages": "29"
       }
     ],
     "power:thinbloodalchemy:imitate-auspex-obeah": [
@@ -2519,34 +2380,10 @@
     ],
     "power:thinbloodalchemy:imitate-auspex-psychicBacklash": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "29–31",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1877
-      }
-    ],
-    "power:thinbloodalchemy:imitate-auspex-scanTheRoom": [
-      {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "pages": "29–31",
-        "file": "Vampire5edPlayersGuide02",
-        "anchor": 2000
+        "pages": "29–30"
       }
     ],
     "power:thinbloodalchemy:imitate-auspex-spiritsTouch": [
@@ -2615,18 +2452,10 @@
     ],
     "power:thinbloodalchemy:imitate-celerity-controlMomentum": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "29–31",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 1973
+        "pages": "30"
       }
     ],
     "power:thinbloodalchemy:imitate-celerity-blink": [
@@ -2663,34 +2492,18 @@
     ],
     "power:thinbloodalchemy:imitate-celerity-combatTempest": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "29–31",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2006
+        "pages": "31"
       }
     ],
     "power:thinbloodalchemy:imitate-celerity-speedIsPower": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "29–31",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2014
+        "pages": "31"
       }
     ],
     "power:thinbloodalchemy:imitate-celerity-draughtOfElegance": [
@@ -2727,34 +2540,18 @@
     ],
     "power:thinbloodalchemy:imitate-celerity-furiousFrenzy": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "29–31",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2038
+        "pages": "31"
       }
     ],
     "power:thinbloodalchemy:imitate-celerity-longDistanceJourney": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "31–32",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2077
+        "pages": "31–32"
       }
     ],
     "power:thinbloodalchemy:imitate-dominate-cloudMemory": [
@@ -2823,34 +2620,18 @@
     ],
     "power:thinbloodalchemy:imitate-dominate-declareWeakness": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "32–33",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2097
+        "pages": "32"
       }
     ],
     "power:thinbloodalchemy:imitate-dominate-objectCommand": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "32–33",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2153
+        "pages": "32"
       }
     ],
     "power:thinbloodalchemy:imitate-dominate-favorDoDomitor": [
@@ -2918,18 +2699,10 @@
     ],
     "power:thinbloodalchemy:imitate-dominate-mentalConditioning": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "32–33",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2212
+        "pages": "32"
       }
     ],
     "power:thinbloodalchemy:imitate-fortitude-resilience": [
@@ -2966,18 +2739,10 @@
     ],
     "power:thinbloodalchemy:imitate-fortitude-eternalVigilance": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "34–35",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2280
+        "pages": "33"
       }
     ],
     "power:thinbloodalchemy:imitate-fortitude-toughness": [
@@ -3014,50 +2779,26 @@
     ],
     "power:thinbloodalchemy:imitate-fortitude-returnToSender": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "34–35",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2291
+        "pages": "33"
       }
     ],
     "power:thinbloodalchemy:imitate-fortitude-mentalVault": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "34–35",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2312
+        "pages": "33"
       }
     ],
     "power:thinbloodalchemy:imitate-fortitude-sleepLikeStone": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "34–35",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2351
+        "pages": "34"
       }
     ],
     "power:thinbloodalchemy:imitate-fortitude-valeren": [
@@ -3173,18 +2914,10 @@
     ],
     "power:thinbloodalchemy:imitate-obfuscate-shapeAura": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "35–36",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2372
+        "pages": "34"
       }
     ],
     "power:thinbloodalchemy:imitate-obfuscate-chimerstry": [
@@ -3236,18 +2969,10 @@
     ],
     "power:thinbloodalchemy:imitate-obfuscate-duplicate": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "35–36",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2409
+        "pages": "34"
       }
     ],
     "power:thinbloodalchemy:imitate-obfuscate-fataMorgana": [
@@ -3299,18 +3024,10 @@
     ],
     "power:thinbloodalchemy:imitate-obfuscate-hiddenBlade": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "35–36",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2450
+        "pages": "35"
       }
     ],
     "power:thinbloodalchemy:imitate-potence-lethalBody": [
@@ -3411,18 +3128,10 @@
     ],
     "power:thinbloodalchemy:imitate-potence-fastballSpecial": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "36–37",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2532
+        "pages": "36"
       }
     ],
     "power:thinbloodalchemy:imitate-potence-draughtOfMight": [
@@ -3491,18 +3200,10 @@
     ],
     "power:thinbloodalchemy:imitate-presence-subtleMessages": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "37–38",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2566
+        "pages": "36"
       }
     ],
     "power:thinbloodalchemy:imitate-presence-dreadGaze": [
@@ -3539,34 +3240,18 @@
     ],
     "power:thinbloodalchemy:imitate-presence-throneRoom": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "37–38",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2573
+        "pages": "37"
       }
     ],
     "power:thinbloodalchemy:imitate-presence-obsession": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "38–39",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2626
+        "pages": "37"
       }
     ],
     "power:thinbloodalchemy:imitate-presence-irresistibleVoice": [
@@ -3603,34 +3288,18 @@
     ],
     "power:thinbloodalchemy:imitate-presence-twistWords": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "38–39",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2648
+        "pages": "37"
       }
     ],
     "power:thinbloodalchemy:imitate-presence-hideousLaughter": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "38–39",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2682
+        "pages": "37"
       }
     ],
     "power:thinbloodalchemy:imitate-protean-eyesOfTheBeast": [
@@ -3667,18 +3336,10 @@
     ],
     "power:thinbloodalchemy:imitate-protean-shedSkin": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "39–40",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2729
+        "pages": "38"
       }
     ],
     "power:thinbloodalchemy:imitate-protean-feralWeapons": [
@@ -3746,18 +3407,10 @@
     ],
     "power:thinbloodalchemy:imitate-protean-toolsOfNature": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "39–40",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2813
+        "pages": "38"
       }
     ],
     "power:thinbloodalchemy:imitate-protean-fleshCrafting": [
@@ -3793,34 +3446,18 @@
     ],
     "power:thinbloodalchemy:imitate-protean-swarmForm": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "39–40",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2841
+        "pages": "39"
       }
     ],
     "power:thinbloodalchemy:imitate-protean-traverseTheEarth": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "40–41",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2875
+        "pages": "39"
       }
     ],
     "power:thinbloodalchemy:imitate-protean-horrificForm": [
@@ -3888,34 +3525,18 @@
     ],
     "power:thinbloodalchemy:imitate-bloodsorcery-bloodObject": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "41–42",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2899
+        "pages": "39"
       }
     ],
     "power:thinbloodalchemy:imitate-bloodsorcery-bloodTendrils": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "41–42",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2923
+        "pages": "40"
       }
     ],
     "power:thinbloodalchemy:imitate-bloodsorcery-bloodOfPotency": [
@@ -3952,34 +3573,18 @@
     ],
     "power:thinbloodalchemy:imitate-bloodsorcery-diluteTheLine": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "42–43",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2957
+        "pages": "40"
       }
     ],
     "power:thinbloodalchemy:imitate-bloodsorcery-healersBane": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "42–43",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 2990
+        "pages": "41"
       }
     ],
     "power:thinbloodalchemy:imitate-bloodsorcery-theftOfVitae": [
@@ -4000,34 +3605,18 @@
     ],
     "power:thinbloodalchemy:imitate-bloodsorcery-crimsonFury": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "42–43",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 3012
+        "pages": "41"
       }
     ],
     "power:thinbloodalchemy:imitate-bloodsorcery-curseOfTheSlowBlood": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "42–43",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 3048
+        "pages": "41"
       }
     ],
     "power:thinbloodalchemy:imitate-oblivion-shadowCloak": [
@@ -4096,18 +3685,10 @@
     ],
     "power:thinbloodalchemy:imitate-oblivion-abyssalPulse": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "46–47",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 3368
+        "pages": "44"
       }
     ],
     "power:thinbloodalchemy:imitate-oblivion-touchOfOblivion": [
@@ -4128,34 +3709,10 @@
     ],
     "power:thinbloodalchemy:imitate-oblivion-shadowPuppet": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "47",
         "file": "Vampire5edPlayersGuide02",
-        "anchor": 3385
-      }
-    ],
-    "power:thinbloodalchemy:imitate-oblivion-witnessTheEnd": [
-      {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "pages": "282–287",
-        "file": "Vampiro5edptbr",
-        "section": "Imitação de poderes por Alquimia Sangue-Ralo; opção gerada a partir da regra, não fórmula com título próprio."
-      },
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "pages": "47",
-        "file": "Vampire5edPlayersGuide02",
-        "anchor": 3463
+        "pages": "45"
       }
     ],
     "power:thinbloodalchemy:imitate-oblivion-stygianShroud": [
@@ -4346,144 +3903,144 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "4",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "7"
       }
     ],
     "predator:confidant": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "4",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "7"
       }
     ],
     "predator:corporate_leech": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "4",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "8"
       }
     ],
     "predator:eat_the_rich": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "4",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "8"
       }
     ],
     "predator:hide_and_eat": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "5",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "8"
       }
     ],
     "predator:kidnapper": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "5",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "9"
       }
     ],
     "predator:lab_rat": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "5",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "9"
       }
     ],
     "predator:hospital_hunter": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "5",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "8"
       }
     ],
     "predator:local_haunt": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "6",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "9"
       }
     ],
     "predator:lurker_in_crowd": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "6",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "9"
       }
     ],
     "predator:manic_pixie": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "6",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "9"
       }
     ],
     "predator:online_predator": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "6",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "10"
       }
     ],
     "predator:opportunist": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "7",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "10"
       }
     ],
     "predator:pack_hunter": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "7",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "10"
       }
     ],
     "predator:pay_for_blood": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "7",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "10"
       }
     ],
     "predator:street_feeder": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "7",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "11"
       }
     ],
     "predator:watcher_from_water": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "8",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "11"
       }
     ],
     "predator:wolfinsheepsclothing": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "8",
-        "file": "Vampire5edPlayersGuide02"
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "11"
       }
     ],
     "predator:bloodleech": [
@@ -8666,7 +8223,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "10"
+        "pages": "13"
       }
     ],
     "advantage:daredevil": [
@@ -8674,7 +8231,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "10"
+        "pages": "14"
       }
     ],
     "advantage:codeofhonor": [
@@ -8682,7 +8239,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "10"
+        "pages": "13"
       }
     ],
     "advantage:fastlearner": [
@@ -8690,7 +8247,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "11"
+        "pages": "14"
       }
     ],
     "advantage:focused": [
@@ -8698,7 +8255,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "11"
+        "pages": "14"
       }
     ],
     "advantage:headstrong": [
@@ -8706,7 +8263,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "11"
+        "pages": "14"
       }
     ],
     "advantage:highhumanity": [
@@ -8714,7 +8271,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "11"
+        "pages": "14"
       }
     ],
     "advantage:ironwill": [
@@ -8722,7 +8279,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "11"
+        "pages": "15"
       }
     ],
     "advantage:jackofalltrades": [
@@ -8730,7 +8287,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "11"
+        "pages": "15"
       }
     ],
     "advantage:expertinstructor": [
@@ -8738,7 +8295,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "11"
+        "pages": "14"
       }
     ],
     "advantage:remorseful_merit": [
@@ -8746,7 +8303,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:loremaster_merit_v": [
@@ -8754,7 +8311,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:totalrecall": [
@@ -8762,7 +8319,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
+        "pages": "16"
       }
     ],
     "advantage:crackdriver": [
@@ -8770,7 +8327,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
+        "pages": "16"
       }
     ],
     "advantage:lightsleeper": [
@@ -8778,7 +8335,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
+        "pages": "17"
       }
     ],
     "advantage:sharpsenses": [
@@ -8786,7 +8343,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
+        "pages": "17"
       }
     ],
     "advantage:slippery_merit_v": [
@@ -8794,7 +8351,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
+        "pages": "17"
       }
     ],
     "advantage:skillaptitude": [
@@ -8802,7 +8359,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "14"
+        "pages": "18"
       }
     ],
     "advantage:tough_merit": [
@@ -8810,7 +8367,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "14"
+        "pages": "17"
       }
     ],
     "advantage:unstakeable": [
@@ -8818,7 +8375,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "14"
+        "pages": "17"
       }
     ],
     "advantage:claninfiltrator_merit": [
@@ -8826,7 +8383,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
+        "pages": "18"
       }
     ],
     "advantage:inspiringpresence": [
@@ -8834,7 +8391,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
+        "pages": "18"
       }
     ],
     "advantage:prestigioussire": [
@@ -8842,7 +8399,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "16"
+        "pages": "19"
       }
     ],
     "advantage:socialengineer_merit": [
@@ -8850,7 +8407,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "16"
+        "pages": "19"
       }
     ],
     "advantage:stalwartloyalty": [
@@ -8858,7 +8415,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "16"
+        "pages": "19"
       }
     ],
     "advantage:underestimated_merit_v": [
@@ -8866,7 +8423,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "17"
+        "pages": "19"
       }
     ],
     "advantage:aftermealglow": [
@@ -8874,7 +8431,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "17"
+        "pages": "20"
       }
     ],
     "advantage:alchemyexpert": [
@@ -8882,7 +8439,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "17"
+        "pages": "20"
       }
     ],
     "advantage:animalaffinity": [
@@ -8890,7 +8447,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "17"
+        "pages": "20"
       }
     ],
     "advantage:apexpredator_merit": [
@@ -8898,7 +8455,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "18"
+        "pages": "20"
       }
     ],
     "advantage:berserker": [
@@ -8906,7 +8463,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "18"
+        "pages": "20"
       }
     ],
     "advantage:bloodhealer_merit": [
@@ -8914,7 +8471,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "18"
+        "pages": "20"
       }
     ],
     "advantage:delaydestruction_merit": [
@@ -8922,7 +8479,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "20"
       }
     ],
     "advantage:dangersense_merit": [
@@ -8930,7 +8487,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "20"
       }
     ],
     "advantage:demonicpact": [
@@ -8938,7 +8495,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:diablerist": [
@@ -8946,7 +8503,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:disciplinecompetence": [
@@ -8954,7 +8511,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:efficienteater_merit": [
@@ -8962,7 +8519,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:fasteater": [
@@ -8970,7 +8527,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:fasthealer": [
@@ -8978,7 +8535,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:friendtofae": [
@@ -8986,7 +8543,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:holyaura": [
@@ -9002,7 +8559,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "21"
       }
     ],
     "advantage:magicresistance": [
@@ -9010,7 +8567,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "21"
       }
     ],
     "advantage:memoriamdweller_merit": [
@@ -9018,7 +8575,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "21"
       }
     ],
     "advantage:obscure_merit_v": [
@@ -9026,7 +8583,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "21"
       }
     ],
     "advantage:powerfulvitae": [
@@ -9034,7 +8591,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "22"
       }
     ],
     "advantage:risingsun": [
@@ -9042,7 +8599,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "22"
       }
     ],
     "advantage:spiritmentor": [
@@ -9050,7 +8607,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "22"
       }
     ],
     "advantage:thaumaturgictraining": [
@@ -9058,7 +8615,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "21"
+        "pages": "22"
       }
     ],
     "advantage:truebond": [
@@ -9066,7 +8623,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "21"
+        "pages": "22"
       }
     ],
     "advantage:truefaith": [
@@ -9074,7 +8631,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "21"
+        "pages": "20"
       }
     ],
     "advantage:truesight": [
@@ -9082,7 +8639,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "21"
+        "pages": "23"
       }
     ],
     "advantage:mysticalitem": [
@@ -9090,7 +8647,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "22"
+        "pages": "24"
       }
     ],
     "advantage:addiction": [
@@ -9106,7 +8663,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "21"
       }
     ],
     "advantage:shunned": [
@@ -9122,7 +8679,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "10"
+        "pages": "13"
       }
     ],
     "advantage:curiosity": [
@@ -9130,7 +8687,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "10"
+        "pages": "13"
       }
     ],
     "advantage:impatient": [
@@ -9138,7 +8695,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "11"
+        "pages": "15"
       }
     ],
     "advantage:paranoia": [
@@ -9146,7 +8703,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:routine": [
@@ -9154,7 +8711,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:morbidfascination": [
@@ -9162,7 +8719,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:nightmares": [
@@ -9170,7 +8727,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:vengeful": [
@@ -9178,154 +8735,10 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
+        "pages": "16"
       }
     ],
     "advantage:weakwilled": [
-      {
-        "book": "Vampire: The Masquerade — Players Guide",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide01",
-        "pages": "121"
-      }
-    ],
-    "advantage:softhearted": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
-      }
-    ],
-    "advantage:bluntedfangs": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
-      }
-    ],
-    "advantage:childlike": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
-      }
-    ],
-    "advantage:fleshofthecorpse": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
-      }
-    ],
-    "advantage:fragile": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
-      }
-    ],
-    "advantage:stenchofdeath": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "14"
-      }
-    ],
-    "advantage:weakstomach": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "14"
-      }
-    ],
-    "advantage:mistakenidentity": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
-      }
-    ],
-    "advantage:notorioussire": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
-      }
-    ],
-    "advantage:oathbreaker": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
-      }
-    ],
-    "advantage:outsider_flaw_v": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
-      }
-    ],
-    "advantage:brash_flaw_v": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
-      }
-    ],
-    "advantage:conflictingloyalties_flaw": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
-      }
-    ],
-    "advantage:dull_flaw_v": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
-      }
-    ],
-    "advantage:hunted": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
-      }
-    ],
-    "advantage:intolerance": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
-      }
-    ],
-    "advantage:markedfordeath": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
-      }
-    ],
-    "advantage:overconfident_flaw_v": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
@@ -9333,12 +8746,156 @@
         "pages": "16"
       }
     ],
-    "advantage:twistedupbringing": [
+    "advantage:softhearted": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "15"
+      }
+    ],
+    "advantage:bluntedfangs": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "16"
+      }
+    ],
+    "advantage:childlike": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "16"
+      }
+    ],
+    "advantage:fleshofthecorpse": [
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
         "pages": "17"
+      }
+    ],
+    "advantage:fragile": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "17"
+      }
+    ],
+    "advantage:stenchofdeath": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "17"
+      }
+    ],
+    "advantage:weakstomach": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:mistakenidentity": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:notorioussire": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:oathbreaker": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:outsider_flaw_v": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:brash_flaw_v": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:conflictingloyalties_flaw": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:dull_flaw_v": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:hunted": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:intolerance": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:markedfordeath": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:overconfident_flaw_v": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "19"
+      }
+    ],
+    "advantage:twistedupbringing": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "19"
       }
     ],
     "advantage:angrybeast_flaw": [
@@ -9346,7 +8903,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "17"
+        "pages": "20"
       }
     ],
     "advantage:appetizingblood": [
@@ -9354,7 +8911,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "18"
+        "pages": "20"
       }
     ],
     "advantage:beaconofunholy": [
@@ -9362,7 +8919,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "18"
+        "pages": "20"
       }
     ],
     "advantage:cannotembrace_flaw": [
@@ -9370,7 +8927,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "18"
+        "pages": "20"
       }
     ],
     "advantage:cursed": [
@@ -9378,7 +8935,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "18"
+        "pages": "20"
       }
     ],
     "advantage:eeriepresence_flaw": [
@@ -9386,7 +8943,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:deathskiss_flaw": [
@@ -9394,7 +8951,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "20"
       }
     ],
     "advantage:deepsleeper_flaw": [
@@ -9402,7 +8959,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "20"
       }
     ],
     "advantage:disciplineinept": [
@@ -9410,7 +8967,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:frigidaura_flaw": [
@@ -9418,7 +8975,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:grimwounds": [
@@ -9426,7 +8983,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "21"
       }
     ],
     "advantage:taintofcorruption": [
@@ -9434,7 +8991,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "22"
       }
     ],
     "advantage:taintedblood": [
@@ -9442,7 +8999,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "21"
+        "pages": "22"
       }
     ],
     "advantage:weakblood": [
@@ -9450,7 +9007,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "21"
+        "pages": "23"
       }
     ],
     "advantage:curseditem": [
@@ -9458,7 +9015,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "22"
+        "pages": "24"
       }
     ],
     "wolfadvantage:allies": [
@@ -10205,9 +9762,8 @@
       {
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
-        "pages": "25–26",
         "file": "Vampire5edPlayersGuide02",
-        "section": "Implant Dream — conteúdo comunitário de Bully"
+        "pages": "29"
       }
     ],
     "talisman:tearOfGaia": [
@@ -10233,7 +9789,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:magicsusceptibility": [
@@ -10241,7 +9797,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "21"
       }
     ],
     "advantage:repulsivetoanimals": [
@@ -10249,7 +9805,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "22"
       }
     ],
     "advantage:thirstforinnocence": [
@@ -10257,7 +9813,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "21"
+        "pages": "22"
       }
     ],
     "wolfadvantage:job_basic": [
@@ -10973,10 +10529,10 @@
     ],
     "advantage:base_haven_cell": [
       {
-        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
-        "language": "pt-BR",
-        "file": "Vampiro5edptbr",
-        "pages": "187–189"
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "9"
       }
     ],
     "advantage:business_owner_background": [
@@ -10984,7 +10540,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "22"
+        "pages": "24"
       }
     ],
     "advantage:power_behind_throne": [
@@ -10992,15 +10548,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "23"
-      }
-    ],
-    "advantage:supportive_presence": [
-      {
-        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
-        "language": "en",
-        "file": "Vampire5edPlayersGuide02",
-        "pages": "4"
+        "pages": "24"
       }
     ],
     "advantage:mask_cobbler_online": [
@@ -11040,7 +10588,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:remorseful_confidant": [
@@ -11048,7 +10596,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:memoriam_dweller_confidant": [
@@ -11056,7 +10604,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "21"
       }
     ],
     "advantage:conflicting_loyalties": [
@@ -11064,7 +10612,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
+        "pages": "18"
       }
     ],
     "advantage:dull_flaw": [
@@ -11072,7 +10620,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
+        "pages": "18"
       }
     ],
     "advantage:dark_secret_corporate": [
@@ -11088,7 +10636,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
+        "pages": "18"
       }
     ],
     "advantage:angry_beast_eattherich": [
@@ -11096,7 +10644,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "17"
+        "pages": "20"
       }
     ],
     "advantage:efficient_eater_hideandeat": [
@@ -11104,7 +10652,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "8, 21"
       }
     ],
     "advantage:slippery_hideandeat": [
@@ -11112,7 +10660,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
+        "pages": "17"
       }
     ],
     "advantage:obvious_predator_hideandeat": [
@@ -11128,7 +10676,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:improved_ghouls_labrat": [
@@ -11136,7 +10684,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "21"
       }
     ],
     "advantage:blunted_fangs_labrat": [
@@ -11144,7 +10692,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
+        "pages": "16"
       }
     ],
     "advantage:addiction_labrat": [
@@ -11160,7 +10708,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "18"
+        "pages": "20"
       }
     ],
     "advantage:frigid_aura_hospitalhunter": [
@@ -11168,7 +10716,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:loremaster_localhaunt": [
@@ -11176,7 +10724,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "9, 15"
       }
     ],
     "advantage:eerie_presence_localhaunt": [
@@ -11184,7 +10732,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "21"
       }
     ],
     "advantage:obscure_lurkerincrowd": [
@@ -11192,7 +10740,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "20"
+        "pages": "21"
       }
     ],
     "advantage:outsider_lurkerincrowd": [
@@ -11200,7 +10748,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
+        "pages": "18"
       }
     ],
     "advantage:social_engineer_manicpixie": [
@@ -11208,7 +10756,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "16"
+        "pages": "19"
       }
     ],
     "advantage:cannot_embrace_manicpixie": [
@@ -11216,7 +10764,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "18"
+        "pages": "20"
       }
     ],
     "advantage:paranoia_onlinepredator": [
@@ -11224,7 +10772,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "12"
+        "pages": "15"
       }
     ],
     "advantage:delay_destruction_opportunist": [
@@ -11232,7 +10780,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "20"
       }
     ],
     "advantage:overconfident_opportunist": [
@@ -11240,7 +10788,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "16"
+        "pages": "10, 19"
       }
     ],
     "advantage:apex_predator_packhunter": [
@@ -11248,7 +10796,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "18"
+        "pages": "20"
       }
     ],
     "advantage:brash_packhunter": [
@@ -11256,7 +10804,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "15"
+        "pages": "18"
       }
     ],
     "advantage:deep_sleeper_packhunter": [
@@ -11264,7 +10812,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "20"
       }
     ],
     "advantage:despised_payforblood": [
@@ -11280,7 +10828,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "20"
       }
     ],
     "advantage:destitute_streetfeeder": [
@@ -11296,7 +10844,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
+        "pages": "11, 17"
       }
     ],
     "advantage:slippery_watcher": [
@@ -11304,7 +10852,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "13"
+        "pages": "17"
       }
     ],
     "advantage:no_haven_watcher": [
@@ -11320,7 +10868,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "10"
+        "pages": "14"
       }
     ],
     "advantage:underestimated_wolf": [
@@ -11328,7 +10876,7 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "17"
+        "pages": "19"
       }
     ],
     "advantage:deaths_kiss_wolf": [
@@ -11336,7 +10884,1386 @@
         "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
         "language": "en",
         "file": "Vampire5edPlayersGuide02",
-        "pages": "19"
+        "pages": "20"
+      }
+    ],
+    "advantage:beasttamer": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "20"
+      }
+    ],
+    "advantage:beasttamer_confidant": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "20"
+      }
+    ],
+    "advantage:routine_payforprey": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "15"
+      }
+    ],
+    "advantage:no_haven_streetfeeder": [
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "188"
+      }
+    ],
+    "advantage:outsider_watcher": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "18"
+      }
+    ],
+    "advantage:codeofhonor_wolf": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "13"
+      }
+    ],
+    "power:animalism:warnThePack": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "26–27"
+      }
+    ],
+    "power:thinbloodalchemy:imitate-animalism-warnThePack": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "26–27"
+      }
+    ],
+    "power:celerity:scanTheRoom": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "31"
+      }
+    ],
+    "power:thinbloodalchemy:imitate-celerity-scanTheRoom": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "31"
+      }
+    ],
+    "power:potence:roasted": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "35"
+      }
+    ],
+    "power:thinbloodalchemy:imitate-potence-roasted": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "35"
+      }
+    ],
+    "ritual:bully-warning-against-trespassers": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "42"
+      }
+    ],
+    "ritual:bully-addictive-vitae": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "42"
+      }
+    ],
+    "ritual:bully-blood-homunculus": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "42"
+      }
+    ],
+    "ritual:bully-alchemy": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "43"
+      }
+    ],
+    "ritual:bully-poison-the-well": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "43"
+      }
+    ],
+    "ritual:bully-control-weather": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "43"
+      }
+    ],
+    "ceremony:bully-witness-the-end": [
+      {
+        "book": "V5 Player’s Guide — Bully (conteúdo comunitário)",
+        "language": "en",
+        "file": "Vampire5edPlayersGuide02",
+        "pages": "45"
+      }
+    ],
+    "predator:vesper-ambulance-chaser": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-blood-baby": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-codependent": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3–4",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-condiment-king": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-contractor": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-delivery-diner": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-incarcerator": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4–5",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-intermittent-faster": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-maskless": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-opportunist": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-parasite": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-quiverfull": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-recycler": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-regulator": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6–7",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-remote-feeder": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-sipper": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-skimmer": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-specimen": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-spider": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-stalker": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-tampon-sucker": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-therapist": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-warden": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      }
+    ],
+    "predator:vesper-xenophile": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      }
+    ],
+    "advantage:vesper-reanimated-emotions": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6–7, 10",
+        "pagination": "pdf"
+      }
+    ],
+    "advantage:vesper-dependent": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3–4, 10",
+        "pagination": "pdf"
+      }
+    ],
+    "advantage:vesper-intermittent-fasting": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5, 10",
+        "pagination": "pdf"
+      }
+    ],
+    "advantage:vesper-light-stomach": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7, 10",
+        "pagination": "pdf"
+      }
+    ],
+    "advantage:vesper-ambulance-predator": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:vesper-ambulance-influence": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187"
+      }
+    ],
+    "advantage:vesper-ambulance-contacts": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "185"
+      }
+    ],
+    "advantage:vesper-ambulance-allies": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "184–185"
+      }
+    ],
+    "advantage:vesper-bloodbaby-mawla": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:vesper-bloodbaby-disliked": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187"
+      }
+    ],
+    "advantage:vesper-codependent-retainer": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "3–4",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:vesper-eat-food": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:vesper-garlic-block": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:vesper-contractor-herd": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:vesper-contractor-adversary": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:vesper-delivery-haven": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187–189"
+      }
+    ],
+    "advantage:vesper-delivery-resources": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193"
+      }
+    ],
+    "advantage:vesper-incarcerator-haven": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4–5",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187–189"
+      }
+    ],
+    "advantage:vesper-incarcerator-cell": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4–5",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "188–189"
+      }
+    ],
+    "advantage:vesper-incarcerator-enemies": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "4–5",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "184–185"
+      }
+    ],
+    "advantage:vesper-maskless-fame": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190"
+      }
+    ],
+    "advantage:vesper-maskless-mask": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190"
+      }
+    ],
+    "advantage:vesper-maskless-infamy": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "186"
+      }
+    ],
+    "advantage:vesper-maskless-suspect": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "194"
+      }
+    ],
+    "advantage:vesper-maskless-shunned": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "194"
+      }
+    ],
+    "advantage:vesper-opportunist-linguistics": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "179"
+      }
+    ],
+    "advantage:vesper-opportunist-nohaven": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "5",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187–189"
+      }
+    ],
+    "advantage:vesper-parasite-mawla": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:vesper-parasite-retainers": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:vesper-parasite-obvious": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:vesper-quiver-bond": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "180–181"
+      }
+    ],
+    "advantage:vesper-quiver-mawla-a": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:vesper-quiver-mawla-b": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:vesper-quiver-mawla-c": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:vesper-quiver-past": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "180"
+      }
+    ],
+    "advantage:vesper-quiver-infamy": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "186"
+      }
+    ],
+    "advantage:vesper-organovore": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "181–182"
+      }
+    ],
+    "advantage:vesper-recycler-contacts": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "185"
+      }
+    ],
+    "advantage:vesper-recycler-mask": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190"
+      }
+    ],
+    "advantage:vesper-regulator-bloodhound": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6–7",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:vesper-resonance-addiction": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "6–7",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "179–180"
+      }
+    ],
+    "advantage:vesper-remote-herd": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:vesper-remote-adversary": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:vesper-remote-gullet": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:vesper-remote-haven": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187–189"
+      }
+    ],
+    "advantage:vesper-sipper-contacts": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "185"
+      }
+    ],
+    "advantage:vesper-sipper-allies": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "184–185"
+      }
+    ],
+    "advantage:vesper-skimmer-contacts": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "7",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "185"
+      }
+    ],
+    "advantage:vesper-specimen-herd": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:vesper-specimen-resources": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193"
+      }
+    ],
+    "advantage:vesper-specimen-secret": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "186"
+      }
+    ],
+    "advantage:vesper-known-blankbody": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "190–191"
+      }
+    ],
+    "advantage:vesper-spider-enemy": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "184–185"
+      }
+    ],
+    "advantage:vesper-spider-haven": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187–189"
+      }
+    ],
+    "advantage:vesper-spider-resources": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193"
+      }
+    ],
+    "advantage:vesper-stalker-contacts": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "185"
+      }
+    ],
+    "advantage:vesper-tampon-shunned": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "194"
+      }
+    ],
+    "advantage:vesper-tampon-gullet": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:vesper-tampon-herd": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "8",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:vesper-uninvited-block": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "182"
+      }
+    ],
+    "advantage:vesper-therapist-contacts": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "185"
+      }
+    ],
+    "advantage:vesper-therapist-herd": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "189–190"
+      }
+    ],
+    "advantage:vesper-therapist-resources": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193"
+      }
+    ],
+    "advantage:vesper-warden-enemies": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "184–185"
+      }
+    ],
+    "advantage:vesper-warden-contacts": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "185"
+      }
+    ],
+    "advantage:vesper-warden-influence": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "187"
+      }
+    ],
+    "advantage:vesper-xeno-ally": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "184–185"
+      }
+    ],
+    "advantage:vesper-xeno-adversary": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "193–194"
+      }
+    ],
+    "advantage:vesper-methuselah-thirst": [
+      {
+        "book": "V5 New Predator Types — Vesper Burjoski (conteúdo comunitário)",
+        "language": "en",
+        "file": "V5NewPredatorTypes",
+        "pages": "9",
+        "pagination": "pdf"
+      },
+      {
+        "book": "Vampiro: A Máscara — Livro Básico, 5ª edição",
+        "language": "pt-BR",
+        "file": "Vampiro5edptbr",
+        "pages": "181–182"
       }
     ]
   },
@@ -12022,7 +12949,8 @@
       "power:oblivion:shadowPuppet"
     ],
     "testemunharofim": [
-      "power:oblivion:witnessTheEnd"
+      "power:oblivion:witnessTheEnd",
+      "ceremony:bully-witness-the-end"
     ],
     "mortalhaestigia": [
       "power:oblivion:stygianShroud"
@@ -14375,6 +15303,462 @@
     ],
     "peleespessasuavitalidadee4vigoremvezde3vigor": [
       "wolfadvantage:heritage_thickSkin"
+    ],
+    "feralfrenzy": [
+      "power:animalism:feralFrenzy"
+    ],
+    "huntthebeast": [
+      "power:animalism:huntTheBeast"
+    ],
+    "avisaraalcateia": [
+      "power:animalism:warnThePack"
+    ],
+    "warnthepack": [
+      "power:animalism:warnThePack"
+    ],
+    "howlofrage": [
+      "power:animalism:howlOfRage"
+    ],
+    "markprey": [
+      "power:animalism:markPrey"
+    ],
+    "packfrenzy": [
+      "power:animalism:packFrenzy"
+    ],
+    "subsumetheservant": [
+      "power:animalism:subsumeTheServant"
+    ],
+    "liedetector": [
+      "power:auspex:lieDetector"
+    ],
+    "decipher": [
+      "power:auspex:decipher"
+    ],
+    "implantdream": [
+      "power:auspex:implantDream"
+    ],
+    "readopponent": [
+      "power:auspex:readOpponent"
+    ],
+    "sensestrengthsandweaknesses": [
+      "power:auspex:senseStrengthsAndWeaknesses"
+    ],
+    "retaliacaopsiquica": [
+      "power:auspex:psychicBacklash"
+    ],
+    "psychicbacklash": [
+      "power:auspex:psychicBacklash"
+    ],
+    "controlmomentum": [
+      "power:celerity:controlMomentum"
+    ],
+    "examinarorecinto": [
+      "power:celerity:scanTheRoom"
+    ],
+    "scantheroom": [
+      "power:celerity:scanTheRoom"
+    ],
+    "combattempest": [
+      "power:celerity:combatTempest"
+    ],
+    "speedispower": [
+      "power:celerity:speedIsPower"
+    ],
+    "furiousfrenzy": [
+      "power:celerity:furiousFrenzy"
+    ],
+    "longdistancejourney": [
+      "power:celerity:longDistanceJourney"
+    ],
+    "declareweakness": [
+      "power:dominate:declareWeakness"
+    ],
+    "comandoemobjeto": [
+      "power:dominate:objectCommand"
+    ],
+    "objectcommand": [
+      "power:dominate:objectCommand"
+    ],
+    "mentalconditioning": [
+      "power:dominate:mentalConditioning"
+    ],
+    "energyvampire": [
+      "power:dominate:energyVampire"
+    ],
+    "eternalvigilance": [
+      "power:fortitude:eternalVigilance"
+    ],
+    "mentalvault": [
+      "power:fortitude:mentalVault"
+    ],
+    "returntosender": [
+      "power:fortitude:returnToSender"
+    ],
+    "dormircomopedra": [
+      "power:fortitude:sleepLikeStone"
+    ],
+    "sleeplikestone": [
+      "power:fortitude:sleepLikeStone"
+    ],
+    "duplicate": [
+      "power:obfuscate:duplicate"
+    ],
+    "shapeaura": [
+      "power:obfuscate:shapeAura"
+    ],
+    "hiddenblade": [
+      "power:obfuscate:hiddenBlade"
+    ],
+    "memoriadesvanecida": [
+      "power:obfuscate:fadingMemory"
+    ],
+    "fadingmemory": [
+      "power:obfuscate:fadingMemory"
+    ],
+    "queimadaverbal": [
+      "power:potence:roasted"
+    ],
+    "roasted": [
+      "power:potence:roasted"
+    ],
+    "arremessoespecial": [
+      "power:potence:fastballSpecial"
+    ],
+    "fastballspecial": [
+      "power:potence:fastballSpecial"
+    ],
+    "mensagenssutis": [
+      "power:presence:subtleMessages"
+    ],
+    "subtlemessages": [
+      "power:presence:subtleMessages"
+    ],
+    "throneroom": [
+      "power:presence:throneRoom"
+    ],
+    "obsession": [
+      "power:presence:obsession"
+    ],
+    "twistwords": [
+      "power:presence:twistWords"
+    ],
+    "piadamortal": [
+      "power:presence:hideousLaughter"
+    ],
+    "killingjoke": [
+      "power:presence:hideousLaughter"
+    ],
+    "mindprison": [
+      "power:presence:mindPrison"
+    ],
+    "trocardepele": [
+      "power:protean:shedSkin"
+    ],
+    "shedskin": [
+      "power:protean:shedSkin"
+    ],
+    "toolsofnature": [
+      "power:protean:toolsOfNature"
+    ],
+    "swarmform": [
+      "power:protean:swarmForm"
+    ],
+    "traversetheearth": [
+      "power:protean:traverseTheEarth"
+    ],
+    "bloodobject": [
+      "power:bloodsorcery:bloodObject"
+    ],
+    "bloodtendrils": [
+      "power:bloodsorcery:bloodTendrils"
+    ],
+    "dilutetheline": [
+      "power:bloodsorcery:diluteTheLine"
+    ],
+    "perdicaodocurador": [
+      "power:bloodsorcery:healersBane"
+    ],
+    "healersbane": [
+      "power:bloodsorcery:healersBane"
+    ],
+    "crimsonfury": [
+      "power:bloodsorcery:crimsonFury"
+    ],
+    "curseoftheslowblood": [
+      "power:bloodsorcery:curseOfTheSlowBlood"
+    ],
+    "telekinesis": [
+      "power:bloodsorcery:telekinesis"
+    ],
+    "abyssalpulse": [
+      "power:oblivion:abyssalPulse"
+    ],
+    "marionetedesombras": [
+      "power:oblivion:shadowPuppet"
+    ],
+    "shadowpuppet": [
+      "power:oblivion:shadowPuppet"
+    ],
+    "businessowner": [
+      "predator:business_owner"
+    ],
+    "confidant": [
+      "predator:confidant"
+    ],
+    "sanguessugacorporativa": [
+      "predator:corporate_leech"
+    ],
+    "corporateleech": [
+      "predator:corporate_leech"
+    ],
+    "eattherich": [
+      "predator:eat_the_rich"
+    ],
+    "esconderecomer": [
+      "predator:hide_and_eat"
+    ],
+    "hideandeat": [
+      "predator:hide_and_eat"
+    ],
+    "cacadorhospitalar": [
+      "predator:hospital_hunter"
+    ],
+    "hospitalhunter": [
+      "predator:hospital_hunter"
+    ],
+    "kidnapper": [
+      "predator:kidnapper"
+    ],
+    "labrat": [
+      "predator:lab_rat"
+    ],
+    "localhaunt": [
+      "predator:local_haunt"
+    ],
+    "lurkerinthecrowd": [
+      "predator:lurker_in_crowd"
+    ],
+    "predadordossonhos": [
+      "predator:manic_pixie"
+    ],
+    "manicpixiepredator": [
+      "predator:manic_pixie"
+    ],
+    "onlinepredator": [
+      "predator:online_predator"
+    ],
+    "opportunist": [
+      "predator:opportunist"
+    ],
+    "cacadordematilha": [
+      "predator:pack_hunter"
+    ],
+    "packhunter": [
+      "predator:pack_hunter"
+    ],
+    "pagarpelapresa": [
+      "predator:pay_for_blood"
+    ],
+    "payforprey": [
+      "predator:pay_for_blood"
+    ],
+    "cacadorderua": [
+      "predator:street_feeder"
+    ],
+    "streetfeeder": [
+      "predator:street_feeder"
+    ],
+    "vigianaagua": [
+      "predator:watcher_from_water"
+    ],
+    "watcherinthewater": [
+      "predator:watcher_from_water"
+    ],
+    "wolfinsheepsclothing": [
+      "predator:wolfinsheepsclothing"
+    ],
+    "alertacontrainvasores": [
+      "ritual:bully-warning-against-trespassers"
+    ],
+    "warningagainsttrespassers": [
+      "ritual:bully-warning-against-trespassers"
+    ],
+    "vitaeviciante": [
+      "ritual:bully-addictive-vitae"
+    ],
+    "addictivevitae": [
+      "ritual:bully-addictive-vitae"
+    ],
+    "homunculodesangue": [
+      "ritual:bully-blood-homunculus"
+    ],
+    "bloodhomunculus": [
+      "ritual:bully-blood-homunculus"
+    ],
+    "alquimia": [
+      "ritual:bully-alchemy"
+    ],
+    "alchemy": [
+      "ritual:bully-alchemy"
+    ],
+    "envenenarafonte": [
+      "ritual:bully-poison-the-well"
+    ],
+    "poisonthewell": [
+      "ritual:bully-poison-the-well"
+    ],
+    "controlaroclima": [
+      "ritual:bully-control-weather"
+    ],
+    "controlweather": [
+      "ritual:bully-control-weather"
+    ],
+    "witnesstheend": [
+      "ceremony:bully-witness-the-end"
+    ],
+    "cacadordeambulancias": [
+      "predator:vesper-ambulance-chaser"
+    ],
+    "ambulancechaservesperburjoski": [
+      "predator:vesper-ambulance-chaser"
+    ],
+    "apadrinhadodesangue": [
+      "predator:vesper-blood-baby"
+    ],
+    "bloodbabyvesperburjoski": [
+      "predator:vesper-blood-baby"
+    ],
+    "codependente": [
+      "predator:vesper-codependent"
+    ],
+    "codependentvesperburjoski": [
+      "predator:vesper-codependent"
+    ],
+    "reidoscondimentos": [
+      "predator:vesper-condiment-king"
+    ],
+    "condimentkingvesperburjoski": [
+      "predator:vesper-condiment-king"
+    ],
+    "contratante": [
+      "predator:vesper-contractor"
+    ],
+    "contractorvesperburjoski": [
+      "predator:vesper-contractor"
+    ],
+    "comensaldeentrega": [
+      "predator:vesper-delivery-diner"
+    ],
+    "deliverydinervesperburjoski": [
+      "predator:vesper-delivery-diner"
+    ],
+    "carcereiroparticular": [
+      "predator:vesper-incarcerator"
+    ],
+    "incarceratorvesperburjoski": [
+      "predator:vesper-incarcerator"
+    ],
+    "jejuadorintermitente": [
+      "predator:vesper-intermittent-faster"
+    ],
+    "intermittentfastervesperburjoski": [
+      "predator:vesper-intermittent-faster"
+    ],
+    "semmascara": [
+      "predator:vesper-maskless"
+    ],
+    "masklessvesperburjoski": [
+      "predator:vesper-maskless"
+    ],
+    "oportunistavesperburjoski": [
+      "predator:vesper-opportunist"
+    ],
+    "opportunistvesperburjoski": [
+      "predator:vesper-opportunist"
+    ],
+    "parasita": [
+      "predator:vesper-parasite"
+    ],
+    "parasitevesperburjoski": [
+      "predator:vesper-parasite"
+    ],
+    "prolenumerosa": [
+      "predator:vesper-quiverfull"
+    ],
+    "quiverfullvesperburjoski": [
+      "predator:vesper-quiverfull"
+    ],
+    "reciclador": [
+      "predator:vesper-recycler"
+    ],
+    "recyclervesperburjoski": [
+      "predator:vesper-recycler"
+    ],
+    "regulador": [
+      "predator:vesper-regulator"
+    ],
+    "regulatorvesperburjoski": [
+      "predator:vesper-regulator"
+    ],
+    "alimentadorremoto": [
+      "predator:vesper-remote-feeder"
+    ],
+    "remotefeedervesperburjoski": [
+      "predator:vesper-remote-feeder"
+    ],
+    "bebericador": [
+      "predator:vesper-sipper"
+    ],
+    "sippervesperburjoski": [
+      "predator:vesper-sipper"
+    ],
+    "desviadordesangue": [
+      "predator:vesper-skimmer"
+    ],
+    "skimmervesperburjoski": [
+      "predator:vesper-skimmer"
+    ],
+    "especime": [
+      "predator:vesper-specimen"
+    ],
+    "specimenvesperburjoski": [
+      "predator:vesper-specimen"
+    ],
+    "aranha": [
+      "predator:vesper-spider"
+    ],
+    "spidervesperburjoski": [
+      "predator:vesper-spider"
+    ],
+    "perseguidorvesperburjoski": [
+      "predator:vesper-stalker"
+    ],
+    "stalkervesperburjoski": [
+      "predator:vesper-stalker"
+    ],
+    "sugadordeabsorventes": [
+      "predator:vesper-tampon-sucker"
+    ],
+    "tamponsuckervesperburjoski": [
+      "predator:vesper-tampon-sucker"
+    ],
+    "terapeuta": [
+      "predator:vesper-therapist"
+    ],
+    "therapistvesperburjoski": [
+      "predator:vesper-therapist"
+    ],
+    "carcereiroinstitucional": [
+      "predator:vesper-warden"
+    ],
+    "wardenvesperburjoski": [
+      "predator:vesper-warden"
+    ],
+    "xenofilo": [
+      "predator:vesper-xenophile"
+    ],
+    "xenophilevesperburjoski": [
+      "predator:vesper-xenophile"
     ]
   }
 }

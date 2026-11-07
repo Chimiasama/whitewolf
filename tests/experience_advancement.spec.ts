@@ -673,7 +673,7 @@ test("Méritos comunitários: Competência usa taxa de clã e Alchemy Expert usa
       advantages: [
         {
           id: "disciplinecompetence",
-          cost: 6,
+          cost: 5,
           name: "Competência",
           type: "advantage",
           description: "",
@@ -716,7 +716,7 @@ test("Méritos comunitários: Competência usa taxa de clã e Alchemy Expert usa
       merit: parseCharacter(a).advantages[0].cost,
     };
   });
-  expect(r).toEqual({ competence: 5, alchemy: 7, parsed: 1, merit: 6 });
+  expect(r).toEqual({ competence: 5, alchemy: 7, parsed: 1, merit: 5 });
 });
 test("criação mantém dois níveis da mesma Loresheet e gerador evita Dons duplicados por acesso", async ({
   page,

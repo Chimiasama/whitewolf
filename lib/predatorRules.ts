@@ -129,3 +129,20 @@ export function changePredator(
     ],
   };
 }
+
+/** Allocate across any number of backgrounds, preserving the exact package total. */
+export function distributePredatorPoints(group:NonNullable<PredatorTypeDetail['allocations']>[number],previous:Record<string,number>,id:string,value:number):Record<string,number>{
+ const index=group.options.findIndex(option=>option.id===id);
+ if(index<0||!Number.isInteger(value)||value<0||value>group.total)return previous;
+ const allowed=group.options.map(option=>option.levels?.some(n=>n>0)?[...new Set([0,...option.levels])].filter(n=>n<=group.total):Array.from({length:group.total+1},(_,n)=>n));
+ if(!allowed[index].includes(value))return previous;
+ const current=group.options.map((option,i)=>previous[option.id]??(i===0?group.total:0));
+ let best:number[]|undefined,bestScore=Infinity;
+ const visit=(i:number,values:number[],sum:number)=>{
+  if(sum>group.total)return;
+  if(i===group.options.length){if(sum!==group.total)return;const score=values.reduce((total,n,j)=>total+Math.abs(n-current[j]),0);if(score<bestScore){best=values;bestScore=score;}return;}
+  for(const n of i===index?[value]:allowed[i])visit(i+1,[...values,n],sum+n);
+ };
+ visit(0,[],0);
+ return best?{...previous,...Object.fromEntries(group.options.map((option,i)=>[option.id,best![i]]))}:previous;
+}

@@ -1,3 +1,4 @@
+import {powerPrerequisitesMet} from "./powerRequirements";
 import {LOW_CLAN_DISCIPLINES} from '../data/v5Loresheets';
 import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
 import {baneSeverity,hasAlternativeBane} from '../data/alternativeBanes';
@@ -119,10 +120,10 @@ export function quotePurchase(
     from = c[field][r.key];
     to = rank(from);
     label = t(`${field}.list.${r.key}`);
-    dotCost(attr ? (fast ? 4 : 5) : fast ? 2 : 3);
+    dotCost(attr ? 5 : fast ? 2 : 3);
     patch = { [field]: { ...c[field], [r.key]: to } };
-    if (fast) {
-      reference = "Player’s Guide 02 (Bully), p. 11 — Fast Learner";
+    if (fast && !attr) {
+      reference = "Player’s Guide — Bully, PDF atual, p. 14 — Fast Learner";
       formula += " · Aprendizado Rápido";
     }
     if (
@@ -160,7 +161,7 @@ export function quotePurchase(
       specialties: [...c.specialties, { skill: r.key as Skill, name }],
     };
     if (fast) {
-      reference = "Player’s Guide 02 (Bully), p. 11 — Fast Learner";
+      reference = "Player’s Guide — Bully, PDF atual, p. 14 — Fast Learner";
       formula += " · Aprendizado Rápido";
     }
   } else if (r.kind === "advantage") {
@@ -253,7 +254,7 @@ export function quotePurchase(
       reject(
         "Escolha um poder ou fórmula novo, do nível adquirido ou inferior.",
       );
-    if (p.prerequisite && !ids.includes(p.prerequisite))
+    if (!powerPrerequisitesMet(p,ids))
       reject("Falta o poder pré-requisito.");
     const newDisc = { ...c.disciplines, [r.key]: to };
     if (p.amalgam?.some((a) => (newDisc[a.discipline] || 0) < a.level))
@@ -261,7 +262,7 @@ export function quotePurchase(
     const traded = c.loresheets.some(l=>l.id==="v5-low-clan"&&l.level===4)&&c.resourceChoices?.lowClanDiscipline===r.key&&LOW_CLAN_DISCIPLINES.includes(r.key);
     const favored = traded ||
       c.advantages.some(
-        (a) => a.id === "disciplinecompetence" && a.cost === 6,
+        (a) => a.id === "disciplinecompetence" && a.cost === 5,
       ) && c.disciplineCompetence === r.key;
     const clan =
       fnGetClanDetails(t)[c.clan]?.disciplines.includes(r.key) || favored;
@@ -313,7 +314,7 @@ export function quotePurchase(
     const ceremony=OBLIVION_CEREMONIES.find(x=>x.id===r.key);
     if(!ceremony)reject("Cerimônia fora do catálogo.");
     if((c.disciplines.oblivion||0)<ceremony.level)reject("Cerimônia exige Oblívio do mesmo nível ou superior.");
-    if(!c.disciplinePowers.oblivion?.includes(ceremony.prerequisite))reject("Falta o poder obrigatório desta Cerimônia.");
+    if(ceremony.prerequisite&&!c.disciplinePowers.oblivion?.includes(ceremony.prerequisite))reject("Falta o poder obrigatório desta Cerimônia.");
     if(c.rituals.some(x=>x.id===ceremony.id))reject("Cerimônia já adquirida.");
     to=ceremony.level;cost=to*3;formula=`Cerimônia nível ${to} × 3 = ${cost} XP`;
     label=ceremony.name;reference=ceremony.description;

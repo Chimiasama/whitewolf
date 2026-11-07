@@ -1,3 +1,4 @@
+import {powerPrerequisitesMet} from "./powerRequirements";
 import { fnGetDisciplineDetails } from '../constants';
 import { W5_TRIBES } from '../data/w5';
 import { Character, GameType } from '../types';
@@ -39,7 +40,7 @@ export function asNarrativeNpc(c:Character,scale:string,role?:string):Character 
  const powers=fnGetDisciplineDetails(k=>k);
  const disciplinePowers:Record<string,string[]>={};
  for(const [key,dots] of Object.entries(c.disciplines)){
-  const chosen:string[]=[]; for(let slot=1;slot<=dots;slot++){const eligible=powers[key]?.powers.filter(p=>p.level<=slot&&!chosen.includes(p.id)&&(!p.prerequisite||chosen.includes(p.prerequisite))&&(!p.amalgam||p.amalgam.every(r=>(c.disciplines[r.discipline]||0)>=r.level)))||[];if(eligible.length)chosen.push(eligible[Math.floor(Math.random()*eligible.length)].id);}
+  const chosen:string[]=[]; for(let slot=1;slot<=dots;slot++){const eligible=powers[key]?.powers.filter(p=>p.level<=slot&&!chosen.includes(p.id)&&powerPrerequisitesMet(p,chosen)&&(!p.amalgam||p.amalgam.every(r=>(c.disciplines[r.discipline]||0)>=r.level)))||[];if(eligible.length)chosen.push(eligible[Math.floor(Math.random()*eligible.length)].id);}
   disciplinePowers[key]=chosen;
  }
  const profile=pickNpcRole(c.gameType,role);

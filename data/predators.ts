@@ -1,3 +1,5 @@
+import {VESPER_PREDATORS} from "./vesperPredators";
+import {applyGuidePredator} from "./unofficialGuide";
 import { AdvantageFlaw, PredatorTypeDetail, Skill } from "../types";
 import { resolvePredator } from "../lib/predatorRules";
 const a = (
@@ -204,7 +206,7 @@ export function completePredators(
       ],
     ),
   ];
-  return [...existing, ...additions].map((base) => {
+  return [...existing, ...additions, ...VESPER_PREDATORS].map((base) => {
     const english: Record<string, string> = {
       business_owner: "Business Owner",
       confidant: "Confidant",
@@ -235,7 +237,7 @@ export function completePredators(
     const p: PredatorTypeDetail = {
       ...base,
       englishName: base.englishName || english[base.id],
-      disciplineOptions: disciplines[base.id],
+      disciplineOptions: disciplines[base.id] || base.disciplineOptions,
       source:
         base.source ||
         ([
@@ -379,8 +381,9 @@ export function completePredators(
         },
       ];
     }
-    p.fixedAdvantages = p.advantages;
-    p.fixedFlaws = p.flaws;
-    return resolvePredator(p);
+    const reviewed = applyGuidePredator(p);
+    reviewed.fixedAdvantages = reviewed.advantages;
+    reviewed.fixedFlaws = reviewed.flaws;
+    return resolvePredator(reviewed);
   });
 }

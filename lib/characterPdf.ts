@@ -37,7 +37,7 @@ export async function buildCharacterPdf(c:Character,t:Translate){
  const heading=(text:string)=>{room(18);y+=3;line(text,14);doc.setDrawColor(165,165,165);doc.line(18,y-1,192,y-1);y+=3;};
  const field=(name:string,value:unknown)=>{if(value!==undefined&&value!==null&&String(value).trim())line(`${name}: ${value}`);};
  const fields=(values:object|undefined)=>{for(const [key,value] of Object.entries(values||{}))if(key!=='id')field(labels[key]||key,value);};
- const sources=(title:string,sourceKey?:string)=>{for(const ref of getBookReferences(title,sourceKey,c.gameType||GameType.Vampire))if(ref.pages)line(`${ref.book} - p. ${ref.pages}${ref.language==='pt-BR'?' (pt-BR)':' (inglês)'}`,8);};
+ const sources=(title:string,sourceKey?:string)=>{for(const ref of getBookReferences(title,sourceKey,c.gameType||GameType.Vampire))if(ref.pages)line(`${ref.book} - p. ${ref.pages}${ref.pagination==='pdf'?' do PDF':''}${ref.language==='pt-BR'?' (pt-BR)':' (inglês)'}`,8);};
  const grid=(items:{name:string;value:number}[],columns=3)=>{const rows=Math.ceil(items.length/columns),width=174/columns;room(rows*6+3);doc.setFontSize(9);doc.setTextColor(25,25,25);for(let col=0;col<columns;col++)for(let row=0;row<rows;row++){const item=items[col*rows+row];if(item)doc.text(`${item.name}: ${item.value}`,18+col*width,y+row*6);}y+=rows*6+3;};
  line(c.name||'Personagem sem nome',20);
  line(wolf?'Lobisomem: O Apocalipse - 5ª edição':'Vampiro: A Máscara - 5ª edição',10);

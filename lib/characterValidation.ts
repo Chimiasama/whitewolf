@@ -1,3 +1,4 @@
+import {powerPrerequisitesMet} from "./powerRequirements";
 import {hasAlternativeBane} from '../data/alternativeBanes';
 import {BLOOD_RITUALS} from '../data/bloodRituals';
 import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
@@ -122,12 +123,12 @@ export function finishingIssues(c:Character):string[]{
    if(c.predatorType==='farmer'&&c.bloodPotency>=3)issues.push('Fazendeiro exige Potência de Sangue menor que 3.');
    if(predator&&c.predatorDiscipline&&!availablePredatorDisciplines(predator,c.clan).includes(c.predatorDiscipline))issues.push('Disciplina de predador incompatível com o pacote ou clã.');
    if(predator)for(const group of predator.choices||[])if(c.predatorChoices?.[group.id]&&!group.options.some(o=>o.id===c.predatorChoices[group.id]))issues.push(`Predador: escolha válida exigida para ${group.label}.`);
-   if(predator)for(const group of predator.allocations||[]){const sum=group.options.reduce((s,o,i)=>s+(c.predatorAllocations?.[o.id]??(i===0?group.total:0)),0);if(sum!==group.total)issues.push(`Distribua ${group.total} pontos em ${group.label} do predador.`);}
+   if(predator)for(const group of predator.allocations||[]){const sum=group.options.reduce((s,o,i)=>s+(c.predatorAllocations?.[o.id]??(i===0?group.total:0)),0);if(sum!==group.total||group.options.some(o=>{const n=c.predatorAllocations?.[o.id]??(group.options[0].id===o.id?group.total:0);return n>0&&o.levels?.some(level=>level>0)&&!o.levels.includes(n);}))issues.push(`Distribua ${group.total} pontos em ${group.label} do predador.`);}
    if(c.predatorType&&!predator)issues.push('Tipo de predador desconhecido.');
    if(!c.predatorType)issues.push('Defina o predador ou revise com o Narrador a exceção de recém-criado.');
   }
   const details=fnGetDisciplineDetails(k=>k);
-  for(const [key,dots]of Object.entries(c.disciplines)){const ids=c.disciplinePowers[key]||[];const levels=ids.map(id=>details[key]?.powers.find(p=>p.id===id)?.level||0).sort((a,b)=>b-a);if(levels.some((level,i)=>level>dots-i))issues.push(`Distribuição de poderes inválida: ${key}.`);if(ids.length!==dots)issues.push(`Selecione ${dots} poderes de ${key}.`);for(const id of ids){const p=details[key]?.powers.find(p=>p.id===id);if(!p||p.level>dots||(p.prerequisite&&!ids.includes(p.prerequisite))||p.amalgam?.some(r=>(c.disciplines[r.discipline]||0)<r.level))issues.push(`Reveja os requisitos de ${key}.`);}}
+  for(const [key,dots]of Object.entries(c.disciplines)){const ids=c.disciplinePowers[key]||[];const levels=ids.map(id=>details[key]?.powers.find(p=>p.id===id)?.level||0).sort((a,b)=>b-a);if(levels.some((level,i)=>level>dots-i))issues.push(`Distribuição de poderes inválida: ${key}.`);if(ids.length!==dots)issues.push(`Selecione ${dots} poderes de ${key}.`);for(const id of ids){const p=details[key]?.powers.find(p=>p.id===id);if(!p||p.level>dots||!powerPrerequisitesMet(p,ids)||p.amalgam?.some(r=>(c.disciplines[r.discipline]||0)<r.level))issues.push(`Reveja os requisitos de ${key}.`);}}
  }
  return issues;
 }
@@ -166,7 +167,7 @@ export function advancementIssues(c:Character):string[]{
  for(const ritual of c.rituals){
   const blood=BLOOD_RITUALS.find(x=>x.id===ritual.id),ceremony=OBLIVION_CEREMONIES.find(x=>x.id===ritual.id);
   if(blood&&(c.disciplines.bloodsorcery||0)<blood.level)issues.push('Ritual exige Feitiçaria de Sangue '+blood.level+'.');
-  if(ceremony&&((c.disciplines.oblivion||0)<ceremony.level||!c.disciplinePowers.oblivion?.includes(ceremony.prerequisite)))issues.push('Cerimônia exige Oblívio e seu poder obrigatório.');
+  if(ceremony&&((c.disciplines.oblivion||0)<ceremony.level||(ceremony.prerequisite&&!c.disciplinePowers.oblivion?.includes(ceremony.prerequisite))))issues.push('Cerimônia exige Oblívio e seu poder obrigatório.');
  }
  if(hasAlternativeBane(c)&&!ALTERNATIVE_BANES.some(b=>b.clan===c.clan))issues.push('O perfil escolhido não possui Maldição alternativa.');
  if(c.gameType===GameType.Vampire){
@@ -174,7 +175,7 @@ export function advancementIssues(c:Character):string[]{
   for(const [key,dots] of Object.entries(c.disciplines)){
    const ids=c.disciplinePowers[key]||[];
    if((key==='thinbloodalchemy'?ids.length<dots:ids.length!==dots)||new Set(ids).size!==ids.length)issues.push(`Reveja a quantidade de poderes de ${key}.`);
-   for(const id of ids){const p=catalog[key]?.powers.find(x=>x.id===id);if(!p||p.level>dots||(p.prerequisite&&!ids.includes(p.prerequisite))||p.amalgam?.some(r=>(c.disciplines[r.discipline]||0)<r.level))issues.push(`Reveja os requisitos de ${key}.`);}
+   for(const id of ids){const p=catalog[key]?.powers.find(x=>x.id===id);if(!p||p.level>dots||!powerPrerequisitesMet(p,ids)||p.amalgam?.some(r=>(c.disciplines[r.discipline]||0)<r.level))issues.push(`Reveja os requisitos de ${key}.`);}
   }
  }else if(!c.tribe||!c.auspice)issues.push('Selecione tribo e augúrio.');
  return issues;

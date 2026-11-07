@@ -1,3 +1,4 @@
+import {GUIDE_RITUALS} from "./unofficialGuide";
 /** Initial rituals explicitly listed at level 1 in V5 core, pp. 276–277. */
 export const INITIAL_BLOOD_RITUALS = [
   {
@@ -393,3 +394,5 @@ export const BLOOD_RITUALS = [...INITIAL_BLOOD_RITUALS, ...[{"level":2,"id":"v5-
     "description": "Reveste os braços para manejar chamas; versão de Cults. Creatio Ignis — nível 5; docs/Vampire5edCultsoftheBloddGods:L5052."
   }
 ]];
+
+BLOOD_RITUALS.push(...GUIDE_RITUALS);

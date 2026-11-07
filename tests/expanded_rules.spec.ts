@@ -8,7 +8,7 @@ test('catálogos: identidades, acessos, níveis e referências',async({page})=>{
   const {V5_LORESHEETS}=await import('/data/v5Loresheets.ts');
   const {ALTERNATIVE_BANES}=await import('/data/alternativeBanes.ts');
   return {gifts:new Set(W5_GIFTS.map(g=>w5GiftIdentity(g.id))).size,accesses:W5_GIFTS.length,ids:new Set(W5_GIFTS.map(g=>g.id)).size,rituals:BLOOD_RITUALS.length,ceremonies:OBLIVION_CEREMONIES.length,lore:V5_LORESHEETS.length,banes:ALTERNATIVE_BANES.length,levels:[...new Set(BLOOD_RITUALS.map(r=>r.level))].sort()};
- });expect(result).toEqual({gifts:127,accesses:182,ids:182,rituals:47,ceremonies:10,lore:25,banes:14,levels:[1,2,3,4,5]});
+ });expect(result).toEqual({gifts:127,accesses:182,ids:182,rituals:53,ceremonies:11,lore:25,banes:14,levels:[1,2,3,4,5]});
 });
 test('cerimônias: poder obrigatório, custo e duplicação',async({page})=>{
  const result=await page.evaluate(async()=>{

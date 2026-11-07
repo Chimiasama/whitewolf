@@ -1,3 +1,4 @@
+import {GUIDE_CEREMONIES} from "./unofficialGuide";
 /** Acquisition prerequisites; casting effects remain with the Storyteller. */
 export const OBLIVION_CEREMONIES = [
   {
@@ -91,3 +92,5 @@ export const OBLIVION_CEREMONIES = [
     "description": "Devolve movimento a um corpo como receptáculo de aparição. Lazarene Blessing; Cults of the Blood Gods, seção Oblivion Ceremonies; docs/Vampire5edCultsoftheBloddGods:L18168."
   }
 ];
+
+OBLIVION_CEREMONIES.push(...GUIDE_CEREMONIES);

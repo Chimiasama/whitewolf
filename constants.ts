@@ -1,3 +1,4 @@
+import {applyGuidePowers} from "./data/unofficialGuide";
 import {withVerifiedAdvantageCost} from "./data/advantageFullTexts";
 import {expandPowers} from './data/expandedPowers';
 import {V5_LORESHEETS} from './data/v5Loresheets';
@@ -491,6 +492,11 @@ export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | nul
         { id: 'herd', name: fnT('advantages.herd.name'), description: fnT('advantages.herd.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'bloodhound', name: fnT('advantages.bloodhound.name'), description: fnT('advantages.bloodhound.description'), cost: 1, type: 'advantage', levels: [1]},
 
+        {id:'vesper-reanimated-emotions',name:"Emoções Reanimadas",description:"Sua sintonia com a Ressonância altera os testes de frenesi conforme a Ressonância atual. Colérica: +2 dados contra frenesi de Fome e −1 contra Fúria. Melancólica: +2 contra Fúria e −1 contra terror. Fleumática: +1 contra todos os frenesis e −1 em testes Sociais que não usem Autocontrole. Sanguínea: +2 contra terror e −1 contra Fome. O pacote de Regulador determina o custo de dois pontos.",cost:2,type:'advantage',levels:[2]},
+        {id:'vesper-dependent',name:"Dependente",description:"Você depende de um único mortal para todo o sangue. Alimentar-se de outro mortal causa uma Mácula. Se sua fonte morrer por qualquer motivo que não seja seu Abraço, receba duas Máculas adicionais. Enquanto estiver sem uma fonte exclusiva, não recebe Máculas por alimentar-se de outros mortais. O pacote de Codependente determina o custo de dois pontos.",cost:2,type:'flaw',levels:[2]},
+        {id:'vesper-intermittent-fasting',name:"Jejum Intermitente",description:"Você procura alimentar-se no máximo uma vez por noite para limitar o peso que impõe ao mundo. Se o fizer mais de uma vez na mesma noite, receba uma Mácula. O pacote de Jejuador Intermitente determina o custo de dois pontos.",cost:2,type:'flaw',levels:[2]},
+        {id:'vesper-light-stomach',name:"Estômago Leve",description:"Seu corpo se acostumou a refeições mínimas. Se saciar mais de um ponto de Fome por cena, vomita o sangue e faz tantas Checagens de Sangue quanto os pontos de Fome saciados naquela cena. Pode gastar um ponto de Força de Vontade para atrasar a expulsão por um turno por ponto gasto, mas ela é inevitável. Os pacotes de Bebericador e Desviador de Sangue determinam o custo de dois pontos.",cost:2,type:'flaw',levels:[2]},
+        {id:'beasttamer',name:'Domador da Besta',description:'Mantém dormente a Besta de um aliado em frenesi, sob condições específicas.',cost:3,type:'advantage',levels:[3]},
         { id: 'calmheart', name: fnT('advantages.calmheart.name'), description: fnT('advantages.calmheart.description'), cost: 4, type: 'advantage', levels: [4] },
         { id: 'daredevil', name: fnT('advantages.daredevil.name'), description: fnT('advantages.daredevil.description'), cost: 3, type: 'advantage', levels: [3] },
         { id: 'codeofhonor', name: fnT('advantages.codeofhonor.name'), description: fnT('advantages.codeofhonor.description'), cost: 2, type: 'advantage', levels: [2] },
@@ -966,4 +972,4 @@ export const oInitialCharacter: Character = {
   loresheets: []
 };
 
-export const fnGetDisciplineDetails = (t:TFunction):Record<string,DisciplineDetail> => expandPowers(fnGetBaseDisciplineDetails(t));
+export const fnGetDisciplineDetails = (t:TFunction):Record<string,DisciplineDetail> => expandPowers(applyGuidePowers(fnGetBaseDisciplineDetails(t)));

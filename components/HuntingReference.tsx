@@ -24,7 +24,7 @@ export function HuntingReference({ predator: p }: { predator: PredatorTypeDetail
       {reference ? <>
         <TestList tests={reference.tests} />
         {reference.note && <p>{reference.note}</p>}
-        {reference.community && <p className="text-xs text-gray-400">Fonte comunitária de Bully; estas paradas não pertencem ao Players Guide oficial.</p>}
+        {reference.community && <p className="text-xs text-gray-400">Material comunitário; estas opções não pertencem ao Players Guide oficial. A autoria e a página estão indicadas na referência.</p>}
       </> : <p>Não há uma parada conferida para este tipo. Combine a abordagem e a parada com o Narrador.</p>}
     </section>
     {reference?.additionalTests?.length > 0 && <section className="space-y-2">

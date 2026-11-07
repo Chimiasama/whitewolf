@@ -1,3 +1,5 @@
+import vesperPredators from "./vesperPredators.json";
+import currentGuidePredators from "./unofficialGuidePredators.json";
 /** Conferido nas transcrições V5 em docs/. Nomes pt-BR seguem o básico brasileiro.
  * As condições são resumos; os testes não alteram a ficha nem executam dados. */
 export interface HuntingTest {
@@ -480,3 +482,16 @@ export const DOMAIN_HUNTING_NOTES: Record<string, string[]> = {
   farmer:['Marco cultural (Cultural Landmark): +1 dado se houver animais no local.'],
 };
 export const DOMAIN_HUNTING_SOURCE = 'Players Guide, Qualidades de Domínio, pp. 176–177 (docs/Vampire5edPlayersGuide01). Exigem a Qualidade correspondente no domínio: a mera existência de um hospital, beco ou abrigo não concede esses bônus. Não são novas paradas nem bônus automáticos por escolher um tipo de predador.';
+
+// The supplied PDF is authoritative for this community guide, including changed pools.
+for(const [id,entry] of Object.entries(currentGuidePredators)){
+ const source=`V5 Player’s Guide — Bully (material comunitário; PDF atual), p. ${entry.page} (docs/Vampire5edPlayersGuide02)`;
+ HUNTING_REFERENCES[id]={community:true,source,tests:entry.pool?[{pool:entry.pool,use:'Parada de Predador indicada no PDF atual.',source}]:[],...(id==='online_predator'?{note:'O PDF atual, p. 10, não apresenta teste de caçada para Predador Online. Defina a abordagem e a parada com o Narrador.'}:{})};
+}
+
+for(const entry of vesperPredators){
+ const source=`V5 New Predator Types — Vesper Burjoski (material comunitário), p. ${entry.pages} do PDF; fonte sem numeração impressa.`;
+ HUNTING_REFERENCES[entry.id]={community:true,source,tests:entry.tests.map(test=>({...test,source})),note:entry.id==='vesper-intermittent-faster'?'A fonte não fixa uma combinação de Atributo + Habilidade: justifique a parada conforme a cena.':undefined};
+}
+
+Object.assign(HUNTING_POOLS,Object.fromEntries(Object.entries(HUNTING_REFERENCES).map(([id,entry])=>[id,entry.tests.map(test=>test.pool)])));

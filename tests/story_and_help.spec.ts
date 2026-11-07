@@ -128,9 +128,10 @@ test('consulta distingue teste situacional, divergência do básico e fonte comu
  await search.fill('Wolf in Sheep');
  await page.getByRole('button',{name:'Informações: Lobo em Pele de Cordeiro',exact:true}).click();
  dialog=page.getByRole('dialog',{name:'Lobo em Pele de Cordeiro',exact:true});
- await expect(dialog).toContainText('Fortitude + Armas Brancas');
- await expect(dialog).toContainText('Fortitude é uma Disciplina');
- await expect(dialog).toContainText('Fonte comunitária de Bully');
+ await expect(dialog).toContainText('Manipulação + Armas Brancas');
+ await expect(dialog).not.toContainText('Fortitude + Armas Brancas');
+ await expect(dialog).toContainText('Bully');
+ await expect(dialog).toContainText('Material comunitário');
  await page.keyboard.press('Escape');
  expect(await draft(page)).toEqual(before);
 });

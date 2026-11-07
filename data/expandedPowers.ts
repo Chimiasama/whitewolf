@@ -133,7 +133,7 @@ export const ADDITIONAL_FORMULAE: DisciplinePower[] = [
 export function expandPowers(base: Record<string,DisciplineDetail>):Record<string,DisciplineDetail> {
  const result={...base,oblivion:{...base.oblivion,powers:[...base.oblivion.powers,...NECROMANTIC_POWERS]},thinbloodalchemy:{...base.thinbloodalchemy,powers:[...base.thinbloodalchemy.powers,...ADDITIONAL_FORMULAE]}};
  const counterfeits=Object.entries(result).filter(([key])=>key!=='thinbloodalchemy').flatMap(([key,d])=>d.powers.filter(p=>p.level<=4).map(p=>({
- id:'imitate-'+key+'-'+p.id,level:p.level+1,name:'Imitação: '+p.name,
+ id:'imitate-'+key+'-'+p.id,community:p.community,level:p.level+1,name:'Imitação: '+p.name,
  description:'Fórmula de Alquimia que imita '+d.name+' '+p.level+'. '+p.description,
  system:'V5, pp. 285–287. Use Alquimia na parada. Nos níveis 4–5, exige vitae apropriada; confira ingredientes, pesquisa, Amálgamas e condições do poder com o Narrador. '+p.system
  })));

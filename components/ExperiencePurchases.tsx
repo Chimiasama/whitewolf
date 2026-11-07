@@ -193,7 +193,7 @@ export function ExperiencePurchases({
       </p>
       {!wolf &&
         c.advantages.some(
-          (a) => a.id === "disciplinecompetence" && a.cost === 6,
+          (a) => a.id === "disciplinecompetence" && [5,6].includes(a.cost),
         ) && (
           <label className="block">
             Disciplina tratada como do clã por Competência

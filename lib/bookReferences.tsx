@@ -3,6 +3,7 @@ import bibliography from '../data/bookReferences.json';
 
 export interface BookReference {
   book: string;
+  pagination?: "pdf";
   language: string;
   pages: string;
   section?: string;
@@ -50,11 +51,12 @@ export function BookSources({title = '', sourceKey}: {title?: string; sourceKey?
     <h4 className="font-semibold mb-2">Onde consultar nos livros</h4>
     <ul className="space-y-2">{references.map((ref,i)=><li key={i}>
       <span className="font-medium">{ref.book}</span>
-      {ref.pages && <span> — {ref.pages.includes('–')||ref.pages.includes('-')?'páginas':'página'} {ref.pages}</span>}
+      {ref.pages && <span> — {ref.pages.includes('–')||ref.pages.includes('-')||ref.pages.includes(',')?'páginas':'página'} {ref.pages}</span>}
+      {ref.pagination==='pdf'&&<span> do PDF (sem numeração impressa)</span>}
       {ref.language!=='unverified' && <span> ({ref.language==='pt-BR'?'português brasileiro':'inglês'})</span>}
       {ref.section && <span className="block text-xs text-gray-400">{ref.section}</span>}
     </li>)}</ul>
-    {references.some(r=>r.pages)&&<p className="mt-2 text-xs text-gray-400">Numeração impressa do livro; pode diferir do contador de páginas do PDF.</p>}
+    {references.some(r=>r.pages&&r.pagination!=='pdf')&&<p className="mt-2 text-xs text-gray-400">Numeração impressa do livro; pode diferir do contador de páginas do PDF.</p>}
   </aside>;
 }
 
