@@ -1,3 +1,5 @@
+import {applyGuidePowers} from "./data/unofficialGuide";
+import {withVerifiedAdvantageCost} from "./data/advantageFullTexts";
 import {expandPowers} from './data/expandedPowers';
 import {V5_LORESHEETS} from './data/v5Loresheets';
 import {completePredators} from './data/predators';
@@ -56,7 +58,7 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => comp
         name: fnT('predatorTypes.bagger.name'),
         description: fnT('predatorTypes.bagger.description'),
         humanityModifier: 0,
-        advantages: [{id:'iron_gullet_bagger',name:'Garganta de Ferro',description:'Iron Gullet — V5, p. 176. Alimentação com sangue armazenado; conferir restrições.',cost:3,type:'advantage',levels:[3]}],
+        advantages: [{id:'iron_gullet_bagger',name:'Esôfago de Ferro',description:'Iron Gullet — V5, p. 176. Alimentação com sangue armazenado; conferir restrições.',cost:3,type:'advantage',levels:[3]}],
         flaws: [{ id: 'enemy_bagger', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 2, type: 'flaw', levels: [2]}],
         specialties: [],
         specialtyOptions: [
@@ -419,18 +421,20 @@ export const fnGetPredatorTypes = (fnT: TFunction): PredatorTypeDetail[] => comp
 
 export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | null): AdvantageFlaw[] => {
     const common: AdvantageFlaw[] = [
-        { id: 'allies', name: fnT('advantages.allies.name'), description: fnT('advantages.allies.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
-        { id: 'contacts', name: fnT('advantages.contacts.name'), description: fnT('advantages.contacts.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
+        { id: 'allies', name: fnT('advantages.allies.name'), description: fnT('advantages.allies.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5, 6]},
+        { id: 'contacts', name: fnT('advantages.contacts.name'), description: fnT('advantages.contacts.description'), cost: 1, type: 'advantage', levels: [1, 2, 3]},
         { id: 'fame', name: fnT('advantages.fame.name'), description: fnT('advantages.fame.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'influence', name: fnT('advantages.influence.name'), description: fnT('advantages.influence.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'resources', name: fnT('advantages.resources.name'), description: fnT('advantages.resources.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'beautiful', name: fnT('advantages.beautiful.name'), description: fnT('advantages.beautiful.description'), cost: 2, type: 'advantage', levels: [2, 4]},
-        { id: 'darksecret', name: fnT('flaws.darksecret.name'), description: fnT('flaws.darksecret.description'), cost: 1, type: 'flaw', levels: [1, 2]},
-        { id: 'enemy', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 1, type: 'flaw', levels: [1, 2, 3, 4, 5]},
+        { id: 'darksecret', name: fnT('flaws.darksecret.name'), description: fnT('flaws.darksecret.description'), cost: 1, type: 'flaw', levels: [1]},
+        { id: 'enemy', name: fnT('flaws.enemy.name'), description: fnT('flaws.enemy.description'), cost: 1, type: 'flaw', levels: [1, 2]},
     ];
 
     if (gameType === GameType.Werewolf) {
-        return [
+        return ([
+            {id:'mask',name:'Máscara',description:'Identidade de cobertura e registros que sustentam sua vida pública.',cost:1,type:'advantage',levels:[1,2]},
+            {id:'spiritpact',name:'Pacto Espiritual',description:'Pacto com um espírito aliado; defina sua natureza e seu Poder.',cost:1,type:'advantage',levels:[1,2,3,4,5]},
             ...common,
             { id: 'safehouse_hidden', name: fnT('advantages.safehouse.name'), description: fnT('advantages.safehouse.hidden'), cost: 2, type: 'advantage', levels: [2]},
             { id: 'safehouse_secure', name: fnT('advantages.safehouse.name'), description: fnT('advantages.safehouse.secure'), cost: 2, type: 'advantage', levels: [2]},
@@ -478,16 +482,21 @@ export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | nul
             { id: 'metamorphosis_lunaResilience', name: fnT('advantages.metamorphosis.lunaResilience'), description: fnT('advantages.metamorphosis.lunaResilience'), cost: 2, type: 'advantage', levels: [2] },
             { id: 'supernatural_formMastery', name: fnT('advantages.supernatural.formMastery'), description: fnT('advantages.supernatural.formMastery'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5] },
             { id: 'heritage_thickSkin', name: fnT('advantages.heritage.thickSkin'), description: fnT('advantages.heritage.thickSkin'), cost: 3, type: 'advantage', levels: [3] },
-        ];
+        ] as AdvantageFlaw[]).map(item=>withVerifiedAdvantageCost(item,gameType));
     }
 
-    return [
+    return ([
         { id: 'twicecursed', name: 'Duas Vezes Amaldiçoado (Twice-Cursed)', description: 'Defeito de 2 pontos: conserva a Maldição padrão e acrescenta a variante do próprio clã. A adequação à crônica fica com o Narrador. Players Guide oficial, p. 121; variantes pp. 56–59.', cost: 2, type: 'flaw', levels: [2] },
         ...common,
-        { id: 'haven', name: fnT('advantages.haven.name'), description: fnT('advantages.haven.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
+        { id: 'haven', name: fnT('advantages.haven.name'), description: fnT('advantages.haven.description'), cost: 1, type: 'advantage', levels: [1, 2, 3]},
         { id: 'herd', name: fnT('advantages.herd.name'), description: fnT('advantages.herd.description'), cost: 1, type: 'advantage', levels: [1, 2, 3, 4, 5]},
         { id: 'bloodhound', name: fnT('advantages.bloodhound.name'), description: fnT('advantages.bloodhound.description'), cost: 1, type: 'advantage', levels: [1]},
 
+        {id:'vesper-reanimated-emotions',name:"Emoções Reanimadas",description:"Sua sintonia com a Ressonância altera os testes de frenesi conforme a Ressonância atual. Colérica: +2 dados contra frenesi de Fome e −1 contra Fúria. Melancólica: +2 contra Fúria e −1 contra terror. Fleumática: +1 contra todos os frenesis e −1 em testes Sociais que não usem Autocontrole. Sanguínea: +2 contra terror e −1 contra Fome. O pacote de Regulador determina o custo de dois pontos.",cost:2,type:'advantage',levels:[2]},
+        {id:'vesper-dependent',name:"Dependente",description:"Você depende de um único mortal para todo o sangue. Alimentar-se de outro mortal causa uma Mácula. Se sua fonte morrer por qualquer motivo que não seja seu Abraço, receba duas Máculas adicionais. Enquanto estiver sem uma fonte exclusiva, não recebe Máculas por alimentar-se de outros mortais. O pacote de Codependente determina o custo de dois pontos.",cost:2,type:'flaw',levels:[2]},
+        {id:'vesper-intermittent-fasting',name:"Jejum Intermitente",description:"Você procura alimentar-se no máximo uma vez por noite para limitar o peso que impõe ao mundo. Se o fizer mais de uma vez na mesma noite, receba uma Mácula. O pacote de Jejuador Intermitente determina o custo de dois pontos.",cost:2,type:'flaw',levels:[2]},
+        {id:'vesper-light-stomach',name:"Estômago Leve",description:"Seu corpo se acostumou a refeições mínimas. Se saciar mais de um ponto de Fome por cena, vomita o sangue e faz tantas Checagens de Sangue quanto os pontos de Fome saciados naquela cena. Pode gastar um ponto de Força de Vontade para atrasar a expulsão por um turno por ponto gasto, mas ela é inevitável. Os pacotes de Bebericador e Desviador de Sangue determinam o custo de dois pontos.",cost:2,type:'flaw',levels:[2]},
+        {id:'beasttamer',name:'Domador da Besta',description:'Mantém dormente a Besta de um aliado em frenesi, sob condições específicas.',cost:3,type:'advantage',levels:[3]},
         { id: 'calmheart', name: fnT('advantages.calmheart.name'), description: fnT('advantages.calmheart.description'), cost: 4, type: 'advantage', levels: [4] },
         { id: 'daredevil', name: fnT('advantages.daredevil.name'), description: fnT('advantages.daredevil.description'), cost: 3, type: 'advantage', levels: [3] },
         { id: 'codeofhonor', name: fnT('advantages.codeofhonor.name'), description: fnT('advantages.codeofhonor.description'), cost: 2, type: 'advantage', levels: [2] },
@@ -593,7 +602,7 @@ export const fnGetAdvantagesAndFlaws = (fnT: TFunction, gameType: GameType | nul
         { id: 'thirstforinnocence', name: fnT('flaws.thirstforinnocence.name'), description: fnT('flaws.thirstforinnocence.description'), cost: 4, type: 'flaw', levels: [4] },
         { id: 'weakblood', name: fnT('flaws.weakblood.name'), description: fnT('flaws.weakblood.description'), cost: 5, type: 'flaw', levels: [5] },
         { id: 'curseditem', name: fnT('flaws.curseditem.name'), description: fnT('flaws.curseditem.description'), cost: 2, type: 'flaw', levels: [2] },
-    ];
+    ] as AdvantageFlaw[]).map(item=>withVerifiedAdvantageCost(item,gameType));
 };
 
 export const fnTranslateAdvantageFlaw = (
@@ -963,4 +972,4 @@ export const oInitialCharacter: Character = {
   loresheets: []
 };
 
-export const fnGetDisciplineDetails = (t:TFunction):Record<string,DisciplineDetail> => expandPowers(fnGetBaseDisciplineDetails(t));
+export const fnGetDisciplineDetails = (t:TFunction):Record<string,DisciplineDetail> => expandPowers(applyGuidePowers(fnGetBaseDisciplineDetails(t)));

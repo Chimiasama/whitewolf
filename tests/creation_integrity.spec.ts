@@ -57,7 +57,7 @@ for(const game of ['Vampire','Werewolf'])test(`NPC ${game}: exporta, reimporta e
  const download=await downloadPromise;const path=testInfo.outputPath('character.json');await download.saveAs(path);
  await page.reload();await page.locator('input[type=file]').first().setInputFiles(path);
  await expect(page.getByText('NPC temático — sem orçamento de XP',{exact:true})).toBeVisible();
- await page.getByRole('button',{name:'Salvar rascunho',exact:true}).click();
+ await page.getByRole('button',{name:'Salvar personagem',exact:true}).click();
  const dialog=page.getByRole('dialog');await dialog.locator('input').fill('Teste de preservação');await dialog.getByRole('button',{name:'Salvar',exact:true}).click();
  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('whitewolf_save_Teste de preservação')!));
  expect(saved.schemaVersion).toBe(2);expect(saved.profile).toBe('npc');expect(saved.narrative.secret).toBeTruthy();expect(saved.gameType).toBe(game);
@@ -84,14 +84,14 @@ test('pacotes de predador conferidos e orçamento adicional de Loresheets',async
   const budgetIssues=finishingIssues(c).filter(s=>s.includes('7 pontos'));
   return {osiris:{humanity:osiris.humanityModifier,adv:osiris.advantages.reduce((s,a)=>s+a.cost,0),flaws:osiris.flaws.reduce((s,a)=>s+a.cost,0)},farmer:types.find(p=>p.id==='farmer').humanityModifier,bagger:bagger.advantages.map(a=>a.id),budgetIssues,community:types.find(p=>p.id==='business_owner').source};
  });
- expect(r.osiris).toEqual({humanity:0,adv:3,flaws:2});expect(r.farmer).toBe(1);expect(r.bagger).toContain('iron_gullet_bagger');expect(r.budgetIssues).toEqual([]);expect(r.community).toContain("Player's Guide 02");
+ expect(r.osiris).toEqual({humanity:0,adv:3,flaws:2});expect(r.farmer).toBe(1);expect(r.bagger).toContain('iron_gullet_bagger');expect(r.budgetIssues).toEqual([]);expect(r.community).toContain("Bully");
 });
 
- test('Sangue-Fraco: equilíbrio, incompatibilidades e requisito Tremere',async({page})=>{
+ test('Sangue-Ralo: equilíbrio, incompatibilidades e requisito Tremere',async({page})=>{
  const result=await page.evaluate(async()=>{
  const {thinBloodIssues}=await import('/data/thinBlood.ts');
  const base={thinMerits:['lifelike'],thinFlaws:['dead'],generation:14,bloodPotency:0,predatorType:null};
  return {conflict:thinBloodIssues(base),tremere:thinBloodIssues({...base,thinMerits:['day'],thinFlaws:['curse'],thinCurse:'tremere'}),valid:thinBloodIssues({...base,thinMerits:['catenating'],thinFlaws:['curse'],thinCurse:'tremere'})};
  });
- expect(result.conflict.some(x=>x.includes('incompatíveis'))).toBe(true);expect(result.tremere.some(x=>x.includes('Sangue Vinculante'))).toBe(true);expect(result.valid).toEqual([]);
+ expect(result.conflict.some(x=>x.includes('incompatíveis'))).toBe(true);expect(result.tremere.some(x=>x.includes('Sangue Agregador'))).toBe(true);expect(result.valid).toEqual([]);
  });

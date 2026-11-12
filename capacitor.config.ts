@@ -4,6 +4,9 @@ const config: CapacitorConfig = {
   appId: 'com.vampire.charactercreator',
   appName: 'Vampire V5 Character Creator',
   webDir: 'dist',
+  plugins: {
+    SystemBars: { hidden: true, insetsHandling: 'css' },
+  },
   server: {
     androidScheme: 'https',
     cleartext: true,

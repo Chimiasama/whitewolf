@@ -102,13 +102,10 @@ test("40 XP: Força 3 → 4 custa 20, grava recibo e sobrevive a salvar/exportar
   await download.saveAs(file);
   await page.reload();
   await page.locator("input[type=file]").first().setInputFiles(file);
-  await expect(
-    page.getByRole("heading", { name: "Ficha em jogo", exact: true }),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "Capacidades", exact: false }).click();
-  await expect(
-    page.getByText("A distribuição inicial foi encerrada.", { exact: false }),
-  ).toBeVisible();
+  await expect(page.getByRole('region',{name:'Personagem em jogo'})).toBeVisible();
+  await expect(page.locator('.creation-progress')).toHaveCount(0);
+  await page.getByRole('button',{name:'Editar personagem',exact:true}).click();
+  await expect(page.getByRole('button',{name:'Voltar à ficha',exact:true})).toBeVisible();
   expect(errors).toEqual([]);
 });
 test("ficha antiga habilita evolução sem sessão zero, justificativa ou aprovação", async ({
@@ -366,7 +363,7 @@ test("V5: clã ×5, fora do clã ×7, Caitiff ×6, poder incluído e requisitos 
   expect(r.parsed).toBe(1);
   expect(r.invalid).toBe(true);
 });
-test("V5: fórmulas, rituais, Vantagens, especialidades, Humanidade e teto de Potência por geração", async ({
+test("V5: fórmulas, rituais, Vantagens, especializações, Humanidade e teto de Potência por geração", async ({
   page,
 }) => {
   const r = await page.evaluate(async () => {
@@ -676,7 +673,7 @@ test("Méritos comunitários: Competência usa taxa de clã e Alchemy Expert usa
       advantages: [
         {
           id: "disciplinecompetence",
-          cost: 6,
+          cost: 5,
           name: "Competência",
           type: "advantage",
           description: "",
@@ -719,7 +716,7 @@ test("Méritos comunitários: Competência usa taxa de clã e Alchemy Expert usa
       merit: parseCharacter(a).advantages[0].cost,
     };
   });
-  expect(r).toEqual({ competence: 5, alchemy: 7, parsed: 1, merit: 6 });
+  expect(r).toEqual({ competence: 5, alchemy: 7, parsed: 1, merit: 5 });
 });
 test("criação mantém dois níveis da mesma Loresheet e gerador evita Dons duplicados por acesso", async ({
   page,
@@ -727,21 +724,19 @@ test("criação mantém dois níveis da mesma Loresheet e gerador evita Dons dup
   const c = await fixture(page);
   delete c.creationCompletedAt;
   await load(page, c);
+  await page.getByRole('button',{name:'Editar personagem',exact:true}).click();
   await page
     .getByRole("button", { name: "Vínculos e recursos", exact: false })
     .click();
-  await page.getByRole("tab", { name: "Loresheets", exact: true }).click();
-  const region = page.getByRole("region", { name: "Loresheets", exact: true });
-  await region.getByRole("button", { name: "Escolher", exact: true }).click();
-  await region.getByRole("searchbox").fill("Bahari");
+  await page.getByRole("tab", { name: "Fichas de Conhecimento", exact: true }).click();
+  const region = page.getByRole("region", { name: "Fichas de Conhecimento", exact: true });
+  await region.locator("summary").filter({hasText:"Os Bahari"}).click();
   await region
-    .locator("li")
-    .filter({ hasText: "Bahari · 1 pontos" })
+    .getByRole("listitem", {name:"Os Bahari · 1 ponto",exact:true})
     .getByRole("button", { name: "Escolher", exact: true })
     .click();
   await region
-    .locator("li")
-    .filter({ hasText: "Bahari · 2 pontos" })
+    .getByRole("listitem", {name:"Os Bahari · 2 pontos",exact:true})
     .getByRole("button", { name: "Escolher", exact: true })
     .click();
   const r = await page.evaluate(async () => {

@@ -1,10 +1,15 @@
+import {useQuickRoll} from '../lib/rollContext';
+import {PdfButton} from './PdfButton';
+import {trackRemaining} from '../lib/damage';
 import {LegacyLoresheets} from './LegacyLoresheets';
+import {HelpLabel} from './HelpLabel';
+import {HuntingReference} from './HuntingReference';
 import {V5_LORESHEETS} from '../data/v5Loresheets';
 import React from "react";
 import { Character, GameType, Attribute } from "../types";
 import { useI18n } from "../lib/i18n";
 import { W5_GIFTS } from "../data/w5";
-import { fnGetDisciplineDetails } from "../constants";
+import { fnGetDisciplineDetails, fnGetPredatorTypes } from "../constants";
 import { StorySummary } from "./CharacterStory";
 export function CompactSheet({
   character: c,
@@ -18,14 +23,16 @@ export function CompactSheet({
   onBack?: () => void;
 }) {
   const { t } = useI18n();
+  const quickRoll=useQuickRoll();
   const wolf = c.gameType === GameType.Werewolf;
   const disciplines = fnGetDisciplineDetails(t);
+  const predator = !wolf && c.predatorType ? fnGetPredatorTypes(t).find(p => p.id === c.predatorType) : undefined;
   const health = c.attributes[Attribute.Stamina] + 3,
     willpower =
       c.attributes[Attribute.Composure] + c.attributes[Attribute.Resolve];
   const tracks: [string, keyof Character, number, number][] = [
-    ["Vitalidade", "health", c.health ?? health, health],
-    ["Força de Vontade", "willpower", c.willpower ?? willpower, willpower],
+    ["Vitalidade", "health", trackRemaining(c,'health'), health],
+    ["Força de Vontade", "willpower", trackRemaining(c,'willpower'), willpower],
     ...(wolf
       ? [
           ["Fúria", "rage", c.rage, 5],
@@ -44,15 +51,21 @@ export function CompactSheet({
           <h2 className="text-2xl">{c.name || "Sem nome"}</h2>
           <p>{c.concept}</p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <button type="button" className="border rounded p-2" onClick={onBack}>
             Início
           </button>
+          <PdfButton character={c}/>
           <button type="button" className="border rounded p-2" onClick={onSave}>
             Salvar ficha
           </button>
         </div>
       </div>
+      {quickRoll&&<button type="button" className="min-h-11 rounded border p-3" onClick={()=>quickRoll({kind:'willpower'})}>Testar Força de Vontade</button>}
+      {predator && <section aria-label="Predador e caçada">
+        <h3>Tipo de predador</h3>
+        <HelpLabel title={'Caçada: '+predator.name} content={<HuntingReference predator={predator}/>}>{predator.name}</HelpLabel>
+      </section>}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {tracks.map(([label, key, value, max]) => (
           <section key={key} className="rounded border border-gray-600 p-3">
@@ -99,7 +112,7 @@ export function CompactSheet({
           </dl>
         </section>
         <section>
-          <h3>Perícias com pontos</h3>
+          <h3>Habilidades com pontos</h3>
           <dl>
             {Object.entries(c.skills)
               .filter(([, v]) => v > 0)
@@ -108,7 +121,7 @@ export function CompactSheet({
                   key={k}
                   className="flex justify-between py-1 border-b border-gray-700"
                 >
-                  <dt>{t("skills.list." + k)}</dt>
+                  <dt><button type="button" className="min-h-11 text-left" aria-label={'Rolar '+t("skills.list."+k)} onClick={()=>quickRoll?.({kind:'skill',skill:k as any})}>{t("skills.list." + k)}</button></dt>
                   <dd>{v}</dd>
                 </div>
               ))}
@@ -164,7 +177,7 @@ export function CompactSheet({
         </details>
       )}
       <details>
-        <summary>Recursos e especialidades</summary>
+        <summary>Recursos e especializações</summary>
         <ul>
           {[...c.advantages, ...c.flaws].map((v, i) => (
             <li key={i}>

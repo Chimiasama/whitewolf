@@ -1,4 +1,11 @@
+import {ThinBloodReference} from "./ThinBloodReference";
+import {BookSources} from "../lib/bookReferences";
+import {AdvantageReference} from './AdvantageReference';
+import {PdfButton} from './PdfButton';
+import {useQuickRoll} from '../lib/rollContext';
+import {trackRemaining} from '../lib/damage';
 import {HelpLabel} from './HelpLabel';
+import {HuntingReference} from './HuntingReference';
 import {DisciplineReference} from './DisciplineReference';
 import {TRAIT_HELP} from '../data/traitHelp';
 import {hasAlternativeBane} from '../data/alternativeBanes';
@@ -26,6 +33,7 @@ import { InfoModal } from './InfoModal';
 
 interface CharacterSheetProps {
   character: Character;
+  editable?:boolean;
   onUpdateHunger?: (hunger: number) => void;
   onUpdateHumanity?: (humanity: number) => void;
   onUpdateWillpower?: (willpower: number) => void;
@@ -87,13 +95,14 @@ const WolfCubIcon: React.FC<{ className?: string }> = ({ className = "w-3 h-3 te
 
 const AttributeGroup: React.FC<{title: string, attributes: Attribute[], values: Record<Attribute, number>, colorClass?: string, isWerewolf?: boolean}> = ({title: sTitle, attributes: aAttributes, values: oValues, colorClass = "bg-red-500", isWerewolf = false}) => {
     const { t: fnT } = useI18n();
+    const quickRoll=useQuickRoll();
     return (
         <div>
             <h3 className={`font-bold text-lg mb-2 border-b border-gray-700 pb-1 ${colorClass.replace('bg-', 'text-')}`}>{sTitle}</h3>
             <ul>
                 {aAttributes.map(sAttr => (
                     <li key={sAttr} className="flex justify-between items-center mb-1">
-                        <HelpLabel title={fnT(`attributes.list.${sAttr}`)} content={TRAIT_HELP[sAttr]}>{fnT(`attributes.list.${sAttr}`)}</HelpLabel>
+                        <HelpLabel onActivate={quickRoll?()=>quickRoll({kind:'attributes',attribute:sAttr}):undefined} title={fnT(`attributes.list.${sAttr}`)} content={TRAIT_HELP[sAttr]}>{fnT(`attributes.list.${sAttr}`)}</HelpLabel>
                         <div className="flex items-center">
                             {[...Array(5)].map((_, nI) => (
                                 isWerewolf ? (
@@ -159,16 +168,17 @@ const WerewolfTracks: React.FC<{
 
 const SkillGroup: React.FC<{title: string, skills: Skill[], values: Record<Skill, number>, specialties: Specialty[], colorClass?: string, isWerewolf?: boolean}> = ({title: sTitle, skills: aSkills, values: oValues, specialties: aSpecialties, colorClass = "bg-red-500", isWerewolf = false}) => {
     const { t: fnT } = useI18n();
+    const quickRoll=useQuickRoll();
     return (
         <div>
             <h3 className={`font-bold text-lg mb-2 border-b border-gray-700 pb-1 ${colorClass.replace('bg-', 'text-')}`}>{sTitle}</h3>
             <ul>
                 {aSkills.map(sSkill => {
                     const sSkillSpecialties = aSpecialties.filter(s => s.skill === sSkill).map(s => s.name).join(', ');
-                    if (oValues[sSkill] > 0) {
+                    if (oValues[sSkill] >= 0) {
                         return (
                             <li key={sSkill} className="flex justify-between items-center mb-1">
-                                <span><HelpLabel title={fnT(`skills.list.${sSkill}`)} content={TRAIT_HELP[sSkill]}>{fnT(`skills.list.${sSkill}`)}</HelpLabel> {sSkillSpecialties && <span className="text-xs text-gray-400">({sSkillSpecialties})</span>}</span>
+                                <span><HelpLabel onActivate={quickRoll?()=>quickRoll({kind:'skill',skill:sSkill}):undefined} title={fnT(`skills.list.${sSkill}`)} content={TRAIT_HELP[sSkill]}>{fnT(`skills.list.${sSkill}`)}</HelpLabel> {sSkillSpecialties && <span className="text-xs text-gray-400">({sSkillSpecialties})</span>}</span>
                                 <div className="flex items-center">
                                     {[...Array(5)].map((_, nI) => (
                                         isWerewolf ? (
@@ -190,6 +200,7 @@ const SkillGroup: React.FC<{title: string, skills: Skill[], values: Record<Skill
 
 const AdvantageFlawList: React.FC<{ title: string, items: AdvantageFlaw[], colorClass?: string, isWerewolf?: boolean }> = ({ title: sTitle, items: aItems, colorClass = "text-red-500", isWerewolf = false }) => {
     const { t: fnT } = useI18n();
+    const quickRoll=useQuickRoll();
     return (
         <Card className="text-left" variant={isWerewolf ? 'werewolf' : 'vampire'}>
             <h3 className={`${colorClass} font-bold text-lg mb-2 border-b border-gray-700 pb-1`}>{sTitle}</h3>
@@ -204,9 +215,9 @@ const AdvantageFlawList: React.FC<{ title: string, items: AdvantageFlaw[], color
                         return (
                             <li key={`${oItem.id || oItem.name}-${nIdx}`} className="mb-2">
                                 <div className="flex justify-between items-center">
-                                    <p className="font-bold text-gray-200">{sName}</p>
+                                    <p className="font-bold text-gray-200"><HelpLabel title={sName} sourceKey={`${isWerewolf?"wolfadvantage":"advantage"}:${oItem.id}`} content={<AdvantageReference item={{...oItem,name:sName,description:sDesc}} game={isWerewolf?GameType.Werewolf:GameType.Vampire}/>}>{sName}</HelpLabel></p>
                                     <div className="flex items-center">
-                                         {[...Array(5)].map((_, nI) => (
+                                         {[...Array(Math.max(5,oItem.cost))].map((_, nI) => (
                                             isWerewolf ? (
                                                 <ClawIcon key={nI} className={`w-2.5 h-2.5 ml-1 ${oItem.cost > nI ? 'text-green-500' : 'text-gray-800'}`} filled={oItem.cost > nI} />
                                             ) : (
@@ -218,7 +229,7 @@ const AdvantageFlawList: React.FC<{ title: string, items: AdvantageFlaw[], color
                                          ))}
                                     </div>
                                 </div>
-                                <p className="text-sm text-gray-400">{sDesc}</p>
+
                             </li>
                         );
                     })}
@@ -283,6 +294,7 @@ const VitalsPool: React.FC<{
 
 export const CharacterSheet: React.FC<CharacterSheetProps> = ({ 
     character: oCharacter, 
+    editable=true,
     onUpdateHunger: fnOnUpdateHunger, 
     onUpdateHumanity: fnOnUpdateHumanity,
     onUpdateWillpower: fnOnUpdateWillpower,
@@ -296,6 +308,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     onChange
 }) => {
     const { t: fnT } = useI18n();
+    const quickRoll=useQuickRoll();
 
     // Performance Optimization: Memoize data objects to prevent expensive translation lookups and object reconstructions on every render.
     // This is particularly important in the CharacterSheet where many small state updates (like hunger/health/willpower) happen.
@@ -342,7 +355,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
     const nHealth = nStamina + 3;
 
     const damagePanel=<DamageTracker character={oCharacter} onChange={onChange?value=>onChange('damage',value):undefined}/>;
-    if(oCharacter.npcTemplate)return <NpcSheet character={oCharacter} onChange={onChange} onBack={onBack} onSave={onSave}/>;
+    if(oCharacter.npcTemplate)return <NpcSheet editable={editable} character={oCharacter} onChange={onChange} onBack={onBack} onSave={onSave}/>;
     if(sheetMode==='compact')return <div>{modeControls}{damagePanel}<CompactSheet character={oCharacter} onSave={onSave} onBack={onBack} onChange={(key,value)=>{const handlers={hunger:fnOnUpdateHunger,humanity:fnOnUpdateHumanity,willpower:fnOnUpdateWillpower,health:fnOnUpdateHealth,rage:fnOnUpdateRage,harano:fnOnUpdateHarano,hauglosk:fnOnUpdateHauglosk};handlers[key]?.(value);}}/></div>;
     return (
     <div className="space-y-8">
@@ -355,11 +368,11 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
       <aside className="rounded border border-gray-600 p-4 text-left bg-gray-950">
        <strong>{oCharacter.profile==='npc'?'NPC temático — sem orçamento de XP':oCharacter.creationCompletedAt?'Personagem em jogo — evolução com XP habilitada':'Personagem de jogador — confira as pendências de criação'}</strong>
        {oCharacter.profile!=='npc' && <ul className="text-amber-200">{playerIssues(oCharacter).map((issue,i)=><li key={i}>{issue}</li>)}</ul>}
-       {oCharacter.clan==='thinblood' && <section><h3>Sangue-Fraco</h3><p>Méritos: {(oCharacter.thinMerits||[]).map(id=>THIN_MERITS[id]).join(', ')||'—'}</p><p>Defeitos: {(oCharacter.thinFlaws||[]).map(id=>THIN_FLAWS[id]).join(', ')||'—'}</p><p>Maldição herdada: {oCharacter.thinCurse||'—'}</p></section>}
+       {oCharacter.clan==='thinblood' && <section className="space-y-3"><h3>Sangue-Ralo</h3>{([['thinMerits',THIN_MERITS,'Qualidades'],['thinFlaws',THIN_FLAWS,'Defeitos']] as const).map(([key,names,title])=><div key={key}><h4>{title}</h4><ul className="space-y-2">{(oCharacter[key]||[]).map(id=><li key={id}><HelpLabel title={names[id]} sourceKey={`${key==='thinMerits'?'thinmerit':'thinflaw'}:${id}`} content={<ThinBloodReference category={key} id={id}/>}>{names[id]}</HelpLabel></li>)}</ul></div>)}<p>Maldição herdada: {oCharacter.thinCurse||'—'}</p></section>}
        {oCharacter.narrative && <dl>{Object.entries(oCharacter.narrative).map(([key,value])=><div key={key}><dt className="font-bold text-amber-200">{{role:'Papel',motivation:'Motivação',secret:'Segredo',relationship:'Vínculo',hook:'Gancho'}[key]}</dt><dd>{value}</dd></div>)}</dl>}
        {bIsWerewolf && <section className="mt-3"><h3>Dons de W5</h3><ul>{(oCharacter.gifts||[]).map(g=>{const d=W5_GIFTS.find(x=>x.id===g.id);return <li key={g.id}>{d?.name} ({d?.english}) — {d?.reference}</li>})}</ul><h3>Ritos</h3><ul>{oCharacter.rituals.map(r=><li key={r.id}>{r.name} — {r.description}</li>)}</ul></section>}
        {!bIsWerewolf&&oCharacter.rituals.length>0&&<section className="mt-3"><h3>Rituais de Sangue</h3><ul>{oCharacter.rituals.map(r=><li key={r.id}>{r.name} — {r.description}</li>)}</ul></section>}
-       <button className="mt-3 px-3 py-2 border rounded" onClick={()=>window.print()}>Imprimir / salvar PDF</button>
+       <PdfButton character={oCharacter} label="Imprimir / salvar PDF"/>
       </aside>
       <div className="flex justify-between items-center bg-black/40 p-4 rounded-xl border border-gray-800 shadow-lg backdrop-blur-sm">
           <Button onClick={onBack} variant="secondary" className="flex items-center gap-2">
@@ -403,7 +416,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                       <>
                         <div className="md:col-span-3"><strong className={sThemeAccentClass}>{fnT('characterSheet.clanBane')}:</strong> {oCharacter.baneVariant==='alternative'&&!oCharacter.flaws.some(f=>f.id==='twicecursed'||f.id==='twice-cursed')?(alternativeBane(oCharacter)?.name||oClanDetail?.bane):oClanDetail?.bane || fnT('common.noClanSelected')}</div>
                         <div className="md:col-span-3"><strong className={sThemeAccentClass}>{fnT('characterSheet.clanCompulsion')}:</strong> {oClanDetail?.compulsion || fnT('common.noClanSelected')}</div>
-                        <div><strong className={sThemeAccentClass}>{fnT('characterSheet.predatorType')}:</strong> {oPredatorTypeDetail ? oPredatorTypeDetail.name : fnT('common.none')}</div>
+                        <div><strong className={sThemeAccentClass}>{fnT('characterSheet.predatorType')}:</strong> {oPredatorTypeDetail ? <HelpLabel title={'Caçada: '+oPredatorTypeDetail.name} content={<HuntingReference predator={oPredatorTypeDetail}/>}>{oPredatorTypeDetail.name}</HelpLabel> : fnT('common.none')}</div>
                         <div><strong className={sThemeAccentClass}>{fnT('characterSheet.generation')}:</strong> {oCharacter.generation}</div>
                         <div><strong className={sThemeAccentClass}>{fnT('characterSheet.bloodPotency')}:</strong> {oCharacter.bloodPotency}</div>
                       </>
@@ -546,9 +559,10 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                         labelColorClass="text-green-400"
                     />
                 )}
+                {quickRoll&&<button type="button" className="min-h-11 rounded border border-gray-600 px-3 py-2" onClick={()=>quickRoll({kind:'willpower'})}>Testar Força de Vontade</button>}
                 <VitalsPool
                     label={fnT('characterSheet.willpower')}
-                    value={Math.min(oCharacter.willpower ?? nWillpower, nWillpower)}
+                    value={trackRemaining(oCharacter,'willpower')}
                     max={nWillpower}
                     colorClass="bg-blue-600"
                     onUpdate={fnOnUpdateWillpower}
@@ -556,7 +570,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                 />
                 <VitalsPool
                     label={fnT('characterSheet.health')}
-                    value={Math.min(oCharacter.health ?? nHealth, nHealth)}
+                    value={trackRemaining(oCharacter,'health')}
                     max={nHealth}
                     colorClass="bg-red-800"
                     onUpdate={fnOnUpdateHealth}
@@ -678,7 +692,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                             {ls?.levels.map((lvl) => (
                                 <div key={lvl.level} className={`pl-4 border-l-2 ${bIsWerewolf ? 'border-green-900' : 'border-red-900'}`}>
                                     <div className="flex items-center gap-2 mb-1">
-                                        <span className={`${bIsWerewolf ? 'bg-green-900 text-green-100' : 'bg-red-900 text-red-100'} text-[10px] px-1.5 py-0.5 rounded font-bold uppercase`}>{fnT('compendium.lvl')} {lvl.level}</span>
+                                        <span className={`${bIsWerewolf ? 'bg-green-900 text-green-100' : 'bg-red-900 text-red-100'} text-[10px] px-1.5 py-0.5 rounded font-bold uppercase`}>{lvl.level} {lvl.level === 1 ? 'ponto' : 'pontos'}</span>
                                         <span className="font-bold text-gray-200">{lvl.name}</span>
                                     </div>
                                     <p className="text-xs text-gray-400 mb-1">{lvl.description}</p>
@@ -686,6 +700,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                                 </div>
                             ))}
                         </div>
+                        <BookSources sourceKey={`loresheet:${ls.id}`} />
                     </div>
                 ))}
             </div>

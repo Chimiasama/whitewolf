@@ -1,3 +1,4 @@
+import {powerPrerequisitesMet} from "./powerRequirements";
 import {LOW_CLAN_DISCIPLINES} from '../data/v5Loresheets';
 import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
 import {baneSeverity,hasAlternativeBane} from '../data/alternativeBanes';
@@ -119,10 +120,10 @@ export function quotePurchase(
     from = c[field][r.key];
     to = rank(from);
     label = t(`${field}.list.${r.key}`);
-    dotCost(attr ? (fast ? 4 : 5) : fast ? 2 : 3);
+    dotCost(attr ? 5 : fast ? 2 : 3);
     patch = { [field]: { ...c[field], [r.key]: to } };
-    if (fast) {
-      reference = "Player’s Guide 02 (Bully), p. 11 — Fast Learner";
+    if (fast && !attr) {
+      reference = "Player’s Guide — Bully, PDF atual, p. 14 — Fast Learner";
       formula += " · Aprendizado Rápido";
     }
     if (
@@ -132,7 +133,7 @@ export function quotePurchase(
     ) {
       const normal = cost;
       cost = Math.floor(cost / 2);
-      formula = `${normal} ÷ 2, arredondado para baixo = ${cost} XP · Talento Verdadeiro`;
+      formula = `${normal} ÷ 2, arredondado para baixo = ${cost} XP · Talento Inato`;
       reference += "; V5, p. 391";
     }
   } else if (r.kind === "specialty") {
@@ -140,10 +141,10 @@ export function quotePurchase(
       !Object.values(Skill).includes(r.key as Skill) ||
       (c.skills[r.key] || 0) < 1
     )
-      reject("Especialidade exige uma Perícia com pontos.");
+      reject("Especialização exige uma Habilidade com pontos.");
     const name = r.choice?.trim();
     if (!name || name.length > 100)
-      reject("Informe uma especialidade de até 100 caracteres.");
+      reject("Informe uma especialização de até 100 caracteres.");
     if (
       c.specialties.some(
         (s) =>
@@ -152,7 +153,7 @@ export function quotePurchase(
             name.toLocaleLowerCase("pt-BR"),
       )
     )
-      reject("Esta especialidade já foi adquirida.");
+      reject("Esta especialização já foi adquirida.");
     label = `${t("skills.list." + r.key)}: ${name}`;
     cost = fast ? 2 : 3;
     formula = `Custo fixo: ${cost} XP`;
@@ -160,7 +161,7 @@ export function quotePurchase(
       specialties: [...c.specialties, { skill: r.key as Skill, name }],
     };
     if (fast) {
-      reference = "Player’s Guide 02 (Bully), p. 11 — Fast Learner";
+      reference = "Player’s Guide — Bully, PDF atual, p. 14 — Fast Learner";
       formula += " · Aprendizado Rápido";
     }
   } else if (r.kind === "advantage") {
@@ -191,25 +192,25 @@ export function quotePurchase(
   } else if (r.kind === "loresheet") {
     const sheet = fnGetLoresheets(t).find((x) => x.id === r.key),
       level = sheet?.levels.find((x) => x.level === r.level);
-    if (!level) reject("Escolha um nível válido de Loresheet.");
+    if (!level) reject("Escolha um nível válido de Ficha de Conhecimento.");
     if (sheet.allowedClans && !sheet.allowedClans.includes(c.clan))
-      reject("Esta Loresheet exige o clã indicado no livro.");
+      reject("Esta Ficha de Conhecimento exige o clã indicado no livro.");
     if (
       r.key === "v5-helena" &&
       r.level === 2 &&
       !["Craft", "Etiquette", "Performance"].includes(r.choice)
     )
       reject(
-        "Escolha Ofícios, Etiqueta ou Performance para Talento Verdadeiro.",
+        "Escolha Ofícios, Etiqueta ou Performance para Talento Inato.",
       );
     if (c.loresheets.some((x) => x.id === r.key && x.level === r.level))
-      reject("Este nível de Loresheet já foi adquirido.");
+      reject("Este nível de Ficha de Conhecimento já foi adquirido.");
     to = level.level;
     cost = to * 3;
     formula = `${to} pontos × 3 = ${cost} XP (nível independente)`;
     label = `${sheet.name}: ${level.name}`;
     reference =
-      "V5, pp. 152, 190 — níveis de Loresheet são comprados separadamente";
+      "V5, pp. 152, 190 — níveis de Ficha de Conhecimento são comprados separadamente";
     patch = {
       loresheets: [...c.loresheets, { id: r.key, level: to }],
       ...(r.key === "v5-helena" && r.level === 2
@@ -229,7 +230,7 @@ export function quotePurchase(
       !c.advantages.some((a) => a.id === "alchemyexpert" && a.cost === 5)
     )
       reject(
-        "Alquimia exige Sangue-Fraco ou o Mérito comunitário Alchemy Expert.",
+        "Alquimia exige Sangue-Ralo ou o Mérito comunitário Alchemy Expert.",
       );
     if (
       thin &&
@@ -240,7 +241,7 @@ export function quotePurchase(
         "Afinidade permite evoluir apenas a Disciplina permanente já escolhida.",
       );
     if (r.kind === "formula" && !alchemy)
-      reject("Fórmulas pertencem à Alquimia de Sangue-Fraco.");
+      reject("Fórmulas pertencem à Alquimia de Sangue-Ralo.");
     from = c.disciplines[r.key] || 0;
     to = r.kind === "formula" ? from : rank(from);
     const ids = c.disciplinePowers[r.key] || [];
@@ -253,7 +254,7 @@ export function quotePurchase(
       reject(
         "Escolha um poder ou fórmula novo, do nível adquirido ou inferior.",
       );
-    if (p.prerequisite && !ids.includes(p.prerequisite))
+    if (!powerPrerequisitesMet(p,ids))
       reject("Falta o poder pré-requisito.");
     const newDisc = { ...c.disciplines, [r.key]: to };
     if (p.amalgam?.some((a) => (newDisc[a.discipline] || 0) < a.level))
@@ -261,7 +262,7 @@ export function quotePurchase(
     const traded = c.loresheets.some(l=>l.id==="v5-low-clan"&&l.level===4)&&c.resourceChoices?.lowClanDiscipline===r.key&&LOW_CLAN_DISCIPLINES.includes(r.key);
     const favored = traded ||
       c.advantages.some(
-        (a) => a.id === "disciplinecompetence" && a.cost === 6,
+        (a) => a.id === "disciplinecompetence" && a.cost === 5,
       ) && c.disciplineCompetence === r.key;
     const clan =
       fnGetClanDetails(t)[c.clan]?.disciplines.includes(r.key) || favored;
@@ -313,7 +314,7 @@ export function quotePurchase(
     const ceremony=OBLIVION_CEREMONIES.find(x=>x.id===r.key);
     if(!ceremony)reject("Cerimônia fora do catálogo.");
     if((c.disciplines.oblivion||0)<ceremony.level)reject("Cerimônia exige Oblívio do mesmo nível ou superior.");
-    if(!c.disciplinePowers.oblivion?.includes(ceremony.prerequisite))reject("Falta o poder obrigatório desta Cerimônia.");
+    if(ceremony.prerequisite&&!c.disciplinePowers.oblivion?.includes(ceremony.prerequisite))reject("Falta o poder obrigatório desta Cerimônia.");
     if(c.rituals.some(x=>x.id===ceremony.id))reject("Cerimônia já adquirida.");
     to=ceremony.level;cost=to*3;formula=`Cerimônia nível ${to} × 3 = ${cost} XP`;
     label=ceremony.name;reference=ceremony.description;
@@ -347,7 +348,7 @@ export function quotePurchase(
     reference =
       r.kind === "bloodPotency" ? "V5, pp. 152, 214–216" : "V5, p. 242";
     if (c.clan === Clan.ThinBlood && r.kind === "bloodPotency")
-      reject("Sangue-Fraco não aumenta Potência de Sangue por XP.");
+      reject("Sangue-Ralo não aumenta Potência de Sangue por XP.");
   } else if (r.kind === "renown") {
     if (!["glory", "honor", "wisdom"].includes(r.key))
       reject("Tipo de Renome desconhecido.");

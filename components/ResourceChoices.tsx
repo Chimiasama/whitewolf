@@ -1,3 +1,6 @@
+import {HelpLabel} from "./HelpLabel";
+import { LoresheetPicker } from "./LoresheetPicker";
+import {AdvantageReference} from './AdvantageReference';
 import {alternativeBane} from '../data/alternativeBanes';
 import {BenefitChoices} from './BenefitChoices';
 import {AdvancedCreation} from './AdvancedCreation';
@@ -33,14 +36,14 @@ export function SpecialtyEditor({
     [name, setName] = useState("");
   return (
     <section className="space-y-4">
-      <h3>Especialidades</h3>
+      <h3>Especializações</h3>
       <p className="text-sm text-gray-300">
-        Escolha a especialidade gratuita e as exigidas pelas suas Perícias.
+        Escolha a especialização gratuita e as exigidas pelas suas Habilidades.
         Benefícios de predador são adicionais.
       </p>
       <div className="grid gap-3 sm:grid-cols-2">
         <label>
-          Perícia
+          Habilidade
           <select
             value={skill}
             onChange={(e) => setSkill(e.target.value)}
@@ -57,7 +60,7 @@ export function SpecialtyEditor({
           </select>
         </label>
         <label>
-          Especialidade
+          Especialização
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -78,7 +81,7 @@ export function SpecialtyEditor({
           setName("");
         }}
       >
-        Adicionar especialidade
+        Adicionar especialização
       </button>
       <ul>
         {c.specialties.map((s, i) => (
@@ -87,7 +90,7 @@ export function SpecialtyEditor({
             <button
               type="button"
               className="underline"
-              aria-label={`Remover especialidade ${s.name}`}
+              aria-label={`Remover especialização ${s.name}`}
               onClick={() =>
                 onChange(
                   "specialties",
@@ -138,7 +141,7 @@ export function ResourceChoices({
       {!c.creationCompletedAt && (
         <div className="grid grid-cols-2 gap-3 rounded-lg bg-gray-900 p-4 text-sm">
           <div>
-            Vantagens e Loresheets
+            Vantagens e Fichas de Conhecimento
             <strong className="block text-xl">
               {advantagePoints} / {AGE_PROFILES[c.creationAge||'childer'].advantages} pontos
             </strong>
@@ -152,7 +155,7 @@ export function ResourceChoices({
       {panel === "loresheets" &&
         c.loresheets.some((l) => l.id === "v5-helena" && l.level === 2) && (
           <label className="block">
-            Perícia de Talento Verdadeiro
+            Habilidade de Talento Inato
             <select
               className="mt-2 block rounded p-3"
               value={c.loreChoices?.helenaTalent || ""}
@@ -181,7 +184,7 @@ export function ResourceChoices({
                 { id: "advantages", label: "Vantagens" },
                 { id: "flaws", label: "Defeitos" },
                 ...(c.gameType === GameType.Vampire
-                  ? [{ id: "loresheets", label: "Loresheets" }]
+                  ? [{ id: "loresheets", label: "Fichas de Conhecimento" }]
                   : []),
               ]
             : []),
@@ -205,42 +208,7 @@ export function ResourceChoices({
           ) : key === "ties" ? (
             <CharacterStory character={c} onChange={onChange} />
           ) : key === "loresheets" ? (
-            <CatalogPicker
-              label="Loresheets"
-              multiple
-              selected={c.loresheets.map((l) => l.id + ":" + l.level)}
-              options={loresheets.flatMap((l) =>
-                l.levels.map((level) => ({
-                  id: l.id + ":" + level.level,
-                  name: `${l.name} · ${level.level} pontos`,
-                  summary: level.name,
-                  unavailable:
-                    l.allowedClans && !l.allowedClans.includes(c.clan)
-                      ? "Exige o clã indicado na referência."
-                      : undefined,
-                  details: (
-                    <>
-                      <p>{l.description}</p>
-                      <p>{level.description}</p>
-                      <p>{level.system}</p>
-                    </>
-                  ),
-                })),
-              )}
-              onToggle={(id) => {
-                const [key, n] = id.split(":");
-                onChange(
-                  "loresheets",
-                  c.loresheets.some(
-                    (l) => l.id === key && l.level === Number(n),
-                  )
-                    ? c.loresheets.filter(
-                        (l) => !(l.id === key && l.level === Number(n)),
-                      )
-                    : [...c.loresheets, { id: key, level: Number(n) }],
-                );
-              }}
-            />
+            <LoresheetPicker sheets={loresheets} character={c} onTransaction={onTransaction} />
           ) : (
             (() => {
               const field = key === "flaws" ? "flaws" : "advantages";
@@ -264,44 +232,27 @@ export function ResourceChoices({
                         id: a.id,
                         name: a.name,
                         summary: `${a.levels?.join(", ") || a.cost} pontos`,
-                        details: a.description,
+                        details: <AdvantageReference item={a} game={c.gameType}/>,
                         control: selected.some((s) => s.id === a.id) ? (
                           <label className="block mt-2 text-sm">
                             Pontos
                             <select
                               aria-label={`Pontos de ${a.name}`}
-                              className="ml-2 bg-gray-800 p-2"
+                              className="mt-1 block w-full min-w-0 bg-gray-800 p-2"
                               value={selected.find((s) => s.id === a.id)?.cost}
-                              onChange={(e) =>
-                                onChange(
-                                  field,
-                                  selected.map((s) =>
-                                    s.id === a.id
-                                      ? { ...s, cost: Number(e.target.value) }
-                                      : s,
-                                  ),
-                                )
-                              }
+                              onChange={e=>{const cost=Number(e.target.value);onTransaction(current=>({...current,[field]:current[field].map(item=>item.id===a.id?{...item,cost}:item)}));}}
                             >
-                              {(a.levels || [a.cost]).map((n) => (
-                                <option key={n}>{n}</option>
+                              {[...new Set([...(a.levels||[a.cost]),selected.find(item=>item.id===a.id)?.cost||a.cost])].sort((x,y)=>x-y).map((n) => (
+                                <option key={n} value={n}>{n}{!(a.levels||[a.cost]).includes(n)?' (valor salvo; revisar)':''}</option>
                               ))}
                             </select>
                           </label>
                         ) : undefined,
                       }))}
-                    onToggle={(id) => {
-                      const item = catalogue.find((a) => a.id === id);
-                      if (selected.some((a) => a.id === id))
-                        onChange(
-                          field,
-                          selected.filter((a) => a.id !== id),
-                        );
-                      else if (item)
-                        onChange(field, [
-                          ...selected,
-                          { ...item, cost: item.levels?.[0] || item.cost },
-                        ]);
+                    onRemove={id=>onTransaction(current=>({...current,[field]:current[field].filter(item=>item.id!==id)}))}
+                    onToggle={id=>{
+                      const item=catalogue.find(entry=>entry.id===id);
+                      if(item)onTransaction(current=>current[field].some(entry=>entry.id===id)?current:{...current,[field]:[...current[field],{...item,cost:item.levels?.[0]||item.cost}]});
                     }}
                   />
                   {granted.length > 0 && (
@@ -309,7 +260,7 @@ export function ResourceChoices({
                       <h4>Concedido pelo predador · adicional ao orçamento</h4>
                       {granted.map((g) => (
                         <p key={g.id}>
-                          {g.name} · {g.cost} pontos
+                          <HelpLabel title={g.name} sourceKey={`advantage:${g.id}`} content={<AdvantageReference item={g} game={c.gameType}/>}>{g.name}</HelpLabel> · {g.cost} pontos
                         </p>
                       ))}
                     </aside>

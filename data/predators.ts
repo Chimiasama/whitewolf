@@ -1,3 +1,5 @@
+import {VESPER_PREDATORS} from "./vesperPredators";
+import {applyGuidePredator} from "./unofficialGuide";
 import { AdvantageFlaw, PredatorTypeDetail, Skill } from "../types";
 import { resolvePredator } from "../lib/predatorRules";
 const a = (
@@ -85,7 +87,7 @@ export function completePredators(
   const additions = [
     entry(
       "bloodleech",
-      "Sanguessuga de Vampiros",
+      "Sanguessuga",
       "Blood Leech",
       "Alimenta-se de outros vampiros; aumenta a Potência de Sangue em 1.",
       core,
@@ -96,12 +98,12 @@ export function completePredators(
     ),
     entry(
       "cleaver",
-      "Domesticado",
+      "Trinchador",
       "Cleaver",
       "Alimenta-se de familiares ou amigos mantendo sua condição em segredo.",
       core,
       [a("cleaver_herd", "Rebanho", 2)],
-      [f("cleaver_secret", "Segredo Sombrio: Domesticado", 1)],
+      [f("cleaver_secret", "Segredo Sombrio: Trinchador", 1)],
       [
         spec(Skill.Persuasion, "Manipulação psicológica"),
         spec(Skill.Subterfuge, "Encobrimentos"),
@@ -109,7 +111,7 @@ export function completePredators(
     ),
     entry(
       "scenequeen",
-      "Rainha da Cena",
+      "Scene Queen",
       "Scene Queen",
       "Caça dentro de uma subcultura da qual participa.",
       core,
@@ -141,7 +143,7 @@ export function completePredators(
       "Caça entre cadáveres recentes, enlutados e ambientes funerários.",
       guide,
       [
-        a("graverobber_gullet", "Garganta de Ferro", 3),
+        a("graverobber_gullet", "Esôfago de Ferro", 3),
         a("graverobber_haven", "Refúgio", 1),
       ],
       [f("graverobber_obvious", "Predador Óbvio", 2)],
@@ -179,7 +181,7 @@ export function completePredators(
       "Estuda a rotina das vítimas antes de persegui-las.",
       guide,
       [
-        a("pursuer_bloodhound", "Sabueso de Sangue", 1),
+        a("pursuer_bloodhound", "Sabujo de Sangue", 1),
         a("pursuer_contacts", "Contatos", 1),
       ],
       [],
@@ -204,7 +206,7 @@ export function completePredators(
       ],
     ),
   ];
-  return [...existing, ...additions].map((base) => {
+  return [...existing, ...additions, ...VESPER_PREDATORS].map((base) => {
     const english: Record<string, string> = {
       business_owner: "Business Owner",
       confidant: "Confidant",
@@ -235,7 +237,7 @@ export function completePredators(
     const p: PredatorTypeDetail = {
       ...base,
       englishName: base.englishName || english[base.id],
-      disciplineOptions: disciplines[base.id],
+      disciplineOptions: disciplines[base.id] || base.disciplineOptions,
       source:
         base.source ||
         ([
@@ -379,8 +381,9 @@ export function completePredators(
         },
       ];
     }
-    p.fixedAdvantages = p.advantages;
-    p.fixedFlaws = p.flaws;
-    return resolvePredator(p);
+    const reviewed = applyGuidePredator(p);
+    reviewed.fixedAdvantages = reviewed.advantages;
+    reviewed.fixedFlaws = reviewed.flaws;
+    return resolvePredator(reviewed);
   });
 }

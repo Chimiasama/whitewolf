@@ -59,8 +59,8 @@ export function ExperiencePurchases({
     );
   const categories: { id: PurchaseKind; label: string }[] = [
     { id: "attribute", label: "Atributo" },
-    { id: "skill", label: "Perícia" },
-    { id: "specialty", label: "Especialidade" },
+    { id: "skill", label: "Habilidade" },
+    { id: "specialty", label: "Especialização" },
     { id: "advantage", label: "Vantagem" },
     ...((wolf
       ? [
@@ -72,7 +72,7 @@ export function ExperiencePurchases({
           { id: "discipline", label: "Disciplina" },
           { id: "ritual", label: "Ritual de Sangue" },
           { id: "ceremony", label: "Cerimônia de Oblívio" },
-          { id: "loresheet", label: "Loresheet" },
+          { id: "loresheet", label: "Ficha de Conhecimento" },
           { id: "bloodPotency", label: "Potência de Sangue" },
           { id: "humanity", label: "Humanidade" },
           ...(c.clan === Clan.ThinBlood ||
@@ -124,7 +124,7 @@ export function ExperiencePurchases({
     options = fnGetLoresheets(t).flatMap((s) =>
       s.levels.map((l) => ({
         id: s.id + ":" + l.level,
-        name: `${s.name} · ${l.level}: ${l.name}`,
+        name: `${s.name} · ${l.level} ${l.level === 1 ? "ponto" : "pontos"}: ${l.name}`,
       })),
     );
   else if (kind === "renown")
@@ -193,7 +193,7 @@ export function ExperiencePurchases({
       </p>
       {!wolf &&
         c.advantages.some(
-          (a) => a.id === "disciplinecompetence" && a.cost === 6,
+          (a) => a.id === "disciplinecompetence" && [5,6].includes(a.cost),
         ) && (
           <label className="block">
             Disciplina tratada como do clã por Competência
@@ -220,7 +220,7 @@ export function ExperiencePurchases({
       {c.loresheets.some((l) => l.id === "v5-helena" && l.level === 2) &&
         !c.loreChoices?.helenaTalent && (
           <label className="block">
-            Perícia de Talento Verdadeiro
+            Habilidade de Talento Inato
             <select
               className="mt-2 block w-full rounded border border-gray-600 p-3"
               value=""
@@ -235,7 +235,7 @@ export function ExperiencePurchases({
                   }));
               }}
             >
-              <option value="">Escolha a Perícia do benefício</option>
+              <option value="">Escolha a Habilidade do benefício</option>
               {["Craft", "Etiquette", "Performance"].map((id) => (
                 <option key={id} value={id}>
                   {t("skills.list." + id)}
@@ -335,7 +335,7 @@ export function ExperiencePurchases({
         )}
         {kind === "loresheet" && selected === "v5-helena:2" && (
           <label className="block">
-            Perícia de Talento Verdadeiro
+            Habilidade de Talento Inato
             <select
               className="mt-2 block w-full rounded border border-gray-600 p-3"
               value={choice}
@@ -352,7 +352,7 @@ export function ExperiencePurchases({
         )}
         {kind === "specialty" && (
           <label className="block">
-            Nova especialidade
+            Nova especialização
             <input
               className="mt-2 block w-full rounded border border-gray-600 p-3"
               value={choice}

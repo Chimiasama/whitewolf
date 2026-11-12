@@ -1,3 +1,4 @@
+import {powerPrerequisitesMet} from "./powerRequirements";
 import {hasAlternativeBane} from '../data/alternativeBanes';
 import {BLOOD_RITUALS} from '../data/bloodRituals';
 import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
@@ -18,12 +19,12 @@ const integer = (v:unknown,min:number,max:number) => typeof v==='number' && Numb
 /** Validate before React state changes. Unknown future schema versions must not be silently downgraded. */
 export function parseCharacter(input:unknown):Character {
  if(!object(input)) return fail('documento');
- if(input.skillPath!==undefined&&!['jackOfAllTrades','balanced','specialist'].includes(input.skillPath))return fail('pacote de Perícias');
+ if(input.skillPath!==undefined&&!['jackOfAllTrades','balanced','specialist'].includes(input.skillPath))return fail('pacote de Habilidades');
  for(const key of ['predatorChoices','predatorAllocations'])if(input[key]!==undefined&&(!object(input[key])||Object.values(input[key]).some(v=>key==='predatorChoices'?typeof v!=='string':!integer(v,0,5))))return fail(key);
  if(input.predatorDiscipline!==undefined&&typeof input.predatorDiscipline!=='string')return fail('Disciplina de predador');
  if(input.schemaVersion!==undefined && ![1,SCHEMA_VERSION].includes(input.schemaVersion)) return fail('versão não suportada');
  for(const [key,catalog] of [['thinMerits',THIN_MERITS],['thinFlaws',THIN_FLAWS]] as const)if(input[key]!==undefined&&(!Array.isArray(input[key])||input[key].length>3||new Set(input[key]).size!==input[key].length||input[key].some(id=>typeof id!=='string'||!(id in catalog))))return fail(key);
- if(input.loreChoices!==undefined&&(!object(input.loreChoices)||Object.entries(input.loreChoices).some(([k,v])=>k!=='helenaTalent'||!['','Craft','Etiquette','Performance'].includes(v as string))))return fail('escolha de Loresheet');
+ if(input.loreChoices!==undefined&&(!object(input.loreChoices)||Object.entries(input.loreChoices).some(([k,v])=>k!=='helenaTalent'||!['','Craft','Etiquette','Performance'].includes(v as string))))return fail('escolha de Ficha de Conhecimento');
  if(input.thinCurse!==undefined&&!Object.values(Clan).includes(input.thinCurse))return fail('Maldição herdada');
  if(input.creationAge!==undefined&&!['childer','neonate','ancilla'].includes(input.creationAge))return fail('idade de criação');
  if(input.initialExperienceGranted!==undefined&&typeof input.initialExperienceGranted!=='boolean')return fail('XP inicial');
@@ -39,7 +40,7 @@ export function parseCharacter(input:unknown):Character {
  if(raw.creationCompletedAt!==undefined&&(typeof raw.creationCompletedAt!=='string'||!/^\d{4}-\d{2}-\d{2}T/.test(raw.creationCompletedAt)||Number.isNaN(Date.parse(raw.creationCompletedAt))))return fail('data de conclusão');
  if(raw.profile!==undefined && !['player','npc'].includes(raw.profile)) return fail('perfil');
  const result={...oInitialCharacter,...raw,schemaVersion:SCHEMA_VERSION} as Character;
- for(const key of ['name','concept','ambition','desire','sire','mentor','touchstones','portraitUrl']) {
+ for(const key of ['name','concept','ambition','desire','sire','mentor','touchstones','portraitUrl','backstory']) {
   const v=result[key]; if(v!==undefined && (typeof v!=='string'||v.length>2_000_000)) return fail(key);
  }
  if(result.portraitUrl && !/^data:image\/(jpeg|png|webp);base64,[a-z0-9+/=]+$/i.test(result.portraitUrl)) return fail('retrato: utilize upload local');
@@ -102,9 +103,9 @@ export function finishingIssues(c:Character):string[]{
  const budget=AGE_PROFILES[c.creationAge||'childer'];
  if(adv!==budget.advantages)issues.push(`Distribua exatamente ${budget.advantages} pontos de Vantagens (bônus de predador são adicionais).`);
  if(flaws!==budget.flaws)issues.push(`Distribua exatamente ${budget.flaws} pontos de Defeitos (bônus de predador são adicionais).`);
- if(c.loresheets.some(l=>l.id==='v5-helena'&&l.level===2)&&!c.loreChoices?.helenaTalent)issues.push('Escolha a Perícia de Talento Verdadeiro na Loresheet de Helena.');
- for(const skill of aMandatorySpecialtySkills)if(c.skills[skill]>0&&!c.specialties.some(s=>s.skill===skill&&s.name.trim()))issues.push(`Escolha a especialidade gratuita de ${skill}.`);
- if(c.specialties.length < aMandatorySpecialtySkills.filter(k=>c.skills[k]>0).length+1 || !c.specialties.some(s=>c.skills[s.skill]>0&&s.name.trim()))issues.push('Escolha uma especialidade em uma Perícia com pontos.');
+ if(c.loresheets.some(l=>l.id==='v5-helena'&&l.level===2)&&!c.loreChoices?.helenaTalent)issues.push('Escolha a Habilidade de Talento Inato na Ficha de Conhecimento de Helena.');
+ for(const skill of aMandatorySpecialtySkills)if(c.skills[skill]>0&&!c.specialties.some(s=>s.skill===skill&&s.name.trim()))issues.push(`Escolha a especialização gratuita de ${skill}.`);
+ if(c.specialties.length < aMandatorySpecialtySkills.filter(k=>c.skills[k]>0).length+1 || !c.specialties.some(s=>c.skills[s.skill]>0&&s.name.trim()))issues.push('Escolha uma especialização em uma Habilidade com pontos.');
  if(c.gameType===GameType.Werewolf){
   const t=W5_TRIBES[c.tribe];if(!t||c.renown[t.renown]!==2||Object.values(c.renown).filter(v=>typeof v==='number').reduce((s:number,v:number)=>s+v,0)!==3)issues.push('Renome: 2 no Renome do patrono e 1 em outro.');
   for(const origin of ['native','auspice','tribe']){const selected=(c.gifts||[]).filter(g=>g.origin===origin);if(selected.length!==1||!W5_GIFTS.some(g=>g.id===selected[0]?.id&&g.origin===origin&&g.totalRenown<=3&&(origin==='native'||g.owner===(origin==='tribe'?c.tribe:c.auspice))))issues.push(`Escolha um Dom ${origin==='native'?'nativo':origin==='tribe'?'da tribo':'do augúrio'} elegível.`);}
@@ -122,12 +123,12 @@ export function finishingIssues(c:Character):string[]{
    if(c.predatorType==='farmer'&&c.bloodPotency>=3)issues.push('Fazendeiro exige Potência de Sangue menor que 3.');
    if(predator&&c.predatorDiscipline&&!availablePredatorDisciplines(predator,c.clan).includes(c.predatorDiscipline))issues.push('Disciplina de predador incompatível com o pacote ou clã.');
    if(predator)for(const group of predator.choices||[])if(c.predatorChoices?.[group.id]&&!group.options.some(o=>o.id===c.predatorChoices[group.id]))issues.push(`Predador: escolha válida exigida para ${group.label}.`);
-   if(predator)for(const group of predator.allocations||[]){const sum=group.options.reduce((s,o,i)=>s+(c.predatorAllocations?.[o.id]??(i===0?group.total:0)),0);if(sum!==group.total)issues.push(`Distribua ${group.total} pontos em ${group.label} do predador.`);}
+   if(predator)for(const group of predator.allocations||[]){const sum=group.options.reduce((s,o,i)=>s+(c.predatorAllocations?.[o.id]??(i===0?group.total:0)),0);if(sum!==group.total||group.options.some(o=>{const n=c.predatorAllocations?.[o.id]??(group.options[0].id===o.id?group.total:0);return n>0&&o.levels?.some(level=>level>0)&&!o.levels.includes(n);}))issues.push(`Distribua ${group.total} pontos em ${group.label} do predador.`);}
    if(c.predatorType&&!predator)issues.push('Tipo de predador desconhecido.');
    if(!c.predatorType)issues.push('Defina o predador ou revise com o Narrador a exceção de recém-criado.');
   }
   const details=fnGetDisciplineDetails(k=>k);
-  for(const [key,dots]of Object.entries(c.disciplines)){const ids=c.disciplinePowers[key]||[];const levels=ids.map(id=>details[key]?.powers.find(p=>p.id===id)?.level||0).sort((a,b)=>b-a);if(levels.some((level,i)=>level>dots-i))issues.push(`Distribuição de poderes inválida: ${key}.`);if(ids.length!==dots)issues.push(`Selecione ${dots} poderes de ${key}.`);for(const id of ids){const p=details[key]?.powers.find(p=>p.id===id);if(!p||p.level>dots||(p.prerequisite&&!ids.includes(p.prerequisite))||p.amalgam?.some(r=>(c.disciplines[r.discipline]||0)<r.level))issues.push(`Reveja os requisitos de ${key}.`);}}
+  for(const [key,dots]of Object.entries(c.disciplines)){const ids=c.disciplinePowers[key]||[];const levels=ids.map(id=>details[key]?.powers.find(p=>p.id===id)?.level||0).sort((a,b)=>b-a);if(levels.some((level,i)=>level>dots-i))issues.push(`Distribuição de poderes inválida: ${key}.`);if(ids.length!==dots)issues.push(`Selecione ${dots} poderes de ${key}.`);for(const id of ids){const p=details[key]?.powers.find(p=>p.id===id);if(!p||p.level>dots||!powerPrerequisitesMet(p,ids)||p.amalgam?.some(r=>(c.disciplines[r.discipline]||0)<r.level))issues.push(`Reveja os requisitos de ${key}.`);}}
  }
  return issues;
 }
@@ -147,12 +148,12 @@ export function playerIssues(c:Character):string[]{
  if(c.gameType===GameType.Vampire&&c.convictions?.some(v=>!v.belief.trim()||!v.touchstone.trim()))issues.push('Preencha cada Convicção e seu Pilar associado.');
  if(c.gameType===GameType.Werewolf&&c.touchstoneLinks?.some(v=>!v.name.trim()))issues.push('Preencha o nome dos Pilares adicionados.');
  if(c.gameType===GameType.Vampire&&c.rituals.some(r=>INITIAL_BLOOD_RITUALS.some(x=>x.id===r.id))&&(c.disciplines.bloodsorcery||0)<1)issues.push('Ritual de Sangue exige Feitiçaria de Sangue 1.');
- if(!c.skillPath)issues.push('Escolha um pacote de Perícias: Generalista, Equilibrado ou Especialista.');
- if(c.skillPath&&Object.values(c.skills).filter(n=>n>0).sort((a,b)=>a-b).join()!==[...oSkillPaths[c.skillPath]].sort((a,b)=>a-b).join())issues.push('Conclua a distribuição do pacote de Perícias escolhido.');
+ if(!c.skillPath)issues.push('Escolha um pacote de Habilidades: Generalista, Equilibrado ou Especialista.');
+ if(c.skillPath&&Object.values(c.skills).filter(n=>n>0).sort((a,b)=>a-b).join()!==[...oSkillPaths[c.skillPath]].sort((a,b)=>a-b).join())issues.push('Conclua a distribuição do pacote de Habilidades escolhido.');
  if(!c.name.trim()||!c.concept.trim())issues.push('Preencha nome e conceito.');
  if(!validAttributes(c))issues.push('Atributos: um 4, três 3, quatro 2 e um 1.');
  const skills=Object.values(c.skills).filter(n=>n>0).sort((a,b)=>a-b).join();
- if(!Object.values(oSkillPaths).some(pool=>[...pool].sort((a,b)=>a-b).join()===skills))issues.push('Distribua as Perícias conforme um dos três pacotes.');
+ if(!Object.values(oSkillPaths).some(pool=>[...pool].sort((a,b)=>a-b).join()===skills))issues.push('Distribua as Habilidades conforme um dos três pacotes.');
  if(c.gameType===GameType.Vampire&&!c.clan)issues.push('Selecione o clã ou perfil vampírico.');
  if(c.gameType===GameType.Werewolf&&(!c.tribe||!c.auspice))issues.push('Selecione tribo e augúrio.');
  return issues;
@@ -166,7 +167,7 @@ export function advancementIssues(c:Character):string[]{
  for(const ritual of c.rituals){
   const blood=BLOOD_RITUALS.find(x=>x.id===ritual.id),ceremony=OBLIVION_CEREMONIES.find(x=>x.id===ritual.id);
   if(blood&&(c.disciplines.bloodsorcery||0)<blood.level)issues.push('Ritual exige Feitiçaria de Sangue '+blood.level+'.');
-  if(ceremony&&((c.disciplines.oblivion||0)<ceremony.level||!c.disciplinePowers.oblivion?.includes(ceremony.prerequisite)))issues.push('Cerimônia exige Oblívio e seu poder obrigatório.');
+  if(ceremony&&((c.disciplines.oblivion||0)<ceremony.level||(ceremony.prerequisite&&!c.disciplinePowers.oblivion?.includes(ceremony.prerequisite))))issues.push('Cerimônia exige Oblívio e seu poder obrigatório.');
  }
  if(hasAlternativeBane(c)&&!ALTERNATIVE_BANES.some(b=>b.clan===c.clan))issues.push('O perfil escolhido não possui Maldição alternativa.');
  if(c.gameType===GameType.Vampire){
@@ -174,7 +175,7 @@ export function advancementIssues(c:Character):string[]{
   for(const [key,dots] of Object.entries(c.disciplines)){
    const ids=c.disciplinePowers[key]||[];
    if((key==='thinbloodalchemy'?ids.length<dots:ids.length!==dots)||new Set(ids).size!==ids.length)issues.push(`Reveja a quantidade de poderes de ${key}.`);
-   for(const id of ids){const p=catalog[key]?.powers.find(x=>x.id===id);if(!p||p.level>dots||(p.prerequisite&&!ids.includes(p.prerequisite))||p.amalgam?.some(r=>(c.disciplines[r.discipline]||0)<r.level))issues.push(`Reveja os requisitos de ${key}.`);}
+   for(const id of ids){const p=catalog[key]?.powers.find(x=>x.id===id);if(!p||p.level>dots||!powerPrerequisitesMet(p,ids)||p.amalgam?.some(r=>(c.disciplines[r.discipline]||0)<r.level))issues.push(`Reveja os requisitos de ${key}.`);}
   }
  }else if(!c.tribe||!c.auspice)issues.push('Selecione tribo e augúrio.');
  return issues;

@@ -1,8 +1,14 @@
+import {PredatorBenefits} from './components/PredatorBenefits';
+import {powerPrerequisitesMet} from "./lib/powerRequirements";
+import {PdfButton} from './components/PdfButton';
+import {DiceRoller} from './components/DiceRoller';
+import {setRemaining,synchronizeDamage,characterDamage,trackCapacity} from './lib/damage';
+import {BookSources,BookReferenceScope} from './lib/bookReferences';
 import {RulesLibrary} from './components/RulesLibrary';
 import {HelpLabel} from './components/HelpLabel';
 import {DisciplineReference} from './components/DisciplineReference';
 import {HuntingReference} from './components/HuntingReference';
-import {GoalIdeas} from './components/GoalIdeas';
+import {generateStoryIdea} from './data/storyIdeas';
 import {TRAIT_HELP} from './data/traitHelp';
 import {withNpcTemplate} from './lib/npcTemplates';
 import {BloodRitualPicker} from './components/BloodRitualPicker';
@@ -19,7 +25,7 @@ import { ThinBloodCreation } from './components/ThinBloodCreation';
 import { WerewolfCreation } from './components/WerewolfCreation';
 import { parseCharacter, finishingIssues, validAttributes, playerIssues, SCHEMA_VERSION } from './lib/characterValidation';
 import { W5_TRIBES } from './data/w5';
-import { asNarrativeNpc } from './lib/npc';
+import { createNarrativeNpc } from './lib/npc';
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, Specialty, DisciplinePower, GameType, Tribe, Auspice, Disciplines } from './types';
@@ -33,8 +39,7 @@ import { InfoModal } from './components/InfoModal';
 import { InfoIcon } from './components/InfoIcon';
 import { GothicFrame, RoseIcon } from './components/ui/GothicFrame';
 import { StepIndicator } from './components/StepIndicator';
-import { fnGenerateIdentity } from './lib/generators';
-import { fnCreateRandomCharacter } from './lib/randomizer';
+import { fnGenerateIdentity, fnGenerateName, fnGenerateConcept } from './lib/generators';
 import { fnProcessImage } from './lib/imageUtils';
 
 // --- ICONS --- //
@@ -156,14 +161,14 @@ const StorageModal: React.FC<StorageModalProps> = ({ mode: sMode, onClose: fnOnC
         <InfoModal title={sMode === 'save' ? fnT('storage.saveMode') : fnT('storage.loadMode')} onClose={fnOnClose}>
             <div className="space-y-6">
                 {sMode === 'save' && (
-                    <div className="flex gap-2 items-end">
+                    <div className="storage-save-form grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] items-end">
                         <Input 
                             label={fnT('storage.enterName')} 
                             value={sNameInput} 
                             onChange={e => fnSetNameInput(e.target.value)}
                             placeholder={fnT('storage.namePlaceholder')}
                         />
-                        <Button onClick={fnHandleSave} disabled={!sNameInput.trim()} className="mb-[2px] h-[42px]">
+                        <Button onClick={fnHandleSave} disabled={!sNameInput.trim()} className="min-h-11">
                             {fnT('buttons.save')}
                         </Button>
                     </div>
@@ -195,7 +200,7 @@ const StorageModal: React.FC<StorageModalProps> = ({ mode: sMode, onClose: fnOnC
                                                 fnSetNameInput(sName);
                                             }
                                         }}
-                                        className="flex-grow text-left font-bold p-3 focus:outline-none focus-visible:bg-gray-750 focus-visible:text-red-400 h-full w-full"
+                                        className="flex-1 min-w-0 break-words text-left font-bold p-3 focus:outline-none focus-visible:bg-gray-750 focus-visible:text-red-400"
                                         aria-label={sMode === 'load' ? `${fnT('buttons.load')}: ${sName}` : `${fnT('buttons.activate')}: ${sName}`}
                                     >
                                         {sName}
@@ -203,7 +208,7 @@ const StorageModal: React.FC<StorageModalProps> = ({ mode: sMode, onClose: fnOnC
                                     <button 
                                         type="button"
                                         onClick={(e) => fnHandleDelete(sName, e)}
-                                        className="p-3 mr-1 hover:bg-red-900 rounded text-gray-500 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                                        className="shrink-0 p-3 mr-1 hover:bg-red-900 rounded text-gray-500 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                                         title={fnT('buttons.delete')}
                                         aria-label={`${fnT('buttons.delete')}: ${sName}`}
                                     >
@@ -411,7 +416,7 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
         if (!oPower) return false;
 
         // Check prerequisites
-        if (oPower.prerequisite && !aSelectedPowerIds.includes(oPower.prerequisite)) return false;
+        if (!powerPrerequisitesMet(oPower,aSelectedPowerIds)) return false;
 
         // Check amalgams
         if (oPower.amalgam) {
@@ -441,7 +446,7 @@ const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disci
         }
     };
 
-    return <div className="mt-4"><p className="mb-2 text-sm text-gray-300">{aSelectedPowerIds.length} / {nDots} {sDisciplineKey==='thinbloodalchemy'?'fórmulas escolhidas':'poderes escolhidos'}</p><CatalogPicker label={`${oDisciplineDetails.name} — ${sDisciplineKey==='thinbloodalchemy'?'fórmulas':'poderes'}`} multiple selected={aSelectedPowerIds} onToggle={fnTogglePower} options={oDisciplineDetails.powers.map(p=>({id:p.id,name:p.name,summary:`Nível ${p.level} · ${p.cost||'Consulte o sistema'}`,unavailable:aSelectedPowerIds.includes(p.id)?undefined:p.level>nDots?`Exige ${p.level} pontos nesta Disciplina.`:aSelectedPowerIds.length>=nDots?'Todos os espaços de poder foram preenchidos.':!fnCheckValidity(p.id)?'Exige pré-requisito, amálgama ou espaço de nível compatível.':undefined,details:<><p>{p.description}</p><p className="mt-2">{p.system}</p>{p.amalgam?.map((r,i)=><p key={i}>Amálgama: {r.discipline} {r.level}</p>)}{p.prerequisite&&<p>Pré-requisito: {oDisciplineDetails.powers.find(x=>x.id===p.prerequisite)?.name||p.prerequisite}</p>}</>}))}/></div>;
+    return <div className="mt-4"><p className="mb-2 text-sm text-gray-300">{aSelectedPowerIds.length} / {nDots} {sDisciplineKey==='thinbloodalchemy'?'fórmulas escolhidas':'poderes escolhidos'}</p><CatalogPicker label={`${oDisciplineDetails.name} — ${sDisciplineKey==='thinbloodalchemy'?'fórmulas':'poderes'}`} multiple selected={aSelectedPowerIds} onToggle={fnTogglePower} options={oDisciplineDetails.powers.map(p=>({id:p.id,name:p.name,summary:`Nível ${p.level} · ${p.cost||'Consulte o sistema'}`,unavailable:aSelectedPowerIds.includes(p.id)?undefined:p.level>nDots?`Exige ${p.level} pontos nesta Disciplina.`:aSelectedPowerIds.length>=nDots?'Todos os espaços de poder foram preenchidos.':!fnCheckValidity(p.id)?'Exige pré-requisito, amálgama ou espaço de nível compatível.':undefined,details:<><p>{p.description}</p><p className="mt-2">{p.system}</p>{p.amalgam?.map((r,i)=><p key={i}>Amálgama: {r.discipline} {r.level}</p>)}{p.prerequisite&&<p>Pré-requisito: {oDisciplineDetails.powers.find(x=>x.id===p.prerequisite)?.name||p.prerequisite}</p>}{p.prerequisiteAny?.length&&<p>Pré-requisito (um deles): {p.prerequisiteAny.map(id=>oDisciplineDetails.powers.find(item=>item.id===id)?.name||id).join(" ou ")}</p>}</>}))}/></div>;
 };
 
 // --- NOTIFICATION COMPONENT --- //
@@ -483,13 +488,29 @@ const App: React.FC = () => {
     const oTribeDetails = useMemo(() => fnGetTribeDetails(fnT), [fnT]);
     const oAuspiceDetails = useMemo(() => fnGetAuspiceDetails(fnT), [fnT]);
 
-    const [view, setView] = useState<'home' | 'creator'>('home');
+    const [view, setView] = useState<'home' | 'creator' | 'sheet'>('home');
     const [nStep, fnSetStep] = useState(1);
+    const workspaceRef = useRef<HTMLDivElement>(null);
+    const headerRef = useRef<HTMLElement>(null);
+    const footerRef = useRef<HTMLElement>(null);
+    useEffect(() => {
+        if (view === 'home') return;
+        const updateInsets = () => {
+            workspaceRef.current?.style.setProperty('--app-header-height', `${headerRef.current?.offsetHeight || 0}px`);
+            workspaceRef.current?.style.setProperty('--app-footer-height', `${footerRef.current?.offsetHeight || 0}px`);
+        };
+        const observer = new ResizeObserver(updateInsets);
+        if (headerRef.current) observer.observe(headerRef.current);
+        if (footerRef.current) observer.observe(footerRef.current);
+        updateInsets();
+        return () => observer.disconnect();
+    }, [view]);
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, [nStep]);
+    }, [nStep,view]);
     const [oCharacter, fnSetCharacter] = useState<Character>(oInitialCharacter);
+    const [activeSaveName,setActiveSaveName]=useState<string|null>(null);
     useEffect(()=>theme.setGame(oCharacter.gameType),[oCharacter.gameType]);
     const characterRef=useRef(oCharacter);
     characterRef.current=oCharacter;
@@ -501,10 +522,10 @@ const App: React.FC = () => {
     useEffect(()=>setCompleted(Boolean(oCharacter.creationCompletedAt)),[oCharacter.creationCompletedAt]);
 
     useEffect(()=>{
-        if(view==='creator'&&oCharacter.gameType){
-            try {localStorage.setItem('whitewolf_draft_v2',JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}));setDraftSummary({name:oCharacter.name,gameType:oCharacter.gameType});setSaveStatus('Rascunho salvo neste navegador');} catch {setSaveStatus('Não foi possível salvar o rascunho. Exporte JSON para preservar suas escolhas.');}
+        if(view!=='home'&&oCharacter.gameType){
+            try {localStorage.setItem('whitewolf_draft_v2',JSON.stringify({...oCharacter,schemaVersion:SCHEMA_VERSION}));localStorage.setItem('whitewolf_draft_save_v1',activeSaveName||'');setDraftSummary({name:oCharacter.name,gameType:oCharacter.gameType});setSaveStatus('Rascunho salvo neste navegador');} catch {setSaveStatus('Não foi possível salvar o rascunho. Exporte JSON para preservar suas escolhas.');}
         }
-    },[oCharacter,view]);
+    },[oCharacter,view,activeSaveName]);
     const fnNormalizeCharacter = useCallback(parseCharacter, []);
     const aAdvantagesAndFlaws = useMemo(() => fnGetAdvantagesAndFlaws(fnT, oCharacter.gameType), [fnT, oCharacter.gameType]);
     const [bShowStorage, fnSetShowStorage] = useState(false);
@@ -520,6 +541,33 @@ const App: React.FC = () => {
     const [completed,setCompleted]=useState(false);
     const [completionRequested,setCompletionRequested]=useState(false);
     const [saveStatus,setSaveStatus]=useState('');
+    const [showExit,setShowExit]=useState(false);
+    const [exitName,setExitName]=useState('');
+    const [exitError,setExitError]=useState('');
+    const requestHome=()=>{
+        setExitName(activeSaveName||oCharacter.name || 'Personagem sem nome');
+        setExitError('');
+        setShowExit(true);
+    };
+    const returnHome=(save:boolean)=>{
+        const name=exitName.trim();
+        if(save){
+            if(!name)return;
+            try {
+                if(name!==activeSaveName&&(localStorage.getItem(`${SAVE_PREFIX}${name}`)||localStorage.getItem(`${LEGACY_SAVE_PREFIX}${name}`))&&!window.confirm(fnT('storage.overwriteWarning')))return;
+            } catch {setExitError('Não foi possível acessar os arquivos salvos. Exporte JSON antes de sair.');return;}
+            if(!fnSaveCharacter(name)){setExitError('Não foi possível salvar. Tente novamente ou exporte JSON antes de sair.');return;}
+        }
+        try {
+            if(!save){localStorage.removeItem('whitewolf_draft_v2');localStorage.removeItem('whitewolf_flow_v1');localStorage.removeItem('whitewolf_draft_save_v1');setDraftSummary(null);}
+        } catch {setExitError('Não foi possível remover o rascunho. Tente novamente.');return;}
+        setShowExit(false);
+        fnSetShowStorage(false);
+        fnSetActiveDetail(null);
+        setCompletionRequested(false);
+        setView('home');
+        window.scrollTo({top:0});
+    };
     const allIssues=creationIssues(oCharacter);
     useEffect(()=>{
         if(view==='creator')try{localStorage.setItem('whitewolf_flow_v1',JSON.stringify({step:nStep,panels}));}catch{}
@@ -543,7 +591,15 @@ const App: React.FC = () => {
     }, [sLocale]);
 
     const fnUpdateCharacter = (field: keyof Character, value: any) => {
-        fnSetCharacter(prev => ({ ...prev, [field]: value }));
+        if(field==='attributes'){
+            const current=characterRef.current,next={...current,attributes:value};
+            const damage={health:characterDamage(current,'health'),willpower:characterDamage(current,'willpower')};
+            if((['health','willpower'] as const).some(key=>damage[key].superficial+damage[key].aggravated>trackCapacity(next,key))){
+                fnShowNotification('A trilha possui mais dano do que a nova capacidade. Revise os ferimentos antes de reduzir esse Atributo.','error');return;
+            }
+            fnApplyTransaction(prev=>synchronizeDamage({...prev,attributes:value},damage));return;
+        }
+        fnApplyTransaction(prev=>field==='damage'?synchronizeDamage(prev,value):field==='health'||field==='willpower'?setRemaining(prev,field,value):({...prev,[field]:value}));
     };
 
     const fnHandleAttributeChange = (attr: string, val: number) => {
@@ -569,19 +625,28 @@ const App: React.FC = () => {
         }));
     };
 
-    const fnSaveCharacter = (sName: string) => {
+    const fnSaveCharacter = (sName: string,finish=false) => {
         if (typeof window !== 'undefined') {
             try {
-                const next={...oCharacter,schemaVersion:SCHEMA_VERSION,...(completionRequested&&allIssues.length===0?{creationCompletedAt:oCharacter.creationCompletedAt||new Date().toISOString()}:{})};
+                const next=fnNormalizeCharacter({...oCharacter,schemaVersion:SCHEMA_VERSION,...((finish||completionRequested)&&allIssues.length===0?{creationCompletedAt:oCharacter.creationCompletedAt||new Date().toISOString()}:{})});
                 localStorage.setItem(`${SAVE_PREFIX}${sName}`, JSON.stringify(next));
                 fnSetCharacter(next);
+                setActiveSaveName(sName);
                 fnShowNotification(fnT('storage.saveSuccess'));
-                if(completionRequested&&allIssues.length===0)setCompleted(true);
+                if((finish||completionRequested)&&allIssues.length===0){setCompleted(true);setView('sheet');fnSetStep(REVIEW_STEP);}
+                else if(oCharacter.creationCompletedAt){setView('sheet');fnSetStep(REVIEW_STEP);}
                 setCompletionRequested(false);
+                return true;
             } catch (e) {
                 fnShowNotification(fnT('storage.saveError'), "error");
             }
         }
+        return false;
+    };
+
+    const fnRequestSave=()=>{
+        if(activeSaveName){fnSaveCharacter(activeSaveName);return;}
+        fnSetStorageMode('save');fnSetShowStorage(true);
     };
 
     const fnLoadCharacter = (sName: string) => {
@@ -592,7 +657,8 @@ const App: React.FC = () => {
                     const oLoaded = JSON.parse(sData) as Partial<Character>;
                     const normalized=fnNormalizeCharacter(oLoaded);
                     fnSetCharacter(normalized);
-                    setView('creator');
+                    setActiveSaveName(sName);
+                    setView('sheet');
                     fnSetStep(REVIEW_STEP);
                     fnShowNotification(fnT('storage.loadSuccess'));
                 } catch (e) {
@@ -613,6 +679,7 @@ const App: React.FC = () => {
 
     const fnResetCharacter = () => {
         if (window.confirm(fnT('common.resetWarning'))) {
+            setActiveSaveName(null);
             const oIdentity = fnGenerateIdentity(sLocale, oCharacter.gameType); 
             fnSetCharacter({
                 ...oInitialCharacter,
@@ -649,7 +716,8 @@ const App: React.FC = () => {
                 const oLoaded = JSON.parse(event.target?.result as string) as Partial<Character>;
                 const normalized=fnNormalizeCharacter(oLoaded);
                 fnSetCharacter(normalized);
-                setView('creator');
+                setActiveSaveName(null);
+                setView('sheet');
                 fnSetStep(REVIEW_STEP);
                 fnShowNotification(fnT('storage.importSuccess'));
             } catch (err) {
@@ -685,12 +753,11 @@ const App: React.FC = () => {
                 const aNext = aToFilter.filter(sId => {
                     const oPower = oDiscDetails.powers.find(p => p.id === sId);
                     if (!oPower) return false;
-
                     // Level check
                     if (oPower.level > (oCharacter.disciplines[sDisc] || 0)) return false;
 
                     // Prerequisite check
-                    if (oPower.prerequisite && !aToFilter.includes(oPower.prerequisite)) return false;
+                    if (!powerPrerequisitesMet(oPower,aToFilter)) return false;
 
                     // Amalgam check
                     if (oPower.amalgam) {
@@ -739,7 +806,7 @@ const App: React.FC = () => {
         const sThemeAccent=sThemeColor;
         const sThemeBorder=bIsWerewolf?'border-emerald-800':'border-red-800';
         const sThemeBg='bg-gray-900';
-        if(oCharacter.creationCompletedAt&&['nature','capacities','powers'].includes(sStepId))return <section className="rounded-lg border border-gray-600 bg-gray-900 p-6 space-y-4"><h2 className="text-xl">Ficha em jogo</h2><p>A distribuição inicial foi encerrada. Use a evolução com XP para aumentar características e adquirir novos benefícios.</p><button className="rounded border p-3" onClick={()=>{setPanel('resources','experience');fnSetStep(5);}}>Evoluir com XP</button></section>;
+        if(view==='sheet'&&oCharacter.creationCompletedAt&&['nature','capacities','powers'].includes(sStepId))return <section className="rounded-lg border border-gray-600 bg-gray-900 p-6 space-y-4"><h2 className="text-xl">Ficha em jogo</h2><p>A distribuição inicial foi encerrada. Use a evolução com XP para aumentar características e adquirir novos benefícios.</p><button className="rounded border p-3" onClick={()=>{setPanel('resources','experience');fnSetStep(5);}}>Evoluir com XP</button></section>;
         switch (sStepId) {
             case 'concept':
                 return (
@@ -758,13 +825,13 @@ const App: React.FC = () => {
                         </div>
                         <p className="text-gray-400 mb-6 italic">{fnT('concept.subtitle')}</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                            <Input id="char-name" label={fnT('concept.name')} value={oCharacter.name} onChange={e => fnUpdateCharacter('name', e.target.value)} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
-                            <Input id="char-mentor" label={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sire')} value={oCharacter.gameType === GameType.Werewolf ? (oCharacter.mentor || '') : oCharacter.sire} onChange={e => fnUpdateCharacter(oCharacter.gameType === GameType.Werewolf ? 'mentor' : 'sire', e.target.value)} placeholder={oCharacter.gameType === GameType.Werewolf ? fnT('concept.mentorPlaceholder') : fnT('concept.sirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                            <Input id="char-name" onGenerate={()=>fnUpdateCharacter('name',fnGenerateName(sLocale,undefined,oCharacter.gameType,oCharacter.name))} label={fnT('concept.name')} value={oCharacter.name} onChange={e => fnUpdateCharacter('name', e.target.value)} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                            <Input id="char-mentor" onGenerate={()=>{const key=oCharacter.gameType===GameType.Werewolf?'mentor':'sire';fnUpdateCharacter(key,fnGenerateName(sLocale,undefined,oCharacter.gameType,oCharacter[key]||''));}} label={oCharacter.gameType === GameType.Werewolf ? fnT('characterSheet.mentor') : fnT('concept.sire')} value={oCharacter.gameType === GameType.Werewolf ? (oCharacter.mentor || '') : oCharacter.sire} onChange={e => fnUpdateCharacter(oCharacter.gameType === GameType.Werewolf ? 'mentor' : 'sire', e.target.value)} placeholder={oCharacter.gameType === GameType.Werewolf ? fnT('concept.mentorPlaceholder') : fnT('concept.sirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             <div className="md:col-span-2">
-                                <Input id="char-concept" label={fnT('concept.concept')} value={oCharacter.concept} onChange={e => fnUpdateCharacter('concept', e.target.value)} placeholder={fnT('concept.conceptPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
+                                <TextArea autoGrow id="char-concept" onGenerate={()=>fnUpdateCharacter('concept',fnGenerateConcept(sLocale,undefined,oCharacter.gameType,oCharacter.concept).concept)} label={fnT('concept.concept')} value={oCharacter.concept} onChange={e => fnUpdateCharacter('concept', e.target.value)} placeholder={fnT('concept.conceptPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} />
                             </div>
-                            <div><Input id="char-ambition" label={fnT('concept.ambition')} value={oCharacter.ambition} onChange={e => fnUpdateCharacter('ambition', e.target.value)} placeholder={fnT('concept.ambitionPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} /><GoalIdeas character={oCharacter} kind="ambition" onChange={fnUpdateCharacter}/></div>
-                            <div><Input id="char-desire" label={fnT('concept.desire')} value={oCharacter.desire} onChange={e => fnUpdateCharacter('desire', e.target.value)} placeholder={fnT('concept.desirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} /><GoalIdeas character={oCharacter} kind="desire" onChange={fnUpdateCharacter}/></div>
+                            <div><TextArea autoGrow id="char-ambition" onGenerate={()=>fnUpdateCharacter('ambition',generateStoryIdea(oCharacter.gameType,'ambition',oCharacter.ambition))} label={fnT('concept.ambition')} value={oCharacter.ambition} onChange={e => fnUpdateCharacter('ambition', e.target.value)} placeholder={fnT('concept.ambitionPlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} /></div>
+                            <div><TextArea autoGrow id="char-desire" onGenerate={()=>fnUpdateCharacter('desire',generateStoryIdea(oCharacter.gameType,'desire',oCharacter.desire))} label={fnT('concept.desire')} value={oCharacter.desire} onChange={e => fnUpdateCharacter('desire', e.target.value)} placeholder={fnT('concept.desirePlaceholder')} isWerewolf={oCharacter.gameType === GameType.Werewolf} /></div>
                              <div className="md:col-span-2">
                                 <label className="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-1.5">
                                     {fnT('concept.portrait')}
@@ -802,7 +869,7 @@ const App: React.FC = () => {
                                 <h2 className="text-2xl font-cinzel text-red-500">{fnT('clan.title')}</h2>
                             </div>
 
-                            <div className="bg-black/40 p-4 rounded-xl border border-red-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
+                            <div className="app-sticky-tools bg-black/40 p-4 rounded-xl border border-red-900/30 sticky z-30 backdrop-blur-md shadow-2xl">
                                 <div className="flex flex-wrap justify-center gap-2">
                                     {aClanKeys.map(sClan => (
                                         <button
@@ -849,6 +916,7 @@ const App: React.FC = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    <BookSources sourceKey={'clan:'+oCharacter.clan}/>
                                 </GothicFrame>
                             ) : (
                                 <div className="py-20 flex flex-col items-center justify-center opacity-30">
@@ -868,7 +936,7 @@ const App: React.FC = () => {
                                 <h2 className="text-2xl font-cinzel text-emerald-500">{fnT('steps.tribe')}</h2>
                             </div>
 
-                            <div className="bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
+                            <div className="app-sticky-tools bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky z-30 backdrop-blur-md shadow-2xl">
                                 <div className="flex flex-wrap justify-center gap-2">
                                     {aTribeKeys.map(sTribe => (
                                         <button
@@ -915,6 +983,7 @@ const App: React.FC = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    <BookSources sourceKey={'tribe:'+oCharacter.tribe}/>
                                 </GothicFrame>
                             ) : (
                                 <div className="py-20 flex flex-col items-center justify-center opacity-30">
@@ -934,7 +1003,7 @@ const App: React.FC = () => {
                                 <h2 className="text-2xl font-cinzel text-emerald-500">{fnT('steps.auspice')}</h2>
                             </div>
 
-                            <div className="bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky top-[72px] z-30 backdrop-blur-md shadow-2xl">
+                            <div className="app-sticky-tools bg-black/40 p-4 rounded-xl border border-emerald-900/30 sticky z-30 backdrop-blur-md shadow-2xl">
                                 <div className="flex flex-wrap justify-center gap-2">
                                     {aAuspiceKeys.map(sAuspice => (
                                         <button
@@ -961,6 +1030,7 @@ const App: React.FC = () => {
                                         </div>
                                         <p className="text-gray-300 leading-relaxed italic text-lg">{oAuspiceDetails[oCharacter.auspice as Auspice].description}</p>
                                     </div>
+                                    <BookSources sourceKey={'auspice:'+oCharacter.auspice}/>
                                 </GothicFrame>
                             ) : (
                                 <div className="py-20 flex flex-col items-center justify-center opacity-30">
@@ -1003,7 +1073,7 @@ const App: React.FC = () => {
             case 'nature':
                 return bIsWerewolf?<CreationTabs items={[{id:'tribe',label:'Tribo'},{id:'auspice',label:'Augúrio'}]} active={panels.nature} onChange={id=>setPanel('nature',id)}>{id=>renderStepContent(id)}</CreationTabs>:renderStepContent('clan');
             case 'capacities':
-                return <CreationTabs items={[{id:'attributes',label:'Atributos'},{id:'skills',label:'Perícias'},{id:'specialties',label:'Especialidades'}]} active={panels.capacities} onChange={id=>setPanel('capacities',id)}>{id=>id==='specialties'?<SpecialtyEditor character={oCharacter} onChange={fnUpdateCharacter}/>:renderStepContent(id)}</CreationTabs>;
+                return <CreationTabs items={[{id:'attributes',label:'Atributos'},{id:'skills',label:'Habilidades'},{id:'specialties',label:'Especializações'}]} active={panels.capacities} onChange={id=>setPanel('capacities',id)}>{id=>id==='specialties'?<SpecialtyEditor character={oCharacter} onChange={fnUpdateCharacter}/>:renderStepContent(id)}</CreationTabs>;
             case 'powers':
                 return bIsWerewolf?renderStepContent('wolf'):<CreationTabs items={oCharacter.clan===Clan.ThinBlood?[{id:'thinblood',label:'Méritos e Defeitos'},{id:'disciplines',label:'Disciplinas e fórmulas'}]:[{id:'predator',label:'Alimentação'},{id:'disciplines',label:'Disciplinas e poderes'},...(((oCharacter.disciplines.bloodsorcery||0)>0||(oCharacter.disciplines.oblivion||0)>0)?[{id:'bloodrituals',label:'Rituais e cerimônias'}]:[])]} active={panels.powers} onChange={id=>setPanel('powers',id)}>{id=>renderStepContent(id)}</CreationTabs>;
             case 'bloodrituals':
@@ -1217,24 +1287,25 @@ const App: React.FC = () => {
                                 })()}
                             </div>
 
-                            <div className="mt-6"><CatalogPicker label="Disciplinas disponíveis" selected={[]} onToggle={id=>fnUpdateCharacter('disciplines',{...oCharacter.disciplines,[id]:0})} options={VAMPIRE_DISCIPLINES.filter(id=>!(id in oCharacter.disciplines)).map(id=>({id,name:oDisciplineDetails[id]?.name||id,summary:oDisciplineDetails[id]?.description,details:oDisciplineDetails[id]?<DisciplineReference discipline={oDisciplineDetails[id]}/>:undefined,unavailable:id==='thinbloodalchemy'?(oCharacter.clan!==Clan.ThinBlood||!oCharacter.thinMerits?.includes('alchemist')?'Exige Alquimista de Sangue-Fraco.':undefined):oCharacter.clan===Clan.ThinBlood&&!oCharacter.thinMerits?.includes('affinity')?'Exige Afinidade com Disciplina.':undefined}))}/></div>
+                            <div className="mt-6"><CatalogPicker label="Disciplinas disponíveis" selected={[]} onToggle={id=>fnUpdateCharacter('disciplines',{...oCharacter.disciplines,[id]:0})} options={VAMPIRE_DISCIPLINES.filter(id=>!(id in oCharacter.disciplines)).map(id=>({id,name:oDisciplineDetails[id]?.name||id,summary:oDisciplineDetails[id]?.description,details:oDisciplineDetails[id]?<DisciplineReference discipline={oDisciplineDetails[id]}/>:undefined,unavailable:id==='thinbloodalchemy'?(oCharacter.clan!==Clan.ThinBlood||!oCharacter.thinMerits?.includes('alchemist')?'Exige Alquimista Sangue-Ralo.':undefined):oCharacter.clan===Clan.ThinBlood&&!oCharacter.thinMerits?.includes('affinity')?'Exige Afinidade com Disciplina.':undefined}))}/></div>
                         </GothicFrame>
 
                         </>):null}
                         {sStepId==='predator'&&<div className="space-y-5">
                         <p className="text-sm text-gray-300">Como você se alimenta? O predador concede benefícios adicionais e pode alterar suas Disciplinas.</p>
-                        <CatalogPicker label="Tipo de predador" selected={oCharacter.predatorType?[oCharacter.predatorType]:[]} onToggle={id=>fnHandlePredatorTypeChange(id===oCharacter.predatorType?'':id)} options={aPredatorTypes.map(pt=>({id:pt.id,name:pt.name.replace('[Comunitário / opcional] ',''),summary:pt.description.split('. ')[0],unavailable:oCharacter.clan===Clan.Ventrue&&['farmer','bagger'].includes(pt.id)?'Incompatível com Ventrue.':pt.id==='farmer'&&oCharacter.bloodPotency>=3?'Exige Potência de Sangue menor que 3.':undefined,details:<><p>{pt.description}</p><HuntingReference predator={pt}/><p>{pt.source}</p><h4 className="mt-3">Concedido pelo predador</h4>{pt.disciplineAdd&&<p>{oDisciplineDetails[pt.disciplineAdd.discipline]?.name} +{pt.disciplineAdd.dots}</p>}<p>Humanidade: {pt.humanityModifier>0?'+':''}{pt.humanityModifier}</p>{[...pt.advantages,...pt.flaws].map(a=><p key={a.id}>{a.name} · {a.cost} pontos</p>)}</>}))}/>
+                        <CatalogPicker label="Tipo de predador" selected={oCharacter.predatorType?[oCharacter.predatorType]:[]} onToggle={id=>fnHandlePredatorTypeChange(id===oCharacter.predatorType?'':id)} options={aPredatorTypes.map(pt=>({id:pt.id,name:pt.name.replace('[Comunitário / opcional] ',''),summary:pt.description.split('. ')[0],unavailable:oCharacter.clan===Clan.Ventrue&&['farmer','bagger'].includes(pt.id)?'Incompatível com Ventrue.':pt.id==='farmer'&&oCharacter.bloodPotency>=3?'Exige Potência de Sangue menor que 3.':undefined,details:<><p>{pt.description}</p><PredatorBenefits predator={pt} preview/><HuntingReference predator={pt}/><p>{pt.source}</p></>}))}/>
                         {characterPredator(oCharacter,aPredatorTypes)&&<PredatorCustomization character={oCharacter} predator={characterPredator(oCharacter,aPredatorTypes)!} onChange={patch=>fnHandlePredatorTypeChange(oCharacter.predatorType,patch)} disciplineName={key=>oDisciplineDetails[key]?.name||key}/>}
-                        {(()=>{const p=characterPredator(oCharacter,aPredatorTypes);const choices=p?.specialtyOptions||[];return choices.length>0&&<CatalogPicker label="Especialidade do predador" selected={choices.filter(o=>oCharacter.specialties.some(s=>s.skill===o.skill&&s.name===o.name)).map(o=>o.skill+':'+o.name)} options={choices.map(o=>({id:o.skill+':'+o.name,name:`${fnT('skills.list.'+o.skill)}: ${o.name}`,summary:'Benefício adicional do predador.'}))} onToggle={id=>{const choice=choices.find(o=>o.skill+':'+o.name===id);const other=oCharacter.specialties.filter(s=>!choices.some(o=>o.name===s.name&&o.skill===s.skill));if(choice)fnUpdateCharacter('specialties',oCharacter.specialties.some(s=>s.skill===choice.skill&&s.name===choice.name)?other:[...other,choice]);}}/>;})()}
+                        {(()=>{const p=characterPredator(oCharacter,aPredatorTypes);const choices=p?.specialtyOptions||[];return choices.length>0&&<CatalogPicker label="Especialização do predador" selected={choices.filter(o=>oCharacter.specialties.some(s=>s.skill===o.skill&&s.name===o.name)).map(o=>o.skill+':'+o.name)} options={choices.map(o=>({id:o.skill+':'+o.name,name:`${fnT('skills.list.'+o.skill)}: ${o.name}`,summary:'Benefício adicional do predador.'}))} onToggle={id=>{const choice=choices.find(o=>o.skill+':'+o.name===id);const other=oCharacter.specialties.filter(s=>!choices.some(o=>o.name===s.name&&o.skill===s.skill));if(choice)fnUpdateCharacter('specialties',oCharacter.specialties.some(s=>s.skill===choice.skill&&s.name===choice.name)?other:[...other,choice]);}}/>;})()}
                         </div>}
                     </div>
                 );
             case 'sheet':
                 return (
+                    <DiceRoller character={oCharacter} onUpdate={fnApplyTransaction}>
                     <CharacterSheet 
-                        character={oCharacter} 
+                        character={oCharacter} editable={view==='creator'}
                         onChange={fnUpdateCharacter}
-                        onAdvance={()=>{setPanel('resources','experience');fnSetStep(5);}}
+                        onAdvance={()=>{setPanel('resources','experience');fnSetStep(5);setView('creator');}}
                         onUpdateHunger={(h) => fnUpdateCharacter('hunger', h)} 
                         onUpdateHumanity={(h) => fnUpdateCharacter('humanity', h)}
                         onUpdateWillpower={(w) => fnUpdateCharacter('willpower', w)}
@@ -1242,9 +1313,9 @@ const App: React.FC = () => {
                         onUpdateRage={(r) => fnUpdateCharacter('rage', r)}
                         onUpdateHarano={(h) => fnUpdateCharacter('harano', h)}
                         onUpdateHauglosk={(h) => fnUpdateCharacter('hauglosk', h)}
-                        onBack={() => { setView('home'); fnSetStep(1); }}
-                        onSave={() => { fnSetStorageMode('save'); fnSetShowStorage(true); }}
-                    />
+                        onBack={requestHome}
+                        onSave={fnRequestSave}
+                    /></DiceRoller>
                 );
             default:
                 return null;
@@ -1252,34 +1323,38 @@ const App: React.FC = () => {
     };
 
     if(view==='home')return <div className="min-h-screen clean-creation" style={gothicBackgroundStyle}>
-        <StartScreen draft={draftSummary} onStart={(mode,game,role,scale,template)=>{
+        <StartScreen draft={draftSummary} onStart={(mode,game,role,scale,template,options)=>{
+            setActiveSaveName(null);
             const identity=fnGenerateIdentity(sLocale,game);
             if(mode==='npc'){
-                const base=asNarrativeNpc(fnCreateRandomCharacter(sLocale,scale as any,fnT,game),scale,role);
+                const base=createNarrativeNpc(sLocale,scale as any,fnT,game,role,options);
                 const c=template?withNpcTemplate(base,template as any):base;
                 fnSetCharacter(c);fnSetStep(REVIEW_STEP);
             }else{fnSetCharacter({...oInitialCharacter,gameType:game,profile:'player',name:identity.name,concept:identity.concept});fnSetStep(1);setPanels({nature:'tribe',capacities:'attributes',powers:'predator',resources:'advantages'});}
             setView('creator');
-        }} onContinue={()=>{try{const raw=localStorage.getItem('whitewolf_draft_v2');if(!raw)return;const c=parseCharacter(JSON.parse(raw));fnSetCharacter(c);let step=1;try{const meta=JSON.parse(localStorage.getItem('whitewolf_flow_v1')||'{}');if(Number.isInteger(meta.step)&&meta.step>=1&&meta.step<=REVIEW_STEP)step=meta.step;if(meta.panels&&typeof meta.panels==='object')setPanels(prev=>Object.fromEntries(Object.entries(prev).map(([key,value])=>[key,typeof meta.panels[key]==='string'?meta.panels[key]:value])) as typeof prev);}catch{}fnSetStep(step);setView('creator');}catch(err){fnShowNotification(err instanceof Error?err.message:'Não foi possível abrir o rascunho.','error');}}} onLibrary={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}} onImport={fnImportJSON}/>
-        {bShowStorage&&<StorageModal mode={sStorageMode} onClose={()=>fnSetShowStorage(false)} currentName={oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>}
+        }} onContinue={()=>{try{const raw=localStorage.getItem('whitewolf_draft_v2');if(!raw)return;const c=parseCharacter(JSON.parse(raw));fnSetCharacter(c);setActiveSaveName(localStorage.getItem('whitewolf_draft_save_v1')||null);let step=1;try{const meta=JSON.parse(localStorage.getItem('whitewolf_flow_v1')||'{}');if(Number.isInteger(meta.step)&&meta.step>=1&&meta.step<=REVIEW_STEP)step=meta.step;if(meta.panels&&typeof meta.panels==='object')setPanels(prev=>Object.fromEntries(Object.entries(prev).map(([key,value])=>[key,typeof meta.panels[key]==='string'?meta.panels[key]:value])) as typeof prev);}catch{}fnSetStep(c.creationCompletedAt?REVIEW_STEP:step);setView(c.creationCompletedAt?'sheet':'creator');}catch(err){fnShowNotification(err instanceof Error?err.message:'Não foi possível abrir o rascunho.','error');}}} onLibrary={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}} onImport={fnImportJSON}/>
+        {bShowStorage&&<StorageModal mode={sStorageMode} onClose={()=>fnSetShowStorage(false)} currentName={activeSaveName||oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>}
         {oNotification&&<Notification message={oNotification.message} type={oNotification.type} onClose={()=>fnSetNotification(null)}/>}
     </div>;
 
     return (
-        <div className="min-h-screen clean-creation w-full overflow-x-hidden text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
-            <header className="bg-black border-b-2 border-red-900 p-3 sm:p-4 sticky top-0 z-50 shadow-sm">
-                <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3 min-w-0">
-                    <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => setView('home')}>
-                         <div className="text-red-600">{oCharacter.gameType===GameType.Werewolf?<MoonGlyph className="w-10 h-10"/>:<RoseIcon className="w-10 h-10"/>}</div>
-                        <div>
+        <BookReferenceScope.Provider value={oCharacter.gameType}>
+        <div ref={workspaceRef} className="app-workspace min-h-screen clean-creation w-full text-white font-sans selection:bg-red-900 selection:text-white flex flex-col" style={gothicBackgroundStyle}>
+            <header ref={headerRef} className="app-header bg-black border-b border-red-900 sticky top-0 z-50">
+                <div className="app-header-inner max-w-7xl mx-auto">
+                    <button type="button" aria-label="Voltar à tela inicial" className="app-brand" onClick={requestHome}>
+                         <span className="app-brand-symbol text-red-600">{oCharacter.gameType===GameType.Werewolf?<MoonGlyph className="w-10 h-10"/>:<RoseIcon className="w-10 h-10"/>}</span>
+                        <div className="min-w-0">
                             <h1 className="text-lg sm:text-2xl font-cinzel font-bold text-red-600 tracking-widest [text-wrap:balance] break-words whitespace-normal leading-tight"><span className="hidden sm:inline">{fnT('app.title')}</span><span className="sm:hidden">Whitewolf</span></h1>
-                            <p className="text-xs text-gray-500 hidden md:block break-words whitespace-normal">{fnT('app.subtitle')}</p>
+                            <p className="text-xs text-gray-300 break-words whitespace-normal">← Tela inicial</p>
                         </div>
-                    </div>
-                    <div className="flex flex-wrap items-center gap-3 text-sm">
+                    </button>
+                    <div className="app-header-actions text-sm">
                         <RulesLibrary character={oCharacter}/>
-                        <button type="button" aria-label="Salvar rascunho" className="border border-gray-600 rounded px-3 py-2" onClick={()=>{fnSetStorageMode('save');fnSetShowStorage(true);}}><span className="hidden sm:inline">Salvar rascunho</span><span className="sm:hidden">Salvar</span></button>
-                        <details className="relative"><summary className="cursor-pointer border border-gray-600 rounded px-3 py-2">Mais ações</summary><div className="absolute right-0 top-full mt-2 z-50 w-56 p-3 rounded border border-gray-600 bg-gray-950 grid gap-3">
+                        <button type="button" aria-label={view==='sheet'?'Salvar personagem':'Salvar rascunho'} className="border border-gray-600 rounded px-3 py-2" onClick={fnRequestSave}><span className="hidden sm:inline">{view==='sheet'?'Salvar personagem':'Salvar rascunho'}</span><span className="sm:hidden">Salvar</span></button>
+                        <details className="app-actions-menu"><summary className="border border-gray-600 rounded px-3 py-2">Mais ações</summary><div className="app-actions-popover border border-gray-600 bg-gray-950">
+                            <button type="button" onClick={requestHome}>Voltar à tela inicial</button>
+                            <button type="button" onClick={()=>{fnSetStorageMode('save');fnSetShowStorage(true);}}>Salvar uma cópia</button>
                             <ThemeControl/><button type="button" onClick={fnExportJSON}>Exportar JSON</button>
                             <label className="cursor-pointer">Importar JSON<input type="file" accept=".json" className="sr-only" onChange={fnImportJSON}/></label>
                             <button type="button" onClick={()=>{fnSetStorageMode('load');fnSetShowStorage(true);}}>Meus personagens</button>
@@ -1289,31 +1364,37 @@ const App: React.FC = () => {
                     </div>
                 </div>
             </header>
-            <main className="flex-grow p-3 sm:p-4 md:p-8 pb-36 sm:pb-36 md:pb-36 max-w-6xl mx-auto w-full min-w-0 overflow-x-hidden">
-                <StepIndicator
+            <main className="app-main flex-grow p-4 md:p-8 max-w-6xl mx-auto w-full min-w-0">
+                {view==='creator'&&<StepIndicator
                     completedSteps={aSteps.map((_,i)=>i+1).filter(step=>step<REVIEW_STEP&&allIssues.every(issue=>issueDestination(issue,oCharacter).step!==step))}
                     currentStep={nStep}
                     totalSteps={aSteps.length}
                     steps={aSteps}
                     isWerewolf={oCharacter.gameType === GameType.Werewolf}
                     onStepClick={fnSetStep}
-                />
-                <div className="mb-5 mt-4 flex flex-wrap justify-between gap-2 text-sm text-gray-400"><p>Etapa {nStep} de {aSteps.length} · {aSteps[nStep-1]?.label}</p><p role="status">{saveStatus}</p></div>
-                {nStep===REVIEW_STEP&&<section aria-label="Revisão da criação" className="mb-6 rounded-xl border border-gray-600 p-5 bg-gray-900">
+                />}
+                {view==='sheet'?<section aria-label="Personagem em jogo" className="mb-6 rounded-xl border border-gray-600 bg-gray-950 p-5">
+                  <p className="mb-2 text-sm text-gray-400">{oCharacter.creationCompletedAt?'Ficha pronta para jogar':'Personagem salvo · criação ainda pode ser revisada'}</p>
+                  <h2 className="text-2xl font-cinzel break-words">{oCharacter.name||'Personagem sem nome'}</h2>
+                  <p className="mt-2">{oCharacter.concept}</p>
+                  <p className="mt-2 text-sm">Toque em uma habilidade para testar. Os dados de Fome ou Fúria vêm da ficha.</p>
+                  <div className="mt-4 flex flex-wrap gap-3"><button type="button" className="min-h-11 rounded border border-gray-600 px-4 py-2" onClick={()=>{setView('creator');fnSetStep(1);}}>Editar personagem</button><PdfButton character={oCharacter}/></div>
+                </section>:<div className="mb-5 mt-4 flex flex-wrap justify-between gap-2 text-sm text-gray-400"><p>Etapa {nStep} de {aSteps.length} · {aSteps[nStep-1]?.label}</p><p role="status">{saveStatus}</p>{oCharacter.creationCompletedAt&&<button type="button" className="min-h-11 rounded border px-3" onClick={()=>{setView('sheet');fnSetStep(REVIEW_STEP);}}>Voltar à ficha</button>}</div>}
+                {view==='creator'&&nStep===REVIEW_STEP&&<section aria-label="Revisão da criação" className="mb-6 rounded-xl border border-gray-600 p-5 bg-gray-900">
                     <h2 className="text-xl">{allIssues.length?`Faltam ${allIssues.length} escolhas`:oCharacter.creationCompletedAt?'Ficha em jogo':oCharacter.profile==='npc'?'NPC pronto para revisão do Narrador':'Escolhas de criação preenchidas'}</h2>
                     <p className="mt-2 text-sm text-gray-300">{oCharacter.profile==='npc'?'Confira a coerência da ficha com a sua história.':'Confira os detalhes e as regras antes de concluir. Você pode salvar um rascunho a qualquer momento.'}</p>
                     <ul className="mt-4 space-y-3">{allIssues.map(issue=><li key={issue} className="flex justify-between gap-3 text-sm"><span>{displayIssue(issue)}</span><button type="button" className="underline shrink-0" onClick={()=>goToIssue(issue)}>Resolver</button></li>)}</ul>
-                    <button type="button" disabled={allIssues.length>0} className="mt-4 rounded bg-emerald-800 px-4 py-3 disabled:opacity-40" onClick={()=>{setCompletionRequested(true);fnSetStorageMode('save');fnSetShowStorage(true);}}>{completed?'Criação concluída':'Concluir criação'}</button>
+                    <button type="button" disabled={allIssues.length>0} className="mt-4 rounded bg-emerald-800 px-4 py-3 disabled:opacity-40" onClick={()=>{if(activeSaveName){fnSaveCharacter(activeSaveName,true);return;}setCompletionRequested(true);fnSetStorageMode('save');fnSetShowStorage(true);}}>{completed?'Criação concluída':'Concluir criação'}</button>
                     {completed&&<p role="status" className="mt-2 text-emerald-200">Personagem salvo neste navegador. Exporte JSON para guardar uma cópia.</p>}
                 </section>}
                 <div className="mt-1 min-w-0">{renderStepContent()}</div>
                 {aValidationIssues.length>0&&nStep<REVIEW_STEP&&<details className="mt-6 border border-gray-700 rounded-lg p-4 text-sm"><summary>{aValidationIssues.length} pendências nesta etapa · você pode continuar</summary><ul className="mt-3 space-y-2">{aValidationIssues.map(issue=><li key={issue}>{displayIssue(issue)}</li>)}</ul></details>}
             </main>
-            <footer className="bg-black border-t border-gray-800 p-3 sm:p-6 fixed bottom-0 inset-x-0 z-40">
-                <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
-                    <Button onClick={() => fnSetStep(prev => Math.max(1, prev - 1))} disabled={nStep === 1} variant="secondary">{fnT('buttons.back')}</Button>
+            {view==='creator'&&<footer ref={footerRef} className="app-footer bg-black border-t border-gray-800 fixed bottom-0 inset-x-0 z-40">
+                <div className="app-footer-inner max-w-6xl mx-auto">
+                    <Button onClick={() => nStep === 1 ? requestHome() : fnSetStep(prev => Math.max(1, prev - 1))} variant="secondary">{nStep === 1 ? 'Tela inicial' : fnT('buttons.back')}</Button>
                     {nStep < aSteps.length ? (
-                        <div className="flex flex-wrap justify-end gap-2 sm:gap-4">
+                        <div className="app-footer-actions">
                             <Button variant="secondary" disabled={!oCharacter.gameType} onClick={() => fnSetStep(aSteps.length)}>Revisar pendências</Button>
                             <Button
                                 onClick={() => fnSetStep(prev => Math.min(aSteps.length, prev + 1))}
@@ -1323,12 +1404,26 @@ const App: React.FC = () => {
                             </Button>
                         </div>
                     ) : (
-                        <Button variant="secondary" onClick={() => window.print()}>{fnT('buttons.print')}</Button>
+                        <PdfButton character={oCharacter}/>
                     )}
                 </div>
-            </footer>
+            </footer>}
+            {showExit && <InfoModal title="Voltar à tela inicial?" onClose={()=>setShowExit(false)}>
+                <div className="space-y-4">
+                    <p>Deseja salvar o personagem no estado atual antes de sair? Você pode salvar mesmo com escolhas pendentes.</p>
+                    <label className="block" htmlFor="exit-character-name">Nome do arquivo</label>
+                    <input id="exit-character-name" className="w-full min-w-0 rounded border border-gray-600 bg-gray-900 px-3 py-3" value={exitName} onChange={e=>setExitName(e.target.value)}/>
+                    <p className="text-sm text-gray-300">Sair sem salvar descarta o rascunho atual. Arquivos salvos anteriormente permanecem em Meus personagens.</p>
+                    {exitError&&<p role="alert" className="text-red-300">{exitError}</p>}
+                    <div className="grid gap-3 sm:grid-cols-2">
+                        <Button disabled={!exitName.trim()} onClick={()=>returnHome(true)}>Salvar e voltar ao início</Button>
+                        <Button variant="secondary" onClick={()=>returnHome(false)}>Sair sem salvar</Button>
+                        <Button variant="secondary" className="sm:col-span-2" onClick={()=>setShowExit(false)}>Continuar editando</Button>
+                    </div>
+                </div>
+            </InfoModal>}
             {bShowStorage && (
-                <StorageModal mode={sStorageMode} onClose={() => {fnSetShowStorage(false);setCompletionRequested(false);}} currentName={oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>
+                <StorageModal mode={sStorageMode} onClose={() => {fnSetShowStorage(false);setCompletionRequested(false);}} currentName={activeSaveName||oCharacter.name} onSave={fnSaveCharacter} onLoad={fnLoadCharacter} onDelete={fnDeleteCharacter}/>
             )}
             {oNotification && (
                 <Notification message={oNotification.message} type={oNotification.type} onClose={() => fnSetNotification(null)} />
@@ -1339,6 +1434,7 @@ const App: React.FC = () => {
                 </InfoModal>
             )}
         </div>
+        </BookReferenceScope.Provider>
     );
 };
 

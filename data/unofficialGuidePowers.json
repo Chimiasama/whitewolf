@@ -1,0 +1,681 @@
+[
+  {
+    "discipline": "animalism",
+    "id": "feralFrenzy",
+    "name": "Frenesi Feral",
+    "english": "Feral Frenzy",
+    "level": 2,
+    "page": "26",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Faça Manipulação + Animalismo; a Dificuldade depende da agressividade natural dos animais e da disponibilidade de alvos. Um sucesso põe todos os animais que ouvirem o chamado em frenesi. Eles não ficam sob seu controle sem Sussurros Selvagens ou outro poder. Atacam a criatura viva mais próxima de outra espécie, incluindo você; sem alvo, destroem objetos e podem atacar a própria espécie. Permanecem violentos por uma cena ou até serem destruídos, sem cuidar da própria segurança. Mesmo com Sussurros Selvagens, só aceitam ações violentas, e dirigir a fúria sofre penalidade de três dados. Duração: uma cena."
+  },
+  {
+    "discipline": "animalism",
+    "id": "huntTheBeast",
+    "name": "Caçar a Besta",
+    "english": "Hunt the Beast",
+    "level": 2,
+    "page": "26",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Você fareja a essência de uma Besta sobrenatural e percebe mudanças emocionais ao longo do rastro. Para seguir um alvo específico, dispute Determinação + Animalismo contra Autocontrole + Subterfúgio. Receba três dados extras se o identificou antes com Sentir a Besta. Um crítico revela o tipo exato de criatura e sua Fome ou Fúria ao longo do trajeto. Havendo vários rastros, Determinação + Sobrevivência os distingue sem outra Checagem de Sangue. Para detectar Bestas na área sem alvo específico, teste Determinação + Animalismo com Dificuldade do Narrador, conforme odor, vento e tempo: um rastro de uma hora sem odores fortes pode ser 2; um de quatro horas perto de um lixão pode ser 6. Duração: uma hora por ponto de margem contra a Dificuldade definida pelo Narrador.",
+    "prerequisite": "senseTheBeast"
+  },
+  {
+    "discipline": "animalism",
+    "id": "warnThePack",
+    "name": "Avisar a Alcateia",
+    "english": "Warn the Pack",
+    "level": 2,
+    "page": "26–27",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Declare como ameaça um vampiro visível e dispute Manipulação + Animalismo contra Autocontrole + Determinação. Se vencer, ele sofre penalidade igual ao seu Animalismo em testes de Carisma e recebe bônus igual em Intimidação. Sua aura parece predatória e suas palavras soam ameaçadoras. Você precisa mantê-lo à vista. Duração: uma cena ou até romper a linha de visão.",
+    "amalgam": [
+      {
+        "discipline": "presence",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "discipline": "animalism",
+    "id": "howlOfRage",
+    "name": "Uivo de Fúria",
+    "english": "Howl of Rage",
+    "level": 3,
+    "page": "27",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Funciona como Centelha de Fúria do básico, usando Animalismo em vez de Potência. Dispute Manipulação + Animalismo contra Autocontrole + Determinação.",
+    "amalgam": [
+      {
+        "discipline": "presence",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "discipline": "animalism",
+    "id": "markPrey",
+    "name": "Marcar Presa",
+    "english": "Mark Prey",
+    "level": 3,
+    "page": "27",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Declare verbalmente um alvo visível e dispute Carisma + Animalismo contra Autocontrole + Determinação. Se vencer, todos os vampiros recebem bônus em ataques de Briga ou Armas Brancas contra ele igual à metade de seu Animalismo, arredondada para cima. Críticos desses ataques são considerados críticos bestiais. O alvo precisa continuar em sua linha de visão. Duração: uma cena ou até perder a visão do alvo."
+  },
+  {
+    "discipline": "animalism",
+    "id": "packFrenzy",
+    "name": "Frenesi de Alcateia",
+    "english": "Pack Frenzy",
+    "level": 4,
+    "page": "27",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Quando precisar resistir a frenesi de Fúria ou terror, ou presenciar outro vampiro sucumbir a um deles, faça Raciocínio + Animalismo para compartilhar o frenesi com Membros voluntários visíveis. Para compartilhar o próprio, a Dificuldade é 3, mais um por participante após o primeiro; os sucessos determinam quantos participam, sem precisar declarar o total antes. Você entra automaticamente em frenesi e escolhe não resistir. Se falhar em compartilhá-lo, não pode Cavalgar a Onda e fica à mercê da Besta e do Narrador. Um inimigo pode resistir à partilha com Força de Vontade contra seu Raciocínio + Animalismo; a margem determina os voluntários afetados e o inimigo continua em frenesi. Você orienta os aliados como em Cavalgar a Onda. Cada participante, incluindo você, recebe dois dados em todas as paradas de combate, mais um por Membro adicional após o primeiro. Duração: a do frenesi."
+  },
+  {
+    "discipline": "animalism",
+    "id": "subsumeTheServant",
+    "name": "Subjugar o Servo",
+    "english": "Subsume the Servant",
+    "level": 5,
+    "page": "28",
+    "cost": "Duas Checagens de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Entre em transe e teste Manipulação + Animalismo, Dificuldade 4, para possuir um carniçal que contenha seu Sangue. Cada sucesso acima da Dificuldade permite controlar outro nas mesmas condições. Seu corpo fica inerte e sem percepção. Um crítico permite posse indefinida, mas falhar ao resistir ao sono diurno encerra o poder. Qualquer ferimento em seu corpo, morte ou inconsciência de um carniçal também encerra o efeito; cada carniçal morto durante a posse causa dois danos Agravados de Força de Vontade. Vários carniçais devem agir ou falar do mesmo modo; um pode agir independentemente apenas se os outros não agirem. Você pode usar Auspícios, Presença e Dominação próprios e a Disciplina do carniçal. Use Atributos Físicos e Vitalidade dele, mas suas próprias Habilidades; não acessa memórias nem conhecimentos do hospedeiro. Ao ser libertado, o carniçal recebe um dano Agravado de Força de Vontade por cena de posse e fica Debilitado por 24 horas, podendo entrar em coma com a trilha totalmente Agravada. O Narrador deve considerar Máculas por essa violação. Duração: uma cena; indefinida com crítico, sujeita às condições de término.",
+    "amalgam": [
+      {
+        "discipline": "dominate",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "discipline": "auspex",
+    "id": "lieDetector",
+    "name": "Detector de Mentiras",
+    "english": "Lie Detector",
+    "level": 1,
+    "page": "29",
+    "cost": "Gratuito",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Some Auspícios a testes de Sagacidade e, a critério do Narrador, a outros testes para saber se alguém diz a verdade. Quem souber que está sendo examinado pode resistir com Autocontrole + Subterfúgio contra sua Sagacidade + Auspícios. Se vencer, resiste por uma cena; com crítico, fica imune pelo resto da noite. Duração: uma cena ou até encerrar voluntariamente."
+  },
+  {
+    "discipline": "auspex",
+    "id": "decipher",
+    "name": "Decifrar",
+    "english": "Decipher",
+    "level": 2,
+    "page": "29",
+    "cost": "Gratuito",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Teste Inteligência + Auspícios contra Dificuldade do Narrador, conforme familiaridade e complexidade do idioma ou código. Um sucesso permite entender a intenção da mensagem, não uma tradução perfeita. Não permite falar o idioma ou escrever o código. Duração: uma cena."
+  },
+  {
+    "discipline": "auspex",
+    "id": "implantDream",
+    "name": "Implantar Sonho",
+    "english": "Implant Dream",
+    "level": 2,
+    "page": "29",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Mencione um assunto ou mostre uma imagem e dispute Determinação + Dominação contra Autocontrole + Inteligência. Um sucesso implanta um sonho ligado à mensagem ou imagem, vivido na próxima vez que o alvo dormir ou entrar em Torpor. Pode transmitir mensagens secretas, assustar ou sugerir ideias que persistam ao despertar. Duração: até o próximo sono.",
+    "amalgam": [
+      {
+        "discipline": "dominate",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "discipline": "auspex",
+    "id": "readOpponent",
+    "name": "Ler Oponente",
+    "english": "Read Opponent",
+    "level": 2,
+    "page": "29",
+    "cost": "Uma Checagem de Sangue por oponente",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Leia intenções e sinais físicos. Dispute Raciocínio + Auspícios contra Força + Subterfúgio do oponente. Se vencer, some Auspícios às defesas contra ataques Físicos dele. Cada alvo adicional exige outra Checagem de Sangue. Penalidades por enfrentar vários combatentes continuam valendo. Duração: uma cena."
+  },
+  {
+    "discipline": "auspex",
+    "id": "senseStrengthsAndWeaknesses",
+    "name": "Sentir Forças e Fraquezas",
+    "english": "Sense Strengths and Weaknesses",
+    "level": 2,
+    "page": "29",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Dispute Inteligência + Auspícios contra Autocontrole + Subterfúgio. Se vencer, escolha descobrir o Atributo mais alto ou o mais baixo do alvo. Em empates, o Narrador escolhe qual revelar. Um crítico revela ambos e todos os empatados. Duração: um turno."
+  },
+  {
+    "discipline": "auspex",
+    "id": "psychicBacklash",
+    "name": "Retaliação Psíquica",
+    "english": "Psychic Backlash",
+    "level": 3,
+    "page": "29–30",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Depois de resistir com sucesso a uma tentativa sobrenatural de manipular sua mente, como Dominação ou Presença, faça uma Checagem de Sangue para ativar o poder. Com a vitória na disputa de resistência, cause ao agressor dano Superficial de Força de Vontade igual à margem de vitória. A parada é a da capacidade sobrenatural resistida. Duração: um turno."
+  },
+  {
+    "discipline": "celerity",
+    "id": "controlMomentum",
+    "name": "Controlar Impulso",
+    "english": "Control Momentum",
+    "level": 2,
+    "page": "30",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Após vencer uma defesa de Destreza + Atletismo contra ataque corpo a corpo, redirecione-o a um oponente próximo. Dispute Destreza ou Força + Rapidez contra Destreza + Atletismo do novo alvo. Um sucesso causa dano normal, incluindo modificadores do ataque original. Um crítico permite voltar o golpe contra o próprio agressor. Duração: um turno.",
+    "amalgam": [
+      {
+        "discipline": "potence",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "discipline": "celerity",
+    "id": "scanTheRoom",
+    "name": "Examinar o Recinto",
+    "english": "Scan the Room",
+    "level": 2,
+    "page": "31",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Investigue minuciosamente um recinto em instantes, percebendo auras e examinando pistas em velocidade sobrenatural. Teste Raciocínio + Investigação e some seu valor de Auspícios à Investigação. Duração: uma cena. O PDF apresenta este poder em Rapidez 2 e lista Potência 1 como Amálgama; o sistema usa o valor de Auspícios.",
+    "amalgam": [
+      {
+        "discipline": "potence",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "discipline": "celerity",
+    "id": "combatTempest",
+    "name": "Tempestade de Combate",
+    "english": "Combat Tempest",
+    "level": 3,
+    "page": "31",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Não sofra penalidades para defender-se de vários oponentes: use a parada completa em cada disputa, incluindo Rapidez se outro poder, como Agilidade, a acrescentar. Ao dividir uma parada para atacar vários alvos, acrescente a metade de sua Rapidez, arredondada para cima, a cada rolagem. Duração: uma rodada."
+  },
+  {
+    "discipline": "celerity",
+    "id": "speedIsPower",
+    "name": "Velocidade é Poder",
+    "english": "Speed is Power",
+    "level": 3,
+    "page": "31",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Com espaço para ganhar velocidade, acrescente Rapidez a uma única ação que exija Força e não demande ficar parado. Não serve para erguer um carro imóvel, mas pode quebrar a porta dele com impulso. Pode reforçar ataques e combinar-se com poderes de Potência que aumentem Força. Duração: uma ação."
+  },
+  {
+    "discipline": "celerity",
+    "id": "furiousFrenzy",
+    "name": "Frenesi Furioso",
+    "english": "Furious Frenzy",
+    "level": 4,
+    "page": "31",
+    "cost": "Gratuito",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Ao entrar em qualquer frenesi, pode assumir este estado e executar duas ações por turno durante ele. Todo crítico se torna bestial. Ao terminar, fica fisicamente Debilitado e preenche a trilha de Vitalidade com dano Superficial. Se já estava Debilitado antes do fim, recebe em vez disso dano Agravado igual ao número de turnos em frenesi depois da Debilitação. Em combate avançado, dois ataques ao mesmo oponente exigem que ele divida a parada se contra-atacar; se apenas defender, sofre um dado de penalidade por ataque após o primeiro. Você usa a parada completa em cada ataque e pode defender duas vezes com a parada completa antes de sofrer penalidades. Duração: uma cena ou a do frenesi."
+  },
+  {
+    "discipline": "celerity",
+    "id": "longDistanceJourney",
+    "name": "Jornada de Longa Distância",
+    "english": "Long Distance Journey",
+    "level": 4,
+    "page": "31–32",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Teste Vigor + Rapidez, Dificuldade 3. Um sucesso permite correr a até 130 km/h por ponto de Rapidez por meia hora, mais meia hora por sucesso acima da Dificuldade. Terreno e obstáculos podem exigir Destreza + Atletismo. Colisões nessas velocidades podem causar danos graves a você e ao que atingir.",
+    "prerequisite": "blink"
+  },
+  {
+    "discipline": "dominate",
+    "id": "declareWeakness",
+    "name": "Declarar Fraqueza",
+    "english": "Declare Weakness",
+    "level": 2,
+    "page": "32",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Nenhum teste é necessário contra mortal desprevenido. Contra alvo resistente ou vampiro, dispute Manipulação + Dominação contra Autocontrole + Inteligência. Escolha um Atributo do alvo e reduza-o pela metade de sua Dominação, arredondada para cima; com crítico, reduza pelo valor inteiro. Não pode baixar de um nem afetar mais de um Atributo ao mesmo tempo. Duração: uma cena."
+  },
+  {
+    "discipline": "dominate",
+    "id": "objectCommand",
+    "name": "Comando em Objeto",
+    "english": "Object Command",
+    "level": 3,
+    "page": "32",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Toque um objeto e grave na aura dele uma ordem ligada ao próprio item, usando Compelir ou Mesmerizar, inclusive modificadores como Diretriz Submersa e Racionalizar. A próxima pessoa que tocar o item dispara uma disputa de Manipulação + Dominação contra Inteligência + Determinação; se você vencer, ela cumpre imediatamente a ordem. Só tenta afetar uma pessoa e desaparece depois. Duração: uma noite; com crítico, a impressão é permanente até ser disparada. Exemplos: mandar atirar um tijolo numa janela ou entregar um celular a um endereço.",
+    "amalgam": [
+      {
+        "discipline": "auspex",
+        "level": 2
+      }
+    ],
+    "prerequisiteAny": [
+      "compel",
+      "mesmerize"
+    ]
+  },
+  {
+    "discipline": "dominate",
+    "id": "mentalConditioning",
+    "name": "Condicionamento Mental",
+    "english": "Mental Conditioning",
+    "level": 4,
+    "page": "32",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Antes de rolar um poder de Dominação contra uma vítima, faça uma Checagem de Sangue adicional. Se o poder funcionar, ganhe uma brecha na mente dela. Cada brecha concede um dado adicional para Dominá-la ou controlá-la socialmente com Manipulação ou Carisma. O máximo por vítima é seu valor de Dominação; só pode ganhar uma brecha por vítima em cada noite. Se ela resistir com sucesso a uma tentativa de Dominação ou a um teste Social seu, perde todas as brechas e precisa recomeçar. Duração: até a resistência bem-sucedida."
+  },
+  {
+    "discipline": "dominate",
+    "id": "energyVampire",
+    "name": "Vampiro de Energia",
+    "english": "Energy Vampire",
+    "level": 5,
+    "page": "33",
+    "cost": "Uma Checagem de Sangue por alvo",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Depois de uma conversa, mesmo unilateral, dispute Manipulação + Dominação para drenar energia mental. O campo Paradas do PDF indica Autocontrole + Determinação como resistência, mas o texto de Sistema indica Autocontrole + Inteligência; a fonte diverge nesses campos e o Narrador precisa definir qual aplicar. A vitória causa dano Superficial de Força de Vontade e permite recuperar igual quantidade, sem ultrapassar sua trilha máxima. Só pode afetar cada vítima uma vez por noite e ela percebe a exaustão causada pela interação. Cada alvo extra exige outra Checagem de Sangue. Mortais Debilitados ficam letárgicos; vampiros Debilitados ganham dois dados para resistir ao frenesi pelo resto da noite. Duração: uma cena.",
+    "amalgam": [
+      {
+        "discipline": "oblivion",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "discipline": "fortitude",
+    "id": "eternalVigilance",
+    "name": "Vigilância Eterna",
+    "english": "Eternal Vigilance",
+    "level": 1,
+    "page": "33",
+    "cost": "Gratuito",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Acrescente Fortitude a testes para permanecer acordado durante o dia. Duração: passivo."
+  },
+  {
+    "discipline": "fortitude",
+    "id": "mentalVault",
+    "name": "Cofre Mental",
+    "english": "Mental Vault",
+    "level": 2,
+    "page": "33",
+    "cost": "Gratuito",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Armazene um número de memórias igual a Fortitude para recordação perfeita. Elas recebem proteção igual a duas vezes Fortitude contra Disciplinas mentais ou persuasão Social. Devem ser lembranças específicas que sua Inteligência permita memorizar, como uma experiência com um Pilar ou a planta de um prédio. Pode substituir uma por noite; deixar de proteger uma lembrança muito especial pode causar dano de Força de Vontade. Duração: passivo."
+  },
+  {
+    "discipline": "fortitude",
+    "id": "returnToSender",
+    "name": "Devolver ao Remetente",
+    "english": "Return to Sender",
+    "level": 2,
+    "page": "33",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Depois de sofrer dano de um projétil que permaneça em seu corpo, pode expulsá-lo contra alvos próximos com Vigor + Fortitude contra Destreza + Atletismo. Vale para balas, flechas ou estacas. Alcance: um metro por ponto de Fortitude. Os projéteis saem na direção pela qual entraram, sem controle preciso se houver várias pessoas. Não recebem bônus de dano; causam apenas a margem de sucesso. Não pode usar o poder em Torpor. Duração: uma rodada."
+  },
+  {
+    "discipline": "fortitude",
+    "id": "sleepLikeStone",
+    "name": "Dormir como Pedra",
+    "english": "Sleep Like Stone",
+    "level": 2,
+    "page": "34",
+    "cost": "Gratuito",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Em Torpor ou sono diurno, dobre a Fortitude somada à Vitalidade por Resiliência e trate todas as fontes de dano como Superficial, inclusive fogo e sol. Depois de preencher a trilha com Superficial, o dano Agravado passa a ocorrer normalmente. Também pode usar outros poderes de Fortitude em Torpor. Duração: passivo.",
+    "prerequisite": "resilience"
+  },
+  {
+    "discipline": "obfuscate",
+    "id": "duplicate",
+    "name": "Duplicata",
+    "english": "Duplicate",
+    "level": 3,
+    "page": "34",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Crie uma imagem sua em posição adjacente, espelhando seus movimentos, enquanto você permanece oculto como por Manto das Sombras. Não exige teste, mas Sentir o Invisível pode detectar a ilusão. Sons parecem vir dela, permitindo conversas e outras interações não físicas. Contato físico rompe o efeito. O primeiro ataque contra a imagem falha automaticamente e a desfaz. Um ataque surpresa seu segue as regras de Ofuscação, inclusive encerrando o efeito. Duração: uma cena ou até detecção.",
+    "amalgam": [
+      {
+        "discipline": "presence",
+        "level": 1
+      }
+    ],
+    "prerequisite": "cloakOfShadows"
+  },
+  {
+    "discipline": "obfuscate",
+    "id": "shapeAura",
+    "name": "Moldar Aura",
+    "english": "Shape Aura",
+    "level": 3,
+    "page": "34",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Dispute Manipulação + Ofuscação contra Autocontrole + Percepção para alterar a leitura da aura de um alvo. A margem determina quantos aspectos pode mudar: emoções, origem sobrenatural, Diablerie e outros percebidos por Perscrutar a Alma ou sentidos semelhantes. Para sua própria aura, teste Manipulação + Ofuscação, Dificuldade 3: um sucesso permite uma mudança e cada sucesso excedente, outra. Duração: uma noite.",
+    "amalgam": [
+      {
+        "discipline": "auspex",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "discipline": "obfuscate",
+    "id": "hiddenBlade",
+    "name": "Lâmina Oculta",
+    "english": "Hidden Blade",
+    "level": 4,
+    "page": "35",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Dispute Raciocínio + Ofuscação contra Raciocínio + Percepção do oponente. Se vencer, some metade de Ofuscação, arredondada para cima, aos ataques de Armas Brancas com uma arma, cuja posição fica borrada ou desalinhada. Só afeta uma arma por vez. Duração: uma cena."
+  },
+  {
+    "discipline": "obfuscate",
+    "id": "fadingMemory",
+    "name": "Memória Desvanecida",
+    "english": "Fading Memory",
+    "level": 5,
+    "page": "35",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Depois de uma cena, teste Determinação + Ofuscação contra Dificuldade do Narrador para tornar vagas as lembranças de sua presença e participação. Não apaga nem substitui memórias. Exemplos: Dificuldade 3 para clientes esquecerem que esteve num bar; 6 para rivais esquecerem seu vexame no Elísio. Só pode tentar uma vez, até 24 horas depois da cena, ficando mais difícil conforme o tempo passa. O campo Duração do PDF diz uma cena."
+  },
+  {
+    "discipline": "potence",
+    "id": "roasted",
+    "name": "Queimada Verbal",
+    "english": "Roasted",
+    "level": 2,
+    "page": "35",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Suas palavras causam dano Agravado de Força de Vontade em combate Social. A descrição de Sistema diz uma cena, enquanto o campo Duração diz uma rodada; confirme essa diferença interna da fonte com o Narrador.",
+    "amalgam": [
+      {
+        "discipline": "presence",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "discipline": "potence",
+    "id": "fastballSpecial",
+    "name": "Arremesso Especial",
+    "english": "Fastball Special",
+    "level": 3,
+    "page": "36",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Teste Força + Potência para lançar um alvo que consiga erguer. Um aliado pode fazer um ataque corpo a corpo e somar metade de seus sucessos, arredondada para baixo, ao dano, ignorando vantagens de alcance do oponente. Uma pessoa mediana alcança aproximadamente três vezes sua Potência em metros na vertical ou cinco vezes na horizontal. Para lançar um inimigo, agarre-o antes e dispute Força + Atletismo + Potência contra Vigor + Atletismo, arremessando-o contra obstáculo sólido ao alcance. O dano Superficial é a margem mais metade de Potência, arredondada para cima; o obstáculo sofre o mesmo dano. Pode atingir outro inimigo, que se defende como contra arma de fogo. Também permite usar Força em vez de Destreza para lançar objetos como projéteis. Duração: uma rodada."
+  },
+  {
+    "discipline": "presence",
+    "id": "subtleMessages",
+    "name": "Mensagens Sutis",
+    "english": "Subtle Messages",
+    "level": 2,
+    "page": "36",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Obtenha a atenção da vítima e dispute Manipulação + Presença contra Autocontrole + Raciocínio. Se vencer, induza uma emoção geral por gestos sutis e mensagens subliminares: agitação, tédio, animação ou paranoia, por exemplo. A vítima não identifica a origem sobrenatural nem dirige necessariamente a emoção a você. Não permite escolher um alvo específico para o sentimento nem leva a condutas radicalmente contrárias à natureza dela. Duração: uma cena."
+  },
+  {
+    "discipline": "presence",
+    "id": "throneRoom",
+    "name": "Sala do Trono",
+    "english": "Throne Room",
+    "level": 2,
+    "page": "37",
+    "cost": "Gratuito; uma Checagem de Sangue para efeitos adicionais",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Organize um espaço distinto, normalmente um recinto, para transmitir uma emoção. Não vale para um prédio inteiro ou área aberta indefinida. Ali, some Presença aos testes Sociais sem Checagem de Sangue. Uma Checagem permite também causar dano adicional de Força de Vontade igual à metade de Presença, arredondada para cima. Para estender os bônus a aliados, faça a Checagem e Ofícios + Presença, com Dificuldade conforme o número de aliados; o exemplo da fonte permite três aliados com três sucessos. Nenhum teste é necessário para beneficiar apenas você. Uma vez por noite, recebe uma rerrolagem gratuita de Força de Vontade para teste Social nesse recinto. Duração: uma cena.",
+    "amalgam": [
+      {
+        "discipline": "auspex",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "discipline": "presence",
+    "id": "obsession",
+    "name": "Obsessão",
+    "english": "Obsession",
+    "level": 3,
+    "page": "37",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Mostre admiração por pessoa ou objeto à vista tanto sua quanto da vítima e dispute Manipulação + Presença contra Inteligência + Autocontrole. A vitória faz o alvo ficar obcecado pelo tema e buscar sua presença, podendo protegê-lo ou manter alguém por perto contra a vontade. Se falhar, não pode tentar de novo naquela noite. Duração: uma hora mais uma por ponto de margem.",
+    "amalgam": [
+      {
+        "discipline": "auspex",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "discipline": "presence",
+    "id": "twistWords",
+    "name": "Distorcer Palavras",
+    "english": "Twist Words",
+    "level": 3,
+    "page": "37",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Em combate Social diante de público, use a parada Social do oponente contra Raciocínio + Sagacidade do espectador com maior Carisma. Se vencer, parece sincero e inocente enquanto as palavras adversárias são distorcidas. Some metade de Presença, arredondada para cima, ao dano de Força de Vontade causado ao oponente. Se perder, você sofre o dano em vez do público. Exige audiência e só afeta uma pessoa por vez. O campo Paradas do PDF lista Raciocínio + Sagacidade; o Sistema detalha a substituição pela parada do alvo. Duração: uma rodada."
+  },
+  {
+    "discipline": "presence",
+    "id": "hideousLaughter",
+    "name": "Piada Mortal",
+    "english": "Killing Joke",
+    "level": 4,
+    "page": "37",
+    "cost": "Uma Checagem de Sangue por alvo",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Consiga a atenção da vítima e faça algo destinado a ser engraçado. Dispute Carisma + Presença contra Autocontrole + Raciocínio. Se vencer, ela se dobra de rir por um minuto mais um por ponto de margem, sem conseguir fazer outras ações ou perceber algo além de você ou do assunto da piada. Cada vítima adicional exige outra Checagem de Sangue. Sofrer dano liberta imediatamente o alvo."
+  },
+  {
+    "discipline": "presence",
+    "id": "mindPrison",
+    "name": "Prisão Mental",
+    "english": "Mind Prison",
+    "level": 5,
+    "page": "38",
+    "cost": "Duas Checagens de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Dispute Determinação + Presença contra Inteligência + Determinação. Se vencer, descreva uma realidade falsa na qual a vítima fica presa em transe imóvel e que aceita como verdadeira. Pode repetir um cenário infernal ou a rotina habitual. Ao sair, acredita no que viveu, embora possa reconstruir a verdade aos poucos. Para manter a prisão em noites seguintes, gaste um ponto de Força de Vontade e reforce verbalmente a realidade diante dela a cada noite. Dano ao corpo permite Raciocínio + Percepção para escapar, com Dificuldade menor quanto mais grave o dano. A vítima conta como adormecida e pode definhar sem alimento; vampiros continuam fazendo Checagens de Sangue noturnas e podem entrar em Torpor por Fome. Duração: 24 horas.",
+    "amalgam": [
+      {
+        "discipline": "obfuscate",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "discipline": "protean",
+    "id": "shedSkin",
+    "name": "Trocar de Pele",
+    "english": "Shed Skin",
+    "level": 1,
+    "page": "38",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Gaste um turno trocando a pele para revelar uma camada com aparência perfeitamente saudável. A pele descartada se desintegra. As lesões continuam internas, sem recuperar partes perdidas por ferimentos Agravados ainda não curados. A forma da troca pode lembrar serpente ou outra criatura. Duração: uma noite."
+  },
+  {
+    "discipline": "protean",
+    "id": "toolsOfNature",
+    "name": "Ferramentas da Natureza",
+    "english": "Tools of Nature",
+    "level": 3,
+    "page": "38",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Imite estruturas fisiológicas complexas sem transformar-se inteiramente num animal: glândulas venenosas, ecolocalização ou camuflagem natural, por exemplo. O Narrador define a Dificuldade pela complexidade. O campo Paradas indica Determinação + Metamorfose, mas o Sistema diz Animalismo + Determinação: a fonte contém essa divergência e ela deve ser resolvida na mesa. Duração: uma cena.",
+    "prerequisite": "feralWeapons"
+  },
+  {
+    "discipline": "protean",
+    "id": "swarmForm",
+    "name": "Forma de Enxame",
+    "english": "Swarm Form",
+    "level": 4,
+    "page": "39",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Transforme-se instantaneamente num enxame de morcegos, aves, roedores, serpentes ou insetos. Compartilha os sentidos de todos, mas não pode separá-los além de um agrupamento compacto. Recebe Atributos Físicos, sentidos e Habilidades nativas do animal e pode usar Disciplinas permitidas pelo Narrador, como em Metamorfose. Some um dado por ponto de Metamorfose às defesas. Se sofrer dano além da Vitalidade, retorna imediatamente à forma vampírica com a Vitalidade que tinha antes da transformação. Duração: uma cena.",
+    "amalgam": [
+      {
+        "discipline": "animalism",
+        "level": 2
+      }
+    ],
+    "prerequisite": "shapechange"
+  },
+  {
+    "discipline": "protean",
+    "id": "traverseTheEarth",
+    "name": "Atravessar a Terra",
+    "english": "Traverse the Earth",
+    "level": 4,
+    "page": "39",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Enquanto usa Fusão com a Terra, mova-se no solo natural à velocidade de caminhada e perceba sobrenaturalmente os arredores imediatos. Não pode mover-se no sono diurno nem usar outras Disciplinas nessa condição. Precisa emergir por terra natural e pode atravessar espaços com pelo menos um metro desse solo. Duração: como Fusão com a Terra.",
+    "prerequisite": "earthMeld"
+  },
+  {
+    "discipline": "bloodsorcery",
+    "id": "bloodObject",
+    "name": "Objeto de Sangue",
+    "english": "Blood Object",
+    "level": 2,
+    "page": "39",
+    "cost": "Uma ou mais Checagens de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Abra uma ferida e use uma Checagem para produzir Sangue maleável do tamanho de uma mão. Pode formar ferramentas simples e até material tão duro quanto aço; Ofícios + Feitiçaria de Sangue permite formas mais complexas, com Dificuldade pela complexidade e dureza. Não cria máquinas de várias peças. Cada Checagem adicional aumenta o tamanho ou cria outro objeto. A cor continua sendo de sangue. Armas brancas têm o bônus de dano de equivalentes reais. Ao fim de uma cena vira um icor que não pode ser moldado novamente. Não sacia Fome."
+  },
+  {
+    "discipline": "bloodsorcery",
+    "id": "bloodTendrils",
+    "name": "Tentáculos de Sangue",
+    "english": "Blood Tendrils",
+    "level": 2,
+    "page": "40",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Abra uma ferida e controle um tentáculo de Sangue com alcance em metros igual à Feitiçaria de Sangue. Pode dividir a parada para criar vários, na mesma ferida ou em outras. Eles aplicam efeitos de Feitiçaria que exijam contato com seu sangue, disputando Raciocínio + Feitiçaria de Sangue contra defesa apropriada. Manipulam objetos de até cerca de nove quilos. Enquanto os controla, não faz outras ações além de Feitiçaria de Sangue. Precisam manter-se ligados à ferida; cortá-los ou fechar a ferida os destrói. Qualquer dano também os destrói. Defendem-se separadamente com Raciocínio + Feitiçaria, sem consumir sua ação; outra Checagem substitui um tentáculo destruído. Não saciam Fome. Duração: uma cena ou até encerramento ou destruição."
+  },
+  {
+    "discipline": "bloodsorcery",
+    "id": "diluteTheLine",
+    "name": "Diluir a Linhagem",
+    "english": "Dilute the Line",
+    "level": 3,
+    "page": "40",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Concentre-se por um turno e faça gestos ocultos contra vampiro visível. Dispute Inteligência + Feitiçaria de Sangue contra Determinação + Vigor ou Feitiçaria de Sangue. A vitória reduz a Potência de Sangue do alvo em um; um crítico, em dois, podendo ultrapassar limites da geração, mas nunca baixar de um. A vítima percebe algo maléfico em seu Sangue e pode identificar você com Inteligência + Ocultismo contra Raciocínio + Subterfúgio se puder vê-lo. Duração: uma cena."
+  },
+  {
+    "discipline": "bloodsorcery",
+    "id": "healersBane",
+    "name": "Perdição do Curador",
+    "english": "Healer's Bane",
+    "level": 3,
+    "page": "41",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Toque o vampiro, podendo exigir Destreza + Briga, e dispute Determinação + Feitiçaria de Sangue contra Vigor + Ocultismo ou Fortitude. Se vencer, ele não pode regenerar ferimentos por uma cena; com crítico, pelo resto da noite."
+  },
+  {
+    "discipline": "bloodsorcery",
+    "id": "crimsonFury",
+    "name": "Fúria Carmesim",
+    "english": "Crimson Fury",
+    "level": 4,
+    "page": "41",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Concentre-se por um turno para envenenar seu Sangue. Ele mantém a propriedade fora do corpo, mas precisa tocar a carne do alvo. Dispute Manipulação + Feitiçaria de Sangue contra Autocontrole + Vigor. Se vencer, o alvo faz imediatamente um teste de frenesi de Fúria; mortais entram em fúria violenta pelas mesmas regras. O Sangue é viscoso demais para ser injetado e não se mistura a outros líquidos. Duração: uma cena."
+  },
+  {
+    "discipline": "bloodsorcery",
+    "id": "curseOfTheSlowBlood",
+    "name": "Maldição do Sangue Lento",
+    "english": "Curse of the Slow Blood",
+    "level": 4,
+    "page": "41",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Mantenha o alvo vampiro à vista, concentre-se e pronuncie palavras de poder. Dispute Determinação + Feitiçaria de Sangue contra Vigor + Autocontrole. A vitória exige uma Checagem de Sangue adicional toda vez que ele despertar o Sangue. Se puder vê-lo, a vítima pode identificá-lo com Inteligência + Ocultismo contra Raciocínio + Subterfúgio. Duração: uma cena."
+  },
+  {
+    "discipline": "bloodsorcery",
+    "id": "telekinesis",
+    "name": "Telecinese",
+    "english": "Telekinesis",
+    "level": 5,
+    "page": "41",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Mova um objeto de até 500 kg a até 50 metros. Para atingir pessoas ou estruturas, dispute Determinação + Feitiçaria de Sangue contra a defesa apropriada; o dano é a margem mais modificadores do objeto definidos pelo Narrador. Objetos leves e sem ponta dificilmente causam muito dano. Contra uma pessoa, dispute Determinação + Feitiçaria contra Força + Atletismo: pode movê-la dez metros por ponto de margem, causando igual quantidade de dano Superficial se lançada contra algo. Para mantê-la no ar, teste Determinação + Feitiçaria, Dificuldade 3, a cada turno. Manipulação fina exige Raciocínio + Feitiçaria com Dificuldade do Narrador. Duração: uma cena.",
+    "amalgam": [
+      {
+        "discipline": "auspex",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "discipline": "oblivion",
+    "id": "abyssalPulse",
+    "name": "Pulso Abissal",
+    "english": "Abyssal Pulse",
+    "level": 2,
+    "page": "44",
+    "cost": "Uma ou mais Checagens de Sangue, conforme o equipamento",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Teste Raciocínio + Oblívio com Dificuldade determinada pelo equipamento. Desabilite máquinas eletrônicas num raio de um metro por ponto de Oblívio, centrado em você, por uma cena; com crítico, pela noite. Um pulso frio e sombrio torna a manifestação facilmente perceptível."
+  },
+  {
+    "discipline": "oblivion",
+    "id": "shadowPuppet",
+    "name": "Marionete de Sombras",
+    "english": "Shadow Puppet",
+    "level": 3,
+    "page": "45",
+    "cost": "Uma Checagem de Sangue",
+    "description": "Poder comunitário de Bully — tradução revisada do PDF atual.",
+    "system": "Com a sombra de outra criatura visível, dispute Determinação + Oblívio contra Determinação + Autocontrole. A vitória permite usar suas ações para controlar a sombra, fazendo o corpo imitá-la, inclusive atacar. Não pode ativar Disciplinas ou usar o Sangue da vítima. Seus gestos tornam o controle óbvio. Após o primeiro turno, cada turno de controle custa um ponto de Força de Vontade. Só afeta um alvo de cada vez. Duração: uma cena."
+  }
+]

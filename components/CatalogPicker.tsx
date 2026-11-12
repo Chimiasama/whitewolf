@@ -1,3 +1,4 @@
+import {catalogReferenceKey} from '../lib/bookReferences';
 import {HelpLabel} from './HelpLabel';
 import React, { useState, useId } from "react";
 export interface CatalogOption {
@@ -14,6 +15,7 @@ export function CatalogPicker({
   options,
   selected,
   onToggle,
+  onRemove,
   multiple = false,
 }: {
   key?: string;
@@ -21,6 +23,7 @@ export function CatalogPicker({
   options: CatalogOption[];
   selected: string[];
   onToggle: (id: string) => void;
+  onRemove?: (id:string)=>void;
   multiple?: boolean;
 }) {
   const [open, setOpen] = useState(false),
@@ -59,17 +62,17 @@ export function CatalogPicker({
       </div>
       {selected.length > 0 ? (
         <ul className="space-y-2">
-          {selected.map((key) => {
+          {[...new Set(selected)].map((key) => {
             const item = options.find((o) => o.id === key);
             return (
               <li key={key} className="rounded-lg bg-gray-900 p-3">
                 <div className="flex justify-between items-center gap-3">
-                  <strong><HelpLabel title={item?.name||key} content={item?.details||item?.summary}>{item?.name||key}</HelpLabel></strong>
+                  <strong><HelpLabel sourceKey={catalogReferenceKey(label,key)} title={item?.name||key} content={item?.details||item?.summary}>{item?.name||key}</HelpLabel></strong>
                   <button
                     type="button"
                     className="text-sm text-gray-300 underline"
                     aria-label={`Remover ${item?.name || key}`}
-                    onClick={() => onToggle(key)}
+                    onClick={() => (onRemove||onToggle)(key)}
                   >
                     Remover
                   </button>
@@ -124,7 +127,7 @@ export function CatalogPicker({
               <li key={o.id} className="border border-gray-700 rounded-lg p-3">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <strong><HelpLabel title={o.name} content={o.details||o.summary}>{o.name}</HelpLabel></strong>
+                    <strong><HelpLabel sourceKey={catalogReferenceKey(label,o.id)} title={o.name} content={o.details||o.summary}>{o.name}</HelpLabel></strong>
                     {o.community && (
                       <span className="block text-xs text-amber-200">
                         Comunitário · opcional
@@ -135,15 +138,17 @@ export function CatalogPicker({
                   <button
                     type="button"
                     className="shrink-0 rounded border border-gray-500 px-3 py-2 text-sm disabled:opacity-50"
-                    disabled={!!o.unavailable && !selected.includes(o.id)}
+                    disabled={multiple&&selected.includes(o.id)||!!o.unavailable && !selected.includes(o.id)}
                     onClick={() => {
+                      if(multiple&&selected.includes(o.id))return;
                       onToggle(o.id);
                       if (!multiple) setOpen(false);
                     }}
                   >
-                    {selected.includes(o.id) ? "Remover" : "Escolher"}
+                    {selected.includes(o.id) ? multiple?"Selecionado":"Remover" : "Escolher"}
                   </button>
                 </div>
+                {multiple&&selected.includes(o.id)&&<p className="mt-2 text-sm text-gray-400">Já selecionado. Ajuste os pontos ou use Remover no cartão acima.</p>}
                 {o.unavailable && (
                   <p className="mt-2 text-sm text-amber-200">{o.unavailable}</p>
                 )}

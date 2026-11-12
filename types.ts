@@ -100,6 +100,8 @@ export interface DisciplinePower {
     cost?: string;
     amalgam?: { discipline: string, level: number }[];
     prerequisite?: string;
+    prerequisiteAny?: string[];
+    community?: boolean;
 }
 
 export interface DisciplineDetail {
@@ -205,6 +207,7 @@ export interface Character {
   gameType: GameType | null;
   name: string;
   concept: string;
+  backstory?: string;
   ambition: string;
   desire: string;
   // Vampire specific

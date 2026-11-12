@@ -17,7 +17,7 @@ export function CreationTabs({
       <div
         role="tablist"
         aria-label="Seções da etapa"
-        className="flex flex-wrap gap-2 border-b border-gray-700 pb-3"
+        className="creation-tabs flex flex-wrap gap-2 border-b border-gray-700 pb-3"
       >
         {items.map((item, i) => (
           <button

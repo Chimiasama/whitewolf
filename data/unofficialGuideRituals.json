@@ -1,0 +1,93 @@
+[
+  {
+    "id": "bully-warning-against-trespassers",
+    "name": "Alerta contra Invasores",
+    "english": "Warning Against Trespassers",
+    "level": 2,
+    "page": 42,
+    "summary": "Ritual comunitário de Bully — PDF atual.",
+    "description": "Ingredientes: um pedaço de barbante. Embeba o fio em seu Sangue e coloque-o em portas, janelas ou outros acessos, sussurrando os nomes de quem pode atravessar sem disparar o alarme. Mantenha um segmento amarrado a você. Ao passar uma criatura não autorizada, o segmento em seu corpo esquenta; o fio no acesso não reage visivelmente. Mover ou adulterar o fio também ativa o alarme. Não funciona para cercar grandes áreas abertas. Dura 24 horas. Se disparar no sono diurno, reduza em um a Dificuldade do teste de Humanidade para despertar. O trecho de Sistema do PDF não explicita uma rolagem separada além das regras gerais de ritual.",
+    "community": true,
+    "fullText": true,
+    "ceremony": false,
+    "prerequisite": ""
+  },
+  {
+    "id": "bully-addictive-vitae",
+    "name": "Vitae Viciante",
+    "english": "Addictive Vitae",
+    "level": 3,
+    "page": 42,
+    "summary": "Ritual comunitário de Bully — PDF atual.",
+    "description": "Ingredientes: pequena quantidade de substância narcótica. Misture-a ao seu Sangue em um frasco e pronuncie a invocação. O Processo diz que o efeito fica disponível para aplicação até o fim da cena; o Sistema diz que a preparação permanece potente por uma noite. Essa diferença interna do PDF deve ser resolvida pelo Narrador. Faça o teste de Ritual ao reduzir a mistura. Um crítico cria duas doses; cada uma afeta um alvo. Você sabe se funcionou ao completar o ritual. A preparação evapora durante o dia, deixando pó vermelho fino. Ao tocar a pele, torna o sangue da vítima atraente: vampiros à vista sofrem penalidade de três dados em testes de frenesi de Fome e, se falharem, procuram se alimentar dela primeiro. Vampiros com Fome 4 ou maior fazem teste de frenesi de Fome, Dificuldade 2, ao entrar na presença da vítima.",
+    "community": true,
+    "fullText": true,
+    "ceremony": false,
+    "prerequisite": ""
+  },
+  {
+    "id": "bully-blood-homunculus",
+    "name": "Homúnculo de Sangue",
+    "english": "Blood Homunculus",
+    "level": 3,
+    "page": 42,
+    "summary": "Ritual comunitário de Bully — PDF atual.",
+    "description": "Ingredientes: leite, urina e um olho de qualquer criatura. Acrescente seu Sangue, reduza em fogo baixo, mexa e entoe palavras de poder. Um teste de Ritual bem-sucedido cria um servo de sangue para espionar, seguir e obedecer ordens simples. A mais de cem metros de você ele fica inerte até que se aproxime. Dura uma noite. Um crítico cria dois; fora isso, criar outro faz o anterior secar. Parece uma poça um pouco mais espessa que água e atravessa frestas pelas quais água passaria. Só manipula objetos que uma poça lenta conseguiria afetar. Move-se à velocidade de caminhada em qualquer superfície sólida, inclusive verticalmente e de cabeça para baixo, sem deixar rastros. Comunica imagens isoladas telepaticamente ao criador, mas não ouve nem produz sons. Consumi-lo não sacia Fome.",
+    "community": true,
+    "fullText": true,
+    "ceremony": false,
+    "prerequisite": ""
+  },
+  {
+    "id": "bully-alchemy",
+    "name": "Alquimia",
+    "english": "Alchemy",
+    "level": 4,
+    "page": 43,
+    "summary": "Ritual comunitário de Bully — PDF atual.",
+    "description": "Ingredientes: raspas de ouro, ácido clorídrico, enxofre, mercúrio, recipiente de vidro e o objeto a transmutar. Coloque o objeto no recipiente e cubra-o com os ingredientes e uma Checagem de Sangue de Vitae. Aqueça lentamente e ajuste a mistura por cinco horas. Um teste de Ritual bem-sucedido permite alterações simples de dureza, cor ou forma básica. Mudanças complexas ou grandes exigem Ofícios + Inteligência com Dificuldade do Narrador. As novas propriedades são permanentes.",
+    "community": true,
+    "fullText": true,
+    "ceremony": false,
+    "prerequisite": ""
+  },
+  {
+    "id": "bully-poison-the-well",
+    "name": "Envenenar a Fonte",
+    "english": "Poison the Well",
+    "level": 4,
+    "page": 43,
+    "summary": "Ritual comunitário de Bully — PDF atual.",
+    "description": "Ingredientes: cinzas e mel. Misture-os ao seu Sangue, reduza sobre um braseiro e entoe palavras apropriadas. Faça o teste de Ritual ao reduzir a mistura; um crítico cria duas doses. Você sabe se deu certo ao completar. O veneno dura uma noite e evapora de dia em pó vermelho. Ao ser bebido por mortal, não causa efeito perceptível, mas torna seu sangue venenoso só para vampiros. Se ninguém beber dele, volta ao normal no próximo amanhecer. Cada ponto de Fome saciado com esse sangue causa dois danos Agravados ao vampiro. O dano só aparece instantes depois de parar de beber, quando as veias escurecem e parecem queimar sob a pele. Antes disso, o veneno não é detectável.",
+    "community": true,
+    "fullText": true,
+    "ceremony": false,
+    "prerequisite": ""
+  },
+  {
+    "id": "bully-control-weather",
+    "name": "Controlar o Clima",
+    "english": "Control Weather",
+    "level": 5,
+    "page": 43,
+    "summary": "Ritual comunitário de Bully — PDF atual.",
+    "description": "Ingredientes: água de chuva, sais, folhas de beladona, raspas de ferro e bule. Realize o ritual sob céu aberto, ferva a mistura com seu Sangue e pronuncie palavras de poder enquanto o vapor sobe. Faça o teste de Ritual quando começar a evaporar. Se funcionar, uma tempestade de raios surge centrada naquele local, sem deslocar o centro depois. A área pode chegar a 25 quilômetros e durar até cinco horas. Ofícios + Feitiçaria de Sangue permite outros efeitos climáticos, com Dificuldade do Narrador: neblina densa pode ser 3, ventos que danificam propriedades podem ser 6. Não cria furacões nem tornados, mas pode produzir granizo, ventos fortes e enchentes. O clima fica como criado até outro teste para alterá-lo. A precipitação contém traços de seu Vitae, detectáveis com equipamento científico, suficientes para contar como contato com seu sangue para outros poderes de Feitiçaria. Mudanças súbitas e antinaturais podem ser extremamente vulgares.",
+    "community": true,
+    "fullText": true,
+    "ceremony": false,
+    "prerequisite": ""
+  },
+  {
+    "id": "bully-witness-the-end",
+    "name": "Testemunhar o Fim",
+    "english": "Witness the End",
+    "level": 3,
+    "page": 45,
+    "summary": "Cerimônia comunitário de Bully — PDF atual.",
+    "description": "Ingredientes: um olho e uma orelha de cadáver, relativamente intactos. Retire os órgãos, encha a boca com sangue e engula-os; usar apenas um permite apenas ver ou ouvir. Faça o teste de Cerimônia. Se vencer, entra em transe semelhante ao Torpor e vive os momentos finais percebidos pela vítima, sem perceber o próprio corpo. Dano ao seu corpo permite encerrar o transe; também pode terminá-lo voluntariamente. A experiência dura dez minutos por ponto de Oblívio, começando no instante mais antigo e terminando na morte; pode escolher um período menor. Com Oblívio 3, por exemplo, vê e ouve os últimos trinta minutos. Funciona com mortais, animais e criaturas sobrenaturais. O PDF atual apresenta esta entrada como Cerimônia de nível 3, não poder de Disciplina, e não lista um poder pré-requisito.",
+    "community": true,
+    "fullText": true,
+    "ceremony": true,
+    "prerequisite": ""
+  }
+]

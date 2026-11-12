@@ -1,0 +1,880 @@
+{
+  "business_owner": {
+    "name": "Dono de Negócio",
+    "englishName": "Business Owner",
+    "page": 7,
+    "disciplineOptions": [
+      "dominate",
+      "presence"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Persuasion",
+        "name": "Negócios"
+      },
+      {
+        "skill": "Finance",
+        "name": "Lavagem de dinheiro"
+      }
+    ],
+    "pool": "Carisma + Liderança",
+    "advantages": [
+      {
+        "id": "business_owner_background",
+        "name": "Dono de Negócio",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Dono de Negócio"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "routine_flaw",
+        "name": "Rotina",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Rotina"
+      }
+    ],
+    "description": "Você possui ou controla um negócio cujos funcionários e clientes fornecem oportunidades de alimentação. Conhece a operação cotidiana do empreendimento.",
+    "humanityModifier": 0
+  },
+  "confidant": {
+    "name": "Confidente",
+    "englishName": "Confidant",
+    "page": 7,
+    "disciplineOptions": [
+      "auspex",
+      "presence"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Insight",
+        "name": "Empatia"
+      },
+      {
+        "skill": "Academics",
+        "name": "Psicologia"
+      }
+    ],
+    "pool": "Autocontrole + Sagacidade",
+    "advantages": [
+      {
+        "id": "beasttamer_confidant",
+        "name": "Domador da Besta",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Domador da Besta"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "conflicting_loyalties",
+        "name": "Lealdades Conflitantes",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Lealdades Conflitantes"
+      }
+    ],
+    "description": "As pessoas procuram seus conselhos, terapia ou escuta para compartilhar sentimentos e aliviar o peso de seus problemas. Às vezes você abre as veias de quem se abre com você.",
+    "humanityModifier": 0
+  },
+  "corporate_leech": {
+    "name": "Sanguessuga Corporativa",
+    "englishName": "Corporate Leech",
+    "page": 8,
+    "disciplineOptions": [
+      "dominate",
+      "obfuscate"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Finance",
+        "name": "Corporativo"
+      },
+      {
+        "skill": "Etiquette",
+        "name": "Corporativo"
+      }
+    ],
+    "pool": "Manipulação + Etiqueta",
+    "advantages": [
+      {
+        "id": "power_behind_throne",
+        "name": "Poder Atrás do Trono",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Poder Atrás do Trono"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "dull_flaw",
+        "name": "Sem Graça",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Sem Graça"
+      }
+    ],
+    "description": "Você se mistura aos trabalhadores de uma empresa, conhece o jargão e circula pelos corredores e divisórias sem despertar atenção, alimentando-se e devolvendo a vítima à rotina.",
+    "humanityModifier": 0
+  },
+  "eat_the_rich": {
+    "name": "Coma os Ricos",
+    "englishName": "Eat the Rich",
+    "page": 8,
+    "disciplineOptions": [
+      "fortitude",
+      "potence"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Intimidation",
+        "name": "Extorsão"
+      },
+      {
+        "skill": "Politics",
+        "name": "Mídia"
+      }
+    ],
+    "pool": "Força + Intimidação",
+    "advantages": [
+      {
+        "id": "clan_infiltrator_eattherich",
+        "name": "Infiltrador de Clã",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Infiltrador de Clã"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "angry_beast_eattherich",
+        "name": "Besta Irritada",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Besta Irritada"
+      }
+    ],
+    "description": "Você caça a elite, tendo acesso à alta sociedade como empregado, antigo integrante dela ou alguém da mídia. Os ricos são sua refeição, não apenas um lema.",
+    "humanityModifier": 0
+  },
+  "hide_and_eat": {
+    "name": "Esconder e Comer",
+    "englishName": "Hide and Eat",
+    "page": 8,
+    "disciplineOptions": [
+      "celerity",
+      "obfuscate"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Stealth",
+        "name": "Esconder-se"
+      },
+      {
+        "skill": "Awareness",
+        "name": "Emboscadas"
+      }
+    ],
+    "pool": "Autocontrole + Furtividade",
+    "advantages": [
+      {
+        "id": "efficient_eater_hideandeat",
+        "name": "Alimentação Eficiente",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Alimentação Eficiente"
+      },
+      {
+        "id": "slippery_hideandeat",
+        "name": "Escorregadio",
+        "cost": 1,
+        "type": "advantage",
+        "levels": [
+          1
+        ],
+        "description": "Escorregadio"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "obvious_predator_hideandeat",
+        "name": "Predador Manifesto",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Predador Manifesto"
+      }
+    ],
+    "description": "Você espera a presa numa armadilha e se alimenta sorrateiramente antes que ela perceba o que aconteceu. O pacote lista Alimentação Eficiente com 2 pontos, enquanto a Qualidade isolada está com 3 na p. 21; os valores impressos de cada contexto foram mantidos.",
+    "humanityModifier": 0
+  },
+  "hospital_hunter": {
+    "name": "Caçador Hospitalar",
+    "englishName": "Hospital Hunter",
+    "page": 8,
+    "disciplineOptions": [
+      "fortitude",
+      "oblivion"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Medicine",
+        "name": "Diagnóstico"
+      },
+      {
+        "skill": "Persuasion",
+        "name": "Simpatia"
+      }
+    ],
+    "pool": "Inteligência + Medicina",
+    "advantages": [
+      {
+        "id": "blood_healer_hospitalhunter",
+        "name": "Curador de Sangue",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Curador de Sangue"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "frigid_aura_hospitalhunter",
+        "name": "Aura Frígida",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Aura Frígida"
+      }
+    ],
+    "description": "Hospitais oferecem vítimas em condições variadas. Você conhece medicina o bastante para escolher pacientes e circular como funcionário, visitante ou paciente, cuidando para não provocar investigações por alterações nos monitores.",
+    "humanityModifier": 0
+  },
+  "kidnapper": {
+    "name": "Sequestrador",
+    "englishName": "Kidnapper",
+    "page": 9,
+    "disciplineOptions": [
+      "dominate",
+      "potence"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Craft",
+        "name": "Segurança"
+      },
+      {
+        "skill": "Investigation",
+        "name": "Perseguição"
+      }
+    ],
+    "pool": "Determinação + Investigação",
+    "advantages": [
+      {
+        "id": "base_haven_cell",
+        "name": "Refúgio 3 + Cela 1 + Sistema de Segurança 1",
+        "cost": 5,
+        "type": "advantage",
+        "levels": [
+          5
+        ],
+        "description": "Refúgio 3 + Cela 1 + Sistema de Segurança 1"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "sadistic_flaw",
+        "name": "Sádico",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Sádico"
+      }
+    ],
+    "description": "Você captura presas e as mantém para se alimentar até que morram ou possam ser liberadas sem violar a Máscara.",
+    "humanityModifier": -1
+  },
+  "lab_rat": {
+    "name": "Rato de Laboratório",
+    "englishName": "Lab Rat",
+    "page": 9,
+    "disciplineOptions": [
+      "bloodsorcery",
+      "fortitude"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Medicine",
+        "name": "Experimentos"
+      },
+      {
+        "skill": "Science",
+        "name": "Experimentos"
+      }
+    ],
+    "pool": "Inteligência + Ciência",
+    "advantages": [
+      {
+        "id": "improved_ghouls_labrat",
+        "name": "Carniçais Aprimorados",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Carniçais Aprimorados"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "blunted_fangs_labrat",
+        "name": "Presas Rombas",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Presas Rombas"
+      }
+    ],
+    "description": "Você administra ou frequenta clínicas, instalações experimentais ou encontros de medicina alternativa onde as pessoas oferecem sangue voluntariamente por um propósito maior ou por dinheiro. Também pode transfundir vítimas e introduzir nelas substâncias de sua preferência.",
+    "humanityModifier": 0
+  },
+  "local_haunt": {
+    "name": "Assombração Local",
+    "englishName": "Local Haunt",
+    "page": 9,
+    "disciplineOptions": [
+      "oblivion",
+      "protean"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Intimidation",
+        "name": "Assustar"
+      },
+      {
+        "skill": "Athletics",
+        "name": "Perseguição"
+      }
+    ],
+    "pool": "Autocontrole + Ocultismo",
+    "advantages": [
+      {
+        "id": "loremaster_localhaunt",
+        "name": "Mestre de Sabedoria",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Mestre de Sabedoria"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "eerie_presence_localhaunt",
+        "name": "Presença Inquietante",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Presença Inquietante"
+      }
+    ],
+    "description": "Você é o perigo real por trás de uma lenda local e atrai os curiosos a um lugar supostamente assombrado. O pacote lista Mestre de Sabedoria com 3 pontos, enquanto a Qualidade isolada custa 2 na p. 15; os valores específicos do PDF foram mantidos.",
+    "humanityModifier": 0
+  },
+  "lurker_in_crowd": {
+    "name": "Espreitador na Multidão",
+    "englishName": "Lurker in the Crowd",
+    "page": 9,
+    "disciplineOptions": [
+      "auspex",
+      "obfuscate"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Stealth",
+        "name": "Misturar-se"
+      },
+      {
+        "skill": "Athletics",
+        "name": "Fuga"
+      }
+    ],
+    "pool": "Raciocínio + Furtividade",
+    "advantages": [
+      {
+        "id": "obscure_lurkerincrowd",
+        "name": "Obscuro",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Obscuro"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "outsider_lurkerincrowd",
+        "name": "Forasteiro",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Forasteiro"
+      }
+    ],
+    "description": "Você escolhe vítimas na multidão e se alimenta antes que percebam, movendo-se depressa e desaparecendo entre as pessoas. Nunca se destacou e prefere continuar assim.",
+    "humanityModifier": 0
+  },
+  "manic_pixie": {
+    "name": "Predador dos Sonhos",
+    "englishName": "Manic Pixie Predator",
+    "page": 9,
+    "disciplineOptions": [
+      "celerity",
+      "presence"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Persuasion",
+        "name": "Correr riscos"
+      },
+      {
+        "skill": "Insight",
+        "name": "Inseguranças"
+      }
+    ],
+    "pool": "Manipulação + Persuasão",
+    "advantages": [
+      {
+        "id": "social_engineer_manicpixie",
+        "name": "Engenheiro Social",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Engenheiro Social"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "cannot_embrace_manicpixie",
+        "name": "Incapaz de Abraçar",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Incapaz de Abraçar"
+      }
+    ],
+    "description": "Você seduz suas vítimas em relações breves e intensas, surge em suas vidas como um sonho e depois as deixa saudosas e perdidas.",
+    "humanityModifier": 0
+  },
+  "online_predator": {
+    "name": "Predador Online",
+    "englishName": "Online Predator",
+    "page": 10,
+    "disciplineOptions": [
+      "auspex",
+      "obfuscate"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Technology",
+        "name": "Doxing"
+      },
+      {
+        "skill": "Etiquette",
+        "name": "Subcultura online"
+      }
+    ],
+    "pool": "",
+    "advantages": [
+      {
+        "id": "online_mask",
+        "name": "Máscara",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Máscara"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "paranoia_onlinepredator",
+        "name": "Paranoia",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Paranoia"
+      }
+    ],
+    "description": "Você investiga pessoas descuidadas na internet para encontrá-las ou cultivar relações que levem a encontros em locais favoráveis à alimentação. A mesma exposição também pode ameaçá-lo.",
+    "humanityModifier": 0
+  },
+  "opportunist": {
+    "name": "Oportunista",
+    "englishName": "Opportunist",
+    "page": 10,
+    "disciplineOptions": [
+      "dominate",
+      "presence"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Subterfuge",
+        "name": "Vendas"
+      },
+      {
+        "skill": "Finance",
+        "name": "Investimentos"
+      }
+    ],
+    "pool": "Manipulação + Finanças",
+    "advantages": [
+      {
+        "id": "delay_destruction_opportunist",
+        "name": "Adiar a Destruição",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Adiar a Destruição"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "overconfident_opportunist",
+        "name": "Excesso de Confiança",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Excesso de Confiança"
+      }
+    ],
+    "description": "Negócios falsos, promessas de enriquecimento e redes sociais atraem clientes desesperados ou ingênuos. Você sai alimentado, e a vítima normalmente fica pior. O pacote imprime Excesso de Confiança com 2 pontos; o Defeito isolado custa 3 na p. 19.",
+    "humanityModifier": 0
+  },
+  "pack_hunter": {
+    "name": "Caçador de Matilha",
+    "englishName": "Pack Hunter",
+    "page": 10,
+    "disciplineOptions": [
+      "animalism",
+      "protean"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "AnimalKen",
+        "name": "Carnívoros"
+      },
+      {
+        "skill": "Brawl",
+        "name": "Táticas de matilha"
+      }
+    ],
+    "pool": "Destreza + Sobrevivência",
+    "advantages": [
+      {
+        "id": "apex_predator_packhunter",
+        "name": "Predador Alfa",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Predador Alfa"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "brash_packhunter",
+        "name": "Brusco",
+        "cost": 1,
+        "type": "flaw",
+        "levels": [
+          1
+        ],
+        "description": "Brusco"
+      },
+      {
+        "id": "deep_sleeper_packhunter",
+        "name": "Sono Pesado",
+        "cost": 1,
+        "type": "flaw",
+        "levels": [
+          1
+        ],
+        "description": "Sono Pesado"
+      }
+    ],
+    "description": "Você caça junto de feras que o aceitam como um dos seus ou como líder. Suas noites ativas exigem descanso profundo durante o dia.",
+    "humanityModifier": 0
+  },
+  "pay_for_blood": {
+    "name": "Pagar pela Presa",
+    "englishName": "Pay for Prey",
+    "page": 10,
+    "disciplineOptions": [
+      "bloodsorcery",
+      "dominate"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Politics",
+        "name": "Hábitos de alimentação"
+      },
+      {
+        "skill": "Finance",
+        "name": "Seguir o dinheiro"
+      }
+    ],
+    "pool": "Manipulação + Finanças",
+    "advantages": [
+      {
+        "id": "pay_resources",
+        "name": "Recursos",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Recursos"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "routine_payforprey",
+        "name": "Rotina",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Rotina"
+      }
+    ],
+    "description": "Caçar é mais uma transação: seus recursos e contatos levam vítimas até você. A conveniência aumenta o número de envolvidos e o risco de exposição ou traição.",
+    "humanityModifier": 0
+  },
+  "street_feeder": {
+    "name": "Caçador de Rua",
+    "englishName": "Street Feeder",
+    "page": 11,
+    "disciplineOptions": [
+      "obfuscate",
+      "potence"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Streetwise",
+        "name": "Bairros perigosos"
+      },
+      {
+        "skill": "Brawl",
+        "name": "Emboscada"
+      }
+    ],
+    "pool": "Força + Manha",
+    "advantages": [
+      {
+        "id": "danger_sense_streetfeeder",
+        "name": "Sentido de Perigo",
+        "cost": 3,
+        "type": "advantage",
+        "levels": [
+          3
+        ],
+        "description": "Sentido de Perigo"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "destitute_streetfeeder",
+        "name": "Destituído",
+        "cost": 1,
+        "type": "flaw",
+        "levels": [
+          1
+        ],
+        "description": "Destituído"
+      },
+      {
+        "id": "no_haven_streetfeeder",
+        "name": "Sem Refúgio",
+        "cost": 1,
+        "type": "flaw",
+        "levels": [
+          1
+        ],
+        "description": "Sem Refúgio"
+      }
+    ],
+    "description": "Você conhece as ruas e os lugares onde atrair presas vulneráveis. Lugares que outros consideram perigosos são sua casa.",
+    "humanityModifier": 0
+  },
+  "watcher_from_water": {
+    "name": "Vigia na Água",
+    "englishName": "Watcher in the Water",
+    "page": 11,
+    "disciplineOptions": [
+      "oblivion",
+      "protean"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Athletics",
+        "name": "Natação"
+      },
+      {
+        "skill": "Survival",
+        "name": "Água"
+      }
+    ],
+    "pool": "Raciocínio + Furtividade",
+    "advantages": [
+      {
+        "id": "sharp_senses_watcher",
+        "name": "Sentidos Aguçados",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Sentidos Aguçados"
+      },
+      {
+        "id": "slippery_watcher",
+        "name": "Escorregadio",
+        "cost": 1,
+        "type": "advantage",
+        "levels": [
+          1
+        ],
+        "description": "Escorregadio"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "outsider_watcher",
+        "name": "Forasteiro",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Forasteiro"
+      }
+    ],
+    "description": "Você espera submerso por mergulhadores, pescadores, marinheiros ou pessoas próximas à água durante a noite. O pacote usa Sentidos Aguçados com 2 pontos; a Qualidade isolada custa 1 na p. 17.",
+    "humanityModifier": 0
+  },
+  "wolfinsheepsclothing": {
+    "name": "Lobo em Pele de Cordeiro",
+    "englishName": "Wolf in Sheep's Clothing",
+    "page": 11,
+    "disciplineOptions": [
+      "auspex",
+      "fortitude"
+    ],
+    "specialtyOptions": [
+      {
+        "skill": "Subterfuge",
+        "name": "Fingir fraqueza"
+      },
+      {
+        "skill": "Melee",
+        "name": "Ataque furtivo"
+      }
+    ],
+    "pool": "Manipulação + Armas Brancas",
+    "advantages": [
+      {
+        "id": "codeofhonor_wolf",
+        "name": "Código de Honra",
+        "cost": 2,
+        "type": "advantage",
+        "levels": [
+          2
+        ],
+        "description": "Código de Honra"
+      },
+      {
+        "id": "underestimated_wolf",
+        "name": "Subestimado",
+        "cost": 1,
+        "type": "advantage",
+        "levels": [
+          1
+        ],
+        "description": "Subestimado"
+      }
+    ],
+    "flaws": [
+      {
+        "id": "deaths_kiss_wolf",
+        "name": "Beijo da Morte",
+        "cost": 2,
+        "type": "flaw",
+        "levels": [
+          2
+        ],
+        "description": "Beijo da Morte"
+      }
+    ],
+    "description": "Você se faz de presa fácil ou procura predadores entre aqueles que exploram pessoas desesperadas. Entra voluntariamente no perigo e inverte a situação, alimentando-se de quem acreditava ter o controle.",
+    "humanityModifier": 0
+  }
+}

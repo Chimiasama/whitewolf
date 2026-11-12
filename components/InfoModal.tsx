@@ -1,4 +1,5 @@
 
+import {BookSources} from '../lib/bookReferences';
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Button } from './ui/Button';
@@ -8,11 +9,12 @@ interface InfoModalProps {
   title: string;
   onClose: () => void;
   children: React.ReactNode;
+  sourceKey?: string;
 }
 
 let nGlobalModalCount = 0;
 
-export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fnOnClose, children: oChildren }) => {
+export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fnOnClose, children: oChildren, sourceKey }) => {
   const { t: fnT } = useI18n();
   const [nMyIndex, fnSetMyIndex] = useState(0);
   const modalIndexRef=useRef(0);
@@ -123,6 +125,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ title: sTitle, onClose: fn
         </header>
         <main className={`p-6 ${bIsTop ? 'overflow-y-auto' : 'overflow-y-hidden'}`}>
           {oChildren}
+          <BookSources title={sTitle} sourceKey={sourceKey}/>
         </main>
       </div>
     </div>
