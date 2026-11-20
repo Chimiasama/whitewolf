@@ -25,7 +25,7 @@ export function PredatorBenefits({predator:p, preview=false}:{predator:PredatorT
   return <section aria-label="Benefícios do predador" className="space-y-3">
     <h4 className="font-semibold">{preview ? 'O que este predador concede' : 'Você recebe deste predador'}</h4>
     {ids.length>1 && <p className="text-sm text-gray-400">Disciplina: escolha uma das opções abaixo.</p>}
-    {ids.map(id=><div key={id} className="flex flex-wrap items-baseline gap-x-2 gap-y-1"><span className="text-gray-400">Disciplina:</span><HelpLabel title={disciplines[id]?.name||id} content={disciplines[id] ? <DisciplineReference discipline={disciplines[id]}/> : undefined}/><span>+{p.disciplineAdd?.dots || 1} ponto</span></div>)}
+    {ids.map(id=><div key={id} className="flex flex-wrap items-baseline gap-x-2 gap-y-1"><span className="text-gray-400">Disciplina:</span><HelpLabel title={disciplines[id]?.name||id} content={disciplines[id] ? <DisciplineReference discipline={disciplines[id]} disciplineKey={id}/> : undefined}/><span>+{p.disciplineAdd?.dots || 1} ponto</span></div>)}
     {advantages.map(item=><div key={item.id}><PredatorBenefitItem item={{...item,type:'advantage'}}/></div>)}
     {flaws.map(item=><div key={item.id}><PredatorBenefitItem item={{...item,type:'flaw'}}/></div>)}
     {preview && p.choices?.map(group=><div key={group.id} className="space-y-2 rounded border border-gray-700 p-3"><p>{group.type==='flaw'?'Defeito':'Vantagem'} · {group.label} — escolha uma opção:</p>{group.options.map(item=><div key={item.id}><PredatorBenefitItem item={{...item,type:group.type}}/></div>)}</div>)}

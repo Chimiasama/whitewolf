@@ -1,4 +1,5 @@
-import {powerPrerequisitesMet} from "./powerRequirements";
+import { grantsAutomaticSpecialty } from './specialties';
+import {fitDisciplinePowers, powerPrerequisitesMet} from "./powerRequirements";
 import {LOW_CLAN_DISCIPLINES} from '../data/v5Loresheets';
 import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
 import {baneSeverity,hasAlternativeBane} from '../data/alternativeBanes';
@@ -122,6 +123,14 @@ export function quotePurchase(
     label = t(`${field}.list.${r.key}`);
     dotCost(attr ? 5 : fast ? 2 : 3);
     patch = { [field]: { ...c[field], [r.key]: to } };
+    if (!attr && grantsAutomaticSpecialty(c, r.key as Skill) && r.choice !== undefined) {
+      const name = r.choice.trim();
+      if (!name || name.length > 100) reject("Informe a especialização gratuita de até 100 caracteres.");
+      const existing = c.specialties.find(item => item.skill === r.key && item.name.trim().toLocaleLowerCase('pt-BR') === name.toLocaleLowerCase('pt-BR'));
+      if (existing) reject("Escolha uma especialização diferente da que já consta na ficha.");
+      patch.specialties = [...c.specialties, { skill: r.key as Skill, name }];
+      label += ` · ${name}`;
+    }
     if (fast && !attr) {
       reference = "Player’s Guide — Bully, PDF atual, p. 14 — Fast Learner";
       formula += " · Aprendizado Rápido";
@@ -244,8 +253,9 @@ export function quotePurchase(
       reject("Fórmulas pertencem à Alquimia de Sangue-Ralo.");
     from = c.disciplines[r.key] || 0;
     to = r.kind === "formula" ? from : rank(from);
-    const ids = c.disciplinePowers[r.key] || [];
-    if (!alchemy && ids.length !== from)
+    const savedIds = c.disciplinePowers[r.key] || [];
+    const ids = alchemy ? savedIds : fitDisciplinePowers(discipline, savedIds, c.disciplines, r.key);
+    if (!alchemy && (ids.length !== from || ids.length !== savedIds.length))
       reject(
         "Complete os poderes atuais da Disciplina antes de comprar outro ponto.",
       );
@@ -406,6 +416,9 @@ export function purchaseWithExperience(
   t?: Translate,
 ): Character {
   const q = quotePurchase(c, r, t);
+  if (r.kind === "skill" && grantsAutomaticSpecialty(c, r.key as Skill) && !r.choice?.trim()) {
+    reject("Informe a especialização gratuita ao adquirir esta Habilidade.");
+  }
   if (receipt.expectedToken !== q.token)
     reject("A ficha mudou. Confira novamente o custo antes de comprar.");
   if (experienceBalance(c) < q.cost)

@@ -1,3 +1,4 @@
+import { missingAutomaticSpecialties } from '../lib/specialties';
 import {HelpLabel} from "./HelpLabel";
 import { LoresheetPicker } from "./LoresheetPicker";
 import {AdvantageReference} from './AdvantageReference';
@@ -34,13 +35,22 @@ export function SpecialtyEditor({
   const { t } = useI18n();
   const [skill, setSkill] = useState(""),
     [name, setName] = useState("");
+  const missing = missingAutomaticSpecialties(c);
+  const canAdd = c.skills[skill] > 0 && !!name.trim() && !c.specialties.some(
+    item => item.skill === skill && item.name.trim().toLocaleLowerCase('pt-BR') === name.trim().toLocaleLowerCase('pt-BR'),
+  );
   return (
     <section className="space-y-4">
       <h3>Especializações</h3>
       <p className="text-sm text-gray-300">
-        Escolha a especialização gratuita e as exigidas pelas suas Habilidades.
-        Benefícios de predador são adicionais.
+        Ofícios, Performance, Erudição e Ciência concedem uma especialização ao receber o primeiro ponto.
+        Escolha também uma especialização livre. O tipo de predador pode conceder outra.
       </p>
+      {missing.length > 0 && (
+        <p className="text-sm text-amber-200">
+          Especialização gratuita pendente em {missing.map(item => t('skills.list.' + item)).join(', ')}.
+        </p>
+      )}
       <div className="grid gap-3 sm:grid-cols-2">
         <label>
           Habilidade
@@ -71,9 +81,10 @@ export function SpecialtyEditor({
       </div>
       <button
         type="button"
-        disabled={!skill || !name.trim()}
+        disabled={!canAdd}
         className="rounded border p-2 disabled:opacity-40"
         onClick={() => {
+          if (!canAdd) return;
           onChange("specialties", [
             ...c.specialties,
             { skill: skill as Skill, name: name.trim() },

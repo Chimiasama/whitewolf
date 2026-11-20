@@ -1,3 +1,6 @@
+import { grantsAutomaticSpecialty } from '../lib/specialties';
+import { PowerDetails } from './DisciplineReference';
+import { HelpLabel } from './HelpLabel';
 import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
 import React, { useState } from "react";
 import { Attribute, Character, Clan, GameType, Skill } from "../types";
@@ -150,6 +153,7 @@ export function ExperiencePurchases({
   const selected = options.some((o) => o.id === key)
     ? key
     : options[0]?.id || "";
+  const automaticSpecialty = kind === "skill" && grantsAutomaticSpecialty(c, selected as Skill);
   const [sheetId, sheetLevel] = selected.split(":");
   const request: PurchaseRequest = {
     kind,
@@ -158,6 +162,7 @@ export function ExperiencePurchases({
     ...(["discipline", "formula", "specialty", "loresheet"].includes(kind)
       ? { choice }
       : {}),
+    ...(automaticSpecialty && choice.trim() ? { choice } : {}),
   };
   let quote: ReturnType<typeof quotePurchase> | undefined,
     reason = "";
@@ -175,6 +180,7 @@ export function ExperiencePurchases({
               (c.disciplines[selected] || 0) + (kind === "discipline" ? 1 : 0),
         ) || []
       : [];
+  const selectedPower = powerOptions.find(power => power.id === choice);
   const change = () => {
     setChoice("");
     setError("");
@@ -311,27 +317,38 @@ export function ExperiencePurchases({
           </label>
         </div>
         {["discipline", "formula"].includes(kind) && (
-          <label className="block">
-            {kind === "formula"
-              ? "Fórmula adicional"
-              : "Poder ou fórmula incluído no novo ponto"}
-            <select
-              className="mt-2 block w-full rounded border border-gray-600 p-3"
-              value={choice}
-              onChange={(e) => {
-                setChoice(e.target.value);
-                setError("");
-                setMessage("");
-              }}
-            >
-              <option value="">Escolha</option>
-              {powerOptions.map((p) => (
-                <option key={p.id} value={p.id}>
-                  {p.name} · nível {p.level}
-                </option>
-              ))}
-            </select>
-          </label>
+          <div className="space-y-2">
+            <label className="block">
+              {kind === "formula"
+                ? "Fórmula adicional"
+                : "Poder ou fórmula incluído no novo ponto"}
+              <select
+                className="mt-2 block w-full rounded border border-gray-600 p-3"
+                value={choice}
+                onChange={(e) => {
+                  setChoice(e.target.value);
+                  setError("");
+                  setMessage("");
+                }}
+              >
+                <option value="">Escolha</option>
+                {powerOptions.map((p) => (
+                  <option key={p.id} value={p.id}>
+                    {p.name} · nível {p.level}
+                  </option>
+                ))}
+              </select>
+            </label>
+            {selectedPower && (
+              <HelpLabel
+                title={selectedPower.name}
+                sourceKey={`power:${selected}:${selectedPower.id}`}
+                content={<PowerDetails power={selectedPower} discipline={disciplines[selected]} disciplineKey={selected} />}
+              >
+                {selectedPower.name} · nível {selectedPower.level}
+              </HelpLabel>
+            )}
+          </div>
         )}
         {kind === "loresheet" && selected === "v5-helena:2" && (
           <label className="block">
@@ -350,9 +367,9 @@ export function ExperiencePurchases({
             </select>
           </label>
         )}
-        {kind === "specialty" && (
+        {(kind === "specialty" || automaticSpecialty) && (
           <label className="block">
-            Nova especialização
+            {automaticSpecialty ? "Especialização gratuita do primeiro ponto" : "Nova especialização"}
             <input
               className="mt-2 block w-full rounded border border-gray-600 p-3"
               value={choice}
@@ -412,7 +429,7 @@ export function ExperiencePurchases({
         </details>
         <button
           type="submit"
-          disabled={!quote || balance < (quote?.cost || 0)}
+          disabled={!quote || balance < (quote?.cost || 0) || (automaticSpecialty && !choice.trim())}
           className="rounded border p-3 disabled:opacity-40"
         >
           {quote ? `Comprar por ${quote.cost} XP` : "Compra indisponível"}

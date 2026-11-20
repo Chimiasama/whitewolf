@@ -1,4 +1,6 @@
-import {powerPrerequisitesMet} from "./powerRequirements";
+import { creationSpecialties, missingAutomaticSpecialties } from './specialties';
+import { translate } from './i18n';
+import {fitDisciplinePowers, powerPrerequisitesMet} from "./powerRequirements";
 import {hasAlternativeBane} from '../data/alternativeBanes';
 import {BLOOD_RITUALS} from '../data/bloodRituals';
 import {OBLIVION_CEREMONIES} from '../data/oblivionCeremonies';
@@ -104,8 +106,13 @@ export function finishingIssues(c:Character):string[]{
  if(adv!==budget.advantages)issues.push(`Distribua exatamente ${budget.advantages} pontos de Vantagens (bônus de predador são adicionais).`);
  if(flaws!==budget.flaws)issues.push(`Distribua exatamente ${budget.flaws} pontos de Defeitos (bônus de predador são adicionais).`);
  if(c.loresheets.some(l=>l.id==='v5-helena'&&l.level===2)&&!c.loreChoices?.helenaTalent)issues.push('Escolha a Habilidade de Talento Inato na Ficha de Conhecimento de Helena.');
- for(const skill of aMandatorySpecialtySkills)if(c.skills[skill]>0&&!c.specialties.some(s=>s.skill===skill&&s.name.trim()))issues.push(`Escolha a especialização gratuita de ${skill}.`);
- if(c.specialties.length < aMandatorySpecialtySkills.filter(k=>c.skills[k]>0).length+1 || !c.specialties.some(s=>c.skills[s.skill]>0&&s.name.trim()))issues.push('Escolha uma especialização em uma Habilidade com pontos.');
+ const specialties = creationSpecialties(c);
+ for (const skill of missingAutomaticSpecialties(c, specialties)) {
+  issues.push(`Escolha a especialização gratuita de ${translate('pt', 'skills.list.' + skill)}.`);
+ }
+ const automaticCount = aMandatorySpecialtySkills.filter(skill => c.skills[skill] > 0).length;
+ if (specialties.length < automaticCount + 1) issues.push('Escolha uma especialização livre adicional em uma Habilidade com pontos.');
+
  if(c.gameType===GameType.Werewolf){
   const t=W5_TRIBES[c.tribe];if(!t||c.renown[t.renown]!==2||Object.values(c.renown).filter(v=>typeof v==='number').reduce((s:number,v:number)=>s+v,0)!==3)issues.push('Renome: 2 no Renome do patrono e 1 em outro.');
   for(const origin of ['native','auspice','tribe']){const selected=(c.gifts||[]).filter(g=>g.origin===origin);if(selected.length!==1||!W5_GIFTS.some(g=>g.id===selected[0]?.id&&g.origin===origin&&g.totalRenown<=3&&(origin==='native'||g.owner===(origin==='tribe'?c.tribe:c.auspice))))issues.push(`Escolha um Dom ${origin==='native'?'nativo':origin==='tribe'?'da tribo':'do augúrio'} elegível.`);}
@@ -128,7 +135,14 @@ export function finishingIssues(c:Character):string[]{
    if(!c.predatorType)issues.push('Defina o predador ou revise com o Narrador a exceção de recém-criado.');
   }
   const details=fnGetDisciplineDetails(k=>k);
-  for(const [key,dots]of Object.entries(c.disciplines)){const ids=c.disciplinePowers[key]||[];const levels=ids.map(id=>details[key]?.powers.find(p=>p.id===id)?.level||0).sort((a,b)=>b-a);if(levels.some((level,i)=>level>dots-i))issues.push(`Distribuição de poderes inválida: ${key}.`);if(ids.length!==dots)issues.push(`Selecione ${dots} poderes de ${key}.`);for(const id of ids){const p=details[key]?.powers.find(p=>p.id===id);if(!p||p.level>dots||!powerPrerequisitesMet(p,ids)||p.amalgam?.some(r=>(c.disciplines[r.discipline]||0)<r.level))issues.push(`Reveja os requisitos de ${key}.`);}}
+  for (const [key, dots] of Object.entries(c.disciplines)) {
+   const ids = c.disciplinePowers[key] || [];
+   const discipline = details[key];
+   if (discipline && fitDisciplinePowers(discipline, ids, c.disciplines, key).length !== ids.length) {
+    issues.push(`Distribuição de poderes inválida: ${key}.`);
+   }
+   if (ids.length !== dots) issues.push(`Selecione ${dots} poderes de ${key}.`);
+  }
  }
  return issues;
 }
@@ -172,9 +186,14 @@ export function advancementIssues(c:Character):string[]{
  if(hasAlternativeBane(c)&&!ALTERNATIVE_BANES.some(b=>b.clan===c.clan))issues.push('O perfil escolhido não possui Maldição alternativa.');
  if(c.gameType===GameType.Vampire){
   if(!c.clan)issues.push('Selecione o clã ou perfil vampírico.');
+  for (const skill of missingAutomaticSpecialties(c)) {
+   issues.push(`Escolha a especialização gratuita de ${translate('pt', 'skills.list.' + skill)}.`);
+  }
   for(const [key,dots] of Object.entries(c.disciplines)){
    const ids=c.disciplinePowers[key]||[];
    if((key==='thinbloodalchemy'?ids.length<dots:ids.length!==dots)||new Set(ids).size!==ids.length)issues.push(`Reveja a quantidade de poderes de ${key}.`);
+   const discipline=catalog[key];
+   if(key!=='thinbloodalchemy'&&discipline&&fitDisciplinePowers(discipline,ids,c.disciplines,key).length!==ids.length)issues.push(`Distribuição de poderes inválida: ${key}.`);
    for(const id of ids){const p=catalog[key]?.powers.find(x=>x.id===id);if(!p||p.level>dots||!powerPrerequisitesMet(p,ids)||p.amalgam?.some(r=>(c.disciplines[r.discipline]||0)<r.level))issues.push(`Reveja os requisitos de ${key}.`);}
   }
  }else if(!c.tribe||!c.auspice)issues.push('Selecione tribo e augúrio.');

@@ -1,12 +1,13 @@
+import { updateSkills } from './lib/specialties';
 import {PredatorBenefits} from './components/PredatorBenefits';
-import {powerPrerequisitesMet} from "./lib/powerRequirements";
+import {fitDisciplinePowers, powerPrerequisitesMet} from "./lib/powerRequirements";
 import {PdfButton} from './components/PdfButton';
 import {DiceRoller} from './components/DiceRoller';
 import {setRemaining,synchronizeDamage,characterDamage,trackCapacity} from './lib/damage';
 import {BookSources,BookReferenceScope} from './lib/bookReferences';
 import {RulesLibrary} from './components/RulesLibrary';
 import {HelpLabel} from './components/HelpLabel';
-import {DisciplineReference} from './components/DisciplineReference';
+import {DisciplineReference, PowerDetails} from './components/DisciplineReference';
 import {HuntingReference} from './components/HuntingReference';
 import {generateStoryIdea} from './data/storyIdeas';
 import {TRAIT_HELP} from './data/traitHelp';
@@ -29,7 +30,7 @@ import { createNarrativeNpc } from './lib/npc';
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Character, Clan, Attribute, Skill, DisciplineDetail, PredatorTypeDetail, AdvantageFlaw, Specialty, DisciplinePower, GameType, Tribe, Auspice, Disciplines } from './types';
-import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, aMandatorySpecialtySkills, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths, oDisciplineCreationPools, VAMPIRE_DISCIPLINES, WEREWOLF_GIFTS, fnTranslateAdvantageFlaw } from './constants';
+import { fnGetClanDetails, oInitialCharacter, fnGetPredatorTypes, aSkillList, aAttributeList, fnGetDisciplineDetails, fnGetAdvantagesAndFlaws, fnGetTribeDetails, fnGetAuspiceDetails, fnGetLoresheets, fnGetRituals, fnGetTalismans, oSkillPaths, oDisciplineCreationPools, VAMPIRE_DISCIPLINES, WEREWOLF_GIFTS, fnTranslateAdvantageFlaw } from './constants';
 import { Card } from './components/ui/Card';
 import { Button } from './components/ui/Button';
 import { Input, TextArea } from './components/ui/Input';
@@ -410,43 +411,47 @@ interface DisciplinePowerSelectorProps {
 }
 
 const DisciplinePowerSelector: React.FC<DisciplinePowerSelectorProps> = ({ disciplineKey: sDisciplineKey, dots: nDots, selectedPowerIds: aSelectedPowerIds, onSelectPowers: fnOnSelectPowers, disciplineDetails: oDisciplineDetails, allDisciplines: oAllDisciplines }) => {
-    const { t: fnT } = useI18n();
-    const fnCheckValidity = useCallback((sTestId: string) => {
-        const oPower = oDisciplineDetails.powers.find(p => p.id === sTestId);
-        if (!oPower) return false;
-
-        // Check prerequisites
-        if (!powerPrerequisitesMet(oPower,aSelectedPowerIds)) return false;
-
-        // Check amalgams
-        if (oPower.amalgam) {
-            for (const oReq of oPower.amalgam) {
-                if ((oAllDisciplines[oReq.discipline] || 0) < oReq.level) return false;
-            }
-        }
-
-        const aTestList = [...aSelectedPowerIds, sTestId];
-        const aLevels = aTestList.map(id => {
-            return oDisciplineDetails.powers.find(p => p.id === id)?.level || 0;
-        });
-        aLevels.sort((a: number, b: number) => b - a);
-        for (let i = 0; i < aLevels.length; i++) {
-            if (aLevels[i] > nDots - i) return false;
-        }
-        return true;
-    }, [aSelectedPowerIds, nDots, oDisciplineDetails, oAllDisciplines]);
-
-    const fnTogglePower = (sPowerId: string) => {
-        if (aSelectedPowerIds.includes(sPowerId)) {
-            fnOnSelectPowers(aSelectedPowerIds.filter(id => id !== sPowerId));
-        } else {
-            if (aSelectedPowerIds.length < nDots && fnCheckValidity(sPowerId)) {
-                fnOnSelectPowers([...aSelectedPowerIds, sPowerId]);
-            }
+    const nextDot = aSelectedPowerIds.length + 1;
+    const isAlchemy = sDisciplineKey === 'thinbloodalchemy';
+    const unavailable = (power: DisciplineDetail['powers'][number]) => {
+        if (aSelectedPowerIds.includes(power.id)) return undefined;
+        if (nextDot > nDots) return 'Todos os pontos têm um poder escolhido.';
+        if (power.level > nextDot) return `Disponível a partir do ponto ${power.level}.`;
+        if (!powerPrerequisitesMet(power, aSelectedPowerIds)) return 'Exige um poder pré-requisito.';
+        if (power.amalgam?.some(req => (oAllDisciplines[req.discipline] || 0) < req.level)) {
+            return 'Faltam pontos para o Amálgama.';
         }
     };
 
-    return <div className="mt-4"><p className="mb-2 text-sm text-gray-300">{aSelectedPowerIds.length} / {nDots} {sDisciplineKey==='thinbloodalchemy'?'fórmulas escolhidas':'poderes escolhidos'}</p><CatalogPicker label={`${oDisciplineDetails.name} — ${sDisciplineKey==='thinbloodalchemy'?'fórmulas':'poderes'}`} multiple selected={aSelectedPowerIds} onToggle={fnTogglePower} options={oDisciplineDetails.powers.map(p=>({id:p.id,name:p.name,summary:`Nível ${p.level} · ${p.cost||'Consulte o sistema'}`,unavailable:aSelectedPowerIds.includes(p.id)?undefined:p.level>nDots?`Exige ${p.level} pontos nesta Disciplina.`:aSelectedPowerIds.length>=nDots?'Todos os espaços de poder foram preenchidos.':!fnCheckValidity(p.id)?'Exige pré-requisito, amálgama ou espaço de nível compatível.':undefined,details:<><p>{p.description}</p><p className="mt-2">{p.system}</p>{p.amalgam?.map((r,i)=><p key={i}>Amálgama: {r.discipline} {r.level}</p>)}{p.prerequisite&&<p>Pré-requisito: {oDisciplineDetails.powers.find(x=>x.id===p.prerequisite)?.name||p.prerequisite}</p>}{p.prerequisiteAny?.length&&<p>Pré-requisito (um deles): {p.prerequisiteAny.map(id=>oDisciplineDetails.powers.find(item=>item.id===id)?.name||id).join(" ou ")}</p>}</>}))}/></div>;
+    return (
+        <div className="mt-4 space-y-2">
+            <p className="text-sm text-gray-300" aria-live="polite">
+                {nextDot <= nDots
+                    ? `Ponto ${nextDot} de ${nDots} · ${nextDot === 1 ? 'Nível 1' : `Níveis 1 a ${nextDot}`}`
+                    : `${aSelectedPowerIds.length} / ${nDots} ${isAlchemy ? 'fórmulas escolhidas' : 'poderes escolhidos'}`}
+            </p>
+            <CatalogPicker
+                label={`${oDisciplineDetails.name} — ${isAlchemy ? 'fórmulas' : 'poderes'}`}
+                multiple
+                selected={aSelectedPowerIds}
+                onRemove={id => fnOnSelectPowers(aSelectedPowerIds.filter(selected => selected !== id))}
+                onToggle={id => {
+                    const power = oDisciplineDetails.powers.find(item => item.id === id);
+                    if (power && !aSelectedPowerIds.includes(id) && !unavailable(power)) {
+                        fnOnSelectPowers([...aSelectedPowerIds, id]);
+                    }
+                }}
+                options={oDisciplineDetails.powers.map(power => ({
+                    id: power.id,
+                    name: power.name,
+                    metadata: `Nível ${power.level}`,
+                    summary: power.description,
+                    unavailable: unavailable(power),
+                    details: <PowerDetails power={power} discipline={oDisciplineDetails} disciplineKey={sDisciplineKey} />,
+                }))}
+            />
+        </div>
+    );
 };
 
 // --- NOTIFICATION COMPONENT --- //
@@ -607,7 +612,7 @@ const App: React.FC = () => {
     };
 
     const fnHandleSkillChange = (skill: string, val: number) => {
-        fnUpdateCharacter('skills', { ...oCharacter.skills, [skill]: val });
+        fnApplyTransaction(current => updateSkills(current, { ...current.skills, [skill]: val }));
     };
 
     const fnShowNotification = (message: string, type: 'success' | 'error' = 'success') => {
@@ -729,58 +734,23 @@ const App: React.FC = () => {
         e.target.value = "";
     };
 
-    // Prune invalid powers (amalgams/prerequisites) when disciplines change
     useEffect(() => {
-        const oNewDisciplinePowers = { ...oCharacter.disciplinePowers };
-        let bChanged = false;
-
-        const oDetails = oDisciplineDetails;
-
-        Object.keys(oNewDisciplinePowers).forEach(sDisc => {
-            const aSelectedIds = oNewDisciplinePowers[sDisc];
-            const oDiscDetails = oDetails[sDisc];
-            if (!oDiscDetails) return;
-
-            const aValidIds: string[] = [];
-            // We need to check in order because prerequisites might depend on each other
-            // but for simplicity we can just filter multiple times or use a more robust logic.
-            // Standard discipline powers are linear enough.
-
-            let aToFilter = [...aSelectedIds];
-            let bFilterChanged = true;
-            while (bFilterChanged) {
-                bFilterChanged = false;
-                const aNext = aToFilter.filter(sId => {
-                    const oPower = oDiscDetails.powers.find(p => p.id === sId);
-                    if (!oPower) return false;
-                    // Level check
-                    if (oPower.level > (oCharacter.disciplines[sDisc] || 0)) return false;
-
-                    // Prerequisite check
-                    if (!powerPrerequisitesMet(oPower,aToFilter)) return false;
-
-                    // Amalgam check
-                    if (oPower.amalgam) {
-                        for (const oReq of oPower.amalgam) {
-                            if ((oCharacter.disciplines[oReq.discipline] || 0) < oReq.level) return false;
-                        }
-                    }
-                    return true;
-                });
-
-                if (aNext.length !== aToFilter.length) {
-                    aToFilter = aNext;
-                    bFilterChanged = true;
-                    bChanged = true;
+        if (view !== 'creator') return;
+        fnSetCharacter((current: Character) => {
+            const disciplinePowers = { ...current.disciplinePowers };
+            let changed = false;
+            for (const [key, ids] of Object.entries(disciplinePowers)) {
+                const discipline = oDisciplineDetails[key];
+                if (!discipline) continue;
+                const ordered = fitDisciplinePowers(discipline, ids, current.disciplines, key, key === 'thinbloodalchemy' && !!current.creationCompletedAt);
+                if (ordered.length !== ids.length || ordered.some((id, index) => id !== ids[index])) {
+                    disciplinePowers[key] = ordered;
+                    changed = true;
                 }
             }
-            oNewDisciplinePowers[sDisc] = aToFilter;
+            return changed ? { ...current, disciplinePowers } : current;
         });
-
-        if (bChanged) {
-            fnUpdateCharacter('disciplinePowers', oNewDisciplinePowers);
-        }
-    }, [oCharacter.disciplines, fnT]);
+    }, [view, oCharacter.disciplines, oCharacter.disciplinePowers, oDisciplineDetails]);
 
     const fnHandlePredatorTypeChange = (id:string,patch:Partial<Character>={}) => fnSetCharacter(prev=>changePredator(prev,aPredatorTypes,id,patch));
     const fnHandlePortraitChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -1058,7 +1028,7 @@ const App: React.FC = () => {
                 );
             case 'skills':
                 return (
-                    <SkillDistribution character={oCharacter} onChange={patch=>fnSetCharacter(prev=>({...prev,...patch}))}>
+                    <SkillDistribution character={oCharacter} onChange={patch => fnApplyTransaction(current => patch.skills ? updateSkills({ ...current, ...patch }, patch.skills) : { ...current, ...patch })}>
                         <PointAllocator 
                             items={aSkillList} 
                             values={oCharacter.skills} 
@@ -1193,7 +1163,7 @@ const App: React.FC = () => {
                                             <div key={sDisc} className="bg-gray-800 p-3 rounded-lg border border-gray-700 min-w-0">
                                                 <div className="flex flex-wrap justify-between items-center gap-3 mb-2">
                                                     <div className="flex flex-col">
-                                                        <h4 className="font-bold text-gray-200 break-words"><HelpLabel title={oDetails?.name||sDisc} content={oDetails?<DisciplineReference discipline={oDetails}/>:undefined}>{oDetails?.name||sDisc}</HelpLabel></h4>
+                                                        <h4 className="font-bold text-gray-200 break-words"><HelpLabel title={oDetails?.name||sDisc} content={oDetails?<DisciplineReference discipline={oDetails} disciplineKey={sDisc}/>:undefined}>{oDetails?.name||sDisc}</HelpLabel></h4>
                                                         <div className="flex gap-1">
                                                             {!aBaseDiscs.includes(sDisc) && (
                                                                 <span className="text-[9px] uppercase text-gray-500 font-bold">{fnT('common.unknown')}</span>
@@ -1287,7 +1257,7 @@ const App: React.FC = () => {
                                 })()}
                             </div>
 
-                            <div className="mt-6"><CatalogPicker label="Disciplinas disponíveis" selected={[]} onToggle={id=>fnUpdateCharacter('disciplines',{...oCharacter.disciplines,[id]:0})} options={VAMPIRE_DISCIPLINES.filter(id=>!(id in oCharacter.disciplines)).map(id=>({id,name:oDisciplineDetails[id]?.name||id,summary:oDisciplineDetails[id]?.description,details:oDisciplineDetails[id]?<DisciplineReference discipline={oDisciplineDetails[id]}/>:undefined,unavailable:id==='thinbloodalchemy'?(oCharacter.clan!==Clan.ThinBlood||!oCharacter.thinMerits?.includes('alchemist')?'Exige Alquimista Sangue-Ralo.':undefined):oCharacter.clan===Clan.ThinBlood&&!oCharacter.thinMerits?.includes('affinity')?'Exige Afinidade com Disciplina.':undefined}))}/></div>
+                            <div className="mt-6"><CatalogPicker label="Disciplinas disponíveis" selected={[]} onToggle={id=>fnUpdateCharacter('disciplines',{...oCharacter.disciplines,[id]:0})} options={VAMPIRE_DISCIPLINES.filter(id=>!(id in oCharacter.disciplines)).map(id=>({id,name:oDisciplineDetails[id]?.name||id,summary:oDisciplineDetails[id]?.description,details:oDisciplineDetails[id]?<DisciplineReference discipline={oDisciplineDetails[id]} disciplineKey={id}/>:undefined,unavailable:id==='thinbloodalchemy'?(oCharacter.clan!==Clan.ThinBlood||!oCharacter.thinMerits?.includes('alchemist')?'Exige Alquimista Sangue-Ralo.':undefined):oCharacter.clan===Clan.ThinBlood&&!oCharacter.thinMerits?.includes('affinity')?'Exige Afinidade com Disciplina.':undefined}))}/></div>
                         </GothicFrame>
 
                         </>):null}

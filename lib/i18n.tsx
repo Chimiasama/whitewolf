@@ -5315,12 +5315,15 @@ const fnGetNestedTranslation = (oObj: any, sKey: string): string | undefined => 
   return sKey.split('.').reduce((o, i) => (o ? o[i] : undefined), oObj);
 };
 
+export const translate = (locale: Locale, key: string): string =>
+  fnGetNestedTranslation(oTranslations[locale], key) || fnGetNestedTranslation(oEn, key) || key;
+
 export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children: oChildren }) => {
   const [sLocale, fnSetLocale] = useState<Locale>(fnGetInitialLocale());
 
   useEffect(()=>{ document.documentElement.lang=sLocale==='pt'?'pt-BR':'en'; try {localStorage.setItem('whitewolf_locale',sLocale);} catch {} },[sLocale]);
   const fnT = useCallback((sKey: string, oReplacements?: Record<string, string | number>): string => {
-    let sTranslation = fnGetNestedTranslation(oTranslations[sLocale], sKey) || fnGetNestedTranslation(oTranslations['en'], sKey) || sKey;
+    let sTranslation = translate(sLocale, sKey);
     if (oReplacements) {
         Object.keys(oReplacements).forEach(sRKey => {
             sTranslation = sTranslation.replace(`{{${sRKey}}}`, String(oReplacements[sRKey]));

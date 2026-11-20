@@ -60,7 +60,7 @@ export function SkillDistribution({
                 if (!skillsFitPath(c, p.id)) {
                   if (
                     !window.confirm(
-                      "A distribuição atual não cabe neste pacote. Limpar os pontos de Habilidades para redistribuir? As especializações serão preservadas para revisão.",
+                      "A distribuição atual não cabe neste pacote. Limpar os pontos de Habilidades para redistribuir? As especializações ligadas a esses pontos serão removidas.",
                     )
                   )
                     return;

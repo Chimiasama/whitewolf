@@ -5,6 +5,7 @@ export interface CatalogOption {
   id: string;
   name: string;
   summary?: string;
+  metadata?: string;
   details?: React.ReactNode;
   unavailable?: string;
   community?: boolean;
@@ -40,7 +41,7 @@ export function CatalogPicker({
     (o) =>
       (community || !o.community || selected.includes(o.id)) &&
       (locked || !o.unavailable || selected.includes(o.id)) &&
-      normalize(o.name + " " + (o.summary || "")).includes(normalize(query)),
+      normalize([o.name, o.metadata, o.summary].join(" ")).includes(normalize(query)),
   );
   return (
     <section aria-label={label} className="catalog-picker space-y-3 text-left">
@@ -67,7 +68,8 @@ export function CatalogPicker({
             return (
               <li key={key} className="rounded-lg bg-gray-900 p-3">
                 <div className="flex justify-between items-center gap-3">
-                  <strong><HelpLabel sourceKey={catalogReferenceKey(label,key)} title={item?.name||key} content={item?.details||item?.summary}>{item?.name||key}</HelpLabel></strong>
+                  <div><strong><HelpLabel sourceKey={catalogReferenceKey(label,key)} title={item?.name||key} content={item?.details||item?.summary}>{item?.name||key}</HelpLabel></strong>
+                  {item?.metadata && <p className="text-sm text-gray-300">{item.metadata}</p>}</div>
                   <button
                     type="button"
                     className="text-sm text-gray-300 underline"
@@ -128,6 +130,7 @@ export function CatalogPicker({
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <strong><HelpLabel sourceKey={catalogReferenceKey(label,o.id)} title={o.name} content={o.details||o.summary}>{o.name}</HelpLabel></strong>
+                    {o.metadata && <p className="text-sm text-gray-300">{o.metadata}</p>}
                     {o.community && (
                       <span className="block text-xs text-amber-200">
                         Comunitário · opcional

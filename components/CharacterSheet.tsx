@@ -473,7 +473,7 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({
                         <li key={sKey} className="mb-3 hover:bg-gray-800/50 rounded px-2 -mx-2 transition-colors py-2">
                             <div className="flex justify-between items-center">
                                 <div className="flex items-center">
-                                    <HelpLabel title={sDisplayName} content={oDisciplineDetail?<DisciplineReference discipline={oDisciplineDetail}/>:undefined}>{sDisplayName}</HelpLabel>
+                                    <HelpLabel title={sDisplayName} content={oDisciplineDetail?<DisciplineReference discipline={oDisciplineDetail} disciplineKey={sKey}/>:undefined}>{sDisplayName}</HelpLabel>
                                 </div>
                                 <div className="flex items-center">
                                     {[...Array(5)].map((_, nI) => (

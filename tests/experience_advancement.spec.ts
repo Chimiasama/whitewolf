@@ -763,3 +763,36 @@ test("criação mantém dois níveis da mesma Loresheet e gerador evita Dons dup
   ]);
   expect(r.duplicates).toBe(0);
 });
+
+test("V5 concede especialização ao comprar o primeiro ponto de Ciência", async ({ page }) => {
+  await page.goto("/");
+  const report = await page.evaluate(async () => {
+    const { oInitialCharacter } = await import("/constants.ts");
+    const { purchaseWithExperience, quotePurchase } = await import("/lib/advancement.ts");
+    const c = {
+      ...structuredClone(oInitialCharacter),
+      gameType: "Vampire",
+      clan: "tremere",
+      creationCompletedAt: "2026-10-27T12:00:00Z",
+      experience: [{ id: "award", date: "2026-10-27", kind: "earned", amount: 10, note: "" }],
+    };
+    const request = { kind: "skill", key: "Science" };
+    const receipt = { id: "science", date: "2026-10-27", note: "" };
+    let blocked = false;
+    try {
+      purchaseWithExperience(c, request, { ...receipt, expectedToken: quotePurchase(c, request).token });
+    } catch (error) {
+      blocked = String(error).includes("especialização gratuita");
+    }
+    const selected = { ...request, choice: "Química" };
+    const quote = quotePurchase(c, selected);
+    const after = purchaseWithExperience(c, selected, { ...receipt, expectedToken: quote.token });
+    return { blocked, cost: quote.cost, dots: after.skills.Science, specialties: after.specialties };
+  });
+  expect(report).toEqual({
+    blocked: true,
+    cost: 3,
+    dots: 1,
+    specialties: [{ skill: "Science", name: "Química" }],
+  });
+});

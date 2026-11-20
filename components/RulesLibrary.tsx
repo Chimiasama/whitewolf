@@ -22,7 +22,7 @@ export function RulesLibrary({character:c}:{character:Character}){
  let entries:{id:string;name:string;search?:string;content:React.ReactNode}[]=[];
  if(open){
  if(category==='attributes'||category==='skills')entries=Object.values(category==='attributes'?Attribute:Skill).map(id=>({id,name:t(category+'.list.'+id),content:<p>{TRAIT_HELP[id]}</p>}));
- else if(category==='disciplines')entries=Object.entries(fnGetDisciplineDetails(t)).map(([id,d])=>({id,name:d.name,search:d.description,content:<DisciplineReference discipline={d}/>}));
+ else if(category==='disciplines')entries=Object.entries(fnGetDisciplineDetails(t)).map(([id,d])=>({id,name:d.name,search:d.description,content:<DisciplineReference discipline={d} disciplineKey={id}/>}));
  else if(category==='rituals')entries=BLOOD_RITUALS.map(r=>({id:r.id,name:r.name+' · nível '+r.level,search:r.english,content:<RitualReference ritual={r}/>}));
  else if(category==='ceremonies')entries=OBLIVION_CEREMONIES.map(r=>({id:r.id,name:r.name+' · nível '+r.level,search:r.english,content:<RitualReference ritual={r} ceremony/>}));
  else if(category==='predators')entries=fnGetPredatorTypes(t).map(p=>({id:p.id,name:p.name.replace('[Comunitário / opcional] ',''),search:p.englishName,content:<><p>{p.description}</p><PredatorBenefits predator={p} preview/><HuntingReference predator={p}/></>}));

@@ -129,13 +129,15 @@ export const ADDITIONAL_FORMULAE: DisciplinePower[] = [
     "system": "Players Guide, seção Thin-Blood Alchemy; docs/Vampire5edPlayersGuide01:L5635. Consulte ingredientes, custo e duração."
   }
 ];
+export const IMITATION_RULE = 'V5, pp. 285–287. Use Alquimia na parada. Nos níveis 4–5, exige vitae apropriada; confira ingredientes, pesquisa, Amálgamas e condições do poder com o Narrador.';
+
 /** Counterfeits are formulae, not permanent access to the source Discipline. */
 export function expandPowers(base: Record<string,DisciplineDetail>):Record<string,DisciplineDetail> {
  const result={...base,oblivion:{...base.oblivion,powers:[...base.oblivion.powers,...NECROMANTIC_POWERS]},thinbloodalchemy:{...base.thinbloodalchemy,powers:[...base.thinbloodalchemy.powers,...ADDITIONAL_FORMULAE]}};
  const counterfeits=Object.entries(result).filter(([key])=>key!=='thinbloodalchemy').flatMap(([key,d])=>d.powers.filter(p=>p.level<=4).map(p=>({
  id:'imitate-'+key+'-'+p.id,community:p.community,level:p.level+1,name:'Imitação: '+p.name,
  description:'Fórmula de Alquimia que imita '+d.name+' '+p.level+'. '+p.description,
- system:'V5, pp. 285–287. Use Alquimia na parada. Nos níveis 4–5, exige vitae apropriada; confira ingredientes, pesquisa, Amálgamas e condições do poder com o Narrador. '+p.system
+ system:IMITATION_RULE+' '+p.system
  })));
  result.thinbloodalchemy.powers.push(...counterfeits);
  return result;

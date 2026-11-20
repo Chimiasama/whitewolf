@@ -165,3 +165,82 @@ test("NPC: papel solicitado, conclusão e arquivos acessíveis no celular", asyn
     await page.locator("body").evaluate((el) => el.scrollWidth <= innerWidth),
   ).toBe(true);
 });
+
+test("V5 mostra nível e texto do poder e libera escolhas ponto a ponto", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await start(page);
+  await page.evaluate(async () => {
+    const { oInitialCharacter } = await import('/constants.ts');
+    localStorage.setItem('whitewolf_draft_v2', JSON.stringify({
+      ...oInitialCharacter,
+      name: 'Teste de Potência',
+      gameType: 'Vampire',
+      clan: 'brujah',
+      disciplines: { potence: 3 },
+    }));
+    localStorage.setItem('whitewolf_flow_v1', JSON.stringify({
+      step: 4,
+      panels: { powers: 'disciplines' },
+    }));
+  });
+  await page.reload();
+  await page.getByRole('button', { name: 'Continuar personagem' }).click();
+  const powers = page.getByRole('region', { name: 'Potência — poderes' });
+  const choose = (name: string) => powers.locator('li').filter({ has: page.getByText(name, { exact: true }) })
+    .getByRole('button', { name: 'Escolher', exact: true });
+  await expect(page.getByText('Ponto 1 de 3 · Nível 1')).toBeVisible();
+  await powers.getByRole('button', { name: 'Escolher', exact: true }).click();
+  await powers.getByLabel('Mostrar indisponíveis').check();
+  const levelThree = powers.locator('li').filter({ hasText: 'Disponível a partir do ponto 3.' }).first();
+  const levelThreeName = await levelThree.locator('[data-help-label]').textContent();
+  await expect(levelThree.getByText('Nível 3', { exact: true })).toBeVisible();
+  await expect(choose(levelThreeName!)).toBeDisabled();
+
+  const levelOne = powers.locator('li').filter({ has: page.getByText('Nível 1', { exact: true }) });
+  const firstName = await levelOne.first().locator('[data-help-label]').textContent();
+  const secondName = await levelOne.nth(1).locator('[data-help-label]').textContent();
+  await levelOne.first().getByRole('button', { name: /^Informações/ }).click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog.getByText('Texto da fonte (português)')).toBeVisible();
+  await expect(dialog.getByText(/^Sistema:/)).toBeVisible();
+  await expect(dialog.getByText(/^Duração:/)).toBeVisible();
+  await page.keyboard.press('Escape');
+  await choose(firstName!).click();
+  await expect(page.getByText('Ponto 2 de 3 · Níveis 1 a 2')).toBeVisible();
+  await expect(choose(levelThreeName!)).toBeDisabled();
+  await choose(secondName!).click();
+  await expect(page.getByText('Ponto 3 de 3 · Níveis 1 a 3')).toBeVisible();
+  await choose(levelThreeName!).click();
+  await expect(page.getByText('3 / 3 poderes escolhidos')).toBeVisible();
+  await expect(choose('Poderio')).toBeDisabled();
+});
+
+test("V5 exige as especializações das Habilidades adquiridas e limpa as que perdem todos os pontos", async ({ page }) => {
+  await start(page);
+  await page.getByRole("button", { name: "Capacidades" }).click();
+  await page.getByRole("tab", { name: "Habilidades" }).click();
+  await page.getByLabel(/^Equilibrado/).check();
+
+  const changeCraft = async (dots: number) => {
+    await page.getByRole("button", { name: /^Ofícios \d/ }).click();
+    await page.getByRole("dialog", { name: "Ofícios" }).getByRole("button", { name: new RegExp(`^${dots} `) }).click();
+  };
+  await changeCraft(2);
+  await page.getByRole("tab", { name: "Especializações" }).click();
+  await expect(page.getByText("Especialização gratuita pendente em Ofícios.")).toBeVisible();
+  await page.getByRole("combobox", { name: "Habilidade", exact: true }).selectOption("Craft");
+  await page.getByLabel("Especialização", { exact: true }).fill("Marcenaria");
+  await page.getByRole("button", { name: "Adicionar especialização" }).click();
+  await expect(page.getByText("Especialização gratuita pendente em Ofícios.")).toHaveCount(0);
+
+  await page.getByRole("tab", { name: "Habilidades" }).click();
+  await changeCraft(1);
+  await page.getByRole("tab", { name: "Especializações" }).click();
+  await expect(page.getByText("Ofícios: Marcenaria")).toBeVisible();
+
+  await page.getByRole("tab", { name: "Habilidades" }).click();
+  await changeCraft(0);
+  await page.getByRole("tab", { name: "Especializações" }).click();
+  await expect(page.getByText("Ofícios: Marcenaria")).toHaveCount(0);
+  await expect(page.getByRole("option", { name: "Ofícios" })).toHaveCount(0);
+});
