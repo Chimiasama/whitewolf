@@ -38,9 +38,13 @@ test("V5: predador precede os poderes e o catálogo filtra requisitos", async ({
   ).toBeVisible();
   const powers = page.getByRole("region", { name: /Presença — poderes/ });
   await powers.getByRole("button", { name: "Escolher", exact: true }).click();
-  await expect(powers.getByText(/Exige 5 pontos/)).toHaveCount(0);
+  const majesty = powers.getByRole("listitem").filter({
+    has: page.getByText("Majestade", { exact: true }),
+  });
+  await expect(majesty).toHaveCount(0);
   await powers.getByLabel("Mostrar indisponíveis").check();
-  await expect(powers.getByText(/Exige 5 pontos/).first()).toBeVisible();
+  await expect(majesty.getByText("Nível 5", { exact: true })).toBeVisible();
+  await expect(majesty.getByRole("button", { name: "Escolher", exact: true })).toBeDisabled();
   await powers.getByRole("searchbox").fill("xxxxxxxx");
   await expect(powers.getByRole("status")).toContainText("Nenhuma opção");
 });
